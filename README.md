@@ -15,7 +15,7 @@ Si tenéis [debian](https://www.debian.org/index.es.html) o [Ubuntu](http://www.
 ```sh
 sudo apt-get install texlive
 ```
-No olvidéis hacer antes un `sudo apt-get update` antes.
+No olvidéis hacer un `sudo apt-get update` antes.
 
 En otras distribuciones de linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.
 
