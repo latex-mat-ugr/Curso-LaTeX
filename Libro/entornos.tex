@@ -1,0 +1,46 @@
+\chapter{Algunos entornos}
+
+%el primer argumento es el nombre del entorno, el segundo el número de parámetros que le pasamos, el tercero indica cómo empieza el entorno, y el último cómo termina (en este caso terminamos con un cuadrado hueco)
+\newenvironment{ejercicio}[1]{\textbf{Ejercicio número #1}}{\qed}
+
+Veamos cómo escribir un ejercicio.
+
+\begin{ejercicio}{1}
+Escribe esto con otras palabras.
+\end{ejercicio}
+
+Otra forma con contadores.
+%definimos un contador, así no tenemos que poner manualmente número a los ejercicios
+\newcounter{ejer_num}
+%ponemos el contador a 1
+\setcounter{ejer_num}{1}
+%definimos ahora un nuevo entorno, sin parámetros; el contador se incrementa con \stepcounter{}
+\newenvironment{ejer}{\textbf{Ejercicio \arabic{ejer_num}: \stepcounter{ejer_num}}\begin{itshape}}{\end{itshape}}
+
+\begin{ejer}
+Una de melón.
+\end{ejer}
+
+\begin{ejer}
+Otra de sandía.
+\end{ejer}
+
+\section{Otros entornos}
+
+%el entorno teorema irá numerado usando las secciones con el formato (nºsección).(nºteorema en la sección)
+\newtheorem{teorema}{Teorema}[section]
+%con esta forma de definir nota, hacemos que tenga el mismo tipo de contador que el entorno teorema anteriormente definido
+\newtheorem{nota}[teorema]{Aclaración}
+
+\begin{teorema}\label{tonto}
+Las ranas son verdes.
+\end{teorema}
+%el entorno proof está predefinido en amsart, al usar el paquete babel con la opción spanish, imprimirá "Demostración:" en vez de "Proof:".
+\begin{proof}
+Así lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.
+\end{proof}
+
+\begin{nota}
+Alguien probó que el Teorema \ref{tonto} es falso, pues encontró una rana marrón.
+\end{nota}
+

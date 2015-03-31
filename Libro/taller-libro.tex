@@ -1,0 +1,77 @@
+\documentclass[11pt]{amsbook}
+
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{cite}
+
+%en corchetes ponemos nombres más cortos, para mejor visualización de las cabeceras del documento
+\title[Taller de LaTeX]{Taller de \LaTeX\ en el Instituto de Biomedicina del Campus de la Salud\\ (II parte)}
+\author[Los presentes]{Los asistentes a dicho curso}
+
+\address{Instituto de Biomedicina}
+\email{alguno@ugr.es}
+\date{\today}
+
+\makeindex
+
+\begin{document}
+
+
+\frontmatter %parte inicial, va enumerado en roman
+
+\maketitle
+
+\include{inicio}
+
+%esta orden genera un índice
+\tableofcontents
+
+\mainmatter %parte principal del libro enumerada en arábigo
+
+\include{introduccion}
+
+\part{Cosas varias}
+
+\include{listas}
+
+\include{tablas}
+
+\include{letras}
+
+\include{formulas}
+
+
+\part{Entornos}
+
+\include{entornos}
+
+\part{Más cosas}
+
+\include{imagenes}
+
+\include{definiciones}
+
+\include{moviendo}
+
+
+\backmatter %parte final
+
+
+\cleardoublepage
+\phantomsection
+
+\bibliography{taller}
+\bibliographystyle{plain}
+
+\cleardoublepage
+\phantomsection
+
+
+\printindex
+
+\end{document}

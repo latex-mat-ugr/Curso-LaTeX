@@ -31,3 +31,10 @@ TeXworks existe en todas las plataformas que hemos mencionado.
 
 
 Yo personalmente uso [TeXStudio](http://texstudio.sourceforge.net), que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.
+
+
+### Material
+
+Podéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyeccto de Innovación Docente [Orientamat](http://www.ugr.es/~orientamat/)
+
+En esta página iremos añadiendo materiales para el curso.
