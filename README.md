@@ -1,4 +1,4 @@
-# Curso-LaTeX-AMAT
+# Curso de LaTeX AMAT
 Curso de LaTeX organizado por AMAT para alumnos de Trabajo de Fin de Grado
 
 ## Antes del curso
@@ -38,3 +38,9 @@ Yo personalmente uso [TeXStudio](http://texstudio.sourceforge.net), que también
 Podéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyeccto de Innovación Docente [Orientamat](http://www.ugr.es/~orientamat/)
 
 En esta página iremos añadiendo materiales para el curso.
+
+- La carpeta `Documento sencillo` corresponde con la primera clase.
+
+- `Libro` contiene un ejemplo de libro con capítulos, tabla de contenidos, índice y bibliografía.
+
+- `Beamer` tiene dentro una presentación sencilla hecha con la clase [beamer](http://www.ctan.org/tex-archive/macros/latex/contrib/beamer)
