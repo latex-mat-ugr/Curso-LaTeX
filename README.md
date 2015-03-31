@@ -25,9 +25,9 @@ Los desarrolladores de [TeXShop](http://pages.uoregon.edu/koch/texshop/index.htm
 
 ### Editores
 
-Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye [TeXworks](https://www.tug.org/texworks/). Y antes ya hemos mencionado TeXShop, que es un buen editor para Mac OS. Para Linux, (emacs)[https://www.gnu.org/software/emacs/] con (AUCTeX)[https://www.gnu.org/software/auctex/] es una buena opción también.
+Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye [TeXworks](https://www.tug.org/texworks). Y antes ya hemos mencionado TeXShop, que es un buen editor para Mac OS. Para Linux, [emacs](https://www.gnu.org/software/emacs) con [AUCTeX](https://www.gnu.org/software/auctex) es una buena opción también.
 
 TeXworks existe en todas las plataformas que hemos mencionado.
 
 
-Yo personalmente uso (TeXStudio)[http://texstudio.sourceforge.net], que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.
+Yo personalmente uso [TeXStudio](http://texstudio.sourceforge.net), que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.
