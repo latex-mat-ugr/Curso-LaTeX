@@ -19,7 +19,7 @@ No olvidéis hacer antes un `sudo apt-get update` antes.
 
 En otras distribuciones de linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.
 
-### Usuarios de Mac OS
+###Usuarios de Mac OS
 
 Los desarrolladores de [TeXShop](http://pages.uoregon.edu/koch/texshop/index.html) describen en su página cómo instalar [TeX Live](https://www.tug.org/texlive) a través de [MacTeX](https://www.tug.org/mactex).
 
@@ -43,4 +43,4 @@ En esta página iremos añadiendo materiales para el curso.
 
 - `Libro` contiene un ejemplo de libro con capítulos, tabla de contenidos, índice y bibliografía.
 
-- `Beamer` tiene dentro una presentación sencilla hecha con la clase [beamer](http://www.ctan.org/tex-archive/macros/latex/contrib/beamer)
+- `Beamer` tiene dentro una presentación sencilla hecha con la clase [beamer](http://www.ctan.org/tex-archive/macros/latex/contrib/beamer).
