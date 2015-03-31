@@ -44,4 +44,4 @@ En esta página iremos añadiendo materiales para el curso.
 - `Libro` contiene un ejemplo de libro con capítulos, tabla de contenidos, índice y bibliografía.
 
 - `Beamer` tiene dentro una presentación sencilla hecha con la clase [beamer](http://www.ctan.org/tex-archive/macros/latex/contrib/beamer).
-- `Markdown' es una carpeta con una breve introducción a [markdown](http://daringfireball.net/projects/markdown).
+- `Markdown` es una carpeta con una breve introducción a [markdown](http://daringfireball.net/projects/markdown).
