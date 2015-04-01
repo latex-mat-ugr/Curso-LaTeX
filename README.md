@@ -45,3 +45,16 @@ En esta página iremos añadiendo materiales para el curso.
 
 - `Beamer` tiene dentro una presentación sencilla hecha con la clase [beamer](http://www.ctan.org/tex-archive/macros/latex/contrib/beamer).
 - `Markdown` es una carpeta con una breve introducción a [markdown](http://daringfireball.net/projects/markdown).
+
+***
+
+### Editores de markdown
+
+El editor [atom](https://atom.io) es multiplataforma, y tiene un módulo markdown (estas líneas se están escribiendo con atom).
+
+Para mac, un buena opción es [MacDown](http://macdown.uranusjr.com), que ya trae integrada [MathJax](http://www.mathjax.org) para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo [Markdown Preview Plus](https://atom.io/packages/markdown-preview-plus).
+
+
+Existe además un plugin para [Chrome](https://www.google.com/chrome/browser/desktop/index.html) para visualizar markdown: [Markdown preview plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl). Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.
+
+Otra opción es usar un editor en línea, como puede ser [StackEdit](https://stackedit.io). También soporta MathJax.
