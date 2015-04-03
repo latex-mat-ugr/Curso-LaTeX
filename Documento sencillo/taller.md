@@ -200,7 +200,7 @@ Y otros entornos con el contador que acabamos de crear
 ```
 
 
-```
+```latex
 \begin{teorema}\label{tonto}
 Las ranas son verdes.
 \end{teorema}
