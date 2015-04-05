@@ -34,7 +34,16 @@ code > span.er { color: #ff0000; font-weight: bold; }
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
-<div id="taller-de-latex-para-alumnos-de-grado-en-matemáticas" class="titleslide slide section level1"><h1>Taller de LaTeX para alumnos de Grado en Matemáticas</h1></div><div id="documento-sencillo" class="slide section level2">
+<!-- <div id="taller-de-latex-para-alumnos-de-grado-en-matemáticas" class="titleslide slide section level1"><h1>Taller de LaTeX para alumnos de Grado en Matemáticas</h1></div><div id="documento-sencillo" class="slide section level2">
+-->
+<div class="slide cover">
+ <img src="../Imagenes/fc.jpg"
+  alt="Cover page images (keys)" witdth="75%" height="75%"" class="cover" />
+ <br clear="all" />
+ <h1>Taller de LaTeX para alumnos de Grado en Matemáticas</h1>
+ <p><a href="http://www.ugr.es/local/pedro">Pedro A. García Sánchez,</a>
+ <a href="mailto:pedro@ugr.es">pedro@ugr.es</a></p>
+</div>
 <h1>Documento sencillo</h1>
 <p>La estructura de un documento es la siguiente</p>
 <pre class="sourceCode latex"><code class="sourceCode latex">\documentclass{...}
@@ -52,7 +61,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 \usepackage[hidelinks]{hyperref}
 \usepackage[vmargin=2cm,hmargin=2cm]{geometry}
 
-<span class="co">%en corchetes ponemos nombres más cortos, para mejor visualización de las cabeceras del documento</span>
 \title[Taller de \LaTeX]{Taller de \LaTeX\ para alumnos del Grado en Matemáticas}
 \author[Los presentes]{Los asistentes a dicho curso}
 \thanks{Agradecemos a la AMAT por organizar este curso}
@@ -221,7 +229,7 @@ Así lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.
 <pre><code>\includegraphics[width=2.5cm]{imagen.jpg}</code></pre>
 <p>Podemos también crear una figura con esa imágen</p>
 <pre class="sourceCode latex"><code class="sourceCode latex">\begin{figure}
-\includegraphics[width=3cm]{imagen.jpg}  
+\includegraphics[width=3cm]{imagen.jpg}
 \caption{Algo que encontré por
 \href{http://www3.interscience.wiley.com/journal/13087/home/ForAuthors.html}{ahí.}
 }

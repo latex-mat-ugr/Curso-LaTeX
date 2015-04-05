@@ -1,5 +1,11 @@
 #Taller de LaTeX para alumnos de Grado en Matemáticas
 
+![fc](../Imagenes/fc.jpg)
+
+[Pedro A. García Sánchez](http://www.ugr.es/local/pedro), <pedro@ugr.es>
+
+***
+
 ##Documento sencillo
 
 La estructura de un documento es la siguiente
@@ -26,7 +32,7 @@ Entre `\documentclass` y `\begin{document}` ponemos declaraciones y paquetes que
 \usepackage[hidelinks]{hyperref}
 \usepackage[vmargin=2cm,hmargin=2cm]{geometry}
 
-%en corchetes ponemos nombres más cortos, para mejor visualización de las cabeceras del documento
+visualización de las cabeceras del documento
 \title[Taller de \LaTeX]{Taller de \LaTeX\ para alumnos del Grado en Matemáticas}
 \author[Los presentes]{Los asistentes a dicho curso}
 \thanks{Agradecemos a la AMAT por organizar este curso}
