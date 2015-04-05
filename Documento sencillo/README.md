@@ -1,4 +1,5 @@
 #Taller de LaTeX para alumnos de Grado en Matemáticas
+#Documento sencillo
 
 ![fc](../Imagenes/fc.jpg)
 
@@ -6,7 +7,7 @@
 
 ***
 
-##Documento sencillo
+##Estructura
 
 La estructura de un documento es la siguiente
 
