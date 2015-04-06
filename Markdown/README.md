@@ -16,7 +16,8 @@ Pedro <http://www.ugr.es/local/pedro>
 ***
 #Fórmulas
 
-Esto es una fórmula en línea $(x^2+1)^3$ y además podemos hacer una en $$\int_a^b \frac{x+1}{x-1} \mathrm d x.$$
+Esto es una fórmula en línea \\((x^2+1)^3\\) y además podemos hacer una en 
+$$\int_a^b \frac{x+1}{x-1} \mathrm d x.$$
 
 ---
 
