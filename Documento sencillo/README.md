@@ -266,3 +266,10 @@ Para insertar la bibliografía se usa bien `bibtex` (que veremos más adelante) 
     \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.
 \end{thebibliography}
 ```
+***
+
+##Resumen 
+
+Un resumen de todo lo dicho y más lo podéis encontrar en el [chuletario](http://osl.ugr.es/CTAN/info/latexcheat/latexcheat-esmx/latexsheet-esmx.pdf) de LaTeX
+
+En vestra instalación de LaTeX tenéis toda la documentación necesaria, e incluso el "[lshort.pdf](http://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf)" o cómo aprender LaTeX en 147 minutos
