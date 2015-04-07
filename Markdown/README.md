@@ -33,7 +33,7 @@ Si queremos numeradas, cambiamos los `*` por un `1.`
 Esto es una fórmula en línea $(x^2+1)^3$ y además podemos hacer una en
 $$\int_a^b \frac{x+1}{x-1} \mathrm d x.$$
 
-Las fórmulas en línea las escribimos con `$..$` las centradas con doble `$`
+Las fórmulas en línea las escribimos con `$..$` las centradas con doble `$$` o bien `\[..\]`
 
 ---
 
