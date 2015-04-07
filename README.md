@@ -1,5 +1,5 @@
 # Curso de LaTeX AMAT
-Curso de LaTeX organizado por AMAT para alumnos de Trabajo de Fin de Grado
+Curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page412.htm) para alumnos de Trabajo de Fin de Grado
 
 ## Antes del curso
 
