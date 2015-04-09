@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <title>Taller de LaTeX</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -35,8 +35,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </head>
 <body>
 <div id="taller-de-latex-para-alumnos-de-grado-en-matemáticas" class="slide section level1">
-  <h1>Taller de LaTeX para alumnos de Grado en Matemáticas</h1>
-  <h1>Documento sencillo</h1>
+<h1>Taller de LaTeX para alumnos de Grado en Matemáticas</h1>
+<div class="figure">
+<img src="../Imagenes/fc.jpg" alt="fc" width="60%" height="60%" />
+</div>
 <p><a href="http://www.ugr.es/local/pedro">Pedro A. García Sánchez</a>, <script type="text/javascript">
 <!--
 h='&#x75;&#x67;&#114;&#46;&#x65;&#x73;';a='&#64;';n='&#112;&#x65;&#100;&#114;&#x6f;';e=n+a+h;
@@ -44,10 +46,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#112;&#x65;&#100;&#114;&#x6f;&#32;&#x61;&#116;&#32;&#x75;&#x67;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x65;&#x73;</noscript></p>
 </div>
-
 <div class="slide section level1">
 
-<h2 id="estructura">Estructura</h2>
+<h2 id="documento-sencillo">Documento sencillo</h2>
 <p>La estructura de un documento es la siguiente</p>
 <pre class="sourceCode latex"><code class="sourceCode latex">\documentclass{...}
 
@@ -216,6 +217,56 @@ Nombre &amp; Pepe &amp; Juan &amp; Manuel\\ \hline
 </div>
 <div class="slide section level1">
 
+<h2 id="matrices-y-derivados">Matrices y derivados</h2>
+<p>El entorno array es similar a tabular</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{array}{clr}
+1 &amp; -\frac{1}2 &amp; 321 \\
+x^2+x+1 &amp; x-1 &amp; 7
+\end{array}</code></pre>
+<p><span class="math">\[
+\begin{array}{clr}
+1 &amp; -\frac{1}2 &amp; 321 \\
+x^2+x+1 &amp; x-1 &amp; 7
+\end{array}
+\]</span></p>
+<p>Podemos delimitarla con <code>\left</code> y <code>\right</code></p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\left\{\begin{array}{clr}
+1 &amp; -\frac{1}2 &amp; 321 \\
+x^2+x+1 &amp; x-1 &amp; 7
+\end{array}
+\right)</code></pre>
+<p><span class="math">\[
+\left\{\begin{array}{clr}
+1 &amp; -\frac{1}2 &amp; 321 \\
+x^2+x+1 &amp; x-1 &amp; 7
+\end{array}
+\right)
+\]</span></p>
+<p>Existen matrices predefinidos como <code>\begin{matrix} .. \end{matrix}</code>, <code>\begin{pmatrix} .. \end{pmatrix}</code>, ...</p>
+</div>
+<div class="slide section level1">
+
+<h2 id="un-ejemplo-función-definida-por-casos">Un ejemplo: función definida por casos</h2>
+<p>Vamos a definir una función por casos</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+f(x)=\left\{
+    \begin{array}{ll}
+    x^2-1, &amp; \hbox{si } 1\le x\le 4,\\
+    x-1, &amp; \hbox{en otro caso}.
+    \end{array}
+    \right.
+$$</code></pre>
+<p><span class="math">\[
+f(x)=\left\{
+    \begin{array}{ll}
+    x^2-1, &amp; \hbox{si } 1\le x\le 4,\\
+    x-1, &amp; \hbox{en otro caso}.
+    \end{array}
+    \right.
+\]</span></p>
+</div>
+<div class="slide section level1">
+
 <h2 id="entornos">Entornos</h2>
 <pre class="sourceCode latex"><code class="sourceCode latex">\newenvironment{ejercicio}[1]{\textbf{Ejercicio número #1}}{\qed}</code></pre>
 <pre class="sourceCode LaTeX"><code class="sourceCode latex">\begin{ejercicio}{1}
@@ -280,12 +331,6 @@ Puede ser más de un párrafo.
   The not so short introduction to \LaTeX2e,
     \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.
 \end{thebibliography}</code></pre>
-</div>
-<div class="slide section level1">
-
-<h2 id="resumen-1">Resumen</h2>
-<p>Un resumen de todo lo dicho y más lo podéis encontrar en el <a href="http://osl.ugr.es/CTAN/info/latexcheat/latexcheat-esmx/latexsheet-esmx.pdf">chuletario</a> de LaTeX</p>
-<p>En vestra instalación de LaTeX tenéis toda la documentación necesaria, e incluso el &quot;<a href="http://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf">lshort.pdf</a>&quot; o cómo aprender LaTeX en 147 minutos</p>
 </div>
 </body>
 </html>

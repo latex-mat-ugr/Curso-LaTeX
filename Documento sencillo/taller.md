@@ -165,6 +165,75 @@ por
 
 ***
 
+##Matrices y derivados
+
+El entorno array es similar a tabular
+
+
+```latex
+\begin{array}{clr}
+1 & -\frac{1}2 & 321 \\
+x^2+x+1 & x-1 & 7
+\end{array}
+```
+
+$$
+\begin{array}{clr}
+1 & -\frac{1}2 & 321 \\
+x^2+x+1 & x-1 & 7
+\end{array}
+$$
+
+Podemos delimitarla con `\left` y `\right`
+
+```latex
+\left\{\begin{array}{clr}
+1 & -\frac{1}2 & 321 \\
+x^2+x+1 & x-1 & 7
+\end{array}
+\right)
+```
+$$
+\left\{\begin{array}{clr}
+1 & -\frac{1}2 & 321 \\
+x^2+x+1 & x-1 & 7
+\end{array}
+\right)
+$$
+
+Existen matrices predefinidos como
+`\begin{matrix} .. \end{matrix}`,
+`\begin{pmatrix} .. \end{pmatrix}`, ...
+
+***
+
+##Un ejemplo: función definida por casos
+
+Vamos a definir una función por casos
+
+```latex
+$$
+f(x)=\left\{
+	\begin{array}{ll}
+	x^2-1, & \hbox{si } 1\le x\le 4,\\
+	x-1, & \hbox{en otro caso}.
+	\end{array}
+	\right.
+$$
+```
+
+
+$$
+f(x)=\left\{
+	\begin{array}{ll}
+	x^2-1, & \hbox{si } 1\le x\le 4,\\
+	x-1, & \hbox{en otro caso}.
+	\end{array}
+	\right.
+$$
+
+***
+
 ##Entornos
 
 ```latex
