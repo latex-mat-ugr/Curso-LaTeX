@@ -46,6 +46,8 @@ En esta página iremos añadiendo materiales para el curso.
 - `Beamer` tiene dentro una presentación sencilla hecha con la clase [beamer](http://www.ctan.org/tex-archive/macros/latex/contrib/beamer).
 - `Markdown` es una carpeta con una breve introducción a [markdown](http://daringfireball.net/projects/markdown).
 
+Cada carpeta contiene una descripción en markdown y html (obtenido a partir de la de markdown). Un ejemplo de traducción del contenido de `Documento sencillo` se puede ver [aquí](http://www.ugr.es/~pedro/latex).
+
 ***
 
 ### Editores de markdown
