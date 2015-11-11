@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>matematicas-jero</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    extensions: [],
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+    },
+    showMathMenu: false
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
+      <style>.markdown-preview, .markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 16px; line-height: 1.6; word-wrap: break-word; overflow: scroll; box-sizing: border-box; padding: 20px; background-color: rgb(255, 255, 255); }
+.markdown-preview > :first-child, .markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview > :last-child, .markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview a:not([href]), .markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview .absent, .markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview .anchor, .markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview .anchor:focus, .markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview h1, .markdown-preview[data-use-github-style] h1, .markdown-preview h2, .markdown-preview[data-use-github-style] h2, .markdown-preview h3, .markdown-preview[data-use-github-style] h3, .markdown-preview h4, .markdown-preview[data-use-github-style] h4, .markdown-preview h5, .markdown-preview[data-use-github-style] h5, .markdown-preview h6, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview h1 .octicon-link, .markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview h2 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview h3 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview h4 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview h5 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview h6 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview h1:hover .anchor, .markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview h2:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview h3:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview h4:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview h5:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview h6:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview h6:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview h1 tt, .markdown-preview[data-use-github-style] h1 tt, .markdown-preview h2 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview h3 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview h4 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview h5 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview h6 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview h1 code, .markdown-preview[data-use-github-style] h1 code, .markdown-preview h2 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview h3 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview h4 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview h5 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview h6 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview h1, .markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview h1 .anchor, .markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview h2, .markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview h2 .anchor, .markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview h3, .markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview h3 .anchor, .markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview h4, .markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview h4 .anchor, .markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview h5, .markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview h5 .anchor, .markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview h6, .markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview h6 .anchor, .markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview p, .markdown-preview[data-use-github-style] p, .markdown-preview blockquote, .markdown-preview[data-use-github-style] blockquote, .markdown-preview ul, .markdown-preview[data-use-github-style] ul, .markdown-preview ol, .markdown-preview[data-use-github-style] ol, .markdown-preview dl, .markdown-preview[data-use-github-style] dl, .markdown-preview table, .markdown-preview[data-use-github-style] table, .markdown-preview pre, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview hr, .markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview ul, .markdown-preview[data-use-github-style] ul, .markdown-preview ol, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview ul.no-list, .markdown-preview[data-use-github-style] ul.no-list, .markdown-preview ol.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview ul ul, .markdown-preview[data-use-github-style] ul ul, .markdown-preview ul ol, .markdown-preview[data-use-github-style] ul ol, .markdown-preview ol ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview ol ul, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview li > p, .markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview dl, .markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview dl dt, .markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview dl dd, .markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview blockquote, .markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview blockquote > :first-child, .markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview blockquote > :last-child, .markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview table, .markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: normal; }
+.markdown-preview table th, .markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview table th, .markdown-preview[data-use-github-style] table th, .markdown-preview table td, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview table tr, .markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview table tr:nth-child(2n), .markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview img, .markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview .emoji, .markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview span.frame, .markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview span.frame > span, .markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview span.frame span img, .markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview span.frame span span, .markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview span.align-center, .markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview span.align-center > span, .markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview span.align-center span img, .markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview span.align-right, .markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview span.align-right > span, .markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview span.align-right span img, .markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview span.float-left, .markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview span.float-left span, .markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview span.float-right, .markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview span.float-right > span, .markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview code, .markdown-preview[data-use-github-style] code, .markdown-preview tt, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview code::before, .markdown-preview[data-use-github-style] code::before, .markdown-preview tt::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview code::after, .markdown-preview[data-use-github-style] code::after, .markdown-preview tt::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: ' '; }
+.markdown-preview code br, .markdown-preview[data-use-github-style] code br, .markdown-preview tt br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview del code, .markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview pre > code, .markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview .highlight, .markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview .highlight pre, .markdown-preview[data-use-github-style] .highlight pre, .markdown-preview pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview .highlight pre, .markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview pre, .markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview pre code, .markdown-preview[data-use-github-style] pre code, .markdown-preview pre tt, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview pre code::before, .markdown-preview[data-use-github-style] pre code::before, .markdown-preview pre tt::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview pre code::after, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview pre tt::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview kbd, .markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview, .markdown-preview[data-use-github-style], .markdown-preview code, .markdown-preview[data-use-github-style] code { color: rgb(51, 51, 51); }
+.markdown-preview h1, .markdown-preview[data-use-github-style] h1, .markdown-preview h2, .markdown-preview[data-use-github-style] h2, .markdown-preview h3, .markdown-preview[data-use-github-style] h3, .markdown-preview h4, .markdown-preview[data-use-github-style] h4, .markdown-preview h5, .markdown-preview[data-use-github-style] h5, .markdown-preview h6, .markdown-preview[data-use-github-style] h6 { -webkit-font-smoothing: antialiased; cursor: text; }
+.markdown-preview > h1:first-child, .markdown-preview[data-use-github-style] > h1:first-child, .markdown-preview > h1:first-child + h2, .markdown-preview[data-use-github-style] > h1:first-child + h2, .markdown-preview > h2:first-child, .markdown-preview[data-use-github-style] > h2:first-child, .markdown-preview > h3:first-child, .markdown-preview[data-use-github-style] > h3:first-child, .markdown-preview > h4:first-child, .markdown-preview[data-use-github-style] > h4:first-child, .markdown-preview > h5:first-child, .markdown-preview[data-use-github-style] > h5:first-child, .markdown-preview > h6:first-child, .markdown-preview[data-use-github-style] > h6:first-child { margin-top: 0px; padding-top: 0px; }
+.markdown-preview a, .markdown-preview[data-use-github-style] a, .markdown-preview a code, .markdown-preview[data-use-github-style] a code { color: rgb(65, 131, 196); }
+.markdown-preview a:first-child h1, .markdown-preview[data-use-github-style] a:first-child h1, .markdown-preview a:first-child h2, .markdown-preview[data-use-github-style] a:first-child h2, .markdown-preview a:first-child h3, .markdown-preview[data-use-github-style] a:first-child h3, .markdown-preview a:first-child h4, .markdown-preview[data-use-github-style] a:first-child h4, .markdown-preview a:first-child h5, .markdown-preview[data-use-github-style] a:first-child h5, .markdown-preview a:first-child h6, .markdown-preview[data-use-github-style] a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+.markdown-preview h1 + p, .markdown-preview[data-use-github-style] h1 + p, .markdown-preview h2 + p, .markdown-preview[data-use-github-style] h2 + p, .markdown-preview h3 + p, .markdown-preview[data-use-github-style] h3 + p, .markdown-preview h4 + p, .markdown-preview[data-use-github-style] h4 + p, .markdown-preview h5 + p, .markdown-preview[data-use-github-style] h5 + p, .markdown-preview h6 + p, .markdown-preview[data-use-github-style] h6 + p { margin-top: 0px; }
+.markdown-preview li p.first, .markdown-preview[data-use-github-style] li p.first { display: inline-block; }
+.markdown-preview ul, .markdown-preview[data-use-github-style] ul { list-style-type: disc; }
+.markdown-preview ol, .markdown-preview[data-use-github-style] ol { list-style-type: decimal; }
+.markdown-preview ul li > :first-child, .markdown-preview[data-use-github-style] ul li > :first-child, .markdown-preview ol li > :first-child, .markdown-preview[data-use-github-style] ol li > :first-child, .markdown-preview ul li ul:first-of-type, .markdown-preview[data-use-github-style] ul li ul:first-of-type, .markdown-preview ol li ul:first-of-type, .markdown-preview[data-use-github-style] ol li ul:first-of-type { margin-top: 0px; }
+.markdown-preview ol > li, .markdown-preview[data-use-github-style] ol > li { list-style-type: inherit; }
+.markdown-preview ul > li, .markdown-preview[data-use-github-style] ul > li { list-style-type: inherit; }
+.markdown-preview dl dt:first-child, .markdown-preview[data-use-github-style] dl dt:first-child { padding: 0px; }
+.markdown-preview dl dt > :first-child, .markdown-preview[data-use-github-style] dl dt > :first-child { margin-top: 0px; }
+.markdown-preview dl dt > :last-child, .markdown-preview[data-use-github-style] dl dt > :last-child { margin-bottom: 0px; }
+.markdown-preview dl dd > :first-child, .markdown-preview[data-use-github-style] dl dd > :first-child { margin-top: 0px; }
+.markdown-preview dl dd > :last-child, .markdown-preview[data-use-github-style] dl dd > :last-child { margin-bottom: 0px; }
+.markdown-preview blockquote p, .markdown-preview[data-use-github-style] blockquote p { font-size: 16px; line-height: 1.5; }
+.markdown-preview pre.editor-colors, .markdown-preview[data-use-github-style] pre.editor-colors { padding: 16px; overflow: auto; font-size: 84%; line-height: 1.45; border-radius: 3px; background-color: rgb(250, 250, 250); }
+.markdown-preview pre, .markdown-preview[data-use-github-style] pre, .markdown-preview pre.editor-colors, .markdown-preview[data-use-github-style] pre.editor-colors { margin-bottom: 16px; word-break: normal; }
+.markdown-preview pre, .markdown-preview[data-use-github-style] pre, .markdown-preview code, .markdown-preview[data-use-github-style] code, .markdown-preview tt, .markdown-preview[data-use-github-style] tt, .markdown-preview pre.editor-colors, .markdown-preview[data-use-github-style] pre.editor-colors { font-family: Consolas, 'Liberation Mono', Courier, monospace; }
+.markdown-preview .emoji, .markdown-preview[data-use-github-style] .emoji { height: 20px; width: 20px; }
+.markdown-preview del, .markdown-preview[data-use-github-style] del { text-decoration: none; position: relative; }
+.markdown-preview del::after, .markdown-preview[data-use-github-style] del::after { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; content: ''; left: 0px; position: absolute; right: 0px; top: 50%; }
+.markdown-preview .flash, .markdown-preview[data-use-github-style] .flash { -webkit-animation: flash 1s ease-out 1; animation-duration: 1s; animation-timing-function: ease-out; animation-delay: initial; animation-direction: initial; animation-fill-mode: initial; -webkit-animation-play-state: initial; animation-play-state: initial; animation-name: flash; animation-iteration-count: 1; outline: rgba(255, 0, 0, 0) solid 1px; }
+.markdown-preview .flash:not(li), .markdown-preview[data-use-github-style] .flash:not(li) { display: block; }
+.markdown-preview { font-family: Optima; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #fafafa;
+  color: #383a42;
+}
+pre.editor-colors .line.cursor-line,
+.host .line.cursor-line {
+  background-color: rgba(56, 58, 66, 0.04);
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #383a42;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-left: 2px solid #526fff;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #ededed;
+}
+pre.editor-colors .bracket-matcher .region,
+.host .bracket-matcher .region {
+  border-bottom: 1px solid #526fff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .gutter .line-number,
+.host .gutter .line-number {
+  color: #9d9d9f;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line,
+.host .gutter .line-number.cursor-line {
+  color: #4d5375;
+  background-color: #f2f2f2;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,
+.host .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right,
+.host .gutter .line-number .icon-right {
+  color: #383a42;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(255, 20, 20, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #4d5375;
+}
+.comment {
+  color: #a0a1a7;
+  font-style: italic;
+}
+.entity.name.type {
+  color: #c18401;
+}
+.entity.other.inherited-class {
+  color: #50a14f;
+}
+.keyword {
+  color: #a626a4;
+}
+.keyword.control {
+  color: #a626a4;
+}
+.keyword.operator {
+  color: #383a42;
+}
+.keyword.other.special-method {
+  color: #4078f2;
+}
+.keyword.other.unit {
+  color: #986801;
+}
+.storage {
+  color: #a626a4;
+}
+.storage.type.annotation,
+.storage.type.primitive {
+  color: #a626a4;
+}
+.storage.modifier.package,
+.storage.modifier.import {
+  color: #383a42;
+}
+.constant {
+  color: #986801;
+}
+.constant.variable {
+  color: #986801;
+}
+.constant.character.escape {
+  color: #0184bc;
+}
+.constant.numeric {
+  color: #986801;
+}
+.constant.other.color {
+  color: #0184bc;
+}
+.constant.other.symbol {
+  color: #0184bc;
+}
+.variable {
+  color: #e45649;
+}
+.variable.interpolation {
+  color: #ca1243;
+}
+.variable.parameter {
+  color: #383a42;
+}
+.string {
+  color: #50a14f;
+}
+.string.regexp {
+  color: #0184bc;
+}
+.string.regexp .source.ruby.embedded {
+  color: #c18401;
+}
+.string.other.link {
+  color: #e45649;
+}
+.punctuation.definition.comment {
+  color: #a0a1a7;
+}
+.punctuation.definition.method-parameters,
+.punctuation.definition.function-parameters,
+.punctuation.definition.parameters,
+.punctuation.definition.separator,
+.punctuation.definition.seperator,
+.punctuation.definition.array {
+  color: #383a42;
+}
+.punctuation.definition.heading,
+.punctuation.definition.identity {
+  color: #4078f2;
+}
+.punctuation.definition.bold {
+  color: #c18401;
+  font-weight: bold;
+}
+.punctuation.definition.italic {
+  color: #a626a4;
+  font-style: italic;
+}
+.punctuation.section.embedded {
+  color: #ca1243;
+}
+.punctuation.section.method,
+.punctuation.section.class,
+.punctuation.section.inner-class {
+  color: #383a42;
+}
+.support.class {
+  color: #c18401;
+}
+.support.type {
+  color: #0184bc;
+}
+.support.function {
+  color: #0184bc;
+}
+.support.function.any-method {
+  color: #4078f2;
+}
+.entity.name.function {
+  color: #4078f2;
+}
+.entity.name.class,
+.entity.name.type.class {
+  color: #c18401;
+}
+.entity.name.section {
+  color: #4078f2;
+}
+.entity.name.tag {
+  color: #e45649;
+}
+.entity.other.attribute-name {
+  color: #986801;
+}
+.entity.other.attribute-name.id {
+  color: #4078f2;
+}
+.meta.class {
+  color: #c18401;
+}
+.meta.class.body {
+  color: #383a42;
+}
+.meta.method-call,
+.meta.method {
+  color: #383a42;
+}
+.meta.definition.variable {
+  color: #e45649;
+}
+.meta.link {
+  color: #986801;
+}
+.meta.require {
+  color: #4078f2;
+}
+.meta.selector {
+  color: #a626a4;
+}
+.meta.separator {
+  background-color: #373b41;
+  color: #383a42;
+}
+.meta.tag {
+  color: #383a42;
+}
+.none {
+  color: #383a42;
+}
+.invalid.deprecated {
+  color: #000000 !important;
+  background-color: #f2a60d !important;
+}
+.invalid.illegal {
+  color: #ffffff !important;
+  background-color: #ff1414 !important;
+}
+.markup.bold {
+  color: #986801;
+  font-weight: bold;
+}
+.markup.changed {
+  color: #a626a4;
+}
+.markup.deleted {
+  color: #e45649;
+}
+.markup.italic {
+  color: #a626a4;
+  font-style: italic;
+}
+.markup.heading .punctuation.definition.heading {
+  color: #4078f2;
+}
+.markup.inserted {
+  color: #50a14f;
+}
+.markup.list {
+  color: #e45649;
+}
+.markup.quote {
+  color: #986801;
+}
+.markup.raw {
+  color: #50a14f;
+}
+.source.cs .keyword.operator {
+  color: #a626a4;
+}
+.source.css .property-name,
+.source.css .property-value {
+  color: #696c77;
+}
+.source.css .property-name.support,
+.source.css .property-value.support {
+  color: #383a42;
+}
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+}
+.source.gfm .markup.heading {
+  color: #e45649;
+}
+.source.gfm .markup.link {
+  color: #a626a4;
+}
+.source.gfm .link .entity {
+  color: #4078f2;
+}
+.source.ini .keyword.other.definition.ini {
+  color: #e45649;
+}
+.source.java .storage.modifier.import {
+  color: #c18401;
+}
+.source.java .storage.type {
+  color: #c18401;
+}
+.source.java-properties .meta.key-pair {
+  color: #e45649;
+}
+.source.java-properties .meta.key-pair > .punctuation {
+  color: #383a42;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json {
+  color: #e45649;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
+  color: #e45649;
+}
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
+  color: #50a14f;
+}
+.source.json .meta.structure.dictionary.json > .constant.language.json,
+.source.json .meta.structure.array.json > .constant.language.json {
+  color: #0184bc;
+}
+.source.ruby .constant.other.symbol > .punctuation {
+  color: inherit;
+}
+.source.python .keyword.operator.logical.python {
+  color: #a626a4;
+}
+.source.python .variable.parameter {
+  color: #986801;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1>Matemáticas</h1>
+<p>Hay dos formas de escribir matemáticas: en la misma línea o centrado en una línea separada.</p>
+<ul>
+<li>Para escribir matemáticas <em>en línea</em> agrupamos el texto entre dólares. Por ejemplo,</li>
+</ul>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>$\cos(x+y)^{2}=\sqrt{2+x^2}$</span></span></div></pre>
+<p>produce <span class="math"><script type="math/tex">\cos(x+y)^{2}=\sqrt{2+x^2}</script></span>.</p>
+<ul>
+<li>Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula entre \[ \] o con dólares dobles. Es recomendable la primera opción. Por ejemplo</li>
+</ul>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<p>produce</p>
+<span class="math"><script type="math/tex; mode=display">\frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
+</script></span>
+<h3>Espaciado</h3>
+<p>Los espacios dentro del modo matemático no se tienen en cuenta.</p>
+<p>El espacio dentro las fórmulas es distinto al espacio en modo texto. Compara lo siguiente:</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>Sea&nbsp;$x=1,2$&nbsp;o&nbsp;$3$&nbsp;con&nbsp;sea&nbsp;$x=1$,&nbsp;$2$&nbsp;o&nbsp;$3$</span></span></div></pre>
+<p>La forma correcta de escribirlo es la <em>segunda</em> si queremos que LaTeX use el espaciado que se considera correcto.</p>
+<h2>Construcciones básicas</h2>
+<h3>Operaciones aritméticas, subíndices y superíndices</h3>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>$a&nbsp;+&nbsp;b$,&nbsp;$a&nbsp;-&nbsp;b$,&nbsp;$-a$,&nbsp;$a&nbsp;/&nbsp;b$,&nbsp;$a&nbsp;b$,&nbsp;$a&nbsp;\cdot&nbsp;b$,&nbsp;$a&nbsp;\times&nbsp;b$,&nbsp;$a&nbsp;\div&nbsp;b$</span></span></div></pre>
+<p>produce
+<span class="math"><script type="math/tex">a + b</script></span>, <span class="math"><script type="math/tex">a - b</script></span>, <span class="math"><script type="math/tex">-a</script></span>, <span class="math"><script type="math/tex">a / b</script></span>, <span class="math"><script type="math/tex">a b</script></span>, <span class="math"><script type="math/tex">a \cdot b</script></span>, <span class="math"><script type="math/tex">a \times b</script></span>, <span class="math"><script type="math/tex">a \div b</script></span>
+Puedes escribir subíndices y superíndices de la siguiente forma:</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>n^{2},&nbsp;x^{1/x},&nbsp;x_{n},&nbsp;lim_{x&nbsp;\to&nbsp;\infty}</span></span></div></pre>
+<p>que da como resultado</p>
+<span class="math"><script type="math/tex; mode=display">n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
+</script></span>
+<p>Se pueden anidar y usar subíndices y superíndices al mismo tiempo:</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\sum_{n=1}^{\infty}&nbsp;x^{x^n}</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">\sum_{n=1}^{\infty} x^{x^n}
+</script></span>
+<p>Las fracciones se escriben con el comando <code style="font-family: Courier;">\frac{numerador}{denominador}</code></p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\frac{a}{b},&nbsp;\tfrac{1}{2},\dfrac{1}{2}</span></span></div></pre>
+<p>produce
+<span class="math"><script type="math/tex">\frac{a}{b}</script></span>, <span class="math"><script type="math/tex">\tfrac{1}{2}</script></span>, <span class="math"><script type="math/tex">\dfrac{1}{2}</script></span></p>
+<p>frac se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como tfrac), si está en una línea separada aumenta (como dfrac). Podemos forzar un comportamiento u otro usando tfrac o dfrac.</p>
+<h3>Números binómicos</h3>
+<p><code style="font-family: Courier;">\binom{a}{b}</code> produce <span class="math"><script type="math/tex">\binom{a}{b}</script></span>. Al igual que con frac, se
+puede alterar su tamaño usando <code style="font-family: Courier;">tbinom{a}{b}</code> o <code style="font-family: Courier;">dbinom{a}{b}</code> y se obtiene <span class="math"><script type="math/tex">\tbinom{a}{b}</script></span> y <span class="math"><script type="math/tex">\dbinom{a}{b}</script></span>.</p>
+<h3>Puntos suspensivos</h3>
+<p>En lugar de escribir tres puntos seguidos, <code style="font-family: Courier;">\dots, \ldots, \cdots</code> producen puntos suspensivos con el espaciado correcto. <code style="font-family: Courier;">\dots</code> intenta adaptarse al entorno. <code style="font-family: Courier;">\ldots</code> da como resultado puntos “bajos” y <code style="font-family: Courier;">\cdots</code>centrados. Un ejemplo:</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>x=1,2,\ldots&nbsp;3,&nbsp;x+y+\cdots&nbsp;+z,&nbsp;x\times&nbsp;y&nbsp;\times&nbsp;\dots&nbsp;z</span></span></div></pre>
+<p>produce <span class="math"><script type="math/tex">x=1,2,\ldots 3</script></span>, <span class="math"><script type="math/tex">x+y+\cdots +z</script></span>, <span class="math"><script type="math/tex">x\times y \times \dots \times z</script></span></p>
+<h3>Integrales</h3>
+<p>Varios símbolos de integral</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>$\oint&nbsp;\iint&nbsp;\iiint&nbsp;\iiiint&nbsp;\idotsint$</span></span></div></pre>
+<p><span class="math"><script type="math/tex">\oint \iint \iiint \iiiint \idotsint</script></span></p>
+<h3>Raíces</h3>
+<p><code style="font-family: Courier;">\sqrt{num}</code>y <code style="font-family: Courier;">\sqrt[n]{num}</code> permiten escribir raíces cuadradas y raíces n-ésimas.</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>$\sqrt{3}$,&nbsp;$\sqrt[4]{3}$&nbsp;$\sqrt[\leftroot{2}&nbsp;\uproot{1}&nbsp;6]{3}$</span></span></div></pre>
+<p><span class="math"><script type="math/tex">\sqrt{3}</script></span>, <span class="math"><script type="math/tex">\sqrt[4]{3}</script></span> <span class="math"><script type="math/tex">\sqrt[\leftroot{2} \uproot{1} 6]{3}</script></span></p>
+<h2>Texto en matemáticas</h2>
+<p>La orden \text{texto} permite incluir texto dentro de una fórmula con el mismo aspecto que el entorno</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>f(x)=x^2,\text{&nbsp;si&nbsp;$x&gt;0$&nbsp;y&nbsp;$\cos(x)$&nbsp;en&nbsp;otro&nbsp;caso}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
+</script></span>
+<h3>Acentos, gorros,…</h3>
+<p><code style="font-family: Courier;">\hat{a}</code>, <code style="font-family: Courier;">\acute{a}</code>, <code style="font-family: Courier;">\breve{a}</code>,  <code style="font-family: Courier;">\dot</code>, <code style="font-family: Courier;">\tilde</code>, <code style="font-family: Courier;">\mathring{A}</code> produce
+<span class="math"><script type="math/tex">\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}</script></span></p>
+<p>También se pueden escribir flechas sobre un texto usando <code style="font-family: Courier;">\vec{a}</code> o
+<code style="font-family: Courier;">\overrightarrow{abc}</code> <span class="math"><script type="math/tex">\overrightarrow{abc}</script></span></p>
+<p>Con el paquete <em>esvect</em> se pueden representar vectores mejor</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\vv{a},&nbsp;&nbsp;\;&nbsp;\vv{abc}&nbsp;,&nbsp;\;&nbsp;\vv*{a}{n}</span></span></div></pre>
+<h2>Operadores</h2>
+<p>LaTeX tiene predefinidos algunas funciones usuales, pero podemos añadir lo que deseemos con la orden <code style="font-family: Courier;">\DeclareMathOperator</code>. Para ello es necesario cargar el paquete amsmath</p>
+<p><span class="math"><script type="math/tex">\cos (x)</script></span>, <span class="math"><script type="math/tex">\sin(x)</script></span>, <span class="math"><script type="math/tex">\tan(x)</script></span>, <span class="math"><script type="math/tex">\arccos(x)</script></span>, <span class="math"><script type="math/tex">\log(x)</script></span>, <span class="math"><script type="math/tex">\ln (x)</script></span>, <span class="math"><script type="math/tex">\exp(x)</script></span>,…
+Usando</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\DeclareMathOperator{\dist}{distancia}</span></span></div></pre>
+<p>en la cabecera del documento, está disponible el comando <code style="font-family: Courier;">\distancia</code></p>
+<h2>Sub y superíndices de nuevo</h2>
+<p>El comando <code style="font-family: Courier;">\texttt{substack}</code> para líneas centradas</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\sum_{\substack{i=1\\j=123}}&nbsp;i+j</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<p>permite incluir subíndices o superíndices que ocupen varias líneas.</p>
+<span class="math"><script type="math/tex; mode=display">\sum_{\substack{i=1\\j=123}} i+j
+</script></span>
+<h2>Llaves y flechas</h2>
+<p>overbrace, underbrace, overline, underline</p>
+<span class="math"><script type="math/tex; mode=display">\overbrace{a+\underbrace{b+c}_{z}+d}^{n}
+</script></span>
+<p>overleftarrow, underleftarrow, overrightarrow, underrightarrow,
+overleftrightarrow, etc.</p>
+<h3>Más flechas</h3>
+<p><span class="math"><script type="math/tex">x\xrightarrow[a+b]{a-b+c} y</script></span></p>
+<h2>Más matemáticas</h2>
+<h3>Espacios</h3>
+<p>Se puede añadir o quitar espacio manualmente. Las formas más comunes de
+hacerlo son</p>
+<ul>
+<li>Añadir (poco) \textbackslash ,{} añade un espacio pequeño.</li>
+</ul>
+<span class="math"><script type="math/tex; mode=display">\int_{0}^{1} f(x)\, dx = \sqrt{x}\, n
+</script></span>
+<ul>
+<li>Añadir (algo más) \textbackslash quad y \textbackslash qquad añade la
+longitud de una letra m o de dos. Son espacios dinámicos (pueden variar
+un poco para ajustar las líneas).</li>
+</ul>
+<span class="math"><script type="math/tex; mode=display">f(x)=\cos (x), \quad \forall\,  x \in [0,1]
+</script></span>
+<ul>
+<li>Quitar (poco) \textbackslash ! quita un espacio pequeño. Compara</li>
+</ul>
+<span class="math"><script type="math/tex; mode=display">\sin x/\log x \qquad \sin x /\! \log x
+</script></span>
+<h2>Entornos multilínea</h2>
+<p>Pueden ser de dos tipos: ajustados o alineados.</p>
+<h3>Entornos ajustados</h3>
+<p>Hay dos: <em>gather</em> y <em>multline</em>. El primero de ellos muestra las ecuaciones
+centradas una tras otra. Por ejemplo</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\begin{gather}</span></span></div><div class="line"><span class="text plain null-grammar"><span>x+y+z_1\\+\int_0^1&nbsp;f(x)\,&nbsp;\mathrm{d}x&nbsp;+\cos&nbsp;\left(&nbsp;\sqrt{x}&nbsp;\,&nbsp;\right)</span></span></div><div class="line"><span class="text plain null-grammar"><span>\end{gather}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">\begin{gather}
+x+y+z_1\\+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+\end{gather}
+</script></span>
+<p>El segundo, multline, alinea la primera fórmula a la izquierda, la última a la
+derecha y las intermedias, si las hay, las centra.</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\begin{multline}</span></span></div><div class="line"><span class="text plain null-grammar"><span>x+y+z_1&nbsp;+&nbsp;\lim_{x&nbsp;\to&nbsp;0}&nbsp;\int_{0}^{x^2}&nbsp;f(x)\,\mathrm{d}x&nbsp;+</span></span></div><div class="line"><span class="text plain null-grammar"><span>\frac{x-1}{x+1}&nbsp;\\</span></span></div><div class="line"><span class="text plain null-grammar"><span>+x+y+z+\omega+\int_0^1&nbsp;f(x)\,&nbsp;\mathrm{d}x&nbsp;+\cos&nbsp;\left(&nbsp;\sqrt{x}&nbsp;\,&nbsp;\right)</span></span></div><div class="line"><span class="text plain null-grammar"><span>\end{multline}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">\begin{multline}
+x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
+\frac{x-1}{x+1} \\
++x+y+z+\omega+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+\end{multline}
+</script></span>
+<h3>Entornos alineados</h3>
+<p>Hay varios entornos de este tipo, dependiendo de cómo estén alineadas
+las columnas.</p>
+<p>En primer lugar, <em>align</em> muestra las columnas centradas.</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\left.</span></span></div><div class="line"><span class="text plain null-grammar"><span>\begin{align}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;x+y&nbsp;&amp;&nbsp;=&nbsp;6&nbsp;\\</span></span></div><div class="line"><span class="text plain null-grammar"><span>2x-3y&nbsp;&amp;&nbsp;=&nbsp;4</span></span></div><div class="line"><span class="text plain null-grammar"><span>\end{align}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\right\}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">\left.
+\begin{align}
+ x+y & = 6 \\
+2x-3y & = 4
+\end{align}
+\right\}
+</script></span>
+<p><em>flalign</em> es una variante de align que alinea a la izquierda la primera
+columna y a la derecha la última</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\begin{flalign}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;x+y&nbsp;+2&nbsp;z&nbsp;&nbsp;&nbsp;&amp;&nbsp;=&nbsp;6&nbsp;&nbsp;&nbsp;&amp;&nbsp;2u+4v&nbsp;&amp;&nbsp;=8&nbsp;&nbsp;&nbsp;\\</span></span></div><div class="line"><span class="text plain null-grammar"><span>2x-3y&nbsp;&amp;&nbsp;=&nbsp;4&nbsp;&amp;&nbsp;3u-4v&nbsp;&nbsp;&amp;&nbsp;=&nbsp;10</span></span></div><div class="line"><span class="text plain null-grammar"><span>\end{flalign}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<p>Por último, <em>alignat</em>, que tiene un comportamiento un poco distinto: hay
+que decir cuántas columnas hay y añadir los espacios entre ellas
+manualmente.</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\begin{alignat}{4}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;f(x)&nbsp;&amp;=&nbsp;x&nbsp;+&nbsp;yz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&nbsp;g(x)&nbsp;&amp;=&nbsp;x&nbsp;+&nbsp;y&nbsp;+&nbsp;z\\</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;h(x)&nbsp;&amp;=&nbsp;xy&nbsp;+&nbsp;xz&nbsp;+&nbsp;yz&nbsp;\qquad&nbsp;&amp;&nbsp;k(x)&nbsp;&amp;=&nbsp;(x+y)(x+z)(y+z)</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;\notag</span></span></div><div class="line"><span class="text plain null-grammar"><span>\end{alignat}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">\begin{alignat}{4}
+   f(x) &= x + yz              & g(x) &= x + y + z\\
+   h(x) &= xy + xz + yz \qquad & k(x) &= (x+y)(x+z)(y+z)
+    \notag
+\end{alignat}
+</script></span>
+<p>Es útil en casos como el siguiente:</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\begin{alignat}{3}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;&amp;=&nbsp;x&nbsp;&nbsp;(y+z)&nbsp;&amp;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;\quad\text{(propiedad&nbsp;distributiva)}\\</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;=&nbsp;(x&nbsp;&nbsp;y)&nbsp;+&nbsp;(x&nbsp;z)&nbsp;&amp;&nbsp;&amp;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\quad\text{(usamos&nbsp;ahora&nbsp;que&nbsp;$x=0$)}\notag\\</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;=&nbsp;y&nbsp;z</span></span></div><div class="line"><span class="text plain null-grammar"><span>\end{alignat}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">\begin{alignat}{3}
+            x &= x  (y+z) &
+            &\quad\text{(propiedad distributiva)}\\
+              &= (x  y) + (x z) & &
+               \quad\text{(usamos ahora que $x=0$)}\notag\\
+              &= y z
+\end{alignat}
+</script></span>
+<h3>Entornos subsidiarios</h3>
+<p>align, alignat y gather tienen versiones subsidiarias que tienen que ir dentro de un entorno matemático.</p>
+<span class="math"><script type="math/tex; mode=display">\begin{aligned}[c]
+ x &= 3 + \mathbf{p} + \alpha\\
+      y &= 4 + \mathbf{q}\\
+      z &= 5 + \mathbf{r}\\
+      u &=6 + \mathbf{s}
+   \end{aligned}
+   \text{\quad using\quad}
+   \begin{gathered}[b]
+      \mathbf{p} = 5 + a + \alpha\\
+      \mathbf{q} = 12\\
+      \mathbf{r} = 13\\
+      \mathbf{s} = 11 + d
+   \end{gathered}
+</script></span>
+<span class="math"><script type="math/tex; mode=display">\left.
+\begin{aligned}[c]
+wx&=u\\
+wy&=v\\
+w&=10
+\end{aligned}
+\right\}
+\qquad\Longleftrightarrow\qquad
+\begin{aligned}[c]
+x&=u/w\\
+y&=v/w\\
+\end{aligned}
+</script></span>
+<p>El entorno más flexible es split. Se puede usar sólo</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\begin{split}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x_{1}x_{2}&amp;x_{3}x_{4}x_{5}x_{6})^{2}\\</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;+&nbsp;(x_{1}x_{2}x_{3}x_{4}x_{5}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;x_{1}x_{3}x_{4}x_{5}x_{6}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;x_{1}x_{2}x_{4}x_{5}x_{6}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;x_{1}x_{2}x_{3}x_{5}x_{6})^{2}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\end{split}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">\begin{split}
+                (x_{1}x_{2}&x_{3}x_{4}x_{5}x_{6})^{2}\\
+                           &+ (x_{1}x_{2}x_{3}x_{4}x_{5}
+                            + x_{1}x_{3}x_{4}x_{5}x_{6}
+                            + x_{1}x_{2}x_{4}x_{5}x_{6}
+                            + x_{1}x_{2}x_{3}x_{5}x_{6})^{2}
+\end{split}
+</script></span>
+<p>o dentro de otro y se alinea como corresponda</p>
+<pre class="editor-colors lang-latex"><div class="line"><span class="text plain null-grammar"><span>\[</span></span></div><div class="line"><span class="text plain null-grammar"><span>\begin{align}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;\left.</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;\begin{split}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f(x)&nbsp;&amp;&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;(x_{1}x_{2}&nbsp;)&nbsp;\\</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&nbsp;=&nbsp;x+y</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;&nbsp;&nbsp;\end{split}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;\right\}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;\implies&nbsp;y+z</span></span></div><div class="line"><span class="text plain null-grammar"><span>\end{align}</span></span></div><div class="line"><span class="text plain null-grammar"><span>\]</span></span></div></pre>
+<span class="math"><script type="math/tex; mode=display">\begin{align}
+    \left.
+  \begin{split}
+             f(x) & =    (x_{1}x_{2} ) \\
+                   & = x+y
+    \end{split}
+  \right\}
+  \implies y+z
+\end{align}
+</script></span></body>
+</html>
