@@ -210,7 +210,7 @@ f(x)=\cos (x), \quad \forall\,  x \in [0,1]
 \]
 ```
 
-* Quitar (poco) `\!` quita un espacio pequeño. Compara
+* Quitar (poco) `\!` quita un espacio pequeño. Compara el espacio que separa las funciones en la siguiente expresión
 ```latex
 \[
 \sin x/\log x \qquad \sin x /\! \log x
