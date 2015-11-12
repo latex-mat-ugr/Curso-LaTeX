@@ -151,20 +151,40 @@ permite incluir subíndices o superíndices que ocupen varias líneas.
 ## Llaves y flechas
 
 
-overbrace, underbrace, overline, underline
-
+`\overbrace`, `\underbrace`, `\overline`, `\underline` se usan para añadir llaves o líneas por encima o bajo un texto o fórmula.
+```latex
 \[
 \overbrace{a+\underbrace{b+c}_{z}+d}^{n}
 \]
-
-overleftarrow, underleftarrow, overrightarrow, underrightarrow,
-overleftrightarrow, etc.
-
+```
+produce
+\[
+\overbrace{a+\underbrace{b+c}_{z}+d}^{n}
+\]
+`\overleftarrow`, `\underleftarrow`, `\overrightarrow`, `\underrightarrow`,
+`\overleftrightarrow` permiten escribir flechas que se estiran para acomodar texto sobre o bajo ellas. Las versiones *left* y *right* indican el sentido de las flechas.
+```latex
+\[
+\overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
+\]
+```
+da como resultado
+\[
+\overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
+\]
 
 ### Más flechas
 
-$x\xrightarrow[a+b]{a-b+c} y$
-
+`\xrightarrow[debajo]{arriba}`y `\xleftrightarrow[debajo]{arriba}` permiten escribir flechas extensibles con texto encima y debajo. Por ejemplo,
+```latex
+\[
+x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
+\]
+```
+produce
+\[
+x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
+\]
 
 
 ## Más matemáticas
@@ -174,22 +194,28 @@ $x\xrightarrow[a+b]{a-b+c} y$
 Se puede añadir o quitar espacio manualmente. Las formas más comunes de
 hacerlo son
 
-* Añadir (poco) \textbackslash ,{} añade un espacio pequeño.
+* Añadir (poco) `\,` añade un espacio pequeño.
+```latex
 \[
 \int_{0}^{1} f(x)\, dx = \sqrt{x}\, n
 \]
+```
 
-* Añadir (algo más) \textbackslash quad y \textbackslash qquad añade la
+* Añadir (algo más) `\quad` y `\qquad` añaden la
 longitud de una letra m o de dos. Son espacios dinámicos (pueden variar
 un poco para ajustar las líneas).
+```latex
 \[
 f(x)=\cos (x), \quad \forall\,  x \in [0,1]
 \]
+```
 
-* Quitar (poco) \textbackslash ! quita un espacio pequeño. Compara
+* Quitar (poco) `\!` quita un espacio pequeño. Compara
+```latex
 \[
 \sin x/\log x \qquad \sin x /\! \log x
 \]
+```
 
 ## Entornos multilínea
 
