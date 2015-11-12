@@ -10,7 +10,7 @@ Hay dos formas de escribir matemáticas: en la misma línea o centrado en una l�
 ```latex
 $\cos(x+y)^{2}=\sqrt{2+x^2}$
 ```
-produce $\cos(x+y)^{2}=\sqrt{2+x^2}$.
+produce \(\cos(x+y)^{2}=\sqrt{2+x^2}\).
 * Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula entre \\[ \\] o con dólares dobles. Es recomendable la primera opción. Por ejemplo
 ```latex
 \[
@@ -39,7 +39,7 @@ La forma correcta de escribirlo es la *segunda* si queremos que LaTeX use el esp
 $a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \div b$
 ```
 produce
-$a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \div b$
+\(a + b\), \(a - b\), \(-a\), \(a / b\), \(a b\), \(a \cdot b\), \(a \times b\), \(a \div b\)
 Puedes escribir subíndices y superíndices de la siguiente forma:
 ```latex
 n^{2}, x^{1/x}, x_{n}, lim_{x \to \infty}
@@ -63,14 +63,14 @@ Las fracciones se escriben con el comando `\frac{numerador}{denominador}`
 \frac{a}{b}, \tfrac{1}{2},\dfrac{1}{2}
 ```
 produce
-$\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
+\(\frac{a}{b}\), \(\tfrac{1}{2}\), \(\dfrac{1}{2}\)
 
 frac se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como tfrac), si está en una línea separada aumenta (como dfrac). Podemos forzar un comportamiento u otro usando tfrac o dfrac.
 
 ### Números binómicos
 
-`\binom{a}{b}` produce $\binom{a}{b}$. Al igual que con frac, se
-puede alterar su tamaño usando `tbinom{a}{b}` o `dbinom{a}{b}` y se obtiene $\tbinom{a}{b}$ y $\dbinom{a}{b}$.
+`\binom{a}{b}` produce \(\binom{a}{b}\). Al igual que con frac, se
+puede alterar su tamaño usando `tbinom{a}{b}` o `dbinom{a}{b}` y se obtiene \(\tbinom{a}{b}\) y \(\dbinom{a}{b}\).
 
 ### Puntos suspensivos
 
@@ -78,7 +78,7 @@ En lugar de escribir tres puntos seguidos, `\dots, \ldots, \cdots` producen punt
 ```latex
 x=1,2,\ldots 3, x+y+\cdots +z, x\times y \times \dots z
 ```
-produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$
+produce \(x=1,2,\ldots 3\), \(x+y+\cdots +z\), \(x\times y \times \dots \times z\)
 
 ### Integrales
 
@@ -86,7 +86,7 @@ Varios símbolos de integral
 ```latex
 $\oint \iint \iiint \iiiint \idotsint$
 ```
-$\oint \iint \iiint \iiiint \idotsint$
+\(\oint \iint \iiint \iiiint \idotsint\)
 
 ### Raíces
 
@@ -95,7 +95,7 @@ $\oint \iint \iiint \iiiint \idotsint$
 ```latex
 $\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
 ```
-$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
+\(\sqrt{3}\), \(\sqrt[4]{3}\) \(\sqrt[\leftroot{2} \uproot{1} 6]{3}\)
 
 ## Texto en matemáticas
 
@@ -106,17 +106,17 @@ f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
 \]
 ```
 \[
-f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
+f(x)=x^2,\text{ si \(x>0\) y \(\cos(x)\) en otro caso}
 \]
 
 ### Acentos, gorros,...
 
 `\hat{a}`, `\acute{a}`, `\breve{a}`,  `\dot`, `\tilde`, `\mathring{A}` produce
-$\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}$
+\(\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}\)
 
 
 También se pueden escribir flechas sobre un texto usando `\vec{a}` o
-`\overrightarrow{abc}` $\overrightarrow{abc}$
+`\overrightarrow{abc}`
 
 Con el paquete *esvect* se pueden representar vectores mejor
 ```latex
@@ -127,7 +127,7 @@ Con el paquete *esvect* se pueden representar vectores mejor
 
 LaTeX tiene predefinidos algunas funciones usuales, pero podemos añadir lo que deseemos con la orden `\DeclareMathOperator`. Para ello es necesario cargar el paquete amsmath
 
-$\cos (x)$, $\sin(x)$, $\tan(x)$, $\arccos(x)$, $\log(x)$, $\ln (x)$, $\exp(x)$,...
+\(\cos (x)\), \(\sin(x)\), \(\tan(x)\), \(\arccos(x)\), \(\log(x)\), \(\ln (x)\), \(\exp(x)\),...
 Usando
 ```latex
 \DeclareMathOperator{\dist}{distancia}
@@ -161,6 +161,7 @@ produce
 \[
 \overbrace{a+\underbrace{b+c}_{z}+d}^{n}
 \]
+
 `\overleftarrow`, `\underleftarrow`, `\overrightarrow`, `\underrightarrow`,
 `\overleftrightarrow` permiten escribir flechas que se estiran para acomodar texto sobre o bajo ellas. Las versiones *left* y *right* indican el sentido de las flechas.
 ```latex
@@ -224,7 +225,7 @@ Pueden ser de dos tipos: ajustados o alineados.
 ### Entornos ajustados
 
 Hay dos: *gather* y *multline*. El primero de ellos muestra las ecuaciones
-centradas una tras otra. Por ejemplo
+centradas una tras otra. Se usa `\\` para partir líneas en la expresión. Por ejemplo
 ```latex
 \[
 \begin{gather}
@@ -234,7 +235,7 @@ x+y+z_1\\+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 ```
 \[
 \begin{gather}
-x+y+z_1\\+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 \end{gather}
 \]
 El segundo, multline, alinea la primera fórmula a la izquierda, la última a la
@@ -259,7 +260,7 @@ x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
 ### Entornos alineados
 
 Hay varios entornos de este tipo, dependiendo de cómo estén alineadas
-las columnas.
+las columnas. Además de `\\` para añadir una línea nueva, `&` se usa para indicar las columnas.
 
 En primer lugar, *align* muestra las columnas centradas.
 ```latex
@@ -327,7 +328,7 @@ Es útil en casos como el siguiente:
             x &= x  (y+z) &
             &\quad\text{(propiedad distributiva)}\\
               &= (x  y) + (x z) & &
-               \quad\text{(usamos ahora que $x=0$)}\notag\\
+               \quad\text{(usamos ahora que \(x=0\))}\notag\\
               &= y z
 \end{alignat}
 \]
@@ -335,7 +336,7 @@ Es útil en casos como el siguiente:
 ### Entornos subsidiarios
 
 align, alignat y gather tienen versiones subsidiarias que tienen que ir dentro de un entorno matemático.
-
+```latex
 \[
 \begin{aligned}[c]
  x &= 3 + \mathbf{p} + \alpha\\
@@ -351,8 +352,8 @@ align, alignat y gather tienen versiones subsidiarias que tienen que ir dentro d
       \mathbf{s} = 11 + d
    \end{gathered}
 \]
-
-
+```
+```latex
 \[
 \left.
 \begin{aligned}[c]
@@ -367,7 +368,7 @@ x&=u/w\\
 y&=v/w\\
 \end{aligned}
 \]
-
+```
 El entorno más flexible es split. Se puede usar sólo
 ```latex
 \[
