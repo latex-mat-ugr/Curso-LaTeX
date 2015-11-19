@@ -1,5 +1,9 @@
-# Curso de LaTeX AMAT
+# Curso de LaTeX
 Curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page412.htm) para alumnos de Trabajo de Fin de Grado
+
+Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas
+
+
 
 ## Antes del curso
 

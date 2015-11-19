@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="matemáticas" class="slide section level1">
+<h1>Matemáticas</h1>
+<p>Hay dos formas de escribir matemáticas: en la misma línea o centrado en una línea separada.</p>
+<ul class="incremental">
+<li><p>Para escribir matemáticas <em>en línea</em> agrupamos el texto entre dólares. Por ejemplo,</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$\cos(x+y)^{2}=\sqrt{2+x^2}$</code></pre>
+<p>produce <span class="math">\(\cos(x+y)^{2}=\sqrt{2+x^2}\)</span>.</p></li>
+<li><p>Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula entre \[ \] o con dólares dobles. Es recomendable la primera opción. Por ejemplo</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
+$$</code></pre>
+<p>produce <span class="math">\[
+\frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
+\]</span></p></li>
+</ul>
+</div>
+<div class="slide section level1">
+
+<h3 id="espaciado">Espaciado</h3>
+<p>Los espacios dentro del modo matemático no se tienen en cuenta.</p>
+<p>El espacio dentro las fórmulas es distinto al espacio en modo texto. Compara lo siguiente:</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">Sea $x=1,2$ o $3$ con sea $x=1$, $2$ o $3$</code></pre>
+<p>La forma correcta de escribirlo es la <em>segunda</em> si queremos que LaTeX use el espaciado que se considera correcto.</p>
+</div>
+<div class="slide section level1">
+
+<h2 id="construcciones-básicas">Construcciones básicas</h2>
+<h3 id="operaciones-aritméticas-subíndices-y-superíndices">Operaciones aritméticas, subíndices y superíndices</h3>
+<pre class="sourceCode latex"><code class="sourceCode latex">$a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \div b$</code></pre>
+<p>produce <span class="math">\(a + b\)</span>, <span class="math">\(a - b\)</span>, <span class="math">\(-a\)</span>, <span class="math">\(a / b\)</span>, <span class="math">\(a b\)</span>, <span class="math">\(a \cdot b\)</span>, <span class="math">\(a \times b\)</span>, <span class="math">\(a \div b\)</span> Puedes escribir subíndices y superíndices de la siguiente forma:</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">n^{2}, x^{1/x}, x_{n}, lim_{x \to \infty}</code></pre>
+<p>que da como resultado <span class="math">\[
+n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
+\]</span></p>
+<p>Se pueden anidar y usar subíndices y superíndices al mismo tiempo:</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\sum_{n=1}^{\infty} x^{x^n}</code></pre>
+<p><span class="math">\[
+\sum_{n=1}^{\infty} x^{x^n}
+\]</span></p>
+</div>
+<div class="slide section level1">
+
+<h3 id="fracciones"> Fracciones</h3>
+<p>Las fracciones se escriben con el comando <code>\frac{numerador}{denominador}</code></p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\frac{a}{b}, \tfrac{1}{2},\dfrac{1}{2}</code></pre>
+<p>produce <span class="math">\(\frac{a}{b}\)</span>, <span class="math">\(\tfrac{1}{2}\)</span>, <span class="math">\(\dfrac{1}{2}\)</span></p>
+<p><code>frac</code> se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como <code>tfrac</code>), si está en una línea separada aumenta (como <code>dfrac</code>). Podemos forzar un comportamiento u otro usando <code>tfrac</code> o <code>dfrac</code>.</p>
+</div>
+<div class="slide section level1">
+
+<h3 id="números-binómicos">Números binómicos</h3>
+<p><code>\binom{a}{b}</code> produce <span class="math">\(\binom{a}{b}\)</span>. Al igual que con frac, se puede alterar su tamaño usando <code>tbinom{a}{b}</code> o <code>dbinom{a}{b}</code> y se obtiene <span class="math">\(\tbinom{a}{b}\)</span> y <span class="math">\(\dbinom{a}{b}\)</span>.</p>
+</div>
+<div class="slide section level1">
+
+<h3 id="puntos-suspensivos">Puntos suspensivos</h3>
+<p>En lugar de escribir tres puntos seguidos, <code>\dots, \ldots, \cdots</code> producen puntos suspensivos con el espaciado correcto. <code>\dots</code> intenta adaptarse al entorno. <code>\ldots</code> da como resultado puntos &quot;bajos&quot; y <code>\cdots</code>centrados. Un ejemplo:</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">x=1,2,\ldots 3, x+y+\cdots +z, x\times y \times \dots z</code></pre>
+<p>produce <span class="math">\(x=1,2,\ldots 3\)</span>, <span class="math">\(x+y+\cdots +z\)</span>, <span class="math">\(x\times y \times \dots \times z\)</span></p>
+</div>
+<div class="slide section level1">
+
+<h3 id="integrales">Integrales</h3>
+<p>Varios símbolos de integral</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$\oint \iint \iiint \iiiint \idotsint$</code></pre>
+<p><span class="math">\(\oint \iint \iiint \iiiint \idotsint\)</span></p>
+</div>
+<div class="slide section level1">
+
+<h3 id="raíces">Raíces</h3>
+<p><code>\sqrt{num}</code>y <code>\sqrt[n]{num}</code> permiten escribir raíces cuadradas y raíces n-ésimas.</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$</code></pre>
+<p><span class="math">\(\sqrt{3}\)</span>, <span class="math">\(\sqrt[4]{3}\)</span> <span class="math">\(\sqrt[\leftroot{2} \uproot{1} 6]{3}\)</span></p>
+</div>
+<div class="slide section level1">
+
+<h2 id="texto-en-matemáticas">Texto en matemáticas</h2>
+<p>La orden  permite incluir texto dentro de una fórmula con el mismo aspecto que el entorno</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+f(x)=x^2,\text{ si $x&gt;0$ y $\cos(x)$ en otro caso}
+$$</code></pre>
+<p><span class="math">\[
+f(x)=x^2,\text{ si $x&gt;0$ y $\cos(x)$ en otro caso}
+\]</span></p>
+</div>
+<div class="slide section level1">
+
+<h3 id="acentos-gorros...">Acentos, gorros,...</h3>
+<p><code>\hat{a}</code>, <code>\acute{a}</code>, <code>\breve{a}</code>, <code>\dot</code>, <code>\tilde</code>, <code>\mathring{A}</code> produce <span class="math">\(\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}\)</span></p>
+<p>También se pueden escribir flechas sobre un texto usando <code>\vec{a}</code> o <code>\overrightarrow{abc}</code></p>
+<p>Con el paquete <em>esvect</em> se pueden representar vectores mejor</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\vv{a},  \; \vv{abc} , \; \vv*{a}{n}</code></pre>
+</div>
+<div class="slide section level1">
+
+<h2 id="operadores">Operadores</h2>
+<p>LaTeX tiene predefinidos algunas funciones usuales, pero podemos añadir lo que deseemos con la orden <code>\DeclareMathOperator</code>. Para ello es necesario cargar el paquete amsmath</p>
+<p><span class="math">\(\cos (x)\)</span>, <span class="math">\(\sin(x)\)</span>, <span class="math">\(\tan(x)\)</span>, <span class="math">\(\arccos(x)\)</span>, <span class="math">\(\log(x)\)</span>, <span class="math">\(\ln (x)\)</span>, <span class="math">\(\exp(x)\)</span>,... Usando</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\DeclareMathOperator{\dist}{distancia}</code></pre>
+<p>en la cabecera del documento, está disponible el comando <code>\distancia</code></p>
+</div>
+<div class="slide section level1">
+
+<h2 id="sub-y-superíndices-de-nuevo">Sub y superíndices de nuevo</h2>
+<p>El comando <code>\texttt{substack}</code> para líneas centradas</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\sum_{\substack{i=1\\j=123}} i+j
+$$</code></pre>
+<p>permite incluir subíndices o superíndices que ocupen varias líneas. <span class="math">\[
+\sum_{\substack{i=1\\j=123}} i+j
+\]</span></p>
+</div>
+<div class="slide section level1">
+
+<h2 id="llaves-y-flechas">Llaves y flechas</h2>
+<p><code>\overbrace</code>, <code>\underbrace</code>, <code>\overline</code>, <code>\underline</code> se usan para añadir llaves o líneas por encima o bajo un texto o fórmula.</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\overbrace{a+\underbrace{b+c}_{z}+d}^{n}
+$$</code></pre>
+<p>produce <span class="math">\[
+\overbrace{a+\underbrace{b+c}_{z}+d}^{n}
+\]</span></p>
+<p><code>\overleftarrow</code>, <code>\underleftarrow</code>, <code>\overrightarrow</code>, <code>\underrightarrow</code>, <code>\overleftrightarrow</code> permiten escribir flechas que se estiran para acomodar texto sobre o bajo ellas. Las versiones <em>left</em> y <em>right</em> indican el sentido de las flechas.</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
+$$</code></pre>
+<p>da como resultado <span class="math">\[
+\overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
+\]</span></p>
+</div>
+<div class="slide section level1">
+
+<h3 id="más-flechas">Más flechas</h3>
+<p><code>\xrightarrow[debajo]{arriba}</code>y <code>\xleftrightarrow[debajo]{arriba}</code> permiten escribir flechas extensibles con texto encima y debajo. Por ejemplo,</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
+$$</code></pre>
+<p>produce <span class="math">\[
+x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
+\]</span></p>
+</div>
+<div class="slide section level1">
+
+<h2 id="más-matemáticas">Más matemáticas</h2>
+<h3 id="espacios">Espacios</h3>
+<p>Se puede añadir o quitar espacio manualmente. Las formas más comunes de hacerlo son</p>
+<ul class="incremental">
+<li><p>Añadir (poco) <code>\,</code> añade un espacio pequeño.</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\int_{0}^{1} f(x)\, dx = \sqrt{x}\, n
+$$</code></pre></li>
+<li><p>Añadir (algo más) <code>\quad</code> y <code>\qquad</code> añaden la longitud de una letra m o de dos. Son espacios dinámicos (pueden variar un poco para ajustar las líneas).</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+f(x)=\cos (x), \quad \forall\,  x \in [0,1]
+$$</code></pre></li>
+<li><p>Quitar (poco) <code>\!</code> quita un espacio pequeño. Compara el espacio que separa las funciones en la siguiente expresión</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\sin x/\log x \qquad \sin x /\! \log x
+$$</code></pre></li>
+</ul>
+</div>
+<div class="slide section level1">
+
+<h2 id="entornos-multilínea">Entornos multilínea</h2>
+<p>Pueden ser de dos tipos: ajustados o alineados.</p>
+<h3 id="entornos-ajustados">Entornos ajustados</h3>
+<p>Hay dos: <em>gather</em> y <em>multline</em>. El primero de ellos muestra las ecuaciones centradas una tras otra. Se usa <code>\\</code> para partir líneas en la expresión. Por ejemplo</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+<span class="al">\begin{gather}</span>
+x+y+z_1\\+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+<span class="al">\end{gather}</span>
+$$</code></pre>
+<p><span class="math">\[
+\begin{gather}
+x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+\end{gather}
+\]</span> El segundo, multline, alinea la primera fórmula a la izquierda, la última a la derecha y las intermedias, si las hay, las centra.</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+<span class="al">\begin{multline}</span>
+x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
+\frac{x-1}{x+1} \\
++x+y+z+\omega+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+<span class="al">\end{multline}</span>
+$$</code></pre>
+<p><span class="math">\[
+\begin{multline}
+x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
+\frac{x-1}{x+1} \\
++x+y+z+\omega+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+\end{multline}
+\]</span></p>
+</div>
+<div class="slide section level1">
+
+<h3 id="entornos-alineados">Entornos alineados</h3>
+<p>Hay varios entornos de este tipo, dependiendo de cómo estén alineadas las columnas. Además de <code>\\</code> para añadir una línea nueva, <code>&amp;</code> se usa para indicar las columnas.</p>
+<p>En primer lugar, <em>align</em> muestra las columnas centradas.</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\left.
+<span class="al">\begin{align}</span>
+ x+y &amp; = 6 \\
+2x-3y &amp; = 4
+<span class="al">\end{align}</span>
+\right\}
+$$</code></pre>
+<p><span class="math">\[
+\left.
+\begin{align}
+ x+y &amp; = 6 \\
+2x-3y &amp; = 4
+\end{align}
+\right\}
+\]</span></p>
+<p><em>flalign</em> es una variante de align que alinea a la izquierda la primera columna y a la derecha la última</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+<span class="al">\begin{flalign}</span>
+ x+y +2 z   &amp; = 6   &amp; 2u+4v &amp; =8   \\
+2x-3y &amp; = 4 &amp; 3u-4v  &amp; = 10
+<span class="al">\end{flalign}</span>
+$$</code></pre>
+<p>Por último, <em>alignat</em>, que tiene un comportamiento un poco distinto: hay que decir cuántas columnas hay y añadir los espacios entre ellas manualmente.</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+<span class="al">\begin{alignat}</span>{4}
+   f(x) &amp;= x + yz              &amp; g(x) &amp;= x + y + z\\
+   h(x) &amp;= xy + xz + yz \qquad &amp; k(x) &amp;= (x+y)(x+z)(y+z)
+    \notag
+<span class="al">\end{alignat}</span>
+$$</code></pre>
+<p><span class="math">\[
+\begin{alignat}{4}
+   f(x) &amp;= x + yz              &amp; g(x) &amp;= x + y + z\\
+   h(x) &amp;= xy + xz + yz \qquad &amp; k(x) &amp;= (x+y)(x+z)(y+z)
+    \notag
+\end{alignat}
+\]</span> Es útil en casos como el siguiente:</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+<span class="al">\begin{alignat}</span>{3}
+            x &amp;= x  (y+z) &amp;
+            &amp;\quad\text{(propiedad distributiva)}\\
+              &amp;= (x  y) + (x z) &amp; &amp;
+               \quad\text{(usamos ahora que $x=0$)}\notag\\
+              &amp;= y z
+<span class="al">\end{alignat}</span>
+$$</code></pre>
+<p><span class="math">\[
+\begin{alignat}{3}
+            x &amp;= x  (y+z) &amp;
+            &amp;\quad\text{(propiedad distributiva)}\\
+              &amp;= (x  y) + (x z) &amp; &amp;
+               \quad\text{(usamos ahora que $x=0$)}\notag\\
+              &amp;= y z
+\end{alignat}
+\]</span></p>
+</div>
+<div class="slide section level1">
+
+<h3 id="entornos-subsidiarios">Entornos subsidiarios</h3>
+<p>align, alignat y gather tienen versiones subsidiarias que tienen que ir dentro de un entorno matemático.</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\begin{aligned}[c]
+ x &amp;= 3 + \mathbf{p} + \alpha\\
+      y &amp;= 4 + \mathbf{q}\\
+      z &amp;= 5 + \mathbf{r}\\
+      u &amp;=6 + \mathbf{s}
+   \end{aligned}
+   \text{\quad usande\quad}
+   \begin{gathered}[b]
+      \mathbf{p} = 5 + a + \alpha\\
+      \mathbf{q} = 12\\
+      \mathbf{r} = 13\\
+      \mathbf{s} = 11 + d
+   \end{gathered}
+$$</code></pre>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\left.
+\begin{aligned}[c]
+wx&amp;=u\\
+wy&amp;=v\\
+w&amp;=10
+\end{aligned}
+\right\}
+\qquad\Longleftrightarrow\qquad
+\begin{aligned}[c]
+x&amp;=u/w\\
+y&amp;=v/w\\
+\end{aligned}
+$$</code></pre>
+<p>El entorno más flexible es split. Se puede usar sólo</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+\begin{split}
+                (x_{1}x_{2}&amp;x_{3}x_{4}x_{5}x_{6})^{2}\\
+                           &amp;+ (x_{1}x_{2}x_{3}x_{4}x_{5}
+                            + x_{1}x_{3}x_{4}x_{5}x_{6}
+                            + x_{1}x_{2}x_{4}x_{5}x_{6}
+                            + x_{1}x_{2}x_{3}x_{5}x_{6})^{2}
+\end{split}
+$$</code></pre>
+<p><span class="math">\[
+\begin{split}
+                (x_{1}x_{2}&amp;x_{3}x_{4}x_{5}x_{6})^{2}\\
+                           &amp;+ (x_{1}x_{2}x_{3}x_{4}x_{5}
+                            + x_{1}x_{3}x_{4}x_{5}x_{6}
+                            + x_{1}x_{2}x_{4}x_{5}x_{6}
+                            + x_{1}x_{2}x_{3}x_{5}x_{6})^{2}
+\end{split}
+\]</span> o dentro de otro y se alinea como corresponda</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">$$
+<span class="al">\begin{align}</span>
+    \left.
+  \begin{split}
+             f(x) &amp; =    (x_{1}x_{2} ) \\
+                   &amp; = x+y
+    \end{split}
+  \right\}
+  \implies y+z
+<span class="al">\end{align}</span>
+$$</code></pre>
+<p><span class="math">\[
+\begin{align}
+    \left.
+  \begin{split}
+             f(x) &amp; =    (x_{1}x_{2} ) \\
+                   &amp; = x+y
+    \end{split}
+  \right\}
+  \implies y+z
+\end{align}
+\]</span></p>
+</div>
+</body>
+</html>
