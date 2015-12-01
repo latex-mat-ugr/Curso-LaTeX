@@ -3,7 +3,7 @@ Curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page
 
 Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas
 
-
+Los contenidos del curso se mantienen por [Jerónimo Alaminos](http://www.ugr.es/~alaminos/), [Pedro A. García Sánchez](http://www.ugr.es/~pedro) y [Óscar Sánchez Romero](http://www.ugr.es/~ossanche).
 
 ## Antes del curso
 
