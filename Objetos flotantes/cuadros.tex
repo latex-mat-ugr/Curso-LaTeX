@@ -1,0 +1,672 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+  \setromanfont[Mapping=tex-text]{Optima}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\usepackage[a4paper,margin=3cm]{geometry}
+\usepackage[spanish]{babel}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage[table]{xcolor}
+\usepackage{longtable,tabu}
+
+\definecolor{lightblue}{rgb}{0.93,0.95,1.0}
+
+\begin{document}
+
+\section{Objetos flotantes}\label{objetos-flotantes}
+
+Los \emph{objetos flotantes} son aquellos que TeX puede mover en el
+documento final para conseguir el mejor aspecto posible. Son dos:
+figuras y cuadros (tablas).
+
+No vamos a hablar aquí de como generar los gráficos si no de cómo se
+incluye un gráfico o un cuadro en un documento LaTeX.
+
+\subsection{Figuras y cuadros}\label{figuras-y-cuadros}
+
+\subsubsection{Figuras}\label{figuras}
+
+La forma de incluir un gráfico como objeto flotante es
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{figure\}[opciones]}
+\NormalTok{Gráfico,}
+\NormalTok{\textbackslash{}end\{figure\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Opciones}\label{opciones}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  h (\emph{here}) intenta colocar el gráfico en ese lugar en el texto.
+\item
+  t (\emph{top}) tiene preferencia la parte superior de la página.
+\item
+  b (\emph{bottom}) tiene preferencia la parte inferior de la página.
+\item
+  p (\emph{paragraph}) en una página aparte donde se colocan todos los objetos flotantes
+\end{itemize}
+
+\subsubsection{Cuadros}\label{cuadros}
+
+La forma de incluir un cuadro como objeto flotante es
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{table\}[opciones]}
+\NormalTok{Cuadro}
+\NormalTok{\textbackslash{}end\{table\}}
+\end{Highlighting}
+\end{Shaded}
+
+El entorno \texttt{table} tiene las mismas opciones que el entorno
+\texttt{figure}.
+
+\subsection{Cómo escribir cuadros}\label{cuxf3mo-escribir-cuadros}
+
+Hay muchas formas de escribir cuadros o tablas en un fichero LaTeX.
+Existen numerosos paquetes que hacen esto más sencillo. Vamos a comentar
+algunos.
+
+\subsubsection{Tabular}\label{tabular}
+
+El entorno \texttt{tabular} es la forma más básica de incluir cuadros.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{table\}[htp] % coloca el cuadro aquí, arriba}
+\NormalTok{\textbackslash{}centering}
+\NormalTok{\textbackslash{}begin\{tabular\}\{||c|l|r||\}}
+\NormalTok{\textbackslash{}hline \textbackslash{}hline Nombre & Apellidos & Nota \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}hline Alonso & Machado & 7 \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}hline Eduardo & Aranda & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}hline José & García & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}hline \textbackslash{}hline}
+\NormalTok{\textbackslash{}end\{tabular\}}
+\NormalTok{\textbackslash{}caption\{Lista de notas\}}
+\NormalTok{\textbackslash{}end\{table\}}
+\end{Highlighting}
+\end{Shaded}
+produce
+\begin{table}[htp] % coloca el cuadro aquí, arriba
+\centering
+\begin{tabular}{||c|l|r||}
+\hline \hline Nombre & Apellidos & Nota \\
+\hline Alonso & Machado & 7 \\
+\hline Eduardo & Aranda & 8 \\
+\hline José & García & 8 \\
+\hline \hline
+\end{tabular}
+\caption{Lista de notas}
+\end{table}
+
+
+Como se ve en el ejemplo anterior, el aspecto de un cuadro es el
+siguiente
+\begin{verbatim}
+\begin{tabular}{col1,col2,col3}
+a11 & a12 & a13 \\
+a21 & a22 & a23 \\
+\end{tabular}
+\end{verbatim}
+
+donde col1, col2,\ldots{} es un tipo de columna. Además de esto se
+pueden dibujar líneas horizontales (con \textbackslash{}hline) o verticales (usando \textbar{} como separador).
+
+\paragraph{Tipos de columnas}
+
+Hay tres tipos básicos de columnas: alineada a izquierda, centrada o
+alineada a la derecha: se indican con las letras l,c,r. Además también
+tenemos el tipo de columna párrafo que se indica con la letra p seguida
+de la anchura del párrafo entre llaves.
+
+Por ejemplo,
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{center\}}
+\NormalTok{\textbackslash{}begin\{tabular\}\{|l|c|r|p\{5cm\}|\}}
+\NormalTok{\textbackslash{}hline Nombre & Apellidos & Nota & Comentarios \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}hline Manuel & López & 7 & Hoy hemos hablado 
+de cuadros y tablas, los dos ejemplos de objetos flotantes\textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}hline Mike  & García & 7.5 & Mañana
+hablaremos de la forma de organizar la bibliografía de un documento \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}hline}
+\NormalTok{\textbackslash{}end\{tabular\}}
+\NormalTok{\textbackslash{}end\{center\}}
+\end{Highlighting}
+\end{Shaded}
+produce
+\begin{center}
+\begin{tabular}{|l|c|r|p{5cm}|}
+\hline Nombre & Apellidos & Nota & Comentarios \\
+\hline Manuel & López & 7 & Hoy hemos hablado de cuadros y tablas, los dos ejemplos de objetos flotantes\\
+\hline Mike  & García & 7.5 & Mañana hablaremos de la forma de organizar la bibliografía de un documento \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{El paquete \emph{booktabs}}\label{el-paquete-booktabs}
+
+El paquete \href{http://ctan.org/pkg/booktabs}{booktabs} contiene
+algunas reglas generales que mejoran el aspecto de tablas o cuadros:
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  es preferible alinear a la izquierda;
+\item
+  no uses líneas verticales;
+\item
+  evita las líneas dobles;
+\item
+  coloca las unidades en la cabecera;
+\item
+  no uses comillas para repetir el contenido.
+\end{itemize}
+
+Entre otras cosas el paquete \emph{booktabs} incluye las órdenes
+toprule, midrule y bottomrule que hacen las líneas horizontales de una
+tabla.
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{table\}[htp]}
+\NormalTok{\textbackslash{}centering}
+\NormalTok{\textbackslash{}begin\{tabular\}\{@\{\}lll@\{\}\}}
+\NormalTok{\textbackslash{}toprule}
+\NormalTok{Nombre & Apellidos & Nota \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}midrule}
+ \NormalTok{Antonio & López & 7 \textbackslash{}\textbackslash{}}
+ \NormalTok{John & Fuentes & 8 \textbackslash{}\textbackslash{}}
+ \NormalTok{Mario & Suárez & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}bottomrule}
+\NormalTok{\textbackslash{}end\{tabular\}}
+\NormalTok{\textbackslash{}caption\{Lista de notas\}}
+\NormalTok{\textbackslash{}end\{table\}}
+\end{Highlighting}
+\end{Shaded}
+\begin{table}[htp]\centering\begin{tabular}{@{}lll@{}}\topruleNombre & Apellidos & Nota \\\midrule Antonio & López & 7 \\ John & Fuentes & 8 \\ Mario & Suárez & 8 \\\bottomrule\end{tabular}\caption{Lista de notas}\end{table}
+
+\subsubsection{El paquete \emph{tabularx}}\label{el-paquete-tabularx}
+
+Incluye el tipo de columna \emph{X}, que se estira hasta ocupar el
+espacio indicado. Cada una de ellas se comporta como una columna de tipo párrafo, p, en la que se anchura se calcula automáticamente. En el ejemplo siguiente, una columna (la segunda), se estira hasta ocupar toda la línea.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{tabularx\}\{\textbackslash{}linewidth\}\{lX\}}
+\NormalTok{\textbackslash{}toprule}
+ \NormalTok{Unidad & Definición \textbackslash{}\textbackslash{}}
+ \NormalTok{\textbackslash{}midrule}
+ \NormalTok{Newton & Su correspondiente definición  \textbackslash{}\textbackslash{}}
+ \NormalTok{Otra &  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  \textbackslash{}\textbackslash{}}
+ \NormalTok{\textbackslash{}bottomrule}
+\NormalTok{\textbackslash{}end\{tabularx\}}
+\NormalTok{\textbackslash{}end\{center\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{lX}\toprule Unidad & Definición \\ \midrule Newton & Su correspondiente definición  \\ Otra &  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\\ \bottomrule\end{tabularx}\end{center}
+
+Si ponemos más de una columna de tipo X, el espacio se distribuye entre
+todas ellas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{tabularx\}\{\textbackslash{}linewidth\}\{lXX\}}
+\NormalTok{\textbackslash{}toprule}
+ \NormalTok{Unidad & Definición & Otra cosa \textbackslash{}\textbackslash{}}
+ \NormalTok{\textbackslash{}midrule}
+ \NormalTok{Newton & Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  & Un poco más de texto para ocupar otro poco más \textbackslash{}\textbackslash{}}
+ \NormalTok{Otra & Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  & Un poco más de texto para ocupar otro poco más \textbackslash{}\textbackslash{}}
+ \NormalTok{Newton & Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  & Un poco más de texto para ocupar otro poco más \textbackslash{}\textbackslash{}}
+ \NormalTok{Otra & Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  & Un poco más de texto para ocupar otro poco más \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}bottomrule}
+\NormalTok{\textbackslash{}end\{tabularx\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabularx}{\linewidth}{lXX}
+\toprule
+ Unidad & Definición & Otra cosa \\
+ \midrule
+ Newton & Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  & Un poco más de texto para ocupar otro poco más \\
+ Otra & Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  & Un poco más de texto para ocupar otro poco más \\
+ Newton & Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  & Un poco más de texto para ocupar otro poco más \\
+ Otra & Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  & Un poco más de texto para ocupar otro poco más \\
+\bottomrule
+\end{tabularx}
+
+\subsubsection{El paquete \emph{rotating}}\label{el-paquete-rotating}
+
+El paquete rotating incluye varias órdenes para girar cuadros.
+
+Se puede usar \texttt{sideways} alrededor de un entorno de entorno
+tabular para girar un cuadro pequeño.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{center\}}
+\NormalTok{\textbackslash{}begin\{sideways\}}
+\NormalTok{\textbackslash{}begin\{tabular\}\{llr\}}
+\NormalTok{\textbackslash{}toprule}
+\NormalTok{\textbackslash{}multicolumn\{2\}\{c\}\{\textbackslash{}textbf\{Alumno\}\} \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}cmidrule(r)\{1-2\}}
+\NormalTok{Nombre & Apellidos & Nota \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}midrule}
+\NormalTok{Antonio & López & 7 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Fuentes & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{Mario & Suárez & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}bottomrule}
+\NormalTok{\textbackslash{}end\{tabular\}}
+\NormalTok{\textbackslash{}end\{sideways\}}
+\NormalTok{\textbackslash{}end\{center\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}
+\begin{sideways}
+\begin{tabular}{llr}
+\toprule
+\multicolumn{2}{c}{\textbf{Alumno}} \\
+\cmidrule(r){1-2}
+Nombre & Apellidos & Nota \\
+\midrule
+Antonio & López & 7 \\
+John & Fuentes & 8 \\
+Mario & Suárez & 8 \\
+\bottomrule
+\end{tabular}
+\end{sideways}
+\end{center}
+
+
+También se puede girar un cuadro que ocupe una página completa: en lugar
+de un entorno \texttt{table}, usamos \texttt{sidewaystable}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{sidewaystable\}}
+\NormalTok{\textbackslash{}centering}
+\NormalTok{\textbackslash{}begin\{tabular\}\{@\{\}lllllllll@\{\}\}}
+\NormalTok{\textbackslash{}toprule}
+\NormalTok{Nombre & Apellidos & Nota & Nombre & Apellidos & Nota & Nombre & Apellidos & Nota \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}midrule Manuel & López & 7 & Manuel & López & 7 & Manuel & López & 7 \textbackslash{}\textbackslash{}}
+ \NormalTok{John & Smith & 8 &  John & Smith & 8 &  John & Smith & 8 \textbackslash{}\textbackslash{}}
+ \NormalTok{Mike & Aranda & 8 &  Mike & Aranda & 8 &  Mike & Aranda & 8 \textbackslash{}\textbackslash{}}
+ \NormalTok{Manuel & López & 7 & Manuel & López & 7 & Manuel & López & 7 \textbackslash{}\textbackslash{}}
+ \NormalTok{John & Smith & 8 &  John & Smith & 8 &  John & Smith & 8 \textbackslash{}\textbackslash{}}
+ \NormalTok{Mike & Aranda & 8 &  Mike & Aranda & 8 &  Mike & Aranda & 8 \textbackslash{}\textbackslash{}}
+ \NormalTok{Manuel & López & 7 & Manuel & López & 7 & Manuel & López & 7 \textbackslash{}\textbackslash{}}
+ \NormalTok{John & Smith & 8 &  John & Smith & 8 &  John & Smith & 8 \textbackslash{}\textbackslash{}}
+ \NormalTok{Mike & Aranda & 8 &  Mike & Aranda & 8 &  Mike & Aranda & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}bottomrule}
+\NormalTok{\textbackslash{}end\{tabular\}}
+\NormalTok{\textbackslash{}caption\{lista de notas\}}
+\NormalTok{\textbackslash{}end\{sidewaystable\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Uso de color (versión
+básica)}
+
+Hay que cargar el paquete color con la opción table. La orden rowcolors
+tiene tres parámetros: la fila en la que empieza a funcionar, color
+inicial y color alternativo. Por ejemplo, empezamos en la tercera fila
+con un 5\% de negro y alternamos con blanco.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{table\}[htbp]}
+\NormalTok{\textbackslash{}rowcolors\{2\}\{black!5\}\{white\}}
+\NormalTok{\textbackslash{}centering}
+\NormalTok{\textbackslash{}begin\{tabular\}\{llr\}}
+\NormalTok{\textbackslash{}toprule}
+\NormalTok{Nombre & Apellidos &  Nota \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}midrule}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}bottomrule}
+\NormalTok{\textbackslash{}end\{tabular\}}
+\NormalTok{\textbackslash{}caption\{Una prueba\}}
+\NormalTok{\textbackslash{}end\{table\}}
+\end{Highlighting}
+\end{Shaded}
+
+
+\begin{table}[htbp]
+\rowcolors{2}{black!5}{white}
+\centering
+\begin{tabular}{llr}
+\toprule
+Nombre & Apellidos &  Nota \\
+\midrule
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+\bottomrule
+\end{tabular}
+\caption{Una prueba}
+\end{table}
+
+\begin{sidewaystable}
+\centering
+\begin{tabular}{@{}lllllllll@{}}
+\toprule
+Nombre & Apellidos & Nota & Nombre & Apellidos & Nota & Nombre & Apellidos & Nota \\
+\midrule Manuel & López & 7 & Manuel & López & 7 & Manuel & López & 7 \\
+ John & Smith & 8 &  John & Smith & 8 &  John & Smith & 8 \\
+ Mike & Aranda & 8 &  Mike & Aranda & 8 &  Mike & Aranda & 8 \\
+ Manuel & López & 7 & Manuel & López & 7 & Manuel & López & 7 \\
+ John & Smith & 8 &  John & Smith & 8 &  John & Smith & 8 \\
+ Mike & Aranda & 8 &  Mike & Aranda & 8 &  Mike & Aranda & 8 \\
+ Manuel & López & 7 & Manuel & López & 7 & Manuel & López & 7 \\
+ John & Smith & 8 &  John & Smith & 8 &  John & Smith & 8 \\
+ Mike & Aranda & 8 &  Mike & Aranda & 8 &  Mike & Aranda & 8 \\
+\bottomrule
+\end{tabular}
+\caption{lista de notas}
+\end{sidewaystable}
+
+\subsubsection{Cuadros de más de una
+página}
+
+Cargamos los paquetes \texttt{longtable} y \texttt{tabu}. En el código
+siguiente se puede ver la estructura de un cuadro que ocupa más de una
+página. Al principio se escriben las cabeceras de la primera página, de
+las siguientes y lo mismo con los finales de los cuadros.
+
+\begin{center}
+\begin{longtabu} to 0.7\linewidth{lll} % la tabla va a ocupar el 70% de la línea
+% empieza la primera cabecera
+\toprule
+\textbf{Nombre} & \textbf{Apellidos} & \textbf{Nota} \\
+\midrule
+\endfirsthead
+% ahora la cabecera para el resto de páginas
+\toprule
+\textbf{Nombre (seguimos)} & \textbf{Apellidos} & \textbf{Nota} \\
+\midrule
+\endhead
+% ahora el pie de tabla para cada página
+\midrule
+\endfoot
+% y el pie de página para la última página
+\bottomrule
+\endlastfoot
+% ahora ya escribimos los datos de la tabla
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+John & Smith & 7.5 \\
+Mike & Dodds & 7.5 \\
+Robert & Isaac & 8 \\
+\end{longtabu}
+\end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{center\}}
+\NormalTok{\textbackslash{}begin\{longtabu\} to 0.7\textbackslash{}linewidth\{lll\} % la tabla va a ocupar el 70% de la línea}
+\CommentTok{% empieza la primera cabecera}
+\NormalTok{\textbackslash{}toprule}
+\NormalTok{\textbackslash{}textbf\{Nombre\} & \textbackslash{}textbf\{Apellidos\} & \textbackslash{}textbf\{Nota\} \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}midrule}
+\NormalTok{\textbackslash{}endfirsthead}
+\CommentTok{% ahora la cabecera para el resto de páginas}
+\NormalTok{\textbackslash{}toprule}
+\NormalTok{\textbackslash{}textbf\{Nombre (seguimos)\} & \textbackslash{}textbf\{Apellidos\} & \textbackslash{}textbf\{Nota\} \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}midrule}
+\NormalTok{\textbackslash{}endhead}
+\CommentTok{% ahora el pie de tabla para cada página}
+\NormalTok{\textbackslash{}midrule}
+\NormalTok{\textbackslash{}endfoot}
+\CommentTok{% y el pie de página para la última página}
+\NormalTok{\textbackslash{}bottomrule}
+\NormalTok{\textbackslash{}endlastfoot}
+\CommentTok{% ahora ya escribimos los datos de la tabla}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{John & Smith & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Mike & Dodds & 7.5 \textbackslash{}\textbackslash{}}
+\NormalTok{Robert & Isaac & 8 \textbackslash{}\textbackslash{}}
+\NormalTok{\textbackslash{}end\{longtabu\}}
+\NormalTok{\textbackslash{}end\{center\}}
+\end{Highlighting}
+\end{Shaded}
+
+\end{document}
