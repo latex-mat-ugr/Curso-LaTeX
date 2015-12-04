@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Formatos gr\'aficos}{2}{0}{1}
+\beamer@sectionintoc {2}{Inserci\'on de un gr\'afico}{5}{0}{2}
+\beamer@sectionintoc {3}{Creaci\'on de gr\'aficos}{11}{0}{3}
