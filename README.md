@@ -36,6 +36,7 @@ TeXworks existe en todas las plataformas que hemos mencionado.
 
 Yo personalmente uso [TeXStudio](http://texstudio.sourceforge.net), que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.
 
+Existen varias posibilidades también de editar textos en línea, una de ellas es [ShareLaTeX](https://www.sharelatex.com?r=1412eb69&rm=d&rs=b).
 
 ### Material
 
