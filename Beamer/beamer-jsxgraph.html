@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Taller LaTeX</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+  <script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+</head>
+<body>
+<div id="taller-de-latex-para-alumnos-de-grado-en-matemáticastransparencias" class="slide section level1">
+<h1>Taller de LaTeX para alumnos de Grado en Matemáticas::Transparencias</h1>
+<div class="figure">
+<img src="../Imagenes/fc.jpg" alt="fc" width="70%" heigth="70%"/>
+</div>
+<p><a href="http://www.ugr.es/local/pedro">Pedro A. García Sánchez</a>, <script type="text/javascript">
+<!--
+h='&#x75;&#x67;&#114;&#46;&#x65;&#x73;';a='&#64;';n='&#112;&#x65;&#100;&#114;&#x6f;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#112;&#x65;&#100;&#114;&#x6f;&#32;&#x61;&#116;&#32;&#x75;&#x67;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x65;&#x73;</noscript></p>
+</div>
+<div class="slide section level1">
+
+<h2 id="estructura">Estructura</h2>
+<p>El tipo de documento <code>beamer</code> es parecido a un artículo o libro</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">
+\documentclass{beamer}
+
+<span class="co">%probad a descomentar alguna de las siguientes</span>
+<span class="co">%\usetheme{Goettingen}</span>
+<span class="co">%\usetheme{Berkeley}</span>
+<span class="co">%\usetheme{Boadilla}</span>
+<span class="co">%\usetheme{Copenhagen}</span>
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\title[Taller de \LaTeX]{Taller de \LaTeX\ AMAT}
+\author[Los presentes]{Estudiantes de Grado en Matemáticas}
+\institute[UGR]{Universidad de Granada}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introducción}</code></pre>
+</div>
+<div class="slide section level1">
+
+<h2 id="frames">Frames</h2>
+<p>Cada transparencia se corresponde con un cuatro o frame</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{frame}{Con su título}
+
+...
+
+\end{frame}</code></pre>
+<p>El título es opcional</p>
+</div>
+<div class="slide section level1">
+
+<h2 id="itemize">Itemize</h2>
+<p>En <code>beamer</code> se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{frame}
+\begin{itemize}[&lt;+-|alert@+&gt;]
+\item Este taller está pensado como pequeña introducción al \LaTeX
+
+\item Intentaremos dar algunas pequeñas pinceladas sobe su uso
+
+\item Para m\&#39;as detalles véase la documentación de beamer.
+\end{itemize}
+\end{frame}</code></pre>
+</div>
+<div class="slide section level1">
+
+<h2 id="bloques">Bloques</h2>
+<p>Dentro de una transparencia podemos usar bloques</p>
+<p>Hay varios predefinidos</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{block}{Bloques}
+En beamer existen varios tipos de bloques....
+Y en ellos podemos escribir lo que queramos.
+\end{block}
+
+Podemos poner texto fuera de los bloques
+
+\begin{alertblock}{Bloques de alerta}
+En éstos escribimos cosas a resaltar.
+\end{alertblock}
+
+\begin{exampleblock}{Ejemplos}
+Y en estos los ejemplos, por ejemplo.
+\end{exampleblock}</code></pre>
+<p>Los colores y forma (bordes) cambian dependiendo del estilo seleccionado</p>
+</div>
+<div class="slide section level1">
+
+<h2 id="pausas">Pausas</h2>
+<p>Con el comando <code>\pause</code> podemos hacer que se muestre el texto de una transparencia hasta dicha marca</p>
+<p>El proceso se puede repetir tantas veces como queramos</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">
+Algo nuevo
+
+\pause
+
+Otra cosa
+
+\pause
+
+Y otra cosa más</code></pre>
+</div>
+<div class="slide section level1">
+
+<h2 id="sobreimpresiones">Sobreimpresiones</h2>
+<p>A veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{overprint}
+
+\onslide&lt;1&gt;
+
+Y en estos los ejemplos, por ejemplo.
+
+\onslide&lt;2&gt;
+
+Y en estos los ejemplos, por ejemplo. Ligeramente modificado.
+
+\onslide&lt;3&gt;
+
+O cualquier otra cosa.
+
+\end{overprint}</code></pre>
+</div>
+<div class="slide section level1">
+
+<h2 id="bibliografía">Bibliografía</h2>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{thebibliography}{10}
+\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,
+The not so short introduction to \LaTeX2e,
+ \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.
+\end{thebibliography}</code></pre>
+<p>El código anterior, al igual que <code>\maketitle</code>, crea una nueva transparencia conteniendo la bibliografía</p>
+</div>
+
+<div class="slide section level1">
+
+<h2 id="bibliografía">Gráficos</h2>
+<p>Podemos insertar gráficos, por ejemplo con <a href="https://jsxgraph.uni-bayreuth.de/wp/index.html">JSXGraph</a>  </p>
+
+<p><div id="box" class="jxgbox" style="width:400px; height:400px;"></div></p>
+<script type="text/javascript">
+  function pinta_parabola(){
+    var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-5, 9, 5, -1], axis:true, showCopyright:false, showNavigation:false});
+    var curve = board.create('functiongraph',
+                   [function(t){ return(t*t)}, -10,10]);
+    var A = board.create('glider',[1,1,curve], {name:'A', strokeColor:"black",fillColor:'white'});
+    //punto = board.create('point',[function(){return pend.Value()},function(){return pend.Value()*pend.Value()}], {strokeColor:"black",fillColor:'white', name:''})
+    board.create('functiongraph', [function(t){return (A.Y()+2*A.X()*(t-A.X()))}, -10,10],{strokeColor:"red"})
+    board.create('functiongraph', [function(t){return (A.Y()-1/(2*A.X())*(t-A.X()))}, -10,10],{strokeColor:"green"})
+  }
+  pinta_parabola()
+</script>
+</div>
+
+<div class="slide section level1">
+
+<h2 id="recomendaciones">Recomendaciones</h2>
+<ul>
+<li><p>No hacer demasiadas transparencias</p></li>
+<li><p>Cada transparencia no debe superar las 12 líneas</p></li>
+<li><p>El estilo debe ser sencillo para no distraer a la audiencia</p></li>
+<li><p>No abusar de las pausas</p></li>
+</ul>
+</div>
+</body>
+</html>
