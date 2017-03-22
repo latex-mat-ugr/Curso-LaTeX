@@ -1,12 +1,12 @@
-#Taller de LaTeX para alumnos de Grado en Matemáticas
+# Taller de LaTeX para alumnos de Grado en Matemáticas
 
 ![fc](../Imagenes/fc.jpg)
 
-[Pedro A. García Sánchez](http://www.ugr.es/local/pedro), <pedro@ugr.es>
+[Pedro A. García Sánchez](http://www.ugr.es/local/pedro), [pedro@ugr.es](mailto:pedro@ugr.es)
 
-***
+--------------------------------------------------------------------------------
 
-##Documento sencillo
+## Documento sencillo
 
 La estructura de un documento es la siguiente
 
@@ -18,7 +18,7 @@ La estructura de un documento es la siguiente
 \end{document}
 ```
 
-***
+--------------------------------------------------------------------------------
 
 ## Cabecera o preámbulo
 
@@ -45,11 +45,11 @@ visualización de las cabeceras del documento
 \keywords{\LaTeX, taller software libre}
 ```
 
-***
+--------------------------------------------------------------------------------
 
-##Resumen, título y tabla de contenidos
+## Resumen, título y tabla de contenidos
 
-###Resumen
+### Resumen
 
 ```latex
 \begin{abstract}
@@ -57,43 +57,44 @@ Esto es una prueba de cómo hacer algunas cosas en \LaTeX.
 \end{abstract}
 ```
 
-###Título
+### Título
+
 El título y datos de autores se visualiza con `\maketitle`
 
-###Tabla de contenidos
+### Tabla de contenidos
+
 Podemos añadir una tabla de contenidos con `\tableofcontents`
 
-***
+--------------------------------------------------------------------------------
 
-##Secciones
+## Secciones
 
 Podemos crear seccions (en un libro también capítulos y partes) con el comando `\section`. Éstas pueden contener subsecciones: `\subsection`, y subsubseciones. Finalmente tenemos párrafos, `\paragraph`, y subpárrafos
 
-
-| Comando	| Nivel |
-| --- | :----: |
-|`\part`	| -1 |
-|`\chapter`	| 0 |
-|`\section`	| 1 |
-|`\subsection` |	2 |
-|`\subsubsection` |	3 |
-|`\paragraph`	| 4 |
-|`\subparagraph`	| 5 |
+Comando          | Nivel
+---------------- | :---:
+`\part`          |  -1
+`\chapter`       |   0
+`\section`       |   1
+`\subsection`    |   2
+`\subsubsection` |   3
+`\paragraph`     |   4
+`\subparagraph`  |   5
 
 Véase <http://en.wikibooks.org/wiki/LaTeX/Document_Structure>
 
-***
+--------------------------------------------------------------------------------
 
-##Listas
+## Listas
 
 Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento
 
 ```latex
 \begin{enumerate}[1)]
 \item Aquellas que van enumeradas.
-	\begin{enumerate}
-	\item \ldots que además se pueden anidar.
-	\end{enumerate}
+    \begin{enumerate}
+    \item \ldots que además se pueden anidar.
+    \end{enumerate}
 
 \item Aquellas sin enumerar:
 \begin{itemize}
@@ -105,9 +106,9 @@ Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración c
 \end{enumerate}
 ```
 
-***
+--------------------------------------------------------------------------------
 
-##Tablas
+## Tablas
 
 Las tablas que presentamos aquí son muy sencillas, se pueden además unir celdas o separarlas
 
@@ -127,48 +128,52 @@ Nombre & Pepe & Juan & Manuel\\ \hline
 \end{tabular}
 ```
 
-***
+--------------------------------------------------------------------------------
 
-##Tipos de letra
+## Tipos de letra
 
 Tenemos varios tipos de letra y tamaños básicos
 
-Comando | Tipo
---- | ---
-`\textbf` | **negrita**
-`\textit` | *itálica*
+Comando   | Tipo
+--------- | -------------------
+`\textbf` | **negrita**
+`\textit` | _itálica_
 `\textsl` | helvética
-`\texttt` | courier
-`\textsc` | pequeñas Mayúsculas
+`\texttt` | courier
+`\textsc` | pequeñas Mayúsculas
 
- ... o bien podemos `\emph{enfatizar}` una `\textit{parte del texto \emph{dentro} de otro}`
+... o bien podemos `\emph{enfatizar}` una `\textit{parte del texto \emph{dentro} de otro}`
 
-***
+--------------------------------------------------------------------------------
 
-##Fórmulas
+## Fórmulas
 
 Existen dos tipos de fórmulas
-- En línea como por ejemplo `$x^2+1$` que produce $x^2+1$  
+
+- En línea como por ejemplo `$x^2+1$` que produce $x^2+1$
 - En modo ventana o centrado: `$$x^2+1$$` que se ve como
 
 $$x^2+1$$
 
 Los delimitadores `$..$` se pueden substituir por `\(..\)` y
+
 ```
 $$..$$
 ```
+
 por
+
 ```
 \[..\]
 ```
+
 (entre otros, de hecho este último ofrece más funcionalidades como `\qedhere`)
 
-***
+--------------------------------------------------------------------------------
 
-##Matrices y derivados
+## Matrices y derivados
 
 El entorno array es similar a tabular
-
 
 ```latex
 \begin{array}{clr}
@@ -177,12 +182,7 @@ x^2+x+1 & x-1 & 7
 \end{array}
 ```
 
-$$
-\begin{array}{clr}
-1 & -\frac{1}2 & 321 \\
-x^2+x+1 & x-1 & 7
-\end{array}
-$$
+$$ \begin{array}{clr} 1 & -\frac{1}2 & 321 \ x^2+x+1 & x-1 & 7 \end{array} $$
 
 Podemos delimitarla con `\left` y `\right`
 
@@ -193,54 +193,39 @@ x^2+x+1 & x-1 & 7
 \end{array}
 \right)
 ```
-$$
-\left\{\begin{array}{clr}
-1 & -\frac{1}2 & 321 \\
-x^2+x+1 & x-1 & 7
-\end{array}
-\right)
-$$
 
-Existen matrices predefinidos como
-`\begin{matrix} .. \end{matrix}`,
-`\begin{pmatrix} .. \end{pmatrix}`, ...
+$$ \left{\begin{array}{clr} 1 & -\frac{1}2 & 321 \ x^2+x+1 & x-1 & 7 \end{array} \right) $$
 
-***
+Existen matrices predefinidos como `\begin{matrix} .. \end{matrix}`, `\begin{pmatrix} .. \end{pmatrix}`, ...
 
-##Un ejemplo: función definida por casos
+--------------------------------------------------------------------------------
+
+## Un ejemplo: función definida por casos
 
 Vamos a definir una función por casos
 
 ```latex
 $$
 f(x)=\left\{
-	\begin{array}{ll}
-	x^2-1, & \hbox{si } 1\le x\le 4,\\
-	x-1, & \hbox{en otro caso}.
-	\end{array}
-	\right.
+    \begin{array}{ll}
+    x^2-1, & \text{si } 1\le x\le 4,\\
+    x-1, & \text{en otro caso}.
+    \end{array}
+    \right.
 $$
 ```
 
+$$ f(x)=\left{ \begin{array}{ll} x^2-1, & \text{si } 1\le x\le 4,\ x-1, & \text{en otro caso}. \end{array} \right. $$
 
-$$
-f(x)=\left\{
-	\begin{array}{ll}
-	x^2-1, & \hbox{si } 1\le x\le 4,\\
-	x-1, & \hbox{en otro caso}.
-	\end{array}
-	\right.
-$$
+--------------------------------------------------------------------------------
 
-***
-
-##Entornos
+## Entornos
 
 ```latex
 \newenvironment{ejercicio}[1]{\textbf{Ejercicio número #1}}{\qed}
 ```
 
-```LaTeX
+```latex
 \begin{ejercicio}{1}
 Escribe esto con otras palabras.
 \end{ejercicio}
@@ -260,20 +245,21 @@ Para automatizarlo, hacemos lo siguiente
   {\end{itshape}}
 ```
 
-***
+--------------------------------------------------------------------------------
 
-##Entornos predefinidos
+## Entornos predefinidos
 
 Podemos numerar con la sección
+
 ```
 \newtheorem{teorema}{Teorema}[section]
 ```
+
 Y otros entornos con el contador que acabamos de crear
 
 ```
 \newtheorem{nota}[teorema]{Aclaración}
 ```
-
 
 ```latex
 \begin{teorema}\label{tonto}
@@ -283,11 +269,12 @@ Las ranas son verdes.
 Así lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.
 \end{proof}
 ```
+
 Luego podremos referenciar a este teorema como Teorema `\ref{tonto}`
 
-***
+--------------------------------------------------------------------------------
 
-##Figuras e imágenes
+## Figuras e imágenes
 
 El paquete `graphicx` nos permite insertar gráficos con el comando `\includegraphics`
 
@@ -306,11 +293,13 @@ Podemos también crear una figura con esa imágen
 \label{uno}
 \end{figure}
 ```
-***
 
-##Indentación
+--------------------------------------------------------------------------------
+
+## Indentación
 
 Podemos escribir texto centrado con
+
 ```latex
 \begin{center}
 Texto a centrar.
@@ -321,9 +310,9 @@ Puede ser más de un párrafo.
 
 Y desplazarlo a la derecha con `\hfill`
 
-***
+--------------------------------------------------------------------------------
 
-##La bibliografía
+## La bibliografía
 
 Para insertar la bibliografía se usa bien `bibtex` (que veremos más adelante) o el entorno `thebibliography`
 
