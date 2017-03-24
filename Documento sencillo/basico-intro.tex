@@ -1,0 +1,1204 @@
+% !TEX TS-program = XeLaTeX
+% !TEX encoding = UTF-8 Unicode
+
+
+
+\documentclass[10pt,xcolor=svgnames]{beamer}
+\usepackage{metalogo}
+\setlogokern{La}{-0.15em}
+\setlogokern{aT}{-0.07em}
+\setlogokern{eX}{-0.07em}
+
+
+
+\usepackage{fontawesome}
+
+
+
+\usepackage[utf8]{inputenc}       
+\usepackage[T1]{fontenc}
+
+\usepackage[spanish]{babel}
+
+% \deactivatequoting
+% \let\layoutspanish\relax
+
+
+
+\usepackage{tikz,pgf}%,pgfarrows,pgfnodes,pgfautomata,pgfheaps}
+
+
+\usepackage{booktabs}
+
+
+\usetheme[sectionpage=progressbar,numbering=none,titleformat frame=smallcaps]{metropolis}
+
+
+
+\setbeamertemplate{navigation symbols}{}
+
+
+
+\definecolor{dblue}{rgb}{0.23,0.4,0.7}
+\definecolor{azulon}{rgb}{0,0,0.44}
+\definecolor{naranjon}{rgb}{.84,.418,0}
+\definecolor{rojoclaro}{rgb}{.6,.2,0}
+\definecolor{verdepaquete}{rgb}{.0,.4,.2}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\usepackage{multicol}
+
+
+\usepackage[random]{blindtext}
+\usepackage{colortbl}
+\usepackage{graphicx}
+
+
+%% Cajas
+\usepackage[listings]{tcolorbox}
+
+
+
+
+\usepackage{keystroke}
+
+
+\usepackage{listings}
+\lstset{
+	language=[latex]tex,
+	backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily,%\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,  
+    firstnumber=1,
+%    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2}
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+   {basicstyle=\scriptsize\bf\ttfamily}
+
+
+
+
+
+
+
+\hypersetup{pdftitle={Taller de LaTeX},
+  pdfsubject={Curso de LaTeX}
+  pdfauthor={Orientamat}
+  pdfkeywords={LaTeX, Orientamat},
+  pdfpagemode={FullScreen},
+%  colorlinks,
+%  linkcolor=Orange,
+  }
+
+
+
+
+\title{Taller de \LaTeX}
+
+\subtitle{Instalación, personalización y primeros pasos}
+
+\author{Orientamat}
+
+\institute{Universidad de Granada}
+
+\date[2017]{24 de marzo de 2017}
+
+%\titlegraphic{\includegraphics[scale=.25]{UGR-grlogo.png}}
+
+\begin{document}
+
+
+\maketitle
+
+
+\begin{frame}
+\frametitle{Estructura del Curso}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+
+
+\section{Instalación}
+
+\begin{frame}
+\frametitle{Distribuciones}
+\begin{itemize}
+\addtolength{\itemsep}{0.6\baselineskip}
+\item \LaTeX{} está disponible en la mayoría de las plataformas usuales
+
+
+
+\item La \emph{distribuciones} más populares son
+	\medskip
+
+	\begin{itemize}
+	\addtolength{\itemsep}{0.5\baselineskip}
+	\item MiK\TeX{} (\faWindows)
+	\item Mac\TeX{} (\faApple)
+	\item \TeX Live (\faApple, \faLinux, \faWindows)
+	\end{itemize}
+
+\item Todas las distribuciones están basadas en el material disponible en CTAN.	
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Instalación}
+
+Es importante que tengamos instalado algún visor de archivos PDF.
+
+\begin{block}{En Windows \faWindows}
+    \begin{itemize}
+    %\setlength\itemsep{0.2\baselineskip}
+        \item Vamos a instalar la distribución MiK\TeX
+        \item Usaremos una variante de esta, \alert{Pro\TeX{t}}, que tiene incluidas algunos programas adicionales como TeXstudio o Ghostscript. 
+
+        \centerline{\small \url{https://tug.org/protext/}}
+
+    \end{itemize}
+\end{block}
+
+
+\begin{block}{En macOS \faApple}
+    \begin{itemize}
+        \item Usar \alert{Mac\TeX{}}  \quad {\small \url{https://tug.org/mactex/}}
+    \end{itemize}
+\end{block}
+
+\begin{block}{En Linux \faLinux}
+    \begin{itemize}
+        \item Está disponible en los repositorios de las distribuciones
+    \end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Editores}
+
+El programa (editor) que usemos para escribir un documento es independiente de \LaTeX{} aunque existen algunos editores mejor adaptados a su uso que incluyen atajos para algunas acciones usuales.
+
+\medskip
+
+Los más comunes son
+\begin{description}
+	\addtolength{\itemsep}{0.5\baselineskip}
+	\item[\faWindows] TeXstudio, Texworks, Texniccenter, Texmaker (varias plataformas), WinEdt (shareware), Led,...
+	\item[\faApple] TeXShop, Texmaker, Texworks, scite,...
+	\item[\faLinux] Kile, Texworks, emacs, vim,...
+\end{description}
+\end{frame}
+
+\section{Generalidades}
+
+\subsection{¿Qué es \LaTeX?}
+
+\begin{frame}
+\frametitle{¿Qué es?}
+	\begin{block}{¿Qué es \TeX?}
+		\begin{itemize}
+			\item \TeX{} es un programa destinado a la composición de documentos que contienen texto y fórmulas matemáticas con calidad de imprenta creado por Donald Knuth en 1978
+			\item NO es un editor de texto sino un procesador de macros y lenguaje de programación
+		\end{itemize}
+	\end{block}
+	\begin{block}{¿Y \LaTeX?}
+		\begin{itemize}
+			\item \LaTeX{} es un conjunto de macros para \TeX{}  debido originalmente a Leslie Lamport para facilitar el uso de \TeX.
+			\item La Sociedad Matemática Americana añade sus estándares a \LaTeX{}: nace AMS-\LaTeX
+		\end{itemize}
+	\end{block}
+
+	Usaremos el término \alert{\LaTeX{}} para referirnos a \TeX{} + \LaTeX{} + mejoras sucesivas
+\end{frame}
+ 
+
+
+
+\begin{frame}
+\frametitle{Características de \LaTeX}
+	\begin{description}[Transportabiilidad]
+	\addtolength\itemsep{\fill}
+		\item[Transportable] los ficheros .tex sólo contienen texto y son de pequeño tamaño 
+		\item[WYSIWYM] \LaTeX{} se ocupa del formato del documento. El usuario no tiene que preocuparse de hacer saltos de página, justificaciones, sangrías, referencias, etc.
+		\item[Versátil] se puede hacer casi cualquier cosa
+		\item[Flexible] permite al usuario crear nuevos comandos y entornos 
+		\item[Actualizado] \LaTeX{} es mejorado constantemente de forma altruista.
+	\end{description}
+\end{frame}
+
+
+\begin{frame}[t,fragile]
+    \frametitle{¿Cómo funciona?}
+\begin{block}{}
+	\begin{itemize}
+        \setlength{\itemsep}{0.5\baselineskip}
+        \item Escribimos un fichero de texto con el contenido y órdenes
+        \item \LaTeX{} lo procesa y da como resultado un fichero (PDF) formateado
+    \end{itemize}
+\end{block}
+
+\begin{exampleblock}{Ejemplo}
+\begin{lstlisting}{language=tex}
+\documentclass{article}
+\begin{document}
+    Consideremos una función \emph{continua} $f$. Su integral es...
+\end{document}
+\end{lstlisting}
+
+    Consideremos la función \emph{continua} $f(x)=\cos(x)$. Su integral es...
+\end{exampleblock}
+\end{frame}
+
+
+
+\begin{frame}[t]
+\frametitle{Ventajas e inconvenientes}
+\vspace{-2em}
+\begin{columns}
+\begin{column}[t]{0.5\textwidth}
+	\begin{block}{Ventajas}
+	\begin{itemize}
+		\item Composición de fórmulas
+		\item Calidad de imprenta
+		\item Facilidad para gestionar bibliografías, 
+		notas, referencias, etc.
+		\item Muchos paquetes adicionales
+		\item Independiente de la plataforma: Unix, Windows, OSX,...
+		\item Software libre
+		\item Salida PDF, Postscript,...
+		\item Separación de contenido y forma
+	\end{itemize}
+	\end{block}
+\end{column}
+\begin{column}[t]{0.5\textwidth}
+	\begin{block}{Inconvenientes}
+	\begin{itemize}
+		\item El diseño de un documento (nuevo) es difícil 
+		si los predefinidos no se ajustan a lo que necesitamos
+		\item Detección y manejo de errores
+		\item Separación de contenido y forma
+	\end{itemize}
+	\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Ayuda}
+\begin{block}{}
+	\begin{itemize}
+	\addtolength{\itemsep}{0.5\baselineskip}
+		\item Ayuda incluida en la instalación
+		\item Listas de correo 
+			\begin{itemize}
+			\item Grupo de usuarios de \LaTeX{} de la UGR
+			\url{https://groups.google.com/forum/#!forum/gul-ugr} 
+			\item Lista de correo de Cervan\TeX{} 
+			\url{http://www.rediris.es/list/info/es-tex.html} 
+			\end{itemize} 
+		\item Foros, blogs, grupos de noticias, etc.
+			\begin{itemize}
+			\item \url{https://es.sharelatex.com} (también editor online)
+			\item \url{https://www.overleaf.com} (también editor online)
+			\item \url{http://tex.stackexchange.com}
+			\item \url{http://latex.org/forum/}
+			\end{itemize}
+	\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{¿Para que sirve?}
+\begin{block}{Algunos usos}
+\begin{itemize}
+	\addtolength{\itemsep}{0.5\baselineskip}
+		\item Artículos,
+		\item exámenes, ejercicios,
+		\item cartas, informes,
+		\item libros, apuntes, 
+		\item posters, presentaciones, etc.
+	\end{itemize}
+\end{block}
+\end{frame}
+
+
+\subsection{Paquetes}
+
+\begin{frame}[t,fragile]
+\frametitle{Paquetes}
+
+\vspace{-1em}
+
+\begin{columns}[t]
+\begin{column}{0.5\textwidth}
+\begin{block}{}
+\begin{itemize}
+\addtolength{\itemsep}{0.4\baselineskip}
+\item \LaTeX{} es modular.
+\item Hay módulos (\emph{paquetes}) que añaden posibilidades adicionales o modifican las definidas por defecto.
+\item {\small \lstinline!\usepackage[opciones]{paquete}!} 
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{block}{}
+\begin{itemize}
+\item Tipos (mathtpmx, etc.)
+\item Aspecto (márgenes, cabeceras, etc.)
+
+\item Gráficos (inclusión, construcción, posición, etc.)
+
+\item Manejo de índices, glosarios, referencias, etc.
+\item Currícula
+\item Idioma
+\item Hipervínculos, enlaces, etc.
+\item Música
+\item Cuadros, tablas, etc.
+
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+
+
+\section{Creación de un documento \LaTeX}
+
+
+\begin{frame}
+\frametitle{Ficheros \LaTeX}
+
+\begin{description}[.bib, .bbl, .blg, .bst]
+\item[.tex] El documento fuente es un fichero de texto que contiene tanto el texto como las instrucciones para formatear ese texto. Se puede crear con cualquier editor de textos.
+\end{description}
+
+\bigskip
+
+Al compilar se obtienen varios documentos.
+
+\medskip
+
+\begin{description}[.bib, .bbl, .blg, .bst]
+\addtolength\itemsep{0.5\baselineskip}
+\item[.aux] Fichero auxiliar que contiene la información sobre las referencias, la bibliografía, el índice, etc.
+\item[.dvi, .pdf] Posibles resultados de la compilación.
+
+\item[.log] Mensajes del compilador.
+
+\item[.toc, .lof, .lot] Información relativa a índices, lista de figuras y lista de tablas.
+
+\item[.bib, .bbl, .blg, .bst] Ficheros relacionados con la bibliografía.
+
+\end{description}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+\subsection{Estructura de un documento .tex}
+
+\begin{frame}[fragile]
+\frametitle{Partes de un documento .tex}
+
+Cualquier  documento .tex tiene dos partes: el \emph{encabezamiento} y el \emph{cuerpo}
+
+\begin{block}{Encabezamiento}
+\begin{itemize}
+\addtolength\itemsep{0.5\baselineskip}
+	\item Contiene la información sobre los aspectos globales del
+	documento: tipo de documento, tipo de letra, márgenes, 
+	espacio entre líneas, etc. y los paquetes adicionales.
+	
+
+
+	\item Comienza con la declaración del tipo de documento:
+
+	\lstinline!\documentclass[opciones]{tipo de documento}!
+	
+
+\end{itemize}
+\end{block}
+
+\begin{block}{Cuerpo}
+\begin{itemize}
+\addtolength\itemsep{0.5\baselineskip}
+	\item Contiene el texto y los comandos
+	para darle el formato deseado
+
+	\item Se encuentra encerrado por los comandos \\
+	\lstinline!\begin{document} ... \end{document}! 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Escritura en el documento fuente}
+\begin{frame}[fragile]
+\frametitle{Escritura en el documento fuente}
+Hay que tener en cuenta que el aspecto final del documento \emph{no} se asemejará en absoluto al documento \texttt{.tex}
+
+\begin{block}{}
+En el documento fuente escribimos como si tuviésemos una línea infinita, que luego \LaTeX{} interpretará.
+\begin{itemize}
+\item \LaTeX{} finaliza las líneas donde considera más oportuno, justifica el texto por la derecha (realizando segmentación silábica) y realiza sangría por la izquierda al comienzo de cada párrafo
+\item Para cambiar de párrafo debemos \emph{dejar una línea en blanco} o escribir \lstinline!\par!
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[t,fragile]
+\frametitle{Primer ejemplo}
+\begin{exampleblock}{Nuestro primer texto en \LaTeX}
+\begin{lstlisting}{language=tex}
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\begin{document}
+Pasos para instalar Latex en nuestro ordenador. 
+Mejor dicho, Latex se escribe \LaTeX.
+    
+Los espacios en blanco no cuentan y si queremos 
+empezar un párrafo nuevo sólo tenemos que dejar 
+una línea en blanco. También podemos escribir 
+fórmulas
+\[
+f(x)=\cos(x)+\frac{1}{x}
+\]
+\end{document}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[t,fragile]
+\frametitle{Primer ejemplo - Cabecera}
+\begin{lstlisting}
+\documentclass[11pt]{article}
+% Para escribir acentos...
+\usepackage[utf8]{inputenc} 
+% matemáticas, símbolos,... de la AMS
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+% selección del idioma
+\usepackage[spanish]{babel}
+% tamaño del papel
+\usepackage[margin=3cm,a4paper]{geometry}
+...
+\begin{document}
+...
+\end{lstlisting}
+
+\texttt{\%} se utiliza para añadir comentarios
+
+\end{frame}
+
+\begin{frame}[standout]
+\frametitle{Compilación}
+
+\begin{itemize}
+\setlength{\itemsep}{\baselineskip}
+\item ¿Cómo se compila?
+\item ¿Errores?
+\end{itemize}
+
+\end{frame}
+
+
+
+\subsection{Errores en la compilación}
+\begin{frame}{Gestión de errores en la compilación}
+Si \LaTeX{} encuentra errores en la compilación, para y se ``queja''. 
+
+\medskip
+
+\begin{block}{Posibles respuestas}
+\begin{description}
+\addtolength\itemsep{0.5\baselineskip}
+\item[\keystroke{Enter}] le estamos diciendo olvida el error y haz lo que puedas. Puede ser necesario repetir el proceso varias veces
+\item[\keystroke{x}+\keystroke{Enter}] \LaTeX{} para la compilación
+\item[\keystroke{r}+\keystroke{Enter}] \LaTeX{} seguirá aunque encuentre errores
+\item[\keystroke{e}+\keystroke{Enter}] \LaTeX{} para la compilación y nos manda al archivo fuente a la primera línea de código en la que encontró un error
+\end{description}
+\end{block}
+
+Es fácil que la línea que señala \LaTeX{} no sea donde este se encuentre.
+
+\end{frame}
+
+
+
+
+\section{Primeros pasos}
+
+\subsection{Comandos y entornos}
+
+\begin{frame}[fragile]
+\frametitle{Comandos}
+\begin{alertblock}{Comandos}
+\begin{itemize}
+\setlength{\itemsep}{0.5\baselineskip}
+\item Sirven para que \LaTeX{} realice una acción sencilla: cambiar de párrafo, escribir un símbolo, dejar un espacio\dots
+\item Comienzan con \texttt{\textbackslash} y se escriben sólo con letras (distingue mayúsculas y minúsculas)
+\item Pueden ser redefinidos y se pueden crear nuevos comandos
+\item La sintaxis habitual es:
+
+{\small \lstinline!\nombrecomando[opciones]{argumentos obligatorios}!}
+
+\item \LaTeX{} ignora los espacios después de un comando
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Comandos}
+
+\begin{exampleblock}{Ejemplos}
+\begin{itemize}
+\item \lstinline!\xi! escribe la letra griega xi: $\xi$
+\item \lstinline!\hfill! inserta un espacio horizontal dinámico
+\item \lstinline!\usepackage[spanish]{babel}! le dice a \LaTeX{} que cargue el paquete babel con la opción español
+\end{itemize}
+\end{exampleblock}
+
+
+\begin{lstlisting}{language=tex}
+Un documento contiene \textbf{texto} en negrita, 
+letras griegas $\xi$. 
+
+También podemos añadir una raya horizontal que se 
+extienda hasta el final de la línea \hrulefill
+\end{lstlisting}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Entornos}
+    \begin{alertblock}{Entornos}
+        \begin{itemize}
+            \item Son órdenes que sirven para que \LaTeX{} realice una acción compleja: crear una matriz, crear un página dentro de otra, escribir en varias columnas\dots
+            \item Es necesario abrir el entorno y cerrarlo, la sintaxis es: \par \texttt{\textbackslash begin\{entorno\} \... \textbackslash end\{entorno\}}
+            \item Los entornos también se pueden redefinir y se pueden crear otros nuevos
+        \end{itemize}
+    \end{alertblock}
+
+    \begin{exampleblock}{Ejemplos}
+        \begin{itemize}
+            \item Entornos para escribir listas: itemize, enumerate
+            \item Entornos para escribir tablas: table, array, matrix
+            \item Entornos para situar el texto: center, flushleft, flushright
+        \end{itemize}
+    \end{exampleblock}
+
+%Suele ser una buena estrategia cerrar los entornos justo después de abrirlos y luego continuar con el contenido del entorno.
+\end{frame}
+
+\subsection{Grupos}
+\begin{frame}[fragile]
+\frametitle{Grupos}
+
+
+\begin{alertblock}{Grupo}
+Es una parte bien delimitada del documento, con un inicio y un fin y que abarca todo lo que hay comprendido entre ambos
+\medskip
+\begin{itemize}
+\item Para abrir un grupo utilizamos {\color{magenta}\{} y para cerrarlo {\color{magenta}\}}
+\medskip
+\item Los grupos se pueden anidar unos dentro de otros
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Grupos}
+\begin{exampleblock}{Ejemplo}
+
+\begin{lstlisting}{language=tex}
+\textsc{Queremos escribir una frase en letras 
+mayúsculas pequeñas {\color{blue} y una parte 
+dentro de ella en \textbf{azul}} y a su vez 
+otras partes  en \textbf{negrita} y otra más 
+{\Large grande}}
+\end{lstlisting}
+
+\medskip
+
+\includegraphics[width=\linewidth]{text.pdf}
+\end{exampleblock}
+\end{frame}
+
+
+
+
+
+\subsection{Líneas, párrafos y páginas}
+
+
+\begin{frame}[fragile]
+\frametitle{Líneas y párrafos}
+\begin{alertblock}{Espacios y párrafos}
+\begin{itemize}
+\addtolength\itemsep{0.5\baselineskip}
+\item Uno o más espacios son tratados como un espacio.
+\item También se trata como un espacio el salto de línea.
+
+\item Varias líneas en blanco separan los párrafos.
+\item El comando \lstinline!\par! tiene el mismo efecto.
+
+\item \lstinline!\newline! inicia una nueva línea sin completar la línea en curso
+\item \lstinline!\linebreak[opcion]! inicia una nueva línea justificando la línea en curso
+\end{itemize}
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}[t,fragile]
+\frametitle{Alineación de párrafos}
+
+
+
+\begin{block}{Alinear}
+Se pueden alinear a izquierda o derecha párrafos usando
+\begin{lstlisting}{language=tex}
+\begin{flushleft}
+Alineado a la izquierda\ldots
+\end{flushleft}
+\begin{flushright}
+\ldots alineado a la derecha.
+\end{flushright}
+\end{lstlisting}
+\end{block}
+
+\begin{block}{Centrar párrafos}
+Se pueden centrar párrafos con 
+\begin{lstlisting}{language=tex}
+\begin{center}
+Esto es un texto centrado
+\end{center}
+\end{lstlisting}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Párrafos}
+
+\begin{block}{}
+\begin{itemize}
+\addtolength\itemsep{0.5\baselineskip}
+\item Hay entornos (quote, quotation, verse) para escribir algunos tipos de párrafos particulares
+
+\item Se puede cambiar el espacio entre líneas de varias formas. Se recomienda usar el paquete \texttt{setspace} %(aunque también se pueden cambiar el valor de linespread o baselinestrecth)
+\begin{lstlisting}
+\usepackage{setspace}
+\onehalfspacing % linea y media
+\doublespacing % doble espacio
+\end{lstlisting}
+
+\item 
+\LaTeX{} realiza una sangría a la izquierda al comienzo de cada nuevo párrafo. Si se quiere evitar se utiliza el comando \lstinline!\noindent!
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Espacios, párrafos y páginas}
+
+\begin{block}{Saltos de página}
+\begin{itemize}
+\addtolength\itemsep{0.5\baselineskip}
+\item \lstinline!\newpage! inicia una nueva página sin completar la página en curso
+\item \lstinline!\clearpage! produce un efecto similar al comando anterior ubicando los objetos ``flotantes'' (como tablas o gráficos) en una nueva página sin texto alguno
+\end{itemize}
+\end{block}
+
+
+\end{frame}
+
+
+
+\subsection{Símbolos especiales}
+\begin{frame}{Símbolos especiales}
+\begin{block}{Símbolos reservados}
+
+Algunos caracteres tienen una utilidad especial para \LaTeX{} y su uso está reservado. Todos se pueden escribir anteponiendo una barra invertida salvo la propia barra invertida (\textbackslash{}\textbackslash indica línea nueva)
+\begin{description}[\^{} y \_{}]
+\addtolength\itemsep{0.4\baselineskip}
+\item[\${}] Declarar el modo matemático {\color{rojoclaro}$\backslash$}{\color{blue}\$}
+\item[\{{} \}{}] Iniciar y finalizar grupos {\color{magenta}{\color{rojoclaro}$\backslash$}\{\qquad{\color{rojoclaro}$\backslash$}\}}
+\item[\#{}] Indicar el número de un argumento {\color{rojoclaro}$\backslash$}{\color{magenta}\#}
+\item[\%{}] Hacer que \LaTeX{} ignore una línea de código {\color{rojoclaro}$\backslash$}{\color{magenta}\%}
+\item[\&{}] Separar elementos de una tabla o una fórmula {\color{rojoclaro}$\backslash$}{\color{magenta}\&}
+\item[\textbackslash{}] Inicio de cualquier comando {\color{blue}\$}{\color{rojoclaro}$\backslash$}backslash{\color{blue}\$}
+\item[\^{} y \_{}] Escribir super y subíndices {\color{rojoclaro}$\backslash$\^ \qquad $\backslash$ \_}
+\item[\~{}] ``Pegar'' palabras {\color{rojoclaro}$\backslash$\~\quad}
+\end{description}
+\end{block}
+\end{frame}
+
+\begin{frame}{Símbolos especiales}
+\begin{block}{Símbolos ortográficos}
+\begin{itemize}
+\addtolength\itemsep{0.5\baselineskip}
+\item Es mejor usar el paquete \emph{inputenc} con la codificación adecuada que escribir el comando necesario para cada símbolo.
+
+\item ¿Cómo se escriben las <<comillas>>, ``comillas''?
+
+\item ¿Y los puntos suspensivos...?
+
+\item ¿Y los ordinales? 1\sptext{o} (¿o es 1º?) 
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{División de palabras}
+
+\begin{block}{}
+\begin{itemize}
+\addtolength\itemsep{0.5\baselineskip}
+\item \LaTeX{} se encarga de la división de palabras al final de línea cuando sea necesario
+
+\item Se puede indicar como dividir una palabra concreta usando \textbackslash{}-
+
+\item El comando \lstinline!\hyphenation{pa-la-bra1, pa-la-bra2,...}! en la cabecera vale para todo el documento
+
+\item El paquete babel hace, entre otras cosas, que \LaTeX{} use los patrones de guionado del lenguaje seleccionado
+
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\subsection{Tipos y colores}
+
+\begin{frame}[fragile]
+\frametitle{Tipos}
+\begin{block}{Familias de tipos de letra}
+%Hay tres tipos de letra:
+\begin{description}[\texttt{Máquina de escribir}]
+\item[Texto normal] \lstinline!\textrm{Texto}! \quad $\rightsquigarrow$ \textrm{Texto}
+\item[\textsf{Sanserif o sin adornos}] \lstinline!\textsf{Texto}! \quad $\rightsquigarrow$ \textsf{Texto}
+\item[\texttt{Máquina de escribir}] \lstinline!\texttt{Texto}! \quad $\rightsquigarrow$ \texttt{Texto}
+\end{description}
+\end{block}
+
+
+\bigskip
+
+\begin{block}{Perfiles}
+\begin{description}[\texttt{Máquina de escribir}]
+\item[Recto]  \lstinline!\textup{Texto}! \quad $\rightsquigarrow$ \textup{Hola}
+\item[Itálica] \lstinline!\textit{Texto}! \quad $\rightsquigarrow$ \textit{Hola}
+\item[Inclinado]  \lstinline!\textsl{Texto}! \quad $\rightsquigarrow$ \textsl{Hola}
+\item[Versalita]  \lstinline!\textsc{Texto}! \quad $\rightsquigarrow$ \textsc{Hola}
+\end{description}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Tipos}
+
+\begin{block}{Grosor}
+\begin{description}[\texttt{Máquina de}]
+\item[Normal]  \texttt{\textbackslash{}textmd\{Texto\}} \quad  $\rightsquigarrow$ \textmd{hola}  
+\item[Grueso]  \texttt{\textbackslash{}textbf\{Texto en negritas\}} \quad $\rightsquigarrow$ \textbf{hola}
+\end{description}
+\end{block}
+
+\bigskip
+
+\begin{block}{Otras formas de destacar texto}
+\begin{description}[\texttt{Máquina de}]
+\item[Resaltar] \texttt{\textbackslash emph\{Texto a resaltar\}} \quad $\rightsquigarrow$ \emph{hola}
+\item[Subrayar] \texttt{\textbackslash{}underline\{Texto subrayado\}} \quad $\rightsquigarrow$ \underline{hola}
+\end{description}
+\end{block}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Tipos}
+
+\begin{block}{Tamaño de letra}
+\begin{lstlisting}{language=tex}
+{\tiny Hay} {\footnotesize unos} {\small pocos} 
+{\normalsize tamaños} {\large de} {\Large letra} 
+{\huge en} {\Huge \LaTeX} {\huge que} {\Large se} 
+{\large ponen} {\normalsize con} {\small los}
+{\footnotesize comandos} {\tiny siguientes}
+\end{lstlisting}
+\medskip
+
+{\tiny Hay} {\footnotesize unos} {\small pocos} 
+{\normalsize tamaños} {\large de} {\Large letra} 
+{\huge en} {\Huge \LaTeX} {\huge que} {\Large se} 
+{\large ponen} {\normalsize con} {\small los}
+{\footnotesize comandos:}
+
+\texttt{
+ {\tiny$\backslash$tiny}
+{\scriptsize$\backslash$scriptsize}
+{\footnotesize$\backslash$footnotesize}
+{\small$\backslash$small}}
+
+\medskip
+
+\texttt{\normalsize$\backslash$normalsize}
+
+\texttt{{\large$\backslash$large}
+{\Large$\backslash$Large}
+{\LARGE$\backslash$LARGE}
+{\huge$\backslash$huge}
+{\Huge $\backslash$Huge}}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Colores}
+\begin{block}{Colores}
+\begin{itemize}
+\addtolength{\itemsep}{0.5\baselineskip}
+\item Es necesario cargar el paquete \texttt{color} o \texttt{xcolor}
+
+\textbackslash{}usepackage[pdftex,usenames,dvipsnames]\{color\}
+
+\item \textbackslash{}textcolor\{Red\}\{Texto\} $\ \rightsquigarrow$ \textcolor{Red}{Rojo}
+
+\item \textbackslash{}textcolor[rgb]\{0.89,0.67,0.31\}\{Texto\} $\ \rightsquigarrow$ \textcolor[rgb]{0.89,0.67,0.31}{Otro color}
+
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+
+\subsection{Listas}
+
+\begin{frame}[fragile,t]
+\frametitle{Listas}
+\framesubtitle{Listas numeradas}
+Existen tres entornos en \LaTeX{} para escribir listas: \alert<2->{enumerate}, itemize y description.
+
+\bigskip \bigskip
+
+\pause
+\textbf{Entorno enumerate}
+
+
+\begin{columns}
+\begin{column}[]{0.5\textwidth}
+\begin{lstlisting}{language=tex}
+\begin{enumerate}
+   \item Primer ítem,
+   \item segundo ítem, y
+   \item tercer ítem.
+\end{enumerate}	
+\end{lstlisting}
+\end{column}
+\begin{column}[]{0.5\textwidth}
+\begin{enumerate}
+   \item Primer ítem,
+   \item segundo ítem, y
+   \item tercer ítem.
+\end{enumerate}	
+\end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}[fragile,t]
+\frametitle{Listas}
+\framesubtitle{Listas con viñetas}
+Existen tres entornos en \LaTeX{} para escribir listas: enumerate, \alert<2->{itemize} y description.
+
+\bigskip \bigskip
+
+\pause
+
+\textbf{Entorno itemize}
+
+
+
+\begin{columns}
+\begin{column}[]{0.5\textwidth}
+\begin{lstlisting}{language=tex}
+\begin{itemize}
+   \item Primer ítem,
+   \item segundo ítem, y
+   \item tercer ítem.
+\end{itemize}	
+\end{lstlisting}
+\end{column}
+\begin{column}[]{0.5\textwidth}
+\begin{itemize}
+   \item Primer ítem,
+   \item segundo ítem, y
+   \item tercer ítem.
+\end{itemize}	
+\end{column}
+\end{columns}
+
+
+\end{frame}
+
+
+\begin{frame}[fragile,t]
+\frametitle{Listas}
+\framesubtitle{Listas descriptivas}
+Existen tres entornos en \LaTeX{} para escribir listas: enumerate, itemize y
+\alert<2->{description}.
+
+\bigskip \bigskip
+
+\pause
+\textbf{Entorno description}
+
+
+\begin{columns}
+\begin{column}[]{0.48\textwidth}
+\begin{lstlisting}{language=tex}
+\begin{description}
+   \item[Curso] Dirección o carrera.
+   \item[Alumno] Discípulo, respecto de su maestro...
+   \item[Maestro] Dicho de un irracional.
+\end{description}	
+\end{lstlisting}
+\end{column}
+\begin{column}[]{0.48\textwidth}
+\begin{description}
+   \item[Curso] Dirección o carrera.
+   \item[Alumno] Discípulo, respecto de su maestro...
+   \item[Maestro] Dicho de un irracional.
+\end{description}
+\end{column}
+\end{columns}
+
+
+\end{frame}
+
+
+\begin{frame}[fragile,t]
+\frametitle{Listas}
+
+Las listas se pueden anidar
+
+
+\bigskip \bigskip
+
+\begin{columns}
+\begin{column}[]{0.5\textwidth}
+\begin{lstlisting}{language=tex}
+\begin{itemize}
+  \item Varias cosas:
+    \begin{enumerate}
+       \item Una;
+       \item otra;
+       \item la última.
+    \end{enumerate}
+  \item segundo ítem y
+  \item tercer ítem.
+\end{itemize}
+\end{lstlisting}
+\end{column}
+\begin{column}[]{0.5\textwidth}
+\begin{itemize}
+   \item Varias cosas:
+   	\begin{enumerate}
+	\item Una;
+	\item otra;
+	\item la última.
+	\end{enumerate}
+   \item segundo ítem y
+   \item tercer ítem.
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}[t]
+\frametitle{Listas}
+
+\begin{block}{¿Y después?}
+\begin{enumerate}
+\item El formato, la numeración, las vi\~{n}etas, el espaciado, sangrado, etc. se pueden modficar.
+\item Todas las listas que hemos visto son un caso particular del entorno ``list''. Se pueden definir listas personalizadas.
+\end{enumerate}
+\end{block}
+
+\bigskip \bigskip
+
+\begin{block}{Ejercicios}
+\begin{enumerate}
+\item Prueba a anidar listas de diferentes tipos
+\item ¿Qué ocurre si anidas m\'{a}s de cuatro?
+\end{enumerate}
+\end{block}
+\end{frame}
+
+
+
+\subsection{Matemáticas}
+
+\begin{frame}[fragile]
+\frametitle{Matemáticas}
+Podemos escribir fórmula \alert{en línea}, $\sqrt{x+y}$ o en centradas en una línea separada
+\[
+\frac{\partial f}{\partial x} (x,y)= \sum_{n=1}^{\infty} \oint_{a}^{b} \frac{x}{1+x^2}\, \mathrm{d}x
+\]
+\begin{lstlisting}
+Podemos escribir fórmula \alert{en línea}, 
+$\sqrt{x+y}$ o en centradas en una línea separada
+\[
+f(x,y)= \sum_{n=1}^{\infty} \int_{a}^{b} 
+\frac{x}{1+x^2}\, \mathrm{d}x
+\]
+\end{lstlisting}
+
+\end{frame}
+
+
+
+
+
+
+\subsection{Columnas}
+
+\begin{frame}[t]
+\frametitle{Columnas}
+
+\begin{alertblock}{El paquete multicols}
+{\small
+\begin{multicols}{3}
+\LaTeX{} trae incorporada la posibilidad de escribir a una o dos columnas. Sus posibilidades son limitadas.
+
+\columnbreak
+
+Es mucho mejor utilizar alguno de los paquetes dedicados a tal efecto. Hay muchos, pero uno de los m\'{a}s cómodos de usar es multicols.
+
+\columnbreak
+
+Las longitudes \texttt{columsep}, \texttt{columnseprule} y \texttt{multicolsep} permiten personalizar este entorno.
+\end{multicols}
+}
+
+{\scriptsize
+\begin{multicols}{4}
+\blindtext
+\end{multicols}
+}
+\end{alertblock}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile,t,shrink]
+\frametitle{Columnas}
+
+{\scriptsize
+\begin{tcolorbox}[colframe=blue!30!white,colback=white,arc=0mm,boxrule=1pt]
+\vspace{-1em}
+\begin{lstlisting}{language=tex}
+\usepacakge{multicol}
+
+\begin{multicols}{3}
+% \columnsep = 3mm % separación entre columnas
+% \columnseprule = 0.4pt % grosor de la línea de separación
+% \multicolsep = 12pt plus 4pt minus 3pt  % separación del resto
+
+\LaTeX{} trae incorporada la posibilidad de...
+
+\columnbreak
+
+Es mucho mejor utilizar alguno...
+\end{multicols}
+
+\begin{multicols}{4}
+Lorem ipsum...
+\end{multicols}
+\end{lstlisting}
+\end{tcolorbox}
+}
+\end{frame}
+
+
+
+\subsection{¿Y después?}
+\begin{frame}
+\frametitle{¿Y después?}
+
+
+
+
+Índices, índices de términos, referencias cruzadas, pies de página, bibliografías, cuadros, teoremas, inclusión de código, música, tipos de documentos, presentaciones, gráficos,...
+\end{frame}
+
+
+\begin{frame}[standout]
+
+{\Large ¿Preguntas?}
+
+\bigskip
+
+{\large Gracias}
+
+\end{frame}
+
+\end{document}
