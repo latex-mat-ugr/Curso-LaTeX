@@ -1,4 +1,4 @@
-#Taller de LaTeX para alumnos de Grado en Matemáticas::Libro
+# Taller de LaTeX para alumnos de Grado en Matemáticas::Libro
 
 ![fc](../Imagenes/fc.jpg)
 
@@ -6,7 +6,7 @@
 
 ***
 
-##Estructura
+## Estructura
 
 Además de la estructura básica que vimos en un documento sencillo, el cuerpo de un libro se puede dividir en tres partes
 
@@ -18,7 +18,7 @@ Además de la estructura básica que vimos en un documento sencillo, el cuerpo d
 
 ***
 
-##frontmatter
+## frontmatter
 
 En esta parte pondremos el título, tabla de contenidos y prólogo
 
@@ -38,7 +38,7 @@ Lás páginas en el `frontmatter` van numeradas con números romanos
 
 ***
 
-##mainmatter
+## mainmatter
 
 En esta parte del libro las páginas se numeran con números indoarábigos
 
@@ -57,7 +57,7 @@ Además de `section` y `paragraph` (y sub...), tenemos partes y capítulos
 
 ***
 
-##backmatter
+## backmatter
 
 Aquí colocaremos la bibliographía y los índices de contenido, de resultados...
 
@@ -81,7 +81,7 @@ También podemos añadir apéndices
 
 ***
 
-##Hipervínculos
+## Hipervínculos
 
 Los comandos
 ```latex
