@@ -4,7 +4,7 @@
 
 ***
 
-#Listas
+# Listas
 
 Podemos empezar una lista con `-` o bien `*`
 ```
@@ -28,7 +28,7 @@ Si queremos numeradas, cambiamos los `*` por un `1.`
 
 ***
 
-#Fórmulas
+# Fórmulas
 
 Esto es una fórmula en línea $(x^2+1)^3$ y además podemos hacer una en
 $$\int_a^b \frac{x+1}{x-1} \mathrm d x.$$
@@ -37,7 +37,7 @@ Las fórmulas en línea las escribimos con `$..$` las centradas con doble `$$` o
 
 ---
 
-#Tablas
+# Tablas
 
 ```markdown
 |Cabecera 1|Cabecera 2| Y 3|
@@ -51,7 +51,7 @@ Las fórmulas en línea las escribimos con `$..$` las centradas con doble `$$` o
 
 ---
 
-#Textos
+# Textos
 
 ```markdown
 En *itálica*, **negrita** y en las dos **_ambos_**.
@@ -60,7 +60,7 @@ En *itálica*, **negrita** y en las dos **_ambos_**.
 
 ___
 
-#Enlaces
+# Enlaces
 
 Sintáxis
 
@@ -78,27 +78,27 @@ y si queremos imágenes, ponemos un ! delante
 
 ---
 
-#Estructura
+# Estructura
 
-##Subtítulo
+## Subtítulo
 
-###Otro nivel
+### Otro nivel
 
 ##### Y otro
 
 Podemos usar de una a seis \# para indicar nivel de profundidad
 
 ```markdown
-#Título
+# Título
 
-##Subtítulo
+## Subtítulo
 
 ...
 ```
 
 ***
 
-#Citas
+# Citas
 
 > Citascomienzan con \>
 > > y se pueden anidar
@@ -112,7 +112,7 @@ Podemos usar de una a seis \# para indicar nivel de profundidad
 
 ---
 
-#Código insertado
+# Código insertado
 
 Código en línea `printf("Hello world\n")`
 
@@ -139,7 +139,7 @@ Se puede especificar el lenguaje usado
 
 ***
 
-#Transparencias
+# Transparencias
 
 Para convertirlo en transparencias hacemos
 
