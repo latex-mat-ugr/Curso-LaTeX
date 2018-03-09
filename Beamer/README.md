@@ -1,4 +1,4 @@
-#Taller de LaTeX para alumnos de Grado en Matemáticas::Transparencias
+# Taller de LaTeX para alumnos de Grado en Matemáticas::Transparencias
 
 ![fc](../Imagenes/fc.jpg)
 
@@ -6,7 +6,7 @@
 
 ***
 
-##Estructura
+## Estructura
 
 El tipo de documento `beamer` es parecido a un artículo o libro
 
@@ -37,7 +37,7 @@ El tipo de documento `beamer` es parecido a un artículo o libro
 
 ***
 
-##Frames
+## Frames
 
 Cada transparencia se corresponde con un cuatro o frame
 
@@ -53,7 +53,7 @@ El título es opcional
 
 ***
 
-##Itemize
+## Itemize
 
 En `beamer` se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento
 
@@ -70,7 +70,7 @@ En `beamer` se pueden hacer pausas cada vez que hay una lista, haciendo que camb
 ```
 ***
 
-##Bloques
+## Bloques
 
 Dentro de una transparencia podemos usar bloques
 
@@ -97,7 +97,7 @@ Los colores y forma (bordes) cambian dependiendo del estilo seleccionado
 
 ***
 
-##Pausas
+## Pausas
 
 Con el comando `\pause` podemos hacer que se muestre el texto de una transparencia hasta dicha marca
 
@@ -118,7 +118,7 @@ Y otra cosa más
 
 ***
 
-##Sobreimpresiones
+## Sobreimpresiones
 
 A veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros
 
@@ -142,7 +142,7 @@ O cualquier otra cosa.
 
 ***
 
-##Bibliografía
+## Bibliografía
 
 ```latex
 \begin{thebibliography}{10}
@@ -157,7 +157,7 @@ El código anterior, al igual que `\maketitle`, crea una nueva transparencia con
 
 ***
 
-##Recomendaciones
+## Recomendaciones
 
 - No hacer demasiadas transparencias
 
