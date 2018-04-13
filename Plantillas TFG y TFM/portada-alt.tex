@@ -1,0 +1,102 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[utf8]{inputenc}
+%\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{kpfonts}
+\usepackage[spanish]{babel}
+\usepackage{emptypage}
+\renewcommand{\shorthandsspanish}{}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{latexsym} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fourier}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=red, citecolor=blue]{hyperref}
+\newtheorem{defi}{Definici\'on}
+\newtheorem{prop}{Proposici\'on}
+\newtheorem{teo}{Teorema}
+\newtheorem{lem}{Lema}
+\newtheorem{obs}{Observaci\'on}
+
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+	\put(0,0){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight,%
+			keepaspectratio]{fondo.pdf}%
+			\vfill
+}}}
+
+
+\title{Título del trabajo}
+\author{Autor del trabajo}
+
+\begin{document}
+
+\begin{titlepage}
+	
+\AddToShipoutPicture*{\BackgroundPic}
+	
+	\newlength{\centeroffset}
+	\setlength{\centeroffset}{-0.5\oddsidemargin}
+	\addtolength{\centeroffset}{0.5\evensidemargin}
+	\thispagestyle{empty}
+
+\vspace*{4cm}
+
+	\noindent\hspace*{\centeroffset}\begin{minipage}{\textwidth}
+		
+		\centering
+		%\includegraphics[width=0.4\textwidth]{logougrnuevo.jpg}\\[1.4cm]
+		
+		\textsc{ \huge Trabajo Fin de Máster\\[0.2cm]}
+		\medskip
+		\textsc{ \Large Máster en Matemáticas}\\[0.8cm]
+		% Upper part of the page
+		% 
+		% Title
+		
+		{\Huge\bfseries \makeatletter \@title \makeatother
+		}
+		
+	\end{minipage}
+	
+	\vspace{2cm}
+	\noindent\hspace*{\centeroffset}\begin{minipage}{\textwidth}
+		\centering
+		\textbf{\large Autor}\\ {\large \makeatletter \@author \makeatother}\\[5.5ex]
+%		\textbf{\large Tutor}\\
+%		{\large Pedro A. García-Sánchez}\\[1.6cm]
+%		\textsc{---}\\
+%		Granada, febrero de 2018
+	\end{minipage}
+	%\addtolength{\textwidth}{\centeroffset}
+	%\vspace{\stretch{2}}
+	
+	\vfill
+	\begin{minipage}[t][1cm][t]{1.7cm}
+	{\large  {\bf Tutor:}}
+	\end{minipage}\hfill
+	\begin{minipage}[t][1cm][t]{7cm}
+	{\large Nombre del Tutor\\
+	\emph{Departamento del Tutor}}\\[.7em]
+	{\large Nombre del otro Tutor\\
+	\emph{Departamento del otro}}
+	\end{minipage}\hfill
+	\begin{minipage}[t][1cm][t]{3.5cm}
+	\large{Septiembre 2015}
+	\end{minipage}
+	
+\end{titlepage}
+
+
+\end{document}
