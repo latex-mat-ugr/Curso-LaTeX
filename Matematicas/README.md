@@ -11,7 +11,7 @@ Hay dos formas de escribir matemáticas: en la misma línea o centrado en una l�
 $\cos(x+y)^{2}=\sqrt{2+x^2}$
 ```
 produce $\cos(x+y)^{2}=\sqrt{2+x^2}$.
-* Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula entre \\[ \\] o con dólares dobles. Es recomendable la primera opción. Por ejemplo
+* Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula entre `\[ \]` o con dólares dobles. Es recomendable la primera opción. Por ejemplo
 ```latex
 \[
 \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
