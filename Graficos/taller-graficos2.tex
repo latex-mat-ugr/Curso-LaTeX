@@ -15,6 +15,7 @@
 \usepackage{pgf,tikz}
 \usepackage{tkz-graph}
 \usetikzlibrary{shapes.gates.logic.US,trees,positioning,arrows}
+\usetikzlibrary{spy}
 % PGFPlots
 \usepackage{pgfplots}
 \pgfplotsset{width=6cm,compat=1.12} %{compat=yourversion}
@@ -51,7 +52,8 @@ Do it yourself (DIY)
 Esto es,  el propio \LaTeX \  interpreta una serie de instrucciones y genera el 
 gr\'afico.  Otra cosa distinta es c\'omo generamos dicho c\'odigo...
 
-{\small \color{red} Ventaja: por ejemplo este documento con $26$ gr\'aficas ocupa 340 KB!!!. }
+{\small \color{red} Ventajas: Alta calidad y ficheros con peso reducido.}
+%por ejemplo este documento con $31$ gr\'aficas ocupa 438 KB!!!. }
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -232,9 +234,54 @@ $\Gamma_4\equiv $  \begin{minipage}{4cm}
 \end{tabular}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{C\'odigo adaptado TikZ: ejemplo 3}
+\definecolor{darkgray}{rgb}{0.25,0.25,0.25}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+
+\begin{tikzpicture}
+   [scale=0.8,line cap=round,line join=round,x=2cm,y=2cm, 
+    %using the 'spy' to magnify a part of the picture
+    spy using outlines={rectangle,lens={scale=3}, size=6cm, connect spies}]
+%main layer
+%creating the grid
+ \draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=2cm,ystep=2cm]
+                                                (-0.1,-0.1) grid (2.3,2.3);
+%ejes
+ \draw (-0.2,0) -- (2.4,0);
+
+ \draw (0,-0.2) -- (0,2.6);
+
+%funcion
+ \draw[smooth,samples=1000,domain=0.0:2.2]
+  plot(\x,{8*\x-32.4*\x^2+53.48*\x^3-42.11*\x^4+17.594*\x^5
+                           -3.99*\x^6+0.465713*\x^7-0.0217374*\x^8});
+%using the 'spy' to magnify a piece of the picture
+ \spy [blue] on (0.4,0.4) in node [left] at (6.5,1);
+\end{tikzpicture}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{C\'odigo adaptado TikZ: ejemplo 4}
+\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm,spy using outlines={circle,lens={scale=2.5}, size=2.5cm, connect spies}]
+\draw[color=red,thick] plot[smooth,tension=0.3] coordinates{(-1,-1) (0,1) (1,-1.5) (2,2.5)} node[right]{\footnotesize $f(x)$};
+\draw (-1.5,0)--(2.5,0);
+\draw[color=black] (0pt,-2pt) -- (0pt,2pt) node[above] {\footnotesize $a$};
+\draw[shift={(0.35,0)},color=black] (0pt,-1pt) -- (0pt,1pt) node[below] {\footnotesize $a+r$};
+\draw[shift={(-0.35,0)},color=black] (0pt,-1pt) -- (0pt,1pt) node[below] {\footnotesize $a-r$};
+\draw[fill=green] (-0.01,1) circle (1.5pt)  node[above]{\footnotesize $(a,f(a))$};
+\draw[thick] (-0.35,0)--(0.35,0);
+\draw[shift={(1,0)},color=black] (0pt,-2pt) -- (0pt,2pt) node[above] {\footnotesize $b$};
+\draw[fill=green] (0.99,-1.5) circle (1.5pt)  node[below]{\footnotesize $(b,f(b))$};
+\spy [color=darkgray] on (0,1) in node at (-3,0);
+\spy [color=darkgray] on (1,-1.5) in node at (4,0);
+\end{tikzpicture}
+\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame} {C\'odigo adaptado TikZ: ejemplo 3}
+\begin{frame} {C\'odigo adaptado TikZ: ejemplo 5}
 No hay que pensar que \'unicamente podemos hacer gr\'aficos. 
 Estas herramientas nos dan mucho juego a la hora de hacer por ejemplo 
 presentaciones.
@@ -442,9 +489,6 @@ $ $ %\vspace{1cm}
 \end{frame}
 
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Código TikZ generado con otro programa
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -575,6 +619,78 @@ que acabamos de realizar (puede dar errores no sencillos de detectar/corregir).
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Ejercicio 1:}
+Empleando el modificador \verb|view={giro eje z}{giro eje x}| de \verb|axis| prueba a cambiar el 
+punto de vista de la visualizaci\'on (detalles en \cite{ManualPGFPlots}).
+
+\begin{figure}{r}
+\begin{tikzpicture} \begin{axis}[
+    title={$x \exp(-x^2-y^2)$},
+    xlabel=$x$, ylabel=$y$,
+    view={-30}{30},
+    small,
+] \addplot3[
+    surf,
+    domain=-2:2,
+    domain y=-1.3:1.3,
+]
+    {exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+%\end{wrapfigure}
+%\vspace{1cm}
+%\begin{tikzpicture} 
+%\begin{axis}[
+%    title={$x \exp(-x^2-y^2)$},
+%    xlabel=$x$, ylabel=$y$,
+%    small] 
+%\addplot3[surf,
+%    domain=-2:2,
+%    domain y=-1.3:1.3,
+%]{exp(-x^2-y^2)*x};
+%\end{axis}
+%\end{tikzpicture}
+\caption{Gr\'afico tridimensional girado}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Ejercicio 2:}
+Empleando el modificador \verb|colorbar right| de \verb|axis| prueba a añadir una barra con 
+el c\'odigo de colores (detalles en \cite{ManualPGFPlots}).
+
+\begin{figure}{r}
+\begin{tikzpicture} \begin{axis}[
+    title={$x \exp(-x^2-y^2)$},
+    xlabel=$x$, ylabel=$y$,
+    colorbar right,
+    small,
+] \addplot3[
+    surf,
+    domain=-2:2,
+    domain y=-1.3:1.3,
+]
+    {exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+%\end{wrapfigure}
+%\vspace{1cm}
+%\begin{tikzpicture} 
+%\begin{axis}[
+%    title={$x \exp(-x^2-y^2)$},
+%    xlabel=$x$, ylabel=$y$,
+%    small] 
+%\addplot3[surf,
+%    domain=-2:2,
+%    domain y=-1.3:1.3,
+%]{exp(-x^2-y^2)*x};
+%\end{axis}
+%\end{tikzpicture}
+\caption{Gr\'afico tridimensional}
+\end{figure}
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -582,11 +698,13 @@ que acabamos de realizar (puede dar errores no sencillos de detectar/corregir).
 
 \begin{frame}[fragile]{Bibliograf\'ia}
 \begin{thebibliography}{10}
-\bibitem{ManualLatexWikilibros} \href{http://es.wikibooks.org/wiki/Manual_de_LaTeX/Insertar_figuras_en_un_documento}{Manual de Latex/ Insertar figuras en un documento- Wikilibros.}
+\bibitem{WebTikZ} \href{http://www.texample.net/tikz/}{Web TikZ}
 
-\bibitem{ManualImportingGraphics}\href{http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics}{Latex/Importing Graphics-Wikilibros.}
+\bibitem{ManualTikZ} \href{http://www.texample.net/media/pgf/builds/pgfmanual_3.0.1a.pdf}{Manual TikZ}
 
-%\bibitem{wrapfigure} \href{http://www.ctan.org/pkg/wrapfig}{P\'agina del paquete wrapfig, ctang.org}
+\bibitem{WebPGFPlots}\href{http://pgfplots.sourceforge.net/}{Web PGFPlots}
+
+\bibitem{ManualPGFPlots} \href{http://pgfplots.sourceforge.net/pgfplots.pdf}{Manual PGFPlots}
 
 \end{thebibliography}
 \end{frame}

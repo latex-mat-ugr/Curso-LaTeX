@@ -103,7 +103,7 @@ Inserci\'on del gr\'afico en el documento:
 \end{verbatim}
 Mediante los par\'ametros se puede modificar el aspecto:\\
 \begin{verbatim}height=0.5\textwidth, keepaspectratio,angle=90, ....\end{verbatim}
-Para profundizar ver \cite{ManualImportingGraphics,ManualLatexWikilibros} .
+Para profundizar ver documentaci\'on paquete graphicx \cite{DocGraphicx} .
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
@@ -149,11 +149,12 @@ Este fichero gr\'afico se puede insertar en un documento
 
 \begin{frame}[fragile]{Modificaci\'on de la imagen}
 \LaTeX $ $ permite modificar mediante par\'ametros el aspecto de la figura insertada.\\
-\verb|[trim = 10mm 5mm 50mm 55mm, clip,width=0.7\textwidth]|
-
+\verb|[ trim = 10mm 5mm 50mm 55mm, clip,width=0.6\textwidth]|
+\verb| %trim = <left> <lower> <right> <upper> |
 \begin{figure}
 \begin{center}
-\includegraphics[trim = 10mm 5mm 50mm 55mm, clip,width=0.7\textwidth]{graficos/sin.pdf}
+\includegraphics[trim = 10mm 5mm 50mm 55mm, clip,width=0.6\textwidth]{graficos/sin.pdf}
+
 \end{center}
 \caption{Gr\'afico recortado y ampliado \label{figura:sinestilo}}
 \end{figure}
@@ -325,7 +326,7 @@ se pueden superponer `el objeto' en la posicion `coordenadas'.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
 \begin{exampleblock}{Ejercicio 5: Superposici\'on de varios gr\'aficos}
-{\scriptsize OJO!  Requiere  \href{http://nopiensoarreglar.blogspot.com.es/2007/12/cmo-hacer-un-fondo-transparente-en-gimp.html}{fondo transparente} en la figura a superponer (objeto).}
+{\scriptsize OJO!  Requiere  \href{https://docs.gimp.org/2.10/es/gimp-tutorial-quickie-separate.html}{fondo transparente} en la figura a superponer (objeto).}
 %\includegraphics[angle=0, width=3cm]{./graficos/ciclista}
 \includegraphics[angle=270,width=9cm]{./graficos/fig_9}
 \put(-100,-205){\includegraphics[angle=-7,scale=0.4]{./graficos/ciclista}}
@@ -335,7 +336,7 @@ se pueden superponer `el objeto' en la posicion `coordenadas'.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
 \begin{exampleblock}{Soluci\'on: Superposici\'on de varios gr\'aficos}
-{\scriptsize OJO!  Requiere  \href{http://nopiensoarreglar.blogspot.com.es/2007/12/cmo-hacer-un-fondo-transparente-en-gimp.html}{fondo transparente} en la figura a superponer (objeto).}
+{\scriptsize OJO!  Requiere  \href{https://docs.gimp.org/2.10/es/gimp-tutorial-quickie-separate.html}{fondo transparente} en la figura a superponer (objeto).}
 \begin{verbatim}
 \includegraphics[angle=270,width=9cm]{./graficos/fig_9}
 \put(-100,-205){
@@ -373,7 +374,63 @@ por \LaTeX $ $ pueden ser f\'acilmente modificables, por ejemplo:
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\begin{exampleblock}{Ejercicio propuesto 1}
+Insertar un subgr\'afico dentro de otro gr\'afico.
+\end{exampleblock}
+\begin{figure}
+\includegraphics[angle=270,width=8cm]{./graficos/fig_9}
+\put(-100,-35){
+\includegraphics[angle=270,scale=0.1]{./graficos/fig_10}
+}
+\end{figure}
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\begin{exampleblock}{Ejercicio propuesto 2}
+Comprueba que los par\'ametros de comando includegraphics angle y width no son comutativos.
+\end{exampleblock}
+\begin{figure}
+\includegraphics[angle=270,width=4cm]{./graficos/fig_9}
+\hspace{0.5cm}
+\includegraphics[width=4cm,angle=270]{./graficos/fig_10}
+\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\begin{exampleblock}{Ejercicio propuesto 3}
+Recorta  y agranda  la niña de la imagen reflejada.
+\end{exampleblock}
+\begin{figure}
+\includegraphics[width=5cm]{./graficos/sorpresa}
+\hspace{0.5cm}
+\includegraphics[trim = 50mm 0mm 190mm 40mm, clip,width=5cm]{./graficos/sorpresa}
+%trim = <left> <lower> <right> <upper>,
+\end{figure}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\begin{exampleblock}{Ejercicio propuesto 4}
+Realiza con \LaTeX \ un montaje inspirándote en el siguiente
+\begin{figure}
+\includegraphics[trim = 50mm 0mm 190mm 40mm, clip,width=5cm]{./graficos/sorpresa}
+\hspace{-0.13cm}
+\reflectbox{
+\includegraphics[trim = 50mm 0mm 190mm 40mm, clip,width=5cm]{./graficos/sorpresa}
+}
+\put(-210,110){{\color{green}  \LARGE Powered by \LaTeX}}
+\end{figure}
+\end{exampleblock}
+\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -382,6 +439,8 @@ por \LaTeX $ $ pueden ser f\'acilmente modificables, por ejemplo:
 \bibitem{ManualLatexWikilibros} \href{http://es.wikibooks.org/wiki/Manual_de_LaTeX/Insertar_figuras_en_un_documento}{Manual de Latex/ Insertar figuras en un documento- Wikilibros.}
 
 \bibitem{ManualImportingGraphics}\href{http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics}{Latex/Importing Graphics-Wikilibros.}
+
+\bibitem{DocGraphicx}\href{http://texdoc.net/texmf-dist/doc/latex/graphics/graphicx.pdf}{Documentaci\'on del paquete graphicx}
 
 \bibitem{wrapfigure} \href{http://www.ctan.org/pkg/wrapfig}{P\'agina del paquete wrapfig, ctang.org}
 
