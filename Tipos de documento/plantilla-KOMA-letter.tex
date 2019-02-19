@@ -1,0 +1,71 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% Plantilla de la clase scrlttr2 del paquete KOMA-Script
+% Francisco Torralbo Torralbo
+% 2019-02-19
+
+\documentclass{scrlttr2}
+\KOMAoptions{%
+  fontsize=12pt,      % Tamaño de letra
+  paper=a4,           % Tamaño del papel
+  pagenumber=false,   % ¿Incluir número de página?
+  parskip=half,       % Espacio entre párrafos: half o full
+  foldmarks=false,    % Muestra marcas para doblar la carta.
+  fromalign=right,    % Alinéa los datos del remitente: right o left
+  fromlogo=true,      % Muestra un logo en la cabecera.
+  fromemail=false,    % Muestra el email del remitente en la cabecera
+  fromphone=false,    % Muestra el teléfono del remitente en la cabecera
+  fromrule=afteraddress, % Muestra una línea separando la cabecera
+  backaddress=false
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\selectlanguage{spanish}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype} % http://www.khirevich.com/latex/microtype/
+
+\usepackage{graphicx}
+
+% Datos del remitente
+\setkomavar{fromname}{Albert Einstein} % Nombre del remitente 
+\setkomavar{fromaddress}{Dpt.\ Physics \\ Institute for Advanced Study \\ 1 Einstein Drive \\ Princeton, New Jersey } % Dirección del remitente
+\setkomavar{fromphone}{666 314 159} % Teléfono del remitente (opcional)
+\setkomavar{fromemail}{albert.einstein@ias.edu} %Email remitente (opcional)
+\setkomavar{fromlogo}{\includegraphics[width=2.5cm]{img/logo-ias}} %logo (opcional)
+\setkomavar{signature}{Albert Einstein\\ \includegraphics[width=0.5\textwidth]{img/firma}} % Firma del remitente. Se imprime después del cierre de la carta. Puede incluirse un gráfico con la firma
+
+\setkomavar{subject}{Solicitud de certificado} % Motivo de la carta (opcional)
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks, urlcolor=black, 
+    pdfauthor={Francisco Torralbo},
+    pdftitle={Plantilla de la clase scrlttr2 del paquete KOMA-Script},
+    pdfsubject={Plantilla de uso de la clase scrlttr2 del paquete KOMA-Script con diversas opciones explicadas en el archivo .tex}
+}
+
+\begin{document}
+\begin{letter}{
+   Destinatario\\  Cargo \\  Dirección }
+
+\opening{Estimado Sr. Destinatario:}  
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+\closing{Reciba un cordial saludo. Atentamente,} 
+
+\ps PD: Postdata
+
+\end{letter}
+\end{document}

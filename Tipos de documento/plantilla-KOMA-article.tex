@@ -1,0 +1,71 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% Plantilla de la clase `scrartcl` del paquete KOMA-script
+% Francisco Torralbo Torralbo
+% 2019-02-19
+
+\documentclass[a4paper]{scrartcl}
+
+\KOMAoptions{%
+  fontsize=12pt,      % Tamaño de fuente
+  paper=a4,           % Tamaño del papel
+  %titlepage=true,    % Reserva una página para el título.
+  twoside=true,       % Para imprimir a doble página
+  headings=normal,    % Tamaño de letra para los títulos: small, normal, big
+  parskip=half,       % Espacio entre párrafos: full (una línea) o half (media línea)
+  headsepline=false,  % Una linea separa la cabecera del texto
+  %listof=totoc,      % Añadir a los contenidos la lista de tablas y figuras
+  %bibliography=totoc,% Añadir a los contenidos una entrada para la bibliografía
+  %bibliography=openstyle,  % oldstyle
+}
+
+\usepackage[activeacute,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\selectlanguage{spanish}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.5} % Aumenta el espacio vertical entre las filas de un entorno tabular
+
+\usepackage{graphicx}
+  % path to the graphics folder
+  \graphicspath{{img/}}
+
+\usepackage{hyperref}
+\hypersetup{%
+  % Descomentar la siguiente línea para crear enlaces con colores. 
+  %colorlinks=true, linktocpage=true, pdfstartview=FitV,%
+  %urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
+  % Descomentar la siguiente línea para crear enlaces en negro (útil para imprimir)
+  colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV,% 
+  pdftitle={Plantilla de la clase \texttt{scrartcl} del paquete KOMA-script},%
+  pdfauthor={Francisco Torralbo},%
+  pdfkeywords={LaTeX, curso, ugr, koma-script},%
+  pdfcreator={pdfLaTeX},%
+  pdfproducer={LaTeX with hyperref}%
+}
+
+\title{Plantilla de la clase \texttt{scrartcl} del paquete KOMA-script}
+\author{Francisco Torralbo Torralbo}
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+
+\subsection{Profundizando}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+\end{document}
