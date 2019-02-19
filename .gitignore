@@ -4,6 +4,8 @@
 *.blg
 *.fdb_latexmk
 *.fls
+*.ilg
+*.ind
 *.log
 *.log
 *.nav
@@ -13,3 +15,4 @@
 tags
 tags.lock
 tags.temp
+.DS_Store
