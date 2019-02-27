@@ -15,7 +15,7 @@ Los documentos se estructuran en diferentes secciones. La clase `article` permit
 1. `\paragraph{}`
 1. `\subparagraph{}`
 
-aunque las dos últimas no son habitualmente usadas. Además, la clase `report` y la clase `book` permiten usar el comando `\chapter{}` para dividir el documento en capítulos. Por defecto estos comandos tienen usan una numeración jerárquica de mayor a menor nivel pero tienen una versión *con asterísco* para producir un encabezado (de capítulo, sección, subseción,...) sin numerar.
+Aunque las dos últimas no son habitualmente usadas. Además, la clase `report` y la clase `book` permiten usar el comando `\chapter{}` para dividir el documento en capítulos. Por defecto estos comandos tienen usan una numeración jerárquica de mayor a menor nivel pero tienen una versión *con asterisco* para producir un encabezado (de capítulo, sección, subsección,...) sin numerar. Por ejemplo `\section*{Introducción}` producirá una nueva sección sin numeración.
 
 Existe además una opción de estructura adicional que no afectan a la numeración: `\part{}`, usada para dividir cualquier documento en partes.
 
@@ -25,7 +25,7 @@ Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras 
 La clase `beamer` es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta [Beamer](Beamer) para más detalles.
 
 ## El paquete [KOMA-Script](https://www.ctan.org/pkg/koma-script)
-Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` cuidando especialmente la tipografía y la versitilidad. Añade además una clase `letter`. Además también ofrece:
+Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` cuidando especialmente la tipografía y la versatilidad. Añade además una clase `letter`. Además también ofrece:
 - Un [paquete para calcular el área de impresión](https://www.ctan.org/pkg/typearea) 
 - paquetes para cambiar y definir fácilmente estilos de página
 
