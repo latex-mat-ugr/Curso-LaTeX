@@ -34,8 +34,24 @@ La [documentación](https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc
 
 La clase [memoir](https://ctan.org/pkg/memoir)
 
-## Miscelánea
 
-### La clase Eduard Tufte
+## Miscelánea
+En la sección precedente hemos introducido las clases de documento del paquete `KOMA-script` por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En esta sección vamos a mencionar algunas de ellas por si calidad y personalización.
+
+### La clase `memoir`
+La [clase memoir](https://www.ctan.org/pkg/memoir?lang=en) es otra clase de documento popular entre los usuarios de LaTeX con un gran cantidad de opciones de personalización. Su completo [manual](http://mirrors.nxthost.com/ctan/macros/latex/contrib/memoir/memman.pdf) nos permitirá sacarle todo el partido a la misma.
+
+### La clase Edward Tufte
+El proyecto [Tufte-LaTeX](https://tufte-latex.github.io/tufte-latex/) ha creado dos clases de documento inspiradas en los trabajos de de [Edward Tufte](https://www.edwardtufte.com/tufte/) profesor emérito de la universidad de Yale autor de cuatro influyentes libros sobre visualización de datos. 
+
+Se trata de dos [clases de documento](https://ctan.org/pkg/tufte-latex) para LaTeX [`handout`](http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-handout.pdf) y [`book`](http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-book.pdf) cuya característica principal es una cuidada tipografía y amplios márgenes para la inclusión de abundantes notas, referencias e imágenes.
+
+Podemos recrear hasta cierto punto la clase `tufte-handout` personalizando la clase `scrartcl`. La [plantilla-KOMA-margen-amplio](plantill-KOMA-margen-amplio.tex) ha usado la clase `scrartcl` cambiando el tipo de fuente, el diseño de página (para permitir un amplio margen) y el paquete `sidenote` (con ciertas modificaciones) para incluir notas y figuras al margen.
 
 ### Las clases definidas por la American Mathematical Society
+La American Mathematical Society (AMS), responsable de los populares paquetes para matemáticas [`amsmath`](https://www.ctan.org/pkg/amsmath), y [`amsthm`](https://www.ctan.org/pkg/amsthm), creó [tres clases de documento](https://www.ctan.org/pkg/amscls) para su uso en LaTeX que siguen la guía de estilo de sus publicaciones:
+- [`amsart`](https://www.ctan.org/pkg/amsart) para artículos de investigación.
+- [`amsbook`](https://www.ctan.org/pkg/amsbook) para la creación de libros. 
+- [`amsproc`](https://www.ctan.org/pkg/amsproc) para actas de un congreso.
+
+Si nos gusta el estilo de dichos documentos podemos usarlos sin problemas para nuestros propios documentos.
