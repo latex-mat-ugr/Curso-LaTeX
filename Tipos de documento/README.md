@@ -36,7 +36,7 @@ La clase [memoir](https://ctan.org/pkg/memoir)
 
 
 ## Miscelánea
-En la sección precedente hemos introducido las clases de documento del paquete `KOMA-script` por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En esta sección vamos a mencionar algunas de ellas por si calidad y personalización.
+En la sección precedente hemos introducido las clases de documento del paquete `KOMA-script` por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En [CTAN](https://ctan.org/topic/class) se puede ver una lista de paquetes que proporcionan clases de documento alternativas. En esta sección vamos a mencionar algunas de ellas por su calidad y personalización.
 
 ### La clase `memoir`
 La [clase memoir](https://www.ctan.org/pkg/memoir?lang=en) es otra clase de documento popular entre los usuarios de LaTeX con un gran cantidad de opciones de personalización. Su completo [manual](http://mirrors.nxthost.com/ctan/macros/latex/contrib/memoir/memman.pdf) nos permitirá sacarle todo el partido a la misma.
