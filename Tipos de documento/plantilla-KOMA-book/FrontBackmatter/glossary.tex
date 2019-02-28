@@ -1,0 +1,17 @@
+% !TeX root = ../libro.tex
+% !TeX encoding = latin1
+
+%*******************************************************
+% Glosario
+%*******************************************************
+\manualmark
+\markboth{\textsc{Glosario}}{\textsc{Glosario}} 
+\begingroup 
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    \let\cleardoublepage\relax
+
+\addtocontents{toc}{\protect\vspace{\medskip}} % to have the bib a bit from the rest in the toc
+\addcontentsline{toc}{chapter}{Glosario}
+\printglossary
+\endgroup

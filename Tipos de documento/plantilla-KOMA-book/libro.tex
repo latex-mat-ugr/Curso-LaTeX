@@ -1,0 +1,167 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% Plantilla de la clase `scrbook` del paquete KOMA-script
+% Francisco Torralbo Torralbo
+% 2019-02-27
+
+\documentclass{scrbook}
+
+\KOMAoptions{%
+  fontsize=10pt,        % Tamaño de fuente
+  paper=b5,             % Tamaño del papel
+  twoside=true,         % Para imprimir a doble página
+  headings=normal,      % Tamaño de letra para los títulos: small, normal, big
+  parskip=half,         % Espacio entre párrafos: full (una línea) o half (media línea)
+  headsepline=false,    % Una linea separa la cabecera del texto
+  cleardoublepage=empty,% No imprime cabecera ni pie en páginas en blanco 
+  headsepline=false,	  % Una linea separa la cabecera del texto
+  chapterprefix=false,  % No antepone el texto "capítulo" antes del número
+  appendixprefix=false,	% No antepone el texto "Apéndice" antes de la letra
+  %listof=totoc,		    % Añade a la tabla de contenidos la lista de tablas y figuras
+  index=totoc,			    % Añade a la talba de contenidos una entrada para el índice
+  bibliography=totoc,	  % Añade a la tabla de contenidos una entrada para bibliografía
+  BCOR=5mm,             % Reserva margen interior para la encuadernación. El valor dependerá el tipo de encuadernado y del grosor del libro.
+  % DIV=15,             % Cálcula el diseño de página según ciertos parámetros. Al aumentar el número aumentamos el ancho de texto y disminuimos el ancho del margen
+}
+
+%********************************************************************
+%	PAQUETES 
+%********************************************************************
+\usepackage[utf8]{inputenc} 			    % Codificación de caracteres
+\usepackage[spanish]{babel}           % Idioma
+
+% MATEMÁTICAS
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[mathscr]{eucal} %Proporciona el comando \mathscr para fuentes de tipo manuscrito en modo matemático sin sobreescribir el comando \mathcal
+
+
+% TIPOGRAFÍA
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+% TABLAS Y GRÁFICOS
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.5} % Aumenta el espacio vertical entre las filas de un entorno tabular
+
+\usepackage{graphicx}
+  % Carpeta donde buscar los archivos de imagen por defecto
+  \graphicspath{{img/}}
+
+% CABECERAS
+\usepackage[automark]{scrlayer-scrpage}
+
+% VARIOS
+\usepackage{xspace} % Para problemas de espaciado al definir comandos
+%\usepackage{showkeys}	% Muestra las etiquetas del documento. Útil para revisar las referencias cruzadas.
+% \usepackage{showframe}  % Dibuja la estructura interna del documento: cabecera y pie de página, margen, área principal del texto. 
+% \usepackage[a4, odd, center, pdflatex]{crop} % Permite imprimir el documento en un a4 (si el tamaño es más pequeño) mostrando unas guías de corte. Útil para imprenta.
+
+% ********************************************************************
+% ÍNDICE 
+% ********************************************************************
+% Usar el comando \index{} para añadir un elemento e \index{main!sub} para añadir un elementos "sub" bajo la categoría "main".
+% Ejemplo: \index{espacio homogéneo}, \index{superficie!mínima}
+
+% Para generar el índice hay que compilar el documento con MakeIndex. Generalmente los editores se encargan de ello automáticamente.
+\usepackage{makeidx}
+\makeindex
+
+% ********************************************************************
+% COMANDOS
+% ********************************************************************
+% Cargamos un archivo externo donde hemos incluido todos los comandos
+% propios que vamos a usar en el documento.
+\input{packages/comandos.tex} 	% Comandos definidos por el usuario
+
+% ********************************************************************
+% INFORMACIÓN DEL LIBRO Y EL AUTOR
+% ********************************************************************
+\newcommand{\myTitle}{Institutiones calculi differentialis}
+\newcommand{\myName}{Leonard Euler\xspace}
+\newcommand{\myDegree}{\textsc{Doctor en Matematicas}\xspace}
+\newcommand{\myDepartment}{Departamento de Matematicas\xspace}
+\newcommand{\myUni}{\protect{Universidad de Basel}\xspace}
+\newcommand{\myLocation}{Basel, Suiza\xspace}
+\newcommand{\myTime}{Febrero 2019\xspace}
+
+% ********************************************************************
+% HYPERREFERENCES
+% ********************************************************************
+\usepackage{hyperref}
+\hypersetup{%
+	% uncomment the following line if you want to have color links
+    %colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,%
+    % uncomment the following line if you want to have black links (e.g., for printing)
+    colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV,% 
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    hypertexnames=true, pdfhighlight=/O,%hyperfootnotes=true,%nesting=true,%frenchlinks,%
+    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+    pdftitle={\myTitle},%
+    pdfauthor={\textcopyright\ \myName, \myUni},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX with hyperref and classicthesis}%
+}
+
+\begin{document}
+
+%********************************************************************
+% FRONTMATTER
+%********************************************************************
+\frontmatter % Desactiva la numeración de capítulos y usa numeración romana para las páginas
+
+\pagestyle{plain} % No imprime cabeceras
+
+\include{FrontBackmatter/Titlepage}
+\include{FrontBackmatter/DirtyTitlepage}
+\include{FrontBackmatter/Titleback}
+\cleardoublepage\include{FrontBackmatter/Dedication}
+\cleardoublepage\include{FrontBackmatter/Foreword}
+\cleardoublepage\include{FrontBackmatter/Acknowledgments}
+
+\pagestyle{scrheadings} % A partir de ahora sí imprime cabeceras
+
+\cleardoublepage\include{FrontBackmatter/Contents}
+\cleardoublepage\include{FrontBackmatter/introduction}
+
+%********************************************************************
+% MAINMATTER
+%********************************************************************
+\mainmatter % activa la numeración de capítulos, resetea la numeración de las páginas y usa números arábigos
+
+\cleardoublepage\part{Primera parte} % Dividir un libro en partes es opcional
+\include{capitulos/chapter01}
+% Añadir tantos capítulos como sea necesario
+
+\cleardoublepage\part{Segunda parte}
+\include{capitulos/chapter02}
+
+%********************************************************************
+% APPENDIX: Opcional
+%********************************************************************
+\appendix % Reinicia la numeración de los capítulos y usa letras para numerarlos
+\include{capitulos/appendix01}
+% Añadir tantos apéndices como sea necesario 
+
+
+%********************************************************************
+% BACKMATTER
+%********************************************************************
+
+\backmatter % Desactiva la numeración de los capítulos
+
+\cleardoublepage
+\manualmark \markboth{\textsc{Índice}}{\textsc{Índice}} 
+\printindex
+
+%********************************************************************
+% BIBLIOGRAFÍA
+%********************************************************************
+\bibliographystyle{alpha}
+\bibliography{library.bib}
+
+
+\end{document}
