@@ -30,9 +30,9 @@ Este paquete proporciona un reemplazo moderno para las clases `article`, `report
 - paquetes para cambiar y definir fácilmente estilos de página
 
 La [documentación](https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf) es extensa y a veces muy técnica pero merece la pena usar este tipo de documentos por las siguientes razones:
+- Todos los elementos del mismo pueden personalizarse de forma sencilla.
+- Permite cambiar varios parámetros del diseño e página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.
 
-
-La clase [memoir](https://ctan.org/pkg/memoir)
 
 
 ## Miscelánea
