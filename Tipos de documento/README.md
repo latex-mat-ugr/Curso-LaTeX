@@ -33,7 +33,39 @@ La [documentación](https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc
 - Todos los elementos del mismo pueden personalizarse de forma sencilla.
 - Permite cambiar varios parámetros del diseño e página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.
 
+### Personalización de los elementos de página en las clases del paquete KOMA-Script
 
+Cada uno de los elementos de un documento: título, nombre del autor, secciones y capítulos, fecha, dedicatoria, citas, pies de página,... tienen un tamaño, tipo de fuente, estilo y color predefinido pero pueden cambiarse a voluntad. Para ello las clases del paquete KOMA-Script proporcionan dos comandos `\setkomafont` y `\addtokomafont` que permiten cambiar dicho estilo. En la [documentación del paquete](http://www.texdoc.net/texmf-dist/doc/latex/koma-script/scrguien.pdf) (ver pp. 60--63) podemos encontrar una lista completa de todos los elementos susceptibles de ser cambiados. Destacaremos aquí los más habituales:
+
+- `title` formato para el título (comando `\title`)
+- `author` formato para el nombre del autor (comando `\author`) 
+- `titlehead` formato para la cabecera sobre el título (comando `\titlehead`)
+- `subject` formato para el tema del documento (comando `\subject`)
+- `date` formato para la fecha (comando `\date`)
+- `part` formato para las partes del documento (comando `\part`)
+- `chapter` formato para los capítulos (comando `\chapter`)
+- `chapterprefix` formato para el texto "Capítulo" que suele anteponerse al nombre del capítulo 
+- `section` formato para las secciones (comando `\section`)
+- `subsection` formato para las subseciones (comando `\subsection`)
+- `minisec` formato para las *minisecciones* (comando `\minisec`)
+- `dictum` formato para las citas (comando `\dictum`)
+- `caption` formato para el título de una figura o tabla (comando `\caption`) 
+- `captionlabel` formato para la etiqueta del título de una figura o tabla (comando `\caption`) 
+- `footnote` formato para las notas al pie de página (comando `\footnote`) 
+- `pagennumber` formato para los números de página (comando `\footnote`) 
+
+El uso de los comandos `\setkomafont` y `\addtokomafont` es el siguiente:
+
+```tex
+\setkomafont{elemento}{valor}
+```
+donde elemento es uno de la lista anterior y *valor* es el estilo que queremos aplicar. Entre los valores más habituales están los siguientes:
+- `\rmfamily`, `\sffamily`, `\ttfamily` para el tipo de letra. 
+- `\upshape`, `\itshape`, `\slshape`, `\scshape` para el estilo 
+- `\mdseries`, `\bfseries`, `\normalfont` para el grosor 
+- `\Huge`, `\huge`, `\LARGE`, `\Large`, `\large`, `\normalsize`, `\small`, `\footnotesize`, `\scriptsize`, `\tiny` para el tamaño.
+
+Además, al redefinir un estilo podemos usar como *valor*`\usefontofkomafont{elemento}` `\usesizeofkomafont{elemento}` y copiaremos la tipografía o el tamaño del elemento deseado.
 
 ## Miscelánea
 En la sección precedente hemos introducido las clases de documento del paquete `KOMA-script` por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En [CTAN](https://ctan.org/topic/class) se puede ver una lista de paquetes que proporcionan clases de documento alternativas. En esta sección vamos a mencionar algunas de ellas por su calidad y personalización.
