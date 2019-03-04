@@ -60,10 +60,14 @@
 % ÍNDICE 
 % ********************************************************************
 % Usar el comando \index{} para añadir un elemento e \index{main!sub} para añadir un elementos "sub" bajo la categoría "main".
+% Usar \index{termino|textbf} para dar formato al número de página (en este caso en negrita).
+% Usar \index{termino|see{termino relacionado}} para crear una referencia cruzada a otro término en el índice.
+
 % Ejemplo: \index{espacio homogéneo}, \index{superficie!mínima}
 
 % Para generar el índice hay que compilar el documento con MakeIndex. Generalmente los editores se encargan de ello automáticamente.
 \usepackage{makeidx}
+%\usepackage{showidx} % Muestra en el margen del documento las entradas añadidas al índice. Útil para revisar el documento.
 \makeindex
 
 % ********************************************************************
@@ -132,7 +136,21 @@
 %********************************************************************
 \mainmatter % activa la numeración de capítulos, resetea la numeración de las páginas y usa números arábigos
 
-\cleardoublepage\part{Primera parte} % Dividir un libro en partes es opcional
+\setpartpreamble[c][0.75\linewidth]{%
+  \bigskip % Deja un espacio vertical en la parte superior
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+  no sea takimata sanctus est Lorem ipsum dolor sit amet.
+}
+\part{Primera parte} % Dividir un libro en partes es opcional
+\setchapterpreamble[c][0.75\linewidth]{%
+  \sffamily
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+  no sea takimata sanctus est Lorem ipsum dolor sit amet.\par\bigskip
+}
 \include{capitulos/chapter01}
 % Añadir tantos capítulos como sea necesario
 
@@ -155,11 +173,13 @@
 
 \cleardoublepage
 \manualmark \markboth{\textsc{Índice}}{\textsc{Índice}} 
+\setindexpreamble{Todas los números de página impresos en \textbf{negrita} hacen referencia a la definición del término. Los números de página impresos normalmente hacen referencia a las páginas donde dicho término es usado.\par\bigskip}
 \printindex
 
 %********************************************************************
 % BIBLIOGRAFÍA
 %********************************************************************
+\setbibpreamble{Las referencias se listan por orden alfabético. Aquellas referencias con más de un autor están ordenadas de acuerdo con el primer autor.\par\bigskip}
 \bibliographystyle{alpha}
 \bibliography{library.bib}
 
