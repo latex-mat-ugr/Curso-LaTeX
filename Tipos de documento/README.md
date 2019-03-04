@@ -59,13 +59,14 @@ El uso de los comandos `\setkomafont` y `\addtokomafont` es el siguiente:
 ```tex
 \setkomafont{elemento}{valor}
 ```
-donde elemento es uno de la lista anterior y *valor* es el estilo que queremos aplicar. Entre los valores más habituales están los siguientes:
-- `\rmfamily`, `\sffamily`, `\ttfamily` para el tipo de letra. 
-- `\upshape`, `\itshape`, `\slshape`, `\scshape` para el estilo 
-- `\mdseries`, `\bfseries`, `\normalfont` para el grosor 
+donde *elemento* es uno de la lista anterior y *valor* es el estilo que queremos aplicar. Entre los valores más habituales están los siguientes:
+
+- `\rmfamily` (roman font), `\sffamily` (sans-serif font), `\ttfamily` (monospace font) para el tipo de letra. 
+- `\upshape` (recta), `\itshape` (itálica), `\slshape` (inclinada), `\scshape` (versalitas) para el estilo 
+- `\mdseries` (normal), `\bfseries` (negrita), para el grosor y
 - `\Huge`, `\huge`, `\LARGE`, `\Large`, `\large`, `\normalsize`, `\small`, `\footnotesize`, `\scriptsize`, `\tiny` para el tamaño.
 
-Además, al redefinir un estilo podemos usar como *valor*`\usefontofkomafont{elemento}` `\usesizeofkomafont{elemento}` y copiaremos la tipografía o el tamaño del elemento deseado.
+Además, al redefinir un estilo podemos usar como *valor*`\usefontofkomafont{elemento}` o bien `\usesizeofkomafont{elemento}` y copiaremos la tipografía o el tamaño del elemento deseado.
 
 ## Miscelánea
 En la sección precedente hemos introducido las clases de documento del paquete `KOMA-script` por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En [CTAN](https://ctan.org/topic/class) se puede ver una lista de paquetes que proporcionan clases de documento alternativas. En esta sección vamos a mencionar algunas de ellas por su calidad y personalización.
