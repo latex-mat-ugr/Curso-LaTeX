@@ -1,0 +1,131 @@
+% !TEX encoding = UTF-8
+
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=3cm]{geometry}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[table,dvipsnames*,svgnames]{xcolor}
+\usepackage{listings}
+\lstset{
+	language=[latex]tex,
+	escapeinside={\%*}{*)},		
+    inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {í}{{\'{\i}}}1 {é}{{\'e}}1 {ñ}{{\~n}}1 {ó}{{\'o}}1 {ú}{{\'u}}1, 	
+	backgroundcolor=\color{white!90!yellow},
+    commentstyle=\color{green!30!black},
+    keywordstyle=\color{DarkBlue},
+    numberstyle=\tiny\color{gray!30!white},
+    stringstyle=\color{purple!30!purple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    firstnumber=1,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=no}
+
+\usepackage[final]{showexpl}
+
+\usepackage{siunitx}
+
+\usepackage{tgpagella,eulervm}
+
+\usepackage[spanish]{babel}
+
+\begin{document}
+
+El paquete \texttt{siunitx} permite escribir unidades y números de forma correcta de acuerdo al Sistema Internacional de Unidades y de acuerdo a unas cuantas convenciones como que las unidades se escriben en texto recto para distinguirlo de las variables o tener cuidado con los espacios entre números y unidades.
+
+Comenzamos cargando este paquete en la cabecera del documento
+\begin{lstlisting}[language=tex]
+\usepackage{siunitx}
+\sisetup{opciones...} % Opcional
+\end{lstlisting}
+
+Este paquete define los siguientes comandos
+\begin{itemize}
+\item \textbackslash ang[options]\{angle\}
+\item \textbackslash num[options]\{number\}
+\item \textbackslash si[options]\{unit\}
+\item \textbackslash SI[options]\{number\}[pre-unit]\{unit\} 
+\item \textbackslash numlist[options]\{numbers\}
+\item \textbackslash numrange[options]\{numbers\}\{number2\} 
+\item \textbackslash SIlist[options]\{numbers\}\{unit\}
+\item \textbackslash SIrange[options]\{number1\}\{number2\}\{unit\} 
+\end{itemize}
+
+\section{Números}
+
+El comando básico para escribir números es \texttt{\textbackslash{}num\{número\}}
+\begin{LTXexample}[pos=l,rframe={}]
+El n\'umero $e$ vale aproximadamente \num{2.7182818} y $\left(\pi^\pi\right)^{\pi}$ vale $\num{80662.6659385}$
+\end{LTXexample}
+Obsérvese que se puede usar dentro y fuera del modo matemático y, en ambos casos, formatea el número de la misma forma. Además se puede usar notación exponencial, no importa el símbolo que utilicemos como separador decimal y se puede utilizar notación exponencial
+\begin{LTXexample}[pos=l,rframe={}]
+\num{0.123}, \num{.123}, \num{3.5d-2}, \num{123.45 x .3e3}, \num{123.04}, \num{3,5x3.5}
+\end{LTXexample}
+
+También se pueden escribir ángulos usando un número decimal o separando con punto y coma, grados, minutos y segundos con \verb|\ang{ángulo}| o \verb|\ang{grados;minutos;segundos}|
+\begin{LTXexample}[pos=l,rframe={}]
+Tanto en grados sexagesimales, \ang{30} o \ang{30;0;0}, como en radianes $\pi/6$,\dots
+\end{LTXexample}
+
+
+\section{Unidades}
+
+El comando básico aquí es \texttt{\textbackslash{}SI\{número\}\{unidad\}} o  \texttt{\textbackslash{}si\{unidad\}}
+\begin{LTXexample}[pos=l,rframe={}]
+Un cuerpo con una masa de \SI{3}{\kilo\gram} tiene una velocidad inicial de \SI{30}{\meter\per\second} (tambi\'en podemos escribir la velocidad en \si{\kilo\meter\per\second})
+\end{LTXexample}
+
+La lista de unidades que se pueden usar es muy amplia, además de que se puedan definir nuevas unidades. Las básicas reconocidas en el Sistema Internacional son  las siguientes:
+
+\begin{center}  
+\begin{tabular}{@{}lll@{}}
+    \toprule
+      Unidad & Orden & Símbolo \\
+    \midrule
+      Amperio & \verb|\ampere| & \si{\ampere}   \\
+      Candela & \verb|\candela| & \si{\candela}  \\
+      Kelvin  & \verb|\kelvin| & \si{\kelvin}   \\
+	  Kilogramo  & \verb|\kilogram| & \si{\kilogram}\\
+      Metro & \verb|\metre| & \si{\metre}    \\
+      Mol & \verb|\mole| & \si{\mole}     \\
+      Segundo & \verb|\second| & \si{\second}   \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+
+
+
+\section{Tablas}
+
+El paquete siunitx añade un nuevo tipo de columnas a las tablas que permite alinear de forma automática
+
+\begin{LTXexample}[pos=l,rframe={}]
+\begin{tabular}{lS}
+\toprule
+$n$ & {Valores} \\ \midrule
+1 &       2.3456 \\
+2 &      34.2345 \\
+3 &      -6.7835 \\
+4 &       90.473  \\
+5 & 5642.5 \\ 
+6 & 1.2e3 \\ 
+7& 1.0 e4 \\
+\bottomrule
+\end{tabular} 
+\end{LTXexample}
+
+\end{document}
