@@ -114,7 +114,7 @@ Si usamos una clase del paquete KOMA-Script no es necessario cargar el paquete `
 ```tex
 \documentclass{scrartcl}
 
-\KOMAoptions{%
+\KOMAoptions{
   fontsize=10pt 
   ,DIV=9
 }
