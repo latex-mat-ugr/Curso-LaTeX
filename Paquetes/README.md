@@ -81,21 +81,6 @@ Entre otras cosas incluye
 - Manejo de etiquetas en ecuaciones,
 - Algunos entornos nuevos para ecuaciones que ocupen varias líneas.
 
-## Breqn
-
-Ecuaciones que ocupen más de una línea se distribuyen de forma automática.
-
-```latex
-\usepackage{breqn}
-```
-
-El entorno `dmath` (con etiquetas) o `dmath*` (sin etiquetas) es similar al entorno `equation`
-
-```latex
-\begin{dmath*}
-f(x) = \int_{0}^{2\pi} g(t)\cos(nt)\,dt = \sum_{n=1}^{\infty} \frac{1}{1+n^{2}} = \lim_{n \to \infty} f(x_{1},\dots,x_{n}) = (a+b+c+d+e+f) = a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+1+2+3+4
-\end{dmath*}
-```
 
 ## Nag
 
