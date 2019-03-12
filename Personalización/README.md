@@ -139,7 +139,7 @@ Esto deberemos hacerlo tras *recalcular* el diseño de página pues de lo contra
 ```tex
 \documentclass{scrartcl}
 
-\KOMAoptions{%
+\KOMAoptions{
   fontsize=10pt 
   ,mpinclude
   ,DIV=9
