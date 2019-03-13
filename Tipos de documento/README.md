@@ -1,7 +1,9 @@
 # Tipos de documento
 
+Todo documento de LaTeX comienza con la declaración de la *clase* o *tipo de documento* mediante el comando `\documentclass`. Existen [multitud de clases](https://ctan.org/topic/class) distintas según el propósito del documento. Describiremos aquí algunas de las más utilizadas.
+
 ## Tipos básicos de LaTeX
-Todo documento de LaTeX comienza con la declaración de la *clase* o *tipo de documento* mediante el comando `\documentclass`. Las clases por defecto más usadas en LaTeX son:
+Las clases por defecto más usadas en LaTeX son:
 
 - `article`: Para artículos en revistas científicas, informes,...
 - `report`: para pequeños libros, informes largos,...
