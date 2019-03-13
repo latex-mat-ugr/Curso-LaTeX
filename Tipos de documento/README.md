@@ -28,7 +28,7 @@ La clase `beamer` es tan extensa y específica que precisa de una explicación d
 
 ## El paquete [KOMA-Script](https://www.ctan.org/pkg/koma-script)
 Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` cuidando especialmente la tipografía y la versatilidad. Añade además una clase `letter`. Además también ofrece:
-- Un [paquete para calcular el área de impresión](https://www.ctan.org/pkg/typearea) 
+- Un [paquete para calcular el diseño de página](https://www.ctan.org/pkg/typearea) 
 - paquetes para cambiar y definir fácilmente estilos de página
 
 La [documentación](https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf) es extensa y a veces muy técnica pero merece la pena usar este tipo de documentos por las siguientes razones:
@@ -47,7 +47,7 @@ El proyecto [Tufte-LaTeX](https://tufte-latex.github.io/tufte-latex/) ha creado 
 
 Se trata de dos [clases de documento](https://ctan.org/pkg/tufte-latex) para LaTeX [`handout`](http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-handout.pdf) y [`book`](http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-book.pdf) cuya característica principal es una cuidada tipografía y amplios márgenes para la inclusión de abundantes notas, referencias e imágenes.
 
-Podemos recrear hasta cierto punto la clase `tufte-handout` personalizando la clase `scrartcl`. La [plantilla-KOMA-margen-amplio](plantill-KOMA-margen-amplio.tex) ha usado la clase `scrartcl` cambiando el tipo de fuente, el diseño de página (para permitir un amplio margen) y el paquete `sidenote` (con ciertas modificaciones) para incluir notas y figuras al margen.
+Podemos recrear hasta cierto punto la clase `tufte-handout` personalizando la clase `scrartcl`. La [plantilla-KOMA-margen-amplio](plantilla-KOMA-margen-amplio.tex) ha usado la clase `scrartcl` cambiando el tipo de fuente, el diseño de página (para permitir un amplio margen) y el paquete `sidenote` (con ciertas modificaciones) para incluir notas y figuras al margen.
 
 ### Las clases definidas por la American Mathematical Society
 La American Mathematical Society (AMS), responsable de los populares paquetes para matemáticas [`amsmath`](https://www.ctan.org/pkg/amsmath), y [`amsthm`](https://www.ctan.org/pkg/amsthm), creó [tres clases de documento](https://www.ctan.org/pkg/amscls) para su uso en LaTeX que siguen la guía de estilo de sus publicaciones:
