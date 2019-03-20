@@ -16,7 +16,11 @@ Una buena opción es MiKTeX. Si tenéis espacio de sobra, podéis optar por la i
 
 En el curso usaremos [proTeXt](https://tug.org/protext/) que incluye una instalación completa de MikTeX y el editor TeXstudio.
 
-*Posibles problemas durante la instalación*: si vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. `José`) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. `jose`), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador pero sólo en la sesión del usuario que hemos creado (en el ejemplo `jose`).
+**Posibles problemas durante la instalación**: 
+
+- Tras descargar el archivo de instalación de MikTeX no cambiarle el nombre. En algunos sistemas Windows esto provoca que la instalación falle.
+- A veces que la instalación para todos lo usuarios términa con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en *Archivos de Programa*) y reinstalar esta vez seleccionando la instalación para un único usuario.
+- Si vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. `José`) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. `jose`), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador pero sólo en la sesión del usuario que hemos creado (en el ejemplo `jose`).
 
 ### Usuarios de Linux
 
