@@ -36,6 +36,25 @@ En otras distribuciones de linux, la instalación es similar, pero si no sabéis
 
 El único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las [instrucciones en su página oficial](https://tug.org/texlive/quickinstall.html) o bien [consultar el siguiente enlace](https://wildunix.es/posts/instalar-tex-live-en-ubuntu-mac-os-y-windows/). 
 
+Una vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos [TeXStudio](https://www.texstudio.org/). Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:
+
+```
+sudo apt-get install texstudio
+```
+
+Si el paquete `texstudio` no está en los repositorios los añadiremos mediante los comandos:
+
+```
+sudo add-apt-repository ppa:sunderme/texstudio
+sudo apt-get update
+```
+
+y volveremos a intentar la instalación
+
+```
+sudo apt-get install texstudio
+```
+
 ### Usuarios de macOS
 
 Los desarrolladores de [TeXShop](http://pages.uoregon.edu/koch/texshop/index.html) describen en su página cómo instalar [TeX Live](https://www.tug.org/texlive) a través de [MacTeX](https://www.tug.org/mactex).
