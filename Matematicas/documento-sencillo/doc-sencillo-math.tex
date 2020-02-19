@@ -1,0 +1,188 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=3cm]{geometry}
+
+
+% paquetes relacionados con matemáticas
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+\numberwithin{equation}{section}
+\allowdisplaybreaks[2]
+
+\DeclareMathOperator{\deter}{determinante}
+\DeclareMathOperator{\dist}{dist}
+
+% idioma
+\usepackage[spanish,es-lcroman]{babel}
+
+
+% teoremas
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{proposicion}[teorema]{Proposición}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{corolario}[teorema]{Corolario}
+\theoremstyle{definition}
+\newtheorem{definicion}[teorema]{Definición}
+\newtheorem{ejemplo}[teorema]{Ejemplo}
+\theoremstyle{remark}
+\newtheorem{remark}[teorema]{Observación}
+
+% Comandos propios
+
+\newcommand{\abs}[1]{\ensuremath\left\vert #1 \right\vert}
+\newcommand{\norm}[1]{\ensuremath\left\Vert #1 \right\Vert}
+
+
+\author{El Autor}
+\title{El título}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Definición}
+
+
+
+Sea $I$ un intervalo y sean $a$, $b \in I$ con $a<b$. Si $x\in [a,b]$, $x$ se puede escribir como \emph{combinación convexa} de $a$ y $b$:
+\[
+ x= \frac{b-x}{b-a}\cdot a + \frac{x-a}{b-a}\, b.
+\]
+Otras fórmulas
+\[
+ \lim_{t \to 0} \frac{f(a+t,b)-f(a,b)}{t}= \frac{\partial f}{\partial x}(a,b).
+\]
+
+
+
+\begin{definicion}\label{def:convexa}
+ Sea $I$ un intervalo y sea $f \colon I \rightarrow \mathbb{R}$.
+ \begin{enumerate}
+  \item La función $f$ es \emph{convexa} si para cualesquiera $a$, $b \in I$ con $a<b$ y cualquier $t \in [0,1]$ se cumple que
+        \[
+         f\left((1-t)a+tb\right) \leq (1-t)f(a)+tf(b).
+        \]
+  \item La función $f$ es \emph{cóncava} (resp. estrictamente cóncava) si $-f$ es convexa (resp. estrictamente cóncava).
+ \end{enumerate}
+\end{definicion}
+
+\begin{ejemplo}
+ La función $f(x)=x^2$ es convexa en todo $\mathbb{R}$. En efecto, si $a$, $b \in \mathbb{R}$ y $t \in [0,1]$,
+ \begin{align*}
+  f\left( (1-t)a+tb \right) & = (1-t)^2 a^{2}+t^{2}b^{2} +2t(1-t)ab, \\
+  (1-t)f(a)+tf(b)           & = (1-t)a^2+tb^2.
+ \end{align*}
+ Para ver cuál es mayor, calculamos la diferencia:
+ \begin{align*}
+  (1-t)f(a) & +tf(b)  - \bigl( f\left( (1-t)a+tb \right) \bigr) \\
+  \begin{split}
+   & = (1-t)a^2+tb^2 - \left( (1-t)^2 a^{2}+t^{2}b^{2} +2t(1-t)ab \right) \\
+   & = t(1-t) \left( a-b \right)^2 \geq 0.
+  \end{split}
+ \end{align*}
+\end{ejemplo}
+
+\subsection{El conjunto de las funciones convexas}
+
+Veamos algunas propiedades del conjunto de las funciones convexas (ver definición~\ref{def:convexa}).
+
+\begin{proposicion}
+ Sean $f$, $g \colon I \rightarrow \mathbb{R}$ dos funciones convexas y
+ sea $\alpha>0$. Entonces
+ \begin{enumerate}
+  \item $f+g$ es convexa,
+  \item $\alpha f$ es convexa, y
+  \item $\max \{f ,g\}$ es convexa.
+ \end{enumerate}
+\end{proposicion}
+\begin{proof}
+ \begin{enumerate}
+  \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
+        \begin{equation}
+         \begin{split}
+          (f+g) \left( (1-t)a+tb \right) & = f \left( (1-t)a+tb \right) + g \left( (1-t)a+tb \right)\\
+          & \leq (1-t)f(a)+tf(b)+(1-t)g(a)+t g(b) \\
+          & = (1-t)(f+g)(a) + t(f+g)(b).
+         \end{split}
+        \end{equation}
+  \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
+        \begin{equation}
+         \begin{aligned}
+          (\alpha f) \left( (1-t)a+tb \right) & = \alpha f \left( (1-t)a+tb \right)     \\
+                                              & \leq \alpha (1-t)f(a)+ \alpha t f(b)    \\
+                                              & = (1-t)(\alpha f)(a) + t (\alpha f)(b).
+         \end{aligned}
+        \end{equation}
+  \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
+        \[
+         \begin{aligned}
+          \max \{ f,g\} \left( (1-t)a+tb \right) & = \max \left\{ f\left( (1-t)a+tb) \right),g \left((1-t)a+tb\right) \right\} \\
+                                                 & \leq \max \left\{ (1-t)f(a)+tf(b),(1-t)g(a)+t g(b) \right\}                 \\
+                                                 & = (1-t) \max\{f,g\}(a) + t \max\{ f,g\} (b). \qedhere
+         \end{aligned}
+        \]
+ \end{enumerate}
+\end{proof}
+
+
+\section{Segunda sección}
+
+
+\begin{teorema}[O. Stolz] \label{th:cc}
+ Sea $I$ un intervalo abierto y sea $f \colon I \rightarrow$ una función convexa.
+ \begin{enumerate}
+  \item La función $f$ tiene derivadas laterales en todos los puntos. En particular, $f$ es continua.
+  \item $f'_{+}$ y $f'_{-}$ son funciones crecientes.
+ \end{enumerate}
+\end{teorema}
+
+\section{Tercera sección}
+
+\begin{teorema}[de la función inversa]\label{th:inversa}
+ Sean $A\subset \mathbb{R}^N$ un
+ abierto y $f\colon A\rightarrow \mathbb{R}^{N}$ un campo vectorial de clase
+ $\mathcal{C}^1$. Supongamos que existe $a\in A$ tal que
+ \[
+  \deter \bigl (J_f(a)\bigr )=\det
+  \left(
+  \begin{matrix}
+    D_1 f_1 (a) & \dotsc & D_{N} f_{1}(a) \\
+    \hdotsfor[2]{3}                       \\
+    D_1f_N(a)   & \dotsc & D_N f_N(a)
+   \end{matrix}
+  \right)
+  \neq 0.
+ \]
+ Entonces existe un entorno abierto $U$ de $a$ contenido en $A$ tal
+ que $V:=f(U)$ es un abierto de $\mathbb{R}^N$, $f$ es un difeomorfismo de
+ clase $\mathcal{C}^1$ de $U$ sobre $V$, y para cada $x\in U$ se
+ verifica
+ \[
+  J_{f^{-1}}\bigl (f(x)\bigr )=
+  \begin{pmatrix}
+   D_1f_1(x) & \dotsc & D_Nf_1(x) \\
+   \hdotsfor[2]{3}                \\
+   D_1f_N(x) & \dotsc & D_Nf_N(x)
+  \end{pmatrix}^{-1}.
+ \]
+\end{teorema}
+
+\begin{teorema}[de la convergencia monótona]
+ Sea $(\Omega,\mathcal{A},\mu)$ un espacio de medida. Si $\{f_n\}$ es
+ una sucesión monótona de funciones integrables en $\Omega$
+ verificando que la sucesión de sus integrales $\big
+  \{\int_{\Omega}f_n\  d\mu \big \}$ está acotada, entonces
+ $\{f_n\}$ converge $\text{c.p.d.}$ a una función $f$ integrable en
+ $\Omega$ y
+ \[
+  \int_{\Omega}f\, \mathrm{d}\mu=\lim \int_{\Omega}f_n\, \mathrm{d}\mu .
+ \]
+\end{teorema}
+
+\end{document}
