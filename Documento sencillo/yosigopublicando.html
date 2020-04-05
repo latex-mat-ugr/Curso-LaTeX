@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Taller de LaTeX</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+
+.content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="taller-de-latex" class="slide section level1">
+<h1>Taller de LaTeX</h1>
+<div class="figure">
+<a href="https://sites.google.com/go.ugr.es/yosigopublicando"><img src="imagen.jpg" alt="fc" width="40%" height="40%" /></a>
+</div>
+<p><a href="https://www.ugr.es/local/pedro">Pedro A. García Sánchez</a></p>
+<p><a href="https://www.ugr.es/local/alaminos">Jerónimo Alaminos Prats</a></p>
+<p><a href="https://www.ugr.es/local/ossanche">Óscar Sánchez Romero</a></p>
+</div>
+<div class="slide section level1">
+
+<h2 id="documento-sencillo">Documento sencillo</h2>
+<p>La estructura de un documento es la siguiente</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\documentclass{...}
+
+\begin{document}
+...
+\end{document}</code></pre>
+</div>
+<div class="slide section level1">
+
+<h2 id="cabecera-o-preámbulo">Cabecera o preámbulo</h2>
+<p>Entre <code>\documentclass</code> y <code>\begin{document}</code> ponemos declaraciones y paquetes que vamos a necesitar</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\documentclass{article}
+  \usepackage[utf8]{inputenc}
+  \usepackage[spanish]{babel}
+  \usepackage{amsthm}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{graphicx}
+  \usepackage{hyperref}
+  
+  \title{Taller yosigopublicando}
+  \author{P.~A.~García-Sánchez, J.~Alaminos, Ó.~Sánchez Romero}
+  \date{April 2020}</code>
+</pre>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Creating_a_document_in_LaTeX#The_preamble_of_a_document" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+
+</div>
+
+<div class="slide section level1">
+
+<h2 id="resumen-título-y-tabla-de-contenidos">Resumen, título y tabla de contenidos</h2>
+<h3 id="resumen">Resumen</h3>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{abstract}
+Esto es una prueba de cómo hacer algunas cosas en \LaTeX.
+\end{abstract}</code></pre>
+<h3 id="título">Título</h3>
+<p>El título y datos de autores se visualiza con <code>\maketitle</code></p>
+<h3 id="tabla-de-contenidos">Tabla de contenidos</h3>
+<p>Podemos añadir una tabla de contenidos con <code>\tableofcontents</code></p>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Table_of_contents" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+</div>
+
+<div class="slide section level1">
+
+<h2 id="secciones">Secciones</h2>
+<p>Podemos crear seccions (en un libro también capítulos y partes) con el comando <code>\section</code>. Éstas pueden contener subsecciones: <code>\subsection</code>, y subsubseciones. Finalmente tenemos párrafos, <code>\paragraph</code>, y subpárrafos</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Comando</th>
+<th align="center"> Nivel </th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>\part</code></td>
+<td align="center">-1</td>
+</tr>
+<tr class="even">
+<td align="left"><code>\chapter</code></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>\section</code></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left"><code>\subsection</code></td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>\subsubsection</code></td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="left"><code>\paragraph</code></td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>\subparagraph</code></td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
+<p>Véase <a href="https://en.wikibooks.org/wiki/LaTeX/Document_Structure">https://en.wikibooks.org/wiki/LaTeX/Document_Structure</a></p>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Sections_and_chapters" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+
+
+</div>
+<div class="slide section level1">
+
+<h2 id="listas">Listas</h2>
+<p>Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{enumerate}
+\item Aquellas que van enumeradas.
+    \begin{enumerate}
+    \item \ldots que además se pueden anidar.
+    \end{enumerate}
+\item Aquellas sin enumerar:
+  \begin{itemize}
+  \item[$\diamond$] damos varios apartados,
+    \begin{itemize}
+    \item y podemos también anidar.
+    \end{itemize}
+  \end{itemize}
+\end{enumerate}
+</code></pre>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Lists" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+
+</div>
+<div class="slide section level1">
+
+<h2 id="tablas">Tablas</h2>
+<p>Las tablas que presentamos aquí son muy sencillas, se pueden además unir celdas o separarlas</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{tabular}{lcr}
+1 &amp; 2 &amp; 3 \\
+Pepe &amp; Juan &amp; Manuel
+\end{tabular}</code></pre>
+<p>O bien con bordes</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{tabular}{l||c|c|c|} \hline
+Posición &amp; 1 &amp; 2 &amp; 3 \\ \hline \hline
+Nombre &amp; Pepe &amp; Juan &amp; Manuel\\ \hline
+\end{tabular}</code></pre>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Tables" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+
+
+</div>
+<div class="slide section level1">
+
+<h2 id="tipos-de-letra">Tipos de letra</h2>
+<p>Tenemos varios tipos de letra y tamaños básicos</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Comando</th>
+<th align="left"> Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>\textbf</code></td>
+<td align="left"> <strong>negrita</strong></td>
+</tr>
+<tr class="even">
+<td align="left"><code>\textit</code></td>
+<td align="left"><em>itálica</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>\textsl</code></td>
+<td align="left">palo seco</td>
+</tr>
+<tr class="even">
+<td align="left"><code>\texttt</code></td>
+<td align="left">monoespaciada</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>\textsc</code></td>
+<td align="left"> pequeñas Mayúsculas</td>
+</tr>
+</tbody>
+</table>
+<p>... o bien podemos <code>\emph{enfatizar}</code> una <code>\textit{parte del texto \emph{dentro} de otro}</code></p>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Bold,_italics_and_underlining" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+
+</div>
+
+<div class="slide section level1">
+
+  <h2 id="indentación">Centrado y a derecha</h2>
+  <p>Podemos escribir texto centrado con</p>
+  <pre class="sourceCode latex"><code class="sourceCode latex">\begin{center}
+    Texto a centrar.
+  
+    Puede ser más de un párrafo.
+\end{center}</code></pre>
+  <p>Y desplazarlo a la derecha</p>
+  <pre class="sourceCode latex"><code class="sourceCode latex">\begin{flushright}
+    Texto a la derecha.
+    
+    Con más de un párrafo.
+\end{flushright}</code></pre>
+  
+  <p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Text_alignment#Centred_text" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+
+
+</div>
+  
+
+<div class="slide section level1">
+
+<h2 id="fórmulas">Fórmulas</h2>
+<p>Existen dos tipos de fórmulas</p>
+<ul>
+    <li>En línea como por ejemplo <code>$x^2+1$</code> que produce <span class="math">\(x^2+1\)</span></li>
+    <li>En modo ventana o centrado: <code>\[x^2+1\]</code> que se ve como
+        <span class="math">\[x^2+1\]</span></li>
+</ul>
+
+<p>Los delimitadores <code>$..$</code> se pueden substituir por <code>\(..\)</code></p>
+<p>Compárese <code>\[\max\{2^{x+y}\int_a^b e^{\frac{x^2}{2}}\lim_{x\to 1}x^{x-1},1\}\]</code></p>
+\[\max\{2^{x+y}\int_a^b e^{\frac{x^2}{2}}\lim_{x\to 1}x^{x-1},1\}\]
+<p>con <code>\[\max\left\{2^{x+y}\int_a^b e^{\frac{x^2}{2}}\lim_{x\to 1}x^{x-1},1\right\}\]</code></p>
+\[\max\left\{2^{x+y}\int_a^b e^{\frac{x^2}{2}}\lim_{x\to 1}x^{x-1},1\right\}.\]
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Mathematics" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+</div>
+
+
+<div class="slide section level1">
+
+<h2 id="matrices-y-derivados">Matrices y derivados</h2>
+<p>El entorno array es similar a tabular</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{array}{clr}
+1 &amp; -\frac{1}2 &amp; 321 \\
+x^2+x+1 &amp; x-1 &amp; 7
+\end{array}</code></pre>
+<p><span class="math">\[
+\begin{array}{clr}
+1 &amp; -\frac{1}2 &amp; 321 \\
+x^2+x+1 &amp; x-1 &amp; 7
+\end{array}
+\]</span></p>
+<p>Podemos delimitarla con <code>\left</code> y <code>\right</code></p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\left\{\begin{array}{clr}
+1 &amp; -\frac{1}2 &amp; 321 \\
+x^2+x+1 &amp; x-1 &amp; 7
+\end{array}
+\right)</code></pre>
+<p><span class="math">\[
+\left\{\begin{array}{clr}
+1 &amp; -\frac{1}2 &amp; 321 \\
+x^2+x+1 &amp; x-1 &amp; 7
+\end{array}
+\right)
+\]</span></p>
+</div>
+<div class="slide section level1">
+
+<h2 id="un-ejemplo-función-definida-por-casos">Un ejemplo: función definida por casos</h2>
+<p>Vamos a definir una función por casos</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\[
+f(x)=\left\{
+    \begin{array}{ll}
+    x^2-1, &amp; \hbox{si } 1\le x\le 4,\\
+    x-1, &amp; \hbox{en otro caso}.
+    \end{array}
+    \right.
+\]
+</code></pre>
+<p><span class="math">\[
+f(x)=\left\{
+    \begin{array}{ll}
+    x^2-1, &amp; \hbox{si } 1\le x\le 4,\\
+    x-1, &amp; \hbox{en otro caso}.
+    \end{array}
+    \right.
+\]</span></p>
+</div>
+
+<div class="slide section level1">
+
+<h2 id="entornos-predefinidos">Entornos predefinidos</h2>
+<p>Podemos numerar con la sección</p>
+<pre><code>\newtheorem{teorema}{Teorema}[section]</code></pre>
+<p>Y otros entornos con el contador que acabamos de crear</p>
+<pre><code>\newtheorem{nota}[teorema]{Aclaración}</code></pre>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{teorema}\label{tonto}
+Las ranas son verdes.
+\end{teorema}
+\begin{proof}
+Así lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.
+\end{proof}</code></pre>
+<p>Luego podremos referenciar a este teorema como <code>Teorema~\ref{tonto}</code></p>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/theorems_and_proofs" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+</div>
+
+<div class="slide section level1">
+
+<h2 id="figuras-e-imágenes">Figuras e imágenes</h2>
+<p>El paquete <code>graphicx</code> nos permite insertar gráficos con el comando <code>\includegraphics</code></p>
+<pre><code>\includegraphics[width=2.5cm]{imagen.jpg}</code></pre>
+<p>Podemos también crear una figura con esa imágen</p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{figure}
+  \begin{center}
+  \includegraphics[width=3cm]{imagen.jpg}  
+  \end{center}
+  \caption{Algo que encontré por %con esta orden determinamos el texto que acompaña a la figura
+  \href{https://sites.google.com/go.ugr.es/yosigopublicando}{ahí.}
+  }
+  \label{uno} 
+  \end{figure}</code>
+</pre>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Inserting_Images" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+
+</div>
+<div class="slide section level1">
+
+<h2 id="la-bibliografía">La bibliografía</h2>
+<p>Para insertar la bibliografía se usa bien <code>bibtex</code> (que veremos más adelante) o el entorno <code>thebibliography</code></p>
+<pre class="sourceCode latex"><code class="sourceCode latex">\begin{thebibliography}{10}
+\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,
+  The not so short introduction to \LaTeX2e,
+    \href{https://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.
+\end{thebibliography}</code></pre>
+
+<p align="right" class="content"><a href="https://www.overleaf.com/learn/latex/Bibliography" target="_blank">Tutorial</a> en <a href="https://www.overleaf.com" target="_blank">overleaf</a></p>
+
+
+</div>
+</body>
+</html>
