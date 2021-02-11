@@ -22,3 +22,5 @@ tags.lock
 tags.temp
 .DS_Store
 Icon?
+*.vrb
+*.xdv
