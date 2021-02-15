@@ -6,9 +6,14 @@ Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grad
 
 Los contenidos del curso se mantienen por [Jerónimo Alaminos](https://www.ugr.es/~alaminos/), [Pedro A. García Sánchez](https://www.ugr.es/~pedro), [Óscar Sánchez Romero](https://www.ugr.es/~ossanche) y [Francisco Torralbo](https://www.ugr.es/~ftorralbo/).
 
-## Antes del curso
+## Nueva edición del curso de LaTeX 2021
 
-Es recomendable, si vais a asistir con vuestro portátil, que llevéis preinstalado al menos LaTeX
+Este curso académico se va a impartir el curso online de LaTeX [*Introducción al lenguaje LaTeX para edición de textos académicos*](https://sites.google.com/go.ugr.es/yosigopublicando/los-cursos#h.1rvelu5hbhsq) a través de la plataforma [**yosigopublicando**](https://sites.google.com/go.ugr.es/yosigopublicando/principal) de la [Universidad de Granada](https://www.ugr.es/).
+
+El material de dicho curso se encuentra disponible en el repositorio [curso-virtual-2021](https://github.com/latex-mat-ugr/curso-virtual-2021). Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.
+
+
+## Instalación de LaTeX
 
 ### Usuarios de Windows
 
