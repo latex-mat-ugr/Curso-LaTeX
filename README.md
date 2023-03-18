@@ -19,7 +19,7 @@ El material de dicho curso se encuentra disponible en el repositorio [curso-virt
 
 Una buena opción es MiKTeX. Si tenéis espacio de sobra, podéis optar por la instalación completa. En caso contrario, una instalación básica, siempre que tengamos una buena conexión a red, es suficiente. Los paquetes que falten se instalarán cuando se necesiten. En la página [miktex.org](http://miktex.org) podéis encontrar los instaladores y más información.
 
-En el curso usaremos [proTeXt](https://tug.org/protext/) que incluye una instalación completa de MikTeX y el editor TeXstudio.
+En el curso usaremos [TeXStudio](https://www.texstudio.org/) como editor de texto.
 
 **Posibles problemas durante la instalación**: 
 
