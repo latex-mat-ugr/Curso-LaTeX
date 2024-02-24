@@ -1,8 +1,5 @@
 project:
   type: website
-  render:
-    - "*.qmd"
-    - "*.md"
 website:
   title: "Curso LaTeX Grado Matemáticas UGR"
   search: false
