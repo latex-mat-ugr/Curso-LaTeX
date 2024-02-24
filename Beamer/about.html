@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Curso LaTeX Grado Matemáticas UGR - Curso de LaTeX</title>
+<title>Curso LaTeX Grado Matemáticas UGR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,21 +20,55 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Sin resultados",
@@ -61,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Curso LaTeX Grado Matemáticas UGR</span>
     </a>
   </div>
@@ -86,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html">Inicio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Beamer/about.html">Transparencias beamer</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -100,25 +134,25 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link active">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inicio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Documento sencillo/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../Documento sencillo/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Documento básico</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Matematicas/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../Matematicas/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matemáticas</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Beamer/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../Beamer/about.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Transparencias beamer</span></a>
   </div>
 </li>
@@ -134,113 +168,149 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#nueva-edición-del-curso-de-latex-2021" id="toc-nueva-edición-del-curso-de-latex-2021" class="nav-link active" data-scroll-target="#nueva-edición-del-curso-de-latex-2021">Nueva edición del curso de LaTeX 2021</a></li>
-  <li><a href="#instalación-de-latex" id="toc-instalación-de-latex" class="nav-link" data-scroll-target="#instalación-de-latex">Instalación de LaTeX</a>
+  <li><a href="#transparencias-beamer" id="toc-transparencias-beamer" class="nav-link active" data-scroll-target="#transparencias-beamer">Transparencias Beamer</a>
   <ul class="collapse">
-  <li><a href="#usuarios-de-windows" id="toc-usuarios-de-windows" class="nav-link" data-scroll-target="#usuarios-de-windows">Usuarios de Windows</a></li>
-  <li><a href="#usuarios-de-linux" id="toc-usuarios-de-linux" class="nav-link" data-scroll-target="#usuarios-de-linux">Usuarios de Linux</a></li>
-  <li><a href="#usuarios-de-macos" id="toc-usuarios-de-macos" class="nav-link" data-scroll-target="#usuarios-de-macos">Usuarios de macOS</a></li>
-  <li><a href="#editores" id="toc-editores" class="nav-link" data-scroll-target="#editores">Editores</a></li>
+  <li><a href="#estructura" id="toc-estructura" class="nav-link" data-scroll-target="#estructura">Estructura</a></li>
+  <li><a href="#frames" id="toc-frames" class="nav-link" data-scroll-target="#frames">Frames</a></li>
+  <li><a href="#itemize" id="toc-itemize" class="nav-link" data-scroll-target="#itemize">Itemize</a></li>
+  <li><a href="#bloques" id="toc-bloques" class="nav-link" data-scroll-target="#bloques">Bloques</a></li>
+  <li><a href="#pausas" id="toc-pausas" class="nav-link" data-scroll-target="#pausas">Pausas</a></li>
+  <li><a href="#sobreimpresiones" id="toc-sobreimpresiones" class="nav-link" data-scroll-target="#sobreimpresiones">Sobreimpresiones</a></li>
+  <li><a href="#bibliografía" id="toc-bibliografía" class="nav-link" data-scroll-target="#bibliografía">Bibliografía</a></li>
+  <li><a href="#recomendaciones" id="toc-recomendaciones" class="nav-link" data-scroll-target="#recomendaciones">Recomendaciones</a></li>
+  <li><a href="#presentación-taller" id="toc-presentación-taller" class="nav-link" data-scroll-target="#presentación-taller">Presentación taller</a></li>
   </ul></li>
-  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a></li>
-  <li><a href="#editores-de-markdown" id="toc-editores-de-markdown" class="nav-link" data-scroll-target="#editores-de-markdown">Editores de markdown</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Curso de LaTeX</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Curso de LaTeX organizado por <a href="http://www.ugr.es/~amat/index_archivos/Page412.htm">AMAT</a> y por el PAT <a href="https://www.ugr.es/~orientamat/">Orientamat</a> para alumnos de Trabajo de Fin de Grado</p>
-<p>Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas</p>
-<p>Los contenidos del curso se mantienen por <a href="https://www.ugr.es/~alaminos/">Jerónimo Alaminos</a>, <a href="https://www.ugr.es/~pedro">Pedro A. García Sánchez</a>, <a href="https://www.ugr.es/~ossanche">Óscar Sánchez Romero</a> y <a href="https://www.ugr.es/~ftorralbo/">Francisco Torralbo</a>.</p>
-<section id="nueva-edición-del-curso-de-latex-2021" class="level2">
-<h2 class="anchored" data-anchor-id="nueva-edición-del-curso-de-latex-2021">Nueva edición del curso de LaTeX 2021</h2>
-<p>Este curso académico se va a impartir el curso online de LaTeX <a href="https://sites.google.com/go.ugr.es/yosigopublicando/los-cursos#h.1rvelu5hbhsq"><em>Introducción al lenguaje LaTeX para edición de textos académicos</em></a> a través de la plataforma <a href="https://sites.google.com/go.ugr.es/yosigopublicando/principal"><strong>yosigopublicando</strong></a> de la <a href="https://www.ugr.es/">Universidad de Granada</a>.</p>
-<p>El material de dicho curso se encuentra disponible en el repositorio <a href="https://github.com/latex-mat-ugr/curso-virtual-2021">curso-virtual-2021</a>. Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.</p>
+<section id="transparencias-beamer" class="level1">
+<h1>Transparencias Beamer</h1>
+<section id="estructura" class="level2">
+<h2 class="anchored" data-anchor-id="estructura">Estructura</h2>
+<p>El tipo de documento <code>beamer</code> es parecido a un artículo o libro</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">beamer</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">%probad a descomentar alguna de las siguientes</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Goettingen}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Berkeley}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Boadilla}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Copenhagen}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[spanish]{<span class="ex">babel</span>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>[Taller de <span class="fu">\LaTeX</span>]{Taller de <span class="fu">\LaTeX\ </span>AMAT}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>[Los presentes]{Estudiantes de Grado en Matemáticas}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\institute</span>[UGR]{Universidad de Granada}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Introducción}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalación-de-latex" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-latex">Instalación de LaTeX</h2>
-<section id="usuarios-de-windows" class="level3">
-<h3 class="anchored" data-anchor-id="usuarios-de-windows">Usuarios de Windows</h3>
-<p>Una buena opción es MiKTeX. Si tenéis espacio de sobra, podéis optar por la instalación completa. En caso contrario, una instalación básica, siempre que tengamos una buena conexión a red, es suficiente. Los paquetes que falten se instalarán cuando se necesiten. En la página <a href="http://miktex.org">miktex.org</a> podéis encontrar los instaladores y más información.</p>
-<p>En el curso usaremos <a href="https://www.texstudio.org/">TeXStudio</a> como editor de texto.</p>
-<p><strong>Posibles problemas durante la instalación</strong>:</p>
+<section id="frames" class="level2">
+<h2 class="anchored" data-anchor-id="frames">Frames</h2>
+<p>Cada transparencia se corresponde con un cuatro o frame</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">frame</span>}{Con su título}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">frame</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El título es opcional</p>
+</section>
+<section id="itemize" class="level2">
+<h2 class="anchored" data-anchor-id="itemize">Itemize</h2>
+<p>En <code>beamer</code> se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">frame</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}[&lt;+-|alert@+&gt;]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Este taller está pensado como pequeña introducción al <span class="fu">\LaTeX</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Intentaremos dar algunas pequeñas pinceladas sobe su uso</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Para m<span class="fu">\'</span>as detalles véase la documentación de beamer.</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">frame</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bloques" class="level2">
+<h2 class="anchored" data-anchor-id="bloques">Bloques</h2>
+<p>Dentro de una transparencia podemos usar bloques</p>
+<p>Hay varios predefinidos</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">block</span>}{Bloques}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>En beamer existen varios tipos de bloques....</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Y en ellos podemos escribir lo que queramos.</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">block</span>}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Podemos poner texto fuera de los bloques</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">alertblock</span>}{Bloques de alerta}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>En éstos escribimos cosas a resaltar.</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">alertblock</span>}</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">exampleblock</span>}{Ejemplos}</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo.</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">exampleblock</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Los colores y forma (bordes) cambian dependiendo del estilo seleccionado</p>
+</section>
+<section id="pausas" class="level2">
+<h2 class="anchored" data-anchor-id="pausas">Pausas</h2>
+<p>Con el comando <code>\pause</code> podemos hacer que se muestre el texto de una transparencia hasta dicha marca</p>
+<p>El proceso se puede repetir tantas veces como queramos</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Algo nuevo</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\pause</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Otra cosa</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\pause</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Y otra cosa más</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sobreimpresiones" class="level2">
+<h2 class="anchored" data-anchor-id="sobreimpresiones">Sobreimpresiones</h2>
+<p>A veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">overprint</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;1&gt;</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo.</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;2&gt;</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo. Ligeramente modificado.</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;3&gt;</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>O cualquier otra cosa.</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">overprint</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bibliografía" class="level2">
+<h2 class="anchored" data-anchor-id="bibliografía">Bibliografía</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{10}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\bibitem</span>{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>The not so short introduction to <span class="fu">\LaTeX</span>2e,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">\href</span>{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El código anterior, al igual que <code>\maketitle</code>, crea una nueva transparencia conteniendo la bibliografía.</p>
+</section>
+<section id="recomendaciones" class="level2">
+<h2 class="anchored" data-anchor-id="recomendaciones">Recomendaciones</h2>
 <ul>
-<li>Tras descargar el archivo de instalación de MikTeX no cambiarle el nombre. En algunos sistemas Windows esto provoca que la instalación falle.</li>
-<li>A veces que la instalación para todos lo usuarios términa con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en <em>Archivos de Programa</em>) y reinstalar esta vez seleccionando la instalación para un único usuario.</li>
-<li>Si vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. <code>José</code>) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. <code>jose</code>), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador pero sólo en la sesión del usuario que hemos creado (en el ejemplo <code>jose</code>).</li>
+<li><p>No hacer demasiadas transparencias</p></li>
+<li><p>Cada transparencia no debe superar las 12 líneas</p></li>
+<li><p>El estilo debe ser sencillo para no distraer a la audiencia</p></li>
+<li><p>No abusar de las pausas</p></li>
 </ul>
 </section>
-<section id="usuarios-de-linux" class="level3">
-<h3 class="anchored" data-anchor-id="usuarios-de-linux">Usuarios de Linux</h3>
-<p>Si tenéis <a href="https://www.debian.org/index.es.html">debian</a> o <a href="http://www.ubuntu.com">Ubuntu</a>, lo podéis instalar desde la línea de comandos</p>
-<pre><code>sudo apt-get install texlive</code></pre>
-<p>No olvidéis hacer un <code>sudo apt-get update</code> antes.</p>
-<p>En otras distribuciones de linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.</p>
-<p>El único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las <a href="https://tug.org/texlive/quickinstall.html">instrucciones en su página oficial</a> o bien <a href="https://wildunix.es/posts/instalar-tex-live-en-ubuntu-mac-os-y-windows/">consultar el siguiente enlace</a>.</p>
-<p>Una vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos <a href="https://www.texstudio.org/">TeXStudio</a>. Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:</p>
-<pre><code>sudo apt-get install texstudio</code></pre>
-<p>Si el paquete <code>texstudio</code> no está en los repositorios los añadiremos mediante los comandos:</p>
-<pre><code>sudo add-apt-repository ppa:sunderme/texstudio
-sudo apt-get update</code></pre>
-<p>y volveremos a intentar la instalación</p>
-<pre><code>sudo apt-get install texstudio</code></pre>
-</section>
-<section id="usuarios-de-macos" class="level3">
-<h3 class="anchored" data-anchor-id="usuarios-de-macos">Usuarios de macOS</h3>
-<p>Los desarrolladores de <a href="http://pages.uoregon.edu/koch/texshop/index.html">TeXShop</a> describen en su página cómo instalar <a href="https://www.tug.org/texlive">TeX Live</a> a través de <a href="https://www.tug.org/mactex">MacTeX</a>.</p>
-<p>La instalación de <a href="https://tug.org/mactex/mactex-download.html">MacTeX</a> ya incluye un editor aunque en el curso usaremos <a href="http://texstudio.sourceforge.net">TeXStudio</a>.</p>
-</section>
-<section id="editores" class="level3">
-<h3 class="anchored" data-anchor-id="editores">Editores</h3>
-<p>Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye <a href="https://www.tug.org/texworks">TeXworks</a>. Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, <a href="https://www.gnu.org/software/emacs">emacs</a> con <a href="https://www.gnu.org/software/auctex">AUCTeX</a> o bien <a href="https://www.vim.org/">vim</a> (o su versión más moderna <a href="https://neovim.io/">neovim</a>) con <a href="https://github.com/lervag/vimtex">vimtex</a> son también buenas opciones para el usuario experto.</p>
-<p>TeXworks existe en todas las plataformas que hemos mencionado.</p>
-<p>Yo uso <a href="http://texstudio.sourceforge.net">TeXStudio</a>, que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.</p>
-<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> es un editor mutiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.</p>
-<p>Existen varias posibilidades también de editar textos en línea, una de ellas es ShareLaTeX que actualmente forma parte de <a href="https://www.overleaf.com/">Overleaf</a>.</p>
-</section>
-</section>
-<section id="material" class="level2">
-<h2 class="anchored" data-anchor-id="material">Material</h2>
-<p>Podéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyeccto de Innovación Docente <a href="http://www.ugr.es/~orientamat/">Orientamat</a>.</p>
-<p>En esta página iremos añadiendo materiales para el curso.</p>
-<ul>
-<li><p>La carpeta <code>Documento sencillo</code> corresponde con la primera clase.</p></li>
-<li><p><code>Libro</code> contiene un ejemplo de libro con capítulos, tabla de contenidos, índice y bibliografía.</p></li>
-<li><p><code>Beamer</code> tiene dentro una presentación sencilla hecha con la clase <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/beamer">beamer</a>.</p></li>
-<li><p><code>Markdown</code> es una carpeta con una breve introducción a <a href="http://daringfireball.net/projects/markdown">markdown</a>.</p></li>
-</ul>
-<p>Cada carpeta contiene una descripción en markdown y html (obtenido a partir de la de markdown). Un ejemplo de traducción del contenido de <code>Documento sencillo</code> se puede ver <a href="http://www.ugr.es/~pedro/latex">aquí</a>.</p>
-<hr>
-</section>
-<section id="editores-de-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="editores-de-markdown">Editores de markdown</h2>
-<p>El editor <a href="https://atom.io">atom</a> es multiplataforma, y tiene un módulo markdown.</p>
-<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> puede editar y visualizar markdown, y tiene muchas extensiones para usar con markdown.</p>
-<p>Para mac, un buena opción es <a href="http://macdown.uranusjr.com">MacDown</a>, que ya trae integrada <a href="http://www.mathjax.org">MathJax</a> para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo <a href="https://atom.io/packages/markdown-preview-plus">Markdown Preview Plus</a>.</p>
-<p>Existe además un plugin para <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> para visualizar markdown: <a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl">Markdown preview plus</a>. Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.</p>
-<p>Otra opción es usar un editor en línea, como puede ser <a href="https://stackedit.io">StackEdit</a>. También soporta MathJax.</p>
+<section id="presentación-taller" class="level2">
+<h2 class="anchored" data-anchor-id="presentación-taller">Presentación taller</h2>
+<p>Ejemplo con <a href="https://jsxgraph.uni-bayreuth.de/">JSXGraph</a>: <a href="beamer-jsxgraph.html" target="_blank">Beamer</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
