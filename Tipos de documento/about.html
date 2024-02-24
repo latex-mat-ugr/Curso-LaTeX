@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -120,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Beamer/about.html">Transparencias beamer</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Tipos de documento/about.html">Tipos de documento</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -152,13 +118,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Tipos de documento/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../Tipos de documento/about.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tipos de documento</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Beamer/about.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Beamer/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparencias beamer</span></a>
   </div>
 </li>
@@ -180,17 +146,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#transparencias-beamer" id="toc-transparencias-beamer" class="nav-link active" data-scroll-target="#transparencias-beamer">Transparencias Beamer</a>
+  <li><a href="#tipos-de-documento" id="toc-tipos-de-documento" class="nav-link active" data-scroll-target="#tipos-de-documento">Tipos de documento</a>
   <ul class="collapse">
-  <li><a href="#estructura" id="toc-estructura" class="nav-link" data-scroll-target="#estructura">Estructura</a></li>
-  <li><a href="#frames" id="toc-frames" class="nav-link" data-scroll-target="#frames">Frames</a></li>
-  <li><a href="#itemize" id="toc-itemize" class="nav-link" data-scroll-target="#itemize">Itemize</a></li>
-  <li><a href="#bloques" id="toc-bloques" class="nav-link" data-scroll-target="#bloques">Bloques</a></li>
-  <li><a href="#pausas" id="toc-pausas" class="nav-link" data-scroll-target="#pausas">Pausas</a></li>
-  <li><a href="#sobreimpresiones" id="toc-sobreimpresiones" class="nav-link" data-scroll-target="#sobreimpresiones">Sobreimpresiones</a></li>
-  <li><a href="#bibliografía" id="toc-bibliografía" class="nav-link" data-scroll-target="#bibliografía">Bibliografía</a></li>
-  <li><a href="#recomendaciones" id="toc-recomendaciones" class="nav-link" data-scroll-target="#recomendaciones">Recomendaciones</a></li>
-  <li><a href="#presentación-taller" id="toc-presentación-taller" class="nav-link" data-scroll-target="#presentación-taller">Presentación taller</a></li>
+  <li><a href="#tipos-básicos-de-latex" id="toc-tipos-básicos-de-latex" class="nav-link" data-scroll-target="#tipos-básicos-de-latex">Tipos básicos de LaTeX</a></li>
+  <li><a href="#transparencias-la-clase-beamer" id="toc-transparencias-la-clase-beamer" class="nav-link" data-scroll-target="#transparencias-la-clase-beamer">Transparencias: la clase <em>beamer</em></a></li>
+  <li><a href="#el-paquete-koma-script" id="toc-el-paquete-koma-script" class="nav-link" data-scroll-target="#el-paquete-koma-script">El paquete KOMA-Script</a></li>
+  <li><a href="#miscelánea" id="toc-miscelánea" class="nav-link" data-scroll-target="#miscelánea">Miscelánea</a>
+  <ul class="collapse">
+  <li><a href="#la-clase-memoir" id="toc-la-clase-memoir" class="nav-link" data-scroll-target="#la-clase-memoir">La clase <code>memoir</code></a></li>
+  <li><a href="#la-clase-edward-tufte" id="toc-la-clase-edward-tufte" class="nav-link" data-scroll-target="#la-clase-edward-tufte">La clase Edward Tufte</a></li>
+  <li><a href="#las-clases-definidas-por-la-american-mathematical-society" id="toc-las-clases-definidas-por-la-american-mathematical-society" class="nav-link" data-scroll-target="#las-clases-definidas-por-la-american-mathematical-society">Las clases definidas por la American Mathematical Society</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -201,127 +167,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="transparencias-beamer" class="level1">
-<h1>Transparencias Beamer</h1>
-<section id="estructura" class="level2">
-<h2 class="anchored" data-anchor-id="estructura">Estructura</h2>
-<p>El tipo de documento <code>beamer</code> es parecido a un artículo o libro</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">beamer</span>}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">%probad a descomentar alguna de las siguientes</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Goettingen}</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Berkeley}</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Boadilla}</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Copenhagen}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[spanish]{<span class="ex">babel</span>}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>[Taller de <span class="fu">\LaTeX</span>]{Taller de <span class="fu">\LaTeX\ </span>AMAT}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>[Los presentes]{Estudiantes de Grado en Matemáticas}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\institute</span>[UGR]{Universidad de Granada}</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Introducción}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="frames" class="level2">
-<h2 class="anchored" data-anchor-id="frames">Frames</h2>
-<p>Cada transparencia se corresponde con un cuatro o frame</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">frame</span>}{Con su título}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">frame</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>El título es opcional</p>
-</section>
-<section id="itemize" class="level2">
-<h2 class="anchored" data-anchor-id="itemize">Itemize</h2>
-<p>En <code>beamer</code> se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">frame</span>}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}[&lt;+-|alert@+&gt;]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Este taller está pensado como pequeña introducción al <span class="fu">\LaTeX</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Intentaremos dar algunas pequeñas pinceladas sobe su uso</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Para m<span class="fu">\'</span>as detalles véase la documentación de beamer.</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">frame</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="bloques" class="level2">
-<h2 class="anchored" data-anchor-id="bloques">Bloques</h2>
-<p>Dentro de una transparencia podemos usar bloques</p>
-<p>Hay varios predefinidos</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">block</span>}{Bloques}</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>En beamer existen varios tipos de bloques....</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Y en ellos podemos escribir lo que queramos.</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">block</span>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Podemos poner texto fuera de los bloques</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">alertblock</span>}{Bloques de alerta}</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>En éstos escribimos cosas a resaltar.</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">alertblock</span>}</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">exampleblock</span>}{Ejemplos}</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo.</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">exampleblock</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Los colores y forma (bordes) cambian dependiendo del estilo seleccionado</p>
-</section>
-<section id="pausas" class="level2">
-<h2 class="anchored" data-anchor-id="pausas">Pausas</h2>
-<p>Con el comando <code>\pause</code> podemos hacer que se muestre el texto de una transparencia hasta dicha marca</p>
-<p>El proceso se puede repetir tantas veces como queramos</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Algo nuevo</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\pause</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Otra cosa</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\pause</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Y otra cosa más</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="sobreimpresiones" class="level2">
-<h2 class="anchored" data-anchor-id="sobreimpresiones">Sobreimpresiones</h2>
-<p>A veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">overprint</span>}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;1&gt;</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo.</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;2&gt;</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo. Ligeramente modificado.</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;3&gt;</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>O cualquier otra cosa.</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">overprint</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="bibliografía" class="level2">
-<h2 class="anchored" data-anchor-id="bibliografía">Bibliografía</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{10}</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\bibitem</span>{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>The not so short introduction to <span class="fu">\LaTeX</span>2e,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">\href</span>{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>El código anterior, al igual que <code>\maketitle</code>, crea una nueva transparencia conteniendo la bibliografía.</p>
-</section>
-<section id="recomendaciones" class="level2">
-<h2 class="anchored" data-anchor-id="recomendaciones">Recomendaciones</h2>
+<section id="tipos-de-documento" class="level1">
+<h1>Tipos de documento</h1>
+<p>Todo documento de LaTeX comienza con la declaración de la <em>clase</em> o <em>tipo de documento</em> mediante el comando <code>\documentclass</code>. Existen <a href="https://ctan.org/topic/class">multitud de clases</a> distintas según el propósito del documento. Describiremos aquí algunas de las más utilizadas.</p>
+<section id="tipos-básicos-de-latex" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-básicos-de-latex">Tipos básicos de LaTeX</h2>
+<p>Las clases por defecto más usadas en LaTeX son:</p>
 <ul>
-<li><p>No hacer demasiadas transparencias</p></li>
-<li><p>Cada transparencia no debe superar las 12 líneas</p></li>
-<li><p>El estilo debe ser sencillo para no distraer a la audiencia</p></li>
-<li><p>No abusar de las pausas</p></li>
+<li><code>article</code>: Para artículos en revistas científicas, informes,…</li>
+<li><code>report</code>: para pequeños libros, informes largos,…</li>
+<li><code>book</code>: para libros</li>
 </ul>
+<p>Los documentos se estructuran en diferentes secciones. La clase <code>article</code> permite los siguientes comandos de estructura (de mayor a menor nivel):</p>
+<ol type="1">
+<li><code>\section{}</code></li>
+<li><code>\subsection{}</code></li>
+<li><code>\subsubsection{}</code></li>
+<li><code>\paragraph{}</code></li>
+<li><code>\subparagraph{}</code></li>
+</ol>
+<p>Aunque las dos últimas no son habitualmente usadas. Además, la clase <code>report</code> y la clase <code>book</code> permiten usar el comando <code>\chapter{}</code> para dividir el documento en capítulos. Por defecto estos comandos tienen usan una numeración jerárquica de mayor a menor nivel pero tienen una versión <em>con asterisco</em> para producir un encabezado (de capítulo, sección, subsección,…) sin numerar. Por ejemplo <code>\section*{Introducción}</code> producirá una nueva sección sin numeración.</p>
+<p>Existe además una opción de estructura adicional que no afectan a la numeración: <code>\part{}</code>, usada para dividir cualquier documento en partes.</p>
+<p>Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras necesidades. Por ejemplo, para crear transparencias se usa un tipo de clase diferente <code>beamer</code>.</p>
 </section>
-<section id="presentación-taller" class="level2">
-<h2 class="anchored" data-anchor-id="presentación-taller">Presentación taller</h2>
-<p>Ejemplo con <a href="https://jsxgraph.uni-bayreuth.de/">JSXGraph</a>: <a href="beamer-jsxgraph.html" target="_blank">Beamer</a></p>
+<section id="transparencias-la-clase-beamer" class="level2">
+<h2 class="anchored" data-anchor-id="transparencias-la-clase-beamer">Transparencias: la clase <em>beamer</em></h2>
+<p>La clase <code>beamer</code> es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta <a href="Beamer">Beamer</a> para más detalles.</p>
+</section>
+<section id="el-paquete-koma-script" class="level2">
+<h2 class="anchored" data-anchor-id="el-paquete-koma-script">El paquete <a href="https://www.ctan.org/pkg/koma-script">KOMA-Script</a></h2>
+<p>Este paquete proporciona un reemplazo moderno para las clases <code>article</code>, <code>report</code> y <code>book</code> cuidando especialmente la tipografía y la versatilidad. Añade además una clase <code>letter</code>. Además también ofrece: - Un <a href="https://www.ctan.org/pkg/typearea">paquete para calcular el diseño de página</a> - paquetes para cambiar y definir fácilmente estilos de página</p>
+<p>La <a href="https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf">documentación</a> es extensa y a veces muy técnica pero merece la pena usar este tipo de documentos por las siguientes razones: - Todos los elementos del mismo pueden personalizarse de forma sencilla. - Permite cambiar varios parámetros del diseño e página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.</p>
+</section>
+<section id="miscelánea" class="level2">
+<h2 class="anchored" data-anchor-id="miscelánea">Miscelánea</h2>
+<p>En la sección precedente hemos introducido las clases de documento del paquete <code>KOMA-script</code> por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En <a href="https://ctan.org/topic/class">CTAN</a> se puede ver una lista de paquetes que proporcionan clases de documento alternativas. En esta sección vamos a mencionar algunas de ellas por su calidad y personalización.</p>
+<section id="la-clase-memoir" class="level3">
+<h3 class="anchored" data-anchor-id="la-clase-memoir">La clase <code>memoir</code></h3>
+<p>La <a href="https://www.ctan.org/pkg/memoir?lang=en">clase memoir</a> es otra clase de documento popular entre los usuarios de LaTeX con un gran cantidad de opciones de personalización. Su completo <a href="http://mirrors.nxthost.com/ctan/macros/latex/contrib/memoir/memman.pdf">manual</a> nos permitirá sacarle todo el partido a la misma.</p>
+</section>
+<section id="la-clase-edward-tufte" class="level3">
+<h3 class="anchored" data-anchor-id="la-clase-edward-tufte">La clase Edward Tufte</h3>
+<p>El proyecto <a href="https://tufte-latex.github.io/tufte-latex/">Tufte-LaTeX</a> ha creado dos clases de documento inspiradas en los trabajos de de <a href="https://www.edwardtufte.com/tufte/">Edward Tufte</a> profesor emérito de la universidad de Yale autor de cuatro influyentes libros sobre visualización de datos.</p>
+<p>Se trata de dos <a href="https://ctan.org/pkg/tufte-latex">clases de documento</a> para LaTeX <a href="http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-handout.pdf"><code>handout</code></a> y <a href="http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-book.pdf"><code>book</code></a> cuya característica principal es una cuidada tipografía y amplios márgenes para la inclusión de abundantes notas, referencias e imágenes.</p>
+<p>Podemos recrear hasta cierto punto la clase <code>tufte-handout</code> personalizando la clase <code>scrartcl</code>. La <a href="plantilla-KOMA-margen-amplio.tex">plantilla-KOMA-margen-amplio</a> ha usado la clase <code>scrartcl</code> cambiando el tipo de fuente, el diseño de página (para permitir un amplio margen) y el paquete <code>sidenote</code> (con ciertas modificaciones) para incluir notas y figuras al margen.</p>
+</section>
+<section id="las-clases-definidas-por-la-american-mathematical-society" class="level3">
+<h3 class="anchored" data-anchor-id="las-clases-definidas-por-la-american-mathematical-society">Las clases definidas por la American Mathematical Society</h3>
+<p>La American Mathematical Society (AMS), responsable de los populares paquetes para matemáticas <a href="https://www.ctan.org/pkg/amsmath"><code>amsmath</code></a>, y <a href="https://www.ctan.org/pkg/amsthm"><code>amsthm</code></a>, creó <a href="https://www.ctan.org/pkg/amscls">tres clases de documento</a> para su uso en LaTeX que siguen la guía de estilo de sus publicaciones: - <a href="https://www.ctan.org/pkg/amsart"><code>amsart</code></a> para artículos de investigación. - <a href="https://www.ctan.org/pkg/amsbook"><code>amsbook</code></a> para la creación de libros. - <a href="https://www.ctan.org/pkg/amsproc"><code>amsproc</code></a> para actas de un congreso.</p>
+<p>Si nos gusta el estilo de dichos documentos podemos usarlos sin problemas para nuestros propios documentos.</p>
 
 
+</section>
 </section>
 </section>
 
