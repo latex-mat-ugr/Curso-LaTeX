@@ -4,14 +4,24 @@ website:
   title: "Curso LaTeX Grado Matemáticas UGR"
   search: false
   repo-url: https://github.com/latex-mat-ugr/Curso-LaTeX
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/latex-mat-ugr/Curso-LaTeX
+        aria-label: GitHub
+
   sidebar: 
     style: "docked"
     footer: Hecho con [Quarto](https://quarto.org/)
     contents:
       - text: "Inicio"
         href: about.qmd
+      - text: "Documento básico"
+        href: Documento sencillo/about.qmd
       - text: "Matemáticas"
         href: Matematicas/about.qmd
+      - text: "Transparencias beamer"
+        href: Beamer/about.qmd
 
 format:
   html:

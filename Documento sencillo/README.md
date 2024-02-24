@@ -1,12 +1,4 @@
-# Taller de LaTeX para alumnos de Grado en Matemáticas
-
-# Documento sencillo
-
-![fc](../Imagenes/fc.jpg)
-
-[Pedro A. García Sánchez](http://www.ugr.es/local/pedro), [pedro@ugr.es](mailto:pedro@ugr.es)
-
---------------------------------------------------------------------------------
+# Documento básico
 
 ## Estructura
 

@@ -4,3 +4,8 @@ lang: es
 ---
 
 {{< include matematicas.md >}}
+
+
+## Transparencias
+
+[Transparencias taller 2017](math-be-2017.pdf){target="_pdf"}

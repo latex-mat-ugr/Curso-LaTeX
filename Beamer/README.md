@@ -1,17 +1,11 @@
-# Taller de LaTeX para alumnos de Grado en Matemáticas::Transparencias
+# Transparencias Beamer
 
-![fc](../Imagenes/fc.jpg)
-
-[Pedro A. García Sánchez](http://www.ugr.es/local/pedro), <pedro@ugr.es>
-
-***
 
 ## Estructura
 
 El tipo de documento `beamer` es parecido a un artículo o libro
 
 ```latex
-
 \documentclass{beamer}
 
 %probad a descomentar alguna de las siguientes
@@ -32,10 +26,8 @@ El tipo de documento `beamer` es parecido a un artículo o libro
 \maketitle
 
 \section*{Introducción}
-
 ```
 
-***
 
 ## Frames
 
@@ -43,15 +35,12 @@ Cada transparencia se corresponde con un cuatro o frame
 
 ```latex
 \begin{frame}{Con su título}
-
 ...
-
 \end{frame}
 ```
 
 El título es opcional
 
-***
 
 ## Itemize
 
@@ -61,15 +50,11 @@ En `beamer` se pueden hacer pausas cada vez que hay una lista, haciendo que camb
 \begin{frame}
 \begin{itemize}[<+-|alert@+>]
 \item Este taller está pensado como pequeña introducción al \LaTeX
-
 \item Intentaremos dar algunas pequeñas pinceladas sobe su uso
-
 \item Para m\'as detalles véase la documentación de beamer.
 \end{itemize}
 \end{frame}
 ```
-***
-
 ## Bloques
 
 Dentro de una transparencia podemos usar bloques
@@ -95,7 +80,6 @@ Y en estos los ejemplos, por ejemplo.
 
 Los colores y forma (bordes) cambian dependiendo del estilo seleccionado
 
-***
 
 ## Pausas
 
@@ -104,7 +88,6 @@ Con el comando `\pause` podemos hacer que se muestre el texto de una transparenc
 El proceso se puede repetir tantas veces como queramos
 
 ```latex
-
 Algo nuevo
 
 \pause
@@ -116,7 +99,6 @@ Otra cosa
 Y otra cosa más
 ```
 
-***
 
 ## Sobreimpresiones
 
@@ -140,7 +122,6 @@ O cualquier otra cosa.
 \end{overprint}
 ```
 
-***
 
 ## Bibliografía
 
@@ -153,9 +134,7 @@ The not so short introduction to \LaTeX2e,
 
 ```
 
-El código anterior, al igual que `\maketitle`, crea una nueva transparencia conteniendo la bibliografía
-
-***
+El código anterior, al igual que `\maketitle`, crea una nueva transparencia conteniendo la bibliografía.
 
 ## Recomendaciones
 

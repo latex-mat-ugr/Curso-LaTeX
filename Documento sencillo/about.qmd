@@ -1,0 +1,10 @@
+---
+Title: "Documento sencillo"
+lang: es
+---
+
+{{< include README.md >}}
+
+## Presentación taller
+
+[Presentación Taller 2020](presentacion-taller-2020.pdf){target="_pdf"}
