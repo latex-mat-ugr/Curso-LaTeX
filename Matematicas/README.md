@@ -1,7 +1,4 @@
 
-**Como GitHub ya no da soporte a mathjax, para ver bien este documento, descárgate el html y lo ves en tu navegador favorito**
-
-
 # Matemáticas
 
 

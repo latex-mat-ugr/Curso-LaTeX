@@ -1,13 +1,10 @@
 # Pequeña intro a markdown
 
-[Pedro A. García Sánchez](http://www.ugr.es/local/pedro)
-
-***
 
 # Listas
 
 Podemos empezar una lista con `-` o bien `*`
-```
+```markdown
 * Sin enumerar
 * Y con sublistas
 	* 1
@@ -23,19 +20,16 @@ Da lugar a
 Si queremos numeradas, cambiamos los `*` por un `1.`
 
 1. numeradas
-2. y tambíen anidadas
+2. y también anidadas
 	1. Eso, ahora otra numeración
-
-***
 
 # Fórmulas
 
 Esto es una fórmula en línea $(x^2+1)^3$ y además podemos hacer una en
+
 $$\int_a^b \frac{x+1}{x-1} \mathrm d x.$$
 
 Las fórmulas en línea las escribimos con `$..$` las centradas con doble `$$` o bien `\[..\]`
-
----
 
 # Tablas
 
@@ -49,16 +43,16 @@ Las fórmulas en línea las escribimos con `$..$` las centradas con doble `$$` o
 | ----| :---: | ---: |
 | Normal | Centrado | a derecha|
 
----
 
-# Textos
+# Tipos de letra
 
 ```markdown
 En *itálica*, **negrita** y en las dos **_ambos_**.
 ```
+Que da lugar a
+
 En *itálica*, **negrita** y en las dos **_ambos_**.
 
-___
 
 # Enlaces
 
@@ -76,7 +70,6 @@ y si queremos imágenes, ponemos un ! delante
 
 ![Una afoto](apery.png)
 
----
 
 # Estructura
 
@@ -90,27 +83,17 @@ Podemos usar de una a seis \# para indicar nivel de profundidad
 
 ```markdown
 # Título
-
 ## Subtítulo
-
 ...
 ```
 
-***
-
 # Citas
 
-> Citascomienzan con \>
-> > y se pueden anidar
+> Citas comienzan con \>
 
-	Si indentamos también obtenemos bloques
+	Si usamos tabulador también obtenemos bloques
 	Del tamaño que escribamos, como un verbatim
 
-> Y los podemos combinar
->
- 	Pues aquí está
-
----
 
 # Código insertado
 
@@ -137,9 +120,7 @@ Para varias líneas de código
 
 Se puede especificar el lenguaje usado
 
-***
-
-# Transparencias
+# Creando transparencias
 
 Para convertirlo en transparencias hacemos
 
@@ -155,4 +136,6 @@ pandoc -s --mathjax=/Users/pedro/lib/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLo
 ```
 
 También podemos utilizar [remark](http://remarkjs.com), de hecho
-estas transparencias están hechas con `remark`
+estas transparencias están hechas con `remark`([ejemplo](transparencias-remark.html){target="_blank"})
+
+O la extensión [Marp](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) de Visual Studio Code

@@ -4,12 +4,6 @@ Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grad
 
 Los contenidos del curso se mantienen por [Jerónimo Alaminos](https://www.ugr.es/~alaminos/), [Pedro A. García Sánchez](https://www.ugr.es/~pedro), [Óscar Sánchez Romero](https://www.ugr.es/~ossanche) y [Francisco Torralbo](https://www.ugr.es/~ftorralbo/).
 
-## Nueva edición del curso de LaTeX 2021
-
-Este curso académico se va a impartir el curso online de LaTeX [*Introducción al lenguaje LaTeX para edición de textos académicos*](https://sites.google.com/go.ugr.es/yosigopublicando/los-cursos#h.1rvelu5hbhsq) a través de la plataforma [**yosigopublicando**](https://sites.google.com/go.ugr.es/yosigopublicando/principal) de la [Universidad de Granada](https://www.ugr.es/).
-
-El material de dicho curso se encuentra disponible en el repositorio [curso-virtual-2021](https://github.com/latex-mat-ugr/curso-virtual-2021). Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.
-
 
 ## Instalación de LaTeX
 
@@ -107,3 +101,9 @@ Para mac, un buena opción es [MacDown](http://macdown.uranusjr.com), que ya tra
 Existe además un plugin para [Chrome](https://www.google.com/chrome/browser/desktop/index.html) para visualizar markdown: [Markdown preview plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl). Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.
 
 Otra opción es usar un editor en línea, como puede ser [StackEdit](https://stackedit.io). También soporta MathJax.
+
+## Nueva edición del curso de LaTeX 2021
+
+Este curso académico se va a impartir el curso online de LaTeX [*Introducción al lenguaje LaTeX para edición de textos académicos*](https://sites.google.com/go.ugr.es/yosigopublicando/los-cursos#h.1rvelu5hbhsq) a través de la plataforma [**yosigopublicando**](https://sites.google.com/go.ugr.es/yosigopublicando/principal) de la [Universidad de Granada](https://www.ugr.es/).
+
+El material de dicho curso se encuentra disponible en el repositorio [curso-virtual-2021](https://github.com/latex-mat-ugr/curso-virtual-2021). Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.

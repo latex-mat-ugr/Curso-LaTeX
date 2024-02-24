@@ -22,6 +22,8 @@ website:
         href: Matematicas/about.qmd
       - text: "Transparencias beamer"
         href: Beamer/about.qmd
+      - text: "Markdown"
+        href: Markdown/about.qmd
 
 format:
   html:
