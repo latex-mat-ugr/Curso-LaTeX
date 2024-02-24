@@ -1,6 +1,5 @@
 # Matemáticas
 
-
 Hay dos formas de escribir matemáticas: en la misma línea o centrado en una línea separada.
 
 * Para escribir matemáticas *en línea* agrupamos el texto entre dólares. Por ejemplo,
@@ -20,7 +19,6 @@ $$
 \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
 $$
 
-***
 
 ### Espaciado
 
@@ -32,21 +30,23 @@ Sea $x=1,2$ o $3$ con sea $x=1$, $2$ o $3$
 ```
 La forma correcta de escribirlo es la *segunda* si queremos que LaTeX use el espaciado que se considera correcto.
 
-***
 
 ## Construcciones básicas
 
 ### Operaciones aritméticas, subíndices y superíndices
+
 ```latex
 $a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \div b$
 ```
-produce
-$a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \div b$
+
+produce $a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \div b$.
+
 Puedes escribir subíndices y superíndices de la siguiente forma:
 ```latex
 n^{2}, x^{1/x}, x_{n}, lim_{x \to \infty}
 ```
 que da como resultado
+
 $$
 n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 $$
@@ -59,7 +59,6 @@ $$
 \sum_{n=1}^{\infty} x^{x^n}
 $$
 
-***
 
 ### Fracciones
 
@@ -73,14 +72,12 @@ $\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
 
 `frac` se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como `tfrac`), si está en una línea separada aumenta (como `dfrac`). Podemos forzar un comportamiento u otro usando `tfrac` o `dfrac`.
 
-***
 
 ### Números binómicos
 
 `\binom{a}{b}` produce $\binom{a}{b}$. Al igual que con frac, se
 puede alterar su tamaño usando `tbinom{a}{b}` o `dbinom{a}{b}` y se obtiene $\tbinom{a}{b}$ y $\dbinom{a}{b}$.
 
-***
 
 ### Puntos suspensivos
 
@@ -90,7 +87,6 @@ x=1,2,\ldots 3, x+y+\cdots +z, x\times y \times \dots z
 ```
 produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$
 
-***
 
 ### Integrales
 
@@ -100,7 +96,6 @@ $\oint \iint \iiint \iiiint \idotsint$
 ```
 $\oint \iint \iiint \iiiint \idotsint$
 
-***
 
 ### Raíces
 
@@ -111,7 +106,6 @@ $\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
 ```
 $\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
 
-***
 
 ## Texto en matemáticas
 
@@ -125,7 +119,6 @@ $$
 f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
 $$
 
-***
 
 ### Acentos, gorros,...
 
@@ -141,7 +134,6 @@ Con el paquete *esvect* se pueden representar vectores mejor
 \vv{a},  \; \vv{abc} , \; \vv*{a}{n}
 ```
 
-***
 
 ## Operadores
 
@@ -154,7 +146,6 @@ Usando
 ```
 en la cabecera del documento, está disponible el comando `\distancia`
 
-***
 
 ## Sub y superíndices de nuevo
 
@@ -169,7 +160,6 @@ $$
 \sum_{\substack{i=1\\j=123}} i+j
 $$
 
-***
 
 ## Llaves y flechas
 

@@ -1,0 +1,25 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "*.md"
+website:
+  title: "Curso LaTeX Grado Matemáticas UGR"
+  search: false
+  repo-url: https://github.com/latex-mat-ugr/Curso-LaTeX
+  sidebar: 
+    style: "docked"
+    footer: Hecho con [Quarto](https://quarto.org/)
+    contents:
+      - text: "Inicio"
+        href: about.qmd
+      - text: "Matemáticas"
+        href: Matematicas/about.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+
+

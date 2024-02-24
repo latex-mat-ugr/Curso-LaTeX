@@ -24,3 +24,6 @@ tags.temp
 Icon?
 *.vrb
 *.xdv
+
+/.quarto/
+/_site/

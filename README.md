@@ -1,5 +1,3 @@
-# Curso de LaTeX
-
 Curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page412.htm) y por el PAT [Orientamat](https://www.ugr.es/~orientamat/) para alumnos de Trabajo de Fin de Grado
 
 Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas
@@ -31,7 +29,7 @@ En el curso usaremos [TeXStudio](https://www.texstudio.org/) como editor de text
 
 Si tenéis [debian](https://www.debian.org/index.es.html) o [Ubuntu](http://www.ubuntu.com), lo podéis instalar desde la línea de comandos
 
-```sh
+```
 sudo apt-get install texlive
 ```
 
@@ -68,13 +66,17 @@ La instalación de [MacTeX](https://tug.org/mactex/mactex-download.html) ya incl
 
 ### Editores
 
-Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye [TeXworks](https://www.tug.org/texworks). Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, [emacs](https://www.gnu.org/software/emacs) con [AUCTeX](https://www.gnu.org/software/auctex) o bien [vim](https://www.vim.org/) (o su versión más moderna [neovim](https://neovim.io/)) con [vimtex](https://github.com/lervag/vimtex) son también buenas opciones para el usuario experto.
+Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye [TeXworks](https://www.tug.org/texworks). Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, [emacs](https://www.gnu.org/software/emacs) con [AUCTeX](https://www.gnu.org/software/auctex) o bien [vim](https://www.vim.org/) (o su versión más moderna [neovim](https://neovim.io/)) con [vimtex](https://github.com/lervag/vimtex) son también buenas opciones para el usuario experto. 
 
 TeXworks existe en todas las plataformas que hemos mencionado.
 
-Yo personalmente uso [TeXStudio](http://texstudio.sourceforge.net), que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.
+Yo uso [TeXStudio](http://texstudio.sourceforge.net), que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.
 
-Existen varias posibilidades también de editar textos en línea, una de ellas es [ShareLaTeX](https://www.sharelatex.com?r=1412eb69&rm=d&rs=b) que actualmente forma parte de [Overleaf](https://www.overleaf.com/).
+[Visual Studio Code](https://code.visualstudio.com/) es un editor mutiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.
+
+Existen varias posibilidades también de editar textos en línea, una de ellas es ShareLaTeX que actualmente forma parte de [Overleaf](https://www.overleaf.com/).
+
+
 
 ## Material
 
@@ -96,7 +98,9 @@ Cada carpeta contiene una descripción en markdown y html (obtenido a partir de 
 
 ## Editores de markdown
 
-El editor [atom](https://atom.io) es multiplataforma, y tiene un módulo markdown (estas líneas se están escribiendo con atom).
+El editor [atom](https://atom.io) es multiplataforma, y tiene un módulo markdown.
+
+[Visual Studio Code](https://code.visualstudio.com/) puede editar y visualizar markdown, y tiene muchas extensiones para usar con markdown.
 
 Para mac, un buena opción es [MacDown](http://macdown.uranusjr.com), que ya trae integrada [MathJax](http://www.mathjax.org) para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo [Markdown Preview Plus](https://atom.io/packages/markdown-preview-plus).
 
