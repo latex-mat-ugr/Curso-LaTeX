@@ -38,7 +38,7 @@ nos permite escribir `\parcial{f}{x}` e imprimirá la derivada parcial de la fun
 
 La única precaución que tenemos que tener es que el comando que estamos definiendo no puede existir, en cuyo caso LaTeX nos dará un error. Si lo que queremos es realmente cambiar un comando ya existente deberemos usar la orden `\renewcommand` cuya sintaxis es idéntica a `\newcommand`.
 
-## Entornos: la orden `\newenvironment`
+### Entornos: la orden `\newenvironment`
 
 Para definir un entorno nuevo usaremos la orden `\newenvironment` cuya sintaxis es la siguiente:
 

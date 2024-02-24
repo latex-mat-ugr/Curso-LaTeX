@@ -14,8 +14,6 @@ website:
     style: "docked"
     footer: Hecho con [Quarto](https://quarto.org/)
     contents:
-      - text: "Inicio"
-        href: about.qmd
       - text: "Documento básico"
         href: Documento sencillo/about.qmd
       - text: "Matemáticas"
@@ -24,6 +22,8 @@ website:
         href: Beamer/about.qmd
       - text: "Markdown"
         href: Markdown/about.qmd
+      - text: "Personalización"
+        href: Personalizacion/about.qmd
 
 format:
   html:
