@@ -55,7 +55,7 @@ El entorno ``tabular`` es la forma más básica de incluir cuadros.
 ```
 
 Como se ve en el ejemplo anterior, el aspecto de un cuadro es el siguiente
-```
+```latex
 \begin{tabular}{col1,col2,col3}
 a11 & a12 & a13 \\
 a21 & a22 & a23 \\
