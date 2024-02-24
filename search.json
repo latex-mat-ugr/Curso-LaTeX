@@ -111,6 +111,275 @@
     ]
   },
   {
+    "objectID": "Documento sencillo/taller.html",
+    "href": "Documento sencillo/taller.html",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "fc\n\n\nPedro A. García Sánchez, pedro@ugr.es\n\n\n\nLa estructura de un documento es la siguiente\n\\documentclass{...}\n\n\\begin{document}\n...\n\\end{document}\n\n\n\n\nEntre \\documentclass y \\begin{document} ponemos declaraciones y paquetes que vamos a necesitar\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\\usepackage{enumerate}\n\\usepackage{graphicx}\n\\usepackage[hidelinks]{hyperref}\n\\usepackage[vmargin=2cm,hmargin=2cm]{geometry}\n\nvisualización de las cabeceras del documento\n\\title[Taller de \\LaTeX]{Taller de \\LaTeX\\ para alumnos del Grado en Matemáticas}\n\\author[Los presentes]{Los asistentes a dicho curso}\n\\thanks{Agradecemos a la AMAT por organizar este curso}\n\n\\address{Facultad de Ciencias}\n\\email{alguno@ugr.es}\n\\renewcommand{\\datename}{Fecha:}\n\\date{\\today}\n\\renewcommand{\\keywordsname}{Palabras clave}\n\\keywords{\\LaTeX, taller software libre}\n\n\n\n\n\n\n\\begin{abstract}\nEsto es una prueba de cómo hacer algunas cosas en \\LaTeX.\n\\end{abstract}\n\n\n\nEl título y datos de autores se visualiza con \\maketitle\n\n\n\nPodemos añadir una tabla de contenidos con \\tableofcontents\n\n\n\n\n\nPodemos crear seccions (en un libro también capítulos y partes) con el comando \\section. Éstas pueden contener subsecciones: \\subsection, y subsubseciones. Finalmente tenemos párrafos, \\paragraph, y subpárrafos\n\n\n\nComando\nNivel\n\n\n\n\n\\part\n-1\n\n\n\\chapter\n0\n\n\n\\section\n1\n\n\n\\subsection\n2\n\n\n\\subsubsection\n3\n\n\n\\paragraph\n4\n\n\n\\subparagraph\n5\n\n\n\nVéase http://en.wikibooks.org/wiki/LaTeX/Document_Structure\n\n\n\n\nHay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento\n\\begin{enumerate}[1)]\n\\item Aquellas que van enumeradas.\n    \\begin{enumerate}\n    \\item \\ldots que además se pueden anidar.\n    \\end{enumerate}\n\n\\item Aquellas sin enumerar:\n\\begin{itemize}\n\\item[$\\diamond$] damos varios apartados,\n\\begin{itemize}\n\\item y podemos también anidar.\n\\end{itemize}\n\\end{itemize}\n\\end{enumerate}\n\n\n\n\nLas tablas que presentamos aquí son muy sencillas, se pueden además unir celdas o separarlas\n\\begin{tabular}{lcr}\n1 & 2 & 3 \\\\\nPepe & Juan & Manuel\n\\end{tabular}\nO bien con bordes\n\\begin{tabular}{l||c|c|c|} \\hline\nPosición & 1 & 2 & 3 \\\\ \\hline \\hline\nNombre & Pepe & Juan & Manuel\\\\ \\hline\n\\end{tabular}\n\n\n\n\nTenemos varios tipos de letra y tamaños básicos\n\n\n\nComando\nTipo\n\n\n\n\n\\textbf\nnegrita\n\n\n\\textit\nitálica\n\n\n\\textsl\nhelvética\n\n\n\\texttt\ncourier\n\n\n\\textsc\npequeñas Mayúsculas\n\n\n\n… o bien podemos \\emph{enfatizar} una \\textit{parte del texto \\emph{dentro} de otro}\n\n\n\n\nExisten dos tipos de fórmulas\n\nEn línea como por ejemplo $x^2+1$ que produce \\(x^2+1\\)\nEn modo ventana o centrado: $$x^2+1$$ que se ve como\n\n\\[x^2+1\\]\nLos delimitadores $..$ se pueden substituir por \\(..\\) y\n$$..$$\npor\n\\[..\\]\n(entre otros, de hecho este último ofrece más funcionalidades como \\qedhere)\n\n\n\n\nEl entorno array es similar a tabular\n\\begin{array}{clr}\n1 & -\\frac{1}2 & 321 \\\\\nx^2+x+1 & x-1 & 7\n\\end{array}\n\\[ \\begin{array}{clr} 1 & -\\frac{1}2 & 321 \\ x^2+x+1 & x-1 & 7 \\end{array} \\]\nPodemos delimitarla con \\left y \\right\n\\left\\{\\begin{array}{clr}\n1 & -\\frac{1}2 & 321 \\\\\nx^2+x+1 & x-1 & 7\n\\end{array}\n\\right)\n\\[ \\left{\\begin{array}{clr} 1 & -\\frac{1}2 & 321 \\ x^2+x+1 & x-1 & 7 \\end{array} \\right) \\]\nExisten matrices predefinidos como \\begin{matrix} .. \\end{matrix}, \\begin{pmatrix} .. \\end{pmatrix}, …\n\n\n\n\nVamos a definir una función por casos\n$$\nf(x)=\\left\\{\n    \\begin{array}{ll}\n    x^2-1, & \\text{si } 1\\le x\\le 4,\\\\\n    x-1, & \\text{en otro caso}.\n    \\end{array}\n    \\right.\n$$\n\\[ f(x)=\\left{ \\begin{array}{ll} x^2-1, & \\text{si } 1\\le x\\le 4,\\ x-1, & \\text{en otro caso}. \\end{array} \\right. \\]\n\n\n\n\n\\newenvironment{ejercicio}[1]{\\textbf{Ejercicio número #1}}{\\qed}\n\\begin{ejercicio}{1}\nEscribe esto con otras palabras.\n\\end{ejercicio}\nDe esta forma escribimos el contador de ejercicio de forma manual\nPara automatizarlo, hacemos lo siguiente\n\\newcounter{ejer_num}\n\\setcounter{ejer_num}{1}\n\\newenvironment{ejer}{\n  \\textbf{Ejercicio \\arabic{ejer_num}: \\stepcounter{ejer_num}}\n  \\begin{itshape}\n  }\n  {\\end{itshape}}\n\n\n\n\nPodemos numerar con la sección\n\\newtheorem{teorema}{Teorema}[section]\nY otros entornos con el contador que acabamos de crear\n\\newtheorem{nota}[teorema]{Aclaración}\n\\begin{teorema}\\label{tonto}\nLas ranas son verdes.\n\\end{teorema}\n\\begin{proof}\nAsí lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.\n\\end{proof}\nLuego podremos referenciar a este teorema como Teorema \\ref{tonto}\n\n\n\n\nEl paquete graphicx nos permite insertar gráficos con el comando \\includegraphics\n\\includegraphics[width=2.5cm]{imagen.jpg}\nPodemos también crear una figura con esa imágen\n\\begin{figure}\n\\includegraphics[width=3cm]{imagen.jpg}  \n\\caption{Algo que encontré por\n\\href{http://www3.interscience.wiley.com/journal/13087/home/ForAuthors.html}{ahí.}\n}\n\\label{uno}\n\\end{figure}\n\n\n\n\nPodemos escribir texto centrado con\n\\begin{center}\nTexto a centrar.\n\nPuede ser más de un párrafo.\n\\end{center}\nY desplazarlo a la derecha con \\hfill\n\n\n\n\nPara insertar la bibliografía se usa bien bibtex (que veremos más adelante) o el entorno thebibliography\n\\begin{thebibliography}{10}\n\\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,\n  The not so short introduction to \\LaTeX2e,\n    \\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.\n\\end{thebibliography}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#documento-sencillo",
+    "href": "Documento sencillo/taller.html#documento-sencillo",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "La estructura de un documento es la siguiente\n\\documentclass{...}\n\n\\begin{document}\n...\n\\end{document}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#cabecera-o-preámbulo",
+    "href": "Documento sencillo/taller.html#cabecera-o-preámbulo",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Entre \\documentclass y \\begin{document} ponemos declaraciones y paquetes que vamos a necesitar\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\\usepackage{enumerate}\n\\usepackage{graphicx}\n\\usepackage[hidelinks]{hyperref}\n\\usepackage[vmargin=2cm,hmargin=2cm]{geometry}\n\nvisualización de las cabeceras del documento\n\\title[Taller de \\LaTeX]{Taller de \\LaTeX\\ para alumnos del Grado en Matemáticas}\n\\author[Los presentes]{Los asistentes a dicho curso}\n\\thanks{Agradecemos a la AMAT por organizar este curso}\n\n\\address{Facultad de Ciencias}\n\\email{alguno@ugr.es}\n\\renewcommand{\\datename}{Fecha:}\n\\date{\\today}\n\\renewcommand{\\keywordsname}{Palabras clave}\n\\keywords{\\LaTeX, taller software libre}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#resumen-título-y-tabla-de-contenidos",
+    "href": "Documento sencillo/taller.html#resumen-título-y-tabla-de-contenidos",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "\\begin{abstract}\nEsto es una prueba de cómo hacer algunas cosas en \\LaTeX.\n\\end{abstract}\n\n\n\nEl título y datos de autores se visualiza con \\maketitle\n\n\n\nPodemos añadir una tabla de contenidos con \\tableofcontents"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#secciones",
+    "href": "Documento sencillo/taller.html#secciones",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Podemos crear seccions (en un libro también capítulos y partes) con el comando \\section. Éstas pueden contener subsecciones: \\subsection, y subsubseciones. Finalmente tenemos párrafos, \\paragraph, y subpárrafos\n\n\n\nComando\nNivel\n\n\n\n\n\\part\n-1\n\n\n\\chapter\n0\n\n\n\\section\n1\n\n\n\\subsection\n2\n\n\n\\subsubsection\n3\n\n\n\\paragraph\n4\n\n\n\\subparagraph\n5\n\n\n\nVéase http://en.wikibooks.org/wiki/LaTeX/Document_Structure"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#listas",
+    "href": "Documento sencillo/taller.html#listas",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento\n\\begin{enumerate}[1)]\n\\item Aquellas que van enumeradas.\n    \\begin{enumerate}\n    \\item \\ldots que además se pueden anidar.\n    \\end{enumerate}\n\n\\item Aquellas sin enumerar:\n\\begin{itemize}\n\\item[$\\diamond$] damos varios apartados,\n\\begin{itemize}\n\\item y podemos también anidar.\n\\end{itemize}\n\\end{itemize}\n\\end{enumerate}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#tablas",
+    "href": "Documento sencillo/taller.html#tablas",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Las tablas que presentamos aquí son muy sencillas, se pueden además unir celdas o separarlas\n\\begin{tabular}{lcr}\n1 & 2 & 3 \\\\\nPepe & Juan & Manuel\n\\end{tabular}\nO bien con bordes\n\\begin{tabular}{l||c|c|c|} \\hline\nPosición & 1 & 2 & 3 \\\\ \\hline \\hline\nNombre & Pepe & Juan & Manuel\\\\ \\hline\n\\end{tabular}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#tipos-de-letra",
+    "href": "Documento sencillo/taller.html#tipos-de-letra",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Tenemos varios tipos de letra y tamaños básicos\n\n\n\nComando\nTipo\n\n\n\n\n\\textbf\nnegrita\n\n\n\\textit\nitálica\n\n\n\\textsl\nhelvética\n\n\n\\texttt\ncourier\n\n\n\\textsc\npequeñas Mayúsculas\n\n\n\n… o bien podemos \\emph{enfatizar} una \\textit{parte del texto \\emph{dentro} de otro}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#fórmulas",
+    "href": "Documento sencillo/taller.html#fórmulas",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Existen dos tipos de fórmulas\n\nEn línea como por ejemplo $x^2+1$ que produce \\(x^2+1\\)\nEn modo ventana o centrado: $$x^2+1$$ que se ve como\n\n\\[x^2+1\\]\nLos delimitadores $..$ se pueden substituir por \\(..\\) y\n$$..$$\npor\n\\[..\\]\n(entre otros, de hecho este último ofrece más funcionalidades como \\qedhere)"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#matrices-y-derivados",
+    "href": "Documento sencillo/taller.html#matrices-y-derivados",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "El entorno array es similar a tabular\n\\begin{array}{clr}\n1 & -\\frac{1}2 & 321 \\\\\nx^2+x+1 & x-1 & 7\n\\end{array}\n\\[ \\begin{array}{clr} 1 & -\\frac{1}2 & 321 \\ x^2+x+1 & x-1 & 7 \\end{array} \\]\nPodemos delimitarla con \\left y \\right\n\\left\\{\\begin{array}{clr}\n1 & -\\frac{1}2 & 321 \\\\\nx^2+x+1 & x-1 & 7\n\\end{array}\n\\right)\n\\[ \\left{\\begin{array}{clr} 1 & -\\frac{1}2 & 321 \\ x^2+x+1 & x-1 & 7 \\end{array} \\right) \\]\nExisten matrices predefinidos como \\begin{matrix} .. \\end{matrix}, \\begin{pmatrix} .. \\end{pmatrix}, …"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#un-ejemplo-función-definida-por-casos",
+    "href": "Documento sencillo/taller.html#un-ejemplo-función-definida-por-casos",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Vamos a definir una función por casos\n$$\nf(x)=\\left\\{\n    \\begin{array}{ll}\n    x^2-1, & \\text{si } 1\\le x\\le 4,\\\\\n    x-1, & \\text{en otro caso}.\n    \\end{array}\n    \\right.\n$$\n\\[ f(x)=\\left{ \\begin{array}{ll} x^2-1, & \\text{si } 1\\le x\\le 4,\\ x-1, & \\text{en otro caso}. \\end{array} \\right. \\]"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#entornos",
+    "href": "Documento sencillo/taller.html#entornos",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "\\newenvironment{ejercicio}[1]{\\textbf{Ejercicio número #1}}{\\qed}\n\\begin{ejercicio}{1}\nEscribe esto con otras palabras.\n\\end{ejercicio}\nDe esta forma escribimos el contador de ejercicio de forma manual\nPara automatizarlo, hacemos lo siguiente\n\\newcounter{ejer_num}\n\\setcounter{ejer_num}{1}\n\\newenvironment{ejer}{\n  \\textbf{Ejercicio \\arabic{ejer_num}: \\stepcounter{ejer_num}}\n  \\begin{itshape}\n  }\n  {\\end{itshape}}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#entornos-predefinidos",
+    "href": "Documento sencillo/taller.html#entornos-predefinidos",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Podemos numerar con la sección\n\\newtheorem{teorema}{Teorema}[section]\nY otros entornos con el contador que acabamos de crear\n\\newtheorem{nota}[teorema]{Aclaración}\n\\begin{teorema}\\label{tonto}\nLas ranas son verdes.\n\\end{teorema}\n\\begin{proof}\nAsí lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.\n\\end{proof}\nLuego podremos referenciar a este teorema como Teorema \\ref{tonto}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#figuras-e-imágenes",
+    "href": "Documento sencillo/taller.html#figuras-e-imágenes",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "El paquete graphicx nos permite insertar gráficos con el comando \\includegraphics\n\\includegraphics[width=2.5cm]{imagen.jpg}\nPodemos también crear una figura con esa imágen\n\\begin{figure}\n\\includegraphics[width=3cm]{imagen.jpg}  \n\\caption{Algo que encontré por\n\\href{http://www3.interscience.wiley.com/journal/13087/home/ForAuthors.html}{ahí.}\n}\n\\label{uno}\n\\end{figure}"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#indentación",
+    "href": "Documento sencillo/taller.html#indentación",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Podemos escribir texto centrado con\n\\begin{center}\nTexto a centrar.\n\nPuede ser más de un párrafo.\n\\end{center}\nY desplazarlo a la derecha con \\hfill"
+  },
+  {
+    "objectID": "Documento sencillo/taller.html#la-bibliografía",
+    "href": "Documento sencillo/taller.html#la-bibliografía",
+    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
+    "section": "",
+    "text": "Para insertar la bibliografía se usa bien bibtex (que veremos más adelante) o el entorno thebibliography\n\\begin{thebibliography}{10}\n\\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,\n  The not so short introduction to \\LaTeX2e,\n    \\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.\n\\end{thebibliography}"
+  },
+  {
+    "objectID": "Bibliografia/Readme.html",
+    "href": "Bibliografia/Readme.html",
+    "title": "Bibliografías",
+    "section": "",
+    "text": "Bibliografías\nNotas sobre el uso y manejo de bibliografías en LaTeX por Antonio Alarcón López."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Curso de LaTeX",
+    "section": "",
+    "text": "Curso de LaTeX organizado por AMAT y por el PAT Orientamat para alumnos de Trabajo de Fin de Grado\nDurante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas\nLos contenidos del curso se mantienen por Jerónimo Alaminos, Pedro A. García Sánchez, Óscar Sánchez Romero y Francisco Torralbo.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "about.html#instalación-de-latex",
+    "href": "about.html#instalación-de-latex",
+    "title": "Curso de LaTeX",
+    "section": "Instalación de LaTeX",
+    "text": "Instalación de LaTeX\n\nUsuarios de Windows\nUna buena opción es MiKTeX. Si tenéis espacio de sobra, podéis optar por la instalación completa. En caso contrario, una instalación básica, siempre que tengamos una buena conexión a red, es suficiente. Los paquetes que falten se instalarán cuando se necesiten. En la página miktex.org podéis encontrar los instaladores y más información.\nEn el curso usaremos TeXStudio como editor de texto.\nPosibles problemas durante la instalación:\n\nTras descargar el archivo de instalación de MikTeX no cambiarle el nombre. En algunos sistemas Windows esto provoca que la instalación falle.\nA veces que la instalación para todos lo usuarios términa con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en Archivos de Programa) y reinstalar esta vez seleccionando la instalación para un único usuario.\nSi vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. José) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. jose), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador pero sólo en la sesión del usuario que hemos creado (en el ejemplo jose).\n\n\n\nUsuarios de Linux\nSi tenéis debian o Ubuntu, lo podéis instalar desde la línea de comandos\nsudo apt-get install texlive\nNo olvidéis hacer un sudo apt-get update antes.\nEn otras distribuciones de linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.\nEl único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las instrucciones en su página oficial o bien consultar el siguiente enlace.\nUna vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos TeXStudio. Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:\nsudo apt-get install texstudio\nSi el paquete texstudio no está en los repositorios los añadiremos mediante los comandos:\nsudo add-apt-repository ppa:sunderme/texstudio\nsudo apt-get update\ny volveremos a intentar la instalación\nsudo apt-get install texstudio\n\n\nUsuarios de macOS\nLos desarrolladores de TeXShop describen en su página cómo instalar TeX Live a través de MacTeX.\nLa instalación de MacTeX ya incluye un editor aunque en el curso usaremos TeXStudio.\n\n\nEditores\nExisten muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye TeXworks. Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, emacs con AUCTeX o bien vim (o su versión más moderna neovim) con vimtex son también buenas opciones para el usuario experto.\nTeXworks existe en todas las plataformas que hemos mencionado.\nYo uso TeXStudio, que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.\nVisual Studio Code es un editor mutiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.\nExisten varias posibilidades también de editar textos en línea, una de ellas es ShareLaTeX que actualmente forma parte de Overleaf.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "about.html#material",
+    "href": "about.html#material",
+    "title": "Curso de LaTeX",
+    "section": "Material",
+    "text": "Material\nPodéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyeccto de Innovación Docente Orientamat.\nEn esta página iremos añadiendo materiales para el curso.\n\nLa carpeta Documento sencillo corresponde con la primera clase.\nLibro contiene un ejemplo de libro con capítulos, tabla de contenidos, índice y bibliografía.\nBeamer tiene dentro una presentación sencilla hecha con la clase beamer.\nMarkdown es una carpeta con una breve introducción a markdown.\n\nCada carpeta contiene una descripción en markdown y html (obtenido a partir de la de markdown). Un ejemplo de traducción del contenido de Documento sencillo se puede ver aquí.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "about.html#editores-de-markdown",
+    "href": "about.html#editores-de-markdown",
+    "title": "Curso de LaTeX",
+    "section": "Editores de markdown",
+    "text": "Editores de markdown\nEl editor atom es multiplataforma, y tiene un módulo markdown.\nVisual Studio Code puede editar y visualizar markdown, y tiene muchas extensiones para usar con markdown.\nPara mac, un buena opción es MacDown, que ya trae integrada MathJax para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo Markdown Preview Plus.\nExiste además un plugin para Chrome para visualizar markdown: Markdown preview plus. Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.\nOtra opción es usar un editor en línea, como puede ser StackEdit. También soporta MathJax.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "about.html#nueva-edición-del-curso-de-latex-2021",
+    "href": "about.html#nueva-edición-del-curso-de-latex-2021",
+    "title": "Curso de LaTeX",
+    "section": "Nueva edición del curso de LaTeX 2021",
+    "text": "Nueva edición del curso de LaTeX 2021\nEste curso académico se va a impartir el curso online de LaTeX Introducción al lenguaje LaTeX para edición de textos académicos a través de la plataforma yosigopublicando de la Universidad de Granada.\nEl material de dicho curso se encuentra disponible en el repositorio curso-virtual-2021. Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html",
+    "href": "Beamer/about.html",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "El tipo de documento beamer es parecido a un artículo o libro\n\\documentclass{beamer}\n\n%probad a descomentar alguna de las siguientes\n%\\usetheme{Goettingen}\n%\\usetheme{Berkeley}\n%\\usetheme{Boadilla}\n%\\usetheme{Copenhagen}\n\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\n\\title[Taller de \\LaTeX]{Taller de \\LaTeX\\ AMAT}\n\\author[Los presentes]{Estudiantes de Grado en Matemáticas}\n\\institute[UGR]{Universidad de Granada}\n\n\\begin{document}\n\n\\maketitle\n\n\\section*{Introducción}\n\n\n\nCada transparencia se corresponde con un cuatro o frame\n\\begin{frame}{Con su título}\n...\n\\end{frame}\nEl título es opcional\n\n\n\nEn beamer se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento\n\\begin{frame}\n\\begin{itemize}[&lt;+-|alert@+&gt;]\n\\item Este taller está pensado como pequeña introducción al \\LaTeX\n\\item Intentaremos dar algunas pequeñas pinceladas sobe su uso\n\\item Para m\\'as detalles véase la documentación de beamer.\n\\end{itemize}\n\\end{frame}\n\n\n\nDentro de una transparencia podemos usar bloques\nHay varios predefinidos\n\\begin{block}{Bloques}\nEn beamer existen varios tipos de bloques....\nY en ellos podemos escribir lo que queramos.\n\\end{block}\n\nPodemos poner texto fuera de los bloques\n\n\\begin{alertblock}{Bloques de alerta}\nEn éstos escribimos cosas a resaltar.\n\\end{alertblock}\n\n\\begin{exampleblock}{Ejemplos}\nY en estos los ejemplos, por ejemplo.\n\\end{exampleblock}\nLos colores y forma (bordes) cambian dependiendo del estilo seleccionado\n\n\n\nCon el comando \\pause podemos hacer que se muestre el texto de una transparencia hasta dicha marca\nEl proceso se puede repetir tantas veces como queramos\nAlgo nuevo\n\n\\pause\n\nOtra cosa\n\n\\pause\n\nY otra cosa más\n\n\n\nA veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros\n\\begin{overprint}\n\n\\onslide&lt;1&gt;\n\nY en estos los ejemplos, por ejemplo.\n\n\\onslide&lt;2&gt;\n\nY en estos los ejemplos, por ejemplo. Ligeramente modificado.\n\n\\onslide&lt;3&gt;\n\nO cualquier otra cosa.\n\n\\end{overprint}\n\n\n\n\\begin{thebibliography}{10}\n\\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,\nThe not so short introduction to \\LaTeX2e,\n \\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.\n\\end{thebibliography}\nEl código anterior, al igual que \\maketitle, crea una nueva transparencia conteniendo la bibliografía.\n\n\n\n\nNo hacer demasiadas transparencias\nCada transparencia no debe superar las 12 líneas\nEl estilo debe ser sencillo para no distraer a la audiencia\nNo abusar de las pausas\n\n\n\n\nEjemplo con JSXGraph: Beamer",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#estructura",
+    "href": "Beamer/about.html#estructura",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "El tipo de documento beamer es parecido a un artículo o libro\n\\documentclass{beamer}\n\n%probad a descomentar alguna de las siguientes\n%\\usetheme{Goettingen}\n%\\usetheme{Berkeley}\n%\\usetheme{Boadilla}\n%\\usetheme{Copenhagen}\n\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\n\\title[Taller de \\LaTeX]{Taller de \\LaTeX\\ AMAT}\n\\author[Los presentes]{Estudiantes de Grado en Matemáticas}\n\\institute[UGR]{Universidad de Granada}\n\n\\begin{document}\n\n\\maketitle\n\n\\section*{Introducción}",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#frames",
+    "href": "Beamer/about.html#frames",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "Cada transparencia se corresponde con un cuatro o frame\n\\begin{frame}{Con su título}\n...\n\\end{frame}\nEl título es opcional",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#itemize",
+    "href": "Beamer/about.html#itemize",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "En beamer se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento\n\\begin{frame}\n\\begin{itemize}[&lt;+-|alert@+&gt;]\n\\item Este taller está pensado como pequeña introducción al \\LaTeX\n\\item Intentaremos dar algunas pequeñas pinceladas sobe su uso\n\\item Para m\\'as detalles véase la documentación de beamer.\n\\end{itemize}\n\\end{frame}",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#bloques",
+    "href": "Beamer/about.html#bloques",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "Dentro de una transparencia podemos usar bloques\nHay varios predefinidos\n\\begin{block}{Bloques}\nEn beamer existen varios tipos de bloques....\nY en ellos podemos escribir lo que queramos.\n\\end{block}\n\nPodemos poner texto fuera de los bloques\n\n\\begin{alertblock}{Bloques de alerta}\nEn éstos escribimos cosas a resaltar.\n\\end{alertblock}\n\n\\begin{exampleblock}{Ejemplos}\nY en estos los ejemplos, por ejemplo.\n\\end{exampleblock}\nLos colores y forma (bordes) cambian dependiendo del estilo seleccionado",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#pausas",
+    "href": "Beamer/about.html#pausas",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "Con el comando \\pause podemos hacer que se muestre el texto de una transparencia hasta dicha marca\nEl proceso se puede repetir tantas veces como queramos\nAlgo nuevo\n\n\\pause\n\nOtra cosa\n\n\\pause\n\nY otra cosa más",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#sobreimpresiones",
+    "href": "Beamer/about.html#sobreimpresiones",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "A veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros\n\\begin{overprint}\n\n\\onslide&lt;1&gt;\n\nY en estos los ejemplos, por ejemplo.\n\n\\onslide&lt;2&gt;\n\nY en estos los ejemplos, por ejemplo. Ligeramente modificado.\n\n\\onslide&lt;3&gt;\n\nO cualquier otra cosa.\n\n\\end{overprint}",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#bibliografía",
+    "href": "Beamer/about.html#bibliografía",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "\\begin{thebibliography}{10}\n\\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,\nThe not so short introduction to \\LaTeX2e,\n \\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.\n\\end{thebibliography}\nEl código anterior, al igual que \\maketitle, crea una nueva transparencia conteniendo la bibliografía.",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#recomendaciones",
+    "href": "Beamer/about.html#recomendaciones",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "No hacer demasiadas transparencias\nCada transparencia no debe superar las 12 líneas\nEl estilo debe ser sencillo para no distraer a la audiencia\nNo abusar de las pausas",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#presentación-taller",
+    "href": "Beamer/about.html#presentación-taller",
+    "title": "Transparencias Beamer",
+    "section": "",
+    "text": "Ejemplo con JSXGraph: Beamer",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
     "objectID": "Documento sencillo/about.html",
     "href": "Documento sencillo/about.html",
     "title": "Documento básico",
@@ -271,273 +540,14 @@
     ]
   },
   {
-    "objectID": "Beamer/about.html",
-    "href": "Beamer/about.html",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "El tipo de documento beamer es parecido a un artículo o libro\n\\documentclass{beamer}\n\n%probad a descomentar alguna de las siguientes\n%\\usetheme{Goettingen}\n%\\usetheme{Berkeley}\n%\\usetheme{Boadilla}\n%\\usetheme{Copenhagen}\n\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\n\\title[Taller de \\LaTeX]{Taller de \\LaTeX\\ AMAT}\n\\author[Los presentes]{Estudiantes de Grado en Matemáticas}\n\\institute[UGR]{Universidad de Granada}\n\n\\begin{document}\n\n\\maketitle\n\n\\section*{Introducción}\n\n\n\nCada transparencia se corresponde con un cuatro o frame\n\\begin{frame}{Con su título}\n...\n\\end{frame}\nEl título es opcional\n\n\n\nEn beamer se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento\n\\begin{frame}\n\\begin{itemize}[&lt;+-|alert@+&gt;]\n\\item Este taller está pensado como pequeña introducción al \\LaTeX\n\\item Intentaremos dar algunas pequeñas pinceladas sobe su uso\n\\item Para m\\'as detalles véase la documentación de beamer.\n\\end{itemize}\n\\end{frame}\n\n\n\nDentro de una transparencia podemos usar bloques\nHay varios predefinidos\n\\begin{block}{Bloques}\nEn beamer existen varios tipos de bloques....\nY en ellos podemos escribir lo que queramos.\n\\end{block}\n\nPodemos poner texto fuera de los bloques\n\n\\begin{alertblock}{Bloques de alerta}\nEn éstos escribimos cosas a resaltar.\n\\end{alertblock}\n\n\\begin{exampleblock}{Ejemplos}\nY en estos los ejemplos, por ejemplo.\n\\end{exampleblock}\nLos colores y forma (bordes) cambian dependiendo del estilo seleccionado\n\n\n\nCon el comando \\pause podemos hacer que se muestre el texto de una transparencia hasta dicha marca\nEl proceso se puede repetir tantas veces como queramos\nAlgo nuevo\n\n\\pause\n\nOtra cosa\n\n\\pause\n\nY otra cosa más\n\n\n\nA veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros\n\\begin{overprint}\n\n\\onslide&lt;1&gt;\n\nY en estos los ejemplos, por ejemplo.\n\n\\onslide&lt;2&gt;\n\nY en estos los ejemplos, por ejemplo. Ligeramente modificado.\n\n\\onslide&lt;3&gt;\n\nO cualquier otra cosa.\n\n\\end{overprint}\n\n\n\n\\begin{thebibliography}{10}\n\\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,\nThe not so short introduction to \\LaTeX2e,\n \\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.\n\\end{thebibliography}\nEl código anterior, al igual que \\maketitle, crea una nueva transparencia conteniendo la bibliografía.\n\n\n\n\nNo hacer demasiadas transparencias\nCada transparencia no debe superar las 12 líneas\nEl estilo debe ser sencillo para no distraer a la audiencia\nNo abusar de las pausas\n\n\n\n\nEjemplo con JSXGraph: Beamer",
+    "objectID": "Markdown/about.html#subtítulo",
+    "href": "Markdown/about.html#subtítulo",
+    "title": "Pequeña intro a markdown",
+    "section": "Subtítulo",
+    "text": "Subtítulo\n\nOtro nivel\n\nY otro\nPodemos usar de una a seis # para indicar nivel de profundidad\n# Título\n## Subtítulo\n...",
     "crumbs": [
-      "Transparencias beamer"
+      "Markdown"
     ]
-  },
-  {
-    "objectID": "Beamer/about.html#estructura",
-    "href": "Beamer/about.html#estructura",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "El tipo de documento beamer es parecido a un artículo o libro\n\\documentclass{beamer}\n\n%probad a descomentar alguna de las siguientes\n%\\usetheme{Goettingen}\n%\\usetheme{Berkeley}\n%\\usetheme{Boadilla}\n%\\usetheme{Copenhagen}\n\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\n\\title[Taller de \\LaTeX]{Taller de \\LaTeX\\ AMAT}\n\\author[Los presentes]{Estudiantes de Grado en Matemáticas}\n\\institute[UGR]{Universidad de Granada}\n\n\\begin{document}\n\n\\maketitle\n\n\\section*{Introducción}",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "Beamer/about.html#frames",
-    "href": "Beamer/about.html#frames",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "Cada transparencia se corresponde con un cuatro o frame\n\\begin{frame}{Con su título}\n...\n\\end{frame}\nEl título es opcional",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "Beamer/about.html#itemize",
-    "href": "Beamer/about.html#itemize",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "En beamer se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento\n\\begin{frame}\n\\begin{itemize}[&lt;+-|alert@+&gt;]\n\\item Este taller está pensado como pequeña introducción al \\LaTeX\n\\item Intentaremos dar algunas pequeñas pinceladas sobe su uso\n\\item Para m\\'as detalles véase la documentación de beamer.\n\\end{itemize}\n\\end{frame}",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "Beamer/about.html#bloques",
-    "href": "Beamer/about.html#bloques",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "Dentro de una transparencia podemos usar bloques\nHay varios predefinidos\n\\begin{block}{Bloques}\nEn beamer existen varios tipos de bloques....\nY en ellos podemos escribir lo que queramos.\n\\end{block}\n\nPodemos poner texto fuera de los bloques\n\n\\begin{alertblock}{Bloques de alerta}\nEn éstos escribimos cosas a resaltar.\n\\end{alertblock}\n\n\\begin{exampleblock}{Ejemplos}\nY en estos los ejemplos, por ejemplo.\n\\end{exampleblock}\nLos colores y forma (bordes) cambian dependiendo del estilo seleccionado",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "Beamer/about.html#pausas",
-    "href": "Beamer/about.html#pausas",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "Con el comando \\pause podemos hacer que se muestre el texto de una transparencia hasta dicha marca\nEl proceso se puede repetir tantas veces como queramos\nAlgo nuevo\n\n\\pause\n\nOtra cosa\n\n\\pause\n\nY otra cosa más",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "Beamer/about.html#sobreimpresiones",
-    "href": "Beamer/about.html#sobreimpresiones",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "A veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros\n\\begin{overprint}\n\n\\onslide&lt;1&gt;\n\nY en estos los ejemplos, por ejemplo.\n\n\\onslide&lt;2&gt;\n\nY en estos los ejemplos, por ejemplo. Ligeramente modificado.\n\n\\onslide&lt;3&gt;\n\nO cualquier otra cosa.\n\n\\end{overprint}",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "Beamer/about.html#bibliografía",
-    "href": "Beamer/about.html#bibliografía",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "\\begin{thebibliography}{10}\n\\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,\nThe not so short introduction to \\LaTeX2e,\n \\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.\n\\end{thebibliography}\nEl código anterior, al igual que \\maketitle, crea una nueva transparencia conteniendo la bibliografía.",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "Beamer/about.html#recomendaciones",
-    "href": "Beamer/about.html#recomendaciones",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "No hacer demasiadas transparencias\nCada transparencia no debe superar las 12 líneas\nEl estilo debe ser sencillo para no distraer a la audiencia\nNo abusar de las pausas",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "Beamer/about.html#presentación-taller",
-    "href": "Beamer/about.html#presentación-taller",
-    "title": "Transparencias Beamer",
-    "section": "",
-    "text": "Ejemplo con JSXGraph: Beamer",
-    "crumbs": [
-      "Transparencias beamer"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Curso de LaTeX",
-    "section": "",
-    "text": "Curso de LaTeX organizado por AMAT y por el PAT Orientamat para alumnos de Trabajo de Fin de Grado\nDurante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas\nLos contenidos del curso se mantienen por Jerónimo Alaminos, Pedro A. García Sánchez, Óscar Sánchez Romero y Francisco Torralbo.",
-    "crumbs": [
-      "Inicio"
-    ]
-  },
-  {
-    "objectID": "about.html#nueva-edición-del-curso-de-latex-2021",
-    "href": "about.html#nueva-edición-del-curso-de-latex-2021",
-    "title": "Curso de LaTeX",
-    "section": "Nueva edición del curso de LaTeX 2021",
-    "text": "Nueva edición del curso de LaTeX 2021\nEste curso académico se va a impartir el curso online de LaTeX Introducción al lenguaje LaTeX para edición de textos académicos a través de la plataforma yosigopublicando de la Universidad de Granada.\nEl material de dicho curso se encuentra disponible en el repositorio curso-virtual-2021. Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.",
-    "crumbs": [
-      "Inicio"
-    ]
-  },
-  {
-    "objectID": "about.html#instalación-de-latex",
-    "href": "about.html#instalación-de-latex",
-    "title": "Curso de LaTeX",
-    "section": "Instalación de LaTeX",
-    "text": "Instalación de LaTeX\n\nUsuarios de Windows\nUna buena opción es MiKTeX. Si tenéis espacio de sobra, podéis optar por la instalación completa. En caso contrario, una instalación básica, siempre que tengamos una buena conexión a red, es suficiente. Los paquetes que falten se instalarán cuando se necesiten. En la página miktex.org podéis encontrar los instaladores y más información.\nEn el curso usaremos TeXStudio como editor de texto.\nPosibles problemas durante la instalación:\n\nTras descargar el archivo de instalación de MikTeX no cambiarle el nombre. En algunos sistemas Windows esto provoca que la instalación falle.\nA veces que la instalación para todos lo usuarios términa con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en Archivos de Programa) y reinstalar esta vez seleccionando la instalación para un único usuario.\nSi vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. José) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. jose), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador pero sólo en la sesión del usuario que hemos creado (en el ejemplo jose).\n\n\n\nUsuarios de Linux\nSi tenéis debian o Ubuntu, lo podéis instalar desde la línea de comandos\nsudo apt-get install texlive\nNo olvidéis hacer un sudo apt-get update antes.\nEn otras distribuciones de linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.\nEl único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las instrucciones en su página oficial o bien consultar el siguiente enlace.\nUna vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos TeXStudio. Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:\nsudo apt-get install texstudio\nSi el paquete texstudio no está en los repositorios los añadiremos mediante los comandos:\nsudo add-apt-repository ppa:sunderme/texstudio\nsudo apt-get update\ny volveremos a intentar la instalación\nsudo apt-get install texstudio\n\n\nUsuarios de macOS\nLos desarrolladores de TeXShop describen en su página cómo instalar TeX Live a través de MacTeX.\nLa instalación de MacTeX ya incluye un editor aunque en el curso usaremos TeXStudio.\n\n\nEditores\nExisten muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye TeXworks. Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, emacs con AUCTeX o bien vim (o su versión más moderna neovim) con vimtex son también buenas opciones para el usuario experto.\nTeXworks existe en todas las plataformas que hemos mencionado.\nYo uso TeXStudio, que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.\nVisual Studio Code es un editor mutiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.\nExisten varias posibilidades también de editar textos en línea, una de ellas es ShareLaTeX que actualmente forma parte de Overleaf.",
-    "crumbs": [
-      "Inicio"
-    ]
-  },
-  {
-    "objectID": "about.html#material",
-    "href": "about.html#material",
-    "title": "Curso de LaTeX",
-    "section": "Material",
-    "text": "Material\nPodéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyeccto de Innovación Docente Orientamat.\nEn esta página iremos añadiendo materiales para el curso.\n\nLa carpeta Documento sencillo corresponde con la primera clase.\nLibro contiene un ejemplo de libro con capítulos, tabla de contenidos, índice y bibliografía.\nBeamer tiene dentro una presentación sencilla hecha con la clase beamer.\nMarkdown es una carpeta con una breve introducción a markdown.\n\nCada carpeta contiene una descripción en markdown y html (obtenido a partir de la de markdown). Un ejemplo de traducción del contenido de Documento sencillo se puede ver aquí.",
-    "crumbs": [
-      "Inicio"
-    ]
-  },
-  {
-    "objectID": "about.html#editores-de-markdown",
-    "href": "about.html#editores-de-markdown",
-    "title": "Curso de LaTeX",
-    "section": "Editores de markdown",
-    "text": "Editores de markdown\nEl editor atom es multiplataforma, y tiene un módulo markdown.\nVisual Studio Code puede editar y visualizar markdown, y tiene muchas extensiones para usar con markdown.\nPara mac, un buena opción es MacDown, que ya trae integrada MathJax para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo Markdown Preview Plus.\nExiste además un plugin para Chrome para visualizar markdown: Markdown preview plus. Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.\nOtra opción es usar un editor en línea, como puede ser StackEdit. También soporta MathJax.",
-    "crumbs": [
-      "Inicio"
-    ]
-  },
-  {
-    "objectID": "Bibliografia/Readme.html",
-    "href": "Bibliografia/Readme.html",
-    "title": "Bibliografías",
-    "section": "",
-    "text": "Bibliografías\nNotas sobre el uso y manejo de bibliografías en LaTeX por Antonio Alarcón López."
-  },
-  {
-    "objectID": "Documento sencillo/taller.html",
-    "href": "Documento sencillo/taller.html",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "fc\n\n\nPedro A. García Sánchez, pedro@ugr.es\n\n\n\nLa estructura de un documento es la siguiente\n\\documentclass{...}\n\n\\begin{document}\n...\n\\end{document}\n\n\n\n\nEntre \\documentclass y \\begin{document} ponemos declaraciones y paquetes que vamos a necesitar\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\\usepackage{enumerate}\n\\usepackage{graphicx}\n\\usepackage[hidelinks]{hyperref}\n\\usepackage[vmargin=2cm,hmargin=2cm]{geometry}\n\nvisualización de las cabeceras del documento\n\\title[Taller de \\LaTeX]{Taller de \\LaTeX\\ para alumnos del Grado en Matemáticas}\n\\author[Los presentes]{Los asistentes a dicho curso}\n\\thanks{Agradecemos a la AMAT por organizar este curso}\n\n\\address{Facultad de Ciencias}\n\\email{alguno@ugr.es}\n\\renewcommand{\\datename}{Fecha:}\n\\date{\\today}\n\\renewcommand{\\keywordsname}{Palabras clave}\n\\keywords{\\LaTeX, taller software libre}\n\n\n\n\n\n\n\\begin{abstract}\nEsto es una prueba de cómo hacer algunas cosas en \\LaTeX.\n\\end{abstract}\n\n\n\nEl título y datos de autores se visualiza con \\maketitle\n\n\n\nPodemos añadir una tabla de contenidos con \\tableofcontents\n\n\n\n\n\nPodemos crear seccions (en un libro también capítulos y partes) con el comando \\section. Éstas pueden contener subsecciones: \\subsection, y subsubseciones. Finalmente tenemos párrafos, \\paragraph, y subpárrafos\n\n\n\nComando\nNivel\n\n\n\n\n\\part\n-1\n\n\n\\chapter\n0\n\n\n\\section\n1\n\n\n\\subsection\n2\n\n\n\\subsubsection\n3\n\n\n\\paragraph\n4\n\n\n\\subparagraph\n5\n\n\n\nVéase http://en.wikibooks.org/wiki/LaTeX/Document_Structure\n\n\n\n\nHay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento\n\\begin{enumerate}[1)]\n\\item Aquellas que van enumeradas.\n    \\begin{enumerate}\n    \\item \\ldots que además se pueden anidar.\n    \\end{enumerate}\n\n\\item Aquellas sin enumerar:\n\\begin{itemize}\n\\item[$\\diamond$] damos varios apartados,\n\\begin{itemize}\n\\item y podemos también anidar.\n\\end{itemize}\n\\end{itemize}\n\\end{enumerate}\n\n\n\n\nLas tablas que presentamos aquí son muy sencillas, se pueden además unir celdas o separarlas\n\\begin{tabular}{lcr}\n1 & 2 & 3 \\\\\nPepe & Juan & Manuel\n\\end{tabular}\nO bien con bordes\n\\begin{tabular}{l||c|c|c|} \\hline\nPosición & 1 & 2 & 3 \\\\ \\hline \\hline\nNombre & Pepe & Juan & Manuel\\\\ \\hline\n\\end{tabular}\n\n\n\n\nTenemos varios tipos de letra y tamaños básicos\n\n\n\nComando\nTipo\n\n\n\n\n\\textbf\nnegrita\n\n\n\\textit\nitálica\n\n\n\\textsl\nhelvética\n\n\n\\texttt\ncourier\n\n\n\\textsc\npequeñas Mayúsculas\n\n\n\n… o bien podemos \\emph{enfatizar} una \\textit{parte del texto \\emph{dentro} de otro}\n\n\n\n\nExisten dos tipos de fórmulas\n\nEn línea como por ejemplo $x^2+1$ que produce \\(x^2+1\\)\nEn modo ventana o centrado: $$x^2+1$$ que se ve como\n\n\\[x^2+1\\]\nLos delimitadores $..$ se pueden substituir por \\(..\\) y\n$$..$$\npor\n\\[..\\]\n(entre otros, de hecho este último ofrece más funcionalidades como \\qedhere)\n\n\n\n\nEl entorno array es similar a tabular\n\\begin{array}{clr}\n1 & -\\frac{1}2 & 321 \\\\\nx^2+x+1 & x-1 & 7\n\\end{array}\n\\[ \\begin{array}{clr} 1 & -\\frac{1}2 & 321 \\ x^2+x+1 & x-1 & 7 \\end{array} \\]\nPodemos delimitarla con \\left y \\right\n\\left\\{\\begin{array}{clr}\n1 & -\\frac{1}2 & 321 \\\\\nx^2+x+1 & x-1 & 7\n\\end{array}\n\\right)\n\\[ \\left{\\begin{array}{clr} 1 & -\\frac{1}2 & 321 \\ x^2+x+1 & x-1 & 7 \\end{array} \\right) \\]\nExisten matrices predefinidos como \\begin{matrix} .. \\end{matrix}, \\begin{pmatrix} .. \\end{pmatrix}, …\n\n\n\n\nVamos a definir una función por casos\n$$\nf(x)=\\left\\{\n    \\begin{array}{ll}\n    x^2-1, & \\text{si } 1\\le x\\le 4,\\\\\n    x-1, & \\text{en otro caso}.\n    \\end{array}\n    \\right.\n$$\n\\[ f(x)=\\left{ \\begin{array}{ll} x^2-1, & \\text{si } 1\\le x\\le 4,\\ x-1, & \\text{en otro caso}. \\end{array} \\right. \\]\n\n\n\n\n\\newenvironment{ejercicio}[1]{\\textbf{Ejercicio número #1}}{\\qed}\n\\begin{ejercicio}{1}\nEscribe esto con otras palabras.\n\\end{ejercicio}\nDe esta forma escribimos el contador de ejercicio de forma manual\nPara automatizarlo, hacemos lo siguiente\n\\newcounter{ejer_num}\n\\setcounter{ejer_num}{1}\n\\newenvironment{ejer}{\n  \\textbf{Ejercicio \\arabic{ejer_num}: \\stepcounter{ejer_num}}\n  \\begin{itshape}\n  }\n  {\\end{itshape}}\n\n\n\n\nPodemos numerar con la sección\n\\newtheorem{teorema}{Teorema}[section]\nY otros entornos con el contador que acabamos de crear\n\\newtheorem{nota}[teorema]{Aclaración}\n\\begin{teorema}\\label{tonto}\nLas ranas son verdes.\n\\end{teorema}\n\\begin{proof}\nAsí lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.\n\\end{proof}\nLuego podremos referenciar a este teorema como Teorema \\ref{tonto}\n\n\n\n\nEl paquete graphicx nos permite insertar gráficos con el comando \\includegraphics\n\\includegraphics[width=2.5cm]{imagen.jpg}\nPodemos también crear una figura con esa imágen\n\\begin{figure}\n\\includegraphics[width=3cm]{imagen.jpg}  \n\\caption{Algo que encontré por\n\\href{http://www3.interscience.wiley.com/journal/13087/home/ForAuthors.html}{ahí.}\n}\n\\label{uno}\n\\end{figure}\n\n\n\n\nPodemos escribir texto centrado con\n\\begin{center}\nTexto a centrar.\n\nPuede ser más de un párrafo.\n\\end{center}\nY desplazarlo a la derecha con \\hfill\n\n\n\n\nPara insertar la bibliografía se usa bien bibtex (que veremos más adelante) o el entorno thebibliography\n\\begin{thebibliography}{10}\n\\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,\n  The not so short introduction to \\LaTeX2e,\n    \\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.\n\\end{thebibliography}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#documento-sencillo",
-    "href": "Documento sencillo/taller.html#documento-sencillo",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "La estructura de un documento es la siguiente\n\\documentclass{...}\n\n\\begin{document}\n...\n\\end{document}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#cabecera-o-preámbulo",
-    "href": "Documento sencillo/taller.html#cabecera-o-preámbulo",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Entre \\documentclass y \\begin{document} ponemos declaraciones y paquetes que vamos a necesitar\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\\usepackage{enumerate}\n\\usepackage{graphicx}\n\\usepackage[hidelinks]{hyperref}\n\\usepackage[vmargin=2cm,hmargin=2cm]{geometry}\n\nvisualización de las cabeceras del documento\n\\title[Taller de \\LaTeX]{Taller de \\LaTeX\\ para alumnos del Grado en Matemáticas}\n\\author[Los presentes]{Los asistentes a dicho curso}\n\\thanks{Agradecemos a la AMAT por organizar este curso}\n\n\\address{Facultad de Ciencias}\n\\email{alguno@ugr.es}\n\\renewcommand{\\datename}{Fecha:}\n\\date{\\today}\n\\renewcommand{\\keywordsname}{Palabras clave}\n\\keywords{\\LaTeX, taller software libre}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#resumen-título-y-tabla-de-contenidos",
-    "href": "Documento sencillo/taller.html#resumen-título-y-tabla-de-contenidos",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "\\begin{abstract}\nEsto es una prueba de cómo hacer algunas cosas en \\LaTeX.\n\\end{abstract}\n\n\n\nEl título y datos de autores se visualiza con \\maketitle\n\n\n\nPodemos añadir una tabla de contenidos con \\tableofcontents"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#secciones",
-    "href": "Documento sencillo/taller.html#secciones",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Podemos crear seccions (en un libro también capítulos y partes) con el comando \\section. Éstas pueden contener subsecciones: \\subsection, y subsubseciones. Finalmente tenemos párrafos, \\paragraph, y subpárrafos\n\n\n\nComando\nNivel\n\n\n\n\n\\part\n-1\n\n\n\\chapter\n0\n\n\n\\section\n1\n\n\n\\subsection\n2\n\n\n\\subsubsection\n3\n\n\n\\paragraph\n4\n\n\n\\subparagraph\n5\n\n\n\nVéase http://en.wikibooks.org/wiki/LaTeX/Document_Structure"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#listas",
-    "href": "Documento sencillo/taller.html#listas",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento\n\\begin{enumerate}[1)]\n\\item Aquellas que van enumeradas.\n    \\begin{enumerate}\n    \\item \\ldots que además se pueden anidar.\n    \\end{enumerate}\n\n\\item Aquellas sin enumerar:\n\\begin{itemize}\n\\item[$\\diamond$] damos varios apartados,\n\\begin{itemize}\n\\item y podemos también anidar.\n\\end{itemize}\n\\end{itemize}\n\\end{enumerate}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#tablas",
-    "href": "Documento sencillo/taller.html#tablas",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Las tablas que presentamos aquí son muy sencillas, se pueden además unir celdas o separarlas\n\\begin{tabular}{lcr}\n1 & 2 & 3 \\\\\nPepe & Juan & Manuel\n\\end{tabular}\nO bien con bordes\n\\begin{tabular}{l||c|c|c|} \\hline\nPosición & 1 & 2 & 3 \\\\ \\hline \\hline\nNombre & Pepe & Juan & Manuel\\\\ \\hline\n\\end{tabular}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#tipos-de-letra",
-    "href": "Documento sencillo/taller.html#tipos-de-letra",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Tenemos varios tipos de letra y tamaños básicos\n\n\n\nComando\nTipo\n\n\n\n\n\\textbf\nnegrita\n\n\n\\textit\nitálica\n\n\n\\textsl\nhelvética\n\n\n\\texttt\ncourier\n\n\n\\textsc\npequeñas Mayúsculas\n\n\n\n… o bien podemos \\emph{enfatizar} una \\textit{parte del texto \\emph{dentro} de otro}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#fórmulas",
-    "href": "Documento sencillo/taller.html#fórmulas",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Existen dos tipos de fórmulas\n\nEn línea como por ejemplo $x^2+1$ que produce \\(x^2+1\\)\nEn modo ventana o centrado: $$x^2+1$$ que se ve como\n\n\\[x^2+1\\]\nLos delimitadores $..$ se pueden substituir por \\(..\\) y\n$$..$$\npor\n\\[..\\]\n(entre otros, de hecho este último ofrece más funcionalidades como \\qedhere)"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#matrices-y-derivados",
-    "href": "Documento sencillo/taller.html#matrices-y-derivados",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "El entorno array es similar a tabular\n\\begin{array}{clr}\n1 & -\\frac{1}2 & 321 \\\\\nx^2+x+1 & x-1 & 7\n\\end{array}\n\\[ \\begin{array}{clr} 1 & -\\frac{1}2 & 321 \\ x^2+x+1 & x-1 & 7 \\end{array} \\]\nPodemos delimitarla con \\left y \\right\n\\left\\{\\begin{array}{clr}\n1 & -\\frac{1}2 & 321 \\\\\nx^2+x+1 & x-1 & 7\n\\end{array}\n\\right)\n\\[ \\left{\\begin{array}{clr} 1 & -\\frac{1}2 & 321 \\ x^2+x+1 & x-1 & 7 \\end{array} \\right) \\]\nExisten matrices predefinidos como \\begin{matrix} .. \\end{matrix}, \\begin{pmatrix} .. \\end{pmatrix}, …"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#un-ejemplo-función-definida-por-casos",
-    "href": "Documento sencillo/taller.html#un-ejemplo-función-definida-por-casos",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Vamos a definir una función por casos\n$$\nf(x)=\\left\\{\n    \\begin{array}{ll}\n    x^2-1, & \\text{si } 1\\le x\\le 4,\\\\\n    x-1, & \\text{en otro caso}.\n    \\end{array}\n    \\right.\n$$\n\\[ f(x)=\\left{ \\begin{array}{ll} x^2-1, & \\text{si } 1\\le x\\le 4,\\ x-1, & \\text{en otro caso}. \\end{array} \\right. \\]"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#entornos",
-    "href": "Documento sencillo/taller.html#entornos",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "\\newenvironment{ejercicio}[1]{\\textbf{Ejercicio número #1}}{\\qed}\n\\begin{ejercicio}{1}\nEscribe esto con otras palabras.\n\\end{ejercicio}\nDe esta forma escribimos el contador de ejercicio de forma manual\nPara automatizarlo, hacemos lo siguiente\n\\newcounter{ejer_num}\n\\setcounter{ejer_num}{1}\n\\newenvironment{ejer}{\n  \\textbf{Ejercicio \\arabic{ejer_num}: \\stepcounter{ejer_num}}\n  \\begin{itshape}\n  }\n  {\\end{itshape}}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#entornos-predefinidos",
-    "href": "Documento sencillo/taller.html#entornos-predefinidos",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Podemos numerar con la sección\n\\newtheorem{teorema}{Teorema}[section]\nY otros entornos con el contador que acabamos de crear\n\\newtheorem{nota}[teorema]{Aclaración}\n\\begin{teorema}\\label{tonto}\nLas ranas son verdes.\n\\end{teorema}\n\\begin{proof}\nAsí lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.\n\\end{proof}\nLuego podremos referenciar a este teorema como Teorema \\ref{tonto}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#figuras-e-imágenes",
-    "href": "Documento sencillo/taller.html#figuras-e-imágenes",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "El paquete graphicx nos permite insertar gráficos con el comando \\includegraphics\n\\includegraphics[width=2.5cm]{imagen.jpg}\nPodemos también crear una figura con esa imágen\n\\begin{figure}\n\\includegraphics[width=3cm]{imagen.jpg}  \n\\caption{Algo que encontré por\n\\href{http://www3.interscience.wiley.com/journal/13087/home/ForAuthors.html}{ahí.}\n}\n\\label{uno}\n\\end{figure}"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#indentación",
-    "href": "Documento sencillo/taller.html#indentación",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Podemos escribir texto centrado con\n\\begin{center}\nTexto a centrar.\n\nPuede ser más de un párrafo.\n\\end{center}\nY desplazarlo a la derecha con \\hfill"
-  },
-  {
-    "objectID": "Documento sencillo/taller.html#la-bibliografía",
-    "href": "Documento sencillo/taller.html#la-bibliografía",
-    "title": "Taller de LaTeX para alumnos de Grado en Matemáticas",
-    "section": "",
-    "text": "Para insertar la bibliografía se usa bien bibtex (que veremos más adelante) o el entorno thebibliography\n\\begin{thebibliography}{10}\n\\bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,\n  The not so short introduction to \\LaTeX2e,\n    \\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.\n\\end{thebibliography}"
   },
   {
     "objectID": "Matematicas/matematicas.html",

@@ -85,6 +85,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -120,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Beamer/about.html">Transparencias beamer</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Markdown/about.html">Markdown</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -152,13 +181,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Beamer/about.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Beamer/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparencias beamer</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Markdown/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../Markdown/about.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Markdown</span></a>
   </div>
 </li>
@@ -174,18 +203,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#transparencias-beamer" id="toc-transparencias-beamer" class="nav-link active" data-scroll-target="#transparencias-beamer">Transparencias Beamer</a>
+  <li><a href="#pequeña-intro-a-markdown" id="toc-pequeña-intro-a-markdown" class="nav-link active" data-scroll-target="#pequeña-intro-a-markdown">Pequeña intro a markdown</a></li>
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a></li>
+  <li><a href="#fórmulas" id="toc-fórmulas" class="nav-link" data-scroll-target="#fórmulas">Fórmulas</a></li>
+  <li><a href="#tablas" id="toc-tablas" class="nav-link" data-scroll-target="#tablas">Tablas</a></li>
+  <li><a href="#tipos-de-letra" id="toc-tipos-de-letra" class="nav-link" data-scroll-target="#tipos-de-letra">Tipos de letra</a></li>
+  <li><a href="#enlaces" id="toc-enlaces" class="nav-link" data-scroll-target="#enlaces">Enlaces</a></li>
+  <li><a href="#estructura" id="toc-estructura" class="nav-link" data-scroll-target="#estructura">Estructura</a>
   <ul class="collapse">
-  <li><a href="#estructura" id="toc-estructura" class="nav-link" data-scroll-target="#estructura">Estructura</a></li>
-  <li><a href="#frames" id="toc-frames" class="nav-link" data-scroll-target="#frames">Frames</a></li>
-  <li><a href="#itemize" id="toc-itemize" class="nav-link" data-scroll-target="#itemize">Itemize</a></li>
-  <li><a href="#bloques" id="toc-bloques" class="nav-link" data-scroll-target="#bloques">Bloques</a></li>
-  <li><a href="#pausas" id="toc-pausas" class="nav-link" data-scroll-target="#pausas">Pausas</a></li>
-  <li><a href="#sobreimpresiones" id="toc-sobreimpresiones" class="nav-link" data-scroll-target="#sobreimpresiones">Sobreimpresiones</a></li>
-  <li><a href="#bibliografía" id="toc-bibliografía" class="nav-link" data-scroll-target="#bibliografía">Bibliografía</a></li>
-  <li><a href="#recomendaciones" id="toc-recomendaciones" class="nav-link" data-scroll-target="#recomendaciones">Recomendaciones</a></li>
-  <li><a href="#presentación-taller" id="toc-presentación-taller" class="nav-link" data-scroll-target="#presentación-taller">Presentación taller</a></li>
+  <li><a href="#subtítulo" id="toc-subtítulo" class="nav-link" data-scroll-target="#subtítulo">Subtítulo</a>
+  <ul class="collapse">
+  <li><a href="#otro-nivel" id="toc-otro-nivel" class="nav-link" data-scroll-target="#otro-nivel">Otro nivel</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#citas" id="toc-citas" class="nav-link" data-scroll-target="#citas">Citas</a></li>
+  <li><a href="#código-insertado" id="toc-código-insertado" class="nav-link" data-scroll-target="#código-insertado">Código insertado</a></li>
+  <li><a href="#creando-transparencias" id="toc-creando-transparencias" class="nav-link" data-scroll-target="#creando-transparencias">Creando transparencias</a></li>
   </ul>
 </nav>
     </div>
@@ -195,128 +228,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="transparencias-beamer" class="level1">
-<h1>Transparencias Beamer</h1>
-<section id="estructura" class="level2">
-<h2 class="anchored" data-anchor-id="estructura">Estructura</h2>
-<p>El tipo de documento <code>beamer</code> es parecido a un artículo o libro</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">beamer</span>}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">%probad a descomentar alguna de las siguientes</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Goettingen}</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Berkeley}</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Boadilla}</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">%\usetheme{Copenhagen}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[spanish]{<span class="ex">babel</span>}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>[Taller de <span class="fu">\LaTeX</span>]{Taller de <span class="fu">\LaTeX\ </span>AMAT}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>[Los presentes]{Estudiantes de Grado en Matemáticas}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\institute</span>[UGR]{Universidad de Granada}</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Introducción}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="pequeña-intro-a-markdown" class="level1">
+<h1>Pequeña intro a markdown</h1>
 </section>
-<section id="frames" class="level2">
-<h2 class="anchored" data-anchor-id="frames">Frames</h2>
-<p>Cada transparencia se corresponde con un cuatro o frame</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">frame</span>}{Con su título}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">frame</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>El título es opcional</p>
-</section>
-<section id="itemize" class="level2">
-<h2 class="anchored" data-anchor-id="itemize">Itemize</h2>
-<p>En <code>beamer</code> se pueden hacer pausas cada vez que hay una lista, haciendo que cambie de color el ítem del que estemos hablando en ese momento</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">frame</span>}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}[&lt;+-|alert@+&gt;]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Este taller está pensado como pequeña introducción al <span class="fu">\LaTeX</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Intentaremos dar algunas pequeñas pinceladas sobe su uso</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Para m<span class="fu">\'</span>as detalles véase la documentación de beamer.</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">frame</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="bloques" class="level2">
-<h2 class="anchored" data-anchor-id="bloques">Bloques</h2>
-<p>Dentro de una transparencia podemos usar bloques</p>
-<p>Hay varios predefinidos</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">block</span>}{Bloques}</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>En beamer existen varios tipos de bloques....</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Y en ellos podemos escribir lo que queramos.</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">block</span>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Podemos poner texto fuera de los bloques</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">alertblock</span>}{Bloques de alerta}</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>En éstos escribimos cosas a resaltar.</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">alertblock</span>}</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">exampleblock</span>}{Ejemplos}</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo.</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">exampleblock</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Los colores y forma (bordes) cambian dependiendo del estilo seleccionado</p>
-</section>
-<section id="pausas" class="level2">
-<h2 class="anchored" data-anchor-id="pausas">Pausas</h2>
-<p>Con el comando <code>\pause</code> podemos hacer que se muestre el texto de una transparencia hasta dicha marca</p>
-<p>El proceso se puede repetir tantas veces como queramos</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Algo nuevo</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\pause</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Otra cosa</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\pause</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Y otra cosa más</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="sobreimpresiones" class="level2">
-<h2 class="anchored" data-anchor-id="sobreimpresiones">Sobreimpresiones</h2>
-<p>A veces es útil poder mostrar variaciones de texto o formas, creando cuadros dentro de los cuadros</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">overprint</span>}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;1&gt;</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo.</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;2&gt;</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Y en estos los ejemplos, por ejemplo. Ligeramente modificado.</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\onslide</span>&lt;3&gt;</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>O cualquier otra cosa.</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">overprint</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="bibliografía" class="level2">
-<h2 class="anchored" data-anchor-id="bibliografía">Bibliografía</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{10}</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\bibitem</span>{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>The not so short introduction to <span class="fu">\LaTeX</span>2e,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">\href</span>{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>El código anterior, al igual que <code>\maketitle</code>, crea una nueva transparencia conteniendo la bibliografía.</p>
-</section>
-<section id="recomendaciones" class="level2">
-<h2 class="anchored" data-anchor-id="recomendaciones">Recomendaciones</h2>
+<section id="listas" class="level1">
+<h1>Listas</h1>
+<p>Podemos empezar una lista con <code>-</code> o bien <code>*</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Sin enumerar</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Y con sublistas</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>1</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>y dos</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Da lugar a</p>
 <ul>
-<li><p>No hacer demasiadas transparencias</p></li>
-<li><p>Cada transparencia no debe superar las 12 líneas</p></li>
-<li><p>El estilo debe ser sencillo para no distraer a la audiencia</p></li>
-<li><p>No abusar de las pausas</p></li>
+<li>Sin enumerar</li>
+<li>Y con sublistas
+<ul>
+<li>1</li>
+<li>y dos</li>
+</ul></li>
 </ul>
+<p>Si queremos numeradas, cambiamos los <code>*</code> por un <code>1.</code></p>
+<ol type="1">
+<li>numeradas</li>
+<li>y también anidadas
+<ol type="1">
+<li>Eso, ahora otra numeración</li>
+</ol></li>
+</ol>
 </section>
-<section id="presentación-taller" class="level2">
-<h2 class="anchored" data-anchor-id="presentación-taller">Presentación taller</h2>
-<p>Ejemplo con <a href="https://jsxgraph.uni-bayreuth.de/">JSXGraph</a>: <a href="beamer-jsxgraph.html" target="_blank">Beamer</a></p>
+<section id="fórmulas" class="level1">
+<h1>Fórmulas</h1>
+<p>Esto es una fórmula en línea <span class="math inline">\((x^2+1)^3\)</span> y además podemos hacer una en</p>
+<p><span class="math display">\[\int_a^b \frac{x+1}{x-1} \mathrm d x.\]</span></p>
+<p>Las fórmulas en línea las escribimos con <code>$..$</code> las centradas con doble <code>$$</code> o bien <code>\[..\]</code></p>
+</section>
+<section id="tablas" class="level1">
+<h1>Tablas</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>|Cabecera 1|Cabecera 2| Y 3|</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>| ----| :---: | ---: |</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>| Normal | Centrado | a derecha|</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Cabecera 1</th>
+<th style="text-align: center;">Cabecera 2</th>
+<th style="text-align: right;">Y 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Normal</td>
+<td style="text-align: center;">Centrado</td>
+<td style="text-align: right;">a derecha</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tipos-de-letra" class="level1">
+<h1>Tipos de letra</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>En *itálica*, **negrita** y en las dos **_ambos_**.</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Que da lugar a</p>
+<p>En <em>itálica</em>, <strong>negrita</strong> y en las dos <strong><em>ambos</em></strong>.</p>
+</section>
+<section id="enlaces" class="level1">
+<h1>Enlaces</h1>
+<p>Sintáxis</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">ugr</span><span class="co">](http://www.ugr.es)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Un enlace a la <a href="http://www.ugr.es">ugr</a> y si queremos imágenes, ponemos un ! delante</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Una foto](apery.png)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="apery.png" class="img-fluid figure-img"></p>
+<figcaption>Una afoto</figcaption>
+</figure>
+</div>
+</section>
+<section id="estructura" class="level1">
+<h1>Estructura</h1>
+<section id="subtítulo" class="level2">
+<h2 class="anchored" data-anchor-id="subtítulo">Subtítulo</h2>
+<section id="otro-nivel" class="level3">
+<h3 class="anchored" data-anchor-id="otro-nivel">Otro nivel</h3>
+<section id="y-otro" class="level5">
+<h5 class="anchored" data-anchor-id="y-otro">Y otro</h5>
+<p>Podemos usar de una a seis # para indicar nivel de profundidad</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Título</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Subtítulo</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+</section>
+<section id="citas" class="level1">
+<h1>Citas</h1>
+<blockquote class="blockquote">
+<p>Citas comienzan con &gt;</p>
+</blockquote>
+<pre><code>Si usamos tabulador también obtenemos bloques
+Del tamaño que escribamos, como un verbatim</code></pre>
+</section>
+<section id="código-insertado" class="level1">
+<h1>Código insertado</h1>
+<p>Código en línea <code>printf("Hello world\n")</code></p>
+<p>O bien un trozo de código</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>printf<span class="op">(</span><span class="st">"Hello world</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="dt">void</span><span class="op">;</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para el código en línea usamos acentos simples</p>
+<pre><code>`printf("Hello world\n")`</code></pre>
+<p>Para varias líneas de código</p>
+<pre><code>```c
+printf("Hello world\n");
+return void;
+```</code></pre>
+<p>Se puede especificar el lenguaje usado</p>
+</section>
+<section id="creando-transparencias" class="level1">
+<h1>Creando transparencias</h1>
+<p>Para convertirlo en transparencias hacemos</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> <span class="at">--mathjax</span> <span class="at">-t</span> slidy resumen.md <span class="at">-o</span> resumen.html</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>o localmente con</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> <span class="at">--mathjax</span><span class="op">=</span>/Users/pedro/lib/MathJax/MathJax.js<span class="pp">?</span>config=TeX-AMS-MML_HTMLorMML</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-t</span> slidy resumen.md <span class="at">-o</span> resumen.html</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>También podemos utilizar <a href="http://remarkjs.com">remark</a>, de hecho estas transparencias están hechas con <code>remark</code>(<a href="transparencias-remark.html" target="_blank">ejemplo</a>)</p>
+<p>O la extensión <a href="https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode">Marp</a> de Visual Studio Code</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
