@@ -1,5 +1,6 @@
 ---
 title: "Curso de LaTeX"
+lang: es
 ---
 
 {{< include README.md >}}

@@ -1,5 +1,6 @@
 ---
 Title: "Matemáticas"
+lang: es
 ---
 
 {{< include matematicas.md >}}
