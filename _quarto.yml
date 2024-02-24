@@ -18,12 +18,14 @@ website:
         href: Documento sencillo/about.qmd
       - text: "Matemáticas"
         href: Matematicas/about.qmd
+      - text: "Personalización"
+        href: Personalizacion/about.qmd
+      - text: "Tipos de documento"
+        href: Tipos de documento/about.qmd  
       - text: "Transparencias beamer"
         href: Beamer/about.qmd
       - text: "Markdown"
         href: Markdown/about.qmd
-      - text: "Personalización"
-        href: Personalizacion/about.qmd
 
 format:
   html:
