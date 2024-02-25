@@ -1,6 +1,0 @@
----
-Title: "Tipos de documento"
-lang: es
----
-
-{{< include README.md >}}

@@ -1,0 +1,711 @@
+\documentclass{beamer}
+%Temas Beamer por si queremos cambiar aspecto.
+%\usetheme{Goettingen}
+%\usetheme{Berkeley}
+%\usetheme{Boadilla}
+%\usetheme{Copenhagen}
+
+
+%\usepackage{graphicx} No necesario ya que no insertamos figuras.
+\usepackage{wrapfig}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+%TikZ y utilidades particulares para códigos adaptados
+\usepackage{pgf,tikz}
+\usepackage{tkz-graph}
+\usetikzlibrary{shapes.gates.logic.US,trees,positioning,arrows}
+\usetikzlibrary{spy}
+% PGFPlots
+\usepackage{pgfplots}
+\pgfplotsset{width=6cm,compat=1.12} %{compat=yourversion}
+% Español
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+
+\title[Taller de \LaTeX]{Generaci\'on de gr\'aficos con \LaTeX}
+\author[O. S\'anchez]{}
+\institute[UGR]{Universidad de Granada}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Gr\'aficos insertados vs generados}
+Cada vez recurrimos m\'as a representaciones gr\'aficas para ejemplificar. 
+
+La inclusi\'on de muchos documentos gr\'aficos en un mismo documento \LaTeX $ $ tienen varios inconvenientes:
+\begin{itemize}
+\item Dan como resultado documentos muy pesados.
+\item Pese a ello, la calidad de los gr\'aficos insertados no siempre es 
+ \'optima.
+ \end{itemize}
+
+La soluci\'on que \LaTeX \ adopt\'o   hace tiempo es algo que est\'a hoy d\'ia muy de moda:
+\begin{center}
+Do it yourself (DIY)
+\end{center}
+Esto es,  el propio \LaTeX \  interpreta una serie de instrucciones y genera el 
+gr\'afico.  Otra cosa distinta es c\'omo generamos dicho c\'odigo...
+
+{\small \color{red} Ventajas: Alta calidad y ficheros con peso reducido.}
+%por ejemplo este documento con $31$ gr\'aficas ocupa 438 KB!!!. }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Generaci\'on de gr\'aficos b\'asicos: entorno {\em picture}}
+
+\LaTeX \  es capaz de realizar gr\'aficos sencillos 
+directamente desde el entorno picture
+
+\begin{verbatim}
+\begin{picture}(100,7)
+\put(2,1.5){\line(1,0){23.5}}  \put(13,0.5){$<$} 
+\put(27,1.4){\circle*{1.5}}  \put(26.5,3){0}
+\put(28.5,1.5){\line(1,0){22}} \put(39,0.5){$>$}
+\put(52,1.4){\circle*{1.5}} \put(51.5,3){5}
+\put(53.5,1.5){\line(1,0){23.5}} \put(63,0.5){$<$}
+\end{picture}
+\end{verbatim}
+
+
+\begin{center} \setlength{\unitlength}{1mm}
+\begin{picture}(100,7)
+\put(2,1.5){\line(1,0){23.5}} 
+\put(13,0.5){$<$} 
+\put(27,1.4){\circle*{1.5}} 
+\put(26.5,3){0}
+\put(28.5,1.5){\line(1,0){22}}
+\put(39,0.5){$>$}
+\put(52,1.4){\circle*{1.5}}
+ \put(51.5,3){5}
+\put(53.5,1.5){\line(1,0){23.5}}
+\put(63,0.5){$<$}
+\end{picture}
+\end{center}
+
+Inconvenientes: es muy básico y limitado.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Gr\'aficos con PSTricks y TikZ}
+Tanto \href{http://www.ctan.org/pkg/pstricks}{PSTricks} como \href{http://www.texample.net/tikz/}{PGF-TikZ} son paquetes de LaTeX que permiten hacer casi cualquier cosa mediante un gran abanico de comandos espec\'ificos.
+
+Podemos sacar provecho de ellos de v\'arias maneras:
+\begin{enumerate}
+\item Escribiendo nosotros directamente los c\'odigos (siempre que estemos dispuestos a invertir nuestro tiempo en ello). Hay disponibles numerosos manuales, y ejemplos:
+\begin{itemize}
+\item \href{http://www.texample.net/tikz/examples/}{http://www.texample.net/tikz/examples/}
+\item \href{http://tug.org/PSTricks/main.cgi?file=examples}{http://tug.org/PSTricks/main.cgi?file=examples}
+\end{itemize}
+\item Empleando paquetes que facilitan su uso como PGFPlots.
+\item Crear los gr\'aficos con otros programas y exportarlos a TikZ.
+\end{enumerate}
+
+
+\vspace{0.5cm}
+{\small Observaci\'on:
+Aunque PSTricks no es compatible con PDFLaTeX, existen versiones (spt-pdf o pdftricks)
+que si lo son.}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{C\'odigo adaptado TikZ: ejemplo 1}
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[>=latex,thick,auto, scale=0.6, transform shape]
+\coordinate [label=above:{\bf A)}] (Q) at (-0.5,6.25);
+%
+\draw[color=black,line width = 1.5pt, domain=5.9:5.5] plot (\x,{2*(6-\x)*exp((-\x+4)/2)});
+\draw[color=black,style=dashed,line width = 1pt, domain=5.5:4.75] plot (\x,{2*(6-\x)*exp((-\x+4)/2)});
+\coordinate [label=above:{$r$}] (P) at (0,6.5);
+\coordinate [label=right:{$u$}] (f) at (6.5,0);
+%
+\draw[->] (0,0) -- (P) ;
+\draw[->] (0,0) -- (f) ;
+%
+\coordinate [label=below:{$1$}] (f2) at (6,0);
+\coordinate [label=left:{$1$}] (P2) at  (0,6);
+\fill (6,0) circle (2pt);
+\draw[-,style=dashed,dash pattern=on 1pt off 2pt on 1pt off 2pt]
+(6,6)-- (P2) ;
+\draw[-,style=dashed,dash pattern=on 1pt off 2pt on 1pt off 2pt]
+(6,6) -- (f2) ;
+%
+\coordinate [label=above:{$u^*(\sigma)$}] (u*sigma) at (4,6);
+\fill[black] (4,6) circle (2pt);
+\coordinate [label=left:{$r^*(\sigma)$}] (r*) at (0,4);
+\fill[black] (0,4) circle (2pt);
+\draw[arrows = )-angle 60, thin] (1,6)--(0.98,5.5);
+\draw[arrows = )-angle 60, thin] (2,6)--(1.91,5.5);
+\draw[arrows = )-angle 60,thin] (3,6)--(2.7,5.6);
+\draw[arrows = )-angle 60, thin] (4,6)--(3.5,6);
+\draw[arrows = )-angle 60, thin] (5,6)--(4.54,6.21);
+\draw[arrows = )-angle 60, thin] (6,6)--(5.58,6.27);
+\draw[arrows = )-angle 60, thin] (0,6)--(0,5.5);
+\draw[arrows = )-angle 60, thin] (0,5)--(0,4.5);
+\draw[arrows = )-angle 60, thin] (0,3)--(0,3.5);
+\draw[arrows = )-angle 60, thin] (0,2)--(0,2.5);
+\draw[arrows = )-angle 60, thin] (0,1)--(0,1.5);
+\draw[arrows = )-angle 60, thin] (0,0)--(0,0.5);
+
+\draw[->,thin] (6,1)--(5.54,0.64);
+\draw[->,thin] (6,2)--(5.58,1.72);
+\draw[->,thin] (6,3)--(5.52,2.84);
+\draw[->,thin] (6,4)--(5.5,4);
+\draw[->,thin] (6,5)--(5.52,5.15);
+
+\draw[->,thin] (1,0)--(1,0.5);
+\draw[->,thin] (2,0)--(2,0.5);
+\draw[->,thin] (3,0)--(3,0.5);
+\draw[->,thin] (4,0)--(4,0.5);
+\draw[->,thin] (5,0)--(5,0.5);
+
+%%% SEGUNDO GRAFICO  %%%%%%%%
+\coordinate [label=above:{\bf B)}] (Q) at (7.5,6.25);
+\coordinate [label=above:{$r$}] (P) at (8,6.5);
+\coordinate [label=right:{$u$}] (f) at (14.5,0);
+%
+\draw[->] (8,0) -- (P) ;
+\draw[->] (8,0) -- (f) ;
+%
+\coordinate [label=below:{$1$}] (f2) at (14,0);
+\coordinate [label=left:{$1$}] (P2) at  (8,6);
+%\fill (6,0) circle (2pt);
+\draw[-,style=dashed,dash pattern=on 1pt off 2pt on 1pt off 2pt]
+(14,6)-- (P2) ;%linea que llega a P2
+\draw[-,style=dashed,dash pattern=on 1pt off 2pt on 1pt off 2pt]
+(14,6) -- (f2) ;
+\draw[solid,line width = 1.5pt] plot file{./graficos/type1Orbit.table};
+\coordinate [label=below:{$u^*(\sigma_{smooth})$}] (u*sigsmooth) at (9.96078080000047,0);
+\draw[-,style=dotted,line width = 0.5pt] (9.96078080000047,0) --  (9.96078080000047,6.001506405627179);
+\fill[black] (9.96078080000047,6.001506405627179) circle (2.5pt);
+\coordinate [label=above:{$u^*(\sigma_{ent})$}] (u*sigsmooth) at (11.001864692901634,5.99984352366344);
+\fill[black] (10.501864692901634,5.99984352366344) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\caption{{A)} Normalized direction field {B)} Numerical solutions to Type I (solid), II (dashed) and III (dotted) orbits .
+}
+\label{orbitas}
+\end{figure}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} {C\'odigo adaptado TikZ: ejemplo 2}
+Diagramas de grafos
+\begin{tabular}{cp{1cm}c}
+$A_4=\left(\begin{array}{cc}
+1 & 2 \\
+0 & 1
+\end{array}\right)$; &  &
+$\Gamma_4\equiv $  \begin{minipage}{4cm}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,thick]
+\SetGraphUnit{2}
+\tikzset{VertexStyle/.style = {draw,circle,thick,
+                              minimum size=1cm,
+                              font=\Large\bfseries},thick}
+\GraphInit[vstyle=Classic]
+\Vertex[x=0,y=0,L=$P_1$, Lpos=90]{1}
+\Vertex[x=3,y=1,L=$P_2$, Lpos=120]{2}
+\Vertex[x=3,y=-1,L=$P_3$, Lpos=-120]{3}
+
+\Loop[dist=2cm,dir=WE](1)
+\Loop[dist=2cm,dir=NOEA](2)
+\Loop[dist=2cm,dir=SOEA](3)
+
+
+\tikzset{EdgeStyle/.style = {->,bend left}}
+\Edge(3)(2)
+\Edges(1,2)
+\Edge(2)(3)
+\tikzset{EdgeStyle/.style = {->,bend right}}
+\Edge(1)(3)
+%\draw[->] (1) to [bend left] node [above left] {} (2);
+% it's possible with \Edge but Tikz's syntax is allowed too.
+\end{tikzpicture}
+\end{minipage}
+\end{tabular}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{C\'odigo adaptado TikZ: ejemplo 3}
+\definecolor{darkgray}{rgb}{0.25,0.25,0.25}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+
+\begin{tikzpicture}
+   [scale=0.8,line cap=round,line join=round,x=2cm,y=2cm, 
+    %using the 'spy' to magnify a part of the picture
+    spy using outlines={rectangle,lens={scale=3}, size=6cm, connect spies}]
+%main layer
+%creating the grid
+ \draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=2cm,ystep=2cm]
+                                                (-0.1,-0.1) grid (2.3,2.3);
+%ejes
+ \draw (-0.2,0) -- (2.4,0);
+
+ \draw (0,-0.2) -- (0,2.6);
+
+%funcion
+ \draw[smooth,samples=1000,domain=0.0:2.2]
+  plot(\x,{8*\x-32.4*\x^2+53.48*\x^3-42.11*\x^4+17.594*\x^5
+                           -3.99*\x^6+0.465713*\x^7-0.0217374*\x^8});
+%using the 'spy' to magnify a piece of the picture
+ \spy [blue] on (0.4,0.4) in node [left] at (6.5,1);
+\end{tikzpicture}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{C\'odigo adaptado TikZ: ejemplo 4}
+\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm,spy using outlines={circle,lens={scale=2.5}, size=2.5cm, connect spies}]
+\draw[color=red,thick] plot[smooth,tension=0.3] coordinates{(-1,-1) (0,1) (1,-1.5) (2,2.5)} node[right]{\footnotesize $f(x)$};
+\draw (-1.5,0)--(2.5,0);
+\draw[color=black] (0pt,-2pt) -- (0pt,2pt) node[above] {\footnotesize $a$};
+\draw[shift={(0.35,0)},color=black] (0pt,-1pt) -- (0pt,1pt) node[below] {\footnotesize $a+r$};
+\draw[shift={(-0.35,0)},color=black] (0pt,-1pt) -- (0pt,1pt) node[below] {\footnotesize $a-r$};
+\draw[fill=green] (-0.01,1) circle (1.5pt)  node[above]{\footnotesize $(a,f(a))$};
+\draw[thick] (-0.35,0)--(0.35,0);
+\draw[shift={(1,0)},color=black] (0pt,-2pt) -- (0pt,2pt) node[above] {\footnotesize $b$};
+\draw[fill=green] (0.99,-1.5) circle (1.5pt)  node[below]{\footnotesize $(b,f(b))$};
+\spy [color=darkgray] on (0,1) in node at (-3,0);
+\spy [color=darkgray] on (1,-1.5) in node at (4,0);
+\end{tikzpicture}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame} {C\'odigo adaptado TikZ: ejemplo 5}
+No hay que pensar que \'unicamente podemos hacer gr\'aficos. 
+Estas herramientas nos dan mucho juego a la hora de hacer por ejemplo 
+presentaciones.
+
+\begin{tikzpicture}[]
+%% Draw events and edges
+
+%% Draw system flow diagram
+  \begin{scope}[xshift=-7.5cm,yshift=-5cm,very thick,
+       node distance=1.4cm,on grid,>=stealth',
+       caja/.style={rectangle,draw,fill=red!90},
+       redondel/.style={circle,draw,fill=blue!70},]
+   \node [redondel] (meritos)  {$\begin{array}{c}\mbox{T\'{\i}tulo y}\\ \mbox{expediente}\end{array}$};
+     % \node [caja] (titulo)         [above=of meritos] {$\begin{array}{c}\mbox{T\'{\i}tulo}\\ \mbox{Grado}\end{array}$};
+    \node [redondel] (pregunta)    [right =of meritos,xshift=1cm]{?};
+    \draw[->] (meritos) -- (pregunta);
+    \node [redondel] (pregunta3)    [right =of pregunta,yshift=-1.0cm,xshift=0.5cm]{\footnotesize  Inquietud};
+    \node [redondel] (pregunta2)    [right =of pregunta,xshift=0.5cm]{\footnotesize Vocaci\'on};
+    \node [redondel] (pregunta1)    [right =of pregunta,yshift=1.0cm,xshift=0.5cm]{\ \ \ $\$ \$$ \ \ \ };
+   \draw[->] (pregunta) -- (pregunta3);
+   \draw[->] (pregunta) -- (pregunta2);
+   \draw[->] (pregunta) -- (pregunta1);
+    \node [caja] (inves)  [right =of pregunta3,xshift=2.0cm]{Investigaci\'on};
+    \node [caja] (docen) [right =of pregunta2,xshift=2.0cm] {Docencia};
+   \node [caja] (word)    [right =of pregunta1,xshift=2.0cm] {Mundo laboral};
+   %\draw[->] (pregunta1) -- (inves);
+   \draw[->] (pregunta1) -- (docen);
+   \draw[->] (pregunta1) -- (word);
+   \draw[->] (pregunta2) -- (inves);
+   \draw[->] (pregunta2) -- (docen);
+   \draw[->] (pregunta2) -- (word);
+   \draw[->] (pregunta3) -- (inves);
+   %\draw[->] (pregunta3) -- (docen);
+   %\draw[->] (pregunta3) -- (word);
+   %\draw[->] (inves) -- (docen);
+%    \node [redondel] (pregunta)    [left =of docen,yshift=-0.0cm]{?} edge [->] (inves) edge [->] (docen) edge [->] (word);
+%    \node [caja] (inves)  {(vocacional) Investigaci\'on};
+%   \node [caja] (meritos)  {$\begin{array}{c}\mbox{A\~nos}\\ \mbox{expediente}\end{array}$};
+%    \node [caja] (titulo)         [above=of meritos] {$\begin{array}{c}\mbox{T\'{\i}tulo}\\ \mbox{Grado}\end{array}$} edge [<->] (meritos);
+       \end{scope}
+\end{tikzpicture}
+
+\vspace{1cm}
+Ver los ejemplos para tener una idea del potencial de este paquete en 
+ \href{http://www.texample.net/tikz/examples/}{http://www.texample.net/tikz/examples/}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Generaci\'on de gr\'aficos en TikZ con PGFPlots}
+\href{http://pgfplots.sourceforge.net}{PGFPlots} es un paquete  que realiza representaciones
+de funciones directamente en \LaTeX  \ en un entorno amigable.
+\begin{wrapfigure}{r}{6cm}
+	\begin{tikzpicture}
+	\begin{axis}
+	\addplot coordinates {
+	(1,1.5)
+	(4,16)
+	(8,63.5)
+	};
+	\end{axis}	
+	\end{tikzpicture}
+	\caption{Representaci\'on puntos}
+\end{wrapfigure}
+\begin{verbatim}
+\begin{tikzpicture}
+\begin{axis}
+\addplot coordinates {
+	(1,1.5)
+	(4,16)
+	(8,63.5)
+};
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+Añadir al pre\'ambulo:
+\begin{verbatim}
+\usepackage{pgfplots}
+\pgfplotsset{width=6cm,compat=1.12}
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
+\begin{wrapfigure}{r}{6cm}
+\begin{tikzpicture} 
+\begin{axis}[ ]
+% density of Normal distribution:
+\addplot[red, domain=0:4,
+   samples=201]
+   {exp((-(x-2)^2)/2) / sqrt(2*pi)};
+\end{axis}
+\end{tikzpicture}
+\caption{Representaci\'on funci\'on}
+\end{wrapfigure}
+$ $ \vspace{3cm}
+\begin{verbatim}
+\begin{tikzpicture} 
+\begin{axis}[ ]
+\addplot[ red, 
+  domain=0:4,
+  samples=201]
+  {exp((-(x-2)^2)/2) / sqrt(2*pi)};
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
+\begin{wrapfigure}{r}{5cm}
+\begin{tikzpicture} 
+\begin{axis}
+[xlabel=Var X, ylabel=Var Y,
+legend pos=north west]
+\addplot[domain=0:8]{x^2};
+\addplot coordinates {
+	(1,1.5)
+	(4,16)
+	(8,63.5)
+};
+\legend{$f(x)=x^2$,Data}
+\end{axis}
+\end{tikzpicture}
+\caption{Representaci\'on conjunta}
+\end{wrapfigure}
+$ $ %\vspace{1cm}
+\begin{verbatim}
+\begin{tikzpicture} 
+\begin{axis}
+[xlabel=Var X, ylabel=Var Y,
+legend pos=north west]
+\addplot[domain=0:8]{x^2};
+\addplot coordinates {
+	(1,1.5)
+	(4,16)
+	(8,63.5)
+};
+\legend{$f(x)=x^2$,Data}
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
+\begin{wrapfigure}{r}{5cm}
+\begin{tikzpicture}
+\begin{axis}[
+   title=\'Orbita,
+   xlabel={$p(t)$},
+   ylabel={$p'(t)$},
+]
+\addplot[blue] table 
+{./graficos/type1Orbit.table};
+\end{axis}
+\end{tikzpicture}
+\caption{Gr\'afico fichero datos}
+\end{wrapfigure}
+$ $ %\vspace{1cm}
+\begin{verbatim}
+\begin{tikzpicture}
+\begin{axis}[
+   title=Datos externos,
+   xlabel={$x$},
+   ylabel={$y$},
+]
+\addplot[blue] table 
+{./graficos/type1Orbit.table};
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
+\begin{wrapfigure}{r}{5cm}
+\begin{tikzpicture} \begin{axis}[
+    title={$x \exp(-x^2-y^2)$},
+    xlabel=$x$, ylabel=$y$,
+    small,
+] \addplot3[
+    surf,
+    domain=-2:2,
+    domain y=-1.3:1.3,
+]
+    {exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+\caption{Gr\'afico tridimensional}
+\end{wrapfigure}
+$ $ %\vspace{1cm}
+\begin{verbatim}
+\begin{tikzpicture} 
+\begin{axis}[
+    title={$x \exp(-x^2-y^2)$},
+    xlabel=$x$, ylabel=$y$,
+    small] 
+\addplot3[surf,
+    domain=-2:2,
+    domain y=-1.3:1.3,
+]{exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Código TikZ generado con otro programa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exportar a TikZ/PSTricks desde un programa externo}
+Debido a la progresiva implantaci\'on de \LaTeX $ $  son  numerosos los programas que 
+dan la posibilidad de devolver sus gr\'aficos mediante estos comandos 
+\begin{enumerate}
+\item \href{http://mcj.sourceforge.net}{Xfig} {\small (versi\'on para Windows: WinFIG)}, 
+\item \href{http://latexdraw.sourceforge.net}{LatexDraw},
+\item \href{http://dia-installer.de/index.html.en}{Dia}.
+\item \href{http://www.geogebra.org/cms/}{GeoGebra}
+\item  \href{https://Inkscape.org/en/}{Inkscape}
+\item etc...
+\end{enumerate}
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exportar a TikZ desde Geogebra}
+\begin{exampleblock}{Ejemplo: Exportar a TIKZ  un gr\'afico con un programa externo}
+\href{http://www.geogebra.org/cms/}{GeoGebra} es un programa especialmente sencillo para
+realizar  gr\'aficos.  Podemos instalarlo y a jugar un poco.
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7732426303854876cm,y=0.6894409937888198cm]
+\draw[->,color=black] (-4.3,0) -- (4.52,0);
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-3.14) -- (0,3.3);
+\foreach \y in {-3,-2,-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.3,-3.14) rectangle (4.52,3.3);
+\onslide<6->{
+  \fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (-2.16,3.2) -- (0.78,4.52) -- (3,2.68) -- (-1,1) -- cycle;
+}
+\onslide<6->{
+  \draw [color=zzttqq] (0.78,4.52)-- (3,2.68);
+}
+\onslide<6->{
+  \draw [color=zzttqq] (3,2.68)-- (-1,1);
+}
+\onslide<6->{
+  \draw [color=zzttqq] (-1,1)-- (-2.16,3.2);
+}
+\onslide<7->{
+  \draw[smooth,samples=100,domain=-4.3:4.5200000000000005] plot(\x,{sin(((\x))*180/pi)});
+}
+\onslide<11->{
+  \draw [domain=-4.3:4.52] plot(\x,{(-0--1*\x)/1});
+}
+\onslide<15->{
+  \draw(-3.04,4.36) ellipse (0.8cm and 0.71cm);
+}
+\onslide<16->{
+  \draw (4.54,1.96) node[anchor=north west] {$\Sigma_{i=1}^n y_i$};
+}
+\begin{scriptsize}
+\onslide<2->{
+  \fill [color=qqqqff] (-2.16,3.2) circle (1.5pt);
+}
+\onslide<2->{
+  \draw[color=qqqqff] (-2,3.46) node {$A$};
+}
+\onslide<3->{
+  \fill [color=qqqqff] (0.78,4.52) circle (1.5pt);
+}
+\onslide<3->{
+  \draw[color=qqqqff] (0.92,4.78) node {$B$};
+}
+\onslide<4->{
+  \fill [color=qqqqff] (3,2.68) circle (1.5pt);
+}
+\onslide<4->{
+  \draw[color=qqqqff] (3.16,2.94) node {$C$};
+}
+\onslide<5->{
+  \fill [color=qqqqff] (-1,1) circle (1.5pt);
+}
+\onslide<5->{
+  \draw[color=qqqqff] (-0.84,1.26) node {$D$};
+}
+\onslide<8->{
+  \fill [color=qqqqff] (5.26,4.04) circle (1.5pt);
+}
+\onslide<8->{
+  \draw[color=qqqqff] (5.4,4.3) node {$E$};
+}
+\onslide<9->{
+  \fill [color=uququq] (0,0) circle (1.5pt);
+}
+\onslide<9->{
+  \draw[color=uququq] (0.14,0.26) node {$F$};
+}
+\onslide<10->{
+  \fill [color=qqqqff] (1,1) circle (1.5pt);
+}
+\onslide<10->{
+  \draw[color=qqqqff] (1.16,1.26) node {$G$};
+}
+\onslide<12->{
+  \fill [color=qqqqff] (-1.18,5.36) circle (1.5pt);
+}
+\onslide<12->{
+  \draw[color=qqqqff] (-1.02,5.62) node {$H$};
+}
+\onslide<13->{
+  \fill [color=qqqqff] (-3.04,4.36) circle (1.5pt);
+}
+\onslide<13->{
+  \draw[color=qqqqff] (-2.94,4.62) node {$I$};
+}
+\onslide<14->{
+  \fill [color=qqqqff] (-2.58,5.28) circle (1.5pt);
+}
+\onslide<14->{
+  \draw[color=qqqqff] (-2.46,5.54) node {$J$};
+}
+\end{scriptsize}
+\end{tikzpicture}
+
+Nota: Es interesante se\~nalar que ofrece la posibilidad de exportar el gr\'afico
+que acabamos de realizar (puede dar errores no sencillos de detectar/corregir).
+\end{exampleblock}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Ejercicio 1:}
+Empleando el modificador \verb|view={giro eje z}{giro eje x}| de \verb|axis| prueba a cambiar el 
+punto de vista de la visualizaci\'on (detalles en \cite{ManualPGFPlots}).
+
+\begin{figure}{r}
+\begin{tikzpicture} \begin{axis}[
+    title={$x \exp(-x^2-y^2)$},
+    xlabel=$x$, ylabel=$y$,
+    view={-30}{30},
+    small,
+] \addplot3[
+    surf,
+    domain=-2:2,
+    domain y=-1.3:1.3,
+]
+    {exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+%\end{wrapfigure}
+%\vspace{1cm}
+%\begin{tikzpicture} 
+%\begin{axis}[
+%    title={$x \exp(-x^2-y^2)$},
+%    xlabel=$x$, ylabel=$y$,
+%    small] 
+%\addplot3[surf,
+%    domain=-2:2,
+%    domain y=-1.3:1.3,
+%]{exp(-x^2-y^2)*x};
+%\end{axis}
+%\end{tikzpicture}
+\caption{Gr\'afico tridimensional girado}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Ejercicio 2:}
+Empleando el modificador \verb|colorbar right| de \verb|axis| prueba a añadir una barra con 
+el c\'odigo de colores (detalles en \cite{ManualPGFPlots}).
+
+\begin{figure}{r}
+\begin{tikzpicture} \begin{axis}[
+    title={$x \exp(-x^2-y^2)$},
+    xlabel=$x$, ylabel=$y$,
+    colorbar right,
+    small,
+] \addplot3[
+    surf,
+    domain=-2:2,
+    domain y=-1.3:1.3,
+]
+    {exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+%\end{wrapfigure}
+%\vspace{1cm}
+%\begin{tikzpicture} 
+%\begin{axis}[
+%    title={$x \exp(-x^2-y^2)$},
+%    xlabel=$x$, ylabel=$y$,
+%    small] 
+%\addplot3[surf,
+%    domain=-2:2,
+%    domain y=-1.3:1.3,
+%]{exp(-x^2-y^2)*x};
+%\end{axis}
+%\end{tikzpicture}
+\caption{Gr\'afico tridimensional}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{frame}[fragile]{Bibliograf\'ia}
+\begin{thebibliography}{10}
+\bibitem{WebTikZ} \href{http://www.texample.net/tikz/}{Web TikZ}
+
+\bibitem{ManualTikZ} \href{http://www.texample.net/media/pgf/builds/pgfmanual_3.0.1a.pdf}{Manual TikZ}
+
+\bibitem{WebPGFPlots}\href{http://pgfplots.sourceforge.net/}{Web PGFPlots}
+
+\bibitem{ManualPGFPlots} \href{http://pgfplots.sourceforge.net/pgfplots.pdf}{Manual PGFPlots}
+
+\end{thebibliography}
+\end{frame}
+\end{document}
