@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.550">
@@ -37,17 +37,17 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -65,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Curso LaTeX Grado Matemáticas UGR</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -83,11 +83,11 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Plantillas TFG y TFM/about.html">Plantillas TFG y TFM</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -154,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Plantillas TFG y TFM/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../Plantillas TFG y TFM/about.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Plantillas TFG y TFM</span></a>
   </div>
 </li>
@@ -167,10 +167,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#bibliografías" id="toc-bibliografías" class="nav-link active" data-scroll-target="#bibliografías">Bibliografías</a></li>
+  <li><a href="#plantillas" id="toc-plantillas" class="nav-link active" data-scroll-target="#plantillas">Plantillas</a>
+  <ul class="collapse">
+  <li><a href="#plantilla-tfm" id="toc-plantilla-tfm" class="nav-link" data-scroll-target="#plantilla-tfm">Plantilla TFM</a></li>
+  <li><a href="#plantilla-tfg" id="toc-plantilla-tfg" class="nav-link" data-scroll-target="#plantilla-tfg">Plantilla TFG</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -180,11 +184,20 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="bibliografías" class="level1">
-<h1>Bibliografías</h1>
-<p>Notas sobre el uso y manejo de bibliografías en LaTeX por Antonio Alarcón López.</p>
+<section id="plantillas" class="level1">
+<h1>Plantillas</h1>
+<p>Mario Román <a href="https://github.com/M42"><span class="citation" data-cites="M42">@M42</span></a> y David Charte <a href="https://github.com/fdavidcl"><span class="citation" data-cites="fdavidcl">@fdavidcl</span></a> han elaborado unas plantillas de TFG y beamer para el Doble Grado de Matemáticas e Informática. Las plantillas están disponibles en este <a href="https://github.com/M42/templates">enlace</a>.</p>
+<section id="plantilla-tfm" class="level2">
+<h2 class="anchored" data-anchor-id="plantilla-tfm">Plantilla TFM</h2>
+<p>Además en esta carpeta hay un ejemplo de una portada de TFM del Máster de Matemáticas. Esta portada se puede utilizar también para un TFG, cambiando el fondo por el que propone Mario <a href="https://github.com/M42/templates/blob/master/classicthesis-tex-es/ugrA4.pdf">ugrA4.pdf</a>.</p>
+<p>Las imágenes de fondo están extraídas de la página de la Universidad de Granada.</p>
+</section>
+<section id="plantilla-tfg" class="level2">
+<h2 class="anchored" data-anchor-id="plantilla-tfg">Plantilla TFG</h2>
+<p>Una versión más actualizada de la plantilla de Trabajo de Fin de Grado puede encontrarse en el repositorio <a href="https://github.com/latex-mat-ugr/Plantilla-TFG">Plantilla-TFG</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -242,12 +255,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
