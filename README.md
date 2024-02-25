@@ -2,7 +2,9 @@ Curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page
 
 Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas
 
-Los contenidos del curso se mantienen por [Jerónimo Alaminos](https://www.ugr.es/~alaminos/), [Pedro A. García Sánchez](https://www.ugr.es/~pedro), [Óscar Sánchez Romero](https://www.ugr.es/~ossanche) y [Francisco Torralbo](https://www.ugr.es/~ftorralbo/).
+Los contenidos del curso se mantienen por [Jerónimo Alaminos](https://www.ugr.es/~alaminos/), [Pedro A. García Sánchez](https://www.ugr.es/~pedro), [Óscar Sánchez Romero](https://www.ugr.es/~ossanche) y [Francisco Torralbo](https://www.ugr.es/~ftorralbo/). 
+
+En los talleres impartidos, hemos contado con la ayuda de [Aureliano M. Robles Pérez](https://www.ugr.es/~arobles/), [Desiree Romero Molina](https://www.ugr.es/~deromero/), [Antonio Alarcón](https://www.ugr.es/~alarcon/), entre otros.
 
 
 ## Instalación de LaTeX

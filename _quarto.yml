@@ -26,6 +26,8 @@ website:
         href: Beamer/about.qmd
       - text: Gráficos
         href: Graficos/about.qmd
+      - text: Bibliografía
+        href: Bibliografia/Bibliografias.pdf
       - text: "Paquetes útiles"
         href: Paquetes/about.qmd
       - text: "Markdown"
