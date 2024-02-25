@@ -32,6 +32,8 @@ website:
         href: Paquetes/about.qmd
       - text: "Markdown"
         href: Markdown/about.qmd
+      - text: "Plantillas TFG y TFM"
+        href: Plantillas TFG y TFM/about.qmd
 
 format:
   html:
