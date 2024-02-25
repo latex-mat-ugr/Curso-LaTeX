@@ -24,7 +24,7 @@ Entre `\documentclass` y `\begin{document}` ponemos declaraciones y paquetes que
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
-\usepackage[vmargin=2cm,hmargin=2cm]{geometry}
+\usepackage[a4paper,vmargin=2cm,hmargin=2cm]{geometry}
 
 visualización de las cabeceras del documento
 \title[Taller de \LaTeX]{Taller de \LaTeX\ para alumnos del Grado en Matemáticas}
