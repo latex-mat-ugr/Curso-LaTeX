@@ -4,6 +4,7 @@ website:
   title: "Curso LaTeX Grado Matemáticas UGR"
   search: false
   repo-url: https://github.com/latex-mat-ugr/Curso-LaTeX
+  issue-url: https://github.com/latex-mat-ugr/Curso-LaTeX/issues
   navbar:
     right:
       - icon: github
