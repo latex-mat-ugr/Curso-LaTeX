@@ -149,7 +149,7 @@ en la cabecera del documento, está disponible el comando `\distancia`
 
 ## Sub y superíndices de nuevo
 
-El comando `\texttt{substack}` para líneas centradas
+El comando `substack` para líneas centradas
 ```latex
 $$
 \sum_{\substack{i=1\\j=123}} i+j
