@@ -5,7 +5,7 @@ lang: es
 
 {{< include README.md >}}
 
-## Presentación taller
+## Transparencias taller
 
 Ejemplo con [JSXGraph](https://jsxgraph.uni-bayreuth.de/): 
 [Beamer](beamer-jsxgraph.html){target="_blank"}
