@@ -7,7 +7,6 @@ lang: es
 
 ## Transparencias taller
 
-
-{{< pdf presentacion-taller-2020.pdf width=600 height=470 >}}
+{{< pdf presentacion-taller-2020.pdf  width=100% height=400 >}}
 
 [Presentación Taller 2020](presentacion-taller-2020.pdf){target="_pdf"}
