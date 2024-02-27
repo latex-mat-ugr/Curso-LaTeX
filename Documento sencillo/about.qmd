@@ -7,12 +7,6 @@ lang: es
 
 ## Transparencias taller
 
-{{< meta QUARTO_FIG_WIDTH >}}
-
-{{< meta Title >}}
-
-Versión {{< var version >}}
-
 
 {{< pdf presentacion-taller-2020.pdf width=600 height=470 >}}
 
