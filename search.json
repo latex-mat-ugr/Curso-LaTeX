@@ -84,7 +84,7 @@
     "href": "Matematicas/about.html#transparencias",
     "title": "Curso LaTeX Grado Matemáticas UGR",
     "section": "Transparencias",
-    "text": "Transparencias\nTransparencias taller 2017",
+    "text": "Transparencias\nUnable to display PDF file. Download instead.\nTransparencias taller 2017",
     "crumbs": [
       "Matemáticas"
     ]
@@ -254,7 +254,7 @@
     "href": "Graficos/about.html",
     "title": "Gráficos",
     "section": "",
-    "text": "En el fichero taller-graficos1.pdf hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en taller-graficos2.pdf se muestras cómo generar gráficos empleando el propio LaTeX.\nLos ficheros taller-graficos1.tex y taller-graficos2.tex contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos.",
+    "text": "En el fichero taller-graficos1.pdf hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en taller-graficos2.pdf se muestras cómo generar gráficos empleando el propio LaTeX.\nLos ficheros taller-graficos1.tex y taller-graficos2.tex contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos.\nUnable to display PDF file. Download instead.\nUnable to display PDF file. Download instead.",
     "crumbs": [
       "Gráficos"
     ]
@@ -742,11 +742,11 @@
     ]
   },
   {
-    "objectID": "Beamer/about.html#presentación-taller",
-    "href": "Beamer/about.html#presentación-taller",
+    "objectID": "Beamer/about.html#transparencias-taller",
+    "href": "Beamer/about.html#transparencias-taller",
     "title": "Transparencias",
-    "section": "Presentación taller",
-    "text": "Presentación taller\nEjemplo con JSXGraph: Beamer",
+    "section": "Transparencias taller",
+    "text": "Transparencias taller\nEjemplo con JSXGraph: Beamer",
     "crumbs": [
       "Transparencias beamer"
     ]
