@@ -1,6 +1,3 @@
-Personalización de un documento en LaTeX
-========================================
-
 Veremos a continuación diversos modos de personalizar un documento en LaTeX para adaptarlo a nuestras necesidades. Cubriremos los siguientes aspectos:
 
 1. Creación de comandos y entornos propios

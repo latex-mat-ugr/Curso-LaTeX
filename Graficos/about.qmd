@@ -1,5 +1,5 @@
 ---
-Title: "Gráficos"
+title: "Gráficos"
 lang: es
 ---
 

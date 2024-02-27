@@ -1,5 +1,3 @@
-# Paquetes útiles en LaTeX
-
 Cualquier distribución trae cientos de paquetes adicionales que resuelven problemas concretos o añaden alguna nueva capacidad a LaTeX.
 
 ## Microtype

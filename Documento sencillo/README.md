@@ -1,5 +1,3 @@
-# Documento básico
-
 ## Estructura
 
 La estructura de un documento es la siguiente

@@ -1,10 +1,19 @@
 ---
-Title: "Documento sencillo"
+title: "Documento sencillo"
 lang: es
 ---
 
 {{< include README.md >}}
 
-## Presentación taller
+## Transparencias taller
+
+{{< meta QUARTO_FIG_WIDTH >}}
+
+{{< meta Title >}}
+
+Versión {{< var version >}}
+
+
+{{< pdf presentacion-taller-2020.pdf width=600 height=470 >}}
 
 [Presentación Taller 2020](presentacion-taller-2020.pdf){target="_pdf"}
