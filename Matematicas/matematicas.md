@@ -8,28 +8,53 @@ $\cos(x+y)^{2}=\sqrt{2+x^2}$
 ```
 produce $\cos(x+y)^{2}=\sqrt{2+x^2}$.
 
-* Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula entre \\[ \\] o con dólares dobles. Es recomendable la primera opción. Por ejemplo
+* Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula de la forma `\[... \]` o con dólares dobles. Es recomendable la primera opción. Por ejemplo
+
 ```latex
-$$
-\frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
-$$
+\[
+  \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
+\]
 ```
+
 produce
 $$
 \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
 $$
 
-
-### Espaciado
+## Espaciado
 
 Los espacios dentro del modo matemático no se tienen en cuenta.
 
 El espacio dentro las fórmulas es distinto al espacio en modo texto. Compara lo siguiente:
+
 ```latex
 Sea $x=1,2$ o $3$ con sea $x=1$, $2$ o $3$
 ```
+
 La forma correcta de escribirlo es la *segunda* si queremos que LaTeX use el espaciado que se considera correcto.
 
+### ¿Cómo ajustar los espacios? 
+
+Se puede añadir o quitar espacio manualmente. Las formas más comunes de
+hacerlo son
+
+* Añadir (poco) `\,` añade un espacio pequeño.
+
+```latex
+\[
+  \int_{0}^{1} f(x)\, dx = \sqrt{x}\, n
+\]
+```
+
+* Añadir (algo más) `\quad` y `\qquad` añaden la longitud de una letra m 
+  o de dos. Son espacios dinámicos (pueden variar un poco para ajustar 
+  las líneas).
+
+```latex
+\[
+  f(x)= \frac{\sin (1+x)}{\log (1+x)} \quad (x > -1)
+\]
+```
 
 ## Construcciones básicas
 
@@ -42,9 +67,13 @@ $a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \div b$
 produce $a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \div b$.
 
 Puedes escribir subíndices y superíndices de la siguiente forma:
+
 ```latex
-n^{2}, x^{1/x}, x_{n}, lim_{x \to \infty}
+\[ 
+  n^{2}$, $x^{1/x}$, $x_{n}$, $\lim_{x \to \infty}
+\]
 ```
+
 que da como resultado
 
 $$
@@ -52,9 +81,13 @@ n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 $$
 
 Se pueden anidar y usar subíndices y superíndices al mismo tiempo:
+
 ```latex
-\sum_{n=1}^{\infty} x^{x^n}
+\[
+  \sum_{n=1}^{\infty} x^{x^n}
+\]
 ```
+
 $$
 \sum_{n=1}^{\infty} x^{x^n}
 $$
@@ -67,35 +100,36 @@ Las fracciones se escriben con el comando `\frac{numerador}{denominador}`
 ```latex
 \frac{a}{b}, \tfrac{1}{2},\dfrac{1}{2}
 ```
+
 produce
 $\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
 
 `frac` se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como `tfrac`), si está en una línea separada aumenta (como `dfrac`). Podemos forzar un comportamiento u otro usando `tfrac` o `dfrac`.
-
 
 ### Números binómicos
 
 `\binom{a}{b}` produce $\binom{a}{b}$. Al igual que con frac, se
 puede alterar su tamaño usando `tbinom{a}{b}` o `dbinom{a}{b}` y se obtiene $\tbinom{a}{b}$ y $\dbinom{a}{b}$.
 
-
 ### Puntos suspensivos
 
 En lugar de escribir tres puntos seguidos, `\dots, \ldots, \cdots` producen puntos suspensivos con el espaciado correcto. `\dots` intenta adaptarse al entorno. `\ldots` da como resultado puntos "bajos" y `\cdots`centrados. Un ejemplo:
+
 ```latex
 x=1,2,\ldots 3, x+y+\cdots +z, x\times y \times \dots z
 ```
-produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$
 
+produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$
 
 ### Integrales
 
 Varios símbolos de integral
+
 ```latex
 $\oint \iint \iiint \iiiint \idotsint$
 ```
-$\oint \iint \iiint \iiiint \idotsint$
 
+$\oint \iint \iiint \iiiint \idotsint$
 
 ### Raíces
 
@@ -104,17 +138,19 @@ $\oint \iint \iiint \iiiint \idotsint$
 ```latex
 $\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
 ```
-$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
 
+$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
 
 ## Texto en matemáticas
 
-La orden \text{texto} permite incluir texto dentro de una fórmula con el mismo aspecto que el entorno
+La orden `\text{texto}` permite incluir texto dentro de una fórmula con el mismo aspecto que el entorno
+
 ```latex
-$$
-f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
-$$
+\[
+  f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
+\]
 ```
+
 $$
 f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
 $$
@@ -126,50 +162,72 @@ $$
 $\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}$
 
 
-También se pueden escribir flechas sobre un texto usando `\vec{a}` o
-`\overrightarrow{abc}`
+También se pueden escribir flechas sobre un texto usando `\vec{a}` o `\overrightarrow{abc}`
 
 Con el paquete *esvect* se pueden representar vectores mejor
+
 ```latex
 \vv{a},  \; \vv{abc} , \; \vv*{a}{n}
 ```
 
+## Operadores y funciones
 
-## Operadores
+LaTeX tiene predefinidos algunas funciones usuales,
 
-LaTeX tiene predefinidos algunas funciones usuales, pero podemos añadir lo que deseemos con la orden `\DeclareMathOperator`. Para ello es necesario cargar el paquete amsmath
+| código    | salida   | código    | salida    | código    | salida    |
+| --------- | -------- | --------- | --------- | --------- | --------- |
+| `\arccos` | $\arcos$ | `\cos`    | $\cos$    | `\csc`    | $\csc$    |
+| `\exp`    | $\exp$   | `\ker`    | $\ker$    | `\limsup` | $\limsup$ |
+| `\min`    | $\min$   | `\sinh`   | $\sinh$   | `\arcsin` | $\arcsin  |
+| `\cosh`   | $\cosh$  | `\deg`    | $\deg$    | `\gcd`    | $\gcd$    |
+| `\lg`     | $\lg$    | `\ln`     | $\ln$     | `\Pr`     | $\Pr$     |
+| `\sup`    | $\sup$   | `\arctan` | $\arctan$ | `\cot`    | $\cot$    |
+| `\det`    | $\det$   | `\hom`    | $\hom$    | `\lim`    | $\lim$    |
+| `\log`    | $\log$   | `\sec`    | $\sec$    | `\tan`    | $\tan$    |
+| `\arg`    | $\arg$   | `\coth`   | $\coth$   | `\dim`    | $\dim$    |
+| `\inf`    | $\inf$   | `\liminf` | $\liminf$ | `\max`    | $\max$    |
+| `\sin`    | $\sin$   | `\tanh`   | $\tanh$   |           |           |
 
-$\cos (x)$, $\sin(x)$, $\tan(x)$, $\arccos(x)$, $\log(x)$, $\ln (x)$, $\exp(x)$,...
-Usando
+```latex
+La identidad $\cos^{2}(x)+\sin^{2}(x)=1$ es conocida como...
+```
+
+Podemos añadir el operador que deseemos con la orden `\DeclareMathOperator`. Para ello es necesario cargar el paquete *amsmath*
+
 ```latex
 \DeclareMathOperator{\dist}{distancia}
 ```
+
 en la cabecera del documento, está disponible el comando `\distancia`
+
+Si hemos usado el paquete *babel* con la opción *spanish* se añaden las funciones `\sen`, `\tg`, `\arcsen`  y `\arctg` además de, por defecto, acentuar algunos operadores como `\lim`, `\min` o `\max`.
 
 
 ## Sub y superíndices de nuevo
 
 El comando `\texttt{substack}` para líneas centradas
+
 ```latex
-$$
-\sum_{\substack{i=1\\j=123}} i+j
-$$
+\[
+  \sum_{\substack{i=1\\j=123}} i+j
+\]
 ```
+
 permite incluir subíndices o superíndices que ocupen varias líneas.
 $$
 \sum_{\substack{i=1\\j=123}} i+j
 $$
 
-
 ## Llaves y flechas
 
-
 `\overbrace`, `\underbrace`, `\overline`, `\underline` se usan para añadir llaves o líneas por encima o bajo un texto o fórmula.
+
 ```latex
-$$
-\overbrace{a+\underbrace{b+c}_{z}+d}^{n}
-$$
+\[
+ \overbrace{a+\underbrace{b+c}_{z}+d}^{n}
+\]
 ```
+
 produce
 $$
 \overbrace{a+\underbrace{b+c}_{z}+d}^{n}
@@ -177,64 +235,32 @@ $$
 
 `\overleftarrow`, `\underleftarrow`, `\overrightarrow`, `\underrightarrow`,
 `\overleftrightarrow` permiten escribir flechas que se estiran para acomodar texto sobre o bajo ellas. Las versiones *left* y *right* indican el sentido de las flechas.
+
 ```latex
-$$
-\overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
-$$
+\[
+  \overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
+\]
 ```
+
 da como resultado
 $$
-\overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
+  \overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
 $$
 
-***
-
-### Más flechas
 
 `\xrightarrow[debajo]{arriba}`y `\xleftrightarrow[debajo]{arriba}` permiten escribir flechas extensibles con texto encima y debajo. Por ejemplo,
+
 ```latex
-$$
-x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
-$$
+\[
+  x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
+\]
 ```
+
 produce
 $$
-x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
+  x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
 $$
 
-***
-
-## Más matemáticas
-
-### Espacios
-
-Se puede añadir o quitar espacio manualmente. Las formas más comunes de
-hacerlo son
-
-* Añadir (poco) `\,` añade un espacio pequeño.
-```latex
-$$
-\int_{0}^{1} f(x)\, dx = \sqrt{x}\, n
-$$
-```
-
-* Añadir (algo más) `\quad` y `\qquad` añaden la
-longitud de una letra m o de dos. Son espacios dinámicos (pueden variar
-un poco para ajustar las líneas).
-```latex
-$$
-f(x)=\cos (x), \quad \forall\,  x \in [0,1]
-$$
-```
-
-* Quitar (poco) `\!` quita un espacio pequeño. Compara el espacio que separa las funciones en la siguiente expresión
-```latex
-$$
-\sin x/\log x \qquad \sin x /\! \log x
-$$
-```
-
-***
 
 ## Entornos multilínea
 
@@ -437,3 +463,41 @@ $$
   \implies y+z
 \end{align}
 $$
+
+## Teoremas y demostraciones
+
+Se pueden definir fácilmente tantos entornos como se necesiten. Con el paquete *amsthm* cargado en la cabecera tenemos disponible la orden `\newtheorem{teorema}{Teorema}` para definir nuevos entornos.
+
+```latex
+\newtheorem{nombre del entorno}[opcional subentorno de]
+  {Salida del entorno}[opcional nivel de numeración]
+```
+
+Una versión común sería la siguiente: tenemos los entornos teorema, propo, lema, definición, ejemplo y observ.
+
+```latex
+\theoremstyle{theorem}
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{propo}[teorema]{Proposición}
+\newtheorem{lema}[teorema]{Lema}
+\theoremstyle{definition}
+\newtheorem{definicion}[teorema]{Definición}
+\newtheorem{ejemplo}[teorema]{Ejemplo}
+\theoremstyle{remark}
+\newtheorem{observ}{Observación}[section]
+```
+
+Los estilos *theorem*, *definition* y *remark* escriben, o no, el contenido en itálica. Pruébalos. 
+
+Además de etiquetarlos para futuras referencias, se le puede añadir una descripción a cualquiera de ellos.
+
+```latex
+\begin{lema}[de Fermat]
+  Si una función derivable tiene un extremo local en un punto 
+  interior de un intervalo, la derivada en dicho punto se anula
+\end{lema}
+```
+
+### Demostraciones
+
+El entorno *proof*, sin numerar, viene predefinido y se usa para delimitar el principio y final de una demostración. Si el final de la demostración ocurre en una ecuación o una lista se puede usar `\qedhere` para indiciar dónde debería aparecer el símbolo de final de demostración.
