@@ -31,6 +31,22 @@ El entorno *equation* produce el mismo resultado y añade una marca a la ecuaci�
 \end{equation}
 ```
 
+Los estilos que LaTeX usa por defecto para escribir matemáticas son:
+- `textstyle`: matemáticas en línea
+- `displaystyle`: matemáticas centradas en línea separada
+- `scriptstyle`: sub y superíndices
+- `scriptscriptstyle`: sub y superíndices de segundo nivel
+
+Podemos forzar a LaTeX a escribir como lo hace en línea separada añadiendo la orden `\displaystyle`. 
+
+```latex
+Sean $f(x)=\frac{x}{2}$ y $\displaystyle g(x)=\frac{x}{3}$ las funciones
+````
+
+Es preferible no forzar estos cambios y, seguramente, la solución más razonable sea escribir la función $g$ en una línea separada.
+
+
+
 ## Espaciado
 
 Los espacios dentro del modo matemático no se tienen en cuenta.
@@ -76,7 +92,7 @@ Los paréntesis y los corchetes se suelen usar en matemáticas para agrupar oper
 | Corchetes `[...]`           | `[x+y]`                     | $[x+y]$                     |
 | Llaves `\{...\}`            | `\{2n : n \in \mathbb{N}\}` | $\{2n : n \in \mathbb{N}\}$ |
 | Ángulos `\langle...\rangle` | `\langle x,y \rangle`       | $\langle x,y \rangle$       |
-| Barra                       | `                           | z                           | ` | $ | z | $ |
+| Barra                       | `| z | `                    | $ | z | $                   |
 
 Las barras, sencillas o dobles, que usamos habitualmente para escribir el módulo o la norma de un vector se escriben con `\lvert z \rvert ` y `\lVert z \rVert`. Puede ser cómodo añadir en la cabecera un comando definido a propósito para esto:
 
@@ -246,7 +262,7 @@ Un uso habitual de este entorno es definir funciones a trozos: suelen tener una 
 \]
 ```
 $$
-  f(x) = 
+  f(x) =
   \begin{cases}
    1+x^2, & \text{si $x<0$,}\\
    e^x,  & \text{si $x>0$,}\\
@@ -314,6 +330,27 @@ $$
   a_{21} & a_{22} & a_{23}
   \end{Bmatrix}
 $$  
+
+Las matrices, por su tamaño, suelen escribirse en modo matemático en línea separada, pero si es pequeña se puede intentar: `smallmatrix`
+
+```latex
+La matriz $A = 
+  \left()
+  \begin{smallmatrix} 
+  1 & 2 \\ 
+  3 & 4 
+  \end{smallmatrix}
+  \right)$ se ve bien en una línea
+  ```
+
+La matriz $A =
+  \left(
+  \begin{smallmatrix} 
+  1 & 2 \\ 
+  3 & 4 
+  \end{smallmatrix}
+  \right)$ se ve bien en una línea
+
 
 ### Integrales, sumatorios, raíces
 
