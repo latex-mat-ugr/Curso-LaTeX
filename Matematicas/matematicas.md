@@ -1,9 +1,13 @@
+# Matemáticas
+
 Hay dos formas de escribir matemáticas: en la misma línea o centrado en una línea separada.
 
 * Para escribir matemáticas *en línea* agrupamos el texto entre dólares. Por ejemplo,
+
 ```latex
 $\cos(x+y)^{2}=\sqrt{2+x^2}$
 ```
+
 produce $\cos(x+y)^{2}=\sqrt{2+x^2}$.
 
 * Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula de la forma `\[... \]` o con dólares dobles. Es recomendable la primera opción. Por ejemplo
@@ -18,6 +22,14 @@ produce
 $$
 \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
 $$
+
+El entorno *equation* produce el mismo resultado y añade una marca a la ecuación para poder hacer referencia con posterioridad a ella:
+
+```latex
+\begin{equation} \label{eq:identidad}
+  e^{i\pi}+1=0 
+\end{equation}
+```
 
 ## Espaciado
 
@@ -53,6 +65,67 @@ hacerlo son
   f(x)= \frac{\sin (1+x)}{\log (1+x)} \quad (x > -1)
 \]
 ```
+
+## Delimitadores
+
+Los paréntesis y los corchetes se suelen usar en matemáticas para agrupar operaciones. En LaTeX los delimitadores incluidos por defecto son
+
+| Delimitador | Ejemplo | Resultado |
+| ---- | ---- | ---- |
+| Paréntesis `(...)` | `(x+y)^{2}` | $(x+y)^{2}$ |
+| Corchetes `[...]` | `[x+y]` | $[x+y]$ |
+| Llaves `\{...\}` | `\{2n : n \in \mathbb{N}\}` | $\{2n : n \in \mathbb{N}\}$ |
+| Ángulos `\langle...\rangle` | `\langle x,y \rangle` | $\langle x,y \rangle$ |
+| Barra | `|z|` | $|z|$ |
+
+Las barras, sencillas o dobles, que usamos habitualmente para escribir el módulo o la norma de un vector se escriben con `\lvert z \rvert ` y `\lVert z \rVert`. Puede ser cómodo añadir en la cabecera un comando definido a propósito para esto:
+
+```latex
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert
+```
+
+::: {.callout-warning title="¿Para qué tanta barra?"}
+  Hay símbolos que son muy parecidos, pero su aspecto es distinto dependiendo de cómo los escribimos: `|`, `\vert`, `\mid` o `\divides` dan como resultado una barra.  La diferencia entre uno y otro, para distinguirlos de alguna forma, es que  `lvert` y `rvert` son delimitadores, es lo que usamos por ejemplo al escribir un valor absoluto. `mid` indica una relación binaria y añade un poco de espacio antes y después. `divides` es también un operador de tipo relación y es lo que deberíamos usar para indicar que 2 divide a 4.
+:::
+
+### Tamaño automático de los delimitadores
+
+LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos `left` y `right`. 
+
+```latex
+  \[
+    \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
+  \]
+````
+
+$$
+    \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
+$$
+
+Los delimitadores pueden ser distintos a un lado y otro y si se quiere que no aparezca nada en la salida el correspondiente delimitador se cambia por un punto.
+
+```latex
+  \[
+    \left. \left( 1+x^{2} \right\} +\frac{y}{2} \right]
+  \]
+```
+
+$$
+  \left. \left( 1+x^{2} \right\} +\frac{y}{2} \right]
+$$    
+
+### Ajuste manual del tamaño
+
+`\bigl  \Bigl \biggl \Biggl`, de menor a mayor, y sus correspondientes versiones para el delimitador por la derecha permiten ajustar de forma manual el tamaño de los delimitadores.
+
+```latex
+  \bigl (x +(y+z) \Bigr) \neq \biggl[ x+ y^{2} \Biggr\}
+```
+
+$$
+  \bigl (x +(y+z) \Bigr) \neq \biggl[ x+ y^{2} \Biggr\}
+$$
 
 ## Construcciones básicas
 
@@ -90,8 +163,7 @@ $$
 \sum_{n=1}^{\infty} x^{x^n}
 $$
 
-
-### Fracciones
+### Fracciones
 
 Las fracciones se escriben con el comando `\frac{numerador}{denominador}`
 
@@ -153,12 +225,10 @@ $$
 f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
 $$
 
-
-### Acentos, gorros,...
+### Acentos y gorros
 
 `\hat{a}`, `\acute{a}`, `\breve{a}`,  `\dot`, `\tilde`, `\mathring{A}` produce
 $\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}$
-
 
 También se pueden escribir flechas sobre un texto usando `\vec{a}` o `\overrightarrow{abc}`
 
@@ -200,10 +270,47 @@ en la cabecera del documento, está disponible el comando `\distancia`
 
 Si hemos usado el paquete *babel* con la opción *spanish* se añaden las funciones `\sen`, `\tg`, `\arcsen`  y `\arctg` además de, por defecto, acentuar algunos operadores como `\lim`, `\min` o `\max`.
 
+## Símbolos
+
+En las siguientes tablas están algunos de los símbolos más comunes. La lista no es completa. En CTAN se puede consultar la [*Comprehensive LaTeX Symbol List*](https://ctan.org/pkg/comprehensive), una lista exhaustiva de símbolos y los paquetes necesarios para usarlos.
+
+### Letras griegas
+
+| Código          | Salida          | Código                 | Salida                 | Código            | Salida            |
+| --------------- | --------------- | ---------------------- | ---------------------- | ----------------- | ----------------- |
+| `\alpha `       | $\alpha$        | `\beta`                | $\beta$                | `\gamma \Gamma`   | $\gamma \Gamma$   |
+| `\delta \Delta` | $\delta \Delta$ | `\epsilon \varepsilon` | $\epsilon \varepsilon$ | `\zeta`           | $\zeta$           |
+| `\eta`          | $\eta$          | `\theta \Theta`        | $\theta \Theta$        | `\vartheta`       | $\vartheta$       |
+| `\gamma \Gamma` | $\gamma \Gamma$ | `\kappa`               | $\kappa$               | `\lambda \Lambda` | $\lambda \Lambda$ |
+| `\mu`           | $\mu$           | `\nu`                  | $\nu$                  | `\xi \Xi`         | $\xi \Xi$         |
+| `\tau`          | `$\tau$`        | `\pi \Pi`              | $\pi \Pi$              | `\rho \varrho`    | $\rho \varrho$    |
+| `\sigma \Sigma` | $\sigma \Sigma$ | `\varsigma`            | $\varsigma$            | `\upsilon`        | $\upsilon$        |
+| `\phi \Phi`     | $\phi \Phi$     | `\varphi`              | $\varphi$              | `\chi`            | $\chi$            |
+| `\psi \Psi`     | $\psi \Psi$     | `\omega \Omega`        | $\omega \Omega$        |                   |                   |
+
+### Relaciones binarias
+
+|          |          |           |           |           |           |             |             |
+| -------- | -------- | --------- | --------- | --------- | --------- | ----------- | ----------- |
+| `\times` | $\times$ | `\div`    | $\div$    | `\cup`    | $\cup$    | `\cap`      | $\cap       |
+| `\leq`   | $\leq$   | `\geq`    | $\geq$    | `\neq`    | $\neq$    | `\perp`     | $\perp$     |
+| `\in`    | $\in$    | `\notin`  | $\notin$  | `\subset` | $\subset$ | `\subseteq` | $\subseteq$ |
+| `\oplus` | $\oplus$ | `\otimes` | $\otimes$ | `\equiv`  | $\equiv$  | `\cong`     | $\cong$     |
+
+### Algunos símbolos comunes
+
+```latex
+\infty \forall \nabla \exists \partial \emptyset \square \blacksquare
+```
+
+$$
+  \infty \ \forall \ \nabla \ \exists \ \partial \ \emptyset \ \square \ \blacksquare
+$$
 
 ## Sub y superíndices de nuevo
 
-El comando `substack` para líneas centradas
+El comando `\substack` para líneas centradas
+
 ```latex
 \[
   \sum_{\substack{i=1\\j=123}} i+j
@@ -267,13 +374,13 @@ Pueden ser de dos tipos: ajustados o alineados.
 
 Hay dos: *gather* y *multline*. El primero de ellos muestra las ecuaciones
 centradas una tras otra. Se usa `\\` para partir líneas en la expresión. Por ejemplo
+
 ```latex
-$$
 \begin{gather}
 x+y+z_1\\+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 \end{gather}
-$$
 ```
+
 $$
 \begin{gather}
 x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
@@ -281,31 +388,30 @@ x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 $$
 El segundo, multline, alinea la primera fórmula a la izquierda, la última a la
 derecha y las intermedias, si las hay, las centra.
-```latex
-$$
-\begin{multline}
-x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
-\frac{x-1}{x+1} \\
-+x+y+z+\omega+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
-\end{multline}
-$$
-```
-$$
-\begin{multline}
-x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
-\frac{x-1}{x+1} \\
-+x+y+z+\omega+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
-\end{multline}
-$$
 
-***
+```latex
+\begin{multline}
+x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
+\frac{x-1}{x+1} \\
++x+y+z+\omega+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+\end{multline}
+```
+
+$$
+\begin{multline}
+x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
+\frac{x-1}{x+1} \\
++x+y+z+\omega+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
+\end{multline}
+$$
 
 ### Entornos alineados
 
 Hay varios entornos de este tipo, dependiendo de cómo estén alineadas
-las columnas. Además de `\\` para añadir una línea nueva, `&` se usa para indicar las columnas.
+las columnas. Además de `\\` para añadir una línea nueva, `&` se usa para separar las columnas.
 
 En primer lugar, *align* muestra las columnas centradas.
+
 ```latex
 $$
 \left.
@@ -315,7 +421,8 @@ $$
 \end{align}
 \right\}
 $$
-```
+
+```latex
 $$
 \left.
 \begin{align}
@@ -381,8 +488,8 @@ $$
 ### Entornos subsidiarios
 
 align, alignat y gather tienen versiones subsidiarias que tienen que ir dentro de un entorno matemático.
+
 ```latex
-$$
 \begin{aligned}[c]
  x &= 3 + \mathbf{p} + \alpha\\
       y &= 4 + \mathbf{q}\\
@@ -396,10 +503,9 @@ $$
       \mathbf{r} = 13\\
       \mathbf{s} = 11 + d
    \end{gathered}
-$$
 ```
+
 ```latex
-$$
 \left.
 \begin{aligned}[c]
 wx&=u\\
@@ -412,11 +518,11 @@ w&=10
 x&=u/w\\
 y&=v/w\\
 \end{aligned}
-$$
 ```
-El entorno más flexible es split. Se puede usar sólo
+
+El entorno más flexible es *split*. Se puede usar sólo
+
 ```latex
-$$
 \begin{split}
                 (x_{1}x_{2}&x_{3}x_{4}x_{5}x_{6})^{2}\\
                            &+ (x_{1}x_{2}x_{3}x_{4}x_{5}
@@ -424,8 +530,8 @@ $$
                             + x_{1}x_{2}x_{4}x_{5}x_{6}
                             + x_{1}x_{2}x_{3}x_{5}x_{6})^{2}
 \end{split}
-$$
 ```
+
 $$
 \begin{split}
                 (x_{1}x_{2}&x_{3}x_{4}x_{5}x_{6})^{2}\\
@@ -436,8 +542,8 @@ $$
 \end{split}
 $$
 o dentro de otro y se alinea como corresponda
+
 ```latex
-$$
 \begin{align}
 	\left.
   \begin{split}
@@ -447,8 +553,8 @@ $$
   \right\}
   \implies y+z
 \end{align}
-$$
 ```
+
 $$
 \begin{align}
 	\left.
@@ -493,6 +599,9 @@ Además de etiquetarlos para futuras referencias, se le puede añadir una descri
   Si una función derivable tiene un extremo local en un punto 
   interior de un intervalo, la derivada en dicho punto se anula
 \end{lema}
+\begin{proof}
+  Explicación
+\end{proof}
 ```
 
 ### Demostraciones
