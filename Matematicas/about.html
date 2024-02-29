@@ -233,10 +233,21 @@ window.Quarto = {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#espaciado" id="toc-espaciado" class="nav-link active" data-scroll-target="#espaciado">Espaciado</a></li>
+  <li><a href="#matemáticas" id="toc-matemáticas" class="nav-link active" data-scroll-target="#matemáticas">Matemáticas</a>
+  <ul class="collapse">
+  <li><a href="#espaciado" id="toc-espaciado" class="nav-link" data-scroll-target="#espaciado">Espaciado</a>
+  <ul class="collapse">
+  <li><a href="#cómo-ajustar-los-espacios" id="toc-cómo-ajustar-los-espacios" class="nav-link" data-scroll-target="#cómo-ajustar-los-espacios">¿Cómo ajustar los espacios?</a></li>
+  </ul></li>
+  <li><a href="#delimitadores" id="toc-delimitadores" class="nav-link" data-scroll-target="#delimitadores">Delimitadores</a>
+  <ul class="collapse">
+  <li><a href="#tamaño-automático-de-los-delimitadores" id="toc-tamaño-automático-de-los-delimitadores" class="nav-link" data-scroll-target="#tamaño-automático-de-los-delimitadores">Tamaño automático de los delimitadores</a></li>
+  <li><a href="#ajuste-manual-del-tamaño" id="toc-ajuste-manual-del-tamaño" class="nav-link" data-scroll-target="#ajuste-manual-del-tamaño">Ajuste manual del tamaño</a></li>
+  </ul></li>
   <li><a href="#construcciones-básicas" id="toc-construcciones-básicas" class="nav-link" data-scroll-target="#construcciones-básicas">Construcciones básicas</a>
   <ul class="collapse">
   <li><a href="#operaciones-aritméticas-subíndices-y-superíndices" id="toc-operaciones-aritméticas-subíndices-y-superíndices" class="nav-link" data-scroll-target="#operaciones-aritméticas-subíndices-y-superíndices">Operaciones aritméticas, subíndices y superíndices</a></li>
+  <li><a href="#fracciones" id="toc-fracciones" class="nav-link" data-scroll-target="#fracciones">Fracciones</a></li>
   <li><a href="#números-binómicos" id="toc-números-binómicos" class="nav-link" data-scroll-target="#números-binómicos">Números binómicos</a></li>
   <li><a href="#puntos-suspensivos" id="toc-puntos-suspensivos" class="nav-link" data-scroll-target="#puntos-suspensivos">Puntos suspensivos</a></li>
   <li><a href="#integrales" id="toc-integrales" class="nav-link" data-scroll-target="#integrales">Integrales</a></li>
@@ -244,25 +255,29 @@ window.Quarto = {
   </ul></li>
   <li><a href="#texto-en-matemáticas" id="toc-texto-en-matemáticas" class="nav-link" data-scroll-target="#texto-en-matemáticas">Texto en matemáticas</a>
   <ul class="collapse">
-  <li><a href="#acentos-gorros" id="toc-acentos-gorros" class="nav-link" data-scroll-target="#acentos-gorros">Acentos, gorros,…</a></li>
+  <li><a href="#acentos-y-gorros" id="toc-acentos-y-gorros" class="nav-link" data-scroll-target="#acentos-y-gorros">Acentos y gorros</a></li>
   </ul></li>
-  <li><a href="#operadores" id="toc-operadores" class="nav-link" data-scroll-target="#operadores">Operadores</a></li>
+  <li><a href="#operadores-y-funciones" id="toc-operadores-y-funciones" class="nav-link" data-scroll-target="#operadores-y-funciones">Operadores y funciones</a></li>
+  <li><a href="#símbolos" id="toc-símbolos" class="nav-link" data-scroll-target="#símbolos">Símbolos</a>
+  <ul class="collapse">
+  <li><a href="#letras-griegas" id="toc-letras-griegas" class="nav-link" data-scroll-target="#letras-griegas">Letras griegas</a></li>
+  <li><a href="#relaciones-binarias" id="toc-relaciones-binarias" class="nav-link" data-scroll-target="#relaciones-binarias">Relaciones binarias</a></li>
+  <li><a href="#algunos-símbolos-comunes" id="toc-algunos-símbolos-comunes" class="nav-link" data-scroll-target="#algunos-símbolos-comunes">Algunos símbolos comunes</a></li>
+  </ul></li>
   <li><a href="#sub-y-superíndices-de-nuevo" id="toc-sub-y-superíndices-de-nuevo" class="nav-link" data-scroll-target="#sub-y-superíndices-de-nuevo">Sub y superíndices de nuevo</a></li>
-  <li><a href="#llaves-y-flechas" id="toc-llaves-y-flechas" class="nav-link" data-scroll-target="#llaves-y-flechas">Llaves y flechas</a>
-  <ul class="collapse">
-  <li><a href="#más-flechas" id="toc-más-flechas" class="nav-link" data-scroll-target="#más-flechas">Más flechas</a></li>
-  </ul></li>
-  <li><a href="#más-matemáticas" id="toc-más-matemáticas" class="nav-link" data-scroll-target="#más-matemáticas">Más matemáticas</a>
-  <ul class="collapse">
-  <li><a href="#espacios" id="toc-espacios" class="nav-link" data-scroll-target="#espacios">Espacios</a></li>
-  </ul></li>
+  <li><a href="#llaves-y-flechas" id="toc-llaves-y-flechas" class="nav-link" data-scroll-target="#llaves-y-flechas">Llaves y flechas</a></li>
   <li><a href="#entornos-multilínea" id="toc-entornos-multilínea" class="nav-link" data-scroll-target="#entornos-multilínea">Entornos multilínea</a>
   <ul class="collapse">
   <li><a href="#entornos-ajustados" id="toc-entornos-ajustados" class="nav-link" data-scroll-target="#entornos-ajustados">Entornos ajustados</a></li>
   <li><a href="#entornos-alineados" id="toc-entornos-alineados" class="nav-link" data-scroll-target="#entornos-alineados">Entornos alineados</a></li>
   <li><a href="#entornos-subsidiarios" id="toc-entornos-subsidiarios" class="nav-link" data-scroll-target="#entornos-subsidiarios">Entornos subsidiarios</a></li>
   </ul></li>
+  <li><a href="#teoremas-y-demostraciones" id="toc-teoremas-y-demostraciones" class="nav-link" data-scroll-target="#teoremas-y-demostraciones">Teoremas y demostraciones</a>
+  <ul class="collapse">
+  <li><a href="#demostraciones" id="toc-demostraciones" class="nav-link" data-scroll-target="#demostraciones">Demostraciones</a></li>
+  </ul></li>
   <li><a href="#transparencias" id="toc-transparencias" class="nav-link" data-scroll-target="#transparencias">Transparencias</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></nav>
     </div>
@@ -288,6 +303,8 @@ window.Quarto = {
 </header>
 
 
+<section id="matemáticas" class="level1">
+<h1>Matemáticas</h1>
 <p>Hay dos formas de escribir matemáticas: en la misma línea o centrado en una línea separada.</p>
 <ul>
 <li>Para escribir matemáticas <em>en línea</em> agrupamos el texto entre dólares. Por ejemplo,</li>
@@ -295,41 +312,153 @@ window.Quarto = {
 <div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\cos</span><span class="ss">(x+y)^{2}=</span><span class="sc">\sqrt</span><span class="ss">{2+x^2}$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math inline">\(\cos(x+y)^{2}=\sqrt{2+x^2}\)</span>.</p>
 <ul>
-<li>Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula entre \[ \] o con dólares dobles. Es recomendable la primera opción. Por ejemplo</li>
+<li>Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula de la forma <code>\[... \]</code> o con dólares dobles. Es recomendable la primera opción. Por ejemplo</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\frac</span><span class="ss">{x+y}{2x-1}=</span><span class="sc">\sqrt</span><span class="ss">{</span><span class="sc">\log</span><span class="ss">(x)^2+1}</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\frac</span><span class="ss">{x+y}{2x-1}=</span><span class="sc">\sqrt</span><span class="ss">{</span><span class="sc">\log</span><span class="ss">(x)^2+1}</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math display">\[
 \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
 \]</span></p>
-<section id="espaciado" class="level3">
-<h3 class="anchored" data-anchor-id="espaciado">Espaciado</h3>
+<p>El entorno <em>equation</em> produce el mismo resultado y añade una marca a la ecuación para poder hacer referencia con posterioridad a ella:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="ss"> </span><span class="sc">\label</span><span class="ss">{eq:identidad}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  e^{i</span><span class="sc">\pi</span><span class="ss">}+1=0 </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="espaciado" class="level2">
+<h2 class="anchored" data-anchor-id="espaciado">Espaciado</h2>
 <p>Los espacios dentro del modo matemático no se tienen en cuenta.</p>
 <p>El espacio dentro las fórmulas es distinto al espacio en modo texto. Compara lo siguiente:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Sea <span class="ss">$x=1,2$</span> o <span class="ss">$3$</span> con sea <span class="ss">$x=1$</span>, <span class="ss">$2$</span> o <span class="ss">$3$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Sea <span class="ss">$x=1,2$</span> o <span class="ss">$3$</span> con sea <span class="ss">$x=1$</span>, <span class="ss">$2$</span> o <span class="ss">$3$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La forma correcta de escribirlo es la <em>segunda</em> si queremos que LaTeX use el espaciado que se considera correcto.</p>
+<section id="cómo-ajustar-los-espacios" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-ajustar-los-espacios">¿Cómo ajustar los espacios?</h3>
+<p>Se puede añadir o quitar espacio manualmente. Las formas más comunes de hacerlo son</p>
+<ul>
+<li>Añadir (poco) <code>\,</code> añade un espacio pequeño.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\int</span><span class="ss">_{0}^{1} f(x)</span><span class="sc">\,</span><span class="ss"> dx = </span><span class="sc">\sqrt</span><span class="ss">{x}</span><span class="sc">\,</span><span class="ss"> n</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Añadir (algo más) <code>\quad</code> y <code>\qquad</code> añaden la longitud de una letra m o de dos. Son espacios dinámicos (pueden variar un poco para ajustar las líneas).</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  f(x)= </span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\sin</span><span class="ss"> (1+x)}{</span><span class="sc">\log</span><span class="ss"> (1+x)} </span><span class="sc">\quad</span><span class="ss"> (x &gt; -1)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="delimitadores" class="level2">
+<h2 class="anchored" data-anchor-id="delimitadores">Delimitadores</h2>
+<p>Los paréntesis y los corchetes se suelen usar en matemáticas para agrupar operaciones. En LaTeX los delimitadores incluidos por defecto son</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Delimitador</th>
+<th>Ejemplo</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Paréntesis <code>(...)</code></td>
+<td><code>(x+y)^{2}</code></td>
+<td><span class="math inline">\((x+y)^{2}\)</span></td>
+</tr>
+<tr class="even">
+<td>Corchetes <code>[...]</code></td>
+<td><code>[x+y]</code></td>
+<td><span class="math inline">\([x+y]\)</span></td>
+</tr>
+<tr class="odd">
+<td>Llaves <code>\{...\}</code></td>
+<td><code>\{2n : n \in \mathbb{N}\}</code></td>
+<td><span class="math inline">\(\{2n : n \in \mathbb{N}\}\)</span></td>
+</tr>
+<tr class="even">
+<td>Ángulos <code>\langle...\rangle</code></td>
+<td><code>\langle x,y \rangle</code></td>
+<td><span class="math inline">\(\langle x,y \rangle\)</span></td>
+</tr>
+<tr class="odd">
+<td>Barra</td>
+<td><code>|z|</code></td>
+<td><span class="math inline">\(|z|\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Las barras, sencillas o dobles, que usamos habitualmente para escribir el módulo o la norma de un vector se escriben con <code>\lvert z \rvert</code> y <code>\lVert z \rVert</code>. Puede ser cómodo añadir en la cabecera un comando definido a propósito para esto:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\providecommand</span>{<span class="ex">\abs</span>}[1]{<span class="fu">\lvert</span>#1<span class="fu">\rvert</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\providecommand</span>{<span class="ex">\norm</span>}[1]{<span class="fu">\lVert</span>#1<span class="fu">\rVert</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled" title="¿Para qué tanta barra?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Para qué tanta barra?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hay símbolos que son muy parecidos, pero su aspecto es distinto dependiendo de cómo los escribimos: <code>|</code>, <code>\vert</code>, <code>\mid</code> o <code>\divides</code> dan como resultado una barra. La diferencia entre uno y otro, para distinguirlos de alguna forma, es que <code>lvert</code> y <code>rvert</code> son delimitadores, es lo que usamos por ejemplo al escribir un valor absoluto. <code>mid</code> indica una relación binaria y añade un poco de espacio antes y después. <code>divides</code> es también un operador de tipo relación y es lo que deberíamos usar para indicar que 2 divide a 4.</p>
+</div>
+</div>
+<section id="tamaño-automático-de-los-delimitadores" class="level3">
+<h3 class="anchored" data-anchor-id="tamaño-automático-de-los-delimitadores">Tamaño automático de los delimitadores</h3>
+<p>LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos <code>left</code> y <code>right</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="ss">\[</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\left</span><span class="ss">[ </span><span class="sc">\left</span><span class="ss">( 1+x^{2} </span><span class="sc">\right</span><span class="ss">) +</span><span class="sc">\frac</span><span class="ss">{y}{2} </span><span class="sc">\right</span><span class="ss">]</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  \]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+    \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
+\]</span></p>
+<p>Los delimitadores pueden ser distintos a un lado y otro y si se quiere que no aparezca nada en la salida el correspondiente delimitador se cambia por un punto.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>  <span class="ss">\[</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\left</span><span class="ss">. </span><span class="sc">\left</span><span class="ss">( 1+x^{2} </span><span class="sc">\right\}</span><span class="ss"> +</span><span class="sc">\frac</span><span class="ss">{y}{2} </span><span class="sc">\right</span><span class="ss">]</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  \]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+  \left. \left( 1+x^{2} \right\} +\frac{y}{2} \right]
+\]</span></p>
+</section>
+<section id="ajuste-manual-del-tamaño" class="level3">
+<h3 class="anchored" data-anchor-id="ajuste-manual-del-tamaño">Ajuste manual del tamaño</h3>
+<p><code>\bigl  \Bigl \biggl \Biggl</code>, de menor a mayor, y sus correspondientes versiones para el delimitador por la derecha permiten ajustar de forma manual el tamaño de los delimitadores.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\bigl</span> (x +(y+z) <span class="fu">\Bigr</span>) <span class="fu">\neq</span> <span class="fu">\biggl</span>[ x+ y^{2} <span class="fu">\Biggr\}</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+  \bigl (x +(y+z) \Bigr) \neq \biggl[ x+ y^{2} \Biggr\}
+\]</span></p>
+</section>
 </section>
 <section id="construcciones-básicas" class="level2">
 <h2 class="anchored" data-anchor-id="construcciones-básicas">Construcciones básicas</h2>
 <section id="operaciones-aritméticas-subíndices-y-superíndices" class="level3">
 <h3 class="anchored" data-anchor-id="operaciones-aritméticas-subíndices-y-superíndices">Operaciones aritméticas, subíndices y superíndices</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$a + b$</span>, <span class="ss">$a - b$</span>, <span class="ss">$-a$</span>, <span class="ss">$a / b$</span>, <span class="ss">$a b$</span>, <span class="ss">$a </span><span class="sc">\cdot</span><span class="ss"> b$</span>, <span class="ss">$a </span><span class="sc">\times</span><span class="ss"> b$</span>, <span class="ss">$a </span><span class="sc">\div</span><span class="ss"> b$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$a + b$</span>, <span class="ss">$a - b$</span>, <span class="ss">$-a$</span>, <span class="ss">$a / b$</span>, <span class="ss">$a b$</span>, <span class="ss">$a </span><span class="sc">\cdot</span><span class="ss"> b$</span>, <span class="ss">$a </span><span class="sc">\times</span><span class="ss"> b$</span>, <span class="ss">$a </span><span class="sc">\div</span><span class="ss"> b$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math inline">\(a + b\)</span>, <span class="math inline">\(a - b\)</span>, <span class="math inline">\(-a\)</span>, <span class="math inline">\(a / b\)</span>, <span class="math inline">\(a b\)</span>, <span class="math inline">\(a \cdot b\)</span>, <span class="math inline">\(a \times b\)</span>, <span class="math inline">\(a \div b\)</span>.</p>
 <p>Puedes escribir subíndices y superíndices de la siguiente forma:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n^{2}, x^{1/x}, x_{n}, lim_{x <span class="fu">\to</span> <span class="fu">\infty</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[ </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  n^{2}$, $x^{1/x}$, $x_{n}$, $</span><span class="sc">\lim</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">}</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>que da como resultado</p>
 <p><span class="math display">\[
 n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 \]</span></p>
 <p>Se pueden anidar y usar subíndices y superíndices al mismo tiempo:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\sum</span>_{n=1}^{<span class="fu">\infty</span>} x^{x^n}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\sum</span><span class="ss">_{n=1}^{</span><span class="sc">\infty</span><span class="ss">} x^{x^n}</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \sum_{n=1}^{\infty} x^{x^n}
 \]</span></p>
-<p>###&nbsp;Fracciones</p>
+</section>
+<section id="fracciones" class="level3">
+<h3 class="anchored" data-anchor-id="fracciones">Fracciones</h3>
 <p>Las fracciones se escriben con el comando <code>\frac{numerador}{denominador}</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\frac</span>{a}{b}, <span class="fu">\tfrac</span>{1}{2},<span class="fu">\dfrac</span>{1}{2}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\frac</span>{a}{b}, <span class="fu">\tfrac</span>{1}{2},<span class="fu">\dfrac</span>{1}{2}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math inline">\(\frac{a}{b}\)</span>, <span class="math inline">\(\tfrac{1}{2}\)</span>, <span class="math inline">\(\dfrac{1}{2}\)</span></p>
 <p><code>frac</code> se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como <code>tfrac</code>), si está en una línea separada aumenta (como <code>dfrac</code>). Podemos forzar un comportamiento u otro usando <code>tfrac</code> o <code>dfrac</code>.</p>
 </section>
@@ -340,52 +469,321 @@ n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 <section id="puntos-suspensivos" class="level3">
 <h3 class="anchored" data-anchor-id="puntos-suspensivos">Puntos suspensivos</h3>
 <p>En lugar de escribir tres puntos seguidos, <code>\dots, \ldots, \cdots</code> producen puntos suspensivos con el espaciado correcto. <code>\dots</code> intenta adaptarse al entorno. <code>\ldots</code> da como resultado puntos “bajos” y <code>\cdots</code>centrados. Un ejemplo:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x=1,2,<span class="fu">\ldots</span> 3, x+y+<span class="fu">\cdots</span> +z, x<span class="fu">\times</span> y <span class="fu">\times</span> <span class="fu">\dots</span> z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x=1,2,<span class="fu">\ldots</span> 3, x+y+<span class="fu">\cdots</span> +z, x<span class="fu">\times</span> y <span class="fu">\times</span> <span class="fu">\dots</span> z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math inline">\(x=1,2,\ldots 3\)</span>, <span class="math inline">\(x+y+\cdots +z\)</span>, <span class="math inline">\(x\times y \times \dots \times z\)</span></p>
 </section>
 <section id="integrales" class="level3">
 <h3 class="anchored" data-anchor-id="integrales">Integrales</h3>
 <p>Varios símbolos de integral</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\oint</span><span class="ss"> </span><span class="sc">\iint</span><span class="ss"> </span><span class="sc">\iiint</span><span class="ss"> </span><span class="sc">\iiiint</span><span class="ss"> </span><span class="sc">\idotsint</span><span class="ss">$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\oint</span><span class="ss"> </span><span class="sc">\iint</span><span class="ss"> </span><span class="sc">\iiint</span><span class="ss"> </span><span class="sc">\iiiint</span><span class="ss"> </span><span class="sc">\idotsint</span><span class="ss">$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math inline">\(\oint \iint \iiint \iiiint \idotsint\)</span></p>
 </section>
 <section id="raíces" class="level3">
 <h3 class="anchored" data-anchor-id="raíces">Raíces</h3>
 <p><code>\sqrt{num}</code>y <code>\sqrt[n]{num}</code> permiten escribir raíces cuadradas y raíces n-ésimas.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\sqrt</span><span class="ss">{3}$</span>, <span class="ss">$</span><span class="sc">\sqrt</span><span class="ss">[4]{3}$</span> <span class="ss">$</span><span class="sc">\sqrt</span><span class="ss">[</span><span class="sc">\leftroot</span><span class="ss">{2} </span><span class="sc">\uproot</span><span class="ss">{1} 6]{3}$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\sqrt</span><span class="ss">{3}$</span>, <span class="ss">$</span><span class="sc">\sqrt</span><span class="ss">[4]{3}$</span> <span class="ss">$</span><span class="sc">\sqrt</span><span class="ss">[</span><span class="sc">\leftroot</span><span class="ss">{2} </span><span class="sc">\uproot</span><span class="ss">{1} 6]{3}$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math inline">\(\sqrt{3}\)</span>, <span class="math inline">\(\sqrt[4]{3}\)</span> <span class="math inline">\(\sqrt[\leftroot{2} \uproot{1} 6]{3}\)</span></p>
 </section>
 </section>
 <section id="texto-en-matemáticas" class="level2">
 <h2 class="anchored" data-anchor-id="texto-en-matemáticas">Texto en matemáticas</h2>
-<p>La orden permite incluir texto dentro de una fórmula con el mismo aspecto que el entorno</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x)=x^2,</span><span class="sc">\text</span>{ si <span class="ss">$x&gt;0$</span> y <span class="ss">$\cos(x)$</span> en otro caso}</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La orden <code>\text{texto}</code> permite incluir texto dentro de una fórmula con el mismo aspecto que el entorno</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  f(x)=x^2,</span><span class="sc">\text</span>{ si <span class="ss">$x&gt;0$</span> y <span class="ss">$\cos(x)$</span> en otro caso}</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 f(x)=x^2,\text{ si $x&gt;0$ y $\cos(x)$ en otro caso}
 \]</span></p>
-<section id="acentos-gorros" class="level3">
-<h3 class="anchored" data-anchor-id="acentos-gorros">Acentos, gorros,…</h3>
+<section id="acentos-y-gorros" class="level3">
+<h3 class="anchored" data-anchor-id="acentos-y-gorros">Acentos y gorros</h3>
 <p><code>\hat{a}</code>, <code>\acute{a}</code>, <code>\breve{a}</code>, <code>\dot</code>, <code>\tilde</code>, <code>\mathring{A}</code> produce <span class="math inline">\(\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}\)</span></p>
 <p>También se pueden escribir flechas sobre un texto usando <code>\vec{a}</code> o <code>\overrightarrow{abc}</code></p>
 <p>Con el paquete <em>esvect</em> se pueden representar vectores mejor</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\vv</span>{a},  <span class="fu">\;</span> <span class="fu">\vv</span>{abc} , <span class="fu">\;</span> <span class="fu">\vv*</span>{a}{n}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\vv</span>{a},  <span class="fu">\;</span> <span class="fu">\vv</span>{abc} , <span class="fu">\;</span> <span class="fu">\vv*</span>{a}{n}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="operadores" class="level2">
-<h2 class="anchored" data-anchor-id="operadores">Operadores</h2>
-<p>LaTeX tiene predefinidos algunas funciones usuales, pero podemos añadir lo que deseemos con la orden <code>\DeclareMathOperator</code>. Para ello es necesario cargar el paquete amsmath</p>
-<p><span class="math inline">\(\cos (x)\)</span>, <span class="math inline">\(\sin(x)\)</span>, <span class="math inline">\(\tan(x)\)</span>, <span class="math inline">\(\arccos(x)\)</span>, <span class="math inline">\(\log(x)\)</span>, <span class="math inline">\(\ln (x)\)</span>, <span class="math inline">\(\exp(x)\)</span>,… Usando</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\DeclareMathOperator</span>{<span class="fu">\dist</span>}{distancia}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="operadores-y-funciones" class="level2">
+<h2 class="anchored" data-anchor-id="operadores-y-funciones">Operadores y funciones</h2>
+<p>LaTeX tiene predefinidos algunas funciones usuales,</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>código</th>
+<th>salida</th>
+<th>código</th>
+<th>salida</th>
+<th>código</th>
+<th>salida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\arccos</code></td>
+<td><span class="math inline">\(\arcos\)</span></td>
+<td><code>\cos</code></td>
+<td><span class="math inline">\(\cos\)</span></td>
+<td><code>\csc</code></td>
+<td><span class="math inline">\(\csc\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\exp</code></td>
+<td><span class="math inline">\(\exp\)</span></td>
+<td><code>\ker</code></td>
+<td><span class="math inline">\(\ker\)</span></td>
+<td><code>\limsup</code></td>
+<td><span class="math inline">\(\limsup\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\min</code></td>
+<td><span class="math inline">\(\min\)</span></td>
+<td><code>\sinh</code></td>
+<td><span class="math inline">\(\sinh\)</span></td>
+<td><code>\arcsin</code></td>
+<td>$</td>
+</tr>
+<tr class="even">
+<td><code>\cosh</code></td>
+<td><span class="math inline">\(\cosh\)</span></td>
+<td><code>\deg</code></td>
+<td><span class="math inline">\(\deg\)</span></td>
+<td><code>\gcd</code></td>
+<td><span class="math inline">\(\gcd\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\lg</code></td>
+<td><span class="math inline">\(\lg\)</span></td>
+<td><code>\ln</code></td>
+<td><span class="math inline">\(\ln\)</span></td>
+<td><code>\Pr</code></td>
+<td><span class="math inline">\(\Pr\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\sup</code></td>
+<td><span class="math inline">\(\sup\)</span></td>
+<td><code>\arctan</code></td>
+<td><span class="math inline">\(\arctan\)</span></td>
+<td><code>\cot</code></td>
+<td><span class="math inline">\(\cot\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\det</code></td>
+<td><span class="math inline">\(\det\)</span></td>
+<td><code>\hom</code></td>
+<td><span class="math inline">\(\hom\)</span></td>
+<td><code>\lim</code></td>
+<td><span class="math inline">\(\lim\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\log</code></td>
+<td><span class="math inline">\(\log\)</span></td>
+<td><code>\sec</code></td>
+<td><span class="math inline">\(\sec\)</span></td>
+<td><code>\tan</code></td>
+<td><span class="math inline">\(\tan\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\arg</code></td>
+<td><span class="math inline">\(\arg\)</span></td>
+<td><code>\coth</code></td>
+<td><span class="math inline">\(\coth\)</span></td>
+<td><code>\dim</code></td>
+<td><span class="math inline">\(\dim\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\inf</code></td>
+<td><span class="math inline">\(\inf\)</span></td>
+<td><code>\liminf</code></td>
+<td><span class="math inline">\(\liminf\)</span></td>
+<td><code>\max</code></td>
+<td><span class="math inline">\(\max\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\sin</code></td>
+<td><span class="math inline">\(\sin\)</span></td>
+<td><code>\tanh</code></td>
+<td><span class="math inline">\(\tanh\)</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb20"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>La identidad <span class="ss">$</span><span class="sc">\cos</span><span class="ss">^{2}(x)+</span><span class="sc">\sin</span><span class="ss">^{2}(x)=1$</span> es conocida como...</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podemos añadir el operador que deseemos con la orden <code>\DeclareMathOperator</code>. Para ello es necesario cargar el paquete <em>amsmath</em></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\DeclareMathOperator</span>{<span class="fu">\dist</span>}{distancia}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>en la cabecera del documento, está disponible el comando <code>\distancia</code></p>
+<p>Si hemos usado el paquete <em>babel</em> con la opción <em>spanish</em> se añaden las funciones <code>\sen</code>, <code>\tg</code>, <code>\arcsen</code> y <code>\arctg</code> además de, por defecto, acentuar algunos operadores como <code>\lim</code>, <code>\min</code> o <code>\max</code>.</p>
+</section>
+<section id="símbolos" class="level2">
+<h2 class="anchored" data-anchor-id="símbolos">Símbolos</h2>
+<p>En las siguientes tablas están algunos de los símbolos más comunes. La lista no es completa. En CTAN se puede consultar la <a href="https://ctan.org/pkg/comprehensive"><em>Comprehensive LaTeX Symbol List</em></a>, una lista exhaustiva de símbolos y los paquetes necesarios para usarlos.</p>
+<section id="letras-griegas" class="level3">
+<h3 class="anchored" data-anchor-id="letras-griegas">Letras griegas</h3>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Código</th>
+<th>Salida</th>
+<th>Código</th>
+<th>Salida</th>
+<th>Código</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\alpha</code></td>
+<td><span class="math inline">\(\alpha\)</span></td>
+<td><code>\beta</code></td>
+<td><span class="math inline">\(\beta\)</span></td>
+<td><code>\gamma \Gamma</code></td>
+<td><span class="math inline">\(\gamma \Gamma\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\delta \Delta</code></td>
+<td><span class="math inline">\(\delta \Delta\)</span></td>
+<td><code>\epsilon \varepsilon</code></td>
+<td><span class="math inline">\(\epsilon \varepsilon\)</span></td>
+<td><code>\zeta</code></td>
+<td><span class="math inline">\(\zeta\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\eta</code></td>
+<td><span class="math inline">\(\eta\)</span></td>
+<td><code>\theta \Theta</code></td>
+<td><span class="math inline">\(\theta \Theta\)</span></td>
+<td><code>\vartheta</code></td>
+<td><span class="math inline">\(\vartheta\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\gamma \Gamma</code></td>
+<td><span class="math inline">\(\gamma \Gamma\)</span></td>
+<td><code>\kappa</code></td>
+<td><span class="math inline">\(\kappa\)</span></td>
+<td><code>\lambda \Lambda</code></td>
+<td><span class="math inline">\(\lambda \Lambda\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\mu</code></td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td><code>\nu</code></td>
+<td><span class="math inline">\(\nu\)</span></td>
+<td><code>\xi \Xi</code></td>
+<td><span class="math inline">\(\xi \Xi\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\tau</code></td>
+<td><code>$\tau$</code></td>
+<td><code>\pi \Pi</code></td>
+<td><span class="math inline">\(\pi \Pi\)</span></td>
+<td><code>\rho \varrho</code></td>
+<td><span class="math inline">\(\rho \varrho\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\sigma \Sigma</code></td>
+<td><span class="math inline">\(\sigma \Sigma\)</span></td>
+<td><code>\varsigma</code></td>
+<td><span class="math inline">\(\varsigma\)</span></td>
+<td><code>\upsilon</code></td>
+<td><span class="math inline">\(\upsilon\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\phi \Phi</code></td>
+<td><span class="math inline">\(\phi \Phi\)</span></td>
+<td><code>\varphi</code></td>
+<td><span class="math inline">\(\varphi\)</span></td>
+<td><code>\chi</code></td>
+<td><span class="math inline">\(\chi\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\psi \Psi</code></td>
+<td><span class="math inline">\(\psi \Psi\)</span></td>
+<td><code>\omega \Omega</code></td>
+<td><span class="math inline">\(\omega \Omega\)</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="relaciones-binarias" class="level3">
+<h3 class="anchored" data-anchor-id="relaciones-binarias">Relaciones binarias</h3>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>\times</code></td>
+<td><span class="math inline">\(\times\)</span></td>
+<td><code>\div</code></td>
+<td><span class="math inline">\(\div\)</span></td>
+<td><code>\cup</code></td>
+<td><span class="math inline">\(\cup\)</span></td>
+<td><code>\cap</code></td>
+<td>$</td>
+</tr>
+<tr class="even">
+<td><code>\leq</code></td>
+<td><span class="math inline">\(\leq\)</span></td>
+<td><code>\geq</code></td>
+<td><span class="math inline">\(\geq\)</span></td>
+<td><code>\neq</code></td>
+<td><span class="math inline">\(\neq\)</span></td>
+<td><code>\perp</code></td>
+<td><span class="math inline">\(\perp\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\in</code></td>
+<td><span class="math inline">\(\in\)</span></td>
+<td><code>\notin</code></td>
+<td><span class="math inline">\(\notin\)</span></td>
+<td><code>\subset</code></td>
+<td><span class="math inline">\(\subset\)</span></td>
+<td><code>\subseteq</code></td>
+<td><span class="math inline">\(\subseteq\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\oplus</code></td>
+<td><span class="math inline">\(\oplus\)</span></td>
+<td><code>\otimes</code></td>
+<td><span class="math inline">\(\otimes\)</span></td>
+<td><code>\equiv</code></td>
+<td><span class="math inline">\(\equiv\)</span></td>
+<td><code>\cong</code></td>
+<td><span class="math inline">\(\cong\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="algunos-símbolos-comunes" class="level3">
+<h3 class="anchored" data-anchor-id="algunos-símbolos-comunes">Algunos símbolos comunes</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\infty</span> <span class="fu">\forall</span> <span class="fu">\nabla</span> <span class="fu">\exists</span> <span class="fu">\partial</span> <span class="fu">\emptyset</span> <span class="fu">\square</span> <span class="fu">\blacksquare</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+  \infty \ \forall \ \nabla \ \exists \ \partial \ \emptyset \ \square \ \blacksquare
+\]</span></p>
+</section>
 </section>
 <section id="sub-y-superíndices-de-nuevo" class="level2">
 <h2 class="anchored" data-anchor-id="sub-y-superíndices-de-nuevo">Sub y superíndices de nuevo</h2>
-<p>El comando <code>substack</code> para líneas centradas</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\sum</span><span class="ss">_{</span><span class="sc">\substack</span><span class="ss">{i=1</span><span class="sc">\\</span><span class="ss">j=123}} i+j</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El comando <code>\substack</code> para líneas centradas</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\sum</span><span class="ss">_{</span><span class="sc">\substack</span><span class="ss">{i=1</span><span class="sc">\\</span><span class="ss">j=123}} i+j</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>permite incluir subíndices o superíndices que ocupen varias líneas. <span class="math display">\[
 \sum_{\substack{i=1\\j=123}} i+j
 \]</span></p>
@@ -393,57 +791,26 @@ f(x)=x^2,\text{ si $x&gt;0$ y $\cos(x)$ en otro caso}
 <section id="llaves-y-flechas" class="level2">
 <h2 class="anchored" data-anchor-id="llaves-y-flechas">Llaves y flechas</h2>
 <p><code>\overbrace</code>, <code>\underbrace</code>, <code>\overline</code>, <code>\underline</code> se usan para añadir llaves o líneas por encima o bajo un texto o fórmula.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\overbrace</span><span class="ss">{a+</span><span class="sc">\underbrace</span><span class="ss">{b+c}_{z}+d}^{n}</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ss"> </span><span class="sc">\overbrace</span><span class="ss">{a+</span><span class="sc">\underbrace</span><span class="ss">{b+c}_{z}+d}^{n}</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math display">\[
 \overbrace{a+\underbrace{b+c}_{z}+d}^{n}
 \]</span></p>
 <p><code>\overleftarrow</code>, <code>\underleftarrow</code>, <code>\overrightarrow</code>, <code>\underrightarrow</code>, <code>\overleftrightarrow</code> permiten escribir flechas que se estiran para acomodar texto sobre o bajo ellas. Las versiones <em>left</em> y <em>right</em> indican el sentido de las flechas.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\overleftarrow</span><span class="ss">{a+b+c}, </span><span class="sc">\quad</span><span class="ss"> </span><span class="sc">\underrightarrow</span><span class="ss">{x+y}</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\overleftarrow</span><span class="ss">{a+b+c}, </span><span class="sc">\quad</span><span class="ss"> </span><span class="sc">\underrightarrow</span><span class="ss">{x+y}</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>da como resultado <span class="math display">\[
-\overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
+  \overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
 \]</span></p>
-<hr>
-<section id="más-flechas" class="level3">
-<h3 class="anchored" data-anchor-id="más-flechas">Más flechas</h3>
 <p><code>\xrightarrow[debajo]{arriba}</code>y <code>\xleftrightarrow[debajo]{arriba}</code> permiten escribir flechas extensibles con texto encima y debajo. Por ejemplo,</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ss">x</span><span class="sc">\xrightarrow</span><span class="ss">[a+b]{a-b+c}, </span><span class="sc">\quad</span><span class="ss"> x</span><span class="sc">\xleftarrow</span><span class="ss">[a+b]{a-b+c} y</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  x</span><span class="sc">\xrightarrow</span><span class="ss">[a+b]{a-b+c}, </span><span class="sc">\quad</span><span class="ss"> x</span><span class="sc">\xleftarrow</span><span class="ss">[a+b]{a-b+c} y</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math display">\[
-x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
+  x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
 \]</span></p>
-<hr>
-</section>
-</section>
-<section id="más-matemáticas" class="level2">
-<h2 class="anchored" data-anchor-id="más-matemáticas">Más matemáticas</h2>
-<section id="espacios" class="level3">
-<h3 class="anchored" data-anchor-id="espacios">Espacios</h3>
-<p>Se puede añadir o quitar espacio manualmente. Las formas más comunes de hacerlo son</p>
-<ul>
-<li>Añadir (poco) <code>\,</code> añade un espacio pequeño.</li>
-</ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\int</span><span class="ss">_{0}^{1} f(x)</span><span class="sc">\,</span><span class="ss"> dx = </span><span class="sc">\sqrt</span><span class="ss">{x}</span><span class="sc">\,</span><span class="ss"> n</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Añadir (algo más) <code>\quad</code> y <code>\qquad</code> añaden la longitud de una letra m o de dos. Son espacios dinámicos (pueden variar un poco para ajustar las líneas).</li>
-</ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x)=</span><span class="sc">\cos</span><span class="ss"> (x), </span><span class="sc">\quad</span><span class="ss"> </span><span class="sc">\forall\,</span><span class="ss">  x </span><span class="sc">\in</span><span class="ss"> [0,1]</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Quitar (poco) <code>\!</code> quita un espacio pequeño. Compara el espacio que separa las funciones en la siguiente expresión</li>
-</ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\sin</span><span class="ss"> x/</span><span class="sc">\log</span><span class="ss"> x </span><span class="sc">\qquad</span><span class="ss"> </span><span class="sc">\sin</span><span class="ss"> x /</span><span class="sc">\!</span><span class="ss"> </span><span class="sc">\log</span><span class="ss"> x</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
 </section>
 <section id="entornos-multilínea" class="level2">
 <h2 class="anchored" data-anchor-id="entornos-multilínea">Entornos multilínea</h2>
@@ -451,23 +818,19 @@ x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
 <section id="entornos-ajustados" class="level3">
 <h3 class="anchored" data-anchor-id="entornos-ajustados">Entornos ajustados</h3>
 <p>Hay dos: <em>gather</em> y <em>multline</em>. El primero de ellos muestra las ecuaciones centradas una tras otra. Se usa <code>\\</code> para partir líneas en la expresión. Por ejemplo</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">gather</span>}</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ss">x+y+z_1</span><span class="sc">\\</span><span class="ss">+</span><span class="sc">\int</span><span class="ss">_0^1 f(x)</span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\mathrm</span><span class="ss">{d}x +</span><span class="sc">\cos</span><span class="ss"> </span><span class="sc">\left</span><span class="ss">( </span><span class="sc">\sqrt</span><span class="ss">{x} </span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\right</span><span class="ss">)</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">gather</span>}</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">gather</span>}</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ss">x+y+z_1</span><span class="sc">\\</span><span class="ss">+</span><span class="sc">\int</span><span class="ss">_0^1 f(x)</span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\mathrm</span><span class="ss">{d}x +</span><span class="sc">\cos</span><span class="ss"> </span><span class="sc">\left</span><span class="ss">( </span><span class="sc">\sqrt</span><span class="ss">{x} </span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\right</span><span class="ss">)</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">gather</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{gather}
 x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 \end{gather}
 \]</span> El segundo, multline, alinea la primera fórmula a la izquierda, la última a la derecha y las intermedias, si las hay, las centra.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">multline</span>}</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ss">x+y+z_1 + </span><span class="sc">\lim</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> 0} </span><span class="sc">\int</span><span class="ss">_{0}^{x^2} f(x)</span><span class="sc">\,\mathrm</span><span class="ss">{d}x +</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="sc">\frac</span><span class="ss">{x-1}{x+1} </span><span class="sc">\\</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="ss">+x+y+z+</span><span class="sc">\omega</span><span class="ss">+</span><span class="sc">\int</span><span class="ss">_0^1 f(x)</span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\mathrm</span><span class="ss">{d}x +</span><span class="sc">\cos</span><span class="ss"> </span><span class="sc">\left</span><span class="ss">( </span><span class="sc">\sqrt</span><span class="ss">{x} </span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\right</span><span class="ss">)</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">multline</span>}</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">multline</span>}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ss">x+y+z_1 + </span><span class="sc">\lim</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> 0} </span><span class="sc">\int</span><span class="ss">_{0}^{x^2} f(x)</span><span class="sc">\,\mathrm</span><span class="ss">{d}x +</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="sc">\frac</span><span class="ss">{x-1}{x+1} </span><span class="sc">\\</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="ss">+x+y+z+</span><span class="sc">\omega</span><span class="ss">+</span><span class="sc">\int</span><span class="ss">_0^1 f(x)</span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\mathrm</span><span class="ss">{d}x +</span><span class="sc">\cos</span><span class="ss"> </span><span class="sc">\left</span><span class="ss">( </span><span class="sc">\sqrt</span><span class="ss">{x} </span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\right</span><span class="ss">)</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">multline</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{multline}
 x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
@@ -475,43 +838,47 @@ x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
 +x+y+z+\omega+\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 \end{multline}
 \]</span></p>
-<hr>
 </section>
 <section id="entornos-alineados" class="level3">
 <h3 class="anchored" data-anchor-id="entornos-alineados">Entornos alineados</h3>
-<p>Hay varios entornos de este tipo, dependiendo de cómo estén alineadas las columnas. Además de <code>\\</code> para añadir una línea nueva, <code>&amp;</code> se usa para indicar las columnas.</p>
+<p>Hay varios entornos de este tipo, dependiendo de cómo estén alineadas las columnas. Además de <code>\\</code> para añadir una línea nueva, <code>&amp;</code> se usa para separar las columnas.</p>
 <p>En primer lugar, <em>align</em> muestra las columnas centradas.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\left</span><span class="ss">.</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y &amp; = 6 </span><span class="sc">\\</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ss">2x-3y &amp; = 4</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="sc">\right\}</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><span class="math display">\[
-\left.
-\begin{align}
-x+y &amp; = 6 \\
-2x-3y &amp; = 4
-\end{align}
-\right\}
-\]</span></p>
-<p><em>flalign</em> es una variante de align que alinea a la izquierda la primera columna y a la derecha la última</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">flalign</span>}</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y +2 z   &amp; = 6   &amp; 2u+4v &amp; =8   </span><span class="sc">\\</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="ss">2x-3y &amp; = 4 &amp; 3u-4v  &amp; = 10</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">flalign</span>}</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\left</span><span class="ss">.</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y &amp; = 6 </span><span class="sc">\\</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="ss">2x-3y &amp; = 4</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="sc">\right\}</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>```latex</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="sc">\left</span><span class="ss">.</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y &amp; = 6 </span><span class="sc">\\</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="ss">2x-3y &amp; = 4</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="sc">\right\}</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>*flalign* es una variante de align que alinea a la izquierda la primera</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>columna y a la derecha la última</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>```latex</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">flalign</span>}</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y +2 z   &amp; = 6   &amp; 2u+4v &amp; =8   </span><span class="sc">\\</span></span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="ss">2x-3y &amp; = 4 &amp; 3u-4v  &amp; = 10</span></span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">flalign</span>}</span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Por último, <em>alignat</em>, que tiene un comportamiento un poco distinto: hay que decir cuántas columnas hay y añadir los espacios entre ellas manualmente.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">alignat</span>}<span class="ss">{4}</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ss">   f(x) &amp;= x + yz              &amp; g(x) &amp;= x + y + z</span><span class="sc">\\</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="ss">   h(x) &amp;= xy + xz + yz </span><span class="sc">\qquad</span><span class="ss"> &amp; k(x) &amp;= (x+y)(x+z)(y+z)</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\notag</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">alignat</span>}</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">alignat</span>}<span class="ss">{4}</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ss">   f(x) &amp;= x + yz              &amp; g(x) &amp;= x + y + z</span><span class="sc">\\</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="ss">   h(x) &amp;= xy + xz + yz </span><span class="sc">\qquad</span><span class="ss"> &amp; k(x) &amp;= (x+y)(x+z)(y+z)</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\notag</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">alignat</span>}</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{alignat}{4}
    f(x) &amp;= x + yz              &amp; g(x) &amp;= x + y + z\\
@@ -519,15 +886,15 @@ x+y &amp; = 6 \\
     \notag
 \end{alignat}
 \]</span> Es útil en casos como el siguiente:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">alignat</span>}<span class="ss">{3}</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ss">            x &amp;= x  (y+z) &amp;</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ss">            &amp;</span><span class="sc">\quad\text</span><span class="ss">{(propiedad distributiva)}</span><span class="sc">\\</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="ss">              &amp;= (x  y) + (x z) &amp; &amp;</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="ss">               </span><span class="sc">\quad\text</span><span class="ss">{(usamos ahora que </span><span class="er">$</span><span class="ss">x=0</span><span class="er">$</span><span class="ss">)}</span><span class="sc">\notag\\</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="ss">              &amp;= y z</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">alignat</span>}</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">alignat</span>}<span class="ss">{3}</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="ss">            x &amp;= x  (y+z) &amp;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="ss">            &amp;</span><span class="sc">\quad\text</span><span class="ss">{(propiedad distributiva)}</span><span class="sc">\\</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="ss">              &amp;= (x  y) + (x z) &amp; &amp;</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="ss">               </span><span class="sc">\quad\text</span><span class="ss">{(usamos ahora que </span><span class="er">$</span><span class="ss">x=0</span><span class="er">$</span><span class="ss">)}</span><span class="sc">\notag\\</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="ss">              &amp;= y z</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">alignat</span>}</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{alignat}{3}
             x &amp;= x  (y+z) &amp;
@@ -542,45 +909,39 @@ x+y &amp; = 6 \\
 <section id="entornos-subsidiarios" class="level3">
 <h3 class="anchored" data-anchor-id="entornos-subsidiarios">Entornos subsidiarios</h3>
 <p>align, alignat y gather tienen versiones subsidiarias que tienen que ir dentro de un entorno matemático.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}<span class="ss">[c]</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> x &amp;= 3 + </span><span class="sc">\mathbf</span><span class="ss">{p} + </span><span class="sc">\alpha\\</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="ss">      y &amp;= 4 + </span><span class="sc">\mathbf</span><span class="ss">{q}</span><span class="sc">\\</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ss">      z &amp;= 5 + </span><span class="sc">\mathbf</span><span class="ss">{r}</span><span class="sc">\\</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ss">      u &amp;=6 + </span><span class="sc">\mathbf</span><span class="ss">{s}</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="ss">   </span><span class="kw">\end</span>{<span class="ex">aligned</span>}</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="ss">   </span><span class="sc">\text</span>{<span class="sc">\quad</span> usande<span class="sc">\quad</span>}</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="ss">   </span><span class="kw">\begin</span>{<span class="ex">gathered</span>}<span class="ss">[b]</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\mathbf</span><span class="ss">{p} = 5 + a + </span><span class="sc">\alpha\\</span></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\mathbf</span><span class="ss">{q} = 12</span><span class="sc">\\</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\mathbf</span><span class="ss">{r} = 13</span><span class="sc">\\</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="ss">      </span><span class="sc">\mathbf</span><span class="ss">{s} = 11 + d</span></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="ss">   </span><span class="kw">\end</span>{<span class="ex">gathered</span>}</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\left</span><span class="ss">.</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}<span class="ss">[c]</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="ss">wx&amp;=u</span><span class="sc">\\</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="ss">wy&amp;=v</span><span class="sc">\\</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="ss">w&amp;=10</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="sc">\right\}</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="sc">\qquad\Longleftrightarrow\qquad</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}<span class="ss">[c]</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="ss">x&amp;=u/w</span><span class="sc">\\</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="ss">y&amp;=v/w</span><span class="sc">\\</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>El entorno más flexible es split. Se puede usar sólo</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="ss">                (x_{1}x_{2}&amp;x_{3}x_{4}x_{5}x_{6})^{2}</span><span class="sc">\\</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="ss">                           &amp;+ (x_{1}x_{2}x_{3}x_{4}x_{5}</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="ss">                            + x_{1}x_{3}x_{4}x_{5}x_{6}</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="ss">                            + x_{1}x_{2}x_{4}x_{5}x_{6}</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="ss">                            + x_{1}x_{2}x_{3}x_{5}x_{6})^{2}</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">split</span>}</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}[c]</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a> x &amp;= 3 + <span class="fu">\mathbf</span>{p} + <span class="fu">\alpha\\</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>      y &amp;= 4 + <span class="fu">\mathbf</span>{q}<span class="fu">\\</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>      z &amp;= 5 + <span class="fu">\mathbf</span>{r}<span class="fu">\\</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>      u &amp;=6 + <span class="fu">\mathbf</span>{s}</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">\end</span>{<span class="ex">aligned</span>}</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">\text</span>{<span class="fu">\quad</span> usande<span class="fu">\quad</span>}</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>   <span class="kw">\begin</span>{<span class="ex">gathered</span>}[b]</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">\mathbf</span>{p} = 5 + a + <span class="fu">\alpha\\</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">\mathbf</span>{q} = 12<span class="fu">\\</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">\mathbf</span>{r} = 13<span class="fu">\\</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">\mathbf</span>{s} = 11 + d</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">\end</span>{<span class="ex">gathered</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\left</span>.</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}[c]</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>wx&amp;=u<span class="fu">\\</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>wy&amp;=v<span class="fu">\\</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>w&amp;=10</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\right\}</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\qquad\Longleftrightarrow\qquad</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}[c]</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>x&amp;=u/w<span class="fu">\\</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>y&amp;=v/w<span class="fu">\\</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El entorno más flexible es <em>split</em>. Se puede usar sólo</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                (x_{1}x_{2}&amp;x_{3}x_{4}x_{5}x_{6})^{2}<span class="fu">\\</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                           &amp;+ (x_{1}x_{2}x_{3}x_{4}x_{5}</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                            + x_{1}x_{3}x_{4}x_{5}x_{6}</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                            + x_{1}x_{2}x_{4}x_{5}x_{6}</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>                            + x_{1}x_{2}x_{3}x_{5}x_{6})^{2}</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">split</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{split}
                 (x_{1}x_{2}&amp;x_{3}x_{4}x_{5}x_{6})^{2}\\
@@ -590,17 +951,15 @@ x+y &amp; = 6 \\
                             + x_{1}x_{2}x_{3}x_{5}x_{6})^{2}
 \end{split}
 \]</span> o dentro de otro y se alinea como corresponda</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\left</span><span class="ss">.</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="ss">             f(x) &amp; =    (x_{1}x_{2} ) </span><span class="sc">\\</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="ss">                   &amp; = x+y</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\end</span>{<span class="ex">split</span>}</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\right\}</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\implies</span><span class="ss"> y+z</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\left</span><span class="ss">.</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="ss">             f(x) &amp; =    (x_{1}x_{2} ) </span><span class="sc">\\</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="ss">                   &amp; = x+y</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\end</span>{<span class="ex">split</span>}</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\right\}</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\implies</span><span class="ss"> y+z</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{align}
     \left.
@@ -614,12 +973,42 @@ x+y &amp; = 6 \\
 \]</span></p>
 </section>
 </section>
+<section id="teoremas-y-demostraciones" class="level2">
+<h2 class="anchored" data-anchor-id="teoremas-y-demostraciones">Teoremas y demostraciones</h2>
+<p>Se pueden definir fácilmente tantos entornos como se necesiten. Con el paquete <em>amsthm</em> cargado en la cabecera tenemos disponible la orden <code>\newtheorem{teorema}{Teorema}</code> para definir nuevos entornos.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{nombre del entorno}[opcional subentorno de]</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  {Salida del entorno}[opcional nivel de numeración]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Una versión común sería la siguiente: tenemos los entornos teorema, propo, lema, definición, ejemplo y observ.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\theoremstyle</span>{theorem}</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{teorema}{Teorema}[section]</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{propo}[teorema]{Proposición}</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{lema}[teorema]{Lema}</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\theoremstyle</span>{definition}</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{definicion}[teorema]{Definición}</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{ejemplo}[teorema]{Ejemplo}</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\theoremstyle</span>{remark}</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{observ}{Observación}[section]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Los estilos <em>theorem</em>, <em>definition</em> y <em>remark</em> escriben, o no, el contenido en itálica. Pruébalos.</p>
+<p>Además de etiquetarlos para futuras referencias, se le puede añadir una descripción a cualquiera de ellos.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">lema</span>}[de Fermat]</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  Si una función derivable tiene un extremo local en un punto </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  interior de un intervalo, la derivada en dicho punto se anula</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">lema</span>}</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">proof</span>}</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  Explicación</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">proof</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="demostraciones" class="level3">
+<h3 class="anchored" data-anchor-id="demostraciones">Demostraciones</h3>
+<p>El entorno <em>proof</em>, sin numerar, viene predefinido y se usa para delimitar el principio y final de una demostración. Si el final de la demostración ocurre en una ecuación o una lista se puede usar <code>\qedhere</code> para indiciar dónde debería aparecer el símbolo de final de demostración.</p>
+</section>
+</section>
 <section id="transparencias" class="level2">
 <h2 class="anchored" data-anchor-id="transparencias">Transparencias</h2>
 <p><object data="math-be-2017.pdf" type="application/pdf" width="100%" height="470"><p>Unable to display PDF file. <a href="math-be-2017.pdf">Download</a> instead.</p></object></p>
 <p><a href="math-be-2017.pdf" target="_pdf">Transparencias taller 2017</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
