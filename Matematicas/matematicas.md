@@ -32,6 +32,7 @@ El entorno *equation* produce el mismo resultado y añade una marca a la ecuaci�
 ```
 
 Los estilos que LaTeX usa por defecto para escribir matemáticas son:
+
 - `textstyle`: matemáticas en línea
 - `displaystyle`: matemáticas centradas en línea separada
 - `scriptstyle`: sub y superíndices
