@@ -1,6 +1,3 @@
-# Transparencias Beamer
-
-
 ## Estructura
 
 El tipo de documento `beamer` es parecido a un artículo o libro

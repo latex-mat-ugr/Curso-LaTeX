@@ -1,6 +1,3 @@
-# Pequeña intro a markdown
-
-
 # Listas
 
 Podemos empezar una lista con `-` o bien `*`

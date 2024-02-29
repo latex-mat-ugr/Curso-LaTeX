@@ -1,6 +1,11 @@
 ---
-Title: "Gráficos"
+title: "Gráficos"
 lang: es
 ---
 
 {{< include README.md >}}
+
+
+{{< pdf taller-graficos1.pdf width=100% height=470 >}}
+
+{{< pdf taller-graficos2.pdf width=100% height=470 >}}

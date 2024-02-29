@@ -4,7 +4,7 @@ Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grad
 
 Los contenidos del curso se mantienen por [Jerónimo Alaminos](https://www.ugr.es/~alaminos/), [Pedro A. García Sánchez](https://www.ugr.es/~pedro), [Óscar Sánchez Romero](https://www.ugr.es/~ossanche) y [Francisco Torralbo](https://www.ugr.es/~ftorralbo/). 
 
-En los talleres impartidos, hemos contado con la ayuda de [Aureliano M. Robles Pérez](https://www.ugr.es/~arobles/), [Desiree Romero Molina](https://www.ugr.es/~deromero/), [Antonio Alarcón](https://www.ugr.es/~alarcon/), entre otros.
+En los talleres impartidos, hemos contado con la ayuda de [Aureliano M. Robles Pérez](https://www.ugr.es/~arobles/), [Desiree Romero Molina](https://www.ugr.es/~deromero/), [Antonio Alarcón](https://www.ugr.es/~alarcon/), [Antonio Peralta](https://www.ugr.es/~aperalta/), entre otros.
 
 
 ## Instalación de LaTeX

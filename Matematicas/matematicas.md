@@ -1,5 +1,3 @@
-# Matemáticas
-
 Hay dos formas de escribir matemáticas: en la misma línea o centrado en una línea separada.
 
 * Para escribir matemáticas *en línea* agrupamos el texto entre dólares. Por ejemplo,
@@ -205,8 +203,7 @@ Si hemos usado el paquete *babel* con la opción *spanish* se añaden las funcio
 
 ## Sub y superíndices de nuevo
 
-El comando `\texttt{substack}` para líneas centradas
-
+El comando `substack` para líneas centradas
 ```latex
 \[
   \sum_{\substack{i=1\\j=123}} i+j
