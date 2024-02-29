@@ -43,7 +43,7 @@ Sea $x=1,2$ o $3$ con sea $x=1$, $2$ o $3$
 
 La forma correcta de escribirlo es la *segunda* si queremos que LaTeX use el espaciado que se considera correcto.
 
-### ¿Cómo ajustar los espacios? 
+### ¿Cómo ajustar los espacios?
 
 Se puede añadir o quitar espacio manualmente. Las formas más comunes de
 hacerlo son
@@ -70,13 +70,13 @@ hacerlo son
 
 Los paréntesis y los corchetes se suelen usar en matemáticas para agrupar operaciones. En LaTeX los delimitadores incluidos por defecto son
 
-| Delimitador | Ejemplo | Resultado |
-| ---- | ---- | ---- |
-| Paréntesis `(...)` | `(x+y)^{2}` | $(x+y)^{2}$ |
-| Corchetes `[...]` | `[x+y]` | $[x+y]$ |
-| Llaves `\{...\}` | `\{2n : n \in \mathbb{N}\}` | $\{2n : n \in \mathbb{N}\}$ |
-| Ángulos `\langle...\rangle` | `\langle x,y \rangle` | $\langle x,y \rangle$ |
-| Barra | `|z|` | $|z|$ |
+| Delimitador                 | Ejemplo                     | Resultado                   |
+| --------------------------- | --------------------------- | --------------------------- |
+| Paréntesis `(...)`          | `(x+y)^{2}`                 | $(x+y)^{2}$                 |
+| Corchetes `[...]`           | `[x+y]`                     | $[x+y]$                     |
+| Llaves `\{...\}`            | `\{2n : n \in \mathbb{N}\}` | $\{2n : n \in \mathbb{N}\}$ |
+| Ángulos `\langle...\rangle` | `\langle x,y \rangle`       | $\langle x,y \rangle$       |
+| Barra                       | `                           | z                           | ` | $ | z | $ |
 
 Las barras, sencillas o dobles, que usamos habitualmente para escribir el módulo o la norma de un vector se escriben con `\lvert z \rvert ` y `\lVert z \rVert`. Puede ser cómodo añadir en la cabecera un comando definido a propósito para esto:
 
@@ -113,11 +113,11 @@ Los delimitadores pueden ser distintos a un lado y otro y si se quiere que no ap
 
 $$
   \left. \left( 1+x^{2} \right\} +\frac{y}{2} \right]
-$$    
+$$
 
 ### Ajuste manual del tamaño
 
-`\bigl  \Bigl \biggl \Biggl`, de menor a mayor, y sus correspondientes versiones para el delimitador por la derecha permiten ajustar de forma manual el tamaño de los delimitadores.
+`\bigl \Bigl \biggl \Biggl`, de menor a mayor, y sus correspondientes versiones para el delimitador por la derecha permiten ajustar de forma manual el tamaño de los delimitadores.
 
 ```latex
   \bigl (x +(y+z) \Bigr) \neq \biggl[ x+ y^{2} \Biggr\}
@@ -163,152 +163,6 @@ $$
 \sum_{n=1}^{\infty} x^{x^n}
 $$
 
-### Fracciones
-
-Las fracciones se escriben con el comando `\frac{numerador}{denominador}`
-
-```latex
-\frac{a}{b}, \tfrac{1}{2},\dfrac{1}{2}
-```
-
-produce
-$\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
-
-`frac` se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como `tfrac`), si está en una línea separada aumenta (como `dfrac`). Podemos forzar un comportamiento u otro usando `tfrac` o `dfrac`.
-
-### Números binómicos
-
-`\binom{a}{b}` produce $\binom{a}{b}$. Al igual que con frac, se
-puede alterar su tamaño usando `tbinom{a}{b}` o `dbinom{a}{b}` y se obtiene $\tbinom{a}{b}$ y $\dbinom{a}{b}$.
-
-### Puntos suspensivos
-
-En lugar de escribir tres puntos seguidos, `\dots, \ldots, \cdots` producen puntos suspensivos con el espaciado correcto. `\dots` intenta adaptarse al entorno. `\ldots` da como resultado puntos "bajos" y `\cdots`centrados. Un ejemplo:
-
-```latex
-x=1,2,\ldots 3, x+y+\cdots +z, x\times y \times \dots z
-```
-
-produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$
-
-### Integrales
-
-Varios símbolos de integral
-
-```latex
-$\oint \iint \iiint \iiiint \idotsint$
-```
-
-$\oint \iint \iiint \iiiint \idotsint$
-
-### Raíces
-
-`\sqrt{num}`y `\sqrt[n]{num}` permiten escribir raíces cuadradas y raíces n-ésimas.
-
-```latex
-$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
-```
-
-$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
-
-## Texto en matemáticas
-
-La orden `\text{texto}` permite incluir texto dentro de una fórmula con el mismo aspecto que el entorno
-
-```latex
-\[
-  f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
-\]
-```
-
-$$
-f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
-$$
-
-### Acentos y gorros
-
-`\hat{a}`, `\acute{a}`, `\breve{a}`,  `\dot`, `\tilde`, `\mathring{A}` produce
-$\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}$
-
-También se pueden escribir flechas sobre un texto usando `\vec{a}` o `\overrightarrow{abc}`
-
-Con el paquete *esvect* se pueden representar vectores mejor
-
-```latex
-\vv{a},  \; \vv{abc} , \; \vv*{a}{n}
-```
-
-## Operadores y funciones
-
-LaTeX tiene predefinidos algunas funciones usuales,
-
-| código    | salida   | código    | salida    | código    | salida    |
-| --------- | -------- | --------- | --------- | --------- | --------- |
-| `\arccos` | $\arcos$ | `\cos`    | $\cos$    | `\csc`    | $\csc$    |
-| `\exp`    | $\exp$   | `\ker`    | $\ker$    | `\limsup` | $\limsup$ |
-| `\min`    | $\min$   | `\sinh`   | $\sinh$   | `\arcsin` | $\arcsin  |
-| `\cosh`   | $\cosh$  | `\deg`    | $\deg$    | `\gcd`    | $\gcd$    |
-| `\lg`     | $\lg$    | `\ln`     | $\ln$     | `\Pr`     | $\Pr$     |
-| `\sup`    | $\sup$   | `\arctan` | $\arctan$ | `\cot`    | $\cot$    |
-| `\det`    | $\det$   | `\hom`    | $\hom$    | `\lim`    | $\lim$    |
-| `\log`    | $\log$   | `\sec`    | $\sec$    | `\tan`    | $\tan$    |
-| `\arg`    | $\arg$   | `\coth`   | $\coth$   | `\dim`    | $\dim$    |
-| `\inf`    | $\inf$   | `\liminf` | $\liminf$ | `\max`    | $\max$    |
-| `\sin`    | $\sin$   | `\tanh`   | $\tanh$   |           |           |
-
-```latex
-La identidad $\cos^{2}(x)+\sin^{2}(x)=1$ es conocida como...
-```
-
-Podemos añadir el operador que deseemos con la orden `\DeclareMathOperator`. Para ello es necesario cargar el paquete *amsmath*
-
-```latex
-\DeclareMathOperator{\dist}{distancia}
-```
-
-en la cabecera del documento, está disponible el comando `\distancia`
-
-Si hemos usado el paquete *babel* con la opción *spanish* se añaden las funciones `\sen`, `\tg`, `\arcsen`  y `\arctg` además de, por defecto, acentuar algunos operadores como `\lim`, `\min` o `\max`.
-
-## Símbolos
-
-En las siguientes tablas están algunos de los símbolos más comunes. La lista no es completa. En CTAN se puede consultar la [*Comprehensive LaTeX Symbol List*](https://ctan.org/pkg/comprehensive), una lista exhaustiva de símbolos y los paquetes necesarios para usarlos.
-
-### Letras griegas
-
-| Código          | Salida          | Código                 | Salida                 | Código            | Salida            |
-| --------------- | --------------- | ---------------------- | ---------------------- | ----------------- | ----------------- |
-| `\alpha `       | $\alpha$        | `\beta`                | $\beta$                | `\gamma \Gamma`   | $\gamma \Gamma$   |
-| `\delta \Delta` | $\delta \Delta$ | `\epsilon \varepsilon` | $\epsilon \varepsilon$ | `\zeta`           | $\zeta$           |
-| `\eta`          | $\eta$          | `\theta \Theta`        | $\theta \Theta$        | `\vartheta`       | $\vartheta$       |
-| `\gamma \Gamma` | $\gamma \Gamma$ | `\kappa`               | $\kappa$               | `\lambda \Lambda` | $\lambda \Lambda$ |
-| `\mu`           | $\mu$           | `\nu`                  | $\nu$                  | `\xi \Xi`         | $\xi \Xi$         |
-| `\tau`          | `$\tau$`        | `\pi \Pi`              | $\pi \Pi$              | `\rho \varrho`    | $\rho \varrho$    |
-| `\sigma \Sigma` | $\sigma \Sigma$ | `\varsigma`            | $\varsigma$            | `\upsilon`        | $\upsilon$        |
-| `\phi \Phi`     | $\phi \Phi$     | `\varphi`              | $\varphi$              | `\chi`            | $\chi$            |
-| `\psi \Psi`     | $\psi \Psi$     | `\omega \Omega`        | $\omega \Omega$        |                   |                   |
-
-### Relaciones binarias
-
-|          |          |           |           |           |           |             |             |
-| -------- | -------- | --------- | --------- | --------- | --------- | ----------- | ----------- |
-| `\times` | $\times$ | `\div`    | $\div$    | `\cup`    | $\cup$    | `\cap`      | $\cap       |
-| `\leq`   | $\leq$   | `\geq`    | $\geq$    | `\neq`    | $\neq$    | `\perp`     | $\perp$     |
-| `\in`    | $\in$    | `\notin`  | $\notin$  | `\subset` | $\subset$ | `\subseteq` | $\subseteq$ |
-| `\oplus` | $\oplus$ | `\otimes` | $\otimes$ | `\equiv`  | $\equiv$  | `\cong`     | $\cong$     |
-
-### Algunos símbolos comunes
-
-```latex
-\infty \forall \nabla \exists \partial \emptyset \square \blacksquare
-```
-
-$$
-  \infty \ \forall \ \nabla \ \exists \ \partial \ \emptyset \ \square \ \blacksquare
-$$
-
-## Sub y superíndices de nuevo
-
 El comando `\substack` para líneas centradas
 
 ```latex
@@ -322,7 +176,172 @@ $$
 \sum_{\substack{i=1\\j=123}} i+j
 $$
 
-## Llaves y flechas
+### Fracciones y números binómicos
+
+Las fracciones se escriben con el comando `\frac{numerador}{denominador}`
+
+```latex
+\frac{a}{b}, \tfrac{1}{2},\dfrac{1}{2}
+```
+
+produce
+$\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
+
+`frac` se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como `tfrac`), si está en una línea separada aumenta (como `dfrac`). Podemos forzar un comportamiento u otro usando `tfrac` o `dfrac`.
+
+`\binom{a}{b}` produce $\binom{a}{b}$. Al igual que con frac, puede alterar su tamaño usando `tbinom{a}{b}` o `dbinom{a}{b}` y se obtiene $\tbinom{a}{b}$ y $\dbinom{a}{b}$.
+
+### Puntos suspensivos
+
+En lugar de escribir tres puntos seguidos, `\dots, \ldots, \cdots` producen puntos suspensivos con el espaciado correcto. `\dots` intenta adaptarse al entorno. `\ldots` da como resultado puntos "bajos" y `\cdots`centrados. Un ejemplo:
+
+```latex
+x=1,2,\ldots 3, x+y+\cdots +z, x\times y \times \dots z
+```
+
+produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$.
+
+### Arrays y matrices
+
+#### Arrays
+
+El entorno *array* sirve para escribir objetos agrupados por filas y columnas. Hay que indicar cuántas columnas queremos y cómo van a estar alineadas (a la izquierda, centradas o a la derecha). Las columnas se separan con `&` y las filas nuevas se crean con `\\`. Una malla vacía 3x3 sería así:
+
+```latex
+\[
+  \left. 
+  \begin{array}{lcr}
+    2 & 3 & \cos(x) \\ \hline
+    -1 & 1 & 0 \\ \hline
+    2 & 1 &  \\ \hline
+  \end{array}
+  \right\}
+\]
+```
+
+$$
+  \left.
+  \begin{array}{lc|r}
+    2 & 3 & \cos(x) \\
+    -1 & 1 & 0 \\
+    2 & 1 &  \\
+  \end{array}
+  \right\}
+$$
+
+Como ves se pueden añadir líneas verticales con `|` entre dos columnas y también horizontales (`\hline` al comienzo de una fila).
+
+#### El entorno *cases*
+
+Un uso habitual de este entorno es definir funciones a trozos: suelen tener una llave al comenzar, nada por la derecha y línea a línea se van explicando los casos:
+
+```latex
+\[ 
+  f(x) = 
+  \begin{cases}
+   1+x^2, & \text{si $x<0$,}\\
+   e^x,  & \text{si $x>0$,}\\
+   1, & \text{si $x=0$.}
+\end{cases}
+\]
+```
+$$
+  f(x) = 
+  \begin{cases}
+   1+x^2, & \text{si $x<0$,}\\
+   e^x,  & \text{si $x>0$,}\\
+   1, & \text{si $x=0$.}
+\end{cases}
+$$
+
+Si la fórmula que define la función es muy alta se puede usar `dcases` en lugar de `cases` de forma análoga a las fracciones.
+
+#### Matrices
+
+Las matrices son un caso particular de arrays. El paquete *amsmath* tiene varios tipos predefinidos dependiendo de los delimitadores que se quieran usar. En este caso no hay que declarar ni tamaño ni alineación:
+
+`matrix` no tiene delimitadores:
+```latex
+\[
+  \begin{matrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{matrix}
+\]
+```
+
+$$
+  \begin{matrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{matrix}
+$$  
+
+`pmatrix`, `bmatrix` y `Bmatrix` usan, respectivamente, paréntesis, corchetes y llaves.
+
+```latex
+\[
+  \begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{pmatrix} 
+  \quad
+  \begin{bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{bmatrix}
+  \quad
+  \begin{Bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{Bmatrix}
+\]
+```
+
+$$
+  \begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{pmatrix} 
+  \quad
+  \begin{bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{bmatrix}
+  \quad
+  \begin{Bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{Bmatrix}
+$$  
+
+### Integrales, sumatorios, raíces
+
+Hay varios símbolos de integral incluidos que se adaptan al modo matemático en el que se esté
+
+```latex
+$\oint \iint \iiint \iiiint \idotsint$
+\[
+  \int_{a}^{b} f(x)\, \mathrm{d}x
+\]
+```
+
+$\oint \iint \iiint \iiiint \idotsint$
+$$
+\int_{a}^{b} f(x)\, \mathrm{d}x
+$$ 
+
+#### Raíces
+
+`\sqrt{num}`y `\sqrt[n]{num}` permiten escribir raíces cuadradas y raíces n-ésimas.
+
+```latex
+$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
+```
+
+$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
+
+### Llaves y flechas
 
 `\overbrace`, `\underbrace`, `\overline`, `\underline` se usan para añadir llaves o líneas por encima o bajo un texto o fórmula.
 
@@ -365,6 +384,118 @@ $$
   x\xrightarrow[a+b]{a-b+c}, \quad x\xleftarrow[a+b]{a-b+c} y
 $$
 
+## Texto en matemáticas
+
+La orden `\text{texto}` permite incluir texto dentro de una fórmula con el mismo aspecto que el entorno
+
+```latex
+\[
+  f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
+\]
+```
+
+$$
+f(x)=x^2,\text{ si $x>0$ y $\cos(x)$ en otro caso}
+$$
+
+### Acentos y gorros
+
+`\hat{a}`, `\acute{a}`, `\breve{a}`,  `\dot`, `\tilde`, `\mathring{A}` produce
+$\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}$
+
+También se pueden escribir flechas sobre un texto usando `\vec{a}` o `\overrightarrow{abc}`
+
+Con el paquete *esvect* se pueden representar vectores mejor
+
+```latex
+\vv{a},  \; \vv{abc} , \; \vv*{a}{n}
+```
+
+## Tipos de letra en modo matemático
+
+| Tipo               | Código          | Resultado        |
+| ------------------ | --------------- | ---------------- |
+| Negrita            | `\mathbf{a}`    | $\mathbf{a}$     |
+| Caligráfica        | `\mathcal{A}`   | $\mathcal{A}$    |
+| Itálica            | `\mathit{ab}`   | $\mathit{ab}$    |
+| Recta              | `\mathrm{d}`    | $\mathrm{d}$     |
+| Negrita de pizarra | `\matbb{N,R,Q}` | $\mathbb{N,R,Q}$ |
+| Gótica             | `\mathfrak{A}`  | $\mathfrak{A}$   |
+| ¿Script?           | `\mathscr{A}`   | $\mathscr{A}$    |
+
+## Operadores y funciones
+
+LaTeX tiene predefinidos algunas funciones usuales. Estas funciones/operadores se
+escriben con letra recta siempre. Algunos de estos operadores o funciones además 
+pueden tener límites que se añaden como subíndices o superíndices.
+
+| código    | salida   | código    | salida    | código    | salida    |
+| --------- | -------- | --------- | --------- | --------- | --------- |
+| `\arccos` | $\arcos$ | `\cos`    | $\cos$    | `\csc`    | $\csc$    |
+| `\exp`    | $\exp$   | `\ker`    | $\ker$    | `\limsup` | $\limsup$ |
+| `\min`    | $\min$   | `\sinh`   | $\sinh$   | `\arcsin` | $\arcsin  |
+| `\cosh`   | $\cosh$  | `\deg`    | $\deg$    | `\gcd`    | $\gcd$    |
+| `\lg`     | $\lg$    | `\ln`     | $\ln$     | `\Pr`     | $\Pr$     |
+| `\sup`    | $\sup$   | `\arctan` | $\arctan$ | `\cot`    | $\cot$    |
+| `\det`    | $\det$   | `\hom`    | $\hom$    | `\lim`    | $\lim$    |
+| `\log`    | $\log$   | `\sec`    | $\sec$    | `\tan`    | $\tan$    |
+| `\arg`    | $\arg$   | `\coth`   | $\coth$   | `\dim`    | $\dim$    |
+| `\inf`    | $\inf$   | `\liminf` | $\liminf$ | `\max`    | $\max$    |
+| `\sin`    | $\sin$   | `\tanh`   | $\tanh$   |           |           |
+
+```latex
+\[
+  \cos^{2}(x)+\sin^{2}(x)= \lim_{x \to 0} \frac{\sin(x)}{x} 
+\]
+```
+
+Podemos añadir el operador que deseemos con la orden `\DeclareMathOperator`. Para ello es necesario cargar el paquete *amsmath*.
+
+```latex
+\DeclareMathOperator{\dist}{distancia}
+```
+
+en la cabecera del documento, está disponible el comando `\distancia`
+
+Si hemos usado el paquete *babel* con la opción *spanish* se añaden las funciones `\sen`, `\tg`, `\arcsen`  y `\arctg` además de, por defecto, acentuar algunos operadores como `\lim`, `\min` o `\max`.
+
+## Símbolos
+
+En las siguientes tablas están algunos de los símbolos más comunes. La lista no es completa. En CTAN se puede consultar la [*Comprehensive LaTeX Symbol List*](https://ctan.org/pkg/comprehensive), una lista exhaustiva de símbolos y los paquetes necesarios para usarlos.
+
+### Letras griegas
+
+| Código          | Salida          | Código                 | Salida                 | Código            | Salida            |
+| --------------- | --------------- | ---------------------- | ---------------------- | ----------------- | ----------------- |
+| `\alpha `       | $\alpha$        | `\beta`                | $\beta$                | `\gamma \Gamma`   | $\gamma \Gamma$   |
+| `\delta \Delta` | $\delta \Delta$ | `\epsilon \varepsilon` | $\epsilon \varepsilon$ | `\zeta`           | $\zeta$           |
+| `\eta`          | $\eta$          | `\theta \Theta`        | $\theta \Theta$        | `\vartheta`       | $\vartheta$       |
+| `\gamma \Gamma` | $\gamma \Gamma$ | `\kappa`               | $\kappa$               | `\lambda \Lambda` | $\lambda \Lambda$ |
+| `\mu`           | $\mu$           | `\nu`                  | $\nu$                  | `\xi \Xi`         | $\xi \Xi$         |
+| `\tau`          | `$\tau$`        | `\pi \Pi`              | $\pi \Pi$              | `\rho \varrho`    | $\rho \varrho$    |
+| `\sigma \Sigma` | $\sigma \Sigma$ | `\varsigma`            | $\varsigma$            | `\upsilon`        | $\upsilon$        |
+| `\phi \Phi`     | $\phi \Phi$     | `\varphi`              | $\varphi$              | `\chi`            | $\chi$            |
+| `\psi \Psi`     | $\psi \Psi$     | `\omega \Omega`        | $\omega \Omega$        |                   |                   |
+
+### Relaciones binarias
+
+|          |          |           |           |           |           |             |             |
+| -------- | -------- | --------- | --------- | --------- | --------- | ----------- | ----------- |
+| `\times` | $\times$ | `\div`    | $\div$    | `\cup`    | $\cup$    | `\cap`      | $\cap       |
+| `\leq`   | $\leq$   | `\geq`    | $\geq$    | `\neq`    | $\neq$    | `\perp`     | $\perp$     |
+| `\in`    | $\in$    | `\notin`  | $\notin$  | `\subset` | $\subset$ | `\subseteq` | $\subseteq$ |
+| `\oplus` | $\oplus$ | `\otimes` | $\otimes$ | `\equiv`  | $\equiv$  | `\cong`     | $\cong$     |
+
+### Algunos símbolos comunes
+
+```latex
+  \infty \forall \nabla \exists \partial 
+  \emptyset \square \blacksquare
+```
+
+$$
+  \infty \ \forall \ \nabla \ \exists \ \partial \ \emptyset \ \square \ \blacksquare
+$$
 
 ## Entornos multilínea
 
@@ -496,7 +627,7 @@ align, alignat y gather tienen versiones subsidiarias que tienen que ir dentro d
       z &= 5 + \mathbf{r}\\
       u &=6 + \mathbf{s}
    \end{aligned}
-   \text{\quad usande\quad}
+   \text{\quad usando\quad}
    \begin{gathered}[b]
       \mathbf{p} = 5 + a + \alpha\\
       \mathbf{q} = 12\\
@@ -504,6 +635,22 @@ align, alignat y gather tienen versiones subsidiarias que tienen que ir dentro d
       \mathbf{s} = 11 + d
    \end{gathered}
 ```
+
+$$
+\begin{aligned}[c]
+ x &= 3 + \mathbf{p} + \alpha\\
+      y &= 4 + \mathbf{q}\\
+      z &= 5 + \mathbf{r}\\
+      u &=6 + \mathbf{s}
+   \end{aligned}
+   \text{\quad usando\quad}
+   \begin{gathered}[b]
+      \mathbf{p} = 5 + a + \alpha\\
+      \mathbf{q} = 12\\
+      \mathbf{r} = 13\\
+      \mathbf{s} = 11 + d
+   \end{gathered}
+$$   
 
 ```latex
 \left.
@@ -519,6 +666,21 @@ x&=u/w\\
 y&=v/w\\
 \end{aligned}
 ```
+
+$$
+\left.
+\begin{aligned}[c]
+wx&=u\\
+wy&=v\\
+w&=10
+\end{aligned}
+\right\}
+\qquad\Longleftrightarrow\qquad
+\begin{aligned}[c]
+x&=u/w\\
+y&=v/w\\
+\end{aligned}
+$$
 
 El entorno más flexible es *split*. Se puede usar sólo
 
