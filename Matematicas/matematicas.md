@@ -18,9 +18,9 @@ produce $\cos(x+y)^{2}=\sqrt{2+x^2}$.
 \]
 ```
 
-produce
+produce 
 $$
-\frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
+  \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
 $$
 
 El entorno *equation* produce el mismo resultado y añade una marca a la ecuación para poder hacer referencia con posterioridad a ella:
@@ -93,7 +93,7 @@ Los paréntesis y los corchetes se suelen usar en matemáticas para agrupar oper
 | Corchetes `[...]`           | `[x+y]`                     | $[x+y]$                     |
 | Llaves `\{...\}`            | `\{2n : n \in \mathbb{N}\}` | $\{2n : n \in \mathbb{N}\}$ |
 | Ángulos `\langle...\rangle` | `\langle x,y \rangle`       | $\langle x,y \rangle$       |
-| Barra                       | `| z | `                    | $ | z | $                   |
+| Barra                       | `|z|`                    | $|z|$         |
 
 Las barras, sencillas o dobles, que usamos habitualmente para escribir el módulo o la norma de un vector se escriben con `\lvert z \rvert ` y `\lVert z \rVert`. Puede ser cómodo añadir en la cabecera un comando definido a propósito para esto:
 
@@ -227,10 +227,10 @@ El entorno *array* sirve para escribir objetos agrupados por filas y columnas. H
 ```latex
 \[
   \left. 
-  \begin{array}{lcr}
-    2 & 3 & \cos(x) \\ \hline
-    -1 & 1 & 0 \\ \hline
-    2 & 1 &  \\ \hline
+  \begin{array}{lc|r}  % 3 columnas izq., centrada, derecha
+    2 & 3 & \cos(x) \\
+    -1 & 1 & 0 \\
+    2 & 1 &  \\
   \end{array}
   \right\}
 \]
@@ -336,7 +336,7 @@ Las matrices, por su tamaño, suelen escribirse en modo matemático en línea se
 
 ```latex
 La matriz $A = 
-  \left()
+  \left(
   \begin{smallmatrix} 
   1 & 2 \\ 
   3 & 4 
@@ -351,7 +351,6 @@ La matriz $A =
   3 & 4 
   \end{smallmatrix}
   \right)$ se ve bien en una línea
-
 
 ### Integrales, sumatorios, raíces
 
@@ -469,9 +468,9 @@ pueden tener límites que se añaden como subíndices o superíndices.
 
 | código    | salida   | código    | salida    | código    | salida    |
 | --------- | -------- | --------- | --------- | --------- | --------- |
-| `\arccos` | $\arcos$ | `\cos`    | $\cos$    | `\csc`    | $\csc$    |
+| `\arccos` | $\arccos$ | `\cos`    | $\cos$    | `\csc`    | $\csc$    |
 | `\exp`    | $\exp$   | `\ker`    | $\ker$    | `\limsup` | $\limsup$ |
-| `\min`    | $\min$   | `\sinh`   | $\sinh$   | `\arcsin` | $\arcsin  |
+| `\min`    | $\min$   | `\sinh`   | $\sinh$   | `\arcsin` | $\arcsin$  |
 | `\cosh`   | $\cosh$  | `\deg`    | $\deg$    | `\gcd`    | $\gcd$    |
 | `\lg`     | $\lg$    | `\ln`     | $\ln$     | `\Pr`     | $\Pr$     |
 | `\sup`    | $\sup$   | `\arctan` | $\arctan$ | `\cot`    | $\cot$    |
@@ -510,7 +509,7 @@ En las siguientes tablas están algunos de los símbolos más comunes. La lista 
 | `\eta`          | $\eta$          | `\theta \Theta`        | $\theta \Theta$        | `\vartheta`       | $\vartheta$       |
 | `\gamma \Gamma` | $\gamma \Gamma$ | `\kappa`               | $\kappa$               | `\lambda \Lambda` | $\lambda \Lambda$ |
 | `\mu`           | $\mu$           | `\nu`                  | $\nu$                  | `\xi \Xi`         | $\xi \Xi$         |
-| `\tau`          | `$\tau$`        | `\pi \Pi`              | $\pi \Pi$              | `\rho \varrho`    | $\rho \varrho$    |
+| `\tau`          | $\tau$        | `\pi \Pi`              | $\pi \Pi$              | `\rho \varrho`    | $\rho \varrho$    |
 | `\sigma \Sigma` | $\sigma \Sigma$ | `\varsigma`            | $\varsigma$            | `\upsilon`        | $\upsilon$        |
 | `\phi \Phi`     | $\phi \Phi$     | `\varphi`              | $\varphi$              | `\chi`            | $\chi$            |
 | `\psi \Psi`     | $\psi \Psi$     | `\omega \Omega`        | $\omega \Omega$        |                   |                   |
@@ -582,16 +581,15 @@ las columnas. Además de `\\` para añadir una línea nueva, `&` se usa para sep
 En primer lugar, *align* muestra las columnas centradas.
 
 ```latex
-$$
-\left.
+\[ \left.
 \begin{align}
  x+y & = 6 \\
 2x-3y & = 4
 \end{align}
 \right\}
-$$
+\]
+````
 
-```latex
 $$
 \left.
 \begin{align}
@@ -603,6 +601,7 @@ $$
 
 *flalign* es una variante de align que alinea a la izquierda la primera
 columna y a la derecha la última
+
 ```latex
 $$
 \begin{flalign}
@@ -611,48 +610,60 @@ $$
 \end{flalign}
 $$
 ```
+
+$$
+\begin{flalign}
+ x+y +2 z	& = 6 	& 2u+4v & =8   \\
+2x-3y & = 4 & 3u-4v  & = 10
+\end{flalign}
+$$
+
 Por último, *alignat*, que tiene un comportamiento un poco distinto: hay
 que decir cuántas columnas hay y añadir los espacios entre ellas
 manualmente.
+
 ```latex
-$$
+\[
 \begin{alignat}{4}
    f(x) &= x + yz              & g(x) &= x + y + z\\
    h(x) &= xy + xz + yz \qquad & k(x) &= (x+y)(x+z)(y+z)
     \notag
 \end{alignat}
-$$
+\]
 ```
+
 $$
 \begin{alignat}{4}
    f(x) &= x + yz              & g(x) &= x + y + z\\
    h(x) &= xy + xz + yz \qquad & k(x) &= (x+y)(x+z)(y+z)
     \notag
-\end{alignat}
-$$
-Es útil en casos como el siguiente:
-```latex
-$$
-\begin{alignat}{3}
-            x &= x  (y+z) &
-            &\quad\text{(propiedad distributiva)}\\
-              &= (x  y) + (x z) & &
-               \quad\text{(usamos ahora que $x=0$)}\notag\\
-              &= y z
-\end{alignat}
-$$
-```
-$$
-\begin{alignat}{3}
-            x &= x  (y+z) &
-            &\quad\text{(propiedad distributiva)}\\
-              &= (x  y) + (x z) & &
-               \quad\text{(usamos ahora que $x=0$)}\notag\\
-              &= y z
 \end{alignat}
 $$
 
-***
+Es útil en casos como el siguiente:
+
+```latex
+\[
+\begin{alignat}{3}
+            x & = x  (y+z) &  & \quad\text{(propiedad distributiva)}\\
+              &= (x  y) + (x z) & &
+               \quad\text{(usamos ahora que $x=0$)}\notag\\
+              &= y z
+\end{alignat}
+\]
+```
+
+$$
+\begin{alignat}{3}
+            x &= x  (y+z) &
+            &\quad\text{(propiedad distributiva)}\\
+              &= (x  y) + (x z) & &
+               \quad\text{(usamos ahora que $x=0$)}\notag\\
+              & = y z
+\end{alignat}
+$$
+
+
 
 ### Entornos subsidiarios
 
