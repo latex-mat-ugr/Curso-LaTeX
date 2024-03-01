@@ -440,6 +440,33 @@
     ]
   },
   {
+    "objectID": "Bibliografia/Readme.html",
+    "href": "Bibliografia/Readme.html",
+    "title": "Bibliografías",
+    "section": "",
+    "text": "Bibliografías\nNotas sobre el uso y manejo de bibliografías en LaTeX por Antonio Alarcón López."
+  },
+  {
+    "objectID": "Markdown/about.html",
+    "href": "Markdown/about.html",
+    "title": "Markdown",
+    "section": "",
+    "text": "Podemos empezar una lista con - o bien *\n* Sin enumerar\n* Y con sublistas\n    * 1\n    * y dos\nDa lugar a\n\nSin enumerar\nY con sublistas\n\n1\ny dos\n\n\nSi queremos numeradas, cambiamos los * por un 1.\n\nnumeradas\ny también anidadas\n\nEso, ahora otra numeración",
+    "crumbs": [
+      "Markdown"
+    ]
+  },
+  {
+    "objectID": "Markdown/about.html#subtítulo",
+    "href": "Markdown/about.html#subtítulo",
+    "title": "Markdown",
+    "section": "Subtítulo",
+    "text": "Subtítulo\n\nOtro nivel\n\nY otro\nPodemos usar de una a seis # para indicar nivel de profundidad\n# Título\n## Subtítulo\n...",
+    "crumbs": [
+      "Markdown"
+    ]
+  },
+  {
     "objectID": "Personalizacion/about.html",
     "href": "Personalizacion/about.html",
     "title": "Personalización",
@@ -470,31 +497,46 @@
     ]
   },
   {
-    "objectID": "Markdown/about.html",
-    "href": "Markdown/about.html",
-    "title": "Markdown",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Curso de LaTeX",
     "section": "",
-    "text": "Podemos empezar una lista con - o bien *\n* Sin enumerar\n* Y con sublistas\n    * 1\n    * y dos\nDa lugar a\n\nSin enumerar\nY con sublistas\n\n1\ny dos\n\n\nSi queremos numeradas, cambiamos los * por un 1.\n\nnumeradas\ny también anidadas\n\nEso, ahora otra numeración",
-    "crumbs": [
-      "Markdown"
-    ]
+    "text": "Curso de LaTeX organizado por AMAT y por el PAT Orientamat para alumnos de Trabajo de Fin de Grado\nDurante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas\nLos contenidos del curso se mantienen por Jerónimo Alaminos, Pedro A. García Sánchez, Óscar Sánchez Romero y Francisco Torralbo.\nEn los talleres impartidos, hemos contado con la ayuda de Aureliano M. Robles Pérez, Desiree Romero Molina, Antonio Alarcón, Antonio Peralta, entre otros."
   },
   {
-    "objectID": "Markdown/about.html#subtítulo",
-    "href": "Markdown/about.html#subtítulo",
-    "title": "Markdown",
-    "section": "Subtítulo",
-    "text": "Subtítulo\n\nOtro nivel\n\nY otro\nPodemos usar de una a seis # para indicar nivel de profundidad\n# Título\n## Subtítulo\n...",
-    "crumbs": [
-      "Markdown"
-    ]
+    "objectID": "index.html#instalación-de-latex",
+    "href": "index.html#instalación-de-latex",
+    "title": "Curso de LaTeX",
+    "section": "Instalación de LaTeX",
+    "text": "Instalación de LaTeX\n\nUsuarios de Windows\nUna buena opción es MiKTeX. Si tenéis espacio de sobra, podéis optar por la instalación completa. En caso contrario, una instalación básica, siempre que tengamos una buena conexión a red, es suficiente. Los paquetes que falten se instalarán cuando se necesiten. En la página miktex.org podéis encontrar los instaladores y más información.\nEn el curso usaremos TeXStudio como editor de texto.\nPosibles problemas durante la instalación:\n\nTras descargar el archivo de instalación de MikTeX no cambiarle el nombre. En algunos sistemas Windows esto provoca que la instalación falle.\nA veces que la instalación para todos lo usuarios términa con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en Archivos de Programa) y reinstalar esta vez seleccionando la instalación para un único usuario.\nSi vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. José) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. jose), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador pero sólo en la sesión del usuario que hemos creado (en el ejemplo jose).\n\n\n\nUsuarios de Linux\nSi tenéis debian o Ubuntu, lo podéis instalar desde la línea de comandos\nsudo apt-get install texlive\nNo olvidéis hacer un sudo apt-get update antes.\nEn otras distribuciones de linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.\nEl único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las instrucciones en su página oficial o bien consultar el siguiente enlace.\nUna vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos TeXStudio. Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:\nsudo apt-get install texstudio\nSi el paquete texstudio no está en los repositorios los añadiremos mediante los comandos:\nsudo add-apt-repository ppa:sunderme/texstudio\nsudo apt-get update\ny volveremos a intentar la instalación\nsudo apt-get install texstudio\n\n\nUsuarios de macOS\nLos desarrolladores de TeXShop describen en su página cómo instalar TeX Live a través de MacTeX.\nLa instalación de MacTeX ya incluye un editor aunque en el curso usaremos TeXStudio.\n\n\nEditores\nExisten muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye TeXworks. Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, emacs con AUCTeX o bien vim (o su versión más moderna neovim) con vimtex son también buenas opciones para el usuario experto.\nTeXworks existe en todas las plataformas que hemos mencionado.\nYo uso TeXStudio, que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.\nVisual Studio Code es un editor mutiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.\nExisten varias posibilidades también de editar textos en línea, una de ellas es ShareLaTeX que actualmente forma parte de Overleaf."
   },
   {
-    "objectID": "Bibliografia/Readme.html",
-    "href": "Bibliografia/Readme.html",
-    "title": "Bibliografías",
-    "section": "",
-    "text": "Bibliografías\nNotas sobre el uso y manejo de bibliografías en LaTeX por Antonio Alarcón López."
+    "objectID": "index.html#material",
+    "href": "index.html#material",
+    "title": "Curso de LaTeX",
+    "section": "Material",
+    "text": "Material\nPodéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyeccto de Innovación Docente Orientamat.\nEn esta página iremos añadiendo materiales para el curso.\n\nLa carpeta Documento sencillo corresponde con la primera clase.\nLibro contiene un ejemplo de libro con capítulos, tabla de contenidos, índice y bibliografía.\nBeamer tiene dentro una presentación sencilla hecha con la clase beamer.\nMarkdown es una carpeta con una breve introducción a markdown.\n\nCada carpeta contiene una descripción en markdown y html (obtenido a partir de la de markdown). Un ejemplo de traducción del contenido de Documento sencillo se puede ver aquí."
+  },
+  {
+    "objectID": "index.html#editores-de-markdown",
+    "href": "index.html#editores-de-markdown",
+    "title": "Curso de LaTeX",
+    "section": "Editores de markdown",
+    "text": "Editores de markdown\nEl editor atom es multiplataforma, y tiene un módulo markdown.\nVisual Studio Code puede editar y visualizar markdown, y tiene muchas extensiones para usar con markdown.\nPara mac, un buena opción es MacDown, que ya trae integrada MathJax para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo Markdown Preview Plus.\nExiste además un plugin para Chrome para visualizar markdown: Markdown preview plus. Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.\nOtra opción es usar un editor en línea, como puede ser StackEdit. También soporta MathJax."
+  },
+  {
+    "objectID": "index.html#nueva-edición-del-curso-de-latex-2021",
+    "href": "index.html#nueva-edición-del-curso-de-latex-2021",
+    "title": "Curso de LaTeX",
+    "section": "Nueva edición del curso de LaTeX 2021",
+    "text": "Nueva edición del curso de LaTeX 2021\nEste curso académico se va a impartir el curso online de LaTeX Introducción al lenguaje LaTeX para edición de textos académicos a través de la plataforma yosigopublicando de la Universidad de Granada.\nEl material de dicho curso se encuentra disponible en el repositorio curso-virtual-2021. Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio."
+  },
+  {
+    "objectID": "index.html#orientamat",
+    "href": "index.html#orientamat",
+    "title": "Curso de LaTeX",
+    "section": "Orientamat",
+    "text": "Orientamat\nLa mayor parte de este material se ha elaborado para el curso de LaTex realizado dentro del Plan de Acción Tutorial del Grado en Matemáticas de la Universidad de Granada Orientamat"
   },
   {
     "objectID": "Documento sencillo/taller.html",
