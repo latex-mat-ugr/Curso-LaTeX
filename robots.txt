@@ -1,1 +1,1 @@
-Sitemap: https://https://latex-mat-ugr.github.io/Curso-LaTeX/sitemap.xml
+Sitemap: https://latex-mat-ugr.github.io/Curso-LaTeX/sitemap.xml
