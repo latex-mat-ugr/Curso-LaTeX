@@ -430,11 +430,11 @@
     ]
   },
   {
-    "objectID": "Documento sencillo/about.html#resumen-1",
-    "href": "Documento sencillo/about.html#resumen-1",
+    "objectID": "Documento sencillo/about.html#más-información",
+    "href": "Documento sencillo/about.html#más-información",
     "title": "Documento sencillo",
-    "section": "Resumen",
-    "text": "Resumen\nUn resumen de todo lo dicho y más lo podéis encontrar en el chuletario de LaTeX\nEn vestra instalación de LaTeX tenéis toda la documentación necesaria, e incluso el “lshort.pdf” o cómo aprender LaTeX en 147 minutos",
+    "section": "Más información",
+    "text": "Más información\nUn resumen de todo lo dicho y más lo podéis encontrar en el chuletario de LaTeX\nEn vuestra instalación de LaTeX tenéis toda la documentación necesaria, e incluso el “lshort.pdf” o cómo aprender LaTeX en 147 minutos\nOverleaf ofrece un excelente tutorial de inicio.",
     "crumbs": [
       "Documento básico"
     ]
@@ -809,6 +809,16 @@
     "title": "Transparencias",
     "section": "Recomendaciones",
     "text": "Recomendaciones\n\nNo hacer demasiadas transparencias\nCada transparencia no debe superar las 12 líneas\nEl estilo debe ser sencillo para no distraer a la audiencia\nNo abusar de las pausas",
+    "crumbs": [
+      "Transparencias beamer"
+    ]
+  },
+  {
+    "objectID": "Beamer/about.html#tutorial-overleaf",
+    "href": "Beamer/about.html#tutorial-overleaf",
+    "title": "Transparencias",
+    "section": "Tutorial Overleaf",
+    "text": "Tutorial Overleaf\nOverleaf ofrece un excelente tutorial sobre beamer.",
     "crumbs": [
       "Transparencias beamer"
     ]
