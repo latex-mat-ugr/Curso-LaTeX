@@ -3,7 +3,7 @@ project:
 website:
   title: "Curso LaTeX Grado Matemáticas UGR"
   search: false
-  site-url: https://https://latex-mat-ugr.github.io/Curso-LaTeX/
+  site-url: https://latex-mat-ugr.github.io/Curso-LaTeX/
   repo-url: https://github.com/latex-mat-ugr/Curso-LaTeX
   issue-url: https://github.com/latex-mat-ugr/Curso-LaTeX/issues
   navbar:
