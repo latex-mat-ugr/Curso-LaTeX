@@ -28,6 +28,9 @@ El entorno *equation* produce el mismo resultado y añade una marca a la ecuaci�
   e^{i\pi}+1=0 
 \end{equation}
 ```
+$$
+  e^{i\pi}+1=0 
+$$ {#eq-identidad}
 
 Los estilos que LaTeX usa por defecto para escribir matemáticas son:
 
@@ -156,7 +159,7 @@ Puedes escribir subíndices y superíndices de la siguiente forma:
 
 ```latex
 \[ 
-  n^{2}$, $x^{1/x}$, $x_{n}$, $\lim_{x \to \infty}
+  n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 \]
 ```
 
