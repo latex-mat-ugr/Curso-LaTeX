@@ -1,5 +1,3 @@
-# Gráficos
-
 Todos sabemos que en un documento generado con $\LaTeX{}$ podemos incorporar  gráficos. 
 
 Lo que no es tan conocido es que, al insertarlos, permite editarlos ligeramente. Seleccionar parte de la imagen, redimensionar, girar, superponer, simetrizar, incluir texto son algunas de las modificaciones que podemos realizar sobre una imagen al incluirla en un documento de una manera sencilla sin necesidad de recurrir a un editor de gráfico como se explica en la [primera sección](#inserciónedición-de-gráficos)
@@ -11,7 +9,7 @@ No obstante, la inclusión de muchos documentos gráficos en un mismo documento 
 Para resolver estos inconvenientes $\LaTeX$ adoptó hace tiempo la estrategia
 *Do it yourself*. Esto es,  el propio $\LaTeX$ interpreta una serie de instrucciones mediante las que crea el gráfico. El resultado son imágenes de la más alta calidad y de peso muy reducido, aunque para ello hay que invertir en tiempo de aprendizaje. En la [segunda sección](#creación-de-gráficos) mostramos la potencialidad de esta capacidad de $\LaTeX$.
 
-En el fichero presentacion1.pdf hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en presentacion2.pdf se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en [nuestro repositorio de Github](https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos), están encastrados al final de cada sección para su visualización. Los ficheros presentacion1.tex y presentacion2.tex contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta graficos.
+En el fichero [presentacion1.pdf](presentacion1.pdf) hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en [presentacion2.pdf](presentacion2.pdf) se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en [nuestro repositorio de Github](https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos), están encastrados al final de cada sección para su visualización. Los ficheros [presentacion1.tex](presentacion1.tex) y [presentacion2.tex](presentacion2.tex) contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta gráficos.
 
 
 ## Inserción/edición de gráficos.
@@ -162,4 +160,4 @@ dependiendo del tiempo que estemos dispuetos a invertir en ello:
   - [Dia](http://dia-installer.de/index.html.en).
 
 
-Los resultados de los comandos analizados en esta sección pueden ser visualizados en presentacion2.pdf{target="_pdf"}.
+Los resultados de los comandos analizados en esta sección pueden ser visualizados en [presentacion2.pdf](presentacion2.pdf){target="_pdf"}.

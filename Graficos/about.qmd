@@ -5,6 +5,11 @@ lang: es
 
 {{< include README.md >}}
 
+## Tutoriales overleaf
+
+Overleaf tiene varios tutoriales interesantes sobre cómo [insertar imágenes](https://www.overleaf.com/learn/latex/Inserting_Images) o [tikz](https://www.overleaf.com/learn/latex/TikZ_package).
+
+## Transparencias del taller
 
 {{< pdf taller-graficos1.pdf width=100% height=470 >}}
 
