@@ -1,0 +1,604 @@
+% Modelo de slides para projetos de disciplinas do Abel
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{plainnat}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[spanish]{babel}
+% Paquete pdfpages incluye páginas completas de ficheros pdfs
+\usepackage{pdfpages}
+%TikZ 
+\usepackage{pgf,tikz}
+\usetikzlibrary{babel,shapes,arrows}
+% PGFPlots
+\usepackage{pgfplots}
+\pgfplotsset{width=6cm,compat=1.12} %{compat=yourversion}
+%paquete chemfig: gráficos de química
+\usepackage{chemfig}
+%paquete Wrapfig
+\usepackage{wrapfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Creación de gráficos con \LaTeX{}}
+% \subtitle{Subtítulo}
+% \date{\today}
+\date{}
+\author{Óscar Sánchez Romero}
+\institute{Dpto. Matemática Aplicada, UGR}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Contenidos}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Introducción}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Gr\'aficos insertados vs generados}
+%Cada vez recurrimos m\'as a representaciones gr\'aficas para ejemplificar. 
+
+La inclusi\'on de muchos documentos gr\'aficos en un mismo documento \LaTeX $ $ tienen varios inconvenientes:
+\begin{itemize}
+\item Dan como resultado documentos muy pesados.
+\item Pese a ello, la calidad de los gr\'aficos insertados no siempre es 
+ \'optima.
+ \end{itemize}
+
+La soluci\'on que \LaTeX \ adopt\'o   hace tiempo es algo que est\'a hoy d\'ia muy de moda:
+\begin{center}
+Do it yourself (DIY)
+\end{center}
+%Esto es,  el propio \LaTeX \  interpreta una serie de instrucciones y genera el 
+%gr\'afico.  Otra cosa distinta es c\'omo generamos dicho c\'odigo...
+\begin{itemize}
+\item {\small \color{red} Ventajas: }Alta calidad y ficheros con peso reducido.\\
+\item {\small \color{red} Inconveniente:} inversión de tiempo de aprendizaje.
+\end{itemize}
+%por ejemplo este documento con $31$ gr\'aficas ocupa 438 KB!!!. }
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Creación de gráficos con LaTeX}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Generaci\'on de gr\'aficos b\'asicos: entorno {\em picture}}
+
+\LaTeX \  es capaz de realizar gr\'aficos sencillos 
+directamente desde el entorno picture
+
+\begin{verbatim}
+\begin{picture}(100,7)
+\put(2,1.5){\line(1,0){23.5}}  \put(13,0.5){$<$} 
+\put(27,1.4){\circle*{1.5}}  \put(26.5,3){0}
+\put(28.5,1.5){\line(1,0){22}} \put(39,0.5){$>$}
+\put(52,1.4){\circle*{1.5}} \put(51.5,3){5}
+\put(53.5,1.5){\line(1,0){23.5}} \put(63,0.5){$<$}
+\end{picture}
+\end{verbatim}
+
+
+\begin{center} \setlength{\unitlength}{1mm}
+\begin{picture}(100,7)
+\put(2,1.5){\line(1,0){23.5}} 
+\put(13,0.5){$<$} 
+\put(27,1.4){\circle*{1.5}} 
+\put(26.5,3){0}
+\put(28.5,1.5){\line(1,0){22}}
+\put(39,0.5){$>$}
+\put(52,1.4){\circle*{1.5}}
+ \put(51.5,3){5}
+\put(53.5,1.5){\line(1,0){23.5}}
+\put(63,0.5){$<$}
+\end{picture}
+\end{center}
+
+Inconvenientes: es muy básico y limitado.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Gr\'aficos con PSTricks y TikZ}
+Tanto \href{http://www.ctan.org/pkg/pstricks}{\color{blue}PSTricks} como \href{http://www.texample.net/tikz/}{\color{blue}PGF-TikZ} son paquetes de LaTeX que permiten hacer casi cualquier cosa mediante un gran abanico de comandos espec\'ificos.
+
+Podemos sacar provecho de ellos de v\'arias maneras:
+\begin{enumerate}
+\item Escribiendo nosotros directamente los c\'odigos (siempre que estemos dispuestos a invertir nuestro tiempo en ello). Hay disponibles numerosos manuales, y ejemplos:
+\begin{itemize}
+\item \href{http://www.texample.net/tikz/examples/}{\color{blue}http://www.texample.net/tikz/examples/}
+\item \href{http://tug.org/PSTricks/main.cgi?file=examples}{\color{blue}http://tug.org/PSTricks/main.cgi?file=examples}
+\end{itemize}
+\item Empleando paquetes que facilitan su uso como PGFPlots.
+\item Crear los gr\'aficos con otros programas y exportarlos a TikZ.
+\end{enumerate}
+
+
+\vspace{0.5cm}
+{\small Observaci\'on:
+Aunque PSTricks no es compatible con PDFLaTeX, existen versiones (spt-pdf o pdftricks)
+que sí lo son.}
+\end{frame}
+
+\subsection{Tikz, primeros pasos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Filosofía básica TikZ}
+\begin{wrapfigure}{r}{4cm}
+\begin{tikzpicture}[scale=1]
+\draw[help lines] (0,0) grid (3,3);
+\draw[->] (0,0) -- (2,2.5);
+\end{tikzpicture}
+%\caption{Gr\'afico sencillo TikZ}
+\end{wrapfigure}
+$ $
+\begin{verbatim}
+Preámbulo:
+\usepackage{tikz} 
+\usetikzlibrary{babel,shapes,arrows}
+
+Cuerpo:
+\begin{tikzpicture}
+\draw[help lines]  (0,0) grid (3,3);
+\draw[->]  (0,0) -- (2,2.5);
+\end{tikzpicture}
+\end{verbatim}
+\vspace{1cm}
+\href{https://cremeronline.com/LaTeX/minimaltikz.pdf}{\color{blue}A very minimal introduction to TikZ}\\
+\href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusi%C3%B3n_de_gr%C3%A1ficos/Gr%C3%A1ficos_con_TikZ}{\color{blue}Manual de LaTeX/Inclusión de gráficos/Gráficos con TikZ}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Filosofía básica TikZ}
+
+\begin{wrapfigure}{r}{4cm}
+\begin{tikzpicture}
+\draw[<->, line width = 1pt]  (3.5,0) --(0,0) -- (0,1.5);
+\draw [blue, domain=0:pi]  plot (\x, {sin(\x r)*exp(\x/exp(2*pi))});
+\end{tikzpicture}
+\caption{Gr\'afico sencillo TikZ}
+\end{wrapfigure}
+$ $
+\vspace{-1.5cm }
+\begin{verbatim}
+Preámbulo:
+\usepackage{tikz} 
+\usetikzlibrary{babel,shapes,arrows}
+
+Cuerpo:
+\begin{tikzpicture}
+\draw[<->, line width = 1pt] 
+(3.5,0) --(0,0) -- (0,1.5);
+\draw [blue, domain=0:pi] 
+plot (\x, {sin(\x r)*exp(\x/exp(2*pi))});
+\end{tikzpicture}
+\end{verbatim}
+%\vspace{2cm}
+%\href{https://cremeronline.com/LaTeX/minimaltikz.pdf}{\color{blue}A very minimal introduction to TikZ}\\
+%\href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusi%C3%B3n_de_gr%C3%A1ficos/Gr%C3%A1ficos_con_TikZ}{\color{blue}Manual de LaTeX/Inclusión de gráficos/Gráficos con TikZ}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Uso de paquetes específicos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Generaci\'on de gr\'aficos en TikZ con PGFPlots}
+Un primer ejemplo puede ser \href{http://pgfplots.net}{\color{blue}pgfplots} para representar funciones y datos.
+\begin{wrapfigure}{r}{6cm}
+	\begin{tikzpicture}
+	\begin{axis}
+	\addplot coordinates {
+	(1,1.5)
+	(4,16)
+	(8,63.5)
+	};
+	\end{axis}	
+	\end{tikzpicture}
+	\caption{Representaci\'on puntos}
+\end{wrapfigure}
+\begin{verbatim}
+\begin{tikzpicture}
+\begin{axis}
+\addplot coordinates {
+	(1,1.5)
+	(4,16)
+	(8,63.5)
+};
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+Añadir al pre\'ambulo:
+\begin{verbatim}
+\usepackage{pgfplots}
+\pgfplotsset{width=6cm,compat=1.12}
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
+\begin{wrapfigure}{r}{6cm}
+\begin{tikzpicture} 
+\begin{axis}[ ]
+% density of Normal distribution:
+\addplot[red, domain=0:4,
+   samples=201]
+   {exp((-(x-2)^2)/2) / sqrt(2*pi)};
+\end{axis}
+\end{tikzpicture}
+\caption{Representaci\'on funci\'on}
+\end{wrapfigure}
+$ $ \vspace{3cm}
+\begin{verbatim}
+\begin{tikzpicture} 
+\begin{axis}[ ]
+\addplot[ red, 
+  domain=0:4,
+  samples=201]
+  {exp((-(x-2)^2)/2) / sqrt(2*pi)};
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
+\begin{wrapfigure}{r}{5cm}
+\begin{tikzpicture} 
+\begin{axis}
+[xlabel=Var X, ylabel=Var Y,
+legend pos=north west]
+\addplot[domain=0:8]{x^2};
+\addplot coordinates {
+	(1,1.5)
+	(4,16)
+	(8,63.5)
+};
+\legend{$f(x)=x^2$,Data}
+\end{axis}
+\end{tikzpicture}
+\caption{Representaci\'on conjunta}
+\end{wrapfigure}
+$ $ %\vspace{1cm}
+\begin{verbatim}
+\begin{tikzpicture} 
+\begin{axis}
+[xlabel=Var X, ylabel=Var Y,
+legend pos=north west]
+\addplot[domain=0:8]{x};
+\addplot coordinates {
+	(1,1.5)
+	(4,16)
+	(8,63.5)
+};
+\legend{$h(x)=x$,$f(x)$}
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
+\begin{wrapfigure}{r}{5cm}
+\begin{tikzpicture}
+\begin{axis}[
+   title=\'Orbita,
+   xlabel={$p(t)$},
+   ylabel={$p'(t)$},
+]
+\addplot[blue] table 
+{./graficos/type1Orbit.table};
+\end{axis}
+\end{tikzpicture}
+\caption{Gr\'afico fichero datos}
+\end{wrapfigure}
+$ $ %\vspace{1cm}
+\begin{verbatim}
+\begin{tikzpicture}
+\begin{axis}[
+   title=Datos externos,
+   xlabel={$x$},
+   ylabel={$y$},
+]
+\addplot[blue] table 
+{./graficos/type1Orbit.table};
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Generaci\'on de gr\'aficos en TikZ con PGFPlots}
+
+\begin{wrapfigure}{r}{5cm}
+\begin{tikzpicture} \begin{axis}[
+    title={$x \exp(-x^2-y^2)$},
+    xlabel=$x$, ylabel=$y$,
+    small,
+] \addplot3[
+    surf,
+    domain=-2:2,
+    domain y=-1.3:1.3,
+]
+    {exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+\caption{Gr\'afico tridimensional}
+\end{wrapfigure}
+$ $ %\vspace{1cm}
+\begin{verbatim}
+\begin{tikzpicture} 
+\begin{axis}[
+    title={$x \exp(-x^2-y^2)$},
+    xlabel=$x$, ylabel=$y$,
+    small] 
+\addplot3[surf,
+    domain=-2:2,
+    domain y=-1.3:1.3
+]{exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{El paquete chemfig}
+Este uso se está extendiendo en \'areas distintas a la Física o las Matemática como por ejemplo el paquete \href{https://www.ctan.org/pkg/chemfig}{\color{blue} chemfig} en \href{https://www.ctan.org/search/index?phrase=chemistry&offset=48&max=16}{\color{blue}Química}
+\begin{wrapfigure}{r}{4cm}
+\chemfig{-(-[1]O^{\ominus})=[7]O}
+
+\chemfig{C(-[:0]H)(-[:90]H)(-[:180]H)(-[:270]H)}
+\caption{Gr\'aficos química}
+\end{wrapfigure}
+\begin{verbatim}
+\chemfig{-(-[1]O^{\ominus})=[7]O}
+\end{verbatim}
+\vspace{1cm}
+\begin{verbatim}
+\chemfig{C(-[:0]H)(-[:90]H)
+(-[:180]H)(-[:270]H)}
+\end{verbatim}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Funcionalidades específicas: árboles}
+
+\begin{tikzpicture}[every node/.style={rectangle, fill=blue!20!white}]
+\node {Animalia} [sibling distance=6cm]
+child {node {Chordata}
+	child {node {Vertebrata} [sibling distance=1.5cm]
+		child {node {Mammalia}}
+		child {node {Aves}}
+		}
+	}
+child {node {Arthoropoda} [sibling distance=4cm]
+	child {node {Mandibulata}[sibling distance=2cm]
+		child {node {Insecta}}
+		child {node {Crustacea}}
+		}
+	child {node {Chelicerata}
+		child {node {Arachnida}}
+		}
+	};
+\end{tikzpicture}
+
+\href{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_5)%E2%80%94Creating_Mind_Maps#:~:text=Part%204%20%7C-,Part,-5}{\textcolor{blue}{Manual: Creating Mind Maps}}
+%
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Funcionalidades específicas: diagramas de flujo}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=3.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=4em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{tikzpicture}[yscale=0.3,node distance = 1.8cm, auto]
+    % Place nodes
+    \node [block] (init) {\footnotesize initialize model};
+    \node [cloud, left of=init] (expert) {\footnotesize expert};
+    \node [cloud, right of=init] (system) {\footnotesize system};
+    \node [block, below of=init] (identify) {\footnotesize identify candidate models};
+    \node [block, below of=identify] (evaluate) {\footnotesize evaluate candidate models};
+    \node [block, left of=evaluate, node distance=3cm] (update) {\footnotesize update model};
+    \node [decision, below of=evaluate] (decide) {\footnotesize is best candidate better?};
+    \node [block, right of=decide, node distance=3cm] (stop) {\footnotesize stop};
+    % Draw edges
+    \path [line] (init) -- (identify);
+    \path [line] (identify) -- (evaluate);
+    \path [line] (evaluate) -- (decide);
+    \path [line] (decide) -| node [near start] {yes} (update);
+    \path [line] (update) |- (identify);
+    \path [line] (decide) -- node {no}(stop);
+    \path [line,dashed] (expert) -- (init);
+    \path [line,dashed] (system) -- (init);
+    \path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+\href{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Creating_Flowcharts#The_tikzstyle_command:~:text=Part%202%20%7C-,Part,-3%20%7C%20Part}{\textcolor{blue}{Creating flowcharts}}
+\end{frame}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Código TikZ generado con otro programa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exportar a \LaTeX{}  desde un programa externo}
+
+\begin{frame}{Exportar a \LaTeX{} desde un programa externo}
+Debido a la progresiva implantaci\'on de \LaTeX  son  numerosos los programas que 
+dan la posibilidad de exportar gr\'aficos  generados con ellos bien a TikZ
+\begin{enumerate}
+\item \href{https://ctan.org/pkg/gnuplottex}{\color{blue} gnuplot}
+\item \href{https://mcj.sourceforge.net/latex_and_xfig.html}{\color{blue} Xfig} {\small (versi\'on para Windows: WinFIG)}, 
+\item \href{http://www.geogebra.org/cms/}{\color{blue} GeoGebra}
+
+\end{enumerate}
+o bien a PSTricks
+\begin{enumerate}
+\item  \href{https://inkscape-manuals.readthedocs.io/en/latest/export-other-formats.html}{\color{blue} Inkscape}
+\item \href{http://latexdraw.sourceforge.net}{\color{blue} LatexDraw},
+\item \href{http://dia-installer.de/index.html.en}{\color{blue} Dia},
+\item etc...
+\end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exportar a TikZ desde Geogebra}
+%\begin{exampleblock}{Ejemplo: Exportar a TIKZ  un gr\'afico con un programa externo}
+\href{http://www.geogebra.org/cms/}{\color{blue} GeoGebra} es un programa especialmente sencillo para
+realizar  gr\'aficos.
+
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7732426303854876cm,y=0.6894409937888198cm]
+\draw[->,color=black] (-4.3,0) -- (4.52,0);
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-3.14) -- (0,3.3);
+\foreach \y in {-3,-2,-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.3,-3.14) rectangle (4.52,3.3);
+\onslide<1->{
+  \fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (-2.16,3.2) -- (0.78,4.52) -- (3,2.68) -- (-1,1) -- cycle;
+}
+\onslide<1->{
+  \draw [color=zzttqq] (0.78,4.52)-- (3,2.68);
+}
+\onslide<1->{
+  \draw [color=zzttqq] (3,2.68)-- (-1,1);
+}
+\onslide<1->{
+  \draw [color=zzttqq] (-1,1)-- (-2.16,3.2);
+}
+\onslide<1->{
+  \draw[smooth,samples=100,domain=-4.3:4.5200000000000005] plot(\x,{sin(((\x))*180/pi)});
+}
+\onslide<1->{
+  \draw [domain=-4.3:4.52] plot(\x,{(-0--1*\x)/1});
+}
+\onslide<1->{
+  \draw(-3.04,4.36) ellipse (0.8cm and 0.71cm);
+}
+\onslide<1->{
+  \draw (4.54,1.96) node[anchor=north west] {$\Sigma_{i=1}^n y_i$};
+}
+\begin{scriptsize}
+\onslide<1->{
+  \fill [color=qqqqff] (-2.16,3.2) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (-2,3.46) node {$A$};
+}
+\onslide<1->{
+  \fill [color=qqqqff] (0.78,4.52) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (0.92,4.78) node {$B$};
+}
+\onslide<1->{
+  \fill [color=qqqqff] (3,2.68) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (3.16,2.94) node {$C$};
+}
+\onslide<1->{
+  \fill [color=qqqqff] (-1,1) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (-0.84,1.26) node {$D$};
+}
+\onslide<1->{
+  \fill [color=qqqqff] (5.26,4.04) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (5.4,4.3) node {$E$};
+}
+\onslide<1->{
+  \fill [color=uququq] (0,0) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=uququq] (0.14,0.26) node {$F$};
+}
+\onslide<1->{
+  \fill [color=qqqqff] (1,1) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (1.16,1.26) node {$G$};
+}
+\onslide<1->{
+  \fill [color=qqqqff] (-1.18,5.36) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (-1.02,5.62) node {$H$};
+}
+\onslide<1->{
+  \fill [color=qqqqff] (-3.04,4.36) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (-2.94,4.62) node {$I$};
+}
+\onslide<1->{
+  \fill [color=qqqqff] (-2.58,5.28) circle (1.5pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (-2.46,5.54) node {$J$};
+}
+\end{scriptsize}
+\end{tikzpicture}
+
+Nota: Ofrece la posibilidad de exportar el gr\'afico
+que acabamos de realizar (puede dar errores no sencillos de detectar/corregir).
+%\end{exampleblock}
+\end{frame}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Uso avanzado: sitios de interés}
+Puesto que es imposible mostrar paquetes de interés para una 
+audiencia heterogénea lo mejor es mostrar dónde y cómo localizarlos
+
+\href{https://www.ctan.org}{\color{blue}https://www.ctan.org}
+
+\href{https://github.com/pgf-tikz/pgf}{\color{blue}https://github.com/pgf-tikz/pgf}
+
+\href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusión_de_gráficos/Gráficos_con_TikZ}{\color{blue}Wikibooks: Gráficos con Tikz}
+
+\href{http://www.texample.net/tikz/examples/}{\color{blue}http://www.texample.net/tikz/examples/}
+
+\href{https://tex.stackexchange.com/questions/42611/list-of-available-tikz-libraries-with-a-short-introduction}{\color{blue} Librerías de Tikz}
+
+\end{frame}
+
+
+
+\end{document}
