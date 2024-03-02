@@ -101,8 +101,7 @@ El primero de ellos es que el entorno figure es flotante, esto es, $\LaTeX$ "dec
 dónde lo localiza en el texto. Si queremos controlar este proceso tenemos varias 
 opciones:
 
-- Control débil del entorno *figure* con parámetros 
-    de control h (here), b (botton), t (top) como se muestra en el ejemplo anterior.
+- Control débil del entorno *figure* con parámetros de control h (here), b (botton), t (top) como se muestra en el ejemplo anterior.
 - Empleo del entorno *wrapfigure* gracias al paquete [wrapfig](https://www.ctan.org/pkg/wrapfig) para que el texto pueda envolver al gráfico.
 - Empleo del parámetro H del paquete [float](https://www.ctan.org/pkg/float) para que el usuario determine, de manera estricta y bajo su responsabilidad, dónde aparecerá el gráfico.
 - Usar *includegraphics* sin entorno *figure* práctica que, como comentamos, aun siendo posible es no recomendable.
@@ -147,7 +146,6 @@ dependiendo del tiempo que estemos dispuetos a invertir en ello:
 - escribiendo nosotros directamente los códigos. Hay disponibles numerosos manuales, y ejemplos que podemos tomar como punto de partida para nuestros proyectos:
   - [http://www.texample.net/tikz/examples/](http://www.texample.net/tikz/examples/)
   - [http://tug.org/PSTricks/main.cgi?file=examples](http://tug.org/PSTricks/main.cgi?file=examples)
-
 - Una aproximación intermedia sería emplear paquetes/manuales específicos, que aún basándose en los anteriores, proporcionan/analizan comandos específicos para  realizar gráficos particulares como:
   - [PGFPlots](http://pgfplots.net) para representar funciones y datos,
   - [Chemfig](https://www.ctan.org/pkg/chemfig) para representar gráficamente sustancias químicas,
