@@ -3,19 +3,21 @@ Todos sabemos que en un documento generado con $\LaTeX{}$ podemos incorporar  gr
 Lo que no es tan conocido es que, al insertarlos, permite editarlos ligeramente. Seleccionar parte de la imagen, redimensionar, girar, superponer, simetrizar, incluir texto son algunas de las modificaciones que podemos realizar sobre una imagen al incluirla en un documento de una manera sencilla sin necesidad de recurrir a un editor de gráfico como se explica en la [primera sección](#inserciónedición-de-gráficos)
 
 No obstante, la inclusión de muchos documentos gráficos en un mismo documento tiene varios inconvenientes:
+
 - dan como resultado documentos muy pesados,
 - y pese a ello, la calidad de los gráficos insertados no siempre es óptima.
 
 Para resolver estos inconvenientes $\LaTeX$ adoptó hace tiempo la estrategia
 *Do it yourself*. Esto es,  el propio $\LaTeX$ interpreta una serie de instrucciones mediante las que crea el gráfico. El resultado son imágenes de la más alta calidad y de peso muy reducido, aunque para ello hay que invertir en tiempo de aprendizaje. En la [segunda sección](#creación-de-gráficos) mostramos la potencialidad de esta capacidad de $\LaTeX$.
 
-En el fichero [presentacion1.pdf](presentacion1.pdf) hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en [presentacion2.pdf](presentacion2.pdf) se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en [nuestro repositorio de Github](https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos), están encastrados al final de cada sección para su visualización. Los ficheros [presentacion1.tex](presentacion1.tex) y [presentacion2.tex](presentacion2.tex) contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta gráficos.
+En el fichero [presentacion1.pdf](presentacion1.pdf) hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en [presentacion2.pdf](presentacion2.pdf) se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en [nuestro repositorio de Github](https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos), están encastrados al final de esta página para su visualización. Los ficheros [presentacion1.tex](presentacion1.tex) y [presentacion2.tex](presentacion2.tex) contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta gráficos.
 
 
 ## Inserción/edición de gráficos.
 
 ### Generalidades sobre documentos gráficos
 A la hora de preparar un gráfico para insertarlo en un documento $\LaTeX{}$ hemos de tener en cuenta que:
+
 - el resultado final dependerá mucho de cómo éste se haya generado y 
 - que el fichero en el que se guarde no puede estar en un formato cualquiera.  
 
@@ -98,6 +100,7 @@ A continuación comentamos cómo tratar dos de los *inconvenientes* que los usua
 El primero de ellos es que el entorno figure es flotante, esto es, $\LaTeX$ "decide"
 dónde lo localiza en el texto. Si queremos controlar este proceso tenemos varias 
 opciones:
+
 - Control débil del entorno *figure* con parámetros 
     de control h (here), b (botton), t (top) como se muestra en el ejemplo anterior.
 - Empleo del entorno *wrapfigure* gracias al paquete [wrapfig](https://www.ctan.org/pkg/wrapfig) para que el texto pueda envolver al gráfico.
@@ -126,12 +129,13 @@ el paquete [pdfpages](https://www.ctan.org/pkg/pdfpages) permite incluir mediant
 páginas seleccionadas del fichero file.pdf en un documento $\LaTeX$.
 Esto puede ser una herramienta de inmensa ayuda por ejemplo si queremos generar un documento con documentación acreditativa, incluir declaraciones en documentos, etc...
 
-Pueder visualizar todos los ejemplos anteriores en el fichero presentacion1.pdf{target="_pdf"}.
+Pueder visualizar todos los ejemplos anteriores en el fichero [presentacion1.pdf](presentacion1.pdf){target="_pdf"}.
 
 
 ## Creación de gráficos
 
 Existen dos *macropaquetes* para la realización de gráficos en $\LaTeX$:
+
 - [PSTricks](http://www.ctan.org/pkg/pstricks),
 - y [PGF-TikZ](http://www.texample.net/tikz/).
 
@@ -139,6 +143,7 @@ En ambos casos proporcionan un gran abanico de comandos específicos.
 
 Podemos sacar provecho de ellos de varias maneras
 dependiendo del tiempo que estemos dispuetos a invertir en ello:
+
 - escribiendo nosotros directamente los códigos. Hay disponibles numerosos manuales, y ejemplos que podemos tomar como punto de partida para nuestros proyectos:
   - [http://www.texample.net/tikz/examples/](http://www.texample.net/tikz/examples/)
   - [http://tug.org/PSTricks/main.cgi?file=examples](http://tug.org/PSTricks/main.cgi?file=examples)
