@@ -11,6 +11,6 @@ Overleaf tiene varios tutoriales interesantes sobre cómo [insertar imágenes](h
 
 ## Transparencias del taller
 
-{{< pdf taller-graficos1.pdf width=100% height=470 >}}
+{{< pdf presentacion1.pdf width=100% height=470 >}}
 
-{{< pdf taller-graficos2.pdf width=100% height=470 >}}
+{{< pdf presentacion2.pdf width=100% height=470 >}}
