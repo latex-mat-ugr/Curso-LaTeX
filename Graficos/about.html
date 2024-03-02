@@ -271,14 +271,22 @@ window.Quarto = {
 
 <p>Todos sabemos que en un documento generado con <span class="math inline">\(\LaTeX{}\)</span> podemos incorporar gráficos.</p>
 <p>Lo que no es tan conocido es que, al insertarlos, permite editarlos ligeramente. Seleccionar parte de la imagen, redimensionar, girar, superponer, simetrizar, incluir texto son algunas de las modificaciones que podemos realizar sobre una imagen al incluirla en un documento de una manera sencilla sin necesidad de recurrir a un editor de gráfico como se explica en la <a href="#inserciónedición-de-gráficos">primera sección</a></p>
-<p>No obstante, la inclusión de muchos documentos gráficos en un mismo documento tiene varios inconvenientes: - dan como resultado documentos muy pesados, - y pese a ello, la calidad de los gráficos insertados no siempre es óptima.</p>
+<p>No obstante, la inclusión de muchos documentos gráficos en un mismo documento tiene varios inconvenientes:</p>
+<ul>
+<li>dan como resultado documentos muy pesados,</li>
+<li>y pese a ello, la calidad de los gráficos insertados no siempre es óptima.</li>
+</ul>
 <p>Para resolver estos inconvenientes <span class="math inline">\(\LaTeX\)</span> adoptó hace tiempo la estrategia <em>Do it yourself</em>. Esto es, el propio <span class="math inline">\(\LaTeX\)</span> interpreta una serie de instrucciones mediante las que crea el gráfico. El resultado son imágenes de la más alta calidad y de peso muy reducido, aunque para ello hay que invertir en tiempo de aprendizaje. En la <a href="#creación-de-gráficos">segunda sección</a> mostramos la potencialidad de esta capacidad de <span class="math inline">\(\LaTeX\)</span>.</p>
-<p>En el fichero <a href="presentacion1.pdf">presentacion1.pdf</a> hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en <a href="presentacion2.pdf">presentacion2.pdf</a> se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en <a href="https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos">nuestro repositorio de Github</a>, están encastrados al final de cada sección para su visualización. Los ficheros <a href="presentacion1.tex">presentacion1.tex</a> y <a href="presentacion2.tex">presentacion2.tex</a> contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta gráficos.</p>
+<p>En el fichero <a href="presentacion1.pdf">presentacion1.pdf</a> hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en <a href="presentacion2.pdf">presentacion2.pdf</a> se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en <a href="https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos">nuestro repositorio de Github</a>, están encastrados al final de esta página para su visualización. Los ficheros <a href="presentacion1.tex">presentacion1.tex</a> y <a href="presentacion2.tex">presentacion2.tex</a> contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta gráficos.</p>
 <section id="inserciónedición-de-gráficos." class="level2">
 <h2 class="anchored" data-anchor-id="inserciónedición-de-gráficos.">Inserción/edición de gráficos.</h2>
 <section id="generalidades-sobre-documentos-gráficos" class="level3">
 <h3 class="anchored" data-anchor-id="generalidades-sobre-documentos-gráficos">Generalidades sobre documentos gráficos</h3>
-<p>A la hora de preparar un gráfico para insertarlo en un documento <span class="math inline">\(\LaTeX{}\)</span> hemos de tener en cuenta que: - el resultado final dependerá mucho de cómo éste se haya generado y - que el fichero en el que se guarde no puede estar en un formato cualquiera.</p>
+<p>A la hora de preparar un gráfico para insertarlo en un documento <span class="math inline">\(\LaTeX{}\)</span> hemos de tener en cuenta que:</p>
+<ul>
+<li>el resultado final dependerá mucho de cómo éste se haya generado y</li>
+<li>que el fichero en el que se guarde no puede estar en un formato cualquiera.</li>
+</ul>
 <p>En general hemos de tener en cuenta que hay dos grupos básicos de gráficos: los mapas de bits (también llamados imágenes de pixeles) y gráficos vectoriales. Básicamente los primeros son una gran tabla donde se indica el color de cada punto del gráfico (pixel) mientras que los segundos son ficheros donde se guardan una serie de instrucciones para generar el gráfico. Por lo general los mapas de bits son más pesados y poco adecuados para el redimensionado que los gráficos vectoriales. Por lo tanto, hay que evitar el uso de mapas de bits cuando la naturaleza de gráfico nos lo permita, lo que es imposible el caso de fotografías, capturas de pantalla, imágenes descargadas de la red, …</p>
 <p>Por último si queremos generar un fichero PDF con <span class="math inline">\(\LaTeX{}\)</span> los compiladores más usuales únicamente aceptarán ficheros en formato PNG, JPEG o PDF, por lo que te puedes ver obligado a exportar tu imagen a uno de estos formatos.</p>
 <p>Para ampliar detalles y buscar programas que nos ayuden en estas labores tan específicas recomendamos la lectura del siguiente <a href="https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inserci%C3%B3n_de_figuras_externas">Wikibook</a>.</p>
@@ -333,7 +341,13 @@ window.Quarto = {
 <section id="dificultades-usuales" class="level3">
 <h3 class="anchored" data-anchor-id="dificultades-usuales">Dificultades usuales</h3>
 <p>A continuación comentamos cómo tratar dos de los <em>inconvenientes</em> que los usuarios de <span class="math inline">\(\LaTeX\)</span> noveles encuentran a la hora de trabajar con gráficos.</p>
-<p>El primero de ellos es que el entorno figure es flotante, esto es, <span class="math inline">\(\LaTeX\)</span> “decide” dónde lo localiza en el texto. Si queremos controlar este proceso tenemos varias opciones: - Control débil del entorno <em>figure</em> con parámetros de control h (here), b (botton), t (top) como se muestra en el ejemplo anterior. - Empleo del entorno <em>wrapfigure</em> gracias al paquete <a href="https://www.ctan.org/pkg/wrapfig">wrapfig</a> para que el texto pueda envolver al gráfico. - Empleo del parámetro H del paquete <a href="https://www.ctan.org/pkg/float">float</a> para que el usuario determine, de manera estricta y bajo su responsabilidad, dónde aparecerá el gráfico. - Usar <em>includegraphics</em> sin entorno <em>figure</em> práctica que, como comentamos, aun siendo posible es no recomendable.</p>
+<p>El primero de ellos es que el entorno figure es flotante, esto es, <span class="math inline">\(\LaTeX\)</span> “decide” dónde lo localiza en el texto. Si queremos controlar este proceso tenemos varias opciones:</p>
+<ul>
+<li>Control débil del entorno <em>figure</em> con parámetros de control h (here), b (botton), t (top) como se muestra en el ejemplo anterior.</li>
+<li>Empleo del entorno <em>wrapfigure</em> gracias al paquete <a href="https://www.ctan.org/pkg/wrapfig">wrapfig</a> para que el texto pueda envolver al gráfico.</li>
+<li>Empleo del parámetro H del paquete <a href="https://www.ctan.org/pkg/float">float</a> para que el usuario determine, de manera estricta y bajo su responsabilidad, dónde aparecerá el gráfico.</li>
+<li>Usar <em>includegraphics</em> sin entorno <em>figure</em> práctica que, como comentamos, aun siendo posible es no recomendable.</li>
+</ul>
 <p>Podemos ver ejemplos concretos en la <a href="https://www.overleaf.com/learn/latex/Positioning_images_and_tables">ayuda de OverLeaf</a>.</p>
 <p>Otro de los problemas que podemos encontrar muchas veces es que queremos <em>ajustar</em> el espacio que queda entre el texto y el gráfico. Al insertar un gráfico pueden quedar unos espacios muy ámplios hasta el texto y esto, a veces, ocurre porque el gráfico tiene unos márgenes muy grandes. Para estar seguros de si es este el motivo se puede usar el comando <em>frame</em> de la siguiente manera:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
@@ -346,15 +360,24 @@ window.Quarto = {
 <p>Por último, puede ser de mucha utilidad saber que el paquete <a href="https://www.ctan.org/pkg/pdfpages">pdfpages</a> permite incluir mediante el comando:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\includepdf</span>[]{file.pdf}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>páginas seleccionadas del fichero file.pdf en un documento <span class="math inline">\(\LaTeX\)</span>. Esto puede ser una herramienta de inmensa ayuda por ejemplo si queremos generar un documento con documentación acreditativa, incluir declaraciones en documentos, etc…</p>
-<p>Pueder visualizar todos los ejemplos anteriores en el fichero presentacion1.pdf{target=“_pdf”}.</p>
+<p>Pueder visualizar todos los ejemplos anteriores en el fichero <a href="presentacion1.pdf" target="_pdf">presentacion1.pdf</a>.</p>
 </section>
 </section>
 <section id="creación-de-gráficos" class="level2">
 <h2 class="anchored" data-anchor-id="creación-de-gráficos">Creación de gráficos</h2>
-<p>Existen dos <em>macropaquetes</em> para la realización de gráficos en <span class="math inline">\(\LaTeX\)</span>: - <a href="http://www.ctan.org/pkg/pstricks">PSTricks</a>, - y <a href="http://www.texample.net/tikz/">PGF-TikZ</a>.</p>
-<p>En ambos casos proporcionan un gran abanico de comandos específicos.</p>
-<p>Podemos sacar provecho de ellos de varias maneras dependiendo del tiempo que estemos dispuetos a invertir en ello: - escribiendo nosotros directamente los códigos. Hay disponibles numerosos manuales, y ejemplos que podemos tomar como punto de partida para nuestros proyectos: - <a href="http://www.texample.net/tikz/examples/">http://www.texample.net/tikz/examples/</a> - <a href="http://tug.org/PSTricks/main.cgi?file=examples">http://tug.org/PSTricks/main.cgi?file=examples</a></p>
+<p>Existen dos <em>macropaquetes</em> para la realización de gráficos en <span class="math inline">\(\LaTeX\)</span>:</p>
 <ul>
+<li><a href="http://www.ctan.org/pkg/pstricks">PSTricks</a>,</li>
+<li>y <a href="http://www.texample.net/tikz/">PGF-TikZ</a>.</li>
+</ul>
+<p>En ambos casos proporcionan un gran abanico de comandos específicos.</p>
+<p>Podemos sacar provecho de ellos de varias maneras dependiendo del tiempo que estemos dispuetos a invertir en ello:</p>
+<ul>
+<li>escribiendo nosotros directamente los códigos. Hay disponibles numerosos manuales, y ejemplos que podemos tomar como punto de partida para nuestros proyectos:
+<ul>
+<li><a href="http://www.texample.net/tikz/examples/">http://www.texample.net/tikz/examples/</a></li>
+<li><a href="http://tug.org/PSTricks/main.cgi?file=examples">http://tug.org/PSTricks/main.cgi?file=examples</a></li>
+</ul></li>
 <li>Una aproximación intermedia sería emplear paquetes/manuales específicos, que aún basándose en los anteriores, proporcionan/analizan comandos específicos para realizar gráficos particulares como:
 <ul>
 <li><a href="http://pgfplots.net">PGFPlots</a> para representar funciones y datos,</li>
