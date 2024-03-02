@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -51,6 +85,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -166,7 +229,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#inserciónedición-de-gráficos." id="toc-inserciónedición-de-gráficos." class="nav-link active" data-scroll-target="#inserciónedición-de-gráficos.">Inserción/edición de gráficos.</a>
+  <ul class="collapse">
+  <li><a href="#generalidades-sobre-documentos-gráficos" id="toc-generalidades-sobre-documentos-gráficos" class="nav-link" data-scroll-target="#generalidades-sobre-documentos-gráficos">Generalidades sobre documentos gráficos</a></li>
+  <li><a href="#inserción-básica-de-gráficos" id="toc-inserción-básica-de-gráficos" class="nav-link" data-scroll-target="#inserción-básica-de-gráficos">Inserción básica de gráficos</a></li>
+  <li><a href="#inserción-avanzada-de-gráficos-edición" id="toc-inserción-avanzada-de-gráficos-edición" class="nav-link" data-scroll-target="#inserción-avanzada-de-gráficos-edición">Inserción avanzada de gráficos (edición)</a></li>
+  <li><a href="#dificultades-usuales" id="toc-dificultades-usuales" class="nav-link" data-scroll-target="#dificultades-usuales">Dificultades usuales</a></li>
+  <li><a href="#inclusión-de-páginas-completas-seleccionadas-de-ficheros-pdf" id="toc-inclusión-de-páginas-completas-seleccionadas-de-ficheros-pdf" class="nav-link" data-scroll-target="#inclusión-de-páginas-completas-seleccionadas-de-ficheros-pdf">Inclusión de páginas completas seleccionadas de ficheros pdf</a></li>
+  </ul></li>
+  <li><a href="#creación-de-gráficos" id="toc-creación-de-gráficos" class="nav-link" data-scroll-target="#creación-de-gráficos">Creación de gráficos</a></li>
+  <li><a href="#tutoriales-overleaf" id="toc-tutoriales-overleaf" class="nav-link" data-scroll-target="#tutoriales-overleaf">Tutoriales overleaf</a></li>
+  <li><a href="#transparencias-del-taller" id="toc-transparencias-del-taller" class="nav-link" data-scroll-target="#transparencias-del-taller">Transparencias del taller</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -190,12 +269,125 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>En el fichero <a href="taller-graficos1.pdf" target="_pdf">taller-graficos1.pdf</a> hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en <a href="taller-graficos2.pdf" target="_pdf">taller-graficos2.pdf</a> se muestras cómo generar gráficos empleando el propio LaTeX.</p>
-<p>Los ficheros <a href="taller-graficos1.tex">taller-graficos1.tex</a> y <a href="taller-graficos2.tex">taller-graficos2.tex</a> contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos.</p>
-<p><object data="taller-graficos1.pdf" type="application/pdf" width="100%" height="470"><p>Unable to display PDF file. <a href="taller-graficos1.pdf">Download</a> instead.</p></object></p>
-<p><object data="taller-graficos2.pdf" type="application/pdf" width="100%" height="470"><p>Unable to display PDF file. <a href="taller-graficos2.pdf">Download</a> instead.</p></object></p>
+<p>Todos sabemos que en un documento generado con <span class="math inline">\(\LaTeX{}\)</span> podemos incorporar gráficos.</p>
+<p>Lo que no es tan conocido es que, al insertarlos, permite editarlos ligeramente. Seleccionar parte de la imagen, redimensionar, girar, superponer, simetrizar, incluir texto son algunas de las modificaciones que podemos realizar sobre una imagen al incluirla en un documento de una manera sencilla sin necesidad de recurrir a un editor de gráfico como se explica en la <a href="#inserciónedición-de-gráficos">primera sección</a></p>
+<p>No obstante, la inclusión de muchos documentos gráficos en un mismo documento tiene varios inconvenientes: - dan como resultado documentos muy pesados, - y pese a ello, la calidad de los gráficos insertados no siempre es óptima.</p>
+<p>Para resolver estos inconvenientes <span class="math inline">\(\LaTeX\)</span> adoptó hace tiempo la estrategia <em>Do it yourself</em>. Esto es, el propio <span class="math inline">\(\LaTeX\)</span> interpreta una serie de instrucciones mediante las que crea el gráfico. El resultado son imágenes de la más alta calidad y de peso muy reducido, aunque para ello hay que invertir en tiempo de aprendizaje. En la <a href="#creación-de-gráficos">segunda sección</a> mostramos la potencialidad de esta capacidad de <span class="math inline">\(\LaTeX\)</span>.</p>
+<p>En el fichero <a href="presentacion1.pdf">presentacion1.pdf</a> hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en <a href="presentacion2.pdf">presentacion2.pdf</a> se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en <a href="https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos">nuestro repositorio de Github</a>, están encastrados al final de cada sección para su visualización. Los ficheros <a href="presentacion1.tex">presentacion1.tex</a> y <a href="presentacion2.tex">presentacion2.tex</a> contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta gráficos.</p>
+<section id="inserciónedición-de-gráficos." class="level2">
+<h2 class="anchored" data-anchor-id="inserciónedición-de-gráficos.">Inserción/edición de gráficos.</h2>
+<section id="generalidades-sobre-documentos-gráficos" class="level3">
+<h3 class="anchored" data-anchor-id="generalidades-sobre-documentos-gráficos">Generalidades sobre documentos gráficos</h3>
+<p>A la hora de preparar un gráfico para insertarlo en un documento <span class="math inline">\(\LaTeX{}\)</span> hemos de tener en cuenta que: - el resultado final dependerá mucho de cómo éste se haya generado y - que el fichero en el que se guarde no puede estar en un formato cualquiera.</p>
+<p>En general hemos de tener en cuenta que hay dos grupos básicos de gráficos: los mapas de bits (también llamados imágenes de pixeles) y gráficos vectoriales. Básicamente los primeros son una gran tabla donde se indica el color de cada punto del gráfico (pixel) mientras que los segundos son ficheros donde se guardan una serie de instrucciones para generar el gráfico. Por lo general los mapas de bits son más pesados y poco adecuados para el redimensionado que los gráficos vectoriales. Por lo tanto, hay que evitar el uso de mapas de bits cuando la naturaleza de gráfico nos lo permita, lo que es imposible el caso de fotografías, capturas de pantalla, imágenes descargadas de la red, …</p>
+<p>Por último si queremos generar un fichero PDF con <span class="math inline">\(\LaTeX{}\)</span> los compiladores más usuales únicamente aceptarán ficheros en formato PNG, JPEG o PDF, por lo que te puedes ver obligado a exportar tu imagen a uno de estos formatos.</p>
+<p>Para ampliar detalles y buscar programas que nos ayuden en estas labores tan específicas recomendamos la lectura del siguiente <a href="https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inserci%C3%B3n_de_figuras_externas">Wikibook</a>.</p>
+</section>
+<section id="inserción-básica-de-gráficos" class="level3">
+<h3 class="anchored" data-anchor-id="inserción-básica-de-gráficos">Inserción básica de gráficos</h3>
+<p>La inserción de un gráfico requiere de la declaracion del paquete <em>graphicx</em> en el preámbulo mediante el comando:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En cualquier punto del cuerpo del documento podremos incluir una imagen mediante el comando:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="bu">\includegraphics</span>[parametros]{<span class="ex">nombregrafico</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>No obstante, recomendamos que los gráficos siempre se declaren en un entorno <em>figure</em> de la siguiente manera:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\centering</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">\includegraphics</span>[parametros]{<span class="ex">nombregrafico</span>}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\caption</span>{Leyenda bajo el grafico}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\label</span>{<span class="ex">fig:etiqueta</span>}</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De esta forma la imagen aparecerá con la leyenda que describa su contenido en el campo <em>caption</em> y se podrá hacer referencia a ella desde el texto empleando la etiqueta declarada en <em>label</em>, al igual que se hace con tablas o fórmulas.</p>
+<p>Mediante distintos comandos incluidos en el campo <em>parametros</em> se puede modificar el aspecto de la imagen, lo que nos permite editarlos ligeramente. Este punto se amplia a continuación.</p>
+</section>
+<section id="inserción-avanzada-de-gráficos-edición" class="level3">
+<h3 class="anchored" data-anchor-id="inserción-avanzada-de-gráficos-edición">Inserción avanzada de gráficos (edición)</h3>
+<p>Así, por ejemplo, podemos incluir en el campo parámetros los siguientes comandos (separados mediante comas):</p>
+<ul>
+<li><em>scale=0.5</em>, para escalar el tamaño a la mitad,</li>
+<li><em>height=5cm</em>, para fijar la anchura del gráfico a 5cm,</li>
+<li>*width=0.5, para ajustar la anchura de la imagen a la mitad del espacio que ocupa el texto,</li>
+<li><em>angle=90</em>, para girar la imagen 90 grados,</li>
+<li><em>trim = 10mm 5mm 50mm 55mm, clip</em> para recortar la imagen quitando 10mm por izda, 5 mm por debajo, 50mm por la derecha y 55mm por arriba,</li>
+<li><em>draft</em>, para agilizar la compilación de manera que no incluye el gráfico pero deja el espacio apropiado.</li>
+</ul>
+<p>Para una descripción en detalle de estas y otras opciones ver la documentación paquete <a href="https://ctan.org/pkg/graphicx?lang=en">graphicx</a>.</p>
+<p>Así por ejemplo, los comandos</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=0.45<span class="fu">\textwidth</span>]{<span class="ex">./graficos/sorpresa.pdf</span>}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\hspace</span>{0.25cm}</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\reflectbox</span>{</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=0.45<span class="fu">\textwidth</span>]{<span class="ex">./graficos/sorpresa.pdf</span>}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{La misma imagen reflejada.}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>muestran dos veces la imagen del fichero <em>sorpresa.pdf</em>, que se encuentra en la subcarpeta <em>graficos</em>, apareciendo la segunda vez simetrizada gracias al comando *.</p>
+<p>La superposición de gráficos o texto a una imagen se puede hacer mediante el comando</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\put</span>(coordenadas){objeto}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>se pueden superponer ‘el objeto’ en la posicion ‘coordenadas’. De esta manera los comandos</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[angle=270,width=7cm]{<span class="ex">./graficos/fig_9</span>}</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\put</span>(-100,-55){<span class="ss">$</span><span class="sc">\displaystyle</span><span class="ss"> s:=</span><span class="sc">\frac</span><span class="ss">{a+b+c}{2}$</span>}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>incluyen sobre el gráfico <em>fig_9</em>, que ha sido girado 270º, la fórmula matemática <span class="math inline">\(\displaystyle s:=\frac{a+b+c}{2}\)</span> en la posición determinada por las coordenadas <span class="math inline">\((-100,-55)\)</span>.</p>
+</section>
+<section id="dificultades-usuales" class="level3">
+<h3 class="anchored" data-anchor-id="dificultades-usuales">Dificultades usuales</h3>
+<p>A continuación comentamos cómo tratar dos de los <em>inconvenientes</em> que los usuarios de <span class="math inline">\(\LaTeX\)</span> noveles encuentran a la hora de trabajar con gráficos.</p>
+<p>El primero de ellos es que el entorno figure es flotante, esto es, <span class="math inline">\(\LaTeX\)</span> “decide” dónde lo localiza en el texto. Si queremos controlar este proceso tenemos varias opciones: - Control débil del entorno <em>figure</em> con parámetros de control h (here), b (botton), t (top) como se muestra en el ejemplo anterior. - Empleo del entorno <em>wrapfigure</em> gracias al paquete <a href="https://www.ctan.org/pkg/wrapfig">wrapfig</a> para que el texto pueda envolver al gráfico. - Empleo del parámetro H del paquete <a href="https://www.ctan.org/pkg/float">float</a> para que el usuario determine, de manera estricta y bajo su responsabilidad, dónde aparecerá el gráfico. - Usar <em>includegraphics</em> sin entorno <em>figure</em> práctica que, como comentamos, aun siendo posible es no recomendable.</p>
+<p>Podemos ver ejemplos concretos en la <a href="https://www.overleaf.com/learn/latex/Positioning_images_and_tables">ayuda de OverLeaf</a>.</p>
+<p>Otro de los problemas que podemos encontrar muchas veces es que queremos <em>ajustar</em> el espacio que queda entre el texto y el gráfico. Al insertar un gráfico pueden quedar unos espacios muy ámplios hasta el texto y esto, a veces, ocurre porque el gráfico tiene unos márgenes muy grandes. Para estar seguros de si es este el motivo se puede usar el comando <em>frame</em> de la siguiente manera:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\frame</span>{<span class="bu">\includegraphics</span>{<span class="ex">./graficos/fig_9</span>}}</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>a la hora de insertar el gráfico para que este quede enmarcado. De esta forma podemos ajustar con los parámetros <em>trim</em> y <em>clip</em> el espacio a cortar en los márgenes de la imagen. Además de eliminar el espacio innecesario, esto nos permitirá aumentar el tamaño de la parte verdaderamente relevante de la imagen. Si aún así queremos ajustar el espacio entre el texto y la imagen siempre podemos usar (sin abusar) el comando <em></em>.</p>
+</section>
+<section id="inclusión-de-páginas-completas-seleccionadas-de-ficheros-pdf" class="level3">
+<h3 class="anchored" data-anchor-id="inclusión-de-páginas-completas-seleccionadas-de-ficheros-pdf">Inclusión de páginas completas seleccionadas de ficheros pdf</h3>
+<p>Por último, puede ser de mucha utilidad saber que el paquete <a href="https://www.ctan.org/pkg/pdfpages">pdfpages</a> permite incluir mediante el comando:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\includepdf</span>[]{file.pdf}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>páginas seleccionadas del fichero file.pdf en un documento <span class="math inline">\(\LaTeX\)</span>. Esto puede ser una herramienta de inmensa ayuda por ejemplo si queremos generar un documento con documentación acreditativa, incluir declaraciones en documentos, etc…</p>
+<p>Pueder visualizar todos los ejemplos anteriores en el fichero presentacion1.pdf{target=“_pdf”}.</p>
+</section>
+</section>
+<section id="creación-de-gráficos" class="level2">
+<h2 class="anchored" data-anchor-id="creación-de-gráficos">Creación de gráficos</h2>
+<p>Existen dos <em>macropaquetes</em> para la realización de gráficos en <span class="math inline">\(\LaTeX\)</span>: - <a href="http://www.ctan.org/pkg/pstricks">PSTricks</a>, - y <a href="http://www.texample.net/tikz/">PGF-TikZ</a>.</p>
+<p>En ambos casos proporcionan un gran abanico de comandos específicos.</p>
+<p>Podemos sacar provecho de ellos de varias maneras dependiendo del tiempo que estemos dispuetos a invertir en ello: - escribiendo nosotros directamente los códigos. Hay disponibles numerosos manuales, y ejemplos que podemos tomar como punto de partida para nuestros proyectos: - <a href="http://www.texample.net/tikz/examples/">http://www.texample.net/tikz/examples/</a> - <a href="http://tug.org/PSTricks/main.cgi?file=examples">http://tug.org/PSTricks/main.cgi?file=examples</a></p>
+<ul>
+<li>Una aproximación intermedia sería emplear paquetes/manuales específicos, que aún basándose en los anteriores, proporcionan/analizan comandos específicos para realizar gráficos particulares como:
+<ul>
+<li><a href="http://pgfplots.net">PGFPlots</a> para representar funciones y datos,</li>
+<li><a href="https://www.ctan.org/pkg/chemfig">Chemfig</a> para representar gráficamente sustancias químicas,</li>
+<li><a href="https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_5)%E2%80%94Creating_Mind_Maps#:~:text=Part%204%20%7C-,Part,-5">Diagramas de árboles</a>,</li>
+<li>o <a href="https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Creating_Flowcharts#The_tikzstyle_command:~:text=Part%202%20%7C-,Part,-3%20%7C%20Part">diagramas de flujo</a>.</li>
+</ul></li>
+<li>Por último, la opción que a priory puede ser más conservadora en inversión de tiempo sería crear los gráficos con otros programas que permitan exportarlos a <span class="math inline">\(\LaTeX\)</span>. Son numerosos los programas que ofrecen la posibilidad de exportar gráficos generados con ellos bien a TikZ:
+<ul>
+<li><a href="https://ctan.org/pkg/gnuplottex">gnuplot</a>,</li>
+<li><a href="https://mcj.sourceforge.net/latex_and_xfig.html">Xfig</a> (versión para Windows: <a href="http://winfig.com/">WinFIG</a>),</li>
+<li><a href="http://www.geogebra.org/cms/">GeoGebra</a>,</li>
+</ul>
+o bien a PSTricks
+<ul>
+<li><a href="https://inkscape-manuals.readthedocs.io/en/latest/export-other-formats.html">Inkscape</a>,</li>
+<li><a href="http://latexdraw.sourceforge.net">LatexDraw</a>.</li>
+<li><a href="http://dia-installer.de/index.html.en">Dia</a>.</li>
+</ul></li>
+</ul>
+<p>Los resultados de los comandos analizados en esta sección pueden ser visualizados en <a href="presentacion2.pdf" target="_pdf">presentacion2.pdf</a>.</p>
+</section>
+<section id="tutoriales-overleaf" class="level2">
+<h2 class="anchored" data-anchor-id="tutoriales-overleaf">Tutoriales overleaf</h2>
+<p>Overleaf tiene varios tutoriales interesantes sobre cómo <a href="https://www.overleaf.com/learn/latex/Inserting_Images">insertar imágenes</a> o <a href="https://www.overleaf.com/learn/latex/TikZ_package">tikz</a>.</p>
+</section>
+<section id="transparencias-del-taller" class="level2">
+<h2 class="anchored" data-anchor-id="transparencias-del-taller">Transparencias del taller</h2>
+<p><object data="presentacion1.pdf" type="application/pdf" width="100%" height="470"><p>Unable to display PDF file. <a href="presentacion1.pdf">Download</a> instead.</p></object></p>
+<p><object data="presentacion2.pdf" type="application/pdf" width="100%" height="470"><p>Unable to display PDF file. <a href="presentacion2.pdf">Download</a> instead.</p></object></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -590,4 +782,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>
