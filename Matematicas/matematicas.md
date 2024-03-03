@@ -16,7 +16,7 @@ produce $\cos(x+y)^{2}=\sqrt{2+x^2}$.
 \]
 ```
 
-produce 
+produce
 $$
   \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
 $$
@@ -158,7 +158,7 @@ produce $a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \d
 Puedes escribir subíndices y superíndices de la siguiente forma:
 
 ```latex
-\[ 
+\[
   n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 \]
 ```
@@ -173,12 +173,12 @@ Se pueden anidar y usar subíndices y superíndices al mismo tiempo:
 
 ```latex
 \[
-  \sum_{n=1}^{\infty} x^{x^n}
+  \sum_{n=1}^{\infty} x^{x^{n}}
 \]
 ```
 
 $$
-\sum_{n=1}^{\infty} x^{x^n}
+\sum_{n=1}^{\infty} x^{x^{n}}
 $$
 
 El comando `\substack` para líneas centradas
@@ -214,7 +214,8 @@ $\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
 En lugar de escribir tres puntos seguidos, `\dots, \ldots, \cdots` producen puntos suspensivos con el espaciado correcto. `\dots` intenta adaptarse al entorno. `\ldots` da como resultado puntos "bajos" y `\cdots`centrados. Un ejemplo:
 
 ```latex
-x=1,2,\ldots 3, x+y+\cdots +z, x\times y \times \dots z
+$x=1,2,\ldots, 3, x+y+\cdots +z$, 
+$x\times y \times \dots z$
 ```
 
 produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$.
@@ -355,18 +356,24 @@ La matriz $A =
 
 ### Integrales, sumatorios, raíces
 
-Hay varios símbolos de integral incluidos que se adaptan al modo matemático en el que se esté
+Hay varios símbolos de integral incluidos que se adaptan al modo matemático en el que se esté. Los sumatorios o productos se escriben con `\sum` y `\prod`.
+
+| Código | Salida |
+| --- | --- |
+| `$\oint \iint \iiint \iiiint \idotsint$` | $\oint \iint \iiint \iiiint \idotsint$ |
+| `\sum` | $\sum$ |
+| `\prod` | $\prod$ |
 
 ```latex
-$\oint \iint \iiint \iiiint \idotsint$
 \[
-  \int_{a}^{b} f(x)\, \mathrm{d}x
+  \int_{a}^{b} f(x)\, \mathrm{d}x = 
+  \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} = 
+  \prod_{j\geq 1} \alpha_{j}
 \]
-```
+````
 
-$\oint \iint \iiint \iiiint \idotsint$
 $$
-\int_{a}^{b} f(x)\, \mathrm{d}x
+\int_{a}^{b} f(x)\, \mathrm{d}x = \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} = \prod_{j\geq 1} \alpha_{j}.
 $$ 
 
 #### Raíces
@@ -537,7 +544,10 @@ $$
 
 ## Entornos multilínea
 
-Pueden ser de dos tipos: ajustados o alineados.
+A la hora de escribir una fórmula que ocupe varias líneas tenemos que decidir dos cuestiones básicas:
+
+- ¿Hay algún lugar/símbolo en las ecuaciones que nos sirva como elemento para alinear el resto de la ecuación? 
+- ¿Consideramos la fórmula como una única ecuación, y una única etiqueta por tanto, o cada línea debería estar etiquetada? 
 
 ### Entornos ajustados
 
@@ -663,8 +673,6 @@ $$
               & = y z
 \end{alignat}
 $$
-
-
 
 ### Entornos subsidiarios
 
