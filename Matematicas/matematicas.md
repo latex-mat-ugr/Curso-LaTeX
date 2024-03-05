@@ -16,7 +16,7 @@ produce $\cos(x+y)^{2}=\sqrt{2+x^2}$.
 \]
 ```
 
-produce 
+produce
 $$
   \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
 $$
@@ -28,26 +28,25 @@ El entorno *equation* produce el mismo resultado y añade una marca a la ecuaci�
   e^{i\pi}+1=0 
 \end{equation}
 ```
+
 $$
-  e^{i\pi}+1=0 
+  e^{i\pi}+1=0
 $$ {#eq-identidad}
 
 Los estilos que LaTeX usa por defecto para escribir matemáticas son:
 
-- `textstyle`: matemáticas en línea
-- `displaystyle`: matemáticas centradas en línea separada
-- `scriptstyle`: sub y superíndices
-- `scriptscriptstyle`: sub y superíndices de segundo nivel
+* `textstyle`: matemáticas en línea
+* `displaystyle`: matemáticas centradas en línea separada
+* `scriptstyle`: sub y superíndices
+* `scriptscriptstyle`: sub y superíndices de segundo nivel
 
-Podemos forzar a LaTeX a escribir como lo hace en línea separada añadiendo la orden `\displaystyle`. 
+Podemos forzar a LaTeX a escribir como lo hace en línea separada añadiendo la orden `\displaystyle`.
 
 ```latex
 Sean $f(x)=\frac{x}{2}$ y $\displaystyle g(x)=\frac{x}{3}$ las funciones
 ````
 
 Es preferible no forzar estos cambios y, seguramente, la solución más razonable sea escribir la función $g$ en una línea separada.
-
-
 
 ## Espaciado
 
@@ -109,13 +108,13 @@ Las barras, sencillas o dobles, que usamos habitualmente para escribir el módul
 
 ### Tamaño automático de los delimitadores
 
-LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos `left` y `right`. 
+LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos `left` y `right`.
 
 ```latex
   \[
     \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
   \]
-````
+```
 
 $$
     \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
@@ -158,7 +157,7 @@ produce $a + b$, $a - b$, $-a$, $a / b$, $a b$, $a \cdot b$, $a \times b$, $a \d
 Puedes escribir subíndices y superíndices de la siguiente forma:
 
 ```latex
-\[ 
+\[
   n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 \]
 ```
@@ -173,12 +172,12 @@ Se pueden anidar y usar subíndices y superíndices al mismo tiempo:
 
 ```latex
 \[
-  \sum_{n=1}^{\infty} x^{x^n}
+  \sum_{n=1}^{\infty} x^{x^{n}}
 \]
 ```
 
 $$
-\sum_{n=1}^{\infty} x^{x^n}
+\sum_{n=1}^{\infty} x^{x^{n}}
 $$
 
 El comando `\substack` para líneas centradas
@@ -214,7 +213,8 @@ $\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
 En lugar de escribir tres puntos seguidos, `\dots, \ldots, \cdots` producen puntos suspensivos con el espaciado correcto. `\dots` intenta adaptarse al entorno. `\ldots` da como resultado puntos "bajos" y `\cdots`centrados. Un ejemplo:
 
 ```latex
-x=1,2,\ldots 3, x+y+\cdots +z, x\times y \times \dots z
+$x=1,2,\ldots, 3, x+y+\cdots +z$, 
+$x\times y \times \dots z$
 ```
 
 produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$.
@@ -263,6 +263,7 @@ Un uso habitual de este entorno es definir funciones a trozos: suelen tener una 
 \end{cases}
 \]
 ```
+
 $$
   f(x) =
   \begin{cases}
@@ -279,6 +280,7 @@ Si la fórmula que define la función es muy alta se puede usar `dcases` en luga
 Las matrices son un caso particular de arrays. El paquete *amsmath* tiene varios tipos predefinidos dependiendo de los delimitadores que se quieran usar. En este caso no hay que declarar ni tamaño ni alineación:
 
 `matrix` no tiene delimitadores:
+
 ```latex
 \[
   \begin{matrix}
@@ -320,7 +322,7 @@ $$
   \begin{pmatrix}
   a_{11} & a_{12} & a_{13} \\
   a_{21} & a_{22} & a_{23}
-  \end{pmatrix} 
+  \end{pmatrix}
   \quad
   \begin{bmatrix}
   a_{11} & a_{12} & a_{13} \\
@@ -347,27 +349,33 @@ La matriz $A =
 
 La matriz $A =
   \left(
-  \begin{smallmatrix} 
-  1 & 2 \\ 
-  3 & 4 
+  \begin{smallmatrix}
+  1 & 2 \\
+  3 & 4
   \end{smallmatrix}
   \right)$ se ve bien en una línea
 
 ### Integrales, sumatorios, raíces
 
-Hay varios símbolos de integral incluidos que se adaptan al modo matemático en el que se esté
+Hay varios símbolos de integral incluidos que se adaptan al modo matemático en el que se esté. Los sumatorios o productos se escriben con `\sum` y `\prod`.
+
+| Código                                   | Salida                                 |
+| ---------------------------------------- | -------------------------------------- |
+| `$\oint \iint \iiint \iiiint \idotsint$` | $\oint \iint \iiint \iiiint \idotsint$ |
+| `\sum`                                   | $\sum$                                 |
+| `\prod`                                  | $\prod$                                |
 
 ```latex
-$\oint \iint \iiint \iiiint \idotsint$
 \[
-  \int_{a}^{b} f(x)\, \mathrm{d}x
+  \int_{a}^{b} f(x)\, \mathrm{d}x = 
+  \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} = 
+  \prod_{j\geq 1} \alpha_{j}
 \]
-```
+````
 
-$\oint \iint \iiint \iiiint \idotsint$
 $$
-\int_{a}^{b} f(x)\, \mathrm{d}x
-$$ 
+\int_{a}^{b} f(x)\, \mathrm{d}x = \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} = \prod_{j\geq 1} \alpha_{j}.
+$$
 
 #### Raíces
 
@@ -407,7 +415,6 @@ da como resultado
 $$
   \overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
 $$
-
 
 `\xrightarrow[debajo]{arriba}`y `\xleftrightarrow[debajo]{arriba}` permiten escribir flechas extensibles con texto encima y debajo. Por ejemplo,
 
@@ -464,8 +471,7 @@ Con el paquete *esvect* se pueden representar vectores mejor
 ## Operadores y funciones
 
 LaTeX tiene predefinidos algunas funciones usuales. Estas funciones/operadores se
-escriben con letra recta siempre. Algunos de estos operadores o funciones además 
-pueden tener límites que se añaden como subíndices o superíndices.
+escriben con letra recta siempre. Algunos de estos operadores o funciones además pueden tener límites que se añaden como subíndices o superíndices.
 
 | código    | salida   | código    | salida    | código    | salida    |
 | --------- | -------- | --------- | --------- | --------- | --------- |
@@ -537,7 +543,10 @@ $$
 
 ## Entornos multilínea
 
-Pueden ser de dos tipos: ajustados o alineados.
+A la hora de escribir una fórmula que ocupe varias líneas tenemos que decidir dos cuestiones básicas:
+
+* ¿Hay algún lugar/símbolo en las ecuaciones que nos sirva como elemento para alinear el resto de la ecuación?
+* ¿Consideramos la fórmula como una única ecuación, y una única etiqueta por tanto, o cada línea debería estar etiquetada?
 
 ### Entornos ajustados
 
@@ -555,6 +564,7 @@ $$
 x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 \end{gather}
 $$
+
 El segundo, multline, alinea la primera fórmula a la izquierda, la última a la
 derecha y las intermedias, si las hay, las centra.
 
@@ -606,7 +616,7 @@ columna y a la derecha la última
 ```latex
 $$
 \begin{flalign}
- x+y +2 z	& = 6 	& 2u+4v & =8   \\
+ x+y +2 z & = 6 & 2u+4v & =8   \\
 2x-3y & = 4 & 3u-4v  & = 10
 \end{flalign}
 $$
@@ -614,7 +624,7 @@ $$
 
 $$
 \begin{flalign}
- x+y +2 z	& = 6 	& 2u+4v & =8   \\
+ x+y +2 z & = 6 & 2u+4v & =8   \\
 2x-3y & = 4 & 3u-4v  & = 10
 \end{flalign}
 $$
@@ -663,8 +673,6 @@ $$
               & = y z
 \end{alignat}
 $$
-
-
 
 ### Entornos subsidiarios
 
@@ -757,11 +765,11 @@ o dentro de otro y se alinea como corresponda
 
 ```latex
 \begin{align}
-	\left.
+  \left.
   \begin{split}
              f(x) & =    (x_{1}x_{2} ) \\
-		           & = x+y
-	\end{split}
+               & = x+y
+  \end{split}
   \right\}
   \implies y+z
 \end{align}
@@ -769,11 +777,11 @@ o dentro de otro y se alinea como corresponda
 
 $$
 \begin{align}
-	\left.
+  \left.
   \begin{split}
              f(x) & =    (x_{1}x_{2} ) \\
-		           & = x+y
-	\end{split}
+                  & = x+y
+  \end{split}
   \right\}
   \implies y+z
 \end{align}
@@ -802,7 +810,7 @@ Una versión común sería la siguiente: tenemos los entornos teorema, propo, le
 \newtheorem{observ}{Observación}[section]
 ```
 
-Los estilos *theorem*, *definition* y *remark* escriben, o no, el contenido en itálica. Pruébalos. 
+Los estilos *theorem*, *definition* y *remark* escriben, o no, el contenido en itálica. Pruébalos.
 
 Además de etiquetarlos para futuras referencias, se le puede añadir una descripción a cualquiera de ellos.
 
