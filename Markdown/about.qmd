@@ -7,4 +7,4 @@ lang: es
 
 # Video \#yosigopublicando
 
-{{< video https://www.youtube.com/watch?v=hoEsnfuVQM8&t=2s >}}
+{{< video https://www.youtube.com/watch?v=hoEsnfuVQM8 >}}

@@ -13,3 +13,8 @@ Overleaf ofrece un excelente [tutorial](https://es.overleaf.com/learn/latex/Beam
 
 Ejemplo con [JSXGraph](https://jsxgraph.uni-bayreuth.de/): 
 [Beamer](beamer-jsxgraph.html){target="_blank"}
+
+
+## Vídeo \#yosigopublicando
+
+{{< video https://www.youtube.com/watch?v=FOm1MXviZI8 >}}
