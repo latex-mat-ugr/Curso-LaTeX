@@ -1,3 +1,19 @@
+# Estructura
+
+## Subtítulo
+
+### Otro nivel
+
+##### Y otro
+
+Podemos usar de una a seis \# para indicar nivel de profundidad
+
+```markdown
+# Título
+## Subtítulo
+...
+```
+
 # Listas
 
 Podemos empezar una lista con `-` o bien `*`
@@ -41,7 +57,7 @@ Las fórmulas en línea las escribimos con `$..$` las centradas con doble `$$` o
 | Normal | Centrado | a derecha|
 
 
-# Tipos de letra
+# Resaltar texto
 
 ```markdown
 En *itálica*, **negrita** y en las dos **_ambos_**.
@@ -50,6 +66,18 @@ Que da lugar a
 
 En *itálica*, **negrita** y en las dos **_ambos_**.
 
+Podemos tachar con doble tilde
+
+```markdown
+~~tachado~~
+```
+que da lugar a ~~tachado~~.
+
+También podemos usar 
+```markdown
+`monoespaciado`
+```
+para texto `monoespaciado`
 
 # Enlaces
 
@@ -59,8 +87,23 @@ Sintáxis
 [ugr](http://www.ugr.es)
 ```
 
-Un enlace a la [ugr](http://www.ugr.es)
-y si queremos imágenes, ponemos un ! delante
+Un enlace a la [ugr](http://www.ugr.es).
+
+O con citas, por ejemplo: [Universidad de Granada][UGR]; en la página de esa [universidad][UGR], se encuentran muchas cosas.
+
+[UGR]: https://www.ugr.es "Universidad de Granada"
+
+Para ello usamos el formato `[texto enlace][id]` y en cualquier sitio añadimos lo siguiente
+
+```markdown
+
+[id]: https://dondesea.io "Descripción"
+
+```
+
+# Imágenes
+
+Si queremos imágenes, ponemos un ! delante
 ```markdown
 ![Una foto](apery.png)
 ```
@@ -68,21 +111,6 @@ y si queremos imágenes, ponemos un ! delante
 ![Una afoto](apery.png)
 
 
-# Estructura
-
-## Subtítulo
-
-### Otro nivel
-
-##### Y otro
-
-Podemos usar de una a seis \# para indicar nivel de profundidad
-
-```markdown
-# Título
-## Subtítulo
-...
-```
 
 # Citas
 
@@ -125,14 +153,8 @@ Para convertirlo en transparencias hacemos
 pandoc -s --mathjax -t slidy resumen.md -o resumen.html
 ```
 
-o localmente con
-
-```bash
-pandoc -s --mathjax=/Users/pedro/lib/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-	-t slidy resumen.md -o resumen.html
-```
 
 También podemos utilizar [remark](http://remarkjs.com), de hecho
 estas transparencias están hechas con `remark`([ejemplo](transparencias-remark.html){target="_blank"})
 
-O la extensión [Marp](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) de Visual Studio Code
+O la extensión [Marp](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) de Visual Studio Code, o [quarto](https://quarto.org), entre otros.

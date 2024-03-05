@@ -4,3 +4,7 @@ lang: es
 ---
 
 {{< include README.md >}}
+
+# Video \#yosigopublicando
+
+{{< video https://www.youtube.com/watch?v=hoEsnfuVQM8 >}}
