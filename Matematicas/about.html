@@ -448,7 +448,7 @@ window.Quarto = {
 <div class="sourceCode" id="cb12"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$a + b$</span>, <span class="ss">$a - b$</span>, <span class="ss">$-a$</span>, <span class="ss">$a / b$</span>, <span class="ss">$a b$</span>, <span class="ss">$a </span><span class="sc">\cdot</span><span class="ss"> b$</span>, <span class="ss">$a </span><span class="sc">\times</span><span class="ss"> b$</span>, <span class="ss">$a </span><span class="sc">\div</span><span class="ss"> b$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math inline">\(a + b\)</span>, <span class="math inline">\(a - b\)</span>, <span class="math inline">\(-a\)</span>, <span class="math inline">\(a / b\)</span>, <span class="math inline">\(a b\)</span>, <span class="math inline">\(a \cdot b\)</span>, <span class="math inline">\(a \times b\)</span>, <span class="math inline">\(a \div b\)</span>.</p>
 <p>Puedes escribir subíndices y superíndices de la siguiente forma:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[ </span></span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  n^{2}, x^{1/x}, x_{n}, </span><span class="sc">\lim</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">}</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>que da como resultado</p>
@@ -457,10 +457,10 @@ n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 \]</span></p>
 <p>Se pueden anidar y usar subíndices y superíndices al mismo tiempo:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\sum</span><span class="ss">_{n=1}^{</span><span class="sc">\infty</span><span class="ss">} x^{x^n}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\sum</span><span class="ss">_{n=1}^{</span><span class="sc">\infty</span><span class="ss">} x^{x^{n}}</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
-\sum_{n=1}^{\infty} x^{x^n}
+\sum_{n=1}^{\infty} x^{x^{n}}
 \]</span></p>
 <p>El comando <code>\substack</code> para líneas centradas</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
@@ -481,7 +481,8 @@ n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 <section id="puntos-suspensivos" class="level3">
 <h3 class="anchored" data-anchor-id="puntos-suspensivos">Puntos suspensivos</h3>
 <p>En lugar de escribir tres puntos seguidos, <code>\dots, \ldots, \cdots</code> producen puntos suspensivos con el espaciado correcto. <code>\dots</code> intenta adaptarse al entorno. <code>\ldots</code> da como resultado puntos “bajos” y <code>\cdots</code>centrados. Un ejemplo:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x=1,2,<span class="fu">\ldots</span> 3, x+y+<span class="fu">\cdots</span> +z, x<span class="fu">\times</span> y <span class="fu">\times</span> <span class="fu">\dots</span> z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$x=1,2,</span><span class="sc">\ldots</span><span class="ss">, 3, x+y+</span><span class="sc">\cdots</span><span class="ss"> +z$</span>, </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$x</span><span class="sc">\times</span><span class="ss"> y </span><span class="sc">\times</span><span class="ss"> </span><span class="sc">\dots</span><span class="ss"> z$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>produce <span class="math inline">\(x=1,2,\ldots 3\)</span>, <span class="math inline">\(x+y+\cdots +z\)</span>, <span class="math inline">\(x\times y \times \dots \times z\)</span>.</p>
 </section>
 <section id="arrays-y-matrices" class="level3">
@@ -598,13 +599,40 @@ n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 </section>
 <section id="integrales-sumatorios-raíces" class="level3">
 <h3 class="anchored" data-anchor-id="integrales-sumatorios-raíces">Integrales, sumatorios, raíces</h3>
-<p>Hay varios símbolos de integral incluidos que se adaptan al modo matemático en el que se esté</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\oint</span><span class="ss"> </span><span class="sc">\iint</span><span class="ss"> </span><span class="sc">\iiint</span><span class="ss"> </span><span class="sc">\iiiint</span><span class="ss"> </span><span class="sc">\idotsint</span><span class="ss">$</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\int</span><span class="ss">_{a}^{b} f(x)</span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\mathrm</span><span class="ss">{d}x</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><span class="math inline">\(\oint \iint \iiint \iiiint \idotsint\)</span> <span class="math display">\[
-\int_{a}^{b} f(x)\, \mathrm{d}x
+<p>Hay varios símbolos de integral incluidos que se adaptan al modo matemático en el que se esté. Los sumatorios o productos se escriben con <code>\sum</code> y <code>\prod</code>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Código</th>
+<th>Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\oint \iint \iiint \iiiint \idotsint$</code></td>
+<td><span class="math inline">\(\oint \iint \iiint \iiiint \idotsint\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\sum</code></td>
+<td><span class="math inline">\(\sum\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\prod</code></td>
+<td><span class="math inline">\(\prod\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb23"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\int</span><span class="ss">_{a}^{b} f(x)</span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\mathrm</span><span class="ss">{d}x = </span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\lim</span><span class="ss">_{n </span><span class="sc">\to</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">} </span><span class="sc">\sum</span><span class="ss">_{k=1}^{n} f(a_{k}) </span><span class="sc">\frac</span><span class="ss">{b-a}{n} = </span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\prod</span><span class="ss">_{j</span><span class="sc">\geq</span><span class="ss"> 1} </span><span class="sc">\alpha</span><span class="ss">_{j}</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\int_{a}^{b} f(x)\, \mathrm{d}x = \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} = \prod_{j\geq 1} \alpha_{j}.
 \]</span></p>
 <section id="raíces" class="level4">
 <h4 class="anchored" data-anchor-id="raíces">Raíces</h4>
@@ -993,7 +1021,11 @@ f(x)=x^2,\text{ si $x&gt;0$ y $\cos(x)$ en otro caso}
 </section>
 <section id="entornos-multilínea" class="level2">
 <h2 class="anchored" data-anchor-id="entornos-multilínea">Entornos multilínea</h2>
-<p>Pueden ser de dos tipos: ajustados o alineados.</p>
+<p>A la hora de escribir una fórmula que ocupe varias líneas tenemos que decidir dos cuestiones básicas:</p>
+<ul>
+<li>¿Hay algún lugar/símbolo en las ecuaciones que nos sirva como elemento para alinear el resto de la ecuación?</li>
+<li>¿Consideramos la fórmula como una única ecuación, y una única etiqueta por tanto, o cada línea debería estar etiquetada?</li>
+</ul>
 <section id="entornos-ajustados" class="level3">
 <h3 class="anchored" data-anchor-id="entornos-ajustados">Entornos ajustados</h3>
 <p>Hay dos: <em>gather</em> y <em>multline</em>. El primero de ellos muestra las ecuaciones centradas una tras otra. Se usa <code>\\</code> para partir líneas en la expresión. Por ejemplo</p>
@@ -1004,7 +1036,8 @@ f(x)=x^2,\text{ si $x&gt;0$ y $\cos(x)$ en otro caso}
 \begin{gather}
 x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 \end{gather}
-\]</span> El segundo, multline, alinea la primera fórmula a la izquierda, la última a la derecha y las intermedias, si las hay, las centra.</p>
+\]</span></p>
+<p>El segundo, multline, alinea la primera fórmula a la izquierda, la última a la derecha y las intermedias, si las hay, las centra.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">multline</span>}</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ss">x+y+z_1 + </span><span class="sc">\lim</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> 0} </span><span class="sc">\int</span><span class="ss">_{0}^{x^2} f(x)</span><span class="sc">\,\mathrm</span><span class="ss">{d}x +</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="sc">\frac</span><span class="ss">{x-1}{x+1} </span><span class="sc">\\</span></span>
@@ -1040,13 +1073,13 @@ x+y &amp; = 6 \\
 <p><em>flalign</em> es una variante de align que alinea a la izquierda la primera columna y a la derecha la última</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">flalign</span>}</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y +2 z   &amp; = 6   &amp; 2u+4v &amp; =8   </span><span class="sc">\\</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y +2 z &amp; = 6 &amp; 2u+4v &amp; =8   </span><span class="sc">\\</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="ss">2x-3y &amp; = 4 &amp; 3u-4v  &amp; = 10</span></span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">flalign</span>}</span>
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{flalign}
-x+y +2 z   &amp; = 6   &amp; 2u+4v &amp; =8   \\
+x+y +2 z &amp; = 6 &amp; 2u+4v &amp; =8   \\
 2x-3y &amp; = 4 &amp; 3u-4v  &amp; = 10
 \end{flalign}
 \]</span></p>
@@ -1159,21 +1192,21 @@ y&amp;=v/w\\
 \end{split}
 \]</span> o dentro de otro y se alinea como corresponda</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\left</span><span class="ss">.</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\left</span><span class="ss">.</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="ss">             f(x) &amp; =    (x_{1}x_{2} ) </span><span class="sc">\\</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ss">                   &amp; = x+y</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\end</span>{<span class="ex">split</span>}</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ss">               &amp; = x+y</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="kw">\end</span>{<span class="ex">split</span>}</span>
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\right\}</span></span>
 <span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\implies</span><span class="ss"> y+z</span></span>
 <span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{align}
-    \left.
+  \left.
   \begin{split}
              f(x) &amp; =    (x_{1}x_{2} ) \\
-                   &amp; = x+y
-    \end{split}
+                  &amp; = x+y
+  \end{split}
   \right\}
   \implies y+z
 \end{align}
