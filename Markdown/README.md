@@ -4,7 +4,7 @@
 
 ### Otro nivel
 
-##### Y otro
+#### Y otro
 
 Podemos usar de una a seis \# para indicar nivel de profundidad
 
@@ -14,54 +14,56 @@ Podemos usar de una a seis \# para indicar nivel de profundidad
 ...
 ```
 
-# Listas
+## Listas
 
 Podemos empezar una lista con `-` o bien `*`
+
 ```markdown
 * Sin enumerar
 * Y con sublistas
-	* 1
-	* y dos
+ * 1
+ * y dos
 ```
+
 Da lugar a
 
 * Sin enumerar
 * Y con sublistas
-	* 1
-	* y dos
+  * 1
+  * y dos
 
 Si queremos numeradas, cambiamos los `*` por un `1.`
 
 1. numeradas
 2. y también anidadas
-	1. Eso, ahora otra numeración
+   1. Eso, ahora otra numeración
 
-# Fórmulas
+## Fórmulas
 
 Esto es una fórmula en línea $(x^2+1)^3$ y además podemos hacer una en
 
-$$\int_a^b \frac{x+1}{x-1} \mathrm d x.$$
+$$\int_a^b \frac{x+1}{x-1} \mathrm{d} x.$$
 
 Las fórmulas en línea las escribimos con `$..$` las centradas con doble `$$` o bien `\[..\]`
 
-# Tablas
+## Tablas
 
 ```markdown
-|Cabecera 1|Cabecera 2| Y 3|
-| ----| :---: | ---: |
-| Normal | Centrado | a derecha|
+| Cabecera 1 | Cabecera 2 |       Y 3 |
+| ---------- | :--------: | --------: |
+| Normal     |  Centrado  | a derecha |
 ```
 
-|Cabecera 1|Cabecera 2| Y 3|
-| ----| :---: | ---: |
-| Normal | Centrado | a derecha|
+| Cabecera 1 | Cabecera 2 |       Y 3 |
+| ---------- | :--------: | --------: |
+| Normal     |  Centrado  | a derecha |
 
-
-# Resaltar texto
+## Resaltar texto
 
 ```markdown
 En *itálica*, **negrita** y en las dos **_ambos_**.
 ```
+
 Que da lugar a
 
 En *itálica*, **negrita** y en las dos **_ambos_**.
@@ -71,15 +73,18 @@ Podemos tachar con doble tilde
 ```markdown
 ~~tachado~~
 ```
+
 que da lugar a ~~tachado~~.
 
-También podemos usar 
+También podemos usar
+
 ```markdown
 `monoespaciado`
 ```
+
 para texto `monoespaciado`
 
-# Enlaces
+## Enlaces
 
 Sintáxis
 
@@ -96,31 +101,27 @@ O con citas, por ejemplo: [Universidad de Granada][UGR]; en la página de esa [u
 Para ello usamos el formato `[texto enlace][id]` y en cualquier sitio añadimos lo siguiente
 
 ```markdown
-
 [id]: https://dondesea.io "Descripción"
-
 ```
 
-# Imágenes
+## Imágenes
 
 Si queremos imágenes, ponemos un ! delante
+
 ```markdown
 ![Una foto](apery.png)
 ```
 
 ![Una afoto](apery.png)
 
-
-
-# Citas
+## Citas
 
 > Citas comienzan con \>
 
-	Si usamos tabulador también obtenemos bloques
-	Del tamaño que escribamos, como un verbatim
+ Si usamos tabulador también obtenemos bloques
+ Del tamaño que escribamos, como un verbatim
 
-
-# Código insertado
+## Código insertado
 
 Código en línea `printf("Hello world\n")`
 
@@ -133,19 +134,18 @@ return void;
 
 Para el código en línea usamos acentos simples
 
-	`printf("Hello world\n")`
-
+ `printf("Hello world\n")`
 
 Para varias líneas de código
 
-	```c
-	printf("Hello world\n");
-	return void;
-	```
+```c
+printf("Hello world\n");
+return void;
+```
 
 Se puede especificar el lenguaje usado
 
-# Creando transparencias
+## Creando transparencias
 
 Para convertirlo en transparencias hacemos
 
@@ -153,8 +153,6 @@ Para convertirlo en transparencias hacemos
 pandoc -s --mathjax -t slidy resumen.md -o resumen.html
 ```
 
-
-También podemos utilizar [remark](http://remarkjs.com), de hecho
-estas transparencias están hechas con `remark`([ejemplo](transparencias-remark.html){target="_blank"})
+También podemos utilizar [remark](http://remarkjs.com), de hecho estas transparencias están hechas con `remark`([ejemplo](transparencias-remark.html){target="_blank"})
 
 O la extensión [Marp](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) de Visual Studio Code, o [quarto](https://quarto.org), entre otros.

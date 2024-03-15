@@ -108,7 +108,7 @@ Las barras, sencillas o dobles, que usamos habitualmente para escribir el módul
 
 ### Tamaño automático de los delimitadores
 
-LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos `left` y `right`.
+LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos `left` y `right`. 
 
 ```latex
   \[

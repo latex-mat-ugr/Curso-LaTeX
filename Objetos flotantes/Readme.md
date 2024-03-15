@@ -9,6 +9,7 @@ No vamos a hablar aquí de como generar los gráficos si no de cómo se incluye 
 ### Figuras
 
 La forma de incluir un gráfico como objeto flotante es
+
 ```latex
 \begin{figure}[opciones]
 Gráfico,
@@ -25,12 +26,14 @@ Gráfico,
 ### Cuadros
 
 La forma de incluir un cuadro como objeto flotante es
+
 ```latex
 \begin{table}[opciones]
 Cuadro
 \end{table}
 ```
-El entorno ``table`` tiene las mismas opciones que el entorno ``figure``.
+
+El entorno `table` tiene las mismas opciones que el entorno `figure`.
 
 ## Cómo escribir cuadros
 
@@ -38,7 +41,7 @@ Hay muchas formas de escribir cuadros o tablas en un fichero LaTeX. Existen nume
 
 ### Tabular
 
-El entorno ``tabular`` es la forma más básica de incluir cuadros.
+El entorno `tabular` es la forma más básica de incluir cuadros.
 
 ```latex
 \begin{table}[htp] % coloca el cuadro aquí, arriba
@@ -55,12 +58,14 @@ El entorno ``tabular`` es la forma más básica de incluir cuadros.
 ```
 
 Como se ve en el ejemplo anterior, el aspecto de un cuadro es el siguiente
+
 ```latex
 \begin{tabular}{col1,col2,col3}
 a11 & a12 & a13 \\
 a21 & a22 & a23 \\
 \end{tabular}
 ```
+
 donde col1, col2,... es un tipo de columna. Además de esto se pueden dibujar líneas horizontales (con \hline) o verticales (usando | como separador)
 
 #### Tipos de columnas
@@ -68,6 +73,7 @@ donde col1, col2,... es un tipo de columna. Además de esto se pueden dibujar l�
 Hay tres tipos básicos de columnas: alineada a izquierda, centrada o alineada a la derecha: se indican con las letras l,c,r. Además también tenemos el tipo de columna párrafo que se indica con la letra p seguida de la anchura del párrafo entre llaves.
 
 Por ejemplo
+
 ```latex
 \begin{center}
 \begin{tabular}{|l|c|r|p{5cm}|}
@@ -79,18 +85,16 @@ Por ejemplo
 \end{center}
 ```
 
-
-
 ### El paquete *booktabs*
 
 El paquete [booktabs](http://ctan.org/pkg/booktabs) contiene
 algunas reglas generales que mejoran el aspecto de tablas o cuadros:
 
-* es preferible alinear a la izquierda;
-* no uses líneas verticales;
-* evita las líneas dobles;
-* coloca las unidades en la cabecera;
-* no uses comillas para repetir el contenido.
+- es preferible alinear a la izquierda;
+- no uses líneas verticales;
+- evita las líneas dobles;
+- coloca las unidades en la cabecera;
+- no uses comillas para repetir el contenido.
 
 Entre otras cosas el paquete *booktabs* incluye las órdenes toprule, midrule y bottomrule que hacen las líneas horizontales de una tabla.
 
@@ -110,7 +114,6 @@ Nombre & Apellidos & Nota \\
 \end{table}
 ```
 
-
 ### El paquete *tabularx*
 
 Incluye el tipo de columna *X*, que se estira hasta ocupar el espacio indicado. En el ejemplo siguiente: una columna (la segunda), se estira hasta ocupar toda la línea.
@@ -128,6 +131,7 @@ Incluye el tipo de columna *X*, que se estira hasta ocupar el espacio indicado. 
 ```
 
 Si ponemos más de una columna de tipo X, el espacio se distribuye entre todas ellas.
+
 ```latex
 \begin{tabularx}{\linewidth}{lXX}
 \toprule
@@ -146,6 +150,7 @@ Si ponemos más de una columna de tipo X, el espacio se distribuye entre todas e
 El paquete rotating incluye varias órdenes para girar cuadros.
 
 Se puede usar `sideways` alrededor de un entorno de entorno tabular para girar un cuadro pequeño.
+
 ```latex
 \begin{center}
 \begin{sideways}
@@ -165,6 +170,7 @@ Mario & Suárez & 8 \\
 ```
 
 También se puede girar un cuadro que ocupe una página completa: en lugar de un entorno `table`, usamos `sidewaystable`.
+
 ```latex
 \begin{sidewaystable}
 \centering
@@ -212,6 +218,7 @@ Robert & Isaac & 8 \\
 ### Cuadros de más de una página
 
 Cargamos los paquetes `longtable` y `tabu`. En el código siguiente se puede ver la estructura de un cuadro que ocupa más de una página. Al principio se escriben las cabeceras de la primera página, de las siguientes y lo mismo con los finales de los cuadros.
+
 ```latex
 \begin{center}
 \begin{longtabu} to 0.7\linewidth{lll} % la tabla va a ocupar el 70% de la línea
