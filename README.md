@@ -124,7 +124,6 @@ Yo uso [TeXStudio](http://texstudio.sourceforge.net), que también es multiplata
 Existen varias posibilidades también de editar textos en línea, una de ellas es ShareLaTeX que actualmente forma parte de [Overleaf](https://www.overleaf.com/).
 
 
-
 ## Material
 
 Podéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyeccto de Innovación Docente [Orientamat](http://www.ugr.es/~orientamat/).
