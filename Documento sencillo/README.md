@@ -41,28 +41,27 @@ Existen multitud de paquetes que cubren la mayoría de las necesidades del usuar
 
 Si tienes algún problema o quieres hacer algo específico en LaTeX seguramente exista un paquete que lo resuelva.
 
+## Ejemplo de un documento
 
-Entre `\documentclass` y `\begin{document}` ponemos declaraciones y paquetes que vamos a necesitar
+A continuación presentamos nuestro primer documento de LaTeX
 
 ```latex
-\usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage{enumerate}
-\usepackage{graphicx}
-\usepackage[hidelinks]{hyperref}
-\usepackage[a4paper,vmargin=2cm,hmargin=2cm]{geometry}
+\documentclass{article}
 
-visualización de las cabeceras del documento
+% Indicamos que el documento va a escribirse en castellano
+\usepackage[spanish]{babel}
+
+% Cargamos un paquete para poder incluir gráficos
+\usepackage{graphicx}
+
+% Activamos los hipervínculos del documento
+\usepackage[hidelinks]{hyperref}
+
+% Añadimos la información sobre título autoría 
 \title[Taller de \LaTeX]{Taller de \LaTeX\ para alumnos del Grado en Matemáticas}
 \author[Los presentes]{Los asistentes a dicho curso}
-\thanks{Agradecemos a la AMAT por organizar este curso}
-
-\address{Facultad de Ciencias}
 \email{alguno@ugr.es}
-\renewcommand{\datename}{Fecha:}
 \date{\today}
-\renewcommand{\keywordsname}{Palabras clave}
-\keywords{\LaTeX, taller software libre}
 ```
 
 --------------------------------------------------------------------------------
