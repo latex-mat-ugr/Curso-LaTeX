@@ -80,6 +80,17 @@ f(x)=\cos(x)+\frac{1}{x}
 \end{document}
 ```
 
+## Generar el documento: proceso de *compilación*
+
+Como hemos indicado anteriormente, LaTeX es un lenguaje de programación cuya *salida* no es un programa de ordenador sino un documento (generalmente en `pdf`). Una vez escrito el *código* de nuestro documento en un fichero `documento.tex` deberemos *procesarlo* mediante LaTeX (generalmente mediante `pdfLaTeX` o alguna de sus variantes [`XeLaTeX`](https://xetex.sourceforge.net), [`LuaLaTeX`](https://www.luatex.org),...) para obtener el documento. 
+
+En dicho proceso puede haber *errores* que debermos subsanar y se generan una serie de ficheros auxiliares que, una vez terminado el proceso, no son necesarios y podemos borrar. Entre estos ficheros se encuentran:
+
+  - `.log`: Mensajes del procesador. Contiene los errores, en caso de haberlos, y suele ser mostrado en el editor.
+  - `.aux`: Contiene información sobre las referencias, la bibliografía, el índice, etc. para generar las referencias cruzadas y los enlaces en el documento.
+  - `.toc`, `.lof`, `.lot`: Información relativa a índices, lista de figuras y lista de tablas.
+  - `.bbl`,  `.blg`, `.bst`: Ficheros relacionados con la bibliografía.
+
 --------------------------------------------------------------------------------
 
 ## Resumen, título y tabla de contenidos
