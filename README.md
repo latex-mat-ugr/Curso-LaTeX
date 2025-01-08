@@ -157,3 +157,8 @@ Otra opción es usar un editor en línea, como puede ser [StackEdit](https://sta
 Este curso académico se va a impartir el curso online de LaTeX [*Introducción al lenguaje LaTeX para edición de textos académicos*](https://sites.google.com/go.ugr.es/yosigopublicando/los-cursos#h.1rvelu5hbhsq) a través de la plataforma [**yosigopublicando**](https://sites.google.com/go.ugr.es/yosigopublicando/principal) de la [Universidad de Granada](https://www.ugr.es/).
 
 El material de dicho curso se encuentra disponible en el repositorio [curso-virtual-2021](https://github.com/latex-mat-ugr/curso-virtual-2021). Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.
+
+
+## Edición 2025 (AFPD, AcademiaUGR)
+
+Una nueva edición tendrá lugar en enero de 2025 en el programa AFDP de AcademiaUGR de la Universidad de Granada.
