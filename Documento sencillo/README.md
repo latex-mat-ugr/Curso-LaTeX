@@ -62,6 +62,13 @@ A continuación presentamos nuestro primer documento de LaTeX
 \author[Los presentes]{Los asistentes a dicho curso}
 \email{alguno@ugr.es}
 \date{\today}
+
+\begin{document}
+% Imprime la información del título proporcionada antes
+\maketitle
+
+Cuerpo del documento
+\end{document}
 ```
 
 --------------------------------------------------------------------------------
