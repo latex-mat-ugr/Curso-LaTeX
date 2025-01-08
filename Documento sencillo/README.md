@@ -114,9 +114,22 @@ Esto es una prueba de cómo hacer algunas cosas en \LaTeX.
 
 Podemos añadir una tabla de contenidos con `\tableofcontents`
 
---------------------------------------------------------------------------------
 
-## Secciones
+
+## Elementos del texto
+
+### Líneas y párrafos
+
+La unida básica de estructura es el párrafo que se delimita por al menos una línea vacía antes y después de él.
+- Uno o más espacios son tratados como un espacio.
+- También se trata como un espacio el salto de línea.
+- Una o varias líneas en blanco separan los párrafos. El comando `\par` tiene el mismo efecto.
+- `\newline` o `\\` inicia una nueva línea sin completar la línea en curso.
+- `\linebreak[opcion]` inicia una nueva línea justificando la línea en curso.
+- `\pagebreak` fuerza un salto de página.
+
+
+### Secciones
 
 Podemos crear seccions (en un libro también capítulos y partes) con el comando `\section`. Éstas pueden contener subsecciones: `\subsection`, y subsubseciones. Finalmente tenemos párrafos, `\paragraph`, y subpárrafos
 
@@ -132,9 +145,8 @@ Comando          | Nivel
 
 Véase <http://en.wikibooks.org/wiki/LaTeX/Document_Structure>
 
---------------------------------------------------------------------------------
 
-## Listas
+### Listas
 
 Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento
 
