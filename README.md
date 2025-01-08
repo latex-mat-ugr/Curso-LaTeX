@@ -161,4 +161,4 @@ El material de dicho curso se encuentra disponible en el repositorio [curso-virt
 
 ## Edición 2025 (AFPD, AcademiaUGR)
 
-Una nueva edición tendrá lugar en enero de 2025 en el programa [AFDP](https://calidad.ugr.es/profesorado/formacion/formacion-innovacion-docente/pdi/afdp) de AcademiaUGR de la Universidad de Granada.
+Una nueva edición tendrá lugar en enero de 2025 dentro del programa [AFDP](https://calidad.ugr.es/profesorado/formacion/formacion-innovacion-docente/pdi/afdp) de AcademiaUGR de la Universidad de Granada.
