@@ -4,12 +4,12 @@
 
 TeX es un programa destinado a la composición de documentos que contienen texto y fórmulas matemáticas con calidad de imprenta creado por Donald Knuth en 1978
       
- NO es un editor de texto sino un procesador de macros y lenguaje de programación.
+NO es un editor de texto sino un procesador de macros y lenguaje de programación.
 
 **¿Y LaTeX?**
 LaTeX es un conjunto de *macros* para TeX debidos originalmente a Leslie Lamport para facilitar el uso de TeX.
 
-  Usaremos el término **LaTeX** para referirnos a TeX + LaTeX + mejoras sucesivas
+Usaremos el término **LaTeX** para referirnos a TeX + LaTeX + mejoras sucesivas
 
 Las características de LaTeX son:
 
@@ -19,6 +19,7 @@ Las características de LaTeX son:
 - **Flexible**: Permite al usuario crear nuevos comandos y entornos 
 - **Actualizado**: LaTeX es mejorado constantemente de forma altruista.
 
+### Ventajas y desventajas
 Entre sus **ventajas** podemos enumerar:
 - Composición de fórmulas
 - Calidad de imprenta
