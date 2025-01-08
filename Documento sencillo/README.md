@@ -10,7 +10,7 @@ La estructura de un documento en LaTeX es la siguiente
 ...
 \end{document}
 ```
-donde *clase* es un tipo de documento válido de LaTeX (ver [Tipos de documento](Tipos de documento/README.md)), p.e. `article`. 
+donde *clase* es un tipo de documento válido de LaTeX (ver [Tipos de documento](../Tipos de documento/about.qmd)), p.e. `article`. 
 
 El documento se divide en dos partes: 
 - el *encabezamiento* o *preámbulo*: todas las declaraciones contenidas entre `\documentclass`{.latex} y `\begin{document}`.
@@ -95,7 +95,7 @@ En dicho proceso puede haber *errores* que debermos subsanar y se generan una se
 
 ## Título, resumen y tabla de contenidos
 
-Según la [clase de documento](Tipos de documento/README.md), estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen,... del documento.
+Según la [clase de documento](../Tipos de documento/about.qmd), estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen,... del documento.
 
 ### Título
 
