@@ -6,7 +6,7 @@ TeX es un programa destinado a la composición de documentos que contienen texto
       
  NO es un editor de texto sino un procesador de macros y lenguaje de programación.
 
-**¿Y \LaTeX?**
+**¿Y LaTeX?**
 LaTeX es un conjunto de *macros* para TeX debidos originalmente a Leslie Lamport para facilitar el uso de TeX.
 
   Usaremos el término **LaTeX** para referirnos a TeX + LaTeX + mejoras sucesivas
@@ -112,8 +112,6 @@ En esta página iremos añadiendo materiales para el curso.
 - `Markdown` es una carpeta con una breve introducción a [markdown](http://daringfireball.net/projects/markdown).
 
 Cada carpeta contiene una descripción en markdown y html (obtenido a partir de la de markdown). Un ejemplo de traducción del contenido de `Documento sencillo` se puede ver [aquí](http://www.ugr.es/~pedro/latex).
-
---------------------------------------------------------------------------------
 
 ## Editores de markdown
 
