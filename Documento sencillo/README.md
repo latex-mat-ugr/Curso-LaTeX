@@ -1,18 +1,46 @@
+## Primeros pasos: creación de un documento sencillo
 ## Estructura
 
-La estructura de un documento es la siguiente
+La estructura de un documento en LaTeX es la siguiente
 
 ```latex
-\documentclass{...}
+\documentclass{clase}
 
 \begin{document}
 ...
 \end{document}
 ```
+donde *clase* es un tipo de documento válido de LaTeX (ver [Tipos de documento](Tipos de documento/README.md)), p.e. `article`. 
 
---------------------------------------------------------------------------------
+El documento se divide en dos partes: 
+- el *encabezamiento* o *preámbulo*: todas las declaraciones contenidas entre `\documentclass`{.latex} y `\begin{document}`.
+- *cuerpo*: el texto contenido entre `\begin{document}` y `\end{document}`.
 
-## Cabecera o preámbulo
+Cualquier contenido a continuación de `\end{document}` es ignorado.
+
+### Comandos
+LaTeX es un *lenguaje de programación* y cualquier *orden* o *comando* comienza siempre con el símbolo `\` seguido de una palabra (donde se distinguen mayúsculas de minúsculas). La sintaxis habitual de un comando es:
+```latex
+\nombrecomando[opciones]{argumentos}
+```
+
+## Encabezamiento o preámbulo
+
+El preámbulo se compone de todas las *declaraciones* y *paquetes* que incluyamos entre `\documentclass` y `\begin{document}`. 
+
+LaTeX es **modular**: su comportamiento y características pueden ser modificados o ampliados a través del uso de *paquetes*.
+
+Un **paquete** es un *conjunto de instrucciones* de LaTeX diseñado para resolver un problema concreto del documento. 
+
+Para cargar un paquete escribiremos el siguiente *comando* en el preámbulo del documento:
+```latex
+\usepackage[opciones]{paquete}
+```
+
+Existen multitud de paquetes que cubren la mayoría de las necesidades del usuario: aspecto del documento, manejo de índice, glosario, referencias, idioma, hipervínculos,... Buscar en [CTAN](https://www.ctan.org).
+
+Si tienes algún problema o quieres hacer algo específico en LaTeX seguramente exista un paquete que lo resuelva.
+
 
 Entre `\documentclass` y `\begin{document}` ponemos declaraciones y paquetes que vamos a necesitar
 
