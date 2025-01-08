@@ -67,7 +67,16 @@ A continuación presentamos nuestro primer documento de LaTeX
 % Imprime la información del título proporcionada antes
 \maketitle
 
-Cuerpo del documento
+Cuerpo del documento. Los       espacios en        blanco  y 
+saltos de línea      no cuentan. 
+
+Si queremos empezar un párrafo nuevo sólo tenemos que dejar 
+una línea en blanco. 
+
+También podemos escribir fórmulas
+\[
+f(x)=\cos(x)+\frac{1}{x}
+\]
 \end{document}
 ```
 
