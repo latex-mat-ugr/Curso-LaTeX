@@ -91,9 +91,15 @@ En dicho proceso puede haber *errores* que debermos subsanar y se generan una se
   - `.toc`, `.lof`, `.lot`: Información relativa a índices, lista de figuras y lista de tablas.
   - `.bbl`,  `.blg`, `.bst`: Ficheros relacionados con la bibliografía.
 
---------------------------------------------------------------------------------
 
-## Resumen, título y tabla de contenidos
+
+## Título, resumen y tabla de contenidos
+
+Según la [clase de documento](Tipos de documento/README.md), estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen,... del documento.
+
+### Título
+
+El título y datos de autores se visualiza con `\maketitle` y se *declara* (en la mayoría de clases de documento) mediante los comandos `\author` y  `\title`.
 
 ### Resumen
 
@@ -103,9 +109,6 @@ Esto es una prueba de cómo hacer algunas cosas en \LaTeX.
 \end{abstract}
 ```
 
-### Título
-
-El título y datos de autores se visualiza con `\maketitle`
 
 ### Tabla de contenidos
 
