@@ -1,11 +1,34 @@
-Curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page412.htm) y por el PAT [Orientamat](https://www.ugr.es/~orientamat/) para alumnos de Trabajo de Fin de Grado
+# Material docente de LaTeX en la Universidad de Granada
 
-Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas
+## ¿Qué es TeX y LaTeX?
+
+TeX es un programa destinado a la composición de documentos que contienen texto y fórmulas matemáticas con calidad de imprenta creado por Donald Knuth en 1978
+      
+ NO es un editor de texto sino un procesador de macros y lenguaje de programación.
+
+**¿Y \LaTeX?**
+LaTeX es un conjunto de *macros* para TeX debidos originalmente a Leslie Lamport para facilitar el uso de TeX.
+
+  Usaremos el término **LaTeX** para referirnos a TeX + LaTeX + mejoras sucesivas
+
+Las características de LaTeX son:
+
+- **Transportable**: los ficheros `.tex` sólo contienen texto y son de pequeño tamaño.
+- **Estructurado**: LaTeX se ocupa del formato del documento. El usuario no tiene que preocuparse de hacer saltos de página, justificaciones, sangrías, referencias, etc.
+- **Versátil**: Se puede hacer casi [cualquier cosa](https://www.tug.org/texshowcase/).
+- **Flexible**: Permite al usuario crear nuevos comandos y entornos 
+- **Actualizado**: LaTeX es mejorado constantemente de forma altruista.
+
+
+## Acerca de este repositorio
+
+Parte del material de este repositorio fue creado inicialmente como material de apoyo para un curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page412.htm) y por el PAT [Orientamat](https://www.ugr.es/~orientamat/) para alumnos de Trabajo de Fin de Grado
+
+Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas y se ha repetido desde entonces casi anualmente mejorando y añadiendo nuevo material.
 
 Los contenidos del curso se mantienen por [Jerónimo Alaminos](https://www.ugr.es/~alaminos/), [Pedro A. García Sánchez](https://www.ugr.es/~pedro), [Óscar Sánchez Romero](https://www.ugr.es/~ossanche) y [Francisco Torralbo](https://www.ugr.es/~ftorralbo/). 
 
 En los talleres impartidos, hemos contado con la ayuda de [Aureliano M. Robles Pérez](https://www.ugr.es/~arobles/), [Desiree Romero Molina](https://www.ugr.es/~deromero/), [Antonio Alarcón](https://www.ugr.es/~alarcon/), [Antonio Peralta](https://www.ugr.es/~aperalta/), entre otros.
-
 
 ## Instalación de LaTeX
 
