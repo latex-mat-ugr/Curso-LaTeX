@@ -19,6 +19,33 @@ Las características de LaTeX son:
 - **Flexible**: Permite al usuario crear nuevos comandos y entornos 
 - **Actualizado**: LaTeX es mejorado constantemente de forma altruista.
 
+Entre sus **ventajas** podemos enumerar:
+- Composición de fórmulas
+- Calidad de imprenta
+- Facilidad para gestionar bibliografías, notas, referencias, etc.
+- Muchos paquetes adicionales
+- Independiente de la plataforma: Unix, Windows, OSX,...
+- Software libre
+- Salida PDF, Postscript,...
+- Separación de contenido y forma
+
+Entre sus **desventajas**:
+
+- Curva de aprendizaje lenta, el material y la información de este repositorio pretende ayudar a agilizar el aprendizaje desde cero.
+- El diseño de un documento es difícil si los predefinidos no se ajustan a lo que necesitamos, en la carpeta [Tipos de documento](Tipos de documento/README.md) proponemos alternativas para solventar este problema.
+- Detección y manejo de errores.
+
+### Ayuda
+
+- Los documentos de ayuda incluida en la instalación
+- Manual básico: [La introducción no-tan-corta a LaTeX 2ε](https://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf) (la [versión inglesa](https://tobi.oetiker.ch/lshort/lshort.pdf) suele estar más actualizada).
+- (CTAN)[http://ctan.org] (Comprehensive TeX Archive Network): documentación de todos los paquetes
+- [The TeX Font Catalogue](https://www.tug.org/FontCatalogue/): documentación sobre las fuentes tipográficas incluidas en la instalación de TeX.
+- [Listas de correo de CervanTeX](http://www.rediris.es/list/info/es-tex.html)
+- Foros, blogs, grupos de noticias, etc. Por ejemplo:
+    - [TeX Stackexchange](http://tex.stackexchange.com)
+    - [LaTeX.org](http://latex.org/forum/)
+
 
 ## Acerca de este repositorio
 
