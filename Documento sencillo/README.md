@@ -13,10 +13,9 @@ La estructura de un documento en LaTeX es la siguiente
 donde *clase* es un tipo de documento válido de LaTeX (ver [Tipos de documento](../Tipos de documento/about.qmd)), p.e. `article`. 
 
 El documento se divide en dos partes: 
-- el *encabezamiento* o *preámbulo*: todas las declaraciones contenidas entre `\documentclass`{.latex} y `\begin{document}`.
-- *cuerpo*: el texto contenido entre `\begin{document}` y `\end{document}`.
 
-Cualquier contenido a continuación de `\end{document}` es ignorado.
+- el *encabezamiento* o *preámbulo*: todas las declaraciones contenidas entre `\documentclass`{.latex} y `\begin{document}`{.latex}.
+- *cuerpo*: el texto contenido entre `\begin{document}`{.latex} y `\end{document}`{.latex}.
 
 ### Comandos
 LaTeX es un *lenguaje de programación* y cualquier *orden* o *comando* comienza siempre con el símbolo `\` seguido de una palabra (donde se distinguen mayúsculas de minúsculas). La sintaxis habitual de un comando es:
@@ -26,7 +25,7 @@ LaTeX es un *lenguaje de programación* y cualquier *orden* o *comando* comienza
 
 ## Encabezamiento o preámbulo
 
-El preámbulo se compone de todas las *declaraciones* y *paquetes* que incluyamos entre `\documentclass` y `\begin{document}`. 
+El preámbulo se compone de todas las *declaraciones* y *paquetes* que incluyamos entre `\documentclass`{.latex} y `\begin{document}`{.latex}. 
 
 LaTeX es **modular**: su comportamiento y características pueden ser modificados o ampliados a través del uso de *paquetes*.
 
@@ -99,7 +98,7 @@ Según la [clase de documento](../Tipos de documento/about.qmd), estarán dispon
 
 ### Título
 
-El título y datos de autores se visualiza con `\maketitle` y se *declara* (en la mayoría de clases de documento) mediante los comandos `\author` y  `\title`.
+El título y datos de autores se visualiza con `\maketitle`{.latex} y se *declara* (en la mayoría de clases de documento) mediante los comandos `\author`{.latex} y  `\title`{.latex}.
 
 ### Resumen
 
@@ -112,7 +111,7 @@ Esto es una prueba de cómo hacer algunas cosas en \LaTeX.
 
 ### Tabla de contenidos
 
-Podemos añadir una tabla de contenidos con `\tableofcontents`
+Podemos añadir una tabla de contenidos con `\tableofcontents`{.latex}
 
 
 
@@ -121,17 +120,22 @@ Podemos añadir una tabla de contenidos con `\tableofcontents`
 ### Líneas y párrafos
 
 La unida básica de estructura es el párrafo que se delimita por al menos una línea vacía antes y después de él.
+
 - Uno o más espacios son tratados como un espacio.
 - También se trata como un espacio el salto de línea.
-- Una o varias líneas en blanco separan los párrafos. El comando `\par` tiene el mismo efecto.
-- `\newline` o `\\` inicia una nueva línea sin completar la línea en curso.
-- `\linebreak[opcion]` inicia una nueva línea justificando la línea en curso.
-- `\pagebreak` fuerza un salto de página.
+- Una o varias líneas en blanco separan los párrafos. El comando `\par`{.latex} tiene el mismo efecto.
+- LaTeX, por defecto, *sangra* el texto al comienzo de cada párrafo. Esto puede evitarse usando el comando `\noindent`{.latex} al inicio de la línea.
+- `\newline`{.latex} o `\\`{.latex} inicia una nueva línea sin completar la línea en curso.
+- `\linebreak[opcion]`{.latex} inicia una nueva línea justificando la línea en curso.
+- `\newpage` inicia una nueva página sin completar la página en curso.
+- `\pagebreak`{.latex} fuerza un salto de página.
+
+Los párrafos se pueden alinear a la izquierda (entorno `flushleft`), derecha (entorno `flushright`) o centrados (entorno `center`).
 
 
 ### Secciones
 
-Podemos crear seccions (en un libro también capítulos y partes) con el comando `\section`. Éstas pueden contener subsecciones: `\subsection`, y subsubseciones. Finalmente tenemos párrafos, `\paragraph`, y subpárrafos
+Podemos crear seccions (en un libro también capítulos y partes) con el comando `\section`{.latex}. Éstas pueden contener subsecciones: `\subsection`{.latex}, y subsubseciones. Finalmente tenemos párrafos, `\paragraph`{.latex}, y subpárrafos
 
 Comando          | Nivel
 ---------------- | :---:
