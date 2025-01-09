@@ -181,7 +181,7 @@ Véase <http://en.wikibooks.org/wiki/LaTeX/Document_Structure>
 Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento
 
 ```latex
-\begin{enumerate}[1)]
+\begin{enumerate}
 \item Aquellas que van enumeradas.
     \begin{enumerate}
     \item \ldots que además se pueden anidar.
