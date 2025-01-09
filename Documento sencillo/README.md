@@ -235,6 +235,26 @@ Comando   | Tipo
 
 ... o bien podemos `\emph{enfatizar}` una `\textit{parte del texto \emph{dentro} de otro}`
 
+En la siguiente table se recogen todos los comando para modificar el aspecto (familia, grosor, perfil y tamaño) de la tipografía. Podemos combinar un comando de cada columna. En las tres primeras columnas tenemos dos comandos para lo mismo: el primero de ellos (p.e. `\textbf` para negrita) cambia la apariencia a su argumento (p.e. `\textbf{texto en negrita}`) mientras que el segundo (p.e. `\bfseries`) afecta a todo un *bloque* (p.e. `{\bfseries texto en negrita}`).
+
+| Familia    | Estilo                            | Tamaño                  |
+|------------|---------------------------------  |-------------------------|
+|            | Grosor (*series*) | Perfil (*shape*)  |                         |
+| Serif      | Normal          | Recto           | `\tiny`                   |
+| `\textrm`    | `\textmd`         | `\textup`         | `\scriptsize`             |
+| `\rmfamily`  | `\mdseries`       | `\upshape`        | `\footnotesize`           |
+|            | Negrita         | Cursiva         | `\small`                  |
+|            | `\textbf`         | `\textit`         | `\normalsize`             |
+|            | `\bfseries`       | `\itshape`        | `\large`                  |
+| sans-serif |                 | Inclinada       | `\Large`                  |
+| `\textsf`    |                 | `\textsl`         | `\LARGE`                  |
+| `\sffamily`  |                 | `\slshape`        | `\huge`                   |
+| Mono       |                 | Versalitas      | `\Huge`                   |
+| `\texttt`    |                 | `\textsc`         |                         |
+| `\ttfamily`  |                 | `\scshape`        |                         |
+
+Esta tabla incluye las categorías de familia, estilo y tamaño, junto con los comandos LaTeX correspondientes.
+
 --------------------------------------------------------------------------------
 
 ## Fórmulas
