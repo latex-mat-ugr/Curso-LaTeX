@@ -17,11 +17,37 @@ El documento se divide en dos partes:
 - el *encabezamiento* o *preámbulo*: todas las declaraciones contenidas entre `\documentclass`{.latex} y `\begin{document}`{.latex}.
 - *cuerpo*: el texto contenido entre `\begin{document}`{.latex} y `\end{document}`{.latex}.
 
-### Comandos
+Cualquier contenido a continuación de `\end{document}`{.latex} es ignorado.
+
+### Comandos y entorno
 LaTeX es un *lenguaje de programación* y cualquier *orden* o *comando* comienza siempre con el símbolo `\` seguido de una palabra (donde se distinguen mayúsculas de minúsculas). La sintaxis habitual de un comando es:
 ```latex
 \nombrecomando[opciones]{argumentos}
 ```
+
+LaTeX proporciona también los *entornos*:
+```latex
+\begin{nombreEntorno}
+contenido
+\end{nombreEntorno}
+```
+que afectan a todo el *contenido*.
+
+Además, algunos caracteres tienen una utilidad especial y su uso está reservado:
+
+| Símbolo | Uso                                            | Comando LaTeX |
+|---------|------------------------------------------------|---------------|
+| #       | Argumento de un macro                          | `\#`          |
+| $       | Iniciar o terminar un modo matemático          | `\$`          |
+| %       | Comienzo de un comentario                      | `\%`          |
+| ^       | Superíndice en modo matemático                 | `\^{} `       |
+| &       | Alineación en tablas o matrices                | `\&`          |
+| _       | Subíndice en modo matemático                   | `\_`          |
+| { }     | Delimitadores de argumentos o bloques          | `\{`, `\}`    |
+| ~       | Espacio no separable                           | `\~{}`        |
+| \       | Carácter de escape para comandos               | `\textbackslash` |
+
+Estos símbolos tienen funciones especiales en LaTeX y deben utilizarse con un backslash (`\`) para ser impresos literalmente en el documento.
 
 ## Encabezamiento o preámbulo
 
