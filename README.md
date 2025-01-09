@@ -33,7 +33,7 @@ Entre sus **ventajas** podemos enumerar:
 Entre sus **desventajas**:
 
 - Curva de aprendizaje lenta, el material y la información de este repositorio pretende ayudar a agilizar el aprendizaje desde cero.
-- El diseño de un documento es difícil si los predefinidos no se ajustan a lo que necesitamos, en la carpeta [Tipos de documento](Tipos de documento/README.md) proponemos alternativas para solventar este problema.
+- El diseño de un documento es difícil si los predefinidos no se ajustan a lo que necesitamos, en la carpeta [Tipos de documento](../Tipos de documento/about.qmd) proponemos alternativas para solventar este problema.
 - Detección y manejo de errores.
 
 ### Ayuda

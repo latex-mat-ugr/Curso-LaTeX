@@ -59,7 +59,7 @@ En el archivo [`comandosyentornos.tex`](comandosyentornos.tex) podemos ver vario
 
 ## Diseño de página
 
-Al inicio de cualquier documento en LaTeX se ha de indicar el tipo (o la clase) del mismo mediante la orden `\documentclass` (ver la sección [Tipos de documento](Tipos de documento) para más información). Cada tipo de documento define sus propios márgenes (superior, inferior y laterales), suele reservar un área para las notas al margen y suele fijar, normalmente mediante una opción indicada en el comando `\documentclass`, el tamaño de papel en el que se imprimirá el documento. En la siguiente imagen podemos ver dibujadas las diferentes secciones en las que es dividida una página 
+Al inicio de cualquier documento en LaTeX se ha de indicar el tipo (o la clase) del mismo mediante la orden `\documentclass` (ver la sección [Tipos de documento](../Tipos de documento/about.qmd) para más información). Cada tipo de documento define sus propios márgenes (superior, inferior y laterales), suele reservar un área para las notas al margen y suele fijar, normalmente mediante una opción indicada en el comando `\documentclass`, el tamaño de papel en el que se imprimirá el documento. En la siguiente imagen podemos ver dibujadas las diferentes secciones en las que es dividida una página 
 
 ![Diseño de página extraído de "The not so short introduction to LaTeX2e"](img/page-design.png)
 
