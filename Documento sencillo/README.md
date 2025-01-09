@@ -253,7 +253,6 @@ En la siguiente table se recogen todos los comando para modificar el aspecto (fa
 | `\texttt`    |                 | `\textsc`         |                         |
 | `\ttfamily`  |                 | `\scshape`        |                         |
 
-Esta tabla incluye las categorías de familia, estilo y tamaño, junto con los comandos LaTeX correspondientes.
 
 --------------------------------------------------------------------------------
 
