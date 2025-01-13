@@ -83,9 +83,8 @@ A continuación presentamos nuestro primer documento de LaTeX
 \usepackage[hidelinks]{hyperref}
 
 % Añadimos la información sobre título autoría 
-\title[Taller de \LaTeX]{Taller de \LaTeX\ para alumnos del Grado en Matemáticas}
-\author[Los presentes]{Los asistentes a dicho curso}
-\email{alguno@ugr.es}
+\title{Taller de \LaTeX\ para alumnos del Grado en Matemáticas}
+\author{Los asistentes a dicho curso}
 \date{\today}
 
 \begin{document}
