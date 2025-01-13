@@ -266,17 +266,17 @@ $$x^2+1$$
 
 Los delimitadores `$..$` se pueden substituir por `\(..\)` y
 
-```
+```latex
 $$..$$
 ```
 
 por
 
-```
+```latex
 \[..\]
 ```
 
-(entre otros, de hecho este último ofrece más funcionalidades como `\qedhere`)
+(entre otros, de hecho este último ofrece más funcionalidades como `\qedhere`{.latex})
 
 --------------------------------------------------------------------------------
 
