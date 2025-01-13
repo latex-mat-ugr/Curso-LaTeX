@@ -1,5 +1,4 @@
-## Primeros pasos: creación de un documento sencillo
-## Estructura
+## Estructura de un documento LaTeX.
 
 La estructura de un documento en LaTeX es la siguiente
 
