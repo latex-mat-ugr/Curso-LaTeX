@@ -93,10 +93,11 @@ A continuación presentamos nuestro primer documento de LaTeX
 Cuerpo del documento. Los       espacios en        blanco  y 
 saltos de línea      no cuentan. 
 
-Si queremos empezar un párrafo nuevo sólo tenemos que dejar 
+
+Una o más líneas en blanco comienzan un nuevo párrafo.
 una línea en blanco. 
 
-También podemos escribir fórmulas
+También podemos escribir fórmulas en *línea* con el texto: $a^2+b^2=c^2$; o en *bloque*:
 \[
 f(x)=\cos(x)+\frac{1}{x}
 \]
