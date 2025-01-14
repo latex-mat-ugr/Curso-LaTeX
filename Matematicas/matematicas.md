@@ -73,9 +73,7 @@ hacerlo son
 \]
 ```
 
-* Añadir (algo más) `\quad` y `\qquad` añaden la longitud de una letra m 
-  o de dos. Son espacios dinámicos (pueden variar un poco para ajustar 
-  las líneas).
+* Añadir (algo más) `\quad` y `\qquad` añaden la longitud de una letra m o de dos. Son espacios dinámicos (pueden variar un poco para ajustar las líneas).
 
 ```latex
 \[
@@ -108,24 +106,24 @@ Las barras, sencillas o dobles, que usamos habitualmente para escribir el módul
 
 ### Tamaño automático de los delimitadores
 
-LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos `left` y `right`. 
+LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos `left` y `right`.
 
 ```latex
-  \[
-    \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
-  \]
+\[
+  \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
+\]
 ```
 
 $$
-    \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
+  \left[ \left( 1+x^{2} \right) +\frac{y}{2} \right]
 $$
 
 Los delimitadores pueden ser distintos a un lado y otro y si se quiere que no aparezca nada en la salida el correspondiente delimitador se cambia por un punto.
 
 ```latex
-  \[
-    \left. \left( 1+x^{2} \right\} +\frac{y}{2} \right]
-  \]
+\[
+  \left. \left( 1+x^{2} \right\} +\frac{y}{2} \right]
+\]
 ```
 
 $$
@@ -213,7 +211,7 @@ $\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
 En lugar de escribir tres puntos seguidos, `\dots, \ldots, \cdots` producen puntos suspensivos con el espaciado correcto. `\dots` intenta adaptarse al entorno. `\ldots` da como resultado puntos "bajos" y `\cdots`centrados. Un ejemplo:
 
 ```latex
-$x=1,2,\ldots, 3, x+y+\cdots +z$, 
+$x=1,2,\ldots, 3, x+y+\cdots +z$,
 $x\times y \times \dots z$
 ```
 
@@ -227,7 +225,7 @@ El entorno *array* sirve para escribir objetos agrupados por filas y columnas. H
 
 ```latex
 \[
-  \left. 
+  \left.
   \begin{array}{lc|r}  % 3 columnas izq., centrada, derecha
     2 & 3 & \cos(x) \\
     -1 & 1 & 0 \\
@@ -254,8 +252,8 @@ Como ves se pueden añadir líneas verticales con `|` entre dos columnas y tambi
 Un uso habitual de este entorno es definir funciones a trozos: suelen tener una llave al comenzar, nada por la derecha y línea a línea se van explicando los casos:
 
 ```latex
-\[ 
-  f(x) = 
+\[
+  f(x) =
   \begin{cases}
    1+x^2, & \text{si $x<0$,}\\
    e^x,  & \text{si $x>0$,}\\
@@ -304,7 +302,7 @@ $$
   \begin{pmatrix}
   a_{11} & a_{12} & a_{13} \\
   a_{21} & a_{22} & a_{23}
-  \end{pmatrix} 
+  \end{pmatrix}
   \quad
   \begin{bmatrix}
   a_{11} & a_{12} & a_{13} \\
@@ -338,11 +336,11 @@ $$
 Las matrices, por su tamaño, suelen escribirse en modo matemático en línea separada, pero si es pequeña se puede intentar: `smallmatrix`
 
 ```latex
-La matriz $A = 
+La matriz $A =
   \left(
-  \begin{smallmatrix} 
-  1 & 2 \\ 
-  3 & 4 
+  \begin{smallmatrix}
+  1 & 2 \\
+  3 & 4
   \end{smallmatrix}
   \right)$ se ve bien en una línea
   ```
@@ -367,11 +365,11 @@ Hay varios símbolos de integral incluidos que se adaptan al modo matemático en
 
 ```latex
 \[
-  \int_{a}^{b} f(x)\, \mathrm{d}x = 
-  \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} = 
+  \int_{a}^{b} f(x)\, \mathrm{d}x =
+  \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} =
   \prod_{j\geq 1} \alpha_{j}
 \]
-````
+```
 
 $$
 \int_{a}^{b} f(x)\, \mathrm{d}x = \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} = \prod_{j\geq 1} \alpha_{j}.
@@ -489,7 +487,7 @@ escriben con letra recta siempre. Algunos de estos operadores o funciones ademá
 
 ```latex
 \[
-  \cos^{2}(x)+\sin^{2}(x)= \lim_{x \to 0} \frac{\sin(x)}{x} 
+  \cos^{2}(x)+\sin^{2}(x)= \lim_{x \to 0} \frac{\sin(x)}{x}
 \]
 ```
 
@@ -708,7 +706,7 @@ $$
       \mathbf{r} = 13\\
       \mathbf{s} = 11 + d
    \end{gathered}
-$$   
+$$
 
 ```latex
 \left.
@@ -816,8 +814,7 @@ Además de etiquetarlos para futuras referencias, se le puede añadir una descri
 
 ```latex
 \begin{lema}[de Fermat]
-  Si una función derivable tiene un extremo local en un punto 
-  interior de un intervalo, la derivada en dicho punto se anula
+  Si una función derivable tiene un extremo local en un punto interior de un intervalo, la derivada en dicho punto se anula
 \end{lema}
 \begin{proof}
   Explicación
