@@ -8,4 +8,4 @@ lang: es
 
 ## Orientamat
 
-La mayor parte de este material se ha elaborado para el curso de LaTex realizado dentro del Plan de Acción Tutorial del Grado en Matemáticas de la Universidad de Granada [Orientamat](http://www.ugr.es/~orientamat/actividades1.html) 
+La mayor parte de este material se ha elaborado para el curso de LaTeX realizado dentro del Plan de Acción Tutorial del Grado en Matemáticas de la Universidad de Granada [Orientamat](http://www.ugr.es/~orientamat/actividades1.html) 

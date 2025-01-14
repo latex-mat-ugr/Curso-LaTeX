@@ -1,34 +1,82 @@
 \documentclass[11pt]{article}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[a4paper,margin=3cm]{geometry}
+\usepackage[T1]{fontenc} % Codificación de salida
+\usepackage[a4paper,margin=3cm]{geometry} % Márgenes y tamaño de página
 
+% Colores
+\usepackage[table,svgnames,dvipsnames,x11names]{xcolor} % Colores
+%% colores definidos por el usuario
+\definecolor{funcion1}{rgb}{0,0,0.6}
+\definecolor{funcion2}{rgb}{0.6,0,0}
+\definecolor{funcion3}{rgb}{0,0.6,0}
+\definecolor{punto}{rgb}{0.49,0.49,1}
+\definecolor{relleno}{rgb}{0.6,0.2,0}
+
+% gráficos
+\usepackage{graphicx} % inclusión de gráficos
+\usepackage{wrapfig}  % texto que se adapta a una figura
+
+\usepackage{pgfplots,tikz}     % gráficos con pgfplots y tikz
+\pgfplotsset{compat=1.18}     % versión de pgfplots
+\graphicspath{{tikz/},{fig/}}  % directorios de gráficos
+\usepackage[most]{tcolorbox}   % cajas de colores
 
 % paquetes relacionados con matemáticas
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}  % matemáticas AMS
+\usepackage[showonlyrefs]{mathtools} % mejoras y correcciones para matemáticas
 
-\numberwithin{equation}{section}
-\allowdisplaybreaks[2]
+\numberwithin{equation}{section} % numeración de ecuaciones por sección
+\allowdisplaybreaks[2] % permite dividir ecuaciones largas en varias páginas
 
 \DeclareMathOperator{\deter}{determinante}
 \DeclareMathOperator{\dist}{dist}
 
+% paquetes relacionados con matemáticas (opcionales)
+\usepackage{cancel} 			% tachar en una ecuación
+\usepackage{annotate-equations}     % Añadir explicaciones en ecuaciones
+\usepackage{tasks} 			% Listas
+\usepackage{booktabs}			% Tablas
+\usepackage{tabularray}			% tablas y arrays
+\usepackage{witharrows}			% flechas entre ecuaciones
+
+% paquetes relacionados con texto
+\usepackage{enumitem} % personalizar listas (véase también enumerate y tasks) 
+\usepackage{multicol} % texto en varias columnas
+\usepackage{siunitx} % escribir unidades del SI
+
+% paquetes relacionados con química
+\usepackage{chemfig} % fórmulas químicas
+\usepackage[version=4]{mhchem} % ecuaciones químicas
+
+% código
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{markdown}
+
 % idioma
-\usepackage[spanish,es-lcroman]{babel}
+\usepackage[spanish, es-lcroman, es-tabla,es-noshorthands]{babel}   % el último idioma es el principal, no hace falta ponerlo en main
+\decimalpoint % Cambia la coma por el punto en el modo matemático
+\unaccentedoperators % Desactiva el uso de acentos en los operadores matemáticos
 
+% entrecomillados
+\usepackage[babel=true,autostyle=true,spanish=spanish]{csquotes}
 
-% teoremas
-\theoremstyle{plain}
+% Fuente de texto
+\usepackage{newpxtext}        % Fuente de texto
+\usepackage{newpxmath}        % Fuente matemática
+\usepackage{fontawesome5}     % Iconos
+\usepackage[final,babel]{microtype} % Mejoras tipográficas
+
+% teoremas, proposiciones y definiciones
+\theoremstyle{plain}                            % Estilo de los teoremas
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{proposicion}[teorema]{Proposición}
 \newtheorem{lema}[teorema]{Lema}
 \newtheorem{corolario}[teorema]{Corolario}
-\theoremstyle{definition}
+\theoremstyle{definition}                       % Estilo de las definiciones
 \newtheorem{definicion}[teorema]{Definición}
 \newtheorem{ejemplo}[teorema]{Ejemplo}
-\theoremstyle{remark}
+\theoremstyle{remark}                           % Estilo de las observaciones
 \newtheorem{remark}[teorema]{Observación}
 
 % Comandos propios
@@ -36,98 +84,106 @@
 \newcommand{\abs}[1]{\ensuremath\left\vert #1 \right\vert}
 \newcommand{\norm}[1]{\ensuremath\left\Vert #1 \right\Vert}
 
-
+% Metadatos del documento
 \author{El Autor}
 \title{El título}
 
-
-
+% Cuerpo del documento
 \begin{document}
 
 \maketitle
 
+Este fichero es un ejemplo \enquote{sencillo} (``sencillo'') de documento en \LaTeX{} en el que se muestra el uso de algunas herramientas y paquetes útiles para la escritura de documentos matemáticos. 
+
+%Como decía George Bernad Shaw \foreigntextquote{english}{Both optimists and pessimists contribute to society. The optimist invents the aeroplane, the pessimist the parachute.} 
+
 \section{Definición}
-
-
 
 Sea $I$ un intervalo y sean $a$, $b \in I$ con $a<b$. Si $x\in [a,b]$, $x$ se puede escribir como \emph{combinación convexa} de $a$ y $b$:
 \[
- x= \frac{b-x}{b-a}\cdot a + \frac{x-a}{b-a}\, b.
+      x= \frac{b-x}{b-a}\cdot a + \frac{x-a}{b-a}\, b.
 \]
 Otras fórmulas
 \[
- \lim_{t \to 0} \frac{f(a+t,b)-f(a,b)}{t}= \frac{\partial f}{\partial x}(a,b).
+      \lim_{t \to 0} \frac{f(a+t,b)-f(a,b)}{t}= \frac{\partial f}{\partial x}(a,b).
 \]
 
 
 
 \begin{definicion}\label{def:convexa}
- Sea $I$ un intervalo y sea $f \colon I \rightarrow \mathbb{R}$.
- \begin{enumerate}
-  \item La función $f$ es \emph{convexa} si para cualesquiera $a$, $b \in I$ con $a<b$ y cualquier $t \in [0,1]$ se cumple que
-        \[
-         f\left((1-t)a+tb\right) \leq (1-t)f(a)+tf(b).
-        \]
-  \item La función $f$ es \emph{cóncava} (resp. estrictamente cóncava) si $-f$ es convexa (resp. estrictamente cóncava).
- \end{enumerate}
+      Sea $I$ un intervalo y sea $f \colon I \rightarrow \mathbb{R}$.
+      \begin{enumerate}
+            \item La función $f$ es \emph{convexa} si para cualesquiera $a$, $b \in I$ con $a<b$ y cualquier $t \in [0,1]$ se cumple que
+                  \[
+                        f\left((1-t)a+tb\right) \leq (1-t)f(a)+tf(b).
+                  \]
+            \item La función $f$ es \emph{cóncava} (resp. estrictamente cóncava) si $-f$ es convexa (resp. estrictamente cóncava).
+      \end{enumerate}
 \end{definicion}
 
 \begin{ejemplo}
- La función $f(x)=x^2$ es convexa en todo $\mathbb{R}$. En efecto, si $a$, $b \in \mathbb{R}$ y $t \in [0,1]$,
- \begin{align*}
-  f\left( (1-t)a+tb \right) & = (1-t)^2 a^{2}+t^{2}b^{2} +2t(1-t)ab, \\
-  (1-t)f(a)+tf(b)           & = (1-t)a^2+tb^2.
- \end{align*}
- Para ver cuál es mayor, calculamos la diferencia:
- \begin{align*}
-  (1-t)f(a) & +tf(b)  - \bigl( f\left( (1-t)a+tb \right) \bigr) \\
-  \begin{split}
-   & = (1-t)a^2+tb^2 - \left( (1-t)^2 a^{2}+t^{2}b^{2} +2t(1-t)ab \right) \\
-   & = t(1-t) \left( a-b \right)^2 \geq 0.
-  \end{split}
- \end{align*}
+      La función $f(x)=x^2$ es convexa en todo $\mathbb{R}$. En efecto, si $a$, $b \in \mathbb{R}$ y $t \in [0,1]$,
+      \begin{align*}
+            f\left( (1-t)a+tb \right) & = (1-t)^2 a^{2}+t^{2}b^{2} +2t(1-t)ab, \\
+            (1-t)f(a)+tf(b)           & = (1-t)a^2+tb^2.
+      \end{align*}
+      Para ver cuál es mayor, calculamos la diferencia:
+      \begin{align*}
+            (1-t)f(a) & +tf(b)  - \bigl( f\left( (1-t)a+tb \right) \bigr) \\
+            \begin{split}
+                   & = (1-t)a^2+tb^2 - \left( (1-t)^2 a^{2}+t^{2}b^{2} +2t(1-t)ab \right) \\
+                   & = t(1-t) \left( a-b \right)^2 \geq 0.
+            \end{split}
+      \end{align*}
 \end{ejemplo}
+
+El paquete \texttt{witharrows} añade dos entornos: \texttt{WithArrows} y \texttt{DispWithArrows} que funcionan como \texttt{aligned} y \texttt{align}:
+\begin{DispWithArrows*}[tikz=blue]
+      A & = \bigl((a+b)+1\bigr)^2 \Arrow[jump=2]{desarrollamos} \\
+      & = (a+b)^2 + 2(a+b) +1 \\
+      & = a^2 + 2ab + b^2 + 2a + 2b +1
+\end{DispWithArrows*}
 
 \subsection{El conjunto de las funciones convexas}
 
 Veamos algunas propiedades del conjunto de las funciones convexas (ver definición~\ref{def:convexa}).
 
 \begin{proposicion}
- Sean $f$, $g \colon I \rightarrow \mathbb{R}$ dos funciones convexas y
- sea $\alpha>0$. Entonces
- \begin{enumerate}
-  \item $f+g$ es convexa,
-  \item $\alpha f$ es convexa, y
-  \item $\max \{f ,g\}$ es convexa.
- \end{enumerate}
+      Sean $f$, $g \colon I \rightarrow \mathbb{R}$ dos funciones convexas y
+      sea $\alpha>0$. Entonces
+      \begin{enumerate}
+            \item $f+g$ es convexa,
+            \item $\alpha f$ es convexa, y
+            \item $\max \{f ,g\}$ es convexa.
+      \end{enumerate}
 \end{proposicion}
 \begin{proof}
- \begin{enumerate}
-  \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
-        \begin{equation}
-         \begin{split}
-          (f+g) \left( (1-t)a+tb \right) & = f \left( (1-t)a+tb \right) + g \left( (1-t)a+tb \right)\\
-          & \leq (1-t)f(a)+tf(b)+(1-t)g(a)+t g(b) \\
-          & = (1-t)(f+g)(a) + t(f+g)(b).
-         \end{split}
-        \end{equation}
-  \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
-        \begin{equation}
-         \begin{aligned}
-          (\alpha f) \left( (1-t)a+tb \right) & = \alpha f \left( (1-t)a+tb \right)     \\
-                                              & \leq \alpha (1-t)f(a)+ \alpha t f(b)    \\
-                                              & = (1-t)(\alpha f)(a) + t (\alpha f)(b).
-         \end{aligned}
-        \end{equation}
-  \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
-        \[
-         \begin{aligned}
-          \max \{ f,g\} \left( (1-t)a+tb \right) & = \max \left\{ f\left( (1-t)a+tb) \right),g \left((1-t)a+tb\right) \right\} \\
-                                                 & \leq \max \left\{ (1-t)f(a)+tf(b),(1-t)g(a)+t g(b) \right\}                 \\
-                                                 & = (1-t) \max\{f,g\}(a) + t \max\{ f,g\} (b). \qedhere
-         \end{aligned}
-        \]
- \end{enumerate}
+      \begin{enumerate}
+            \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
+                  \begin{equation}
+                        \begin{split}
+                              (f+g) \left( (1-t)a+tb \right) & = f \left( (1-t)a+tb \right) + g \left( (1-t)a+tb \right) \\
+                                                             & \leq (1-t)f(a)+tf(b)+(1-t)g(a)+t g(b)                     \\
+                                                             & = (1-t)(f+g)(a) + t(f+g)(b).
+                        \end{split}
+                  \end{equation}
+            \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
+                  \begin{equation}
+                        \begin{aligned}
+                              (\alpha f) \left( (1-t)a+tb \right) & = \alpha f \left( (1-t)a+tb \right)     \\
+                                                                  & \leq \alpha (1-t)f(a)+ \alpha t f(b)    \\
+                                                                  & = (1-t)(\alpha f)(a) + t (\alpha f)(b).
+                        \end{aligned}
+                  \end{equation}
+            \item Sean $a$, $b\in I$, y sea $t\in [0,1]$, entonces
+                  \[
+                        \begin{aligned}
+                              \max \{ f,g\} \left( (1-t)a+tb \right) & = \max \left\{ f\left( (1-t)a+tb) \right),g \left((1-t)a+tb\right) \right\} \\
+                                                                     & \leq \max \left\{ (1-t)f(a)+tf(b),(1-t)g(a)+t g(b) \right\}                 \\
+                                                                     & = (1-t) \max\{f,g\}(a) + t \max\{ f,g\} (b). \qedhere
+                        \end{aligned}
+                  \]
+      \end{enumerate}
 \end{proof}
 
 
@@ -135,54 +191,144 @@ Veamos algunas propiedades del conjunto de las funciones convexas (ver definici�
 
 
 \begin{teorema}[O. Stolz] \label{th:cc}
- Sea $I$ un intervalo abierto y sea $f \colon I \rightarrow$ una función convexa.
- \begin{enumerate}
-  \item La función $f$ tiene derivadas laterales en todos los puntos. En particular, $f$ es continua.
-  \item $f'_{+}$ y $f'_{-}$ son funciones crecientes.
- \end{enumerate}
+      Sea $I$ un intervalo abierto y sea $f \colon I \rightarrow$ una función convexa.
+      \begin{enumerate}
+            \item La función $f$ tiene derivadas laterales en todos los puntos. En particular, $f$ es continua.
+            \item $f'_{+}$ y $f'_{-}$ son funciones crecientes.
+      \end{enumerate}
 \end{teorema}
 
 \section{Tercera sección}
 
 \begin{teorema}[de la función inversa]\label{th:inversa}
- Sean $A\subset \mathbb{R}^N$ un
- abierto y $f\colon A\rightarrow \mathbb{R}^{N}$ un campo vectorial de clase
- $\mathcal{C}^1$. Supongamos que existe $a\in A$ tal que
- \[
-  \deter \bigl (J_f(a)\bigr )=\det
-  \left(
-  \begin{matrix}
-    D_1 f_1 (a) & \dotsc & D_{N} f_{1}(a) \\
-    \hdotsfor[2]{3}                       \\
-    D_1f_N(a)   & \dotsc & D_N f_N(a)
-   \end{matrix}
-  \right)
-  \neq 0.
- \]
- Entonces existe un entorno abierto $U$ de $a$ contenido en $A$ tal
- que $V:=f(U)$ es un abierto de $\mathbb{R}^N$, $f$ es un difeomorfismo de
- clase $\mathcal{C}^1$ de $U$ sobre $V$, y para cada $x\in U$ se
- verifica
- \[
-  J_{f^{-1}}\bigl (f(x)\bigr )=
-  \begin{pmatrix}
-   D_1f_1(x) & \dotsc & D_Nf_1(x) \\
-   \hdotsfor[2]{3}                \\
-   D_1f_N(x) & \dotsc & D_Nf_N(x)
-  \end{pmatrix}^{-1}.
- \]
+      Sean $A\subset \mathbb{R}^N$ un abierto y $f\colon A\rightarrow \mathbb{R}^{N}$ un campo vectorial de clase
+      $\mathcal{C}^1$. Supongamos que existe $a\in A$ tal que
+      \[
+            \deter \bigl (J_f(a)\bigr )=\det
+            \left(
+            \begin{matrix}
+                        D_1 f_1 (a) & \dotsc & D_{N} f_{1}(a) \\
+                        \hdotsfor[2]{3}                       \\
+                        D_1f_N(a)   & \dotsc & D_N f_N(a)
+                  \end{matrix}
+            \right)
+            \neq 0.
+      \]
+      Entonces existe un entorno abierto $U$ de $a$ contenido en $A$ tal que $V:=f(U)$ es un abierto de $\mathbb{R}^N$, $f$ es un difeomorfismo de clase $\mathcal{C}^1$ de $U$ sobre $V$, y para cada $x\in U$ se verifica
+      \[
+            J_{f^{-1}}\bigl (f(x)\bigr )=
+            \begin{pmatrix}
+                  D_1f_1(x) & \dotsc & D_Nf_1(x) \\
+                  \hdotsfor[2]{3}                \\
+                  D_1f_N(x) & \dotsc & D_Nf_N(x)
+            \end{pmatrix}^{-1}.
+      \]
 \end{teorema}
 
 \begin{teorema}[de la convergencia monótona]
- Sea $(\Omega,\mathcal{A},\mu)$ un espacio de medida. Si $\{f_n\}$ es
- una sucesión monótona de funciones integrables en $\Omega$
- verificando que la sucesión de sus integrales $\big
-  \{\int_{\Omega}f_n\  d\mu \big \}$ está acotada, entonces
- $\{f_n\}$ converge $\text{c.p.d.}$ a una función $f$ integrable en
- $\Omega$ y
- \[
-  \int_{\Omega}f\, \mathrm{d}\mu=\lim \int_{\Omega}f_n\, \mathrm{d}\mu .
- \]
+      Sea $(\Omega,\mathcal{A},\mu)$ un espacio de medida. Si $\{f_n\}$ es una sucesión monótona de funciones integrables en $\Omega$  verificando que la sucesión de sus integrales $\big
+            \{\int_{\Omega}f_n\  d\mu \big \}$ está acotada, entonces $\{f_n\}$ converge $\text{c.p.d.}$ a una función $f$ integrable en $\Omega$ y
+      \[
+            \int_{\Omega}f\, \mathrm{d}\mu=\lim \int_{\Omega}f_n\, \mathrm{d}\mu .
+      \]
 \end{teorema}
+
+\section{Miscelánea}
+
+\subsection{Unidades}
+
+El paquete \texttt{siunitx} permite escribir unidades del Sistema Internacional de forma sencilla. Por ejemplo, la velocidad de la luz en el vacío es \SI{300000}{\km\per\second}. Otra forma de escribirlo es \SI{3e5}{\km\per\second}. Con \texttt{num} podemos formatar los números, por ejemplo 
+\[
+      \begin{split}
+      \pi & \approx\num{3.141592653589793} \\
+      e^{15} & \approx \num{3269017.3724721107} \approx \num[scientific-notation=true]{3269017.3724721107}
+      \end{split}
+\]      
+
+Además de escribir unidades, \texttt{siunitx} permite escribir ángulos, por ejemplo, $\ang{30;15;20}$ o $\ang{30.25}$, números complejos \complexnum{2+3i} en forma cartesiana o polar \complexnum{3:60}. Además de esto añade un tipo nueva de columna en los entornos tabulados para alinear números, parte entera y decimal.
+
+\subsection{Física y Química}
+
+Algunos paquetes para Física:
+      \begin{enumerate}
+            \item revtex
+            \item tikz-feynman
+            \item siunitx
+            \item struct
+      \end{enumerate}
+
+Algunos paquetes para Química:
+      \begin{enumerate}
+            \item chemfig
+            \item mhchem
+            \item chemformula
+            \item chemmacros
+            \item substances
+            \item elements
+            \item carbohydrates
+      \end{enumerate}      
+
+Hay muchos paquetes que simplifican la escritura de fórmulas químicas. Por ejemplo, con \texttt{chemfig} se pueden escribir fórmulas químicas de forma sencilla. Por ejemplo, la molécula de agua se puede escribir como \chemfig{H_2O}.
+
+\begin{equation}
+      \ce{2H2 + O2 -> 2H2O} 
+\end{equation}
+\begin{equation}
+      \ce{N2 + 3H2 -> 2NH3}
+\end{equation}
+
+\begin{table}[h!]
+      \centering
+      \begin{tabular}{|c|c|}
+            \hline
+            Fórmula Química & Nombre            \\
+            \hline
+            \ce{H2O}        & Water molecule    \\
+            \ce{NaCl}       & Sodium chloride   \\
+            \ce{C6H12O6}    & Glucose           \\
+            \ce{^{14}C}     & Carbon-14 isotope \\
+            \ce{Na^+}       & Sodium ion        \\
+            \ce{H2O_{2}}    & Hydrogen Peroxide \\
+            \hline
+      \end{tabular}
+      \caption{Tabla de fórmulas químicas y sus nombres}
+      \label{tab:quimica}
+\end{table}
+
+\subsection{Código}
+
+\subsubsection{Ejemplo de código en Python}
+
+\begin{minted}{python}
+# Ejemplo de código en Python
+def suma(a, b):
+return a + b
+resultado = suma(3, 5)
+print("El resultado de la suma es: {resultado}")
+\end{minted}
+
+\subsubsection{Ejemplo de código en \LaTeX{}}
+
+\begin{minted}{latex}
+      \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c|c|}
+                  \hline
+                  Fórmula Química & Nombre            \\
+                  \hline
+                  \ce{H2O}        & Water molecule    \\
+                  \ce{NaCl}       & Sodium chloride   \\
+                  \ce{C6H12O6}    & Glucose           \\
+                  \ce{^{14}C}     & Carbon-14 isotope \\
+                  \ce{Na^+}       & Sodium ion        \\
+                  \ce{H2O_{2}}    & Hydrogen Peroxide \\
+                  \hline
+            \end{tabular}
+            \caption{Tabla de fórmulas químicas y sus nombres}
+            \label{tab:quimica}
+      \end{table}      
+\end{minted}
+
+
 
 \end{document}

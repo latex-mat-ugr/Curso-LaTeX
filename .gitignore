@@ -12,6 +12,7 @@
 *.ist
 *.log
 *.log
+*.lua
 *.nav
 *.out
 *.snm
@@ -27,3 +28,6 @@ Icon?
 
 /.quarto/
 /_site/
+.vscode/
+Matematicas/documento-sencillo/_minted/
+*.listing

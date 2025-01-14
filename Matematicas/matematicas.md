@@ -81,6 +81,12 @@ hacerlo son
 \]
 ```
 
+* En general de menor, negativo en ese caso, a mayor, los espacios que se pueden usar son
+  
+```latex
+\!  \,  \:  \;  \  \quad \qquad
+```
+
 ## Delimitadores
 
 Los paréntesis y los corchetes se suelen usar en matemáticas para agrupar operaciones. En LaTeX los delimitadores incluidos por defecto son
