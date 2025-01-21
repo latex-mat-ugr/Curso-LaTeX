@@ -12,7 +12,7 @@ La forma de incluir un gráfico como objeto flotante es
 
 ```latex
 \begin{figure}[opciones]
-Gráfico,
+Gráfico
 \end{figure}
 ```
 
@@ -22,6 +22,8 @@ Gráfico,
 - t (*top*) tiene preferencia la parte superior de la página.
 - b (*bottom*) tiene preferencia la parte inferior de la página.
 - p (*paragraph*)
+
+El paquete *float* añade la opción `H` para indicar *aquí* de forma forzosa.
 
 ### Cuadros
 
@@ -70,7 +72,7 @@ donde col1, col2,... es un tipo de columna. Además de esto se pueden dibujar l�
 
 #### Tipos de columnas
 
-Hay tres tipos básicos de columnas: alineada a izquierda, centrada o alineada a la derecha: se indican con las letras l,c,r. Además también tenemos el tipo de columna párrafo que se indica con la letra p seguida de la anchura del párrafo entre llaves.
+Hay tres tipos básicos de columnas: alineada a izquierda, centrada o alineada a la derecha: se indican con las letras `l`, `c` y `r`. Además, también tenemos el tipo de columna párrafo que se indica con la letra p seguida de la anchura del párrafo entre llaves.
 
 Por ejemplo
 
@@ -96,7 +98,7 @@ algunas reglas generales que mejoran el aspecto de tablas o cuadros:
 - coloca las unidades en la cabecera;
 - no uses comillas para repetir el contenido.
 
-Entre otras cosas el paquete *booktabs* incluye las órdenes toprule, midrule y bottomrule que hacen las líneas horizontales de una tabla.
+Entre otras cosas el paquete *booktabs* incluye las órdenes `toprule`, `midrule` y `bottomrule` que hacen las líneas horizontales de una tabla.
 
 ```latex
 \begin{table}[htp]
@@ -147,7 +149,7 @@ Si ponemos más de una columna de tipo X, el espacio se distribuye entre todas e
 
 ### El paquete *rotating*
 
-El paquete rotating incluye varias órdenes para girar cuadros.
+El paquete *rotating* incluye varias órdenes para girar cuadros.
 
 Se puede usar `sideways` alrededor de un entorno de entorno tabular para girar un cuadro pequeño.
 
@@ -194,7 +196,7 @@ Nombre & Apellidos & Nota & Nombre & Apellidos & Nota & Nombre & Apellidos & Not
 
 ### Uso de color (versión básica)
 
-Hay que cargar el paquete color con la opción table. La orden rowcolors tiene tres parámetros: la fila en la que empieza a funcionar, color inicial y color alternativo. Por ejemplo, empezamos en la tercera fila con un 5\% de negro y alternamos con blanco.
+Hay que cargar el paquete color con la opción `table`. La orden `rowcolors` tiene tres parámetros: la fila en la que empieza a funcionar, color inicial y color alternativo. Por ejemplo, empezamos en la tercera fila con un 5\% de negro y alternamos con blanco.
 
 ```latex
 \begin{table}[htbp]
@@ -326,3 +328,15 @@ Robert & Isaac & 8 \\
 \end{longtabu}
 \end{center}
 ```
+
+### El paquete *tabularray*
+
+Este paquete es una de las incorporaciones más recientes al mundo de los cuadros en LaTeX. En su versión más básica una tabla se construye con el entorno `tblr` de forma análoga a un entorno tabular:
+
+```latex
+\begin{tblr}{lcr}
+Nombre & Apellidos & Nota \\
+...
+\end{tblr}
+```
+

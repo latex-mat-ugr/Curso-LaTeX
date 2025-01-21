@@ -254,7 +254,19 @@ tabla.
 \NormalTok{\textbackslash{}end\{table\}}
 \end{Highlighting}
 \end{Shaded}
-\begin{table}[htp]\centering\begin{tabular}{@{}lll@{}}\topruleNombre & Apellidos & Nota \\\midrule Antonio & López & 7 \\ John & Fuentes & 8 \\ Mario & Suárez & 8 \\\bottomrule\end{tabular}\caption{Lista de notas}\end{table}
+\begin{table}[htp]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Nombre & Apellidos & Nota \\
+\midrule
+ Antonio & López & 7 \\
+ John & Fuentes & 8 \\
+ Mario & Suárez & 8 \\
+\bottomrule
+\end{tabular}
+\caption{Lista de notas}
+\end{table}
 
 \subsubsection{El paquete \emph{tabularx}}\label{el-paquete-tabularx}
 
@@ -276,7 +288,15 @@ espacio indicado. Cada una de ellas se comporta como una columna de tipo párraf
 \end{Shaded}
 
 \begin{center}
-\begin{tabularx}{\linewidth}{lX}\toprule Unidad & Definición \\ \midrule Newton & Su correspondiente definición  \\ Otra &  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\\ \bottomrule\end{tabularx}\end{center}
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ Unidad & Definición \\
+ \midrule
+ Newton & Su correspondiente definición  \\
+ Otra &  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\\
+ \bottomrule
+\end{tabularx}
+\end{center}
 
 Si ponemos más de una columna de tipo X, el espacio se distribuye entre
 todas ellas.
@@ -445,13 +465,9 @@ Nombre & Apellidos & Nota & Nombre & Apellidos & Nota & Nombre & Apellidos & Not
 \caption{lista de notas}
 \end{sidewaystable}
 
-\subsubsection{Cuadros de más de una
-página}
+\subsubsection{Cuadros de más de una página}
 
-Cargamos los paquetes \texttt{longtable} y \texttt{tabu}. En el código
-siguiente se puede ver la estructura de un cuadro que ocupa más de una
-página. Al principio se escriben las cabeceras de la primera página, de
-las siguientes y lo mismo con los finales de los cuadros.
+Cargamos los paquetes \texttt{longtable} y \texttt{tabu}. En el código siguiente se puede ver la estructura de un cuadro que ocupa más de una página. Al principio se escriben las cabeceras de la primera página, de las siguientes y lo mismo con los finales de los cuadros.
 
 \begin{center}
 \begin{longtabu} to 0.7\linewidth{lll} % la tabla va a ocupar el 70% de la línea
