@@ -23,6 +23,8 @@
 \usepackage{chemfig}
 %paquete Wrapfig
 \usepackage{wrapfig}
+% Paquete para insertar códigos
+\usepackage{minted}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Creación de gráficos con \LaTeX{}}
@@ -80,7 +82,7 @@ Do it yourself (DIY)
 \LaTeX \  es capaz de realizar gr\'aficos sencillos 
 directamente desde el entorno picture
 
-\begin{verbatim}
+\begin{minted}{latex}
 \begin{picture}(100,7)
 \put(2,1.5){\line(1,0){23.5}}  \put(13,0.5){$<$} 
 \put(27,1.4){\circle*{1.5}}  \put(26.5,3){0}
@@ -88,7 +90,7 @@ directamente desde el entorno picture
 \put(52,1.4){\circle*{1.5}} \put(51.5,3){5}
 \put(53.5,1.5){\line(1,0){23.5}} \put(63,0.5){$<$}
 \end{picture}
-\end{verbatim}
+\end{minted}
 
 
 \begin{center} \setlength{\unitlength}{1mm}
@@ -144,7 +146,7 @@ que sí lo son.}
 %\caption{Gr\'afico sencillo TikZ}
 \end{wrapfigure}
 $ $
-\begin{verbatim}
+\begin{minted}{latex}
 Preámbulo:
 \usepackage{tikz} 
 \usetikzlibrary{babel,shapes,arrows}
@@ -154,7 +156,7 @@ Cuerpo:
 \draw[help lines]  (0,0) grid (3,3);
 \draw[->]  (0,0) -- (2,2.5);
 \end{tikzpicture}
-\end{verbatim}
+\end{minted}
 \vspace{1cm}
 \href{https://cremeronline.com/LaTeX/minimaltikz.pdf}{\color{blue}A very minimal introduction to TikZ}\\
 \href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusi%C3%B3n_de_gr%C3%A1ficos/Gr%C3%A1ficos_con_TikZ}{\color{blue}Manual de LaTeX/Inclusión de gráficos/Gráficos con TikZ}
@@ -171,7 +173,7 @@ Cuerpo:
 \end{wrapfigure}
 $ $
 \vspace{-1.5cm }
-\begin{verbatim}
+\begin{minted}{latex}
 Preámbulo:
 \usepackage{tikz} 
 \usetikzlibrary{babel,shapes,arrows}
@@ -183,7 +185,7 @@ Cuerpo:
 \draw [blue, domain=0:pi] 
 plot (\x, {sin(\x r)*exp(\x/exp(2*pi))});
 \end{tikzpicture}
-\end{verbatim}
+\end{minted}
 %\vspace{2cm}
 %\href{https://cremeronline.com/LaTeX/minimaltikz.pdf}{\color{blue}A very minimal introduction to TikZ}\\
 %\href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusi%C3%B3n_de_gr%C3%A1ficos/Gr%C3%A1ficos_con_TikZ}{\color{blue}Manual de LaTeX/Inclusión de gráficos/Gráficos con TikZ}
@@ -209,7 +211,7 @@ Un primer ejemplo puede ser \href{http://pgfplots.net}{\color{blue}pgfplots} par
 	\end{tikzpicture}
 	\caption{Representaci\'on puntos}
 \end{wrapfigure}
-\begin{verbatim}
+\begin{minted}{latex}
 \begin{tikzpicture}
 \begin{axis}
 \addplot coordinates {
@@ -219,12 +221,12 @@ Un primer ejemplo puede ser \href{http://pgfplots.net}{\color{blue}pgfplots} par
 };
 \end{axis}
 \end{tikzpicture}
-\end{verbatim}
+\end{minted}
 Añadir al pre\'ambulo:
-\begin{verbatim}
+\begin{minted}{latex}
 \usepackage{pgfplots}
 \pgfplotsset{width=6cm,compat=1.12}
-\end{verbatim}
+\end{minted}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,7 +243,7 @@ Añadir al pre\'ambulo:
 \caption{Representaci\'on funci\'on}
 \end{wrapfigure}
 $ $ \vspace{3cm}
-\begin{verbatim}
+\begin{minted}{latex}
 \begin{tikzpicture} 
 \begin{axis}[ ]
 \addplot[ red, 
@@ -250,7 +252,7 @@ $ $ \vspace{3cm}
   {exp((-(x-2)^2)/2) / sqrt(2*pi)};
 \end{axis}
 \end{tikzpicture}
-\end{verbatim}
+\end{minted}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -272,12 +274,12 @@ legend pos=north west]
 \caption{Representaci\'on conjunta}
 \end{wrapfigure}
 $ $ %\vspace{1cm}
-\begin{verbatim}
+\begin{minted}{latex}
 \begin{tikzpicture} 
 \begin{axis}
 [xlabel=Var X, ylabel=Var Y,
 legend pos=north west]
-\addplot[domain=0:8]{x};
+\addplot[domain=0:8]{x^2};
 \addplot coordinates {
 	(1,1.5)
 	(4,16)
@@ -286,7 +288,7 @@ legend pos=north west]
 \legend{$h(x)=x$,$f(x)$}
 \end{axis}
 \end{tikzpicture}
-\end{verbatim}
+\end{minted}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -305,7 +307,7 @@ legend pos=north west]
 \caption{Gr\'afico fichero datos}
 \end{wrapfigure}
 $ $ %\vspace{1cm}
-\begin{verbatim}
+\begin{minted}{latex}
 \begin{tikzpicture}
 \begin{axis}[
    title=Datos externos,
@@ -316,7 +318,7 @@ $ $ %\vspace{1cm}
 {./graficos/type1Orbit.table};
 \end{axis}
 \end{tikzpicture}
-\end{verbatim}
+\end{minted}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -339,7 +341,7 @@ $ $ %\vspace{1cm}
 \caption{Gr\'afico tridimensional}
 \end{wrapfigure}
 $ $ %\vspace{1cm}
-\begin{verbatim}
+\begin{minted}{latex}
 \begin{tikzpicture} 
 \begin{axis}[
     title={$x \exp(-x^2-y^2)$},
@@ -351,7 +353,7 @@ $ $ %\vspace{1cm}
 ]{exp(-x^2-y^2)*x};
 \end{axis}
 \end{tikzpicture}
-\end{verbatim}
+\end{minted}
 \end{frame}
 
 
@@ -360,20 +362,66 @@ $ $ %\vspace{1cm}
 \begin{frame}[fragile]{El paquete chemfig}
 Este uso se está extendiendo en \'areas distintas a la Física o las Matemática como por ejemplo el paquete \href{https://www.ctan.org/pkg/chemfig}{\color{blue} chemfig} en \href{https://www.ctan.org/search/index?phrase=chemistry&offset=48&max=16}{\color{blue}Química}
 \begin{wrapfigure}{r}{4cm}
-\chemfig{-(-[1]O^{\ominus})=[7]O}
-
 \chemfig{C(-[:0]H)(-[:90]H)(-[:180]H)(-[:270]H)}
+\vspace{0.5cm}
+
+\chemfig{A*5(-B=C-D-E=)}
 \caption{Gr\'aficos química}
 \end{wrapfigure}
-\begin{verbatim}
-\chemfig{-(-[1]O^{\ominus})=[7]O}
-\end{verbatim}
-\vspace{1cm}
-\begin{verbatim}
+\begin{minted}{latex}
+
 \chemfig{C(-[:0]H)(-[:90]H)
 (-[:180]H)(-[:270]H)}
-\end{verbatim}
+
+\end{minted}
+\begin{minted}{latex}
+
+\chemfig{A*5(-B=C-D-E=)}
+
+\end{minted}
+\vspace{1cm}
+Links:\\
+\href{https://es.overleaf.com/learn/latex/Chemistry_formulae}{\color{blue} Manual reducido en overleaf}\\
+\href{http://mirrors.ctan.org/macros/generic/chemfig/chemfig-en.pdf}{\color{blue}Manual completo en CTAN}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{mhchem}
+\begin{frame}[fragile]{El paquete chemfig}
+
+Distintas reacciones son representables:
+
+\verb|\schemestart A\arrow{->}B\schemestop|
+\hfill\schemestart A\arrow{->}B\schemestop \par % by default
+
+\verb|\schemestart A\arrow{-/>}B \schemestop|
+\hfill \schemestart A\arrow{-/>}B \schemestop\par
+
+\verb|\schemestart A\arrow{<-}B \schemestop|
+\hfill
+\schemestart A\arrow{<-}B \schemestop\par
+
+\verb|\schemestart A\arrow{<->}B \schemestop|
+\hfill
+\schemestart A\arrow{<->}B \schemestop\par
+
+\verb|\schemestart A\arrow{<=>}B \schemestop|
+\hfill
+\schemestart A\arrow{<=>}B \schemestop\par
+
+\verb|\schemestart A\arrow{<->>}B \schemestop|
+\hfill
+\schemestart A\arrow{<->>}B \schemestop\par
+
+\verb|\schemestart A\arrow{<<->}B \schemestop|
+\hfill
+\schemestart A\arrow{<<->}B \schemestop\par
+
+\verb|\schemestart A\arrow{-U>}B \schemestop|
+\hfill
+\schemestart A\arrow{-U>}B \schemestop\par
+\end{frame}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

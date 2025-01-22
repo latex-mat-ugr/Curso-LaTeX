@@ -20,12 +20,50 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -36,6 +74,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0b70d8ee14c43831778c0a8f58b563a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -65,6 +115,7 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Curso LaTeX Grado Matemáticas UGR</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -108,6 +159,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./Matematicas/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matemáticas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Objetos flotantes/about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Objetos flotantes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -221,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="qué-es-tex-y-latex" class="level2">
 <h2 class="anchored" data-anchor-id="qué-es-tex-y-latex">¿Qué es TeX y LaTeX?</h2>
 <p>TeX es un programa destinado a la composición de documentos que contienen texto y fórmulas matemáticas con calidad de imprenta creado por Donald Knuth en 1978</p>
-<p>NO es un editor de texto sino un procesador de macros y lenguaje de programación.</p>
+<p>NO es un editor de texto, sino un procesador de macros y lenguaje de programación.</p>
 <p><strong>¿Y LaTeX?</strong> LaTeX es un conjunto de <em>macros</em> para TeX debidos originalmente a Leslie Lamport para facilitar el uso de TeX.</p>
 <p>Usaremos el término <strong>LaTeX</strong> para referirnos a TeX + LaTeX + mejoras sucesivas</p>
 <p>Las características de LaTeX son:</p>
@@ -234,7 +291,17 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <section id="ventajas-y-desventajas" class="level3">
 <h3 class="anchored" data-anchor-id="ventajas-y-desventajas">Ventajas y desventajas</h3>
-<p>Entre sus <strong>ventajas</strong> podemos enumerar: - Composición de fórmulas - Calidad de imprenta - Facilidad para gestionar bibliografías, notas, referencias, etc. - Muchos paquetes adicionales - Independiente de la plataforma: Unix, Windows, OSX,… - Software libre - Salida PDF, Postscript,… - Separación de contenido y forma</p>
+<p>Entre sus <strong>ventajas</strong> podemos enumerar:</p>
+<ul>
+<li>Composición de fórmulas</li>
+<li>Calidad de imprenta</li>
+<li>Facilidad para gestionar bibliografías, notas, referencias, etc.</li>
+<li>Muchos paquetes adicionales</li>
+<li>Independiente de la plataforma: Unix, Windows, OSX,…</li>
+<li>Software libre</li>
+<li>Salida PDF, Postscript,…</li>
+<li>Separación de contenido y forma</li>
+</ul>
 <p>Entre sus <strong>desventajas</strong>:</p>
 <ul>
 <li>Curva de aprendizaje lenta, el material y la información de este repositorio pretende ayudar a agilizar el aprendizaje desde cero.</li>
@@ -263,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Parte del material de este repositorio fue creado inicialmente como material de apoyo para un curso de LaTeX organizado por <a href="http://www.ugr.es/~amat/index_archivos/Page412.htm">AMAT</a> y por el PAT <a href="https://www.ugr.es/~orientamat/">Orientamat</a> para alumnos de Trabajo de Fin de Grado</p>
 <p>Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas y se ha repetido desde entonces casi anualmente mejorando y añadiendo nuevo material.</p>
 <p>Los contenidos del curso se mantienen por <a href="https://www.ugr.es/~alaminos/">Jerónimo Alaminos</a>, <a href="https://www.ugr.es/~pedro">Pedro A. García Sánchez</a>, <a href="https://www.ugr.es/~ossanche">Óscar Sánchez Romero</a> y <a href="https://www.ugr.es/~ftorralbo/">Francisco Torralbo</a>.</p>
-<p>En los talleres impartidos, hemos contado con la ayuda de <a href="https://www.ugr.es/~arobles/">Aureliano M. Robles Pérez</a>, <a href="https://www.ugr.es/~deromero/">Desiree Romero Molina</a>, <a href="https://www.ugr.es/~alarcon/">Antonio Alarcón</a>, <a href="https://www.ugr.es/~aperalta/">Antonio Peralta</a>, entre otros.</p>
+<p>En los talleres impartidos, hemos contado con la ayuda de <a href="https://www.ugr.es/~arobles/">Aureliano M. Robles Pérez</a>, <a href="https://www.ugr.es/~deromero/">Desiré Romero Molina</a>, <a href="https://www.ugr.es/~alarcon/">Antonio Alarcón</a>, <a href="https://www.ugr.es/~aperalta/">Antonio Peralta</a>, entre otros.</p>
 </section>
 <section id="instalación-de-latex" class="level2">
 <h2 class="anchored" data-anchor-id="instalación-de-latex">Instalación de LaTeX</h2>
@@ -274,24 +341,24 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Posibles problemas durante la instalación</strong>:</p>
 <ul>
 <li>Tras descargar el archivo de instalación de MikTeX no cambiarle el nombre. En algunos sistemas Windows esto provoca que la instalación falle.</li>
-<li>A veces que la instalación para todos lo usuarios términa con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en <em>Archivos de Programa</em>) y reinstalar esta vez seleccionando la instalación para un único usuario.</li>
-<li>Si vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. <code>José</code>) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. <code>jose</code>), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador pero sólo en la sesión del usuario que hemos creado (en el ejemplo <code>jose</code>).</li>
+<li>A veces que la instalación para todos los usuarios termina con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en <em>Archivos de Programa</em>) y reinstalar esta vez seleccionando la instalación para un único usuario.</li>
+<li>Si vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. <code>José</code>) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. <code>jose</code>), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador, pero sólo en la sesión del usuario que hemos creado (en el ejemplo <code>jose</code>).</li>
 </ul>
 </section>
 <section id="usuarios-de-linux" class="level3">
 <h3 class="anchored" data-anchor-id="usuarios-de-linux">Usuarios de Linux</h3>
 <p>Si tenéis <a href="https://www.debian.org/index.es.html">debian</a> o <a href="http://www.ubuntu.com">Ubuntu</a>, lo podéis instalar desde la línea de comandos</p>
-<pre><code>sudo apt-get install texlive</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install texlive</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>No olvidéis hacer un <code>sudo apt-get update</code> antes.</p>
-<p>En otras distribuciones de linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.</p>
+<p>En otras distribuciones de Linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.</p>
 <p>El único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las <a href="https://tug.org/texlive/quickinstall.html">instrucciones en su página oficial</a> o bien <a href="https://wildunix.es/posts/instalar-tex-live-en-ubuntu-mac-os-y-windows/">consultar el siguiente enlace</a>.</p>
-<p>Una vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos <a href="https://www.texstudio.org/">TeXStudio</a>. Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:</p>
-<pre><code>sudo apt-get install texstudio</code></pre>
+<p>Una vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos <a href="https://www.texstudio.org/">TeXStudio</a>. Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de Linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install texstudio</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Si el paquete <code>texstudio</code> no está en los repositorios los añadiremos mediante los comandos:</p>
-<pre><code>sudo add-apt-repository ppa:sunderme/texstudio
-sudo apt-get update</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:sunderme/texstudio</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>y volveremos a intentar la instalación</p>
-<pre><code>sudo apt-get install texstudio</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install texstudio</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="usuarios-de-macos" class="level3">
 <h3 class="anchored" data-anchor-id="usuarios-de-macos">Usuarios de macOS</h3>
@@ -302,14 +369,14 @@ sudo apt-get update</code></pre>
 <h3 class="anchored" data-anchor-id="editores">Editores</h3>
 <p>Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye <a href="https://www.tug.org/texworks">TeXworks</a>. Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, <a href="https://www.gnu.org/software/emacs">emacs</a> con <a href="https://www.gnu.org/software/auctex">AUCTeX</a> o bien <a href="https://www.vim.org/">vim</a> (o su versión más moderna <a href="https://neovim.io/">neovim</a>) con <a href="https://github.com/lervag/vimtex">vimtex</a> son también buenas opciones para el usuario experto.</p>
 <p>TeXworks existe en todas las plataformas que hemos mencionado.</p>
-<p>Yo uso <a href="http://texstudio.sourceforge.net">TeXStudio</a>, que también es multiplataforma. Lo tengo instalado tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.</p>
+<p>Algunos usamos <a href="http://texstudio.sourceforge.net">TeXStudio</a>, que también es multiplataforma. Se puede usar tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.</p>
 <p><a href="https://code.visualstudio.com/">Visual Studio Code</a> es un editor mutiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.</p>
-<p>Existen varias posibilidades también de editar textos en línea, una de ellas es ShareLaTeX que actualmente forma parte de <a href="https://www.overleaf.com/">Overleaf</a>.</p>
+<p>Existen varias posibilidades también de editar textos en línea, una de ellas es <a href="https://www.overleaf.com/">Overleaf</a>.</p>
 </section>
 </section>
 <section id="material" class="level2">
 <h2 class="anchored" data-anchor-id="material">Material</h2>
-<p>Podéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyeccto de Innovación Docente <a href="http://www.ugr.es/~orientamat/">Orientamat</a>.</p>
+<p>Podéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyecto de Innovación Docente <a href="http://www.ugr.es/~orientamat/">Orientamat</a>.</p>
 <p>En esta página iremos añadiendo materiales para el curso.</p>
 <ul>
 <li><p>La carpeta <code>Documento sencillo</code> corresponde con la primera clase.</p></li>
@@ -317,14 +384,14 @@ sudo apt-get update</code></pre>
 <li><p><code>Beamer</code> tiene dentro una presentación sencilla hecha con la clase <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/beamer">beamer</a>.</p></li>
 <li><p><code>Markdown</code> es una carpeta con una breve introducción a <a href="http://daringfireball.net/projects/markdown">markdown</a>.</p></li>
 </ul>
-<p>Cada carpeta contiene una descripción en markdown y html (obtenido a partir de la de markdown). Un ejemplo de traducción del contenido de <code>Documento sencillo</code> se puede ver <a href="http://www.ugr.es/~pedro/latex">aquí</a>.</p>
+<p>Cada carpeta contiene una descripción en Markdown y HTML (obtenido a partir de la de Markdown). Un ejemplo de traducción del contenido de <code>Documento sencillo</code> se puede ver <a href="http://www.ugr.es/~pedro/latex">aquí</a>.</p>
 </section>
 <section id="editores-de-markdown" class="level2">
 <h2 class="anchored" data-anchor-id="editores-de-markdown">Editores de markdown</h2>
-<p>El editor <a href="https://atom.io">atom</a> es multiplataforma, y tiene un módulo markdown.</p>
-<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> puede editar y visualizar markdown, y tiene muchas extensiones para usar con markdown.</p>
-<p>Para mac, un buena opción es <a href="http://macdown.uranusjr.com">MacDown</a>, que ya trae integrada <a href="http://www.mathjax.org">MathJax</a> para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo <a href="https://atom.io/packages/markdown-preview-plus">Markdown Preview Plus</a>.</p>
-<p>Existe además un plugin para <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> para visualizar markdown: <a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl">Markdown preview plus</a>. Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.</p>
+<p>El editor <a href="https://atom.io">atom</a> es multiplataforma, y tiene un módulo Markdown.</p>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> puede editar y visualizar Markdown, y tiene muchas extensiones para usar con Markdown.</p>
+<p>Para Mac, una buena opción es <a href="http://macdown.uranusjr.com">MacDown</a>, que ya trae integrada <a href="http://www.mathjax.org">MathJax</a> para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo <a href="https://atom.io/packages/markdown-preview-plus">Markdown Preview Plus</a>.</p>
+<p>Existe además un plug-in para <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> para visualizar markdown: <a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl">Markdown preview plus</a>. Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.</p>
 <p>Otra opción es usar un editor en línea, como puede ser <a href="https://stackedit.io">StackEdit</a>. También soporta MathJax.</p>
 </section>
 <section id="nueva-edición-del-curso-de-latex-2021" class="level2">
@@ -338,7 +405,7 @@ sudo apt-get update</code></pre>
 </section>
 <section id="orientamat" class="level2">
 <h2 class="anchored" data-anchor-id="orientamat">Orientamat</h2>
-<p>La mayor parte de este material se ha elaborado para el curso de LaTex realizado dentro del Plan de Acción Tutorial del Grado en Matemáticas de la Universidad de Granada&nbsp;<a href="http://www.ugr.es/~orientamat/actividades1.html">Orientamat</a></p>
+<p>La mayor parte de este material se ha elaborado para el curso de LaTeX realizado dentro del Plan de Acción Tutorial del Grado en Matemáticas de la Universidad de Granada&nbsp;<a href="http://www.ugr.es/~orientamat/actividades1.html">Orientamat</a></p>
 
 
 </section>

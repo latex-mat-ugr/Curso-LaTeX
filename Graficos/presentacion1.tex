@@ -25,6 +25,7 @@
 %paquete Wrapfig
 \usepackage{wrapfig}
 
+\usepackage{minted}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Inserción/edición 
 %y creación \\ 
@@ -53,7 +54,7 @@ gráficos con \LaTeX{}}
 Todos sabemos que en un documento generado con \LaTeX{} podemos incorporar  gráficos  
 \begin{figure}[h]
 \includegraphics[width=0.3\textwidth]{./graficos/sorpresa.jpg} 
-\includegraphics[width=0.3\textwidth]{./graficos/fig_9Vis.pdf}
+\includegraphics[width=0.3\textwidth]{./graficos/fig_9.pdf}
 \includegraphics[width=0.3\textwidth]{./graficos/ciclista.png}
 \caption{Caption general}
 \label{figGeneral}
@@ -63,12 +64,12 @@ Todos sabemos que en un documento generado con \LaTeX{} podemos incorporar  grá
 \subsection{Uso no tan frecuente}
 \begin{frame}[fragile]{Uso no tan frecuente}
 Lo que no es tan conocido es que, al incorporarlos, permite editarlos ligeramente.
-%\vspace{-1cm}
+\vspace{-1cm}
 %\includegraphics[angle=0, width=3cm]{./graficos/ciclista}
 \begin{figure}
 \centering
-\includegraphics[width=6cm]{./graficos/fig_9Vis}
-\put(-90,5){\includegraphics[angle=-10,scale=0.4]{./graficos/ciclista}}
+\includegraphics[angle=270,width=6cm]{./graficos/fig_9}
+\put(-90,-138){\includegraphics[angle=-10,scale=0.4]{./graficos/ciclista}}
 \caption{Redimensionar, girar y superponer imágenes}
 \end{figure}
 {\scriptsize OJO!  Requiere 
@@ -142,19 +143,42 @@ Ver detalles en el siguiente  \href{https://w.wiki/9Luv}{\color{blue}wikibook}.
 %%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Insertar el gr\'afico como una figura}
 Declaraci\'on del paquete graphicx en el pre\'ambulo:
-\begin{verbatim}\usepackage{graphicx} \end{verbatim}
+\mint{latex}/ \usepackage{graphicx} /
 
-Inserci\'on del gr\'afico en el documento:
-\begin{verbatim}
+Inserci\'on del gr\'afico en el documento: 
+%\hfill \attachfile{./attachfiles/inserciongrafico.tex}{{\tiny Copiar texto}}
+%\begin{minted}{latex}
+\begin{minted}{latex}
 \begin{figure}[h]
-  \centering
-  \includegraphics[parametros]{nombregrafico}
-  \caption{Leyenda bajo el grafico}
-  \label{fig:etiqueta}
+\centering
+\includegraphics[parametros]{nombregrafico}
+\caption{Leyenda bajo el grafico}
+\label{fig:etiqueta}
 \end{figure}
-\end{verbatim}
+\end{minted}
+%\end{minted}
+
 Mediante los par\'ametros se puede modificar el aspecto, lo que 
 nos permite editarlos ligeramente.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{ Varios gráficos en un mismo entorno figure}
+%\begin{exampleblock}{Ejemplo: Varios gráficos en un mismo entorno figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{./graficos/ciclista} 
+%}
+\hspace{1cm}
+\includegraphics[scale=0.1]{./graficos/sorpresa}
+\caption{Caption para ambas figuras}
+\label{fig:image2}
+\end{figure}
+
+Ajustar el tamaño adecuadamente mediante \mintinline{latex}{scale}
+
 \end{frame}
 
 
@@ -165,70 +189,250 @@ nos permite editarlos ligeramente.
 \begin{frame}[fragile]{Parámetros para modificar una figura}
 Parámetros empleados más usualmente:
 \begin{itemize}
-    \item \verb|scale=0.5 | \hfill escala el tamaño a la mitad
-    \item \verb|height=5cm | \hfill fija la altura del gráfico a 5cm
-    \item \verb|width=0.5\textwidth | \hfill anchura = mitad del espacio para texto.
-    \item \verb|angle=90 |\hfill  gira la imagen 90 grados.
-    \item \verb|trim = 10mm 5mm 50mm 55mm, clip| \hfill Recorta la imagen quitando
-\verb|trim = <left> <lower> <right> <upper> | \hfill 10mm por izda,...
-    \item \verb|draft| \hfill no se incluye el gráfico pero deja el espacio apropiado.
+    \item \mintinline{latex}{scale=0.5 } \hfill escala el tamaño a la mitad
+    \item \mintinline{latex}{height=5cm } \hfill fija la altura del gráfico a 5cm
+    \item \mintinline{latex}{width=0.5\textwidth } \hfill anchura = mitad del espacio para texto.
+    \item \mintinline{latex}{angle=90 }\hfill  gira la imagen 90 grados.
+    \item \mintinline{latex}{trim = 10mm 5mm 50mm 55mm, clip} \hfill Recorta la imagen quitando
+\mintinline{latex}{trim = <left> <lower> <right> <upper> } \hfill 10mm por izda,...
+    \item \mintinline{latex}{draft} \hfill no se incluye el gráfico pero deja el espacio apropiado.
 \end{itemize}
 \vspace{1cm}
 Para profundizar ver documentaci\'on paquete \href{https://ctan.org/pkg/graphicx}{\color{blue} graphicx}. \\
 {\scriptsize El paquete  alternativo \href{https://ctan.org/pkg/svg}{\color{blue} svg} permite incluir/editar gráficos en este formato vectorial.}
 \end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Espacio excesivo entre la figura y el texto}
+Es posible que al insertar un gráfico quede mucho espacio entre
+el texto y el gráfico.  Para comprobarlo usar el comando frame
+\begin{wrapfigure}{r}{4cm}
+\frame{\includegraphics[width=3.cm]{./graficos/ciclista.jpeg}}
+\end{wrapfigure}
+\begin{minted}{latex}
+\begin{figure}[h]
+\frame{
+\includegraphics{file}
+}
+\caption{Ciclista}
+\label{etiqueta}
+\end{figure}
+\end{minted}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Espacio excesivo entre la figura y el texto}
+y posteriormente recortar con \mintinline{latex}{ trim } y \mintinline{latex}{ clip}
+%\only<1>{
+\begin{wrapfigure}{r}{4cm}
+\vspace{2cm}
+\frame{\includegraphics[trim = 12mm 15mm 9mm 9mm, clip,width=3.cm]{./graficos/ciclista.jpeg}}
+\end{wrapfigure}
+\begin{minted}{latex}
+\begin{figure}[h]
+\frame{
+\includegraphics[trim = 12mm 15mm 9mm 9mm, clip]{file}
+}
+\caption{Ciclista}
+\label{etiqueta}
+\end{figure}
+\end{minted}
+\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Localización de la figura en el texto}
 El entorno figure es flotante, esto es, \LaTeX{} ``decide''
 dónde lo pone. Si queremos controlar este proceso tenemos varias 
 opciones:
 \begin{itemize}
-    \item Control débil del entorno \verb|figure| con parámetros 
-    de control h, b, t. 
-    \item Empleo del entorno \verb|wrapfigure| gracias al paquete \href{https://www.ctan.org/pkg/wrapfig}{\color{blue} wrapfig}.
+    \item Control débil del entorno \mintinline{latex}{figure} con parámetros 
+    de control h, b, t.  
+    \item Empleo del entorno \mintinline{latex}{wrapfigure} gracias al paquete \href{https://www.ctan.org/pkg/wrapfig}{\color{blue} wrapfig}.
+     \item Empleo del entorno \mintinline{latex}{minipage} 
+      %\begin{minted}{latex}
+       %\begin{minipage}{longitud}
+       %  insertar figura
+       %\end{minipage}
+     %\end{minted}
     \item Empleo del parámetro H del paquete \href{https://www.ctan.org/pkg/float}{\color{blue} float}.
-    \item Usar \verb|includegraphics| sin entorno \verb|figure|. \hfill (No recomendable)
+    \item Usar \mintinline{latex}{includegraphics} sin entorno \mintinline{latex}{figure}. \hfill (No recomendable)
 \end{itemize}
 \vspace{1cm}
 Ver detalles en \href{https://www.overleaf.com/learn/latex/Positioning_images_and_tables}{\color{blue}ayuda de OverLeaf}.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Espacio entre la figura y el texto}
-Es posible que al insertar un gráfico quede mucho espacio entre
-el texto y el gráfico.  Para comprobarlo usar el comando frame
-\begin{wrapfigure}{r}{4cm}
-\frame{\includegraphics[width=3.cm]{./graficos/ciclista.jpeg}}
+\begin{frame}[fragile]{El paquete wrapfig}
+El paquete  \href{http://www.ctan.org/pkg/wrapfig}{wrapfig} permite integrar el gr\'afico con el texto.
+\vskip 12pt
+Declaraci\'on del paquete wrapfig en el pre\'ambulo:
+\begin{minted}{latex} 
+\usepackage{wrapfig} 
+\end{minted}
+
+Inserci\'on del gr\'afico en el documento:
+\begin{minted}{latex}
+\begin{wrapfigure}{r}{<width>}
+  \includegraphics[parametros]{nombregrafico}
+  \caption{Leyenda bajo el grafico}
+  \label{fig:etiqueta}
 \end{wrapfigure}
-\begin{verbatim}
-\begin{figure}[h]
-\frame{
-\includegraphics{file}
-}
-\end{figure}
-\end{verbatim}
+\end{minted}
 
-
-
-
+%Para profundizar ver \cite{wrapfigure} .
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Espacio entre la figura y el texto}
-y posteriormente recortar con \verb| trim | y \verb| clip|
-%\only<1>{
-\begin{wrapfigure}{r}{4cm}
-\vspace{2cm}
-\frame{\includegraphics[trim = 12mm 15mm 9mm 9mm, clip,width=3.cm]{./graficos/ciclista.jpeg}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Inserci\'on de un gr\'afico con wrapfigure}
+%\begin{exampleblock}
+
+{\small As\'i el comando
+\mint{latex}{>> t = 0:0.2:6.3;  plot (t, sin(t),'-@r*;sin(t);')}
+representa la funci\'on seno variando dichas propiedades.
+Una vez generado el gr\'afico, se pueden a\~nadir t\'itulos, etiquetas a los ejes, mallados o incluso redimensionar la figura
+tal y como indican los siguientes comandos:
+\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{center}
+\vspace{-20pt}
+\includegraphics[width=0.5\textwidth]{graficos/sin.pdf}
+  \end{center}
+\vspace{-25pt}
+  \caption{{\tiny Funcion seno \label{figura:sinestilo1}}}
 \end{wrapfigure}
-\begin{verbatim}
-\begin{figure}[h]
-\frame{
-\includegraphics[trim = 12mm 15mm 9mm 9mm, clip]{file}
+\vspace{-10pt}
+\begin{minted}{matlab}
+>> title('Grafico de Sen(t)')
+>> xlabel('Angulo')
+>> ylabel('sin(t)')}
+>> grid on
+\end{minted}
+Para guardar un gr\'afico en formato PDF se emplea el comando print:
+\begin{minted}{matlab}
+>> print('grafico1.pdf ','-dpdf')
+\end{minted}
+dango lugar al gr\'afico que presentamos en la fig. \ref{figura:sinestilo1}.
 }
+%\end{exampleblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{El entorno minipage}
+Empleo del entorno \mintinline{latex}{minipage} (conmutable con \mintinline{latex}{figure})
+\vspace{0.25cm}
+
+%\fbox
+%{
+\begin{minipage}{0.45\textwidth}
+\begin{minted}{latex}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{longitud}
+    \includegraphics{...}
+  \end{minipage}
+  \begin{minipage}{longitud}
+    \includegraphics{...}
+  \end{minipage}
+\caption{Caption común}
+\label{fig:*}
 \end{figure}
-\end{verbatim}
+\end{minted}
+\end{minipage}
+%}
+\hspace{0.75cm}
+%\fbox
+%{
+\begin{minipage}{0.45\textwidth}
+\begin{minted}{latex}
+\begin{minipage}{longitud}
+  \begin{figure}[h]
+     \centering
+     \includegraphics{...}
+     \caption{Caption}
+     \label{fig:*}
+  \end{figure}
+\end{minipage}
+\begin{minipage}{longitud}
+    Texto o lo que sea...
+\end{minipage}
+\end{minted}
+\end{minipage}
+%}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Inserci\'on de un gr\'afico con minipage}
+%\begin{exampleblock}
+
+{\small As\'i el comando
+\mint{latex}{>> t = 0:0.2:6.3;  plot (t, sin(t),'-@r*;sin(t);')}
+representa la funci\'on seno variando dichas propiedades.
+Una vez generado el gr\'afico, se pueden a\~nadir t\'itulos, etiquetas a los ejes, mallados o incluso redimensionar la figura
+tal y como indican los siguientes comandos:
+\begin{minipage}{0.45\textwidth}
+\begin{minted}{matlab}
+>> title('Grafico de Sen(t)')
+>> xlabel('Angulo')
+>> ylabel('sin(t)')}
+>> grid on
+\end{minted}
+Para guardar un gr\'afico en formato PDF se emplea el comando print:
+\begin{minted}{matlab}
+>> print('grafico1.pdf ','-dpdf')
+\end{minted}
+dango lugar a la fig. \ref{figura:sinestilo1Bis}.
+\end{minipage}
+}
+\begin{minipage}{0.45\textwidth}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{graficos/sin.pdf}
+ \caption{Funcion seno} 
+\label{figura:sinestilo1Bis}
+\end{figure}
+\end{minipage}
+%\end{exampleblock}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Superposici\'on de varios gr\'aficos}
+%\begin{exampleblock}
+El comando 
+\mint{latex}{\put(coordx,coordy){objeto a superponer}}
+permite superponer objetos a una imagen.
+\vspace{-1cm}
+\begin{figure}
+\includegraphics[angle=270,width=6cm]{./graficos/fig_9}
+\put(-90,-138){\includegraphics[angle=-10,scale=0.4]{./graficos/ciclista}}
+\caption{Superposicion en un texto}
+\end{figure}
+%\end{exampleblock}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Superposici\'on de texto y simetrización}
+%\begin{exampleblock}{Ejercicio: 
+\begin{figure}
+\includegraphics[trim = 50mm 0mm 190mm 40mm, clip,width=4.5cm]{./graficos/sorpresa}
+\hspace{-0.3cm}
+\reflectbox{
+\includegraphics[trim = 50mm 0mm 190mm 40mm, clip,width=4.5cm]{./graficos/sorpresa}
+}
+\put(-195,135){{\color{green}   \LARGE \textbf{Powered by \LaTeX}}}
+\caption{Selección, simetrizar, incluir texto}
+\end{figure}
+%\end{exampleblock}
+
 \end{frame}
 
 
@@ -246,9 +450,9 @@ El paquete \href{https://ctan.org/pkg/pdfpages}{\color{blue}pdfpages} permite in
 
 {\scriptsize Utilidad: generar documentación acreditativa, \\incluir declaraciones en documentos, etc...}
 
-\begin{verbatim}
+\begin{minted}{latex}
 \includepdf[]{file.pdf}
-\end{verbatim}
+\end{minted}
 \end{frame}
 
 
