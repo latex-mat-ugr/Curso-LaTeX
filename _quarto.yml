@@ -20,6 +20,8 @@ website:
         href: Documento sencillo/about.qmd
       - text: "Matemáticas"
         href: Matematicas/about.qmd
+      - text: "Objetos flotantes"
+        href: Objetos flotantes/about.qmd  
       - text: "Personalización"
         href: Personalizacion/about.qmd
       - text: "Tipos de documento"
