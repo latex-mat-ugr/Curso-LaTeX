@@ -35,7 +35,7 @@ Los pasos para incluir la bibliografía de esta forma son los siguientes:
     ```
     donde el primer elemento de cada referencia (`Euler1984` y `Euler1985` respectivamente) es la *etiqueta* que luego debermos usar con el comando `\cite`.
 
-2. Añadir en nuestro documento, donde queremos que aparezca la bibliografía:
+2. Añadir en nuestro documento (ver, por ejemplo, [Ejemplo bibliografía.tex](./Ejemplo bibliografía.tex)), donde queremos que aparezca la bibliografía (habitualmente al final del documento justo antes de `\end{document}`):
 
     ```latex
     \bibliographystyle{plain} % plain, alpha, amsalpha, apalike, abbr
@@ -43,7 +43,7 @@ Los pasos para incluir la bibliografía de esta forma son los siguientes:
     ```
     donde recordemos que `referencias.bib` es el fichero de referencias creado en el punto anterior y ubicado **en la misma carpeta** que el documento `.tex` que estemos procesando.
 
-3. Compilar el fichero primer con `LaTeX` y luego con `bibTeX` (en [TeXstudio](https://www.texstudio.org) u [Overleaf](https://www.overleaf.com) este paso no es necesario aunque sí lo es según el editor según el  editor que estemos usando). 
+3. Compilar el fichero primer con `LaTeX` y luego con `bibTeX` (en [TeXstudio](https://www.texstudio.org) u [Overleaf](https://www.overleaf.com) no es necesario compilar con `bibtex` necesario aunque sí lo es en otros editores). 
 
 Aunque nuestro fichero `referencias.bib` contenga muchas referencias únicamente se añadiran al documento aquellas que hayamos *citado* (es decir, aquellas cuyas etiquetas aparezcan entro de un comando `\cite` en alguna parte del documento). Si queremos añadir una referencia que no aparece citada en el documento usaremos el comando `\nocite{etiqueta}`, donde `etiqueta` es la etiqueda de la referencia (primer elemento en la entrada `bibTeX` de la referencia). Si queremos producir un documento con **todas** las referencias que figuran en `referencias.bib` deberemos incluir el comando `\nocite{*}`.
 
