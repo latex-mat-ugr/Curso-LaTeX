@@ -76,12 +76,51 @@ Todos requieren de la creación de una cuenta.
 
 ### Exportar las referencias a `bibtex` usando Zotero
 
-De forma manual:
+#### Forma manual:
 
 1. Abre Zotero en tu ordenador o bien accede a tu cuenta en [zotero.org](https://www.zotero.org) en tu navegador web.
 
 2. Si quieres exportar **todas las referencias** de una determinada biblioteca a BibTeX, haz clic en el menú desplegable Acciones y selecciona "Exportar biblioteca..." (Archivo > Exportar biblioteca... en la aplicación de escritorio). Si sólo quieres exportar **algunas referencias**, selecciónalas pulsando Control y Mayúsculas, haz clic con el icono de exportar ("crear una bibliografía a partir de los elementos seleccionados" en la versión de escritorio").
 
-3. En el cuadro de diálogo que aparece, selecciona el formato BibTeX y haz clic en Aceptar. Navegue hasta el directorio donde almacena tu documento y guarda el archivo. Esto generará un archivo en el formato `.bib` para que BibTeX lo lea y cree una bibliografía a partir de él.
+3. En el cuadro de diálogo que aparece, selecciona el formato `BibTeX` y haz clic en `Aceptar`. Navegamos hasta el directorio donde se encuentra nuestro documento LaTeX y guardamos ahí el archivo. Esto generará un archivo en el formato `.bib` para que BibTeX lo lea y cree una bibliografía a partir de él.
 
-El anterior procedimiento deberemos repetirlo cada vez que añadamos un elemento nuevo a nuestra biblioteca o bien modifiquemos uno existente.
+**Desventajas**: el anterior procedimiento deberemos repetirlo cada vez que añadamos un elemento nuevo a nuestra biblioteca o bien modifiquemos uno existente.
+
+#### Forma automática: uso del complemento `betterbibtex`
+
+Zotero permite la instalación de *complementos* que añaden características nuevas al gestor de bibliografía. Uno de ellos es [BetterBibTex](https://retorque.re/zotero-better-bibtex/) que facilita el uso de Zotero con LaTeX (o markdown). Este complemento tiene utilidad más allá de lo que indiquemos a continuación luego conviene echarle un vistazo a la [documentación](https://retorque.re/zotero-better-bibtex/).
+
+Una vez finalizada la [instalación](https://retorque.re/zotero-better-bibtex/installation/index.html) del complemento procederemos a partir del punto 2 anterior para exportar la biblioteca entera o bien un conjunto de referencias. En el punto 3 seleccionaremos ahora la opción `Better BibTeX`, marcaremos la opción `Keep updated` (ver captura de pantalla)
+
+![betterbibtex-export.png]
+
+y pulsaremos `OK`. A continuación seleccionaremos el directorio donde se encuentre nuestro documento LaTeX. A partir de este momento, ante cualquier cambio (tanto si añadimos como si modificamos) la base de datos de Zotero, éste exportará automáticamene los cambios al mismo fichero. Podemos repetir este procedimiento tantas veces como queramos (para incluir la bibliografía en distintos proyectos o documentos de LaTeX).
+
+**Ventajas**: Sólo será necesario exportar la biblioteca una única vez *por proyecto de LaTeX*[^1]. 
+
+[^1]: Entendemos por *proyecto de LaTeX* una carpeta en nuestro equipo que contiene uno o varios documentos `.tex`.
+
+**Desventajas**: Para cada nuevo documento `.tex` que creemos en una carpeta distinta a donde hemos exportado el fichero `.bib` con Zotero será necesario volver a repetir (una única vez) los pasos anteriores.
+
+Esta última desventaja puede ser solventada si exportamos la biblioteca de Zotero al [árbol local de TeX](https://www.ugr.es/~ftorralbo/blog/programming/local-texmf/). Este es un directorio especial de LaTeX existente en nuestro equipo donde colocar diferentes ficheros (como los ficheros de bibliografía) para que estén disponibles en cualquier documento LaTeX que editemos.
+
+Para ello seguiremos los siguientes pasos:
+
+1. Localizar la carpeta del *árbol local de TeX* ('local texmf tree'). La ubicación de esta carpeta dependerá tanto de nuestro sistema operativo como de la *distribución* de LaTeX que tengamos instalada. A continuación hay un listado de las ubicaciones habituales:
+    - Linux: `~/texmf`.
+    - MacOS: `~/Library/texmf/`
+    - Windows: `C:\Users\nombreUsuario\texmf`
+
+2. Abrir Zotero y exportar la biblioteca (p.e. con nombre `referencias.bib`) al subdirectorio `bibtex/bib` en el árbo local (`texmf`). Crear dicho directorio si no existe.
+
+    Una vez hecho esto quizá sea necesario reiniciar el equipo.
+
+3. Crear un documento (por ejemplo `ejemplo.tex`) en cualquier carpeta de nuestro equipo y añadir los comandos
+```latex
+\bibliographystyle{plain} % plain, alpha, amsalpha, apalike, abbr
+\bibliography{referencias}
+``` 
+al final del mismo. 
+
+4. Usar el comando `\cite{etiqueta}` para incluir una referencia bibliográfica al documento, donde `etiqueta` es una etiqueta válida de la base de datos de Zotero. Podemos consultar la etiqueta de un elemento determinado en el propio Zotero si habilitamos la columna `Citation key` en la vista principal de Zotero (basta hacer click secundario en la cabecera de la tabla). El complemento `betterBibTeX` permite [gestionar y personalizar estas etiquetas](https://retorque.re/zotero-better-bibtex/installation/preferences/index.html).
+
