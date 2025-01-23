@@ -1,3 +1,87 @@
 # Bibliografías
 
-Notas sobre el uso y manejo de bibliografías en LaTeX por Antonio Alarcón López.
+## Incluir la bibliografía de forma automática: `bibtex`
+
+Ya vimos en [Documento básico](../Documento sencillo/about.qmd) como incluir de forma sencilla las referencias bibliográficas en un documento mediante el uso del entorno \texttt{thebibliography}. A continuación veamos cómo mejorar este procedimiento, que tenía muchos inconvenientes.
+
+LaTeX, mediante el programa externo `bibtex` que está disponible en todas las distribuciones, permite la generación automática del entorno `thebibliography` a partir de una *base de datos bibliográfica* en formato `bibtex` (un fichero de texto con extensión `.bib` con un formato determinado). Una vez generado el entorno `thebibliography` con las entradas citadas en el documento se guarda en un fichero auxiliar con extensión `.bbl` que es incluido de forma automática por LaTEX en el documento.
+
+Los pasos para incluir la bibliografía de esta forma son los siguientes:
+
+1. Crear un fichero, p.e. `referencias.bib` donde incluyamos los datos de los elementos bibliográficos en formato `bibtex`. La mayoría de repositorios de artículos de investigación nos permiten descargar la referencia en dicho formato. Por ejemplo:
+
+    ```bibtex
+    @book {Euler1984,
+      AUTHOR = {Euler, Leonhard},
+      TITLE = {Elements of algebra},
+      PUBLISHER = {Springer-Verlag, New York},
+      YEAR = {1984},
+      PAGES = {lx+593},
+      ISBN = {0-387-96014-7},
+      DOI = {10.1007/978-1-4613-8511-0},
+    }
+    @article {Euler1985,
+        AUTHOR = {Euler, Leonhard},
+         TITLE = {An essay on continued fractions},
+       JOURNAL = {Math. Systems Theory},
+      FJOURNAL = {Mathematical Systems Theory. An International Journal on Mathematical Computing Theory},
+        VOLUME = {18},
+          YEAR = {1985},
+        NUMBER = {4},
+         PAGES = {295--328},
+          ISSN = {0025-5661},
+           DOI = {10.1007/BF01699475},
+    }
+    ```
+    donde el primer elemento de cada referencia (`Euler1984` y `Euler1985` respectivamente) es la *etiqueta* que luego debermos usar con el comando `\cite`.
+
+2. Añadir en nuestro documento, donde queremos que aparezca la bibliografía:
+
+    ```latex
+    \bibliographystyle{plain} % plain, alpha, amsalpha, apalike, abbr
+    \bibliography{referencias}
+    ```
+    donde recordemos que `referencias.bib` es el fichero de referencias creado en el punto anterior y ubicado **en la misma carpeta** que el documento `.tex` que estemos procesando.
+
+3. Compilar el fichero primer con `LaTeX` y luego con `bibtex` (en [TeXstudio](https://www.texstudio.org) u [Overleaf](https://www.overleaf.com) este paso no es necesario aunque sí lo es según el editor según el  editor que estemos usando). 
+
+Aunque nuestro fichero `referencias.bib` contenga muchas referencias únicamente se añadiran al documento aquellas que hayamos *citado* (es decir, aquellas cuyas etiquetas aparezcan entro de un comando `\cite` en alguna parte del documento). Si queremos añadir una referencia que no aparece citada en el documento usaremos el comando `\nocite{etiqueta}`, donde `etiqueta` es la etiqueda de la referencia (primer elemento en la entrada `bibtex` de la referencia). Si queremos producir un documento con **todas** las referencias que figuran en `referencias.bib` deberemos incluir el comando `\nocite{*}`.
+
+**Ventajas**:
+
+1. Al cambiar el estilo con `\bibliographystyle` se genera de nuevo la lista completa de referencias.
+
+2. El fichero `referencias.bib` puede usarse para múltiples documentos de LaTeX, aprovechando de esa forma el tiempo empleado en crear el fichero.
+
+El formato de un fichero `bibtex` puede consultarse en su [manual](https://www.ctan.org/pkg/bibtex) aunque la mayoría de revistas o repositorios de artículos de investigación proporcionan una forma de descargar la información de una referencia en formato `bibtex` para ser añadida en nuestro fichero `referencias.bib`. En la siguiente sección exploraremos cómo automatizar el proceso usando un **gestor de referencias bibliográficas**.
+
+
+Actualmente el paquete [`biblatex`](https://www.ctan.org/pkg/biblatex) se está convirtiendo en el estándar para la gestión bibliográfica en LaTeX pues corrige algunas deficiencias de `bibtex`. Su uso es compatible con `bibtex` aunque tiene su propio *motor* llamado [`biber`](https://biblatex-biber.sourceforge.net) (también incluido en la mayoría de distribuciones de LaTeX).
+
+## Creación de un fichero de referencias `.bib` mediante un gestor de referencias.
+
+En un trabajo de investigación donde se suelen manejar muchas referencias es conveniente mantener cierto orden para recoger, organizar, anotar y citar debidamente los documentos. Existen diversos *gestores de referencias*, algunos de los más populares son:
+
+- [Zotero](https://www.zotero.org)
+- [Endnote](https://web.endnote.com) (Clarivate)
+- [Mendeley](https://www.mendeley.com) (Elsevier)
+- [RefWorks](https://refworks.proquest.com) (ProQuest).
+
+El primero, [Zotero](https://www.zotero.org), es software libre y permite mediante una cuenta gratuita sincronizar nuestra base de datos bibliográficas en distintos equipos (el tamaño está limitado a 200 Mb, lo cual es poco si queremos además adjuntar los pdfs al programa). Existen diversas estrategias (como usar una nube privada) para disponer de más espacio.
+
+Los tres últimos están disponibles (con distinto grado de características) a los miembros de la Universidad de Granada. Consultar la información [sobre gestore bibliográficos](https://bibliotecaugr.libguides.com/investigacion/Gestores_bibliograficos) disponible en el portal de [recursos para la investigación](https://bibliotecaugr.libguides.com/investigacion).
+
+Todos requieren de la creación de una cuenta.
+
+
+### Exportar las referencias a `bibtex` usando Zotero
+
+De forma manual:
+
+1. Abre Zotero en tu ordenador o bien accede a tu cuenta en [zotero.org](https://www.zotero.org) en tu navegador web.
+
+2. Si quieres exportar **todas las referencias** de una determinada biblioteca a BibTeX, haz clic en el menú desplegable Acciones y selecciona "Exportar biblioteca..." (Archivo > Exportar biblioteca... en la aplicación de escritorio). Si sólo quieres exportar **algunas referencias**, selecciónalas pulsando Control y Mayúsculas, haz clic con el icono de exportar ("crear una bibliografía a partir de los elementos seleccionados" en la versión de escritorio").
+
+3. En el cuadro de diálogo que aparece, selecciona el formato BibTeX y haz clic en Aceptar. Navegue hasta el directorio donde almacena tu documento y guarda el archivo. Esto generará un archivo en el formato `.bib` para que BibTeX lo lea y cree una bibliografía a partir de él.
+
+El anterior procedimiento deberemos repetirlo cada vez que añadamos un elemento nuevo a nuestra biblioteca o bien modifiquemos uno existente.

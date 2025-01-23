@@ -1,0 +1,18 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+
+\begin{document}
+\title{Ejemplo de uso de bibliografía con \texttt{bibtex}}
+\maketitle
+
+Se ha creado un documento \texttt{referencias.bib} con la base de datos bibliográfica con dos elementos y se ha cargado con \texttt{\textbackslash bibliography\{referencias\}}. En la lista de referencias sólo aparecen aquellos elementos que han sido citados con el comando \texttt{\textbackslash cite}.
+
+
+Ejemplo de referencia: \emph{Como podemos ver en \cite{Euler1984}}.
+% Las revistas suelen proporcionar un estilo predefinido para sus plantillas a través de un fichero `.bst`. En la instalación habitual de LaTeX tenemos a nuestra disposición diferentes estilos bibliográficos.
+
+\bibliographystyle{plain} % plain, alpha, amsalpha, apalike, abbr
+\bibliography{referencias}
+
+\end{document}

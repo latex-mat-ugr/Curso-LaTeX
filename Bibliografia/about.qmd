@@ -1,0 +1,12 @@
+---
+title: "Bibliografía"
+lang: es
+---
+
+{{< include README.md >}}
+
+## Transparencias taller 2017 por A. Alarcón
+
+{{< pdf Bibliografias.pdf  width=100% height=400 >}}
+
+[Notas sobre el uso y manejo de bibliografías en LaTeX por Antonio Alarcón López](Bibliografias.pdf){target="_pdf"}
