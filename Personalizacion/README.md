@@ -77,16 +77,19 @@ Para personalizar nuestro documento, en lugar de cambiar manualmente la anchura 
 
 donde por supuesto podemos cambiar `article` por la clase de documento que deseemos. Esto le da al usuario mucho control sobre el diseño de página, pero también mucha responsabilidad pues deberá saber elegir bien los valores para que el diseño de página sea armonioso.
 
-- `typearea`: El paquete `typearea` aborda el problema de forma distinta: le proporciona al usuario diversos moddos de ajustar el diseño y algoritmos basados en prácticas tipográficas estándar se encargan de recalcular los elementos de la página de forma correcta. En la sección 2.1 del manual de KOMA-Script (página 29) se encuentra una descripción más detallada de cómo funciona este proceso.
+- `typearea`: El paquete `typearea` aborda el problema de forma distinta: le proporciona al usuario diversos modos de ajustar el diseño y algoritmos basados en prácticas tipográficas estándar se encargan de recalcular los elementos de la página de forma correcta. En la sección 2.1 del manual de KOMA-Script (página 29) se encuentra una descripción más detallada de cómo funciona este proceso.
 
 ### El paquete `typearea`
 
 Para usar correctamente este paquete hay que entender los factores que afectan al diseño de una página:
+
 - el tamaño, anchura y tipo de la fuente usada.
 - el espacio entre líneas
 - la longitud de las palabras
 - el espacio disponible
+
 El primero de estos factores nos indica que la elección de la fuente que se usará en el documento es determinante a la hora de diseñar la página. Por dicho motivo el paquete `typearea` se cargará después de haber seleccionado la fuente del documento y modificado (si se cree conveniente) la separación entre líneas (p.e. con el paquete `setspace`). Dicho paquete tiene dos opciones importantes:
+
 - `BCOR` (*Binding corrections*): corrección al encuadernado. Longitud (generalmente en mm) que corresponde a la anchura del lomo del libro que será necesaria para el encolado o cosido en el proceso de encuadernación.
 - `DIV` (*divisions*): número natural que indica el número de columnas en las que internamente se dividirá la página para ayudar a la hora de situar todos los elementos. Cuando mayo sea dicho número generalmente aumentará el ancho del texto. 
 
@@ -101,6 +104,7 @@ Por ejemplo:
 ```
 
 Además `DIV` permite también varios valores especiales (ver tabla 2.3 en el manual de KOMA-Script):
+
 - `default`: recalcula el diseño de página con los parámetros por defecto.
 - `classic`: recalcula el diseño de página usando el canon de diseño medieval.
 - `calc`: recalcula el diseño de página. Útil para usarlo tras cambiar el tamaño de la fuente o el espaciado de líneas.
