@@ -1,9 +1,9 @@
-# Tipos de documento
+# Clases de documento
 
 Todo documento de LaTeX comienza con la declaración de la *clase* o *tipo de documento* mediante el comando `\documentclass`. Existen [multitud de clases](https://ctan.org/topic/class) distintas según el propósito del documento. Describiremos aquí algunas de las más utilizadas.
 
-## Tipos básicos de LaTeX
-Las clases por defecto más usadas en LaTeX son:
+## Clases básicos de LaTeX
+Las clases básicas en LaTeX son:
 
 - `article`: Para artículos en revistas científicas, informes,...
 - `report`: para pequeños libros, informes largos,...
@@ -21,12 +21,11 @@ Aunque las dos últimas no son habitualmente usadas. Además, la clase `report` 
 
 Existe además una opción de estructura adicional que no afectan a la numeración: `\part{}`, usada para dividir cualquier documento en partes.
 
-Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras necesidades. Por ejemplo, para crear transparencias se usa un tipo de clase diferente `beamer`. 
+Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras necesidades. Por ejemplo, para crear transparencias se usa un tipo de clase diferente [`beamer`](../Beamer/about.qmd). 
 
-## Transparencias: la clase *beamer*
-La clase `beamer` es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta [Beamer](../Beamer) para más detalles.
 
-## El paquete [KOMA-Script](https://www.ctan.org/pkg/koma-script)
+## Las clases de documento del paquete [KOMA-Script](https://www.ctan.org/pkg/koma-script)
+
 Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` cuidando especialmente la tipografía y la versatilidad. Añade además una clase `letter`. Además también ofrece:
 - Un [paquete para calcular el diseño de página](https://www.ctan.org/pkg/typearea) 
 - paquetes para cambiar y definir fácilmente estilos de página
@@ -35,6 +34,17 @@ La [documentación](https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc
 - Todos los elementos del mismo pueden personalizarse de forma sencilla.
 - Permite cambiar varios parámetros del diseño e página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.
 
+## Clases personalizadas: las plantillas de documentos UGR
+
+Es posible crear un clase de documento específica para nuestras necesidades. En Overleaf podemos encontrar documentación sobre [cómo escribir nuestra propia clase de documento](https://www.overleaf.com/learn/latex/Writing_your_own_class). 
+
+En el repositorio [Plantillas UGR](https://github.com/latex-mat-ugr/Plantillas-UGR) se encuentran disponibles tres plantillas diferentes que respectan la imagen institucional de la Universidad de Granada:
+
+- `UGR-generico`: para todo tipo de documentos, desde certificados hasta informes.
+- `UGR-carta`: para cartas
+- `UGR-examen`: para la elaboración de exámenes.
+
+Consultar la [documentación](https://github.com/latex-mat-ugr/Plantillas-UGR/blob/main/README.md) incluida en el repositorio sobre su instalación, uso y opciones.
 
 ## Miscelánea
 En la sección precedente hemos introducido las clases de documento del paquete `KOMA-script` por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En [CTAN](https://ctan.org/topic/class) se puede ver una lista de paquetes que proporcionan clases de documento alternativas. En esta sección vamos a mencionar algunas de ellas por su calidad y personalización.
@@ -56,3 +66,6 @@ La American Mathematical Society (AMS), responsable de los populares paquetes pa
 - [`amsproc`](https://www.ctan.org/pkg/amsproc) para actas de un congreso.
 
 Si nos gusta el estilo de dichos documentos podemos usarlos sin problemas para nuestros propios documentos.
+
+## Transparencias: la clase *beamer*
+La clase `beamer` es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta [Beamer](../Beamer) para más detalles.
