@@ -26,13 +26,17 @@ Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras 
 
 ## Las clases de documento del paquete [KOMA-Script](https://www.ctan.org/pkg/koma-script)
 
-Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` cuidando especialmente la tipografía y la versatilidad. Añade además una clase `letter`. Además también ofrece:
+Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` (denominadas `scrartcl`, `scrreprt` y `scrbook`) cuidando especialmente la tipografía y la versatilidad. Añade además una clase `scrlttr2` para la elboración de cartas. 
+
+Por otro lado también ofrece:
 - Un [paquete para calcular el diseño de página](https://www.ctan.org/pkg/typearea) 
 - paquetes para cambiar y definir fácilmente estilos de página
 
 La [documentación](https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf) es extensa y a veces muy técnica pero merece la pena usar este tipo de documentos por las siguientes razones:
 - Todos los elementos del mismo pueden personalizarse de forma sencilla.
 - Permite cambiar varios parámetros del diseño e página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.
+
+Consultar la sección de [Personalización](../Personalizacion/about.qmd) para ver algunos ejemplos de su uso.
 
 ## Clases personalizadas: las plantillas de documentos UGR
 

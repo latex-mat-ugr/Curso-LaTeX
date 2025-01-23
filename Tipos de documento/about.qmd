@@ -1,5 +1,5 @@
 ---
-Title: "Tipos de documento"
+Title: "Clases de documento"
 lang: es
 ---
 
