@@ -24,7 +24,7 @@ Existe además una opción de estructura adicional que no afectan a la numeraci�
 Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras necesidades. Por ejemplo, para crear transparencias se usa un tipo de clase diferente `beamer`. 
 
 ## Transparencias: la clase *beamer*
-La clase `beamer` es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta [Beamer](Beamer) para más detalles.
+La clase `beamer` es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta [Beamer](../Beamer) para más detalles.
 
 ## El paquete [KOMA-Script](https://www.ctan.org/pkg/koma-script)
 Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` cuidando especialmente la tipografía y la versatilidad. Añade además una clase `letter`. Además también ofrece:
