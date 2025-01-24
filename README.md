@@ -2,14 +2,14 @@
 
 ## ¿Qué es TeX y LaTeX?
 
-TeX es un programa destinado a la composición de documentos que contienen texto y fórmulas matemáticas con calidad de imprenta creado por Donald Knuth en 1978
-      
+TeX es un programa destinado a la composición de documentos que contienen texto y fórmulas matemáticas con calidad de imprenta creado por Donald Knuth en 1978.
+
 NO es un editor de texto, sino un procesador de macros y lenguaje de programación.
 
 **¿Y LaTeX?**
 LaTeX es un conjunto de *macros* para TeX debidos originalmente a Leslie Lamport para facilitar el uso de TeX.
 
-Usaremos el término **LaTeX** para referirnos a TeX + LaTeX + mejoras sucesivas
+Usaremos el término **LaTeX** para referirnos a TeX + LaTeX + mejoras sucesivas.
 
 Las características de LaTeX son:
 
@@ -49,10 +49,9 @@ Entre sus **desventajas**:
   - [TeX Stackexchange](http://tex.stackexchange.com)
   - [LaTeX.org](http://latex.org/forum/)
 
-
 ## Acerca de este repositorio
 
-Parte del material de este repositorio fue creado inicialmente como material de apoyo para un curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page412.htm) y por el PAT [Orientamat](https://www.ugr.es/~orientamat/) para alumnos de Trabajo de Fin de Grado
+Parte del material de este repositorio fue creado inicialmente como material de apoyo para un curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page412.htm) y por el PAT [Orientamat](https://www.ugr.es/~orientamat/) para alumnos de Trabajo de Fin de Grado.
 
 Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas y se ha repetido desde entonces casi anualmente mejorando y añadiendo nuevo material.
 
@@ -68,7 +67,7 @@ Una buena opción es MiKTeX. Si tenéis espacio de sobra, podéis optar por la i
 
 En el curso usaremos [TeXStudio](https://www.texstudio.org/) como editor de texto.
 
-**Posibles problemas durante la instalación**: 
+**Posibles problemas durante la instalación**:
 
 - Tras descargar el archivo de instalación de MikTeX no cambiarle el nombre. En algunos sistemas Windows esto provoca que la instalación falle.
 - A veces que la instalación para todos los usuarios termina con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en *Archivos de Programa*) y reinstalar esta vez seleccionando la instalación para un único usuario.
@@ -76,7 +75,7 @@ En el curso usaremos [TeXStudio](https://www.texstudio.org/) como editor de text
 
 ### Usuarios de Linux
 
-Si tenéis [debian](https://www.debian.org/index.es.html) o [Ubuntu](http://www.ubuntu.com), lo podéis instalar desde la línea de comandos
+Si tenéis [debian](https://www.debian.org/index.es.html) o [Ubuntu](http://www.ubuntu.com), lo podéis instalar desde la línea de comandos:
 
 ```bash
 sudo apt-get install texlive
@@ -86,7 +85,7 @@ No olvidéis hacer un `sudo apt-get update` antes.
 
 En otras distribuciones de Linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.
 
-El único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las [instrucciones en su página oficial](https://tug.org/texlive/quickinstall.html) o bien [consultar el siguiente enlace](https://wildunix.es/posts/instalar-tex-live-en-ubuntu-mac-os-y-windows/). 
+El único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las [instrucciones en su página oficial](https://tug.org/texlive/quickinstall.html) o bien [consultar el siguiente enlace](https://wildunix.es/posts/instalar-tex-live-en-ubuntu-mac-os-y-windows/).
 
 Una vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos [TeXStudio](https://www.texstudio.org/). Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de Linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:
 
@@ -115,13 +114,13 @@ La instalación de [MacTeX](https://tug.org/mactex/mactex-download.html) ya incl
 
 ### Editores
 
-Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye [TeXworks](https://www.tug.org/texworks). Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, [emacs](https://www.gnu.org/software/emacs) con [AUCTeX](https://www.gnu.org/software/auctex) o bien [vim](https://www.vim.org/) (o su versión más moderna [neovim](https://neovim.io/)) con [vimtex](https://github.com/lervag/vimtex) son también buenas opciones para el usuario experto. 
+Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye [TeXworks](https://www.tug.org/texworks). Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, [emacs](https://www.gnu.org/software/emacs) con [AUCTeX](https://www.gnu.org/software/auctex) o bien [vim](https://www.vim.org/) (o su versión más moderna [neovim](https://neovim.io/)) con [vimtex](https://github.com/lervag/vimtex) son también buenas opciones para el usuario experto.
 
 TeXworks existe en todas las plataformas que hemos mencionado.
 
 Algunos usamos [TeXStudio](http://texstudio.sourceforge.net), que también es multiplataforma. Se puede usar tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.
 
-[Visual Studio Code](https://code.visualstudio.com/) es un editor mutiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.
+[Visual Studio Code](https://code.visualstudio.com/) es un editor multiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.
 
 Existen varias posibilidades también de editar textos en línea, una de ellas es [Overleaf](https://www.overleaf.com/).
 
@@ -149,7 +148,7 @@ El editor [atom](https://atom.io) es multiplataforma, y tiene un módulo Markdow
 
 Para Mac, una buena opción es [MacDown](http://macdown.uranusjr.com), que ya trae integrada [MathJax](http://www.mathjax.org) para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo [Markdown Preview Plus](https://atom.io/packages/markdown-preview-plus).
 
-Existe además un plug-in para [Chrome](https://www.google.com/chrome/browser/desktop/index.html) para visualizar markdown: [Markdown preview plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl). Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.
+Existe además un plug-in para [Chrome](https://www.google.com/chrome/browser/desktop/index.html) para visualizar Markdown: [Markdown preview plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl). Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.
 
 Otra opción es usar un editor en línea, como puede ser [StackEdit](https://stackedit.io). También soporta MathJax.
 

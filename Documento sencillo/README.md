@@ -4,14 +4,15 @@ La estructura de un documento en LaTeX es la siguiente
 
 ```latex
 \documentclass{clase}
-
+...
 \begin{document}
 ...
 \end{document}
 ```
-donde *clase* es un tipo de documento válido de LaTeX (ver [Tipos de documento](../Tipos de documento/about.qmd)), p.e. `article`. 
 
-El documento se divide en dos partes: 
+donde *clase* es un tipo de documento válido de LaTeX (ver [Tipos de documento](../Tipos de documento/about.qmd)), p.e. `article`.
+
+El documento se divide en dos partes:
 
 - el *encabezamiento* o *preámbulo*: todas las declaraciones contenidas entre `\documentclass`{.latex} y `\begin{document}`{.latex}.
 - *cuerpo*: el texto contenido entre `\begin{document}`{.latex} y `\end{document}`{.latex}.
@@ -19,44 +20,49 @@ El documento se divide en dos partes:
 Cualquier contenido a continuación de `\end{document}`{.latex} es ignorado.
 
 ### Comandos y entorno
+
 LaTeX es un *lenguaje de programación* y cualquier *orden* o *comando* comienza siempre con el símbolo `\` seguido de una palabra (donde se distinguen mayúsculas de minúsculas). La sintaxis habitual de un comando es:
+
 ```latex
 \nombrecomando[opciones]{argumentos}
 ```
 
 LaTeX proporciona también los *entornos*:
+
 ```latex
 \begin{nombreEntorno}
 contenido
 \end{nombreEntorno}
 ```
+
 que afectan a todo el *contenido*.
 
 Además, algunos caracteres tienen una utilidad especial y su uso está reservado:
 
-| Símbolo | Uso                                            | Comando LaTeX |
-|---------|------------------------------------------------|---------------|
-| #       | Argumento de un macro                          | `\#`          |
-| $       | Iniciar o terminar un modo matemático          | `\$`          |
-| %       | Comienzo de un comentario                      | `\%`          |
-| ^       | Superíndice en modo matemático                 | `\^{} `       |
-| &       | Alineación en tablas o matrices                | `\&`          |
-| _       | Subíndice en modo matemático                   | `\_`          |
-| { }     | Delimitadores de argumentos o bloques          | `\{`, `\}`    |
-| ~       | Espacio no separable                           | `\~{}`        |
-| \       | Carácter de escape para comandos               | `\textbackslash` |
+| Símbolo | Uso                                   | Comando LaTeX    |
+| ------- | ------------------------------------- | ---------------- |
+| #       | Argumento de un macro                 | `\#`             |
+| $       | Iniciar o terminar un modo matemático | `\$`             |
+| %       | Comienzo de un comentario             | `\%`             |
+| ^       | Superíndice en modo matemático        | `\^{} `          |
+| &       | Alineación en tablas o matrices       | `\&`             |
+| _       | Subíndice en modo matemático          | `\_`             |
+| { }     | Delimitadores de argumentos o bloques | `\{`, `\}`       |
+| ~       | Espacio no separable                  | `\~{}`           |
+| \       | Carácter de escape para comandos      | `\textbackslash` |
 
 Estos símbolos tienen funciones especiales en LaTeX y deben utilizarse con un backslash (`\`) para ser impresos literalmente en el documento.
 
 ## Encabezamiento o preámbulo
 
-El preámbulo se compone de todas las *declaraciones* y *paquetes* que incluyamos entre `\documentclass`{.latex} y `\begin{document}`{.latex}. 
+El preámbulo se compone de todas las *declaraciones* y *paquetes* que incluyamos entre `\documentclass`{.latex} y `\begin{document}`{.latex}.
 
 LaTeX es **modular**: su comportamiento y características pueden ser modificados o ampliados a través del uso de *paquetes*.
 
-Un **paquete** es un *conjunto de instrucciones* de LaTeX diseñado para resolver un problema concreto del documento. 
+Un **paquete** es un *conjunto de instrucciones* de LaTeX diseñado para resolver un problema concreto del documento.
 
 Para cargar un paquete escribiremos el siguiente *comando* en el preámbulo del documento:
+
 ```latex
 \usepackage[opciones]{paquete}
 ```
@@ -82,7 +88,7 @@ A continuación presentamos nuestro primer documento de LaTeX
 \usepackage[hidelinks]{hyperref}
 
 % Añadimos la información sobre título autoría 
-\title{Taller de \LaTeX\ para alumnos del Grado en Matemáticas}
+\title{Taller de \LaTeX{} para alumnos del Grado en Matemáticas}
 \author{Los asistentes a dicho curso}
 \date{\today}
 
@@ -106,20 +112,18 @@ f(x)=\cos(x)+\frac{1}{x}
 
 ## Generar el documento: proceso de *compilación*
 
-Como hemos indicado anteriormente, LaTeX es un lenguaje de programación cuya *salida* no es un programa de ordenador sino un documento (generalmente en `pdf`). Una vez escrito el *código* de nuestro documento en un fichero `documento.tex` deberemos *procesarlo* mediante LaTeX (generalmente mediante `pdfLaTeX` o alguna de sus variantes [`XeLaTeX`](https://xetex.sourceforge.net), [`LuaLaTeX`](https://www.luatex.org),...) para obtener el documento. 
+Como hemos indicado anteriormente, LaTeX es un lenguaje de programación cuya *salida* no es un programa de ordenador, sino un documento (generalmente en PDF). Una vez escrito el *código* de nuestro documento en un fichero `documento.tex` deberemos *procesarlo* mediante LaTeX (generalmente mediante `pdfLaTeX` o alguna de sus variantes [`XeLaTeX`](https://xetex.sourceforge.net), [`LuaLaTeX`](https://www.luatex.org),...) para obtener el documento.
 
-En dicho proceso puede haber *errores* que debermos subsanar y se generan una serie de ficheros auxiliares que, una vez terminado el proceso, no son necesarios y podemos borrar. Entre estos ficheros se encuentran:
+En dicho proceso puede haber *errores* que deberemos subsanar y se generan una serie de ficheros auxiliares que, una vez terminado el proceso, no son necesarios y podemos borrar. Entre estos ficheros se encuentran:
 
-  - `.log`: Mensajes del procesador. Contiene los errores, en caso de haberlos, y suele ser mostrado en el editor.
-  - `.aux`: Contiene información sobre las referencias, la bibliografía, el índice, etc. para generar las referencias cruzadas y los enlaces en el documento.
-  - `.toc`, `.lof`, `.lot`: Información relativa a índices, lista de figuras y lista de tablas.
-  - `.bbl`,  `.blg`, `.bst`: Ficheros relacionados con la bibliografía.
-
-
+- `.log`: Mensajes del procesador. Contiene los errores, en caso de haberlos, y suele ser mostrado en el editor.
+- `.aux`: Contiene información sobre las referencias, la bibliografía, el índice, etc. para generar las referencias cruzadas y los enlaces en el documento.
+- `.toc`, `.lof`, `.lot`: Información relativa a índices, lista de figuras y lista de tablas.
+- `.bbl`,  `.blg`, `.bst`: Ficheros relacionados con la bibliografía.
 
 ## Título, resumen y tabla de contenidos
 
-Según la [clase de documento](../Tipos de documento/about.qmd), estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen,... del documento.
+Según la [clase de documento](../Tipos de documento/about.qmd), estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen, ... del documento.
 
 ### Título
 
@@ -133,12 +137,9 @@ Esto es una prueba de cómo hacer algunas cosas en \LaTeX.
 \end{abstract}
 ```
 
-
 ### Tabla de contenidos
 
 Podemos añadir una tabla de contenidos con `\tableofcontents`{.latex}
-
-
 
 ## Elementos del texto
 
@@ -157,27 +158,25 @@ La unida básica de estructura es el párrafo que se delimita por al menos una l
 
 Los párrafos se pueden alinear a la izquierda (entorno `flushleft`), derecha (entorno `flushright`) o centrados (entorno `center`).
 
-
 ### Secciones
 
-Podemos crear seccions (en un libro también capítulos y partes) con el comando `\section`{.latex}. Éstas pueden contener subsecciones: `\subsection`{.latex}, y subsubseciones. Finalmente tenemos párrafos, `\paragraph`{.latex}, y subpárrafos
+Podemos crear secciones (en un libro también capítulos y partes) con el comando `\section`{.latex}. Éstas pueden contener subsecciones: `\subsection`{.latex}, y subsubsecciones. Finalmente, tenemos párrafos, `\paragraph`{.latex}, y subpárrafos
 
-Comando          | Nivel
----------------- | :---:
-`\part`          |  -1
-`\chapter`       |   0
-`\section`       |   1
-`\subsection`    |   2
-`\subsubsection` |   3
-`\paragraph`     |   4
-`\subparagraph`  |   5
+| Comando          | Nivel |
+| ---------------- | :---: |
+| `\part`          |  -1   |
+| `\chapter`       |   0   |
+| `\section`       |   1   |
+| `\subsection`    |   2   |
+| `\subsubsection` |   3   |
+| `\paragraph`     |   4   |
+| `\subparagraph`  |   5   |
 
 Véase <http://en.wikibooks.org/wiki/LaTeX/Document_Structure>
 
-
 ### Listas
 
-Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento
+Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundidad de anidamiento
 
 ```latex
 \begin{enumerate}
@@ -224,34 +223,33 @@ Nombre & Pepe & Juan & Manuel\\ \hline
 
 Tenemos varios tipos de letra y tamaños básicos
 
-Comando   | Tipo
---------- | -------------------
-`\textbf` | **negrita**
-`\textit` | _itálica_
-`\textsl` | helvética
-`\texttt` | courier
-`\textsc` | pequeñas Mayúsculas
+| Comando   | Tipo                             |
+| --------- | -------------------------------- |
+| `\textbf` | **negrita**                      |
+| `\textit` | _itálica_                        |
+| `\textsl` | inclinada                        |
+| `\texttt` | ancho fijo (máquina de escribir) |
+| `\textsc` | versalitas (mayúsculas pequeñas) |
 
 ... o bien podemos `\emph{enfatizar}` una `\textit{parte del texto \emph{dentro} de otro}`
 
-En la siguiente table se recogen todos los comando para modificar el aspecto (familia, grosor, perfil y tamaño) de la tipografía. Podemos combinar un comando de cada columna. En las tres primeras columnas tenemos dos comandos para lo mismo: el primero de ellos (p.e. `\textbf` para negrita) cambia la apariencia a su argumento (p.e. `\textbf{texto en negrita}`) mientras que el segundo (p.e. `\bfseries`) afecta a todo un *bloque* (p.e. `{\bfseries texto en negrita}`).
+En la siguiente tabla se recogen todos los comando para modificar el aspecto (familia, grosor, perfil y tamaño) de la tipografía. Podemos combinar un comando de cada columna. En las tres primeras columnas tenemos dos comandos para lo mismo: el primero de ellos (p.e. `\textbf` para negrita) cambia la apariencia a su argumento (p.e. `\textbf{texto en negrita}`) mientras que el segundo (p.e. `\bfseries`) afecta a todo un *bloque* (p.e. `{\bfseries texto en negrita}`).
 
-| Familia    | Estilo                            | Tamaño                  |
-|------------|---------------------------------  |-------------------------|
-|            | Grosor (*series*) | Perfil (*shape*)  |                         |
-| Serif      | Normal          | Recto           | `\tiny`                   |
-| `\textrm`    | `\textmd`         | `\textup`         | `\scriptsize`             |
-| `\rmfamily`  | `\mdseries`       | `\upshape`        | `\footnotesize`           |
-|            | Negrita         | Cursiva         | `\small`                  |
-|            | `\textbf`         | `\textit`         | `\normalsize`             |
-|            | `\bfseries`       | `\itshape`        | `\large`                  |
-| sans-serif |                 | Inclinada       | `\Large`                  |
-| `\textsf`    |                 | `\textsl`         | `\LARGE`                  |
-| `\sffamily`  |                 | `\slshape`        | `\huge`                   |
-| Mono       |                 | Versalitas      | `\Huge`                   |
-| `\texttt`    |                 | `\textsc`         |                         |
-| `\ttfamily`  |                 | `\scshape`        |                         |
-
+| Familia     | Estilo            |                  | Tamaño          |
+| ----------- | ----------------- | ---------------- | --------------- |
+|             | Grosor (*series*) | Perfil (*shape*) |                 |
+| Serif       | Normal            | Recto            | `\tiny`         |
+| `\textrm`   | `\textmd`         | `\textup`        | `\scriptsize`   |
+| `\rmfamily` | `\mdseries`       | `\upshape`       | `\footnotesize` |
+|             | Negrita           | Cursiva          | `\small`        |
+|             | `\textbf`         | `\textit`        | `\normalsize`   |
+|             | `\bfseries`       | `\itshape`       | `\large`        |
+| Sans-serif  |                   | Inclinada        | `\Large`        |
+| `\textsf`   |                   | `\textsl`        | `\LARGE`        |
+| `\sffamily` |                   | `\slshape`       | `\huge`         |
+| Mono        |                   | Versalitas       | `\Huge`         |
+| `\texttt`   |                   | `\textsc`        |                 |
+| `\ttfamily` |                   | `\scshape`       |                 |
 
 --------------------------------------------------------------------------------
 
@@ -296,7 +294,7 @@ De esta forma escribimos el contador de ejercicio de forma manual
 
 Para automatizarlo, hacemos lo siguiente
 
-```
+```latex
 \newcounter{ejer_num}
 \setcounter{ejer_num}{1}
 \newenvironment{ejer}{
@@ -312,13 +310,13 @@ Para automatizarlo, hacemos lo siguiente
 
 Podemos numerar con la sección
 
-```
+```latex
 \newtheorem{teorema}{Teorema}[section]
 ```
 
 Y otros entornos con el contador que acabamos de crear
 
-```
+```latex
 \newtheorem{nota}[teorema]{Aclaración}
 ```
 
@@ -331,7 +329,7 @@ Así lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.
 \end{proof}
 ```
 
-Luego podremos referenciar a este teorema como Teorema `\ref{tonto}`
+Luego podremos referenciar a este teorema como Teorema `\ref{tonto}`.
 
 --------------------------------------------------------------------------------
 
@@ -339,7 +337,7 @@ Luego podremos referenciar a este teorema como Teorema `\ref{tonto}`
 
 El paquete `graphicx` nos permite insertar gráficos con el comando `\includegraphics`
 
-```
+```latex
 \includegraphics[width=2.5cm]{imagen.jpg}
 ```
 
@@ -369,9 +367,7 @@ Puede ser más de un párrafo.
 \end{center}
 ```
 
-Y desplazarlo a la derecha con `\hfill`
-
-
+Y desplazarlo a la derecha con `\hfill`.
 
 ## La bibliografía
 
@@ -384,13 +380,15 @@ Para insertar manualmente la bibliografía el entorno `thebibliography`, cuya si
     \bibitem[identificador]{etiqueta} Elemento bibliográfico (libro, artículo,...)
 \end{thebibliography}
 ```
-donde `n` es el *número máximo* de elementos de la lista y únicamente se usa como referencia para el espacio entre el identificador del elemento bibliográfco y su descripción.
 
-El argumento opcional `[identificador]` se usa para indicar de forma manual qué identificador queremos para el elemento bibliográfico, es decir, de qué forma se va a imprimir en el documento una referencia a dicho elemento. 
+donde `n` es el *número máximo* de elementos de la lista y únicamente se usa como referencia para el espacio entre el identificador del elemento bibliográfico y su descripción.
+
+El argumento opcional `[identificador]` se usa para indicar de forma manual qué identificador queremos para el elemento bibliográfico, es decir, de qué forma se va a imprimir en el documento una referencia a dicho elemento.
 
 Para hacer referencia a un elemento de la bibliografía usaremos el comando `\cite{etiqueta}`.
 
 Por ejemplo:
+
 ```latex
 \begin{thebibliography}{9}
 \bibitem{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,
@@ -398,7 +396,8 @@ Por ejemplo:
     \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.
 \end{thebibliography}
 ```
-y una referencia a dicho elemento sería: *recomandamos la lectura de `\cite{lshort}`*. 
+
+y una referencia a dicho elemento sería: *recomendamos la lectura de `\cite{lshort}`*.
 
 Las principales desventajas de este método son las siguientes:
 
@@ -408,14 +407,12 @@ Las principales desventajas de este método son las siguientes:
 
 3. Si queremos cambiar el *estilo* del elemento bibliográfico (el orden en que parecen los datos de autor/título/revista/año y su estilo tipográfico cursiva/negrita) deberemos hacerlo manualmente para cada una de las entradas.
 
-
 En la sección [Bibliografía](../Bibliografia/about.qmd) se propone una forma óptima de *gestionar* la bibliografía de un documento mediante la creación de *bases de datos* de referencias bibliográficas (ficheros `bibtex`, de forma manual o usando un gestor) y la inserción automática de la bibliografía en un documento LaTeX (mediante `bibtex` o `biblatex`).
-
 
 ## Más información
 
-Un resumen de todo lo dicho y más lo podéis encontrar en el [chuletario](http://osl.ugr.es/CTAN/info/latexcheat/latexcheat-esmx/latexsheet-esmx.pdf) de LaTeX
+Un resumen de todo lo dicho y más lo podéis encontrar en el [chuletario](http://osl.ugr.es/CTAN/info/latexcheat/latexcheat-esmx/latexsheet-esmx.pdf) de LaTeX.
 
-En vuestra instalación de LaTeX tenéis toda la documentación necesaria, e incluso el "[lshort.pdf](http://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf)" o cómo aprender LaTeX en 147 minutos
+En vuestra instalación de LaTeX tenéis toda la documentación necesaria, e incluso el "[lshort.pdf](http://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf)" o cómo aprender LaTeX en 147 minutos.
 
 [Overleaf](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes) ofrece un excelente tutorial de inicio.

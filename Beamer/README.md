@@ -25,10 +25,9 @@ El tipo de documento `beamer` es parecido a un artículo o libro
 \section*{Introducción}
 ```
 
-
 ## Frames
 
-Cada transparencia se corresponde con un cuatro o frame
+Cada transparencia se corresponde con un cuadro o frame
 
 ```latex
 \begin{frame}{Con su título}
@@ -36,8 +35,7 @@ Cada transparencia se corresponde con un cuatro o frame
 \end{frame}
 ```
 
-El título es opcional
-
+El título es opcional.
 
 ## Itemize
 
@@ -48,10 +46,11 @@ En `beamer` se pueden hacer pausas cada vez que hay una lista, haciendo que camb
 \begin{itemize}[<+-|alert@+>]
 \item Este taller está pensado como pequeña introducción al \LaTeX
 \item Intentaremos dar algunas pequeñas pinceladas sobe su uso
-\item Para m\'as detalles véase la documentación de beamer.
+\item Para más detalles véase la documentación de beamer.
 \end{itemize}
 \end{frame}
 ```
+
 ## Bloques
 
 Dentro de una transparencia podemos usar bloques
@@ -77,7 +76,6 @@ Y en estos los ejemplos, por ejemplo.
 
 Los colores y forma (bordes) cambian dependiendo del estilo seleccionado
 
-
 ## Pausas
 
 Con el comando `\pause` podemos hacer que se muestre el texto de una transparencia hasta dicha marca
@@ -95,7 +93,6 @@ Otra cosa
 
 Y otra cosa más
 ```
-
 
 ## Sobreimpresiones
 
@@ -119,7 +116,6 @@ O cualquier otra cosa.
 \end{overprint}
 ```
 
-
 ## Bibliografía
 
 ```latex
@@ -128,7 +124,6 @@ O cualquier otra cosa.
 The not so short introduction to \LaTeX2e,
  \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.
 \end{thebibliography}
-
 ```
 
 El código anterior, al igual que `\maketitle`, crea una nueva transparencia conteniendo la bibliografía.

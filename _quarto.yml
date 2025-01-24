@@ -28,9 +28,9 @@ website:
         href: Tipos de documento/about.qmd  
       - text: "Transparencias beamer"
         href: Beamer/about.qmd
-      - text: Gráficos
+      - text: "Gráficos"
         href: Graficos/about.qmd
-      - text: Bibliografía
+      - text: "Bibliografía"
         href: Bibliografia/Bibliografias.pdf
       - text: "Paquetes útiles"
         href: Paquetes/about.qmd

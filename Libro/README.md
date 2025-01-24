@@ -24,7 +24,7 @@ En esta parte pondremos el título, tabla de contenidos y prólogo
 
 También podemos poner aquí las dedicatorias y agradecimientos (aunque estos últimos también se pueden poner en el `backmatter`)
 
-Lás páginas en el `frontmatter` van numeradas con números romanos
+Las páginas en el `frontmatter` van numeradas con números romanos
 
 ```latex
 \frontmatter
@@ -59,7 +59,7 @@ Además de `section` y `paragraph` (y sub...), tenemos partes y capítulos
 
 ## backmatter
 
-Aquí colocaremos la bibliographía y los índices de contenido, de resultados...
+Aquí colocaremos la bibliografía y los índices de contenido, de resultados...
 
 También podemos añadir apéndices
 
@@ -84,8 +84,10 @@ También podemos añadir apéndices
 ## Hipervínculos
 
 Los comandos
+
 ```latex
 \cleardoublepage
 \phantomsection
 ```
+
 los usamos para compatibilidad con `hyperref`

@@ -1,6 +1,6 @@
 Todos sabemos que en un documento generado con $\LaTeX{}$ podemos incorporar  gráficos.
 
-Lo que no es tan conocido es que, al insertarlos, permite editarlos ligeramente. Seleccionar parte de la imagen, redimensionar, girar, superponer, simetrizar, incluir texto son algunas de las modificaciones que podemos realizar sobre una imagen al incluirla en un documento de una manera sencilla sin necesidad de recurrir a un editor de gráfico como se explica en la [primera sección](#inserciónedición-de-gráficos)
+Lo que no es tan conocido es que, al insertarlos, permite editarlos ligeramente. Seleccionar parte de la imagen, redimensionar, girar, superponer, simetrizar, incluir texto son algunas de las modificaciones que podemos realizar sobre una imagen al incluirla en un documento de una manera sencilla sin necesidad de recurrir a un editor de gráfico como se explica en la [primera sección](#inserciónedición-de-gráficos).
 
 No obstante, la inclusión de muchos documentos gráficos en un mismo documento tiene varios inconvenientes:
 
@@ -21,7 +21,7 @@ A la hora de preparar un gráfico para insertarlo en un documento $\LaTeX{}$ hem
 - el resultado final dependerá mucho de cómo éste se haya generado y
 - que el fichero en el que se guarde no puede estar en un formato cualquiera.  
 
-En general hemos de tener en cuenta que hay dos grupos básicos de gráficos: los mapas de bits (también llamados imágenes de pixeles) y gráficos vectoriales. Básicamente los primeros son una gran tabla donde se indica el color de cada punto del gráfico (pixel) mientras que los segundos son ficheros donde se guardan una serie de instrucciones para generar el gráfico. Por lo general los mapas de bits son más pesados y poco adecuados para el redimensionado que los gráficos vectoriales. Por lo tanto, hay que evitar el uso de mapas de bits cuando la naturaleza de gráfico nos lo permita, lo que es imposible el caso de fotografías, capturas de pantalla, imágenes descargadas de la red, ...
+En general hemos de tener en cuenta que hay dos grupos básicos de gráficos: los mapas de bits (también llamados imágenes de píxeles) y gráficos vectoriales. Básicamente, los primeros son una gran tabla donde se indica el color de cada punto del gráfico (pixel) mientras que los segundos son ficheros donde se guardan una serie de instrucciones para generar el gráfico. Por lo general los mapas de bits son más pesados y poco adecuados para el redimensionado que los gráficos vectoriales. Por lo tanto, hay que evitar el uso de mapas de bits cuando la naturaleza de gráfico nos lo permita, lo que es imposible el caso de fotografías, capturas de pantalla, imágenes descargadas de la red, ...
 
 Por último si queremos generar un fichero PDF con $\LaTeX{}$ los compiladores más usuales únicamente aceptarán ficheros en formato PNG, JPEG o PDF, por lo que te puedes ver obligado a exportar tu imagen a uno de estos formatos.
 
@@ -29,7 +29,7 @@ Para ampliar detalles y buscar programas que nos ayuden en estas labores tan esp
 
 ### Inserción básica de gráficos
 
-La inserción de un gráfico requiere de la declaracion del paquete *graphicx* en el preámbulo mediante el comando:
+La inserción de un gráfico requiere de la declaración del paquete *graphicx* en el preámbulo mediante el comando:
 
 ```latex
 \usepackage{graphicx}
@@ -54,7 +54,7 @@ No obstante, recomendamos que los gráficos siempre se declaren en un entorno *f
 
 De esta forma la imagen aparecerá con la leyenda que describa su contenido en el campo *caption* y se podrá hacer referencia a ella desde el texto empleando la etiqueta declarada en *label*, al igual que se hace con tablas o fórmulas.
 
-Mediante distintos comandos incluidos en el campo *parametros* se puede modificar el aspecto de la imagen, lo que nos permite editarlos ligeramente. Este punto se amplia a continuación.
+Mediante distintos comandos incluidos en el campo *parametros* se puede modificar el aspecto de la imagen, lo que nos permite editarlos ligeramente. Este punto se amplía a continuación.
 
 ### Inserción avanzada de gráficos (edición)
 
@@ -90,7 +90,7 @@ La superposición de gráficos o texto a una imagen se puede hacer mediante el c
 \put(coordenadas){objeto}
 ```
 
-se pueden superponer ‘el objeto’ en la posicion ‘coordenadas’. De esta manera los comandos
+se pueden superponer ‘el objeto’ en la posición ‘coordenadas’. De esta manera los comandos
 
 ```latex
 \begin{figure}[h]
@@ -103,7 +103,7 @@ incluyen sobre el gráfico *fig_9*, que ha sido girado 270º, la fórmula matem�
 
 ### Dificultades usuales
 
-A continuación comentamos cómo tratar dos de los *inconvenientes* que los usuarios  de $\LaTeX$ noveles encuentran a la hora de trabajar con gráficos.
+A continuación comentamos cómo tratar dos de los *inconvenientes* que los usuarios de $\LaTeX$ noveles encuentran a la hora de trabajar con gráficos.
 
 El primero de ellos es que el entorno figure es flotante, esto es, $\LaTeX$ "decide" dónde lo localiza en el texto. Si queremos controlar este proceso tenemos varias opciones:
 
@@ -122,7 +122,7 @@ Otro de los problemas que podemos encontrar muchas veces es que queremos *ajusta
 \end{figure}
 ```
 
-a la hora de insertar el gráfico para que este quede enmarcado. De esta forma podemos ajustar con los parámetros *trim* y *clip* el espacio a cortar en los márgenes de la imagen. Además de eliminar el espacio innecesario, esto nos permitirá aumentar el tamaño de la parte verdaderamente relevante de la imagen.  Si aún así queremos ajustar el espacio entre el texto y la imagen siempre podemos usar (sin abusar) el comando *\vspace{xcm}*.
+a la hora de insertar el gráfico para que este quede enmarcado. De esta forma podemos ajustar con los parámetros *trim* y *clip* el espacio a cortar en los márgenes de la imagen. Además de eliminar el espacio innecesario, esto nos permitirá aumentar el tamaño de la parte verdaderamente relevante de la imagen.  Si aun así queremos ajustar el espacio entre el texto y la imagen siempre podemos usar (sin abusar) el comando *\vspace{xcm}*.
 
 ### Inclusión de páginas completas seleccionadas de ficheros pdf
 
@@ -133,9 +133,9 @@ Por último, puede ser de mucha utilidad saber que el paquete [pdfpages](https:/
 ```
 
 páginas seleccionadas del fichero file.pdf en un documento $\LaTeX$.
-Esto puede ser una herramienta de inmensa ayuda por ejemplo si queremos generar un documento con documentación acreditativa, incluir declaraciones en documentos, etc...
+Esto puede ser una herramienta de inmensa ayuda por ejemplo si queremos generar un documento con documentación acreditativa, incluir declaraciones en documentos, etc.
 
-Pueder visualizar todos los ejemplos anteriores en el fichero [presentacion1.pdf](presentacion1.pdf){target="_pdf"}.
+Puedes visualizar todos los ejemplos anteriores en el fichero [presentacion1.pdf](presentacion1.pdf){target="_pdf"}.
 
 ## Creación de gráficos
 
@@ -146,8 +146,7 @@ Existen dos *macropaquetes* para la realización de gráficos en $\LaTeX$:
 
 En ambos casos proporcionan un gran abanico de comandos específicos.
 
-Podemos sacar provecho de ellos de varias maneras
-dependiendo del tiempo que estemos dispuetos a invertir en ello:
+Podemos sacar provecho de ellos de varias maneras dependiendo del tiempo que estemos dispuestos a invertir en ello:
 
 - escribiendo nosotros directamente los códigos. Hay disponibles numerosos manuales, y ejemplos que podemos tomar como punto de partida para nuestros proyectos:
   - [http://www.texample.net/tikz/examples/](http://www.texample.net/tikz/examples/)
@@ -158,7 +157,8 @@ dependiendo del tiempo que estemos dispuetos a invertir en ello:
   - [Diagramas de árboles](https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_5)%E2%80%94Creating_Mind_Maps#:~:text=Part%204%20%7C-,Part,-5),
   - o [diagramas de flujo](https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Creating_Flowcharts#The_tikzstyle_command:~:text=Part%202%20%7C-,Part,-3%20%7C%20Part).
 
-- Por último, la opción que a priory puede ser más conservadora en inversión de tiempo sería crear los gráficos con otros programas que permitan exportarlos a $\LaTeX$. Son numerosos los programas que ofrecen la posibilidad de exportar gráficos  generados con ellos bien a TikZ:
+- Por último, la opción que a priori puede ser más conservadora en inversión de tiempo sería crear los gráficos con otros programas que permitan exportarlos a $\LaTeX$. Son numerosos los programas que ofrecen la posibilidad de exportar gráficos generados con ellos bien a TikZ:
+- 
   - [gnuplot](https://ctan.org/pkg/gnuplottex),
   - [Xfig](https://mcj.sourceforge.net/latex_and_xfig.html) (versión para Windows: [WinFIG](http://winfig.com/)),
   - [GeoGebra](http://www.geogebra.org/cms/),
