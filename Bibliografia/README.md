@@ -73,7 +73,6 @@ Los tres últimos están disponibles (con distinto grado de características) a 
 
 Todos requieren de la creación de una cuenta.
 
-
 ### Exportar las referencias a `bibTeX` usando Zotero
 
 #### Forma manual:

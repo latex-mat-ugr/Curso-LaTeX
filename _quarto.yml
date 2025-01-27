@@ -32,7 +32,7 @@ website:
       - text: "Gráficos"
         href: Graficos/about.qmd
       - text: "Bibliografía"
-        href: Bibliografia/Bibliografias.pdf
+        href: Bibliografia/about.qmd
       - text: "Paquetes útiles"
         href: Paquetes/about.qmd
       - text: "Markdown"
