@@ -72,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b70d8ee14c43831778c0a8f58b563a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cc77ee59ca6e156fede203dedbbb611f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -222,7 +222,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Bibliografia/Bibliografias.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../Bibliografia/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -285,7 +285,6 @@ window.Quarto = {
   <li><a href="#la-bibliografía" id="toc-la-bibliografía" class="nav-link" data-scroll-target="#la-bibliografía">La bibliografía</a>
   <ul class="collapse">
   <li><a href="#incluir-la-bibliografía-de-forma-manual-entorno-thebibliography" id="toc-incluir-la-bibliografía-de-forma-manual-entorno-thebibliography" class="nav-link" data-scroll-target="#incluir-la-bibliografía-de-forma-manual-entorno-thebibliography">Incluir la bibliografía de forma <em>manual</em>: entorno <code>thebibliography</code></a></li>
-  <li><a href="#incluir-la-bibliografía-de-forma-automática-bibtex" id="toc-incluir-la-bibliografía-de-forma-automática-bibtex" class="nav-link" data-scroll-target="#incluir-la-bibliografía-de-forma-automática-bibtex">Incluir la bibliografía de forma automática: <code>bibtex</code></a></li>
   </ul></li>
   <li><a href="#más-información" id="toc-más-información" class="nav-link" data-scroll-target="#más-información">Más información</a></li>
   <li><a href="#transparencias-taller" id="toc-transparencias-taller" class="nav-link" data-scroll-target="#transparencias-taller">Transparencias taller</a></li>
@@ -318,7 +317,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="estructura-de-un-documento-latex.">Estructura de un documento LaTeX.</h2>
 <p>La estructura de un documento en LaTeX es la siguiente</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">clase</span>}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -340,11 +339,6 @@ window.Quarto = {
 <p>que afectan a todo el <em>contenido</em>.</p>
 <p>Además, algunos caracteres tienen una utilidad especial y su uso está reservado:</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 66%">
-<col style="width: 20%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Símbolo</th>
@@ -428,7 +422,7 @@ window.Quarto = {
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[hidelinks]{<span class="ex">hyperref</span>}</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">% Añadimos la información sobre título autoría </span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Taller de <span class="fu">\LaTeX\ </span>para alumnos del Grado en Matemáticas}</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Taller de <span class="fu">\LaTeX</span>{} para alumnos del Grado en Matemáticas}</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Los asistentes a dicho curso}</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
@@ -451,8 +445,8 @@ window.Quarto = {
 </section>
 <section id="generar-el-documento-proceso-de-compilación" class="level2">
 <h2 class="anchored" data-anchor-id="generar-el-documento-proceso-de-compilación">Generar el documento: proceso de <em>compilación</em></h2>
-<p>Como hemos indicado anteriormente, LaTeX es un lenguaje de programación cuya <em>salida</em> no es un programa de ordenador sino un documento (generalmente en <code>pdf</code>). Una vez escrito el <em>código</em> de nuestro documento en un fichero <code>documento.tex</code> deberemos <em>procesarlo</em> mediante LaTeX (generalmente mediante <code>pdfLaTeX</code> o alguna de sus variantes <a href="https://xetex.sourceforge.net"><code>XeLaTeX</code></a>, <a href="https://www.luatex.org"><code>LuaLaTeX</code></a>,…) para obtener el documento.</p>
-<p>En dicho proceso puede haber <em>errores</em> que debermos subsanar y se generan una serie de ficheros auxiliares que, una vez terminado el proceso, no son necesarios y podemos borrar. Entre estos ficheros se encuentran:</p>
+<p>Como hemos indicado anteriormente, LaTeX es un lenguaje de programación cuya <em>salida</em> no es un programa de ordenador, sino un documento (generalmente en PDF). Una vez escrito el <em>código</em> de nuestro documento en un fichero <code>documento.tex</code> deberemos <em>procesarlo</em> mediante LaTeX (generalmente mediante <code>pdfLaTeX</code> o alguna de sus variantes <a href="https://xetex.sourceforge.net"><code>XeLaTeX</code></a>, <a href="https://www.luatex.org"><code>LuaLaTeX</code></a>,…) para obtener el documento.</p>
+<p>En dicho proceso puede haber <em>errores</em> que deberemos subsanar y se generan una serie de ficheros auxiliares que, una vez terminado el proceso, no son necesarios y podemos borrar. Entre estos ficheros se encuentran:</p>
 <ul>
 <li><code>.log</code>: Mensajes del procesador. Contiene los errores, en caso de haberlos, y suele ser mostrado en el editor.</li>
 <li><code>.aux</code>: Contiene información sobre las referencias, la bibliografía, el índice, etc. para generar las referencias cruzadas y los enlaces en el documento.</li>
@@ -462,7 +456,7 @@ window.Quarto = {
 </section>
 <section id="título-resumen-y-tabla-de-contenidos" class="level2">
 <h2 class="anchored" data-anchor-id="título-resumen-y-tabla-de-contenidos">Título, resumen y tabla de contenidos</h2>
-<p>Según la <a href="../Tipos de documento/about.html">clase de documento</a>, estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen,… del documento.</p>
+<p>Según la <a href="../Tipos de documento/about.html">clase de documento</a>, estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen, … del documento.</p>
 <section id="título" class="level3">
 <h3 class="anchored" data-anchor-id="título">Título</h3>
 <p>El título y datos de autores se visualiza con <code class="sourceCode latex"><span class="fu">\maketitle</span></code> y se <em>declara</em> (en la mayoría de clases de documento) mediante los comandos <code class="sourceCode latex"><span class="fu">\author</span></code> y <code class="sourceCode latex"><span class="fu">\title</span></code>.</p>
@@ -497,7 +491,7 @@ window.Quarto = {
 </section>
 <section id="secciones" class="level3">
 <h3 class="anchored" data-anchor-id="secciones">Secciones</h3>
-<p>Podemos crear seccions (en un libro también capítulos y partes) con el comando <code class="sourceCode latex"><span class="kw">\section</span></code>. Éstas pueden contener subsecciones: <code class="sourceCode latex"><span class="kw">\subsection</span></code>, y subsubseciones. Finalmente tenemos párrafos, <code class="sourceCode latex"><span class="kw">\paragraph</span></code>, y subpárrafos</p>
+<p>Podemos crear secciones (en un libro también capítulos y partes) con el comando <code class="sourceCode latex"><span class="kw">\section</span></code>. Éstas pueden contener subsecciones: <code class="sourceCode latex"><span class="kw">\subsection</span></code>, y subsubsecciones. Finalmente, tenemos párrafos, <code class="sourceCode latex"><span class="kw">\paragraph</span></code>, y subpárrafos</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -540,7 +534,7 @@ window.Quarto = {
 </section>
 <section id="listas" class="level3">
 <h3 class="anchored" data-anchor-id="listas">Listas</h3>
-<p>Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundicad de anidamiento</p>
+<p>Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundidad de anidamiento</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Aquellas que van enumeradas.</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
@@ -593,30 +587,26 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td><code>\textsl</code></td>
-<td>helvética</td>
+<td>inclinada</td>
 </tr>
 <tr class="even">
 <td><code>\texttt</code></td>
-<td>courier</td>
+<td>ancho fijo (máquina de escribir)</td>
 </tr>
 <tr class="odd">
 <td><code>\textsc</code></td>
-<td>pequeñas Mayúsculas</td>
+<td>versalitas (mayúsculas pequeñas)</td>
 </tr>
 </tbody>
 </table>
 <p>… o bien podemos <code>\emph{enfatizar}</code> una <code>\textit{parte del texto \emph{dentro} de otro}</code></p>
-<p>En la siguiente table se recogen todos los comando para modificar el aspecto (familia, grosor, perfil y tamaño) de la tipografía. Podemos combinar un comando de cada columna. En las tres primeras columnas tenemos dos comandos para lo mismo: el primero de ellos (p.e. <code>\textbf</code> para negrita) cambia la apariencia a su argumento (p.e. <code>\textbf{texto en negrita}</code>) mientras que el segundo (p.e. <code>\bfseries</code>) afecta a todo un <em>bloque</em> (p.e. <code>{\bfseries texto en negrita}</code>).</p>
+<p>En la siguiente tabla se recogen todos los comando para modificar el aspecto (familia, grosor, perfil y tamaño) de la tipografía. Podemos combinar un comando de cada columna. En las tres primeras columnas tenemos dos comandos para lo mismo: el primero de ellos (p.e. <code>\textbf</code> para negrita) cambia la apariencia a su argumento (p.e. <code>\textbf{texto en negrita}</code>) mientras que el segundo (p.e. <code>\bfseries</code>) afecta a todo un <em>bloque</em> (p.e. <code>{\bfseries texto en negrita}</code>).</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 17%">
-<col style="width: 47%">
-<col style="width: 35%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Familia</th>
 <th>Estilo</th>
+<th></th>
 <th>Tamaño</th>
 </tr>
 </thead>
@@ -625,66 +615,79 @@ window.Quarto = {
 <td></td>
 <td>Grosor (<em>series</em>)</td>
 <td>Perfil (<em>shape</em>)</td>
+<td></td>
 </tr>
 <tr class="even">
 <td>Serif</td>
 <td>Normal</td>
 <td>Recto</td>
+<td><code>\tiny</code></td>
 </tr>
 <tr class="odd">
 <td><code>\textrm</code></td>
 <td><code>\textmd</code></td>
 <td><code>\textup</code></td>
+<td><code>\scriptsize</code></td>
 </tr>
 <tr class="even">
 <td><code>\rmfamily</code></td>
 <td><code>\mdseries</code></td>
 <td><code>\upshape</code></td>
+<td><code>\footnotesize</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Negrita</td>
 <td>Cursiva</td>
+<td><code>\small</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td><code>\textbf</code></td>
 <td><code>\textit</code></td>
+<td><code>\normalsize</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><code>\bfseries</code></td>
 <td><code>\itshape</code></td>
+<td><code>\large</code></td>
 </tr>
 <tr class="even">
-<td>sans-serif</td>
+<td>Sans-serif</td>
 <td></td>
 <td>Inclinada</td>
+<td><code>\Large</code></td>
 </tr>
 <tr class="odd">
 <td><code>\textsf</code></td>
 <td></td>
 <td><code>\textsl</code></td>
+<td><code>\LARGE</code></td>
 </tr>
 <tr class="even">
 <td><code>\sffamily</code></td>
 <td></td>
 <td><code>\slshape</code></td>
+<td><code>\huge</code></td>
 </tr>
 <tr class="odd">
 <td>Mono</td>
 <td></td>
 <td>Versalitas</td>
+<td><code>\Huge</code></td>
 </tr>
 <tr class="even">
 <td><code>\texttt</code></td>
 <td></td>
 <td><code>\textsc</code></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><code>\ttfamily</code></td>
 <td></td>
 <td><code>\scshape</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -713,34 +716,34 @@ window.Quarto = {
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">ejercicio</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>De esta forma escribimos el contador de ejercicio de forma manual</p>
 <p>Para automatizarlo, hacemos lo siguiente</p>
-<pre><code>\newcounter{ejer_num}
-\setcounter{ejer_num}{1}
-\newenvironment{ejer}{
-  \textbf{Ejercicio \arabic{ejer_num}: \stepcounter{ejer_num}}
-  \begin{itshape}
-  }
-  {\end{itshape}}</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcounter</span>{ejer_num}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\setcounter</span>{ejer_num}{1}</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{ejer}{</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\textbf</span>{Ejercicio <span class="fu">\arabic</span>{ejer_num}: <span class="fu">\stepcounter</span>{ejer_num}}</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">itshape</span>}</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  {<span class="kw">\end</span>{<span class="ex">itshape</span>}}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="entornos-predefinidos" class="level2">
 <h2 class="anchored" data-anchor-id="entornos-predefinidos">Entornos predefinidos</h2>
 <p>Podemos numerar con la sección</p>
-<pre><code>\newtheorem{teorema}{Teorema}[section]</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{teorema}{Teorema}[section]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Y otros entornos con el contador que acabamos de crear</p>
-<pre><code>\newtheorem{nota}[teorema]{Aclaración}</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{nota}[teorema]{Aclaración}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb17"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">teorema</span>}<span class="kw">\label</span>{<span class="ex">tonto</span>}</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>Las ranas son verdes.</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">teorema</span>}</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">proof</span>}</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>Así lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">proof</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Luego podremos referenciar a este teorema como Teorema <code>\ref{tonto}</code></p>
+<p>Luego podremos referenciar a este teorema como Teorema <code>\ref{tonto}</code>.</p>
 <hr>
 </section>
 <section id="figuras-e-imágenes" class="level2">
 <h2 class="anchored" data-anchor-id="figuras-e-imágenes">Figuras e imágenes</h2>
 <p>El paquete <code>graphicx</code> nos permite insertar gráficos con el comando <code>\includegraphics</code></p>
-<pre><code>\includegraphics[width=2.5cm]{imagen.jpg}</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=2.5cm]{<span class="ex">imagen.jpg</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Podemos también crear una figura con esa imágen</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=3cm]{<span class="ex">imagen.jpg</span>}  </span>
@@ -759,7 +762,7 @@ window.Quarto = {
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>Puede ser más de un párrafo.</span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">center</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Y desplazarlo a la derecha con <code>\hfill</code></p>
+<p>Y desplazarlo a la derecha con <code>\hfill</code>.</p>
 </section>
 <section id="la-bibliografía" class="level2">
 <h2 class="anchored" data-anchor-id="la-bibliografía">La bibliografía</h2>
@@ -769,7 +772,7 @@ window.Quarto = {
 <div class="sourceCode" id="cb21"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{n}</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\bibitem</span>[identificador]{etiqueta} Elemento bibliográfico (libro, artículo,...)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>donde <code>n</code> es el <em>número máximo</em> de elementos de la lista y únicamente se usa como referencia para el espacio entre el identificador del elemento bibliográfco y su descripción.</p>
+<p>donde <code>n</code> es el <em>número máximo</em> de elementos de la lista y únicamente se usa como referencia para el espacio entre el identificador del elemento bibliográfico y su descripción.</p>
 <p>El argumento opcional <code>[identificador]</code> se usa para indicar de forma manual qué identificador queremos para el elemento bibliográfico, es decir, de qué forma se va a imprimir en el documento una referencia a dicho elemento.</p>
 <p>Para hacer referencia a un elemento de la bibliografía usaremos el comando <code>\cite{etiqueta}</code>.</p>
 <p>Por ejemplo:</p>
@@ -778,22 +781,20 @@ window.Quarto = {
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  The not so short introduction to <span class="fu">\LaTeX</span>2e,</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\href</span>{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>y una referencia a dicho elemento sería: <em>recomandamos la lectura de <code>\cite{lshort}</code></em>.</p>
-<p>Las principales desventajas de este método son las siguientes: 1. Los elementos bibliográficos debemos incluirlos manualmente dentro de <code>thebibliography</code>. 2. Si el estilo bibliográfico de nuestro documento exige que la bibliografía esté, por ejemplo, ordenada alfabéticamente por autores deberemos reordenar manualmente la lista nosotros mismos. 3. Si queremos cambiar el <em>estilo</em> del elemento bibliográfico (el orden en que parecen los datos de autor/título/revista/año y su estilo tipográfico cursiva/negrita) deberemos hacerlo manualmente para cada una de las entradas.</p>
-<p>A continuación se propone una forma óptima de <em>gestionar</em> la bibliografía de un documento.</p>
-</section>
-<section id="incluir-la-bibliografía-de-forma-automática-bibtex" class="level3">
-<h3 class="anchored" data-anchor-id="incluir-la-bibliografía-de-forma-automática-bibtex">Incluir la bibliografía de forma automática: <code>bibtex</code></h3>
-<p>LaTeX, mediante el programa externo <code>bibtex</code> que está disponible en todas las distribuciones, permite la generación automática del entorno <code>thebibliography</code> a partir de una <em>base de datos bibliográfica</em> en formato <code>bibtex</code> (un fichero de texto con extensión <code>.bib</code> con un formato determinado).</p>
-<p>Los pasos para incluir la bibliografía de esta forma son los siguientes: 1. Crear un fichero, p.e. <code>referencias.bib</code> donde incluyamos los datos de los elementos bibliográficos en formato <code>bibtex</code>. La mayoría de repositorios de artículos de investigación nos permiten descargar la referencia en dicho formato. Por ejemplo: <code>bibtex     @book {Euler1984,       AUTHOR = {Euler, Leonhard},       TITLE = {Elements of algebra},       PUBLISHER = {Springer-Verlag, New York},       YEAR = {1984},       PAGES = {lx+593},       ISBN = {0-387-96014-7},       DOI = {10.1007/978-1-4613-8511-0},     }     @article {Euler1985,         AUTHOR = {Euler, Leonhard},          TITLE = {An essay on continued fractions},        JOURNAL = {Math. Systems Theory},       FJOURNAL = {Mathematical Systems Theory. An International Journal on Mathematical Computing Theory},         VOLUME = {18},           YEAR = {1985},         NUMBER = {4},          PAGES = {295--328},           ISSN = {0025-5661},            DOI = {10.1007/BF01699475},     }</code> donde el primer elemento de cada referencia (<code>Euler1984</code> y <code>Euler1985</code> respectivamente) es la <em>etiqueta</em> que luego debermos usar con el comando <code>\cite</code>. 2. Añadir en nuestro documento, donde queremos que aparezca la bibliografía: <code>latex     \bibliographystyle{plain} % alpha, apalike, abbr     \bibliography{referencias}</code> donde recordemos que <code>referencias.bib</code> es el fichero de referencias creado en el punto anterior y ubicado <strong>en la misma carpeta</strong> que el documento <code>.tex</code> que estemos procesando. 3. Compilar (posiblemente sea necesario compilar separadamente con <code>bibtex</code>). Aunque nuestro fichero <code>referencias.bib</code> contenga muchas referencias únicamente se añadiran al documento aquellas que hayamos <em>citado</em> (es decir, aquellas cuyas etiquetas aparezcan entro de un comando <code>\cite</code> en alguna parte del documento).</p>
-<p><strong>Ventajas</strong>: 1. Al cambiar el estilo con <code>\bibliographystyle</code> se genera de nuevo la lista completa de referencias. 2. El fichero <code>referencias.bib</code> puede usarse para múltiples ficheros de LaTeX.</p>
-<p>Actualmente el paquete <a href="https://www.ctan.org/pkg/biblatex"><code>biblatex</code></a> se está convirtiendo en el estándar para la gestión bibliográfica en LaTeX pues corrige algunas deficiencias de <code>bibtex</code>. Su uso es compatible con <code>bibtex</code> aunque tiene su propio <em>motor</em> llamado <a href="https://biblatex-biber.sourceforge.net"><code>biber</code></a> (también incluido en la mayoría de distribuciones de LaTeX).</p>
+<p>y una referencia a dicho elemento sería: <em>recomendamos la lectura de <code>\cite{lshort}</code></em>.</p>
+<p>Las principales desventajas de este método son las siguientes:</p>
+<ol type="1">
+<li><p>Los elementos bibliográficos debemos incluirlos manualmente dentro de <code>thebibliography</code>.</p></li>
+<li><p>Si el estilo bibliográfico de nuestro documento exige que la bibliografía esté, por ejemplo, ordenada alfabéticamente por autores deberemos reordenar manualmente la lista nosotros mismos.</p></li>
+<li><p>Si queremos cambiar el <em>estilo</em> del elemento bibliográfico (el orden en que parecen los datos de autor/título/revista/año y su estilo tipográfico cursiva/negrita) deberemos hacerlo manualmente para cada una de las entradas.</p></li>
+</ol>
+<p>En la sección <a href="../Bibliografia/about.html">Bibliografía</a> se propone una forma óptima de <em>gestionar</em> la bibliografía de un documento mediante la creación de <em>bases de datos</em> de referencias bibliográficas (ficheros <code>bibtex</code>, de forma manual o usando un gestor) y la inserción automática de la bibliografía en un documento LaTeX (mediante <code>bibtex</code> o <code>biblatex</code>).</p>
 </section>
 </section>
 <section id="más-información" class="level2">
 <h2 class="anchored" data-anchor-id="más-información">Más información</h2>
-<p>Un resumen de todo lo dicho y más lo podéis encontrar en el <a href="http://osl.ugr.es/CTAN/info/latexcheat/latexcheat-esmx/latexsheet-esmx.pdf">chuletario</a> de LaTeX</p>
-<p>En vuestra instalación de LaTeX tenéis toda la documentación necesaria, e incluso el “<a href="http://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf">lshort.pdf</a>” o cómo aprender LaTeX en 147 minutos</p>
+<p>Un resumen de todo lo dicho y más lo podéis encontrar en el <a href="http://osl.ugr.es/CTAN/info/latexcheat/latexcheat-esmx/latexsheet-esmx.pdf">chuletario</a> de LaTeX.</p>
+<p>En vuestra instalación de LaTeX tenéis toda la documentación necesaria, e incluso el “<a href="http://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf">lshort.pdf</a>” o cómo aprender LaTeX en 147 minutos.</p>
 <p><a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">Overleaf</a> ofrece un excelente tutorial de inicio.</p>
 </section>
 <section id="transparencias-taller" class="level2">

@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -72,7 +38,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0b70d8ee14c43831778c0a8f58b563a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cc77ee59ca6e156fede203dedbbb611f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -193,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Bibliografia/Bibliografias.pdf" class="sidebar-item-text sidebar-link">
+  <a href="./Bibliografia/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -227,27 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#material-docente-de-latex-en-la-universidad-de-granada" id="toc-material-docente-de-latex-en-la-universidad-de-granada" class="nav-link active" data-scroll-target="#material-docente-de-latex-en-la-universidad-de-granada">Material docente de LaTeX en la Universidad de Granada</a>
-  <ul class="collapse">
-  <li><a href="#qué-es-tex-y-latex" id="toc-qué-es-tex-y-latex" class="nav-link" data-scroll-target="#qué-es-tex-y-latex">¿Qué es TeX y LaTeX?</a>
-  <ul class="collapse">
-  <li><a href="#ventajas-y-desventajas" id="toc-ventajas-y-desventajas" class="nav-link" data-scroll-target="#ventajas-y-desventajas">Ventajas y desventajas</a></li>
-  <li><a href="#ayuda" id="toc-ayuda" class="nav-link" data-scroll-target="#ayuda">Ayuda</a></li>
-  </ul></li>
-  <li><a href="#acerca-de-este-repositorio" id="toc-acerca-de-este-repositorio" class="nav-link" data-scroll-target="#acerca-de-este-repositorio">Acerca de este repositorio</a></li>
-  <li><a href="#instalación-de-latex" id="toc-instalación-de-latex" class="nav-link" data-scroll-target="#instalación-de-latex">Instalación de LaTeX</a>
-  <ul class="collapse">
-  <li><a href="#usuarios-de-windows" id="toc-usuarios-de-windows" class="nav-link" data-scroll-target="#usuarios-de-windows">Usuarios de Windows</a></li>
-  <li><a href="#usuarios-de-linux" id="toc-usuarios-de-linux" class="nav-link" data-scroll-target="#usuarios-de-linux">Usuarios de Linux</a></li>
-  <li><a href="#usuarios-de-macos" id="toc-usuarios-de-macos" class="nav-link" data-scroll-target="#usuarios-de-macos">Usuarios de macOS</a></li>
-  <li><a href="#editores" id="toc-editores" class="nav-link" data-scroll-target="#editores">Editores</a></li>
-  </ul></li>
-  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a></li>
-  <li><a href="#editores-de-markdown" id="toc-editores-de-markdown" class="nav-link" data-scroll-target="#editores-de-markdown">Editores de markdown</a></li>
-  <li><a href="#nueva-edición-del-curso-de-latex-2021" id="toc-nueva-edición-del-curso-de-latex-2021" class="nav-link" data-scroll-target="#nueva-edición-del-curso-de-latex-2021">Nueva edición del curso de LaTeX 2021</a></li>
-  <li><a href="#edición-2025-afpd-academiaugr" id="toc-edición-2025-afpd-academiaugr" class="nav-link" data-scroll-target="#edición-2025-afpd-academiaugr">Edición 2025 (AFPD, AcademiaUGR)</a></li>
-  <li><a href="#orientamat" id="toc-orientamat" class="nav-link" data-scroll-target="#orientamat">Orientamat</a></li>
-  </ul></li>
+  <li><a href="#orientamat" id="toc-orientamat" class="nav-link active" data-scroll-target="#orientamat">Orientamat</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></nav>
     </div>
@@ -273,142 +219,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="material-docente-de-latex-en-la-universidad-de-granada" class="level1">
-<h1>Material docente de LaTeX en la Universidad de Granada</h1>
-<section id="qué-es-tex-y-latex" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-tex-y-latex">¿Qué es TeX y LaTeX?</h2>
-<p>TeX es un programa destinado a la composición de documentos que contienen texto y fórmulas matemáticas con calidad de imprenta creado por Donald Knuth en 1978</p>
-<p>NO es un editor de texto, sino un procesador de macros y lenguaje de programación.</p>
-<p><strong>¿Y LaTeX?</strong> LaTeX es un conjunto de <em>macros</em> para TeX debidos originalmente a Leslie Lamport para facilitar el uso de TeX.</p>
-<p>Usaremos el término <strong>LaTeX</strong> para referirnos a TeX + LaTeX + mejoras sucesivas</p>
-<p>Las características de LaTeX son:</p>
-<ul>
-<li><strong>Transportable</strong>: los ficheros <code>.tex</code> sólo contienen texto y son de pequeño tamaño.</li>
-<li><strong>Estructurado</strong>: LaTeX se ocupa del formato del documento. El usuario no tiene que preocuparse de hacer saltos de página, justificaciones, sangrías, referencias, etc.</li>
-<li><strong>Versátil</strong>: Se puede hacer casi <a href="https://www.tug.org/texshowcase/">cualquier cosa</a>.</li>
-<li><strong>Flexible</strong>: Permite al usuario crear nuevos comandos y entornos</li>
-<li><strong>Actualizado</strong>: LaTeX es mejorado constantemente de forma altruista.</li>
-</ul>
-<section id="ventajas-y-desventajas" class="level3">
-<h3 class="anchored" data-anchor-id="ventajas-y-desventajas">Ventajas y desventajas</h3>
-<p>Entre sus <strong>ventajas</strong> podemos enumerar:</p>
-<ul>
-<li>Composición de fórmulas</li>
-<li>Calidad de imprenta</li>
-<li>Facilidad para gestionar bibliografías, notas, referencias, etc.</li>
-<li>Muchos paquetes adicionales</li>
-<li>Independiente de la plataforma: Unix, Windows, OSX,…</li>
-<li>Software libre</li>
-<li>Salida PDF, Postscript,…</li>
-<li>Separación de contenido y forma</li>
-</ul>
-<p>Entre sus <strong>desventajas</strong>:</p>
-<ul>
-<li>Curva de aprendizaje lenta, el material y la información de este repositorio pretende ayudar a agilizar el aprendizaje desde cero.</li>
-<li>El diseño de un documento es difícil si los predefinidos no se ajustan a lo que necesitamos, en la carpeta <a href="../Tipos de documento/about.qmd">Tipos de documento</a> proponemos alternativas para solventar este problema.</li>
-<li>Detección y manejo de errores.</li>
-</ul>
-</section>
-<section id="ayuda" class="level3">
-<h3 class="anchored" data-anchor-id="ayuda">Ayuda</h3>
-<ul>
-<li>Los documentos de ayuda incluida en la instalación</li>
-<li>Manual básico: <a href="https://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf">La introducción no-tan-corta a LaTeX 2ε</a> (la <a href="https://tobi.oetiker.ch/lshort/lshort.pdf">versión inglesa</a> suele estar más actualizada).</li>
-<li>(CTAN)[http://ctan.org] (Comprehensive TeX Archive Network): documentación de todos los paquetes</li>
-<li><a href="https://www.tug.org/FontCatalogue/">The TeX Font Catalogue</a>: documentación sobre las fuentes tipográficas incluidas en la instalación de TeX.</li>
-<li><a href="http://www.rediris.es/list/info/es-tex.html">Listas de correo de CervanTeX</a></li>
-<li>Foros, blogs, grupos de noticias, etc. Por ejemplo:
-<ul>
-<li><a href="http://tex.stackexchange.com">TeX Stackexchange</a></li>
-<li><a href="http://latex.org/forum/">LaTeX.org</a></li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="acerca-de-este-repositorio" class="level2">
-<h2 class="anchored" data-anchor-id="acerca-de-este-repositorio">Acerca de este repositorio</h2>
-<p>Parte del material de este repositorio fue creado inicialmente como material de apoyo para un curso de LaTeX organizado por <a href="http://www.ugr.es/~amat/index_archivos/Page412.htm">AMAT</a> y por el PAT <a href="https://www.ugr.es/~orientamat/">Orientamat</a> para alumnos de Trabajo de Fin de Grado</p>
-<p>Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas y se ha repetido desde entonces casi anualmente mejorando y añadiendo nuevo material.</p>
-<p>Los contenidos del curso se mantienen por <a href="https://www.ugr.es/~alaminos/">Jerónimo Alaminos</a>, <a href="https://www.ugr.es/~pedro">Pedro A. García Sánchez</a>, <a href="https://www.ugr.es/~ossanche">Óscar Sánchez Romero</a> y <a href="https://www.ugr.es/~ftorralbo/">Francisco Torralbo</a>.</p>
-<p>En los talleres impartidos, hemos contado con la ayuda de <a href="https://www.ugr.es/~arobles/">Aureliano M. Robles Pérez</a>, <a href="https://www.ugr.es/~deromero/">Desiré Romero Molina</a>, <a href="https://www.ugr.es/~alarcon/">Antonio Alarcón</a>, <a href="https://www.ugr.es/~aperalta/">Antonio Peralta</a>, entre otros.</p>
-</section>
-<section id="instalación-de-latex" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-latex">Instalación de LaTeX</h2>
-<section id="usuarios-de-windows" class="level3">
-<h3 class="anchored" data-anchor-id="usuarios-de-windows">Usuarios de Windows</h3>
-<p>Una buena opción es MiKTeX. Si tenéis espacio de sobra, podéis optar por la instalación completa. En caso contrario, una instalación básica, siempre que tengamos una buena conexión a red, es suficiente. Los paquetes que falten se instalarán cuando se necesiten. En la página <a href="http://miktex.org">miktex.org</a> podéis encontrar los instaladores y más información.</p>
-<p>En el curso usaremos <a href="https://www.texstudio.org/">TeXStudio</a> como editor de texto.</p>
-<p><strong>Posibles problemas durante la instalación</strong>:</p>
-<ul>
-<li>Tras descargar el archivo de instalación de MikTeX no cambiarle el nombre. En algunos sistemas Windows esto provoca que la instalación falle.</li>
-<li>A veces que la instalación para todos los usuarios termina con un código de error. En dicho caso, intentar desinstalar y borrar la carpeta que ha creado (generalmente en <em>Archivos de Programa</em>) y reinstalar esta vez seleccionando la instalación para un único usuario.</li>
-<li>Si vuestro nombre de usuario de Windows contiene acentos u espacios (p.e. <code>José</code>) la instalación de MikTeX fallará o bien no se instalará correctamente. En dicho caso la única solución que hemos encontrado hasta el momento ha sido crear un usuario nuevo cuyo nombre no contenga acentos ni espacios (p.e. <code>jose</code>), abrir sesión con dicho usuario e instalar MikTeX. Esto permitirá usar LaTeX en dicho ordenador, pero sólo en la sesión del usuario que hemos creado (en el ejemplo <code>jose</code>).</li>
-</ul>
-</section>
-<section id="usuarios-de-linux" class="level3">
-<h3 class="anchored" data-anchor-id="usuarios-de-linux">Usuarios de Linux</h3>
-<p>Si tenéis <a href="https://www.debian.org/index.es.html">debian</a> o <a href="http://www.ubuntu.com">Ubuntu</a>, lo podéis instalar desde la línea de comandos</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install texlive</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>No olvidéis hacer un <code>sudo apt-get update</code> antes.</p>
-<p>En otras distribuciones de Linux, la instalación es similar, pero si no sabéis usar la línea de comandos, utilizad el instalador de paquetes.</p>
-<p>El único inconveniente de este método es que generalmente la distribución de TeXLive que instalaremos suele ser antigua. Para instalar la última versión podemos seguir las <a href="https://tug.org/texlive/quickinstall.html">instrucciones en su página oficial</a> o bien <a href="https://wildunix.es/posts/instalar-tex-live-en-ubuntu-mac-os-y-windows/">consultar el siguiente enlace</a>.</p>
-<p>Una vez instalado TeXLive instalaremos un editor para LaTeX. En este curso usaremos <a href="https://www.texstudio.org/">TeXStudio</a>. Para instalarlo el método más sencillo es usar el gestor de paquetes de la distribución de Linux que tengamos instalada. Si no lo encontramos ejecutaremos el siguiente comando en consola:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install texstudio</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Si el paquete <code>texstudio</code> no está en los repositorios los añadiremos mediante los comandos:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:sunderme/texstudio</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>y volveremos a intentar la instalación</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install texstudio</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="usuarios-de-macos" class="level3">
-<h3 class="anchored" data-anchor-id="usuarios-de-macos">Usuarios de macOS</h3>
-<p>Los desarrolladores de <a href="http://pages.uoregon.edu/koch/texshop/index.html">TeXShop</a> describen en su página cómo instalar <a href="https://www.tug.org/texlive">TeX Live</a> a través de <a href="https://www.tug.org/mactex">MacTeX</a>.</p>
-<p>La instalación de <a href="https://tug.org/mactex/mactex-download.html">MacTeX</a> ya incluye un editor aunque en el curso usaremos <a href="http://texstudio.sourceforge.net">TeXStudio</a>.</p>
-</section>
-<section id="editores" class="level3">
-<h3 class="anchored" data-anchor-id="editores">Editores</h3>
-<p>Existen muchos y muy buenos editores en todos los sistemas operativos arriba mencionados. Por ejemplo, la instalación de MikTeX incluye <a href="https://www.tug.org/texworks">TeXworks</a>. Y antes ya hemos mencionado TeXShop, que es un buen editor para macOS. Para Linux, <a href="https://www.gnu.org/software/emacs">emacs</a> con <a href="https://www.gnu.org/software/auctex">AUCTeX</a> o bien <a href="https://www.vim.org/">vim</a> (o su versión más moderna <a href="https://neovim.io/">neovim</a>) con <a href="https://github.com/lervag/vimtex">vimtex</a> son también buenas opciones para el usuario experto.</p>
-<p>TeXworks existe en todas las plataformas que hemos mencionado.</p>
-<p>Algunos usamos <a href="http://texstudio.sourceforge.net">TeXStudio</a>, que también es multiplataforma. Se puede usar tanto en Windows como en Linux y Mac OS. Es el que utilizaremos en el curso.</p>
-<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> es un editor mutiplataforma con extensiones para trabajar en LaTeX. También se puede usar en un navegador.</p>
-<p>Existen varias posibilidades también de editar textos en línea, una de ellas es <a href="https://www.overleaf.com/">Overleaf</a>.</p>
-</section>
-</section>
-<section id="material" class="level2">
-<h2 class="anchored" data-anchor-id="material">Material</h2>
-<p>Podéis encontrar transparencias y material en los cursos anteriores que hemos dado bajo el Proyecto de Innovación Docente <a href="http://www.ugr.es/~orientamat/">Orientamat</a>.</p>
-<p>En esta página iremos añadiendo materiales para el curso.</p>
-<ul>
-<li><p>La carpeta <code>Documento sencillo</code> corresponde con la primera clase.</p></li>
-<li><p><code>Libro</code> contiene un ejemplo de libro con capítulos, tabla de contenidos, índice y bibliografía.</p></li>
-<li><p><code>Beamer</code> tiene dentro una presentación sencilla hecha con la clase <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/beamer">beamer</a>.</p></li>
-<li><p><code>Markdown</code> es una carpeta con una breve introducción a <a href="http://daringfireball.net/projects/markdown">markdown</a>.</p></li>
-</ul>
-<p>Cada carpeta contiene una descripción en Markdown y HTML (obtenido a partir de la de Markdown). Un ejemplo de traducción del contenido de <code>Documento sencillo</code> se puede ver <a href="http://www.ugr.es/~pedro/latex">aquí</a>.</p>
-</section>
-<section id="editores-de-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="editores-de-markdown">Editores de markdown</h2>
-<p>El editor <a href="https://atom.io">atom</a> es multiplataforma, y tiene un módulo Markdown.</p>
-<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> puede editar y visualizar Markdown, y tiene muchas extensiones para usar con Markdown.</p>
-<p>Para Mac, una buena opción es <a href="http://macdown.uranusjr.com">MacDown</a>, que ya trae integrada <a href="http://www.mathjax.org">MathJax</a> para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo <a href="https://atom.io/packages/markdown-preview-plus">Markdown Preview Plus</a>.</p>
-<p>Existe además un plug-in para <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> para visualizar markdown: <a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl">Markdown preview plus</a>. Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.</p>
-<p>Otra opción es usar un editor en línea, como puede ser <a href="https://stackedit.io">StackEdit</a>. También soporta MathJax.</p>
-</section>
-<section id="nueva-edición-del-curso-de-latex-2021" class="level2">
-<h2 class="anchored" data-anchor-id="nueva-edición-del-curso-de-latex-2021">Nueva edición del curso de LaTeX 2021</h2>
-<p>Este curso académico se va a impartir el curso online de LaTeX <a href="https://sites.google.com/go.ugr.es/yosigopublicando/los-cursos#h.1rvelu5hbhsq"><em>Introducción al lenguaje LaTeX para edición de textos académicos</em></a> a través de la plataforma <a href="https://sites.google.com/go.ugr.es/yosigopublicando/principal"><strong>yosigopublicando</strong></a> de la <a href="https://www.ugr.es/">Universidad de Granada</a>.</p>
-<p>El material de dicho curso se encuentra disponible en el repositorio <a href="https://github.com/latex-mat-ugr/curso-virtual-2021">curso-virtual-2021</a>. Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.</p>
-</section>
-<section id="edición-2025-afpd-academiaugr" class="level2">
-<h2 class="anchored" data-anchor-id="edición-2025-afpd-academiaugr">Edición 2025 (AFPD, AcademiaUGR)</h2>
-<p>Una nueva edición tendrá lugar en enero de 2025 dentro del programa <a href="https://calidad.ugr.es/profesorado/formacion/formacion-innovacion-docente/pdi/afdp">AFDP</a> de AcademiaUGR de la Universidad de Granada.</p>
-</section>
 <section id="orientamat" class="level2">
 <h2 class="anchored" data-anchor-id="orientamat">Orientamat</h2>
-<p>La mayor parte de este material se ha elaborado para el curso de LaTeX realizado dentro del Plan de Acción Tutorial del Grado en Matemáticas de la Universidad de Granada&nbsp;<a href="http://www.ugr.es/~orientamat/actividades1.html">Orientamat</a></p>
+<p>La mayor parte de este material se ha elaborado para el curso de LaTeX realizado dentro del Plan de Acción Tutorial del Grado en Matemáticas de la Universidad de Granada&nbsp;<a href="http://www.ugr.es/~orientamat/actividades1.html">Orientamat</a>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

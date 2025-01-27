@@ -72,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b70d8ee14c43831778c0a8f58b563a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cc77ee59ca6e156fede203dedbbb611f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -222,7 +222,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Bibliografia/Bibliografias.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../Bibliografia/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -293,7 +293,7 @@ window.Quarto = {
 
 
 <p>Todos sabemos que en un documento generado con <span class="math inline">\(\LaTeX{}\)</span> podemos incorporar gráficos.</p>
-<p>Lo que no es tan conocido es que, al insertarlos, permite editarlos ligeramente. Seleccionar parte de la imagen, redimensionar, girar, superponer, simetrizar, incluir texto son algunas de las modificaciones que podemos realizar sobre una imagen al incluirla en un documento de una manera sencilla sin necesidad de recurrir a un editor de gráfico como se explica en la <a href="#inserciónedición-de-gráficos">primera sección</a></p>
+<p>Lo que no es tan conocido es que, al insertarlos, permite editarlos ligeramente. Seleccionar parte de la imagen, redimensionar, girar, superponer, simetrizar, incluir texto son algunas de las modificaciones que podemos realizar sobre una imagen al incluirla en un documento de una manera sencilla sin necesidad de recurrir a un editor de gráfico como se explica en la <a href="#inserciónedición-de-gráficos">primera sección</a>.</p>
 <p>No obstante, la inclusión de muchos documentos gráficos en un mismo documento tiene varios inconvenientes:</p>
 <ul>
 <li>dan como resultado documentos muy pesados,</li>
@@ -310,13 +310,13 @@ window.Quarto = {
 <li>el resultado final dependerá mucho de cómo éste se haya generado y</li>
 <li>que el fichero en el que se guarde no puede estar en un formato cualquiera.</li>
 </ul>
-<p>En general hemos de tener en cuenta que hay dos grupos básicos de gráficos: los mapas de bits (también llamados imágenes de pixeles) y gráficos vectoriales. Básicamente los primeros son una gran tabla donde se indica el color de cada punto del gráfico (pixel) mientras que los segundos son ficheros donde se guardan una serie de instrucciones para generar el gráfico. Por lo general los mapas de bits son más pesados y poco adecuados para el redimensionado que los gráficos vectoriales. Por lo tanto, hay que evitar el uso de mapas de bits cuando la naturaleza de gráfico nos lo permita, lo que es imposible el caso de fotografías, capturas de pantalla, imágenes descargadas de la red, …</p>
+<p>En general hemos de tener en cuenta que hay dos grupos básicos de gráficos: los mapas de bits (también llamados imágenes de píxeles) y gráficos vectoriales. Básicamente, los primeros son una gran tabla donde se indica el color de cada punto del gráfico (pixel) mientras que los segundos son ficheros donde se guardan una serie de instrucciones para generar el gráfico. Por lo general los mapas de bits son más pesados y poco adecuados para el redimensionado que los gráficos vectoriales. Por lo tanto, hay que evitar el uso de mapas de bits cuando la naturaleza de gráfico nos lo permita, lo que es imposible el caso de fotografías, capturas de pantalla, imágenes descargadas de la red, …</p>
 <p>Por último si queremos generar un fichero PDF con <span class="math inline">\(\LaTeX{}\)</span> los compiladores más usuales únicamente aceptarán ficheros en formato PNG, JPEG o PDF, por lo que te puedes ver obligado a exportar tu imagen a uno de estos formatos.</p>
 <p>Para ampliar detalles y buscar programas que nos ayuden en estas labores tan específicas recomendamos la lectura del siguiente <a href="https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inserci%C3%B3n_de_figuras_externas">Wikibook</a>.</p>
 </section>
 <section id="inserción-básica-de-gráficos" class="level3">
 <h3 class="anchored" data-anchor-id="inserción-básica-de-gráficos">Inserción básica de gráficos</h3>
-<p>La inserción de un gráfico requiere de la declaracion del paquete <em>graphicx</em> en el preámbulo mediante el comando:</p>
+<p>La inserción de un gráfico requiere de la declaración del paquete <em>graphicx</em> en el preámbulo mediante el comando:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En cualquier punto del cuerpo del documento podremos incluir una imagen mediante el comando:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="bu">\includegraphics</span>[parametros]{<span class="ex">nombregrafico</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -328,7 +328,7 @@ window.Quarto = {
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\label</span>{<span class="ex">fig:etiqueta</span>}</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>De esta forma la imagen aparecerá con la leyenda que describa su contenido en el campo <em>caption</em> y se podrá hacer referencia a ella desde el texto empleando la etiqueta declarada en <em>label</em>, al igual que se hace con tablas o fórmulas.</p>
-<p>Mediante distintos comandos incluidos en el campo <em>parametros</em> se puede modificar el aspecto de la imagen, lo que nos permite editarlos ligeramente. Este punto se amplia a continuación.</p>
+<p>Mediante distintos comandos incluidos en el campo <em>parametros</em> se puede modificar el aspecto de la imagen, lo que nos permite editarlos ligeramente. Este punto se amplía a continuación.</p>
 </section>
 <section id="inserción-avanzada-de-gráficos-edición" class="level3">
 <h3 class="anchored" data-anchor-id="inserción-avanzada-de-gráficos-edición">Inserción avanzada de gráficos (edición)</h3>
@@ -354,7 +354,7 @@ window.Quarto = {
 <p>muestran dos veces la imagen del fichero <em>sorpresa.pdf</em>, que se encuentra en la subcarpeta <em>graficos</em>, apareciendo la segunda vez simetrizada gracias al comando *.</p>
 <p>La superposición de gráficos o texto a una imagen se puede hacer mediante el comando</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\put</span>(coordenadas){objeto}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>se pueden superponer ‘el objeto’ en la posicion ‘coordenadas’. De esta manera los comandos</p>
+<p>se pueden superponer ‘el objeto’ en la posición ‘coordenadas’. De esta manera los comandos</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[angle=270,width=7cm]{<span class="ex">./graficos/fig_9</span>}</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\put</span>(-100,-55){<span class="ss">$</span><span class="sc">\displaystyle</span><span class="ss"> s:=</span><span class="sc">\frac</span><span class="ss">{a+b+c}{2}$</span>}</span>
@@ -376,14 +376,14 @@ window.Quarto = {
 <div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\frame</span>{<span class="bu">\includegraphics</span>{<span class="ex">./graficos/fig_9</span>}}</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>a la hora de insertar el gráfico para que este quede enmarcado. De esta forma podemos ajustar con los parámetros <em>trim</em> y <em>clip</em> el espacio a cortar en los márgenes de la imagen. Además de eliminar el espacio innecesario, esto nos permitirá aumentar el tamaño de la parte verdaderamente relevante de la imagen. Si aún así queremos ajustar el espacio entre el texto y la imagen siempre podemos usar (sin abusar) el comando <em></em>.</p>
+<p>a la hora de insertar el gráfico para que este quede enmarcado. De esta forma podemos ajustar con los parámetros <em>trim</em> y <em>clip</em> el espacio a cortar en los márgenes de la imagen. Además de eliminar el espacio innecesario, esto nos permitirá aumentar el tamaño de la parte verdaderamente relevante de la imagen. Si aun así queremos ajustar el espacio entre el texto y la imagen siempre podemos usar (sin abusar) el comando <em></em>.</p>
 </section>
 <section id="inclusión-de-páginas-completas-seleccionadas-de-ficheros-pdf" class="level3">
 <h3 class="anchored" data-anchor-id="inclusión-de-páginas-completas-seleccionadas-de-ficheros-pdf">Inclusión de páginas completas seleccionadas de ficheros pdf</h3>
 <p>Por último, puede ser de mucha utilidad saber que el paquete <a href="https://www.ctan.org/pkg/pdfpages">pdfpages</a> permite incluir mediante el comando:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\includepdf</span>[]{file.pdf}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>páginas seleccionadas del fichero file.pdf en un documento <span class="math inline">\(\LaTeX\)</span>. Esto puede ser una herramienta de inmensa ayuda por ejemplo si queremos generar un documento con documentación acreditativa, incluir declaraciones en documentos, etc…</p>
-<p>Pueder visualizar todos los ejemplos anteriores en el fichero <a href="presentacion1.pdf" target="_pdf">presentacion1.pdf</a>.</p>
+<p>páginas seleccionadas del fichero file.pdf en un documento <span class="math inline">\(\LaTeX\)</span>. Esto puede ser una herramienta de inmensa ayuda por ejemplo si queremos generar un documento con documentación acreditativa, incluir declaraciones en documentos, etc.</p>
+<p>Puedes visualizar todos los ejemplos anteriores en el fichero <a href="presentacion1.pdf" target="_pdf">presentacion1.pdf</a>.</p>
 </section>
 </section>
 <section id="creación-de-gráficos" class="level2">
@@ -394,7 +394,7 @@ window.Quarto = {
 <li>y <a href="http://www.texample.net/tikz/">PGF-TikZ</a>.</li>
 </ul>
 <p>En ambos casos proporcionan un gran abanico de comandos específicos.</p>
-<p>Podemos sacar provecho de ellos de varias maneras dependiendo del tiempo que estemos dispuetos a invertir en ello:</p>
+<p>Podemos sacar provecho de ellos de varias maneras dependiendo del tiempo que estemos dispuestos a invertir en ello:</p>
 <ul>
 <li>escribiendo nosotros directamente los códigos. Hay disponibles numerosos manuales, y ejemplos que podemos tomar como punto de partida para nuestros proyectos:
 <ul>
@@ -408,8 +408,8 @@ window.Quarto = {
 <li><a href="https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_5)%E2%80%94Creating_Mind_Maps#:~:text=Part%204%20%7C-,Part,-5">Diagramas de árboles</a>,</li>
 <li>o <a href="https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Creating_Flowcharts#The_tikzstyle_command:~:text=Part%202%20%7C-,Part,-3%20%7C%20Part">diagramas de flujo</a>.</li>
 </ul></li>
-<li>Por último, la opción que a priory puede ser más conservadora en inversión de tiempo sería crear los gráficos con otros programas que permitan exportarlos a <span class="math inline">\(\LaTeX\)</span>. Son numerosos los programas que ofrecen la posibilidad de exportar gráficos generados con ellos bien a TikZ:
-<ul>
+<li>Por último, la opción que a priori puede ser más conservadora en inversión de tiempo sería crear los gráficos con otros programas que permitan exportarlos a <span class="math inline">\(\LaTeX\)</span>. Son numerosos los programas que ofrecen la posibilidad de exportar gráficos generados con ellos bien a TikZ:</li>
+<li><ul>
 <li><a href="https://ctan.org/pkg/gnuplottex">gnuplot</a>,</li>
 <li><a href="https://mcj.sourceforge.net/latex_and_xfig.html">Xfig</a> (versión para Windows: <a href="http://winfig.com/">WinFIG</a>),</li>
 <li><a href="http://www.geogebra.org/cms/">GeoGebra</a>,</li>

@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b70d8ee14c43831778c0a8f58b563a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cc77ee59ca6e156fede203dedbbb611f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Bibliografia/Bibliografias.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../Bibliografia/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -193,17 +193,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#tipos-de-documento" id="toc-tipos-de-documento" class="nav-link active" data-scroll-target="#tipos-de-documento">Tipos de documento</a>
+  <li><a href="#clases-de-documento" id="toc-clases-de-documento" class="nav-link active" data-scroll-target="#clases-de-documento">Clases de documento</a>
   <ul class="collapse">
-  <li><a href="#tipos-básicos-de-latex" id="toc-tipos-básicos-de-latex" class="nav-link" data-scroll-target="#tipos-básicos-de-latex">Tipos básicos de LaTeX</a></li>
-  <li><a href="#transparencias-la-clase-beamer" id="toc-transparencias-la-clase-beamer" class="nav-link" data-scroll-target="#transparencias-la-clase-beamer">Transparencias: la clase <em>beamer</em></a></li>
-  <li><a href="#el-paquete-koma-script" id="toc-el-paquete-koma-script" class="nav-link" data-scroll-target="#el-paquete-koma-script">El paquete KOMA-Script</a></li>
+  <li><a href="#clases-básicos-de-latex" id="toc-clases-básicos-de-latex" class="nav-link" data-scroll-target="#clases-básicos-de-latex">Clases básicos de LaTeX</a></li>
+  <li><a href="#las-clases-de-documento-del-paquete-koma-script" id="toc-las-clases-de-documento-del-paquete-koma-script" class="nav-link" data-scroll-target="#las-clases-de-documento-del-paquete-koma-script">Las clases de documento del paquete KOMA-Script</a></li>
+  <li><a href="#clases-personalizadas-las-plantillas-de-documentos-ugr" id="toc-clases-personalizadas-las-plantillas-de-documentos-ugr" class="nav-link" data-scroll-target="#clases-personalizadas-las-plantillas-de-documentos-ugr">Clases personalizadas: las plantillas de documentos UGR</a></li>
   <li><a href="#miscelánea" id="toc-miscelánea" class="nav-link" data-scroll-target="#miscelánea">Miscelánea</a>
   <ul class="collapse">
   <li><a href="#la-clase-memoir" id="toc-la-clase-memoir" class="nav-link" data-scroll-target="#la-clase-memoir">La clase <code>memoir</code></a></li>
   <li><a href="#la-clase-edward-tufte" id="toc-la-clase-edward-tufte" class="nav-link" data-scroll-target="#la-clase-edward-tufte">La clase Edward Tufte</a></li>
   <li><a href="#las-clases-definidas-por-la-american-mathematical-society" id="toc-las-clases-definidas-por-la-american-mathematical-society" class="nav-link" data-scroll-target="#las-clases-definidas-por-la-american-mathematical-society">Las clases definidas por la American Mathematical Society</a></li>
   </ul></li>
+  <li><a href="#transparencias-la-clase-beamer" id="toc-transparencias-la-clase-beamer" class="nav-link" data-scroll-target="#transparencias-la-clase-beamer">Transparencias: la clase <em>beamer</em></a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></nav>
@@ -214,12 +215,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="tipos-de-documento" class="level1">
-<h1>Tipos de documento</h1>
+<section id="clases-de-documento" class="level1">
+<h1>Clases de documento</h1>
 <p>Todo documento de LaTeX comienza con la declaración de la <em>clase</em> o <em>tipo de documento</em> mediante el comando <code>\documentclass</code>. Existen <a href="https://ctan.org/topic/class">multitud de clases</a> distintas según el propósito del documento. Describiremos aquí algunas de las más utilizadas.</p>
-<section id="tipos-básicos-de-latex" class="level2">
-<h2 class="anchored" data-anchor-id="tipos-básicos-de-latex">Tipos básicos de LaTeX</h2>
-<p>Las clases por defecto más usadas en LaTeX son:</p>
+<section id="clases-básicos-de-latex" class="level2">
+<h2 class="anchored" data-anchor-id="clases-básicos-de-latex">Clases básicos de LaTeX</h2>
+<p>Las clases básicas en LaTeX son:</p>
 <ul>
 <li><code>article</code>: Para artículos en revistas científicas, informes,…</li>
 <li><code>report</code>: para pequeños libros, informes largos,…</li>
@@ -235,16 +236,25 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Aunque las dos últimas no son habitualmente usadas. Además, la clase <code>report</code> y la clase <code>book</code> permiten usar el comando <code>\chapter{}</code> para dividir el documento en capítulos. Por defecto estos comandos tienen usan una numeración jerárquica de mayor a menor nivel pero tienen una versión <em>con asterisco</em> para producir un encabezado (de capítulo, sección, subsección,…) sin numerar. Por ejemplo <code>\section*{Introducción}</code> producirá una nueva sección sin numeración.</p>
 <p>Existe además una opción de estructura adicional que no afectan a la numeración: <code>\part{}</code>, usada para dividir cualquier documento en partes.</p>
-<p>Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras necesidades. Por ejemplo, para crear transparencias se usa un tipo de clase diferente <code>beamer</code>.</p>
+<p>Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras necesidades. Por ejemplo, para crear transparencias se usa un tipo de clase diferente <a href="../Beamer/about.html"><code>beamer</code></a>.</p>
 </section>
-<section id="transparencias-la-clase-beamer" class="level2">
-<h2 class="anchored" data-anchor-id="transparencias-la-clase-beamer">Transparencias: la clase <em>beamer</em></h2>
-<p>La clase <code>beamer</code> es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta <a href="Beamer">Beamer</a> para más detalles.</p>
-</section>
-<section id="el-paquete-koma-script" class="level2">
-<h2 class="anchored" data-anchor-id="el-paquete-koma-script">El paquete <a href="https://www.ctan.org/pkg/koma-script">KOMA-Script</a></h2>
-<p>Este paquete proporciona un reemplazo moderno para las clases <code>article</code>, <code>report</code> y <code>book</code> cuidando especialmente la tipografía y la versatilidad. Añade además una clase <code>letter</code>. Además también ofrece: - Un <a href="https://www.ctan.org/pkg/typearea">paquete para calcular el diseño de página</a> - paquetes para cambiar y definir fácilmente estilos de página</p>
+<section id="las-clases-de-documento-del-paquete-koma-script" class="level2">
+<h2 class="anchored" data-anchor-id="las-clases-de-documento-del-paquete-koma-script">Las clases de documento del paquete <a href="https://www.ctan.org/pkg/koma-script">KOMA-Script</a></h2>
+<p>Este paquete proporciona un reemplazo moderno para las clases <code>article</code>, <code>report</code> y <code>book</code> (denominadas <code>scrartcl</code>, <code>scrreprt</code> y <code>scrbook</code>) cuidando especialmente la tipografía y la versatilidad. Añade además una clase <code>scrlttr2</code> para la elboración de cartas.</p>
+<p>Por otro lado también ofrece: - Un <a href="https://www.ctan.org/pkg/typearea">paquete para calcular el diseño de página</a> - paquetes para cambiar y definir fácilmente estilos de página</p>
 <p>La <a href="https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf">documentación</a> es extensa y a veces muy técnica pero merece la pena usar este tipo de documentos por las siguientes razones: - Todos los elementos del mismo pueden personalizarse de forma sencilla. - Permite cambiar varios parámetros del diseño e página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.</p>
+<p>Consultar la sección de <a href="../Personalizacion/about.html">Personalización</a> para ver algunos ejemplos de su uso.</p>
+</section>
+<section id="clases-personalizadas-las-plantillas-de-documentos-ugr" class="level2">
+<h2 class="anchored" data-anchor-id="clases-personalizadas-las-plantillas-de-documentos-ugr">Clases personalizadas: las plantillas de documentos UGR</h2>
+<p>Es posible crear un clase de documento específica para nuestras necesidades. En Overleaf podemos encontrar documentación sobre <a href="https://www.overleaf.com/learn/latex/Writing_your_own_class">cómo escribir nuestra propia clase de documento</a>.</p>
+<p>En el repositorio <a href="https://github.com/latex-mat-ugr/Plantillas-UGR">Plantillas UGR</a> se encuentran disponibles tres plantillas diferentes que respectan la imagen institucional de la Universidad de Granada:</p>
+<ul>
+<li><code>UGR-generico</code>: para todo tipo de documentos, desde certificados hasta informes.</li>
+<li><code>UGR-carta</code>: para cartas</li>
+<li><code>UGR-examen</code>: para la elaboración de exámenes.</li>
+</ul>
+<p>Consultar la <a href="https://github.com/latex-mat-ugr/Plantillas-UGR/blob/main/README.md">documentación</a> incluida en el repositorio sobre su instalación, uso y opciones.</p>
 </section>
 <section id="miscelánea" class="level2">
 <h2 class="anchored" data-anchor-id="miscelánea">Miscelánea</h2>
@@ -263,9 +273,13 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="las-clases-definidas-por-la-american-mathematical-society">Las clases definidas por la American Mathematical Society</h3>
 <p>La American Mathematical Society (AMS), responsable de los populares paquetes para matemáticas <a href="https://www.ctan.org/pkg/amsmath"><code>amsmath</code></a>, y <a href="https://www.ctan.org/pkg/amsthm"><code>amsthm</code></a>, creó <a href="https://www.ctan.org/pkg/amscls">tres clases de documento</a> para su uso en LaTeX que siguen la guía de estilo de sus publicaciones: - <a href="https://www.ctan.org/pkg/amsart"><code>amsart</code></a> para artículos de investigación. - <a href="https://www.ctan.org/pkg/amsbook"><code>amsbook</code></a> para la creación de libros. - <a href="https://www.ctan.org/pkg/amsproc"><code>amsproc</code></a> para actas de un congreso.</p>
 <p>Si nos gusta el estilo de dichos documentos podemos usarlos sin problemas para nuestros propios documentos.</p>
-
-
 </section>
+</section>
+<section id="transparencias-la-clase-beamer" class="level2">
+<h2 class="anchored" data-anchor-id="transparencias-la-clase-beamer">Transparencias: la clase <em>beamer</em></h2>
+<p>La clase <code>beamer</code> es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta <a href="../Beamer">Beamer</a> para más detalles.</p>
+
+
 </section>
 </section>
 
