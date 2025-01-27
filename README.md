@@ -49,16 +49,6 @@ Entre sus **desventajas**:
   - [TeX Stackexchange](http://tex.stackexchange.com)
   - [LaTeX.org](http://latex.org/forum/)
 
-## Acerca de este repositorio
-
-Parte del material de este repositorio fue creado inicialmente como material de apoyo para un curso de LaTeX organizado por [AMAT](http://www.ugr.es/~amat/index_archivos/Page412.htm) y por el PAT [Orientamat](https://www.ugr.es/~orientamat/) para alumnos de Trabajo de Fin de Grado.
-
-Durante el curso 2015-16 se organizó a través de la Comisión Docente del Grado en Matemáticas y se ha repetido desde entonces casi anualmente mejorando y añadiendo nuevo material.
-
-Los contenidos del curso se mantienen por [Jerónimo Alaminos](https://www.ugr.es/~alaminos/), [Pedro A. García Sánchez](https://www.ugr.es/~pedro), [Óscar Sánchez Romero](https://www.ugr.es/~ossanche) y [Francisco Torralbo](https://www.ugr.es/~ftorralbo/). 
-
-En los talleres impartidos, hemos contado con la ayuda de [Aureliano M. Robles Pérez](https://www.ugr.es/~arobles/), [Desiré Romero Molina](https://www.ugr.es/~deromero/), [Antonio Alarcón](https://www.ugr.es/~alarcon/), [Antonio Peralta](https://www.ugr.es/~aperalta/), entre otros.
-
 ## Instalación de LaTeX
 
 ### Usuarios de Windows
@@ -136,11 +126,11 @@ En esta página iremos añadiendo materiales para el curso.
 
 - `Beamer` tiene dentro una presentación sencilla hecha con la clase [beamer](http://www.ctan.org/tex-archive/macros/latex/contrib/beamer).
 
-- `Markdown` es una carpeta con una breve introducción a [markdown](http://daringfireball.net/projects/markdown).
+- `Markdown` es una carpeta con una breve introducción a [Markdown](http://daringfireball.net/projects/markdown).
 
 Cada carpeta contiene una descripción en Markdown y HTML (obtenido a partir de la de Markdown). Un ejemplo de traducción del contenido de `Documento sencillo` se puede ver [aquí](http://www.ugr.es/~pedro/latex).
 
-## Editores de markdown
+## Editores de Markdown
 
 El editor [atom](https://atom.io) es multiplataforma, y tiene un módulo Markdown.
 
@@ -151,13 +141,3 @@ Para Mac, una buena opción es [MacDown](http://macdown.uranusjr.com), que ya tr
 Existe además un plug-in para [Chrome](https://www.google.com/chrome/browser/desktop/index.html) para visualizar Markdown: [Markdown preview plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl). Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.
 
 Otra opción es usar un editor en línea, como puede ser [StackEdit](https://stackedit.io). También soporta MathJax.
-
-## Nueva edición del curso de LaTeX 2021
-
-Este curso académico se va a impartir el curso online de LaTeX [*Introducción al lenguaje LaTeX para edición de textos académicos*](https://sites.google.com/go.ugr.es/yosigopublicando/los-cursos#h.1rvelu5hbhsq) a través de la plataforma [**yosigopublicando**](https://sites.google.com/go.ugr.es/yosigopublicando/principal) de la [Universidad de Granada](https://www.ugr.es/).
-
-El material de dicho curso se encuentra disponible en el repositorio [curso-virtual-2021](https://github.com/latex-mat-ugr/curso-virtual-2021). Las instrucciones para el seguimiento del mismo también se encuentran en dicho repositorio.
-
-## Edición 2025 (AFPD, AcademiaUGR)
-
-Una nueva edición tendrá lugar en enero de 2025 dentro del programa [AFDP](https://calidad.ugr.es/profesorado/formacion/formacion-innovacion-docente/pdi/afdp) de AcademiaUGR de la Universidad de Granada.

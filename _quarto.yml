@@ -1,5 +1,6 @@
 project:
   type: website
+
 website:
   title: "Curso LaTeX Grado Matemáticas UGR"
   search: true
@@ -38,11 +39,13 @@ website:
         href: Markdown/about.qmd
       - text: "Plantillas TFG y TFM"
         href: Plantillas TFG y TFM/about.qmd
-
+      - text: "Acerca de"
+        href: about.qmd
 format:
   html:
     theme: cosmo
     toc: true
+    code-overflow: wrap
 
 
 

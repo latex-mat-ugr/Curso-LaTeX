@@ -130,10 +130,10 @@ El código anterior, al igual que `\maketitle`, crea una nueva transparencia con
 
 ## Recomendaciones
 
-- No hacer demasiadas transparencias
+- No hacer demasiadas transparencias.
 
-- Cada transparencia no debe superar las 12 líneas
+- Cada transparencia no debe superar las 12 líneas.
 
-- El estilo debe ser sencillo para no distraer a la audiencia
+- El estilo debe ser sencillo para no distraer a la audiencia.
 
-- No abusar de las pausas
+- No abusar de las pausas.

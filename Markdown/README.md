@@ -86,13 +86,13 @@ para texto `monoespaciado`
 
 ## Enlaces
 
-Sintáxis
+Sintaxis
 
 ```markdown
 [ugr](http://www.ugr.es)
 ```
 
-Un enlace a la [ugr](http://www.ugr.es).
+Un enlace a la [UGR](http://www.ugr.es).
 
 O con citas, por ejemplo: [Universidad de Granada][UGR]; en la página de esa [universidad][UGR], se encuentran muchas cosas.
 
