@@ -1,5 +1,3 @@
-# Bibliografías
-
 ## Incluir la bibliografía de forma automática: `bibTeX`
 
 Ya vimos en [Documento básico](../Documento sencillo/about.qmd) como incluir de forma sencilla las referencias bibliográficas en un documento mediante el uso del entorno \texttt{thebibliography}. A continuación veamos cómo mejorar este procedimiento, que tenía muchos inconvenientes.
