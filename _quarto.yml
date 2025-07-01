@@ -19,6 +19,8 @@ website:
     contents:
       - text: "Documento básico"
         href: Documento sencillo/about.qmd
+      - text: "Recomendaciones"
+        href: Recomendaciones/about.qmd
       - text: "Matemáticas"
         href: Matematicas/about.qmd
       - text: "Objetos flotantes"
