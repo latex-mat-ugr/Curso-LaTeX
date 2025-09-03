@@ -19,7 +19,7 @@ El documento se divide en dos partes:
 
 Cualquier contenido a continuación de `\end{document}`{.latex} es ignorado.
 
-### Comandos y entorno
+### Comandos, entornos y *bloques*
 
 LaTeX es un *lenguaje de programación* y cualquier *orden* o *comando* comienza siempre con el símbolo `\` seguido de una palabra (donde se distinguen mayúsculas de minúsculas). La sintaxis habitual de un comando es:
 
@@ -36,6 +36,14 @@ contenido
 ```
 
 que afectan a todo el *contenido*.
+
+Finalmente, LaTeX también permite delimitar *bloques* mediante
+```latex
+{
+bloque
+}
+```
+Existen comandos especiales que no llevan argumento y afectan a todo el bloque donde son invocados. Ver ejemplos en la sección [Tipos de letra](#tipos-de-letra).
 
 Además, algunos caracteres tienen una utilidad especial y su uso está reservado:
 
@@ -258,41 +266,64 @@ En la siguiente tabla se recogen todos los comando para modificar el aspecto (fa
 Existen dos tipos de fórmulas
 
 - En línea como por ejemplo `$x^2+1$` que produce $x^2+1$
-- En modo ventana o centrado: `$$x^2+1$$` que se ve como
+- En modo ventana o centrado: `\[x^2+1\]` que se ve como
 
 $$x^2+1$$
 
-Los delimitadores `$..$` se pueden substituir por `\(..\)` y
+Los delimitadores `$..$` se pueden substituir por `\(..\)`.
 
-```latex
-$$..$$
-```
-
-por
-
-```latex
-\[..\]
-```
-
-(entre otros, de hecho este último ofrece más funcionalidades como `\qedhere`{.latex})
+Antiguamente se usaba la sintaxis `$$ fórmula $$` para fórmulas centradas pero actualmente es preferible usar siempre `\[fórmula\]` (de hecho esta última ofrece más funcionalidades como `\qedhere`{.latex})
 
 --------------------------------------------------------------------------------
 
-## Entornos
+## Creación de comandos y entornos
 
+Como en cualquier lenguaje de programación, LaTeX nos permite extender su funcionalidad definiendo nuestros propios comandos y entornos. Esto se hace siempre en el *preámbulo* del documento (antes de `\begin{document}`).
+
+La sintaxis básica para ello es la siguiente:
+
+### Comandos
+```latex
+\newcommand{\nombre}[n]{definición}
+```
+donde `n` es el número de argumentos que va a tener nuestro comando y `definición` es su definición donde cada argumento se referencia mediante `#x`, donde `x` es el lugar que ocupa el argumento (número natural). 
+
+Por ejemplo, mediante la definición
+```latex
+\newcommand{\parcial}[2]{\frac{\partial #1}{\partial #2}}
+```
+podemos usar `\parcial{f}{x}`{.latex} para escribir
+$$
+\frac{\partial f}{\partial x}
+$$
+
+Los comandos pueden definirse sin ningún argumento, por ejemplo:
+```latex
+\newcommand{\R}{\mathbb{R}} % números reales
+```
+
+Si queremos **re**definir un comando existente deberemos usar el comando `\renewcommand`{.latex} cuya sintaxis es la misma que `\newcommand`. **No es aconsejable redefinir comandos existentes**.
+
+### Entornos
+La sintaxis básica para definir un entorno es la siguiente:
+```latex
+\newenvironment{nombreEntorno}[n]{inicio}{fin}
+```
+donde `n` es el número de argumentos que va a tener el entorno.
+
+Por ejemplo, para definir un entorno muy básico para ejercicios podemos escribir en el preámbulo de nuestro documento:
 ```latex
 \newenvironment{ejercicio}[1]{\textbf{Ejercicio número #1}}{\qed}
 ```
-
+y usarlo mediante
 ```latex
 \begin{ejercicio}{1}
 Escribe esto con otras palabras.
 \end{ejercicio}
 ```
-
 De esta forma escribimos el contador de ejercicio de forma manual
 
-Para automatizarlo, hacemos lo siguiente
+Para automatizarlo, podemos definir nuestro propio [contador](https://es.overleaf.com/learn/latex/Counters):
 
 ```latex
 \newcounter{ejer_num}
@@ -301,12 +332,15 @@ Para automatizarlo, hacemos lo siguiente
   \textbf{Ejercicio \arabic{ejer_num}: \stepcounter{ejer_num}}
   \begin{itshape}
   }
-  {\end{itshape}}
+  {\end{itshape}
+}
 ```
 
 --------------------------------------------------------------------------------
 
-## Entornos predefinidos
+### Entornos predefinidos
+
+Muchos paquetes definen sus propios entornos para tareas concretas o proporcionan mecanismos para crear entornos nuevos. El paquete [`amsthm`](https://ctan.org/pkg/amsthm) permite crear entornos para enunciados matemáticos (teoremas, proposiciones,...).
 
 Podemos numerar con la sección
 
@@ -333,6 +367,16 @@ Luego podremos referenciar a este teorema como Teorema `\ref{tonto}`.
 
 --------------------------------------------------------------------------------
 
+## Referencias cruzadas
+
+LaTeX permite *etiquetar* cualquier elemento en el texto (un párrafo, una figura, una ecuación, un elemento de una lista, un entorno,...) y luego *hacer referencia* a él (para ello habitualmente dicho elemento deberá tener un número asociado como ocurre habitualmente). 
+
+Para ello tenemos que hacer dos pasos:
+1. Etiquetar el elemento incluyendo el comando `\label{etiqueta}`{.latex} dentro del mismo (habitualente al inicio). La **etiqueta** debe ser una *cadena de texto* única (sin acentos ni caracteres especiales aunque podemos incluir guiones `-` y `:`)
+2. Insertar una referencia a dicho elemento mediante el comando `\ref{etiqueta}`{.latex}. También podemos imprimir la página donde se ecuentra el elemento etiquetado mediante el comando `\pageref{etiqueta}`{.latex}.
+
+
+
 ## Figuras e imágenes
 
 El paquete `graphicx` nos permite insertar gráficos con el comando `\includegraphics`
@@ -345,19 +389,23 @@ Podemos también crear una figura con esa imágen
 
 ```latex
 \begin{figure}
-\includegraphics[width=3cm]{imagen.jpg}  
-\caption{Algo que encontré por
-\href{http://www3.interscience.wiley.com/journal/13087/home/ForAuthors.html}{ahí.}
-}
-\label{uno}
+\includegraphics[width=3cm]{superficie.jpg}  
+\caption{Superficie diferenciable en el espacio euclídeo.}
+\label{fig:superficie-diferenciable}
 \end{figure}
+
+En la Figura~\ref{fig:superficie-diferenciable}
 ```
+
+Observa el uso del carácter `~` entre el texto "Figura" y la referencia: esto hace que el número de referencia siempre vaya acompañado del texto y no permite que LaTeX los separe (por ejemplo, al hacer un salto de línea). Es una buena práctica incluirlo siempre.
+
+El paquete [`hyperref`](https://ctan.org/pkg/hyperref) amplia la funcionalidad de las referencias cruzadas (por ejemplo añadiendo un enlace en el pdf para *saltar* entre la referencia y elemento de forma sencilla) y define un nuevo comando `\autoref`{.latex} que imprime automáticamente la descripción de la referencia dependiendo de su tipo (es decir, antepone automáticamente el texto "Figura" al hacer `\autoref{fig:superficie-diferenciable}`{.latex} puesto que detecta automáticamente que dicha etiqueta está dentro de un entorno `figure`).
 
 --------------------------------------------------------------------------------
 
 ## Indentación
 
-Podemos escribir texto centrado con
+Ya hemos indicado que podemos cambiar la disposición del texto alineándolo a la izquierda (con el entorno `flushleft`), a la derecha (con el entorno `flushright`) o centrados (entorno `center`). Por ejemplo:
 
 ```latex
 \begin{center}
@@ -367,7 +415,7 @@ Puede ser más de un párrafo.
 \end{center}
 ```
 
-Y desplazarlo a la derecha con `\hfill`.
+También podemos desplazar el texto horizontal (con los comandos `\hspace{longitud}`{.latex}, `\hfill`{.latex} o verticalmente (`\vspace{longitud}`{.latex} y `\vfill`{.latex}).
 
 ## La bibliografía
 
