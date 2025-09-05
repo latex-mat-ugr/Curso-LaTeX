@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -64,15 +65,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cc77ee59ca6e156fede203dedbbb611f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8c40465eb9fb0e0b4ed722a747840054.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -133,7 +135,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -182,6 +184,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../Documento sencillo/about.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Documento básico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Recomendaciones/about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recomendaciones</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -244,6 +252,12 @@ window.Quarto = {
  <span class="menu-text">Plantillas TFG y TFM</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acerca de</span></a>
+  </div>
+</li>
     </ul>
     </div>
 <div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
@@ -258,7 +272,7 @@ window.Quarto = {
   <ul>
   <li><a href="#estructura-de-un-documento-latex." id="toc-estructura-de-un-documento-latex." class="nav-link active" data-scroll-target="#estructura-de-un-documento-latex.">Estructura de un documento LaTeX.</a>
   <ul class="collapse">
-  <li><a href="#comandos-y-entorno" id="toc-comandos-y-entorno" class="nav-link" data-scroll-target="#comandos-y-entorno">Comandos y entorno</a></li>
+  <li><a href="#comandos-entornos-y-bloques" id="toc-comandos-entornos-y-bloques" class="nav-link" data-scroll-target="#comandos-entornos-y-bloques">Comandos, entornos y <em>bloques</em></a></li>
   </ul></li>
   <li><a href="#encabezamiento-o-preámbulo" id="toc-encabezamiento-o-preámbulo" class="nav-link" data-scroll-target="#encabezamiento-o-preámbulo">Encabezamiento o preámbulo</a></li>
   <li><a href="#ejemplo-de-un-documento" id="toc-ejemplo-de-un-documento" class="nav-link" data-scroll-target="#ejemplo-de-un-documento">Ejemplo de un documento</a></li>
@@ -278,8 +292,13 @@ window.Quarto = {
   <li><a href="#tablas" id="toc-tablas" class="nav-link" data-scroll-target="#tablas">Tablas</a></li>
   <li><a href="#tipos-de-letra" id="toc-tipos-de-letra" class="nav-link" data-scroll-target="#tipos-de-letra">Tipos de letra</a></li>
   <li><a href="#fórmulas" id="toc-fórmulas" class="nav-link" data-scroll-target="#fórmulas">Fórmulas</a></li>
+  <li><a href="#creación-de-comandos-y-entornos" id="toc-creación-de-comandos-y-entornos" class="nav-link" data-scroll-target="#creación-de-comandos-y-entornos">Creación de comandos y entornos</a>
+  <ul class="collapse">
+  <li><a href="#comandos" id="toc-comandos" class="nav-link" data-scroll-target="#comandos">Comandos</a></li>
   <li><a href="#entornos" id="toc-entornos" class="nav-link" data-scroll-target="#entornos">Entornos</a></li>
   <li><a href="#entornos-predefinidos" id="toc-entornos-predefinidos" class="nav-link" data-scroll-target="#entornos-predefinidos">Entornos predefinidos</a></li>
+  </ul></li>
+  <li><a href="#referencias-cruzadas" id="toc-referencias-cruzadas" class="nav-link" data-scroll-target="#referencias-cruzadas">Referencias cruzadas</a></li>
   <li><a href="#figuras-e-imágenes" id="toc-figuras-e-imágenes" class="nav-link" data-scroll-target="#figuras-e-imágenes">Figuras e imágenes</a></li>
   <li><a href="#indentación" id="toc-indentación" class="nav-link" data-scroll-target="#indentación">Indentación</a></li>
   <li><a href="#la-bibliografía" id="toc-la-bibliografía" class="nav-link" data-scroll-target="#la-bibliografía">La bibliografía</a>
@@ -328,8 +347,8 @@ window.Quarto = {
 <li><em>cuerpo</em>: el texto contenido entre <code class="sourceCode latex"><span class="kw">\begin</span>{<span class="ex">document</span>}</code> y <code class="sourceCode latex"><span class="kw">\end</span>{<span class="ex">document</span>}</code>.</li>
 </ul>
 <p>Cualquier contenido a continuación de <code class="sourceCode latex"><span class="kw">\end</span>{<span class="ex">document</span>}</code> es ignorado.</p>
-<section id="comandos-y-entorno" class="level3">
-<h3 class="anchored" data-anchor-id="comandos-y-entorno">Comandos y entorno</h3>
+<section id="comandos-entornos-y-bloques" class="level3">
+<h3 class="anchored" data-anchor-id="comandos-entornos-y-bloques">Comandos, entornos y <em>bloques</em></h3>
 <p>LaTeX es un <em>lenguaje de programación</em> y cualquier <em>orden</em> o <em>comando</em> comienza siempre con el símbolo <code>\</code> seguido de una palabra (donde se distinguen mayúsculas de minúsculas). La sintaxis habitual de un comando es:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\nombrecomando</span>[opciones]{argumentos}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>LaTeX proporciona también los <em>entornos</em>:</p>
@@ -337,6 +356,11 @@ window.Quarto = {
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>contenido</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">nombreEntorno</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>que afectan a todo el <em>contenido</em>.</p>
+<p>Finalmente, LaTeX también permite delimitar <em>bloques</em> mediante</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>bloque</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Existen comandos especiales que no llevan argumento y afectan a todo el bloque donde son invocados. Ver ejemplos en la sección <a href="#tipos-de-letra">Tipos de letra</a>.</p>
 <p>Además, algunos caracteres tienen una utilidad especial y su uso está reservado:</p>
 <table class="caption-top table">
 <thead>
@@ -403,45 +427,45 @@ window.Quarto = {
 <p>LaTeX es <strong>modular</strong>: su comportamiento y características pueden ser modificados o ampliados a través del uso de <em>paquetes</em>.</p>
 <p>Un <strong>paquete</strong> es un <em>conjunto de instrucciones</em> de LaTeX diseñado para resolver un problema concreto del documento.</p>
 <p>Para cargar un paquete escribiremos el siguiente <em>comando</em> en el preámbulo del documento:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[opciones]{<span class="ex">paquete</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[opciones]{<span class="ex">paquete</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Existen multitud de paquetes que cubren la mayoría de las necesidades del usuario: aspecto del documento, manejo de índice, glosario, referencias, idioma, hipervínculos,… Buscar en <a href="https://www.ctan.org">CTAN</a>.</p>
 <p>Si tienes algún problema o quieres hacer algo específico en LaTeX seguramente exista un paquete que lo resuelva.</p>
 </section>
 <section id="ejemplo-de-un-documento" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-de-un-documento">Ejemplo de un documento</h2>
 <p>A continuación presentamos nuestro primer documento de LaTeX</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">% Indicamos que el documento va a escribirse en castellano</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[spanish]{<span class="ex">babel</span>}</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">% Cargamos un paquete para poder incluir gráficos</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">% Activamos los hipervínculos del documento</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[hidelinks]{<span class="ex">hyperref</span>}</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">% Añadimos la información sobre título autoría </span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Taller de <span class="fu">\LaTeX</span>{} para alumnos del Grado en Matemáticas}</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Los asistentes a dicho curso}</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">% Imprime la información del título proporcionada antes</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>Cuerpo del documento. Los       espacios en        blanco  y </span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>saltos de línea      no cuentan. </span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>Una o más líneas en blanco comienzan un nuevo párrafo.</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>una línea en blanco. </span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>También podemos escribir fórmulas en *línea* con el texto: <span class="ss">$a^2+b^2=c^2$</span>; o en *bloque*:</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x)=</span><span class="sc">\cos</span><span class="ss">(x)+</span><span class="sc">\frac</span><span class="ss">{1}{x}</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">% Indicamos que el documento va a escribirse en castellano</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[spanish]{<span class="ex">babel</span>}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">% Cargamos un paquete para poder incluir gráficos</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">% Activamos los hipervínculos del documento</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[hidelinks]{<span class="ex">hyperref</span>}</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">% Añadimos la información sobre título autoría </span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{Taller de <span class="fu">\LaTeX</span>{} para alumnos del Grado en Matemáticas}</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{Los asistentes a dicho curso}</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">% Imprime la información del título proporcionada antes</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>Cuerpo del documento. Los       espacios en        blanco  y </span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>saltos de línea      no cuentan. </span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>Una o más líneas en blanco comienzan un nuevo párrafo.</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>una línea en blanco. </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>También podemos escribir fórmulas en *línea* con el texto: <span class="ss">$a^2+b^2=c^2$</span>; o en *bloque*:</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x)=</span><span class="sc">\cos</span><span class="ss">(x)+</span><span class="sc">\frac</span><span class="ss">{1}{x}</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="generar-el-documento-proceso-de-compilación" class="level2">
 <h2 class="anchored" data-anchor-id="generar-el-documento-proceso-de-compilación">Generar el documento: proceso de <em>compilación</em></h2>
@@ -463,9 +487,9 @@ window.Quarto = {
 </section>
 <section id="resumen" class="level3">
 <h3 class="anchored" data-anchor-id="resumen">Resumen</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">abstract</span>}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Esto es una prueba de cómo hacer algunas cosas en <span class="fu">\LaTeX</span>.</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">abstract</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">abstract</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Esto es una prueba de cómo hacer algunas cosas en <span class="fu">\LaTeX</span>.</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">abstract</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tabla-de-contenidos" class="level3">
 <h3 class="anchored" data-anchor-id="tabla-de-contenidos">Tabla de contenidos</h3>
@@ -535,35 +559,35 @@ window.Quarto = {
 <section id="listas" class="level3">
 <h3 class="anchored" data-anchor-id="listas">Listas</h3>
 <p>Hay listas numeradas y sin numerar. Se pueden anidar, y el tipo de numeración cambia con la profundidad de anidamiento</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Aquellas que van enumeradas.</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> <span class="fu">\ldots</span> que además se pueden anidar.</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Aquellas sin enumerar:</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span>[<span class="ss">$</span><span class="sc">\diamond</span><span class="ss">$</span>] damos varios apartados,</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> y podemos también anidar.</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Aquellas que van enumeradas.</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> <span class="fu">\ldots</span> que además se pueden anidar.</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Aquellas sin enumerar:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span>[<span class="ss">$</span><span class="sc">\diamond</span><span class="ss">$</span>] damos varios apartados,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> y podemos también anidar.</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 </section>
 <section id="tablas" class="level2">
 <h2 class="anchored" data-anchor-id="tablas">Tablas</h2>
 <p>Las tablas que presentamos aquí son muy sencillas, se pueden además unir celdas o separarlas</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{lcr}</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>1 <span class="op">&amp;</span> 2 <span class="op">&amp;</span> 3 <span class="fu">\\</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Pepe <span class="op">&amp;</span> Juan <span class="op">&amp;</span> Manuel</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>O bien con bordes</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{l||c|c|c|} <span class="fu">\hline</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Posición <span class="op">&amp;</span> 1 <span class="op">&amp;</span> 2 <span class="op">&amp;</span> 3 <span class="fu">\\</span> <span class="fu">\hline</span> <span class="fu">\hline</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Nombre <span class="op">&amp;</span> Pepe <span class="op">&amp;</span> Juan <span class="op">&amp;</span> Manuel<span class="fu">\\</span> <span class="fu">\hline</span></span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{lcr}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>1 <span class="op">&amp;</span> 2 <span class="op">&amp;</span> 3 <span class="fu">\\</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Pepe <span class="op">&amp;</span> Juan <span class="op">&amp;</span> Manuel</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>O bien con bordes</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{l||c|c|c|} <span class="fu">\hline</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>Posición <span class="op">&amp;</span> 1 <span class="op">&amp;</span> 2 <span class="op">&amp;</span> 3 <span class="fu">\\</span> <span class="fu">\hline</span> <span class="fu">\hline</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>Nombre <span class="op">&amp;</span> Pepe <span class="op">&amp;</span> Juan <span class="op">&amp;</span> Manuel<span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="tipos-de-letra" class="level2">
@@ -698,89 +722,118 @@ window.Quarto = {
 <p>Existen dos tipos de fórmulas</p>
 <ul>
 <li>En línea como por ejemplo <code>$x^2+1$</code> que produce <span class="math inline">\(x^2+1\)</span></li>
-<li>En modo ventana o centrado: <code>$$x^2+1$$</code> que se ve como</li>
+<li>En modo ventana o centrado: <code>\[x^2+1\]</code> que se ve como</li>
 </ul>
 <p><span class="math display">\[x^2+1\]</span></p>
-<p>Los delimitadores <code>$..$</code> se pueden substituir por <code>\(..\)</code> y</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$..$$</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>por</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[..\]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(entre otros, de hecho este último ofrece más funcionalidades como <code class="sourceCode latex"><span class="fu">\qedhere</span></code>)</p>
+<p>Los delimitadores <code>$..$</code> se pueden substituir por <code>\(..\)</code>.</p>
+<p>Antiguamente se usaba la sintaxis <code>$$ fórmula $$</code> para fórmulas centradas pero actualmente es preferible usar siempre <code>\[fórmula\]</code> (de hecho esta última ofrece más funcionalidades como <code class="sourceCode latex"><span class="fu">\qedhere</span></code>)</p>
 <hr>
 </section>
-<section id="entornos" class="level2">
-<h2 class="anchored" data-anchor-id="entornos">Entornos</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{ejercicio}[1]{<span class="fu">\textbf</span>{Ejercicio número #1}}{<span class="fu">\qed</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">ejercicio</span>}{1}</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Escribe esto con otras palabras.</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">ejercicio</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="creación-de-comandos-y-entornos" class="level2">
+<h2 class="anchored" data-anchor-id="creación-de-comandos-y-entornos">Creación de comandos y entornos</h2>
+<p>Como en cualquier lenguaje de programación, LaTeX nos permite extender su funcionalidad definiendo nuestros propios comandos y entornos. Esto se hace siempre en el <em>preámbulo</em> del documento (antes de <code>\begin{document}</code>).</p>
+<p>La sintaxis básica para ello es la siguiente:</p>
+<section id="comandos" class="level3">
+<h3 class="anchored" data-anchor-id="comandos">Comandos</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\nombre</span>}[n]{definición}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>donde <code>n</code> es el número de argumentos que va a tener nuestro comando y <code>definición</code> es su definición donde cada argumento se referencia mediante <code>#x</code>, donde <code>x</code> es el lugar que ocupa el argumento (número natural).</p>
+<p>Por ejemplo, mediante la definición</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\parcial</span>}[2]{<span class="fu">\frac</span>{<span class="fu">\partial</span> #1}{<span class="fu">\partial</span> #2}}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>podemos usar <code class="sourceCode latex"><span class="fu">\parcial</span>{f}{x}</code> para escribir <span class="math display">\[
+\frac{\partial f}{\partial x}
+\]</span></p>
+<p>Los comandos pueden definirse sin ningún argumento, por ejemplo:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\R</span>}{<span class="fu">\mathbb</span>{R}} <span class="co">% números reales</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si queremos <strong>re</strong>definir un comando existente deberemos usar el comando <code class="sourceCode latex"><span class="fu">\renewcommand</span></code> cuya sintaxis es la misma que <code>\newcommand</code>. <strong>No es aconsejable redefinir comandos existentes</strong>.</p>
+</section>
+<section id="entornos" class="level3">
+<h3 class="anchored" data-anchor-id="entornos">Entornos</h3>
+<p>La sintaxis básica para definir un entorno es la siguiente:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{nombreEntorno}[n]{inicio}{fin}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>donde <code>n</code> es el número de argumentos que va a tener el entorno.</p>
+<p>Por ejemplo, para definir un entorno muy básico para ejercicios podemos escribir en el preámbulo de nuestro documento:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{ejercicio}[1]{<span class="fu">\textbf</span>{Ejercicio número #1}}{<span class="fu">\qed</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>y usarlo mediante</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">ejercicio</span>}{1}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>Escribe esto con otras palabras.</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">ejercicio</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>De esta forma escribimos el contador de ejercicio de forma manual</p>
-<p>Para automatizarlo, hacemos lo siguiente</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcounter</span>{ejer_num}</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\setcounter</span>{ejer_num}{1}</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{ejer}{</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\textbf</span>{Ejercicio <span class="fu">\arabic</span>{ejer_num}: <span class="fu">\stepcounter</span>{ejer_num}}</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">itshape</span>}</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  {<span class="kw">\end</span>{<span class="ex">itshape</span>}}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para automatizarlo, podemos definir nuestro propio <a href="https://es.overleaf.com/learn/latex/Counters">contador</a>:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcounter</span>{ejer_num}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\setcounter</span>{ejer_num}{1}</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{ejer}{</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\textbf</span>{Ejercicio <span class="fu">\arabic</span>{ejer_num}: <span class="fu">\stepcounter</span>{ejer_num}}</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">itshape</span>}</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  {<span class="kw">\end</span>{<span class="ex">itshape</span>}</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
-<section id="entornos-predefinidos" class="level2">
-<h2 class="anchored" data-anchor-id="entornos-predefinidos">Entornos predefinidos</h2>
+<section id="entornos-predefinidos" class="level3">
+<h3 class="anchored" data-anchor-id="entornos-predefinidos">Entornos predefinidos</h3>
+<p>Muchos paquetes definen sus propios entornos para tareas concretas o proporcionan mecanismos para crear entornos nuevos. El paquete <a href="https://ctan.org/pkg/amsthm"><code>amsthm</code></a> permite crear entornos para enunciados matemáticos (teoremas, proposiciones,…).</p>
 <p>Podemos numerar con la sección</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{teorema}{Teorema}[section]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{teorema}{Teorema}[section]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Y otros entornos con el contador que acabamos de crear</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{nota}[teorema]{Aclaración}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">teorema</span>}<span class="kw">\label</span>{<span class="ex">tonto</span>}</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>Las ranas son verdes.</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">teorema</span>}</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">proof</span>}</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>Así lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">proof</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{nota}[teorema]{Aclaración}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">teorema</span>}<span class="kw">\label</span>{<span class="ex">tonto</span>}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>Las ranas son verdes.</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">teorema</span>}</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">proof</span>}</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>Así lo decía Aristóteles, y nosotros no vamos a llevarle la contraria.</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">proof</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Luego podremos referenciar a este teorema como Teorema <code>\ref{tonto}</code>.</p>
 <hr>
+</section>
+</section>
+<section id="referencias-cruzadas" class="level2">
+<h2 class="anchored" data-anchor-id="referencias-cruzadas">Referencias cruzadas</h2>
+<p>LaTeX permite <em>etiquetar</em> cualquier elemento en el texto (un párrafo, una figura, una ecuación, un elemento de una lista, un entorno,…) y luego <em>hacer referencia</em> a él (para ello habitualmente dicho elemento deberá tener un número asociado como ocurre habitualmente).</p>
+<p>Para ello tenemos que hacer dos pasos: 1. Etiquetar el elemento incluyendo el comando <code class="sourceCode latex"><span class="kw">\label</span>{<span class="ex">etiqueta</span>}</code> dentro del mismo (habitualente al inicio). La <strong>etiqueta</strong> debe ser una <em>cadena de texto</em> única (sin acentos ni caracteres especiales aunque podemos incluir guiones <code>-</code> y <code>:</code>) 2. Insertar una referencia a dicho elemento mediante el comando <code class="sourceCode latex"><span class="kw">\ref</span>{<span class="ex">etiqueta</span>}</code>. También podemos imprimir la página donde se ecuentra el elemento etiquetado mediante el comando <code class="sourceCode latex"><span class="kw">\pageref</span>{<span class="ex">etiqueta</span>}</code>.</p>
 </section>
 <section id="figuras-e-imágenes" class="level2">
 <h2 class="anchored" data-anchor-id="figuras-e-imágenes">Figuras e imágenes</h2>
 <p>El paquete <code>graphicx</code> nos permite insertar gráficos con el comando <code>\includegraphics</code></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=2.5cm]{<span class="ex">imagen.jpg</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=2.5cm]{<span class="ex">imagen.jpg</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Podemos también crear una figura con esa imágen</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=3cm]{<span class="ex">imagen.jpg</span>}  </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{Algo que encontré por</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\href</span>{http://www3.interscience.wiley.com/journal/13087/home/ForAuthors.html}{ahí.}</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">uno</span>}</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=3cm]{<span class="ex">superficie.jpg</span>}  </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{Superficie diferenciable en el espacio euclídeo.}</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">fig:superficie-diferenciable</span>}</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>En la Figura~<span class="kw">\ref</span>{<span class="ex">fig:superficie-diferenciable</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Observa el uso del carácter <code>~</code> entre el texto “Figura” y la referencia: esto hace que el número de referencia siempre vaya acompañado del texto y no permite que LaTeX los separe (por ejemplo, al hacer un salto de línea). Es una buena práctica incluirlo siempre.</p>
+<p>El paquete <a href="https://ctan.org/pkg/hyperref"><code>hyperref</code></a> amplia la funcionalidad de las referencias cruzadas (por ejemplo añadiendo un enlace en el pdf para <em>saltar</em> entre la referencia y elemento de forma sencilla) y define un nuevo comando <code class="sourceCode latex"><span class="kw">\autoref</span></code> que imprime automáticamente la descripción de la referencia dependiendo de su tipo (es decir, antepone automáticamente el texto “Figura” al hacer <code class="sourceCode latex"><span class="kw">\autoref</span>{<span class="ex">fig:superficie-diferenciable</span>}</code> puesto que detecta automáticamente que dicha etiqueta está dentro de un entorno <code>figure</code>).</p>
 <hr>
 </section>
 <section id="indentación" class="level2">
 <h2 class="anchored" data-anchor-id="indentación">Indentación</h2>
-<p>Podemos escribir texto centrado con</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">center</span>}</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>Texto a centrar.</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>Puede ser más de un párrafo.</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">center</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Y desplazarlo a la derecha con <code>\hfill</code>.</p>
+<p>Ya hemos indicado que podemos cambiar la disposición del texto alineándolo a la izquierda (con el entorno <code>flushleft</code>), a la derecha (con el entorno <code>flushright</code>) o centrados (entorno <code>center</code>). Por ejemplo:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">center</span>}</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Texto a centrar.</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>Puede ser más de un párrafo.</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">center</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>También podemos desplazar el texto horizontal (con los comandos <code class="sourceCode latex"><span class="fu">\hspace</span>{longitud}</code>, <code class="sourceCode latex"><span class="fu">\hfill</span></code> o verticalmente (<code class="sourceCode latex"><span class="fu">\vspace</span>{longitud}</code> y <code class="sourceCode latex"><span class="fu">\vfill</span></code>).</p>
 </section>
 <section id="la-bibliografía" class="level2">
 <h2 class="anchored" data-anchor-id="la-bibliografía">La bibliografía</h2>
 <section id="incluir-la-bibliografía-de-forma-manual-entorno-thebibliography" class="level3">
 <h3 class="anchored" data-anchor-id="incluir-la-bibliografía-de-forma-manual-entorno-thebibliography">Incluir la bibliografía de forma <em>manual</em>: entorno <code>thebibliography</code></h3>
 <p>Para insertar manualmente la bibliografía el entorno <code>thebibliography</code>, cuya sintaxis es la siguiente:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{n}</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\bibitem</span>[identificador]{etiqueta} Elemento bibliográfico (libro, artículo,...)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{n}</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\bibitem</span>[identificador]{etiqueta} Elemento bibliográfico (libro, artículo,...)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>donde <code>n</code> es el <em>número máximo</em> de elementos de la lista y únicamente se usa como referencia para el espacio entre el identificador del elemento bibliográfico y su descripción.</p>
 <p>El argumento opcional <code>[identificador]</code> se usa para indicar de forma manual qué identificador queremos para el elemento bibliográfico, es decir, de qué forma se va a imprimir en el documento una referencia a dicho elemento.</p>
 <p>Para hacer referencia a un elemento de la bibliografía usaremos el comando <code>\cite{etiqueta}</code>.</p>
 <p>Por ejemplo:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{9}</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\bibitem</span>{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  The not so short introduction to <span class="fu">\LaTeX</span>2e,</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\href</span>{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{9}</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\bibitem</span>{lshort} Tobias Oetiker, Hubert Partl, Irene Hyna and Elisabeth Schlegl,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  The not so short introduction to <span class="fu">\LaTeX</span>2e,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\href</span>{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{ctan.org}.</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>y una referencia a dicho elemento sería: <em>recomendamos la lectura de <code>\cite{lshort}</code></em>.</p>
 <p>Las principales desventajas de este método son las siguientes:</p>
 <ol type="1">
@@ -807,236 +860,242 @@ window.Quarto = {
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiado");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiado");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/latex-mat-ugr\.github\.io\/Curso-LaTeX\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/latex-mat-ugr\.github\.io\/Curso-LaTeX\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1044,185 +1103,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 

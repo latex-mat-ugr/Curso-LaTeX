@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bibliografía – Curso LaTeX Grado Matemáticas UGR</title>
+<title>Recomendaciones – Curso LaTeX Grado Matemáticas UGR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,6 +68,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -139,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Bibliografia/about.html">Bibliografía</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Recomendaciones/about.html">Recomendaciones</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -159,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Recomendaciones/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../Recomendaciones/about.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Recomendaciones</span></a>
   </div>
 </li>
@@ -201,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Bibliografia/about.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Bibliografia/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -241,13 +235,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#incluir-la-bibliografía-de-forma-automática-bibtex" id="toc-incluir-la-bibliografía-de-forma-automática-bibtex" class="nav-link active" data-scroll-target="#incluir-la-bibliografía-de-forma-automática-bibtex">Incluir la bibliografía de forma automática: <code>bibTeX</code></a></li>
-  <li><a href="#creación-de-un-fichero-de-referencias-.bib-mediante-un-gestor-de-referencias." id="toc-creación-de-un-fichero-de-referencias-.bib-mediante-un-gestor-de-referencias." class="nav-link" data-scroll-target="#creación-de-un-fichero-de-referencias-.bib-mediante-un-gestor-de-referencias.">Creación de un fichero de referencias <code>.bib</code> mediante un gestor de referencias.</a>
-  <ul class="collapse">
-  <li><a href="#exportar-las-referencias-a-bibtex-usando-zotero" id="toc-exportar-las-referencias-a-bibtex-usando-zotero" class="nav-link" data-scroll-target="#exportar-las-referencias-a-bibtex-usando-zotero">Exportar las referencias a <code>bibTeX</code> usando Zotero</a></li>
-  <li><a href="#uso-de-otros-gestores-de-bibliografía" id="toc-uso-de-otros-gestores-de-bibliografía" class="nav-link" data-scroll-target="#uso-de-otros-gestores-de-bibliografía">Uso de otros gestores de bibliografía</a></li>
-  </ul></li>
-  <li><a href="#transparencias-taller-2017-por-a.-alarcón" id="toc-transparencias-taller-2017-por-a.-alarcón" class="nav-link" data-scroll-target="#transparencias-taller-2017-por-a.-alarcón">Transparencias taller 2017 por A. Alarcón</a></li>
+  <li><a href="#estructura" id="toc-estructura" class="nav-link active" data-scroll-target="#estructura">Estructura</a></li>
+  <li><a href="#redacción" id="toc-redacción" class="nav-link" data-scroll-target="#redacción">Redacción</a></li>
+  <li><a href="#enunciados-matemáticos" id="toc-enunciados-matemáticos" class="nav-link" data-scroll-target="#enunciados-matemáticos">Enunciados matemáticos</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex">LaTeX</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></nav>
     </div>
@@ -256,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bibliografía</h1>
+<h1 class="title">Recomendaciones</h1>
 </div>
 
 
@@ -273,127 +265,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="incluir-la-bibliografía-de-forma-automática-bibtex" class="level2">
-<h2 class="anchored" data-anchor-id="incluir-la-bibliografía-de-forma-automática-bibtex">Incluir la bibliografía de forma automática: <code>bibTeX</code></h2>
-<p>Ya vimos en <a href="../Documento sencillo/about.html">Documento básico</a> como incluir de forma sencilla las referencias bibliográficas en un documento mediante el uso del entorno . A continuación veamos cómo mejorar este procedimiento, que tenía muchos inconvenientes.</p>
-<p>LaTeX, mediante el programa externo <code>bibTeX</code> que está disponible en todas las distribuciones, permite la generación automática del entorno <code>thebibliography</code> a partir de una <em>base de datos bibliográfica</em> en formato <code>bibTeX</code> (un fichero de texto con extensión <code>.bib</code> con un formato determinado). Una vez generado el entorno <code>thebibliography</code> con las entradas citadas en el documento se guarda en un fichero auxiliar con extensión <code>.bbl</code> que es incluido de forma automática por LaTEX en el documento.</p>
-<p>Los pasos para incluir la bibliografía de esta forma son los siguientes:</p>
-<ol type="1">
-<li><p>Crear un fichero, p.e. <code>referencias.bib</code> donde incluyamos los datos de los elementos bibliográficos en formato <code>bibTeX</code>. La mayoría de repositorios de artículos de investigación nos permiten descargar la referencia en dicho formato. Por ejemplo:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span> {<span class="ot">Euler1984</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">AUTHOR</span> = {Euler, Leonhard},</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">TITLE</span> = {Elements of algebra},</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">PUBLISHER</span> = {Springer-Verlag, New York},</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">YEAR</span> = {1984},</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">PAGES</span> = {lx+593},</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">ISBN</span> = {0-387-96014-7},</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">DOI</span> = {10.1007/978-1-4613-8511-0},</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span> {<span class="ot">Euler1985</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">AUTHOR</span> = {Euler, Leonhard},</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>     <span class="dt">TITLE</span> = {An essay on continued fractions},</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>   <span class="dt">JOURNAL</span> = {Math. Systems Theory},</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="dt">FJOURNAL</span> = {Mathematical Systems Theory. An International Journal on Mathematical Computing Theory},</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">VOLUME</span> = {18},</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">YEAR</span> = {1985},</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">NUMBER</span> = {4},</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>     <span class="dt">PAGES</span> = {295--328},</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">ISSN</span> = {0025-5661},</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>       <span class="dt">DOI</span> = {10.1007/BF01699475},</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>donde el primer elemento de cada referencia (<code>Euler1984</code> y <code>Euler1985</code> respectivamente) es la <em>etiqueta</em> que luego debermos usar con el comando <code>\cite</code>.</p></li>
-<li><p>Añadir en nuestro documento (ver, por ejemplo, <a href="./Ejemplo bibliografía.tex">Ejemplo bibliografía.tex</a>), donde queremos que aparezca la bibliografía (habitualmente al final del documento justo antes de <code>\end{document}</code>):</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliographystyle</span>{<span class="ex">plain</span>} <span class="co">% plain, alpha, amsalpha, apalike, abbr</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliography</span>{<span class="ex">referencias</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>donde recordemos que <code>referencias.bib</code> es el fichero de referencias creado en el punto anterior y ubicado <strong>en la misma carpeta</strong> que el documento <code>.tex</code> que estemos procesando.</p></li>
-<li><p>Compilar el fichero primer con <code>LaTeX</code> y luego con <code>bibTeX</code> (en <a href="https://www.texstudio.org">TeXstudio</a> u <a href="https://www.overleaf.com">Overleaf</a> no es necesario compilar con <code>bibtex</code> necesario aunque sí lo es en otros editores).</p></li>
-</ol>
-<p>Aunque nuestro fichero <code>referencias.bib</code> contenga muchas referencias únicamente se añadiran al documento aquellas que hayamos <em>citado</em> (es decir, aquellas cuyas etiquetas aparezcan entro de un comando <code>\cite</code> en alguna parte del documento). Si queremos añadir una referencia que no aparece citada en el documento usaremos el comando <code>\nocite{etiqueta}</code>, donde <code>etiqueta</code> es la etiqueda de la referencia (primer elemento en la entrada <code>bibTeX</code> de la referencia). Si queremos producir un documento con <strong>todas</strong> las referencias que figuran en <code>referencias.bib</code> deberemos incluir el comando <code>\nocite{*}</code>.</p>
-<p><strong>Ventajas</strong>:</p>
-<ol type="1">
-<li><p>Al cambiar el estilo con <code>\bibliographystyle</code> se genera de nuevo la lista completa de referencias.</p></li>
-<li><p>El fichero <code>referencias.bib</code> puede usarse para múltiples documentos de LaTeX, aprovechando de esa forma el tiempo empleado en crear el fichero.</p></li>
-</ol>
-<p>El formato de un fichero <code>bibTeX</code> puede consultarse en su <a href="https://www.ctan.org/pkg/bibtex">manual</a> aunque la mayoría de revistas o repositorios de artículos de investigación proporcionan una forma de descargar la información de una referencia en formato <code>bibTeX</code> para ser añadida en nuestro fichero <code>referencias.bib</code>. En la siguiente sección exploraremos cómo automatizar el proceso usando un <strong>gestor de referencias bibliográficas</strong>.</p>
-<p>Actualmente el paquete <a href="https://www.ctan.org/pkg/biblatex"><code>biblatex</code></a> se está convirtiendo en el estándar para la gestión bibliográfica en LaTeX pues corrige algunas deficiencias de <code>bibTeX</code>. Su uso es compatible con <code>bibTeX</code> aunque tiene su propio <em>motor</em> llamado <a href="https://biblatex-biber.sourceforge.net"><code>biber</code></a> (también incluido en la mayoría de distribuciones de LaTeX).</p>
-</section>
-<section id="creación-de-un-fichero-de-referencias-.bib-mediante-un-gestor-de-referencias." class="level2">
-<h2 class="anchored" data-anchor-id="creación-de-un-fichero-de-referencias-.bib-mediante-un-gestor-de-referencias.">Creación de un fichero de referencias <code>.bib</code> mediante un gestor de referencias.</h2>
-<p>En un trabajo de investigación donde se suelen manejar muchas referencias es conveniente mantener cierto orden para recoger, organizar, anotar y citar debidamente los documentos. Existen diversos <em>gestores de referencias</em>, algunos de los más populares son:</p>
+<p>A continuación damos una lista de recomendaciones a seguir al elaborar un documento científico. La lista de recomendaciones está dividida en diferentes categorías para que sea más sencillo buscar un problema o caso de uso concreto. Para elaborar la lista se han tenido en cuenta tanto nuestra experiencia personal así como el documento <a href="https://anamat.unizar.es/latex/Sesion5.pdf">Consejos de estilo para un texto con contenido matemático y su código LaTeX</a>.</p>
+<p>Es conveniente consultar también la guía <a href="https://www.texnia.com/archive/ortomatem.pdf">Ortotipografía y notaciones matemáticas</a> donde se analiza de forma más exhaustiva el uso de los símbolos matemáticos en un texto.</p>
+<section id="estructura" class="level2">
+<h2 class="anchored" data-anchor-id="estructura">Estructura</h2>
+<p>Consultar la sección <a href="../Tipos de documento/about.html">Tipos de documento</a> para más información.</p>
 <ul>
-<li><a href="https://www.zotero.org">Zotero</a></li>
-<li><a href="https://web.endnote.com">Endnote</a> (Clarivate)</li>
-<li><a href="https://www.mendeley.com">Mendeley</a> (Elsevier)</li>
-<li><a href="https://refworks.proquest.com">RefWorks</a> (ProQuest).</li>
+<li>Cualquier documento, especialmente si tiene cierta longitud, debe estar jerárquicamente estructurado siguiendo una lógica. Los distintos niveles jerárquicos disponibles en LaTeX son, por orden de mayor a menor nivel de jerarquía: <code>\part</code>, <code>\chapter</code>, <code>\section</code>, <code>\subsection</code>, <code>\subsubsection</code> y <code>paragraph</code>. ¡Sí, el párrafo es el último nivel de jerarquía! Para indicar comienzo de un párrafo no es necesario usar ningún comando (aunque existe el entorno <code>paragraph</code>) sino simplemente dejar una línea en blanco al final del mismo (no importa el número de líneas que dejemos). Es una mala práctica usar el comando <code>\\</code> para iniciar un párrafo puesto que su uso es únicamente para comenzar una nueva línea.</li>
+<li>Es una mala práctica incluir un capítulo sin secciones (excepto para la introducción del documento, que jerárquicamente suele corresponder a un capítulo).</li>
 </ul>
-<p>El primero, <a href="https://www.zotero.org">Zotero</a>, es software libre y permite mediante una cuenta gratuita sincronizar nuestra base de datos bibliográficas en distintos equipos (el tamaño está limitado a 200 Mb, lo cual es poco si queremos además adjuntar los pdfs al programa). Existen diversas estrategias (como usar una nube privada) para disponer de más espacio.</p>
-<p>Los tres últimos están disponibles (con distinto grado de características) a los miembros de la Universidad de Granada. Consultar la información <a href="https://bibliotecaugr.libguides.com/investigacion/Gestores_bibliograficos">sobre gestore bibliográficos</a> disponible en el portal de <a href="https://bibliotecaugr.libguides.com/investigacion">recursos para la investigación</a>.</p>
-<p>Todos requieren de la creación de una cuenta.</p>
-<section id="exportar-las-referencias-a-bibtex-usando-zotero" class="level3">
-<h3 class="anchored" data-anchor-id="exportar-las-referencias-a-bibtex-usando-zotero">Exportar las referencias a <code>bibTeX</code> usando Zotero</h3>
-<section id="forma-manual" class="level4">
-<h4 class="anchored" data-anchor-id="forma-manual">Forma manual:</h4>
-<ol type="1">
-<li><p>Abre Zotero en tu ordenador o bien accede a tu cuenta en <a href="https://www.zotero.org">zotero.org</a> en tu navegador web.</p></li>
-<li><p>Si quieres exportar <strong>todas las referencias</strong> de una determinada biblioteca a bibTeX, haz clic en el menú desplegable Acciones y selecciona “Exportar biblioteca…” (Archivo &gt; Exportar biblioteca… en la aplicación de escritorio). Si sólo quieres exportar <strong>algunas referencias</strong>, selecciónalas pulsando Control y Mayúsculas, haz clic con el icono de exportar (“crear una bibliografía a partir de los elementos seleccionados” en la versión de escritorio”).</p></li>
-<li><p>En el cuadro de diálogo que aparece, selecciona el formato <code>bibTeX</code> y haz clic en <code>Aceptar</code>. Navegamos hasta el directorio donde se encuentra nuestro documento LaTeX y guardamos ahí el archivo. Esto generará un archivo en el formato <code>.bib</code> para que bibTeX lo lea y cree una bibliografía a partir de él.</p></li>
-</ol>
-<p><strong>Desventajas</strong>: el anterior procedimiento deberemos repetirlo cada vez que añadamos un elemento nuevo a nuestra biblioteca o bien modifiquemos uno existente.</p>
 </section>
-<section id="forma-automática-uso-del-complemento-betterbibtex" class="level4">
-<h4 class="anchored" data-anchor-id="forma-automática-uso-del-complemento-betterbibtex">Forma automática: uso del complemento <code>betterbibtex</code></h4>
-<p>Zotero permite la instalación de <em>complementos</em> que añaden características nuevas al gestor de bibliografía. Uno de ellos es <a href="https://retorque.re/zotero-better-bibtex/">BetterBibTex</a> que facilita el uso de Zotero con LaTeX (o markdown). Este complemento tiene utilidad más allá de lo que indiquemos a continuación luego conviene echarle un vistazo a la <a href="https://retorque.re/zotero-better-bibTeX/">documentación</a>.</p>
-<p>Una vez finalizada la <a href="https://retorque.re/zotero-better-bibtex/installation/index.html">instalación</a> del complemento procederemos a partir del punto 2 anterior para exportar la biblioteca entera o bien un conjunto de referencias. En el punto 3 seleccionaremos ahora la opción <code>Better BibTeX</code>, marcaremos la opción <code>Keep updated</code> (ver captura de pantalla)</p>
-<p>![betterbibtex-export.png]</p>
-<p>y pulsaremos <code>OK</code>. A continuación seleccionaremos el directorio donde se encuentre nuestro documento LaTeX. A partir de este momento, ante cualquier cambio (tanto si añadimos como si modificamos) la base de datos de Zotero, éste exportará automáticamene los cambios al mismo fichero. Podemos repetir este procedimiento tantas veces como queramos (para incluir la bibliografía en distintos proyectos o documentos de LaTeX).</p>
-<p><strong>Ventajas</strong>: Sólo será necesario exportar la biblioteca una única vez <em>por proyecto de LaTeX</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p><strong>Desventajas</strong>: Para cada nuevo documento <code>.tex</code> que creemos en una carpeta distinta a donde hemos exportado el fichero <code>.bib</code> con Zotero será necesario volver a repetir (una única vez) los pasos anteriores.</p>
-<p>Esta última desventaja puede ser solventada si exportamos la biblioteca de Zotero al <a href="https://www.ugr.es/~ftorralbo/blog/programming/local-texmf/">árbol local de TeX</a>. Este es un directorio especial de LaTeX existente en nuestro equipo donde colocar diferentes ficheros (como los ficheros de bibliografía) para que estén disponibles en cualquier documento LaTeX que editemos.</p>
-<p>Para ello seguiremos los siguientes pasos:</p>
-<ol type="1">
-<li><p>Localizar la carpeta del <em>árbol local de TeX</em> (‘local texmf tree’). La ubicación de esta carpeta dependerá tanto de nuestro sistema operativo como de la <em>distribución</em> de LaTeX que tengamos instalada. A continuación hay un listado de las ubicaciones habituales:</p>
+<section id="redacción" class="level2">
+<h2 class="anchored" data-anchor-id="redacción">Redacción</h2>
+<p>Consultar la sección <a href="../Matematicas/about.html">Tipos de documento</a> para más información.</p>
 <ul>
-<li>Linux: <code>~/texmf</code>.</li>
-<li>MacOS: <code>~/Library/texmf/</code></li>
-<li>Windows: <code>C:\Users\nombreUsuario\texmf</code></li>
+<li>Aunque se trate de un documento matemático, debe de estar bien escrito con una buena puntuación y sin faltas de ortografía o gramaticales. Es recomendable usar un corrector ortográfico durante la redacción del mismo.</li>
+<li>Redacta correctamente, con un lenguaje preciso y sin complicaciones innecesarias.</li>
+<li>Intenta ponerte en el lugar del público al que te diriges (el documento va dirigido a expertos en la temática del mismo o no, va dirigido a matemáticos o a un público en general).</li>
+<li>Haz un uso moderado de los símbolos y abreviaturas matemáticas y evita su uso en las oraciones (p.&nbsp;ej. usar el símbolo <span class="math inline">\(\Rightarrow\)</span> en mitad de un párrafo en lugar de la palabra <em>implica</em>). Todos los símbolos deben de estar definidos previamente.</li>
+<li>En caso de que el documento contenga mucha nomenclatura específica, crear un <em>glosario de términos</em> al final del documento (e indicar la existencia del mismo en la introducción).</li>
+<li>Las fórmulas matemáticas que acompañan un texto científico deben de ser tratadas como palabras y puntuadas adecuadamente:
+<ul>
+<li>Separadas por comas si estamos dando una lista de ecuaciones</li>
+<li>Finalizando la ecuación con un punto si es el final de la oración.</li>
 </ul></li>
-<li><p>Abrir Zotero y exportar la biblioteca (p.e. con nombre <code>referencias.bib</code>) al subdirectorio <code>bibtex/bib</code> en el árbo local (<code>texmf</code>). Crear dicho directorio si no existe.</p>
-<p>Una vez hecho esto quizá sea necesario reiniciar el equipo.</p></li>
-<li><p>Crear un documento (por ejemplo <code>ejemplo.tex</code>) en cualquier carpeta de nuestro equipo y añadir los comandos</p></li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliographystyle</span>{<span class="ex">plain</span>} <span class="co">% plain, alpha, amsalpha, apalike, abbr</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliography</span>{<span class="ex">referencias</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>al final del mismo.</p>
-<ol start="4" type="1">
-<li>Usar el comando <code>\cite{etiqueta}</code> para incluir una referencia bibliográfica al documento, donde <code>etiqueta</code> es una etiqueta válida de la base de datos de Zotero. Podemos consultar la etiqueta de un elemento determinado en el propio Zotero si habilitamos la columna <code>Citation key</code> en la vista principal de Zotero (basta hacer click secundario en la cabecera de la tabla). El complemento <code>betterBibTeX</code> permite <a href="https://retorque.re/zotero-better-bibtex/installation/preferences/index.html">gestionar y personalizar estas etiquetas</a>.</li>
-</ol>
-</section>
-</section>
-<section id="uso-de-otros-gestores-de-bibliografía" class="level3">
-<h3 class="anchored" data-anchor-id="uso-de-otros-gestores-de-bibliografía">Uso de otros gestores de bibliografía</h3>
-<p>Los otros gestores de referencias mencionados anteriormente también permiten exportar la base de datos bibliográfica en formato <code>bibTeX</code> para ser usada en LaTeX. Por favor, consultar la documentación de cada uno de ellos:</p>
-<ul>
-<li><a href="https://guides.lib.uiowa.edu/sciences_library_endnote/BibTeX">Generating BibTeX files from EndNote</a>.</li>
-<li><a href="https://service.elsevier.com/app/answers/detail/a_id/27743/supporthub/mendeley/p/16075/">How can I export my library | Mendeley</a>.</li>
-<li><a href="https://refworks.com/rwathens/help/508help/Exporting_or_Backing_Up_a_Database.htm">Exporting a Database | RefWorks</a>.</li>
+<li>Es mala práctica comenzar una oración con una ecuación.</li>
+<li>El texto citado debe ir entre comillas (en LaTeX las comillas se abren con `` y se cierran con <code>''</code>) y acompañado de una referencia a la fuente original. Puedes usar el entorno <code>quote</code> (para citas textuales breves) o <code>quotation</code> en LaTeX. Si se hace uso de dichos entornos no es necesario, así lo señala la RAE, entrecomillar las citas.</li>
 </ul>
 </section>
+<section id="enunciados-matemáticos" class="level2">
+<h2 class="anchored" data-anchor-id="enunciados-matemáticos">Enunciados matemáticos</h2>
+<p>Consultar la sección <a href="../Matematicas/about.html">Tipos de documento</a> para más información.</p>
+<ul>
+<li>Los resultados matemáticos (lemas, proposiciones, teoremas y corolarios) deben de estar redactados siguiendo el orden: declaración de objetos matemáticos, hipótesis y tesis.</li>
+<li>Los corolarios habitualmente aparecen después de un teorema y son resultados que se deducen de éste.</li>
+<li>Las proposiciones suelen ser resultados de menor categoría que un teorema aunque de interés por sí mismas.</li>
+<li>Los lemas suelen ser resultados de tipo técnico necesarios para la demostración de un teorema y pueden ir tanto antes del enunciado del teorema como entre el enunciado de este y su demostración. En este último caso, hay que indicar al inicio del entorno <code>proof</code> que vamos a comenzar la demostración del teorema principal mediante el argumento opcional del entorno <code>proof</code> y una referencia al teorema usando <code>\ref</code>: ```tex
+```</li>
+</ul>
 </section>
-<section id="transparencias-taller-2017-por-a.-alarcón" class="level2">
-<h2 class="anchored" data-anchor-id="transparencias-taller-2017-por-a.-alarcón">Transparencias taller 2017 por A. Alarcón</h2>
-<p><object data="Bibliografias.pdf" type="application/pdf" width="100%" height="400"><p>Unable to display PDF file. <a href="Bibliografias.pdf">Download</a> instead.</p></object></p>
-<p><a href="Bibliografias.pdf" target="_pdf">Notas sobre el uso y manejo de bibliografías en LaTeX por Antonio Alarcón López</a></p>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>Consultar la sección <a href="../Bibliografia/about.html">Bibliografía</a> para conocer cómo incluir referencias bibliográficas en un documento LaTeX.</p>
+<ul>
+<li>Todas las referencias incluidas en el documento deben de aparecer citadas en algún lugar del mismo con el comando <code>\cite</code>. Es una mala práctica incluir referencias sin citar.</li>
+<li>Al incluir un resultado (especialmente si no se incluye una demostración) es conveniente citar la fuente original donde encontrar una demostración además de cualquier otra fuente relevante (p.&nbsp;ej. demostraciones alternativas) al mismo. Para indicar la autoría y añadir la referencia a un teorema (o proposición o lema) se usa el argumento opcional (entre corchetes <code>[</code> <code>]</code>) de dicho tipo de entornos: <code>tex     \begin{teorema}[do Carmo~\cite{doCarmo92}, 1992]     Enunciado     \end{teorema}</code></li>
+<li><em>Estilo</em>: al incluir una referencia y hacer mención expresa los autores, p.&nbsp;ej. en <code>Do Carmo \cite{doCarmo92}</code> es recomendable añadir el símbolo <code>~</code> entre el nombre del autor y el comando <code>\cite</code>. Dicho símbolo evita que LaTeX separe en distintas líneas distintas el nombre del autor y su referencia. De forma similar, al incluir una referencia con <code>\ref</code> también se hace uso del mismo símbolo, p.&nbsp;ej. <code>Ver teorema~\ref{thm:DoCarmo}</code>.</li>
+</ul>
+</section>
+<section id="latex" class="level2">
+<h2 class="anchored" data-anchor-id="latex">LaTeX</h2>
+<ul>
+<li>Corrige todos los errores de LaTeX tan pronto aparezcan al compilar. En ocasiones es muy difícil localizar un error que ha quedado sin corregir.</li>
+<li>Intenta obtener al final una <em>composición</em> limpia, sin errores ni advertencias. Especialmente, sin avisos de <em>overfull</em> o <em>underfull</em>. Estos avisos nos indican dificultades que ha tenido LaTeX al componer el texto y que han dado como resultado líneas de anchura mayor o menor que la anchura predefinida para el texto. Para mostrar visualmente las advertencias de <em>overfull</em> incluye el comando <code>tex     \overfullrule=10pt</code> en el preámbulo del documento. Consulta <a href="https://es.overleaf.com/learn/how-to/Understanding_underfull_and_overfull_box_warnings">Understanding underfull and overfull box warnings - Overleaf, Editor de LaTeX online</a> para más información al respecto.</li>
+<li>Evita incluir paquetes o definiciones en el preámbulo que no vas a usar o que desconoces su uso (p.&nbsp;ej. al copiar y pegar de otros sitios).</li>
+<li>Como regla general deja que LaTeX establezca el espacio vertical y horizontal por sí mismo. Aunque existen comandos para modificar el espacio vertical (p.&nbsp;ej. <code>\bigskip</code>, <code>\medskip</code>, <code>\smallskip</code>, <code>\vskip</code>, <code>\vspace</code>) y horizontal (p.&nbsp;ej. <code>\</code>, <code>\,</code>, <code>\!</code>, <code>\quad</code>, <code>\qquad</code>, <code>\hskip</code>) no los uses sin una buena razón.</li>
+<li>No uses <code>\\</code> para terminar un párrafo. Deja en su lugar una línea en blanco. La orden <code>\\</code> tiene su función en tablas y alineamientos.</li>
+<li>Sé moderado a la hora de destacar palabra en el texto (en cursivo con <code>\emph</code>, en negrita con <code>\textbf</code>,…). Una página llena de cursivas, negritas, texto entre comillas, mayúsculas, recuadros, colores y tamaños es <strong>difícil</strong> de leer.</li>
+<li>Usa las órdenes <code>\sen</code>, <code>\cos</code>, <code>\tg</code>, <code>\lim</code>, <code>\max</code>, <code>\min</code>,… que producen los operadores matemáticos en letra <em>recta</em>. Si un operador no está definido puedes crear un comando para el mismo incluyendo el preámbulo <code>tex     \DeclareMathOperator{\grad}{grad} % gradiente</code></li>
+<li>Para incluir texto en una fórmula usa la orden <code>\text</code>. Por ejemplo <code>tex     \[     (-1)^n =      \begin{cases}     1, &amp;\text{si } n \text{ es par,} \\     -1, &amp;\text{si $n$ es impar.}     \end{cases}     \]</code> observa que dentro del comando <code>\text</code> el espacio en blanco funciona como en el texto normal.</li>
+<li>Existe una gran variedad de entornos para escribir una fórmula que no cabe en una línea o agrupar varias fórmulas: <code>align</code>, <code>aligned</code>, <code>split</code>, <code>multline</code>, <code>gather</code>,… Consulta la <a href="https://ctan.fisiquimicamente.com/macros/latex/required/amsmath/amsldoc.pdf">guía del paquete <code>amsmath</code></a>. Por ejemplo, si partes una fórmula en dos líneas, los símbolos de relación (=, &lt;, &gt;,…), operación (+, -) o implicación (<span class="math inline">\(\Rightarrow\)</span>, …) y, en general, los símbolos que unen dos términos o dos miembros de la fórmula nunca deben quedar al final de la línea, sino comenzando la siguiente.</li>
+<li>Nunca se debe numerar a mano. Usar siempre <code>\label</code> para etiquetar un elemento (teorema, fórmula, figura, tabla,…) y <code>\ref</code> para referenciarlo. ¡Atención! Las fórmulas es mejor referenciarlas con <code>\eqref</code>. El comando <code>\autoref</code> se encargará por nosotros de determinar el tipo de elemento y lo formateará de forma adecuada.</li>
+<li>Las figuras y tablas deben siempre ir etiquetadas (con el comando <code>\label</code>) y referenciadas en el texto (con <code>\ref</code> o <code>\autoref</code>). Evitas frases como <em>en la siguiente figura</em> y usa en su lugar <em>en la figura~<span class="math inline">\(\ref{fig:etiqueta}\)</span></em>.</li>
+</ul>
 
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
-
-<ol>
-<li id="fn1"><p>Entendemos por <em>proyecto de LaTeX</em> una carpeta en nuestro equipo que contiene uno o varios documentos <code>.tex</code>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
