@@ -372,6 +372,7 @@ Luego podremos referenciar a este teorema como Teorema `\ref{tonto}`.
 LaTeX permite *etiquetar* cualquier elemento en el texto (un párrafo, una figura, una ecuación, un elemento de una lista, un entorno,...) y luego *hacer referencia* a él (para ello habitualmente dicho elemento deberá tener un número asociado como ocurre habitualmente). 
 
 Para ello tenemos que hacer dos pasos:
+
 1. Etiquetar el elemento incluyendo el comando `\label{etiqueta}`{.latex} dentro del mismo (habitualente al inicio). La **etiqueta** debe ser una *cadena de texto* única (sin acentos ni caracteres especiales aunque podemos incluir guiones `-` y `:`)
 2. Insertar una referencia a dicho elemento mediante el comando `\ref{etiqueta}`{.latex}. También podemos imprimir la página donde se ecuentra el elemento etiquetado mediante el comando `\pageref{etiqueta}`{.latex}.
 
