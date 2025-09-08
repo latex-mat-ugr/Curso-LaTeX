@@ -135,7 +135,7 @@ Según la [clase de documento](../Tipos de documento/about.qmd), estarán dispon
 
 ### Título
 
-El título y datos de autores se visualiza con `\maketitle`{.latex} y se *declara* (en la mayoría de clases de documento) mediante los comandos `\author`{.latex} y  `\title`{.latex}.
+El título y datos de autores se visualiza con `\maketitle`{.latex} y se *declara* (en la mayoría de clases de documento) mediante los comandos `\author`{.latex}, `\title`{.latex} y `\date`{.latex}.
 
 ### Resumen
 
