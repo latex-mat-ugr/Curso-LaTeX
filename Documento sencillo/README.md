@@ -178,7 +178,13 @@ Podemos organizar un documento jerárquicamente creando diferentes *secciones*  
 | `\subsubsection` |   3   |
 | `\paragraph`     |   4   |
 | `\subparagraph`  |   5   |
-El comando `\chapter`{.latex} únicamente está disponible en la clase `book`.
+
+
+Observaciones:
+- Salvo que el documento que estemos escribiendo sea muy técnico no es recomendable usar más de tres niveles de jerarquía (p.e. `\chapter`{.latex}, `\section`{.latex} y `\subsection`{.latex} en un libro o bien `\section`{.latex}, `\subsection`{.latex} y `\subsubsection` en un artículo). No obstante, LaTeX nos proporciona estos 7 niveles de jerarquía.
+- Los niveles `\paragraph`{.latex} y `subparagraph`{.latex} difieren de `\section`{.latex} `\subsection`{.latex} y `\subsubsection`{.latex} en que no comienzan una nueva línea. El nivel `\part`{.latex} comienza una nueva página en las clases `book` y `report` pero no en la clase `article`.
+- Si cambios de clase, estos comandos podrían no estar disponibles o bien cambiar su estilo.
+- El comando `\chapter`{.latex} únicamente está disponible en la clase `book` y siempre comienza una nueva página.
 
 Véase <http://en.wikibooks.org/wiki/LaTeX/Document_Structure>
 
