@@ -167,7 +167,7 @@ Los párrafos se pueden alinear a la izquierda (entorno `flushleft`), derecha (e
 
 ### Secciones
 
-Podemos crear secciones (en un libro también capítulos y partes) con el comando `\section`{.latex}. Éstas pueden contener subsecciones: `\subsection`{.latex}, y subsubsecciones. Finalmente, tenemos párrafos, `\paragraph`{.latex}, y subpárrafos
+Podemos organizar un documento jerárquicamente creando diferentes *secciones*  con el comando `\section`{.latex}. Éstas pueden contener subsecciones: `\subsection`{.latex}, y subsubsecciones. Finalmente, tenemos párrafos, `\paragraph`{.latex}, y subpárrafos
 
 | Comando          | Nivel |
 | ---------------- | :---: |
@@ -178,6 +178,7 @@ Podemos crear secciones (en un libro también capítulos y partes) con el comand
 | `\subsubsection` |   3   |
 | `\paragraph`     |   4   |
 | `\subparagraph`  |   5   |
+El comando `\chapter`{.latex} únicamente está disponible en la clase `book`.
 
 Véase <http://en.wikibooks.org/wiki/LaTeX/Document_Structure>
 
