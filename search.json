@@ -174,7 +174,7 @@
     "href": "Documento sencillo/about.html#título-resumen-y-tabla-de-contenidos",
     "title": "Documento básico",
     "section": "Título, resumen y tabla de contenidos",
-    "text": "Título, resumen y tabla de contenidos\nSegún la clase de documento, estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen, … del documento.\n\nTítulo\nEl título y datos de autores se visualiza con \\maketitle y se declara (en la mayoría de clases de documento) mediante los comandos \\author y \\title.\n\n\nResumen\n\\begin{abstract}\nEsto es una prueba de cómo hacer algunas cosas en \\LaTeX.\n\\end{abstract}\n\n\nTabla de contenidos\nPodemos añadir una tabla de contenidos con \\tableofcontents",
+    "text": "Título, resumen y tabla de contenidos\nSegún la clase de documento, estarán disponibles unas opciones y otras para indicar los datos de título, autoría, resumen, … del documento.\n\nTítulo\nEl título y datos de autores se visualiza con \\maketitle y se declara (en la mayoría de clases de documento) mediante los comandos \\author, \\title y \\date.\n\n\nResumen\n\\begin{abstract}\nEsto es una prueba de cómo hacer algunas cosas en \\LaTeX.\n\\end{abstract}\n\n\nTabla de contenidos\nPodemos añadir una tabla de contenidos con \\tableofcontents",
     "crumbs": [
       "Documento básico"
     ]
