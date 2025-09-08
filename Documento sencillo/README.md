@@ -159,8 +159,7 @@ La unida básica de estructura es el párrafo que se delimita por al menos una l
 - También se trata como un espacio el salto de línea.
 - Una o varias líneas en blanco separan los párrafos. El comando `\par`{.latex} tiene el mismo efecto.
 - LaTeX, por defecto, *sangra* el texto al comienzo de cada párrafo. Esto puede evitarse usando el comando `\noindent`{.latex} al inicio de la línea.
-- `\newline`{.latex} o `\\`{.latex} inicia una nueva línea sin completar la línea en curso.
-- `\linebreak[opcion]`{.latex} inicia una nueva línea justificando la línea en curso.
+- `\linebreak`{.latex} o `\\`{.latex} inicia una nueva línea sin completar la línea en curso.
 - `\newpage` inicia una nueva página sin completar la página en curso.
 - `\pagebreak`{.latex} fuerza un salto de página.
 
