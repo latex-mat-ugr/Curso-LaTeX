@@ -43,7 +43,9 @@ Finalmente, LaTeX también permite delimitar *bloques* mediante
 bloque
 }
 ```
-Existen comandos especiales que no llevan argumento y afectan a todo el bloque donde son invocados. Ver ejemplos en la sección [Tipos de letra](#tipos-de-letra).
+Por defecto, el interior de un *entorno* tiene la categoría de bloque.
+
+Existen comandos especiales que no llevan argumento y afectan a todo el bloque (o el entorno) donde son invocados. Ver ejemplos en la sección [Tipos de letra](#tipos-de-letra).
 
 Además, algunos caracteres tienen una utilidad especial y su uso está reservado:
 
