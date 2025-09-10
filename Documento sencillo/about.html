@@ -360,7 +360,8 @@ window.Quarto = {
 <div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>bloque</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Existen comandos especiales que no llevan argumento y afectan a todo el bloque donde son invocados. Ver ejemplos en la sección <a href="#tipos-de-letra">Tipos de letra</a>.</p>
+<p>Por defecto, el interior de un <em>entorno</em> tiene la categoría de bloque.</p>
+<p>Existen comandos especiales que no llevan argumento y afectan a todo el bloque (o el entorno) donde son invocados. Ver ejemplos en la sección <a href="#tipos-de-letra">Tipos de letra</a>.</p>
 <p>Además, algunos caracteres tienen una utilidad especial y su uso está reservado:</p>
 <table class="caption-top table">
 <thead>
@@ -506,8 +507,7 @@ window.Quarto = {
 <li>También se trata como un espacio el salto de línea.</li>
 <li>Una o varias líneas en blanco separan los párrafos. El comando <code class="sourceCode latex"><span class="fu">\par</span></code> tiene el mismo efecto.</li>
 <li>LaTeX, por defecto, <em>sangra</em> el texto al comienzo de cada párrafo. Esto puede evitarse usando el comando <code class="sourceCode latex"><span class="fu">\noindent</span></code> al inicio de la línea.</li>
-<li><code class="sourceCode latex"><span class="fu">\newline</span></code> o <code class="sourceCode latex"><span class="fu">\\</span></code> inicia una nueva línea sin completar la línea en curso.</li>
-<li><code class="sourceCode latex"><span class="fu">\linebreak</span>[opcion]</code> inicia una nueva línea justificando la línea en curso.</li>
+<li><code class="sourceCode latex"><span class="fu">\linebreak</span></code> o <code class="sourceCode latex"><span class="fu">\\</span></code> inicia una nueva línea sin completar la línea en curso.</li>
 <li><code>\newpage</code> inicia una nueva página sin completar la página en curso.</li>
 <li><code class="sourceCode latex"><span class="fu">\pagebreak</span></code> fuerza un salto de página.</li>
 </ul>
@@ -515,7 +515,7 @@ window.Quarto = {
 </section>
 <section id="secciones" class="level3">
 <h3 class="anchored" data-anchor-id="secciones">Secciones</h3>
-<p>Podemos crear secciones (en un libro también capítulos y partes) con el comando <code class="sourceCode latex"><span class="kw">\section</span></code>. Éstas pueden contener subsecciones: <code class="sourceCode latex"><span class="kw">\subsection</span></code>, y subsubsecciones. Finalmente, tenemos párrafos, <code class="sourceCode latex"><span class="kw">\paragraph</span></code>, y subpárrafos</p>
+<p>Podemos organizar un documento jerárquicamente creando diferentes <em>secciones</em> con el comando <code class="sourceCode latex"><span class="kw">\section</span></code>. Éstas pueden contener subsecciones: <code class="sourceCode latex"><span class="kw">\subsection</span></code>, y subsubsecciones. Finalmente, tenemos párrafos, <code class="sourceCode latex"><span class="kw">\paragraph</span></code>, y subpárrafos</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -554,6 +554,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<p>Observaciones: - Salvo que el documento que estemos escribiendo sea muy técnico no es recomendable usar más de tres niveles de jerarquía (p.e. <code class="sourceCode latex"><span class="kw">\chapter</span></code>, <code class="sourceCode latex"><span class="kw">\section</span></code> y <code class="sourceCode latex"><span class="kw">\subsection</span></code> en un libro o bien <code class="sourceCode latex"><span class="kw">\section</span></code>, <code class="sourceCode latex"><span class="kw">\subsection</span></code> y <code>\subsubsection</code> en un artículo). No obstante, LaTeX nos proporciona estos 7 niveles de jerarquía. - Los niveles <code class="sourceCode latex"><span class="kw">\paragraph</span></code> y <code class="sourceCode latex">subparagraph</code> difieren de <code class="sourceCode latex"><span class="kw">\section</span></code> <code class="sourceCode latex"><span class="kw">\subsection</span></code> y <code class="sourceCode latex"><span class="kw">\subsubsection</span></code> en que no comienzan una nueva línea. El nivel <code class="sourceCode latex"><span class="kw">\part</span></code> comienza una nueva página en las clases <code>book</code> y <code>report</code> pero no en la clase <code>article</code>. - Si cambios de clase, estos comandos podrían no estar disponibles o bien cambiar su estilo. - El comando <code class="sourceCode latex"><span class="kw">\chapter</span></code> únicamente está disponible en la clase <code>book</code> y siempre comienza una nueva página.</p>
 <p>Véase <a href="http://en.wikibooks.org/wiki/LaTeX/Document_Structure" class="uri">http://en.wikibooks.org/wiki/LaTeX/Document_Structure</a></p>
 </section>
 <section id="listas" class="level3">
