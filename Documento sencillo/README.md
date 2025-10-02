@@ -113,7 +113,7 @@ saltos de línea      no cuentan.
 Una o más líneas en blanco comienzan un nuevo párrafo.
 una línea en blanco. 
 
-También podemos escribir fórmulas en *línea* con el texto: $a^2+b^2=c^2$; o en *bloque*:
+También podemos escribir fórmulas en línea con el texto: $a^2+b^2=c^2$; o en bloque:
 \[
 f(x)=\cos(x)+\frac{1}{x}
 \]
@@ -129,7 +129,7 @@ En dicho proceso puede haber *errores* que deberemos subsanar y se generan una s
 - `.log`: Mensajes del procesador. Contiene los errores, en caso de haberlos, y suele ser mostrado en el editor.
 - `.aux`: Contiene información sobre las referencias, la bibliografía, el índice, etc. para generar las referencias cruzadas y los enlaces en el documento.
 - `.toc`, `.lof`, `.lot`: Información relativa a índices, lista de figuras y lista de tablas.
-- `.bbl`,  `.blg`, `.bst`: Ficheros relacionados con la bibliografía.
+- `.bbl`,  `.blg`, `.bst`: Ficheros auxiliares relacionados con la bibliografía.
 
 ## Título, resumen y tabla de contenidos
 
@@ -162,14 +162,14 @@ La unida básica de estructura es el párrafo que se delimita por al menos una l
 - Una o varias líneas en blanco separan los párrafos. El comando `\par`{.latex} tiene el mismo efecto.
 - LaTeX, por defecto, *sangra* el texto al comienzo de cada párrafo. Esto puede evitarse usando el comando `\noindent`{.latex} al inicio de la línea.
 - `\linebreak`{.latex} o `\\`{.latex} inicia una nueva línea sin completar la línea en curso.
-- `\newpage` inicia una nueva página sin completar la página en curso.
+- `\newpage`{.latex} inicia una nueva página sin completar la página en curso.
 - `\pagebreak`{.latex} fuerza un salto de página.
 
 Los párrafos se pueden alinear a la izquierda (entorno `flushleft`), derecha (entorno `flushright`) o centrados (entorno `center`).
 
 ### Secciones
 
-Podemos organizar un documento jerárquicamente creando diferentes *secciones*  con el comando `\section`{.latex}. Éstas pueden contener subsecciones: `\subsection`{.latex}, y subsubsecciones. Finalmente, tenemos párrafos, `\paragraph`{.latex}, y subpárrafos
+Podemos organizar un documento jerárquicamente creando diferentes *secciones*  con el comando `\section`{.latex}. Éstas pueden contener subsecciones: `\subsection`{.latex}, y subsubsecciones `\subsubsection`{.latex}. Finalmente, tenemos párrafos, `\paragraph`{.latex}, y subpárrafos `\subparagraph`{.latex}. En un nivel jerárquico a las secciones tenemos los capítulos `\chapter`{.latex} (únicamente disponibles para las clases `book` y `report`, ver [clase de documento](../Tipos de documento/about.qmd)) y las *partes* `\part`{.latex}
 
 | Comando          | Nivel |
 | ---------------- | :---: |
@@ -183,10 +183,11 @@ Podemos organizar un documento jerárquicamente creando diferentes *secciones*  
 
 
 Observaciones:
-- Salvo que el documento que estemos escribiendo sea muy técnico no es recomendable usar más de tres niveles de jerarquía (p.e. `\chapter`{.latex}, `\section`{.latex} y `\subsection`{.latex} en un libro o bien `\section`{.latex}, `\subsection`{.latex} y `\subsubsection` en un artículo). No obstante, LaTeX nos proporciona estos 7 niveles de jerarquía.
-- Los niveles `\paragraph`{.latex} y `subparagraph`{.latex} difieren de `\section`{.latex} `\subsection`{.latex} y `\subsubsection`{.latex} en que no comienzan una nueva línea. El nivel `\part`{.latex} comienza una nueva página en las clases `book` y `report` pero no en la clase `article`.
+
+- Salvo que el documento que estemos escribiendo sea muy técnico no es recomendable usar más de tres niveles de jerarquía (p.e. `\chapter`{.latex}, `\section`{.latex} y `\subsection`{.latex} en un libro o bien `\section`{.latex}, `\subsection`{.latex} y `\subsubsection`{.latex} en un artículo). No obstante, LaTeX nos proporciona estos 7 niveles de jerarquía.
+- Los niveles `\paragraph`{.latex} y `\subparagraph`{.latex} difieren de `\section`{.latex} `\subsection`{.latex} y `\subsubsection`{.latex} en que no comienzan una nueva línea. El nivel `\part`{.latex} comienza una nueva página en las clases `book` y `report` pero no en la clase `article`. Ver [clase de documento](../Tipos de documento/about.qmd).
 - Si cambios de clase, estos comandos podrían no estar disponibles o bien cambiar su estilo.
-- El comando `\chapter`{.latex} únicamente está disponible en la clase `book` y siempre comienza una nueva página.
+- El comando `\chapter`{.latex} únicamente está disponible en la clase `book` y `report` y siempre comienza una nueva página.
 
 Véase <http://en.wikibooks.org/wiki/LaTeX/Document_Structure>
 
