@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8c40465eb9fb0e0b4ed722a747840054.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4f6427c58cf66be67f92d2b83404e106.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -89,7 +90,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Sin resultados",
+    "search-no-results-text": "No se han encontrado resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -113,6 +114,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Curso LaTeX Grado Matemáticas UGR</span>
     </a>
@@ -149,6 +152,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -252,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#personalización-de-los-elementos-de-página-en-las-clases-del-paquete-koma-script" id="toc-personalización-de-los-elementos-de-página-en-las-clases-del-paquete-koma-script" class="nav-link" data-scroll-target="#personalización-de-los-elementos-de-página-en-las-clases-del-paquete-koma-script">Personalización de los elementos de página en las clases del paquete KOMA-Script</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar sobre problema</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -290,23 +297,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="nuevas-órdenes-la-orden-newcommand" class="level3">
 <h3 class="anchored" data-anchor-id="nuevas-órdenes-la-orden-newcommand">Nuevas órdenes: la orden <code>\newcommand</code></h3>
 <p>Veamos en primer un ejemplo sencillo. Para escribir en matemáticas el conjunto de los números reales usamos el comando <code>$\mathbb{R}$</code>. Si estamos editando un documento y tenemos que incluir muchas veces dicho conjunto de números es más conveniente definir un comando más corto para ello. Así, si escribimos en el <em>preámbulo</em> de nuestro documento la siguiente línea:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\R</span>}{<span class="fu">\mathbb</span>{R}}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\R</span>}{<span class="fu">\mathbb</span>{R}}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>entonces tendremos a nuestra disposición la nueva orden <code>\R</code> para el conjunto de los números reales.</p>
 <p>La sintaxis para definir un comando nuevo en LaTeX es la siguiente:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\nuevocomando</span>}[n]{definición}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\nuevocomando</span>}[n]{definición}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>donde <code>[n]</code> es un parámetro opcional que indica el número <code>n</code> de <em>argumentos</em> que va a tener el nuevo comando. Si no se especifica nada el comando creado no tendrá argumentos (como en el ejemplo anterior <code>\R</code>). En el siguiente ejemplo se crea un comando que aceptará exactamente dos parámetros</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>[2]{<span class="ex">\parcial</span>}{<span class="fu">\frac</span>{<span class="fu">\partial</span> #1}{<span class="fu">\partial</span> #2}}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>[2]{<span class="ex">\parcial</span>}{<span class="fu">\frac</span>{<span class="fu">\partial</span> #1}{<span class="fu">\partial</span> #2}}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>nos permite escribir <code>\parcial{f}{x}</code> e imprimirá la derivada parcial de la función <code>f</code> con respecto a la variable <code>x</code>. Observemos que los identificadores <code>#1</code> y <code>#2</code> se sustituyen en la definición del comando por el primer y segundo argumento proporcionado.</p>
 <p>La única precaución que tenemos que tener es que el comando que estamos definiendo no puede existir, en cuyo caso LaTeX nos dará un error. Si lo que queremos es realmente cambiar un comando ya existente deberemos usar la orden <code>\renewcommand</code> cuya sintaxis es idéntica a <code>\newcommand</code>.</p>
 </section>
 <section id="entornos-la-orden-newenvironment" class="level3">
 <h3 class="anchored" data-anchor-id="entornos-la-orden-newenvironment">Entornos: la orden <code>\newenvironment</code></h3>
 <p>Para definir un entorno nuevo usaremos la orden <code>\newenvironment</code> cuya sintaxis es la siguiente:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{nombre}[n]{inicio}{fin}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newenvironment</span>{nombre}[n]{inicio}{fin}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>donde <code>[n]</code> es un parámetro opcional que indica el número <code>n</code> de argumentos que va a aceptar el entorno. Una vez definido lo usaremos de la forma habitual:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">nombre</span>}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">nombre</span>}</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Texto</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">nombre</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">nombre</span>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Al igual que ocurría con la definición de un comando, la única precaución que tenemos que tener es que el entorno que estamos definiendo no puede existir, en cuyo caso LaTeX nos dará un error. Si lo que queremos es realmente cambiar un entorno ya existente deberemos usar la orden <code>\renewenvironment</code> cuya sintaxis es idéntica a <code>\newenvironment</code>.</p>
 <p>TODO: hablar del espacio en los entornos con <code>\ignorespace</code> (ver lshort).</p>
 <p>En el archivo <a href="comandosyentornos.tex"><code>comandosyentornos.tex</code></a> podemos ver varios ejemplos diferentes del uso de estos dos tipos de órdenes.</p>
@@ -326,9 +333,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><a href="https://www.ctan.org/pkg/geometry"><code>geometry</code></a>: permite modificar los márgenes de un documento de forma muy sencilla. Por ejemplo, supongamos que tenemos que crear un documento con las siguientes especificaciones: <em>el tamaño del papel será un a4. El texto debe tener 16.5cm de anchura por 22cm de altura. El margen superior debe ser de 3cm y el margen izquierdo 2.3cm. El pie de página debe situarse bajo el área reservada para el texto</em>. Para conseguir dicho documento basta escribir:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[a4paper]{<span class="ex">article</span>}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[a4paper]{<span class="ex">article</span>}</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[total={16.5cm, 22cm},</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            top=3cm, left=2.3cm, includefoot]{<span class="ex">geometry</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            top=3cm, left=2.3cm, includefoot]{<span class="ex">geometry</span>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>donde por supuesto podemos cambiar <code>article</code> por la clase de documento que deseemos. Esto le da al usuario mucho control sobre el diseño de página, pero también mucha responsabilidad, pues deberá saber elegir bien los valores para que el diseño de página sea armonioso.</p>
 <ul>
 <li><code>typearea</code>: El paquete <code>typearea</code> aborda el problema de forma distinta: le proporciona al usuario diversos modos de ajustar el diseño y algoritmos basados en prácticas tipográficas estándar se encargan de recalcular los elementos de la página de forma correcta. En la sección 2.1 del manual de KOMA-Script (página 29) se encuentra una descripción más detallada de cómo funciona este proceso.</li>
@@ -354,9 +361,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Por ejemplo:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">bookman</span>}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">bookman</span>}</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\linespread</span>{1.25}</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[BCOR=5mm, DIV=9]{<span class="ex">typearea</span>}   </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[BCOR=5mm, DIV=9]{<span class="ex">typearea</span>}   </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Además <code>DIV</code> permite también varios valores especiales (ver tabla 2.3 en el manual de KOMA-Script):</p>
 <ul>
 <li><code>default</code>: recalcula el diseño de página con los parámetros por defecto.</li>
@@ -365,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>last</code>: recalcula el diseño de página usando la opción DIV que se usó la última vez. Útil si estamos usando el paquete <code>typearea</code> junto con una clase del paquete KOMA-Script (ver ejemplo más abajo)</li>
 </ul>
 <p>Si usamos una clase del paquete KOMA-Script no es necesario cargar el paquete <code>typearea</code> puesto que la clase de documento se encargará de ello. De hecho las opciones <code>DIV</code> y <code>BCOR</code> deberemos indicarlas en el bloque <code>\KOMAoptions{}</code>. Puesto que la elección de fuente se suele hacer a posteriori deberemos indicarle al paquete <code>typearea</code> que <em>recalcule</em> el diseño de página usando la opción <code>last</code>. Un ejemplo concreto sería el siguiente:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">scrartcl</span>}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">scrartcl</span>}</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\KOMAoptions</span>{</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  fontsize=10pt </span>
@@ -374,14 +381,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">bookman</span>}</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\linespread</span>{1.25}</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[BCOR=5mm, DIV=classic]{<span class="ex">typearea</span>}   <span class="co">% &lt;factor&gt;, calc, classic</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\KOMAoptions</span>{DIV=last} <span class="co">% Alternativamente usar \recalctypearea</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\KOMAoptions</span>{DIV=last} <span class="co">% Alternativamente usar \recalctypearea</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="márgenes-amplios-con-el-paquete-typearea" class="level4">
 <h4 class="anchored" data-anchor-id="márgenes-amplios-con-el-paquete-typearea">Márgenes amplios con el paquete <code>typearea</code></h4>
 <p>Una situación interesante es diseñar una página con espacio para notas al margen (que podemos incluir con el comando <code>\marginpar</code> aunque es mejor usar el paquete <code>sidenote</code>). Para ello debemos <em>ampliar</em> la anchura de dicha sección de la página. Para ello usaremos, por ejemplo,</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\setlength</span>{<span class="fu">\marginparwidth</span>}{2<span class="fu">\marginparwidth</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\setlength</span>{<span class="fu">\marginparwidth</span>}{2<span class="fu">\marginparwidth</span>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>para duplicar la anchura de dicha área (podemos especificar en el segundo argumento cualquier longitud absoluta que queremos, p.e. 3cm)</p>
 <p>Esto deberemos hacerlo tras <em>recalcular</em> el diseño de página pues de lo contrario no será efectivo. Además, para que el cambio sea coherente con el diseño de página deberemos indicar la opción <code>mpinclude</code> en <code>KOMAoptions</code> para que el paquete <code>typearea</code> considere al margen como parte del texto (ya que vamos a usarlo para tal fin incluyendo notas al margen). Un ejemplo completo sería el siguiente:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">scrartcl</span>}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">scrartcl</span>}</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\KOMAoptions</span>{</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  fontsize=10pt </span>
@@ -392,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\linespread</span>{1.25}</span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[BCOR=5mm, DIV=classic]{<span class="ex">typearea</span>}   <span class="co">% &lt;factor&gt;, calc, classic</span></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\KOMAoptions</span>{DIV=last} <span class="co">% Alternativamente usar \recalctypearea</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\setlength</span>{<span class="fu">\marginparwidth</span>}{2<span class="fu">\marginparwidth</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\setlength</span>{<span class="fu">\marginparwidth</span>}{2<span class="fu">\marginparwidth</span>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="personalización-de-los-elementos-de-página-en-las-clases-del-paquete-koma-script" class="level3">
@@ -418,7 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>pagennumber</code> formato para los números de página (comando <code>\footnote</code>)</li>
 </ul>
 <p>El uso de los comandos <code>\setkomafont</code> y <code>\addtokomafont</code> es el siguiente:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\setkomafont</span>{elemento}{valor}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\setkomafont</span>{elemento}{valor}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>donde <em>elemento</em> es uno de la lista anterior y <em>valor</em> es el estilo que queremos aplicar. Entre los valores más habituales están los siguientes:</p>
 <ul>
 <li><code>\rmfamily</code> (roman font), <code>\sffamily</code> (sans-serif font), <code>\ttfamily</code> (monospace font) para el tipo de letra.</li>
@@ -484,13 +491,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -837,4 +845,4 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/latex-mat-ugr/Curso-LaTeX/issues" class="toc-action"><i class="bi bi-github"></i>Informar sobre problema</a></li></ul></div></div></div></footer></body></html>
