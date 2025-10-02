@@ -42,7 +42,7 @@ Entre sus **desventajas**:
 
 - Los documentos de ayuda incluida en la instalación
 - Manual básico: [La introducción no-tan-corta a LaTeX 2ε](https://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf) (la [versión inglesa](https://tobi.oetiker.ch/lshort/lshort.pdf) suele estar más actualizada).
-- (CTAN)[http://ctan.org] (Comprehensive TeX Archive Network): documentación de todos los paquetes
+- [CTAN](http://ctan.org) (Comprehensive TeX Archive Network): documentación de todos los paquetes
 - [The TeX Font Catalogue](https://www.tug.org/FontCatalogue/): documentación sobre las fuentes tipográficas incluidas en la instalación de TeX.
 - [Listas de correo de CervanTeX](http://www.rediris.es/list/info/es-tex.html)
 - Foros, blogs, grupos de noticias, etc. Por ejemplo:
