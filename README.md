@@ -132,11 +132,9 @@ Cada carpeta contiene una descripción en Markdown y HTML (obtenido a partir de 
 
 ## Editores de Markdown
 
-El editor [atom](https://atom.io) es multiplataforma, y tiene un módulo Markdown.
-
 [Visual Studio Code](https://code.visualstudio.com/) puede editar y visualizar Markdown, y tiene muchas extensiones para usar con Markdown.
 
-Para Mac, una buena opción es [MacDown](http://macdown.uranusjr.com), que ya trae integrada [MathJax](http://www.mathjax.org) para renderizar fórmulas en LaTeX. Atom también tiene esa posibilidad, pero hay que instalar el módulo [Markdown Preview Plus](https://atom.io/packages/markdown-preview-plus).
+Para Mac, una buena opción es [MacDown](http://macdown.uranusjr.com), que ya trae integrada [MathJax](http://www.mathjax.org) para renderizar fórmulas en LaTeX. 
 
 Existe además un plug-in para [Chrome](https://www.google.com/chrome/browser/desktop/index.html) para visualizar Markdown: [Markdown preview plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl). Soporta MathJax. Así que podéis usar vuestro editor de textos favorito y luego visualizar el resultado en el navegador.
 
