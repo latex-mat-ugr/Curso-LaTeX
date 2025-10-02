@@ -469,7 +469,7 @@ window.Quarto = {
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>Una o más líneas en blanco comienzan un nuevo párrafo.</span>
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>una línea en blanco. </span>
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>También podemos escribir fórmulas en *línea* con el texto: <span class="ss">$a^2+b^2=c^2$</span>; o en *bloque*:</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>También podemos escribir fórmulas en línea con el texto: <span class="ss">$a^2+b^2=c^2$</span>; o en bloque:</span>
 <span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
 <span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x)=</span><span class="sc">\cos</span><span class="ss">(x)+</span><span class="sc">\frac</span><span class="ss">{1}{x}</span></span>
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span>
@@ -483,7 +483,7 @@ window.Quarto = {
 <li><code>.log</code>: Mensajes del procesador. Contiene los errores, en caso de haberlos, y suele ser mostrado en el editor.</li>
 <li><code>.aux</code>: Contiene información sobre las referencias, la bibliografía, el índice, etc. para generar las referencias cruzadas y los enlaces en el documento.</li>
 <li><code>.toc</code>, <code>.lof</code>, <code>.lot</code>: Información relativa a índices, lista de figuras y lista de tablas.</li>
-<li><code>.bbl</code>, <code>.blg</code>, <code>.bst</code>: Ficheros relacionados con la bibliografía.</li>
+<li><code>.bbl</code>, <code>.blg</code>, <code>.bst</code>: Ficheros auxiliares relacionados con la bibliografía.</li>
 </ul>
 </section>
 <section id="título-resumen-y-tabla-de-contenidos" class="level2">
@@ -515,14 +515,14 @@ window.Quarto = {
 <li>Una o varias líneas en blanco separan los párrafos. El comando <code class="sourceCode latex"><span class="fu">\par</span></code> tiene el mismo efecto.</li>
 <li>LaTeX, por defecto, <em>sangra</em> el texto al comienzo de cada párrafo. Esto puede evitarse usando el comando <code class="sourceCode latex"><span class="fu">\noindent</span></code> al inicio de la línea.</li>
 <li><code class="sourceCode latex"><span class="fu">\linebreak</span></code> o <code class="sourceCode latex"><span class="fu">\\</span></code> inicia una nueva línea sin completar la línea en curso.</li>
-<li><code>\newpage</code> inicia una nueva página sin completar la página en curso.</li>
+<li><code class="sourceCode latex"><span class="fu">\newpage</span></code> inicia una nueva página sin completar la página en curso.</li>
 <li><code class="sourceCode latex"><span class="fu">\pagebreak</span></code> fuerza un salto de página.</li>
 </ul>
 <p>Los párrafos se pueden alinear a la izquierda (entorno <code>flushleft</code>), derecha (entorno <code>flushright</code>) o centrados (entorno <code>center</code>).</p>
 </section>
 <section id="secciones" class="level3">
 <h3 class="anchored" data-anchor-id="secciones">Secciones</h3>
-<p>Podemos organizar un documento jerárquicamente creando diferentes <em>secciones</em> con el comando <code class="sourceCode latex"><span class="kw">\section</span></code>. Éstas pueden contener subsecciones: <code class="sourceCode latex"><span class="kw">\subsection</span></code>, y subsubsecciones. Finalmente, tenemos párrafos, <code class="sourceCode latex"><span class="kw">\paragraph</span></code>, y subpárrafos</p>
+<p>Podemos organizar un documento jerárquicamente creando diferentes <em>secciones</em> con el comando <code class="sourceCode latex"><span class="kw">\section</span></code>. Éstas pueden contener subsecciones: <code class="sourceCode latex"><span class="kw">\subsection</span></code>, y subsubsecciones <code class="sourceCode latex"><span class="kw">\subsubsection</span></code>. Finalmente, tenemos párrafos, <code class="sourceCode latex"><span class="kw">\paragraph</span></code>, y subpárrafos <code class="sourceCode latex"><span class="kw">\subparagraph</span></code>. En un nivel jerárquico a las secciones tenemos los capítulos <code class="sourceCode latex"><span class="kw">\chapter</span></code> (únicamente disponibles para las clases <code>book</code> y <code>report</code>, ver <a href="../Tipos de documento/about.html">clase de documento</a>) y las <em>partes</em> <code class="sourceCode latex"><span class="kw">\part</span></code></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -561,7 +561,13 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Observaciones: - Salvo que el documento que estemos escribiendo sea muy técnico no es recomendable usar más de tres niveles de jerarquía (p.e. <code class="sourceCode latex"><span class="kw">\chapter</span></code>, <code class="sourceCode latex"><span class="kw">\section</span></code> y <code class="sourceCode latex"><span class="kw">\subsection</span></code> en un libro o bien <code class="sourceCode latex"><span class="kw">\section</span></code>, <code class="sourceCode latex"><span class="kw">\subsection</span></code> y <code>\subsubsection</code> en un artículo). No obstante, LaTeX nos proporciona estos 7 niveles de jerarquía. - Los niveles <code class="sourceCode latex"><span class="kw">\paragraph</span></code> y <code class="sourceCode latex">subparagraph</code> difieren de <code class="sourceCode latex"><span class="kw">\section</span></code> <code class="sourceCode latex"><span class="kw">\subsection</span></code> y <code class="sourceCode latex"><span class="kw">\subsubsection</span></code> en que no comienzan una nueva línea. El nivel <code class="sourceCode latex"><span class="kw">\part</span></code> comienza una nueva página en las clases <code>book</code> y <code>report</code> pero no en la clase <code>article</code>. - Si cambios de clase, estos comandos podrían no estar disponibles o bien cambiar su estilo. - El comando <code class="sourceCode latex"><span class="kw">\chapter</span></code> únicamente está disponible en la clase <code>book</code> y siempre comienza una nueva página.</p>
+<p>Observaciones:</p>
+<ul>
+<li>Salvo que el documento que estemos escribiendo sea muy técnico no es recomendable usar más de tres niveles de jerarquía (p.e. <code class="sourceCode latex"><span class="kw">\chapter</span></code>, <code class="sourceCode latex"><span class="kw">\section</span></code> y <code class="sourceCode latex"><span class="kw">\subsection</span></code> en un libro o bien <code class="sourceCode latex"><span class="kw">\section</span></code>, <code class="sourceCode latex"><span class="kw">\subsection</span></code> y <code class="sourceCode latex"><span class="kw">\subsubsection</span></code> en un artículo). No obstante, LaTeX nos proporciona estos 7 niveles de jerarquía.</li>
+<li>Los niveles <code class="sourceCode latex"><span class="kw">\paragraph</span></code> y <code class="sourceCode latex"><span class="kw">\subparagraph</span></code> difieren de <code class="sourceCode latex"><span class="kw">\section</span></code> <code class="sourceCode latex"><span class="kw">\subsection</span></code> y <code class="sourceCode latex"><span class="kw">\subsubsection</span></code> en que no comienzan una nueva línea. El nivel <code class="sourceCode latex"><span class="kw">\part</span></code> comienza una nueva página en las clases <code>book</code> y <code>report</code> pero no en la clase <code>article</code>. Ver <a href="../Tipos de documento/about.html">clase de documento</a>.</li>
+<li>Si cambios de clase, estos comandos podrían no estar disponibles o bien cambiar su estilo.</li>
+<li>El comando <code class="sourceCode latex"><span class="kw">\chapter</span></code> únicamente está disponible en la clase <code>book</code> y <code>report</code> y siempre comienza una nueva página.</li>
+</ul>
 <p>Véase <a href="http://en.wikibooks.org/wiki/LaTeX/Document_Structure" class="uri">http://en.wikibooks.org/wiki/LaTeX/Document_Structure</a></p>
 </section>
 <section id="listas" class="level3">
