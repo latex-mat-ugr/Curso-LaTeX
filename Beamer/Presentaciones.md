@@ -6,7 +6,7 @@ De hecho, Beamer significa videoproyector en alemán.
 
 La principal ventaja es que el contenido de la transparencia se escribirá en código $\LaTeX$ al igual que se hace en un artículo o en un libro por lo que permite "reciclar" material ya editado préviamente. Esto simplifica mucho nuestra labor ya que, en este caso, hay seleccionar información que se incluirá en las transparencias y diseñar cómo aparecerá (posibilidad de incluir efectos dinámicos).
 
-A continuación mostramos un ejemplo básico de documento Beamer en sobre el que basaremos nuestra presentación.
+A continuación mostramos un ejemplo básico de documento Beamer sobre el que basaremos nuestra presentación.
 
 
 ```latex
@@ -62,7 +62,7 @@ si se quiere que el logo aparezca únicamente en el título o bien
 ```
 si lo que se quiere es que el logo aparezca en todas las páginas donde el tema lo tenga declarado.
 
-En la plantilla anterior la primera transparencia declarada en un entorno `frame` se crea de manera autormática con el comando `titlepage`a partir de la 
+En la plantilla anterior la primera transparencia, declarada en un entorno `frame`, se crea de manera autormática con el comando `titlepage` a partir de la 
 información declarada en el preámbulo.
 
 De manera análoga se ha generado una segunda transparencia con el índice de la presentación mediante el comando `tableofcontents`. En este aparecerán los títulos de las secciones o subsecciones que se hayan declarado en la presentación de la misma manera que se hace en cualquier otro tipo de documento generado con $\LaTeX$.
@@ -71,7 +71,7 @@ De manera análoga se ha generado una segunda transparencia con el índice de la
 ## Organización del mensaje
 
 Como ya se ha comentado, el entorno Beamer permite mostrar cualquier contenido escrito en $\LaTeX$. 
-Eso sí, tendremos que dividir estos contenidos en las diferentes diapositivas que vayamos a presentar empleando para ello entornos `frame`como el siguiente
+Eso sí, tendremos que dividir estos contenidos en las diferentes diapositivas que vayamos a presentar empleando para ello entornos `frame` como el siguiente
 ```latex
 \begin{frame}{Beamer admite escritura en \LaTeX\ y más:}
 \begin{enumerate}
@@ -91,7 +91,7 @@ Nombre & Pepe & Juan & Manuel\\ \hline
 \end{frame}
 ```
 
-No obstante, presenta algunas funcionalidades extra que, empleadas en una presentación, pueden servir para potenciar el mensaje.
+No obstante, Beamer tiene algunas funcionalidades extra que, empleadas en una presentación, pueden servir para potenciar el mensaje.
 
 ### Encapsulado de contenidos en bloques
 La clase Beamer predefine unos entornos de tipo `block` que sirven para encapsular contenidos con un encabezamiento. Los temas determinan distintos diseños del bloque dependiendo de que sean de tipo:
@@ -151,15 +151,15 @@ Beamer permite ir mostrando los contenidos poco a poco mediante el comando `paus
 ```
 
 
-No obstante, como se ha visto en los ejemplos anteriores, se puede obtener un control mucho mayor empleando `especificadores de acción`,  modificadores opcionales de la forma `<action>`. Así por ejemplo 
+No obstante, como se ha visto en los ejemplos anteriores, se puede obtener un control mucho mayor empleando `especificadores de acción`,  modificadores opcionales de la forma `<action>`. Así por ejemplo:
+
   - `<2->` implica que dicho objeto se añadirá a la transparencia a partir de la segunda transparencia en adelante, 
   - `<uncover@2>` inplica qu el objeto se ha introducido desde la primera transparencia, pero se mostrará a partir de la segunda
   - mientras que 
 `<only@2>`implica que estará presente únicamente en la segunda transparencia (no aparece ni en la primera ni de la tercera en adelante).
 
 
-Otra opción interesante es crear animaciones simples donde cada imagen de la animación la 
-tenemos guardada en un fichero distinto:
+Otra opción interesante es crear animaciones simples donde cada imagen de la animación se hace aparecer en una transparencia distinta:
 
 ```latex
 \begin{frame}{Animación mediante especificadores de acción}
