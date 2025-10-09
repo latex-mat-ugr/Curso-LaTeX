@@ -2,70 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Beamer/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.803Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Documento sencillo/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.806Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Objetos flotantes/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.827Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Markdown/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Bibliografia/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.805Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Matematicas/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Graficos/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.815Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Plantillas TFG y TFM/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.829Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Personalizacion/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.828Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/index.html</loc>
-    <lastmod>2025-10-02T08:20:06.835Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Tipos de documento/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.830Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Matematicas/matematicas.html</loc>
-    <lastmod>2025-10-02T08:20:06.826Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Recomendaciones/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.830Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.835Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Paquetes/about.html</loc>
-    <lastmod>2025-10-02T08:20:06.828Z</lastmod>
-  </url>
-  <url>
-    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Objetos flotantes/Readme.html</loc>
-    <lastmod>2025-10-02T08:20:06.827Z</lastmod>
+    <lastmod>2025-10-09T06:53:14.584Z</lastmod>
   </url>
   <url>
     <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Documento sencillo/taller.html</loc>
-    <lastmod>2025-10-02T08:20:06.810Z</lastmod>
+    <lastmod>2025-10-09T06:53:14.591Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Objetos flotantes/Readme.html</loc>
+    <lastmod>2025-10-09T06:53:14.608Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Paquetes/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.609Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.616Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Recomendaciones/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.611Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Matematicas/matematicas.html</loc>
+    <lastmod>2025-10-09T06:53:14.607Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Tipos de documento/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.611Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/index.html</loc>
+    <lastmod>2025-10-09T06:53:14.616Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Personalizacion/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.609Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Plantillas TFG y TFM/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.610Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Graficos/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.596Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Matematicas/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.606Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Bibliografia/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.586Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Markdown/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.606Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Objetos flotantes/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.608Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Documento sencillo/about.html</loc>
+    <lastmod>2025-10-09T06:53:14.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://latex-mat-ugr.github.io/Curso-LaTeX/Beamer/Presentaciones.html</loc>
+    <lastmod>2025-10-09T06:53:14.584Z</lastmod>
   </url>
 </urlset>
