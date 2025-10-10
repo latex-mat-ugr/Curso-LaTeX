@@ -1,12 +1,14 @@
 
 # Matemáticas
 
-
 Hay dos formas de escribir matemáticas: en la misma línea o centrado en una línea separada.
+
 * Para escribir matemáticas *en línea* agrupamos el texto entre dólares. Por ejemplo,
+
 ```latex
 $\cos(x+y)^{2}=\sqrt{2+x^2}$
 ```
+
 produce $\cos(x+y)^{2}=\sqrt{2+x^2}$.
 * Para escribir matemáticas centradas en una línea separada, agrupamos la fórmula entre `\[ \]` o con dólares dobles. Es recomendable la primera opción. Por ejemplo
 ```latex

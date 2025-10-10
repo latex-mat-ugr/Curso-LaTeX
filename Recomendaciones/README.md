@@ -2,7 +2,6 @@ A continuación damos una lista de recomendaciones a seguir al elaborar un docum
 
 Es conveniente consultar también la guía [Ortotipografía y notaciones matemáticas](https://www.texnia.com/archive/ortomatem.pdf) donde se analiza de forma más exhaustiva el uso de los símbolos matemáticos en un texto.
 
-
 ## Estructura
 
 Consultar la sección [Tipos de documento](../Tipos de documento/about.qmd) para más información.
@@ -58,7 +57,6 @@ Consultar la sección [Tipos de documento](../Matematicas/about.qmd) para más i
 	\end{proof}
 	```
 
-
 ## Referencias
 
 Consultar la sección [Bibliografía](../Bibliografia/about.qmd) para conocer cómo incluir referencias bibliográficas en un documento LaTeX.
@@ -70,8 +68,7 @@ Consultar la sección [Bibliografía](../Bibliografia/about.qmd) para conocer c�
 	Enunciado
 	\end{teorema}
 	```
-- *Estilo*: al incluir una referencia y hacer mención expresa los autores, p. ej. en `Do Carmo \cite{doCarmo92}` es recomendable añadir el símbolo `~` entre el nombre del autor y el comando `\cite`. Dicho símbolo evita que LaTeX separe en distintas líneas distintas el nombre del autor y su referencia. De forma similar, al incluir una referencia con `\ref` también se hace uso del mismo símbolo, p. ej. `Ver teorema~\ref{thm:DoCarmo}`.
-
+- *Estilo*: al incluir una referencia y hacer mención expresa los autores, p. ej. en `Do Carmo \cite{doCarmo92}` es recomendable añadir el símbolo `~` entre el nombre del autor y el comando `\cite`. Dicho símbolo evita que LaTeX separe en distintas líneas distintas el nombre del autor y su referencia. De forma similar, al incluir una referencia con `\ref` también se hace uso del mismo símbolo, p. ej. `Ver teorema~\ref{thm:DoCarmo}`. En general, es recomendable usar el símbolo `~` para evitar que LaTeX separe cualquier elemento numerado (fórmulas, teoremas, figuras, tablas,...) del número que lo identifica.
 
 ## LaTeX
 

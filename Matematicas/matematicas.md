@@ -162,14 +162,14 @@ Puedes escribir subíndices y superíndices de la siguiente forma:
 
 ```latex
 \[
-  n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
+  n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty} f(x)
 \]
 ```
 
 que da como resultado
 
 $$
-n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
+n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty} f(x)
 $$
 
 Se pueden anidar y usar subíndices y superíndices al mismo tiempo:
@@ -271,9 +271,9 @@ Un uso habitual de este entorno es definir funciones a trozos: suelen tener una 
 $$
   f(x) =
   \begin{cases}
-   1+x^2, & \text{si $x<0$,}\\
-   e^x,  & \text{si $x>0$,}\\
-   1, & \text{si $x=0$.}
+   1+x^2 & \text{si $x<0$,}\\
+   e^x  & \text{si $x>0$,}\\
+   1 & \text{si $x=0$.}
 \end{cases}
 $$
 
@@ -529,7 +529,7 @@ En las siguientes tablas están algunos de los símbolos más comunes. La lista 
 
 |          |          |           |           |           |           |             |             |
 | -------- | -------- | --------- | --------- | --------- | --------- | ----------- | ----------- |
-| `\times` | $\times$ | `\div`    | $\div$    | `\cup`    | $\cup$    | `\cap`      | $\cap       |
+| `\times` | $\times$ | `\div`    | $\div$    | `\cup`    | $\cup$    | `\cap`      | $\cap$       |
 | `\leq`   | $\leq$   | `\geq`    | $\geq$    | `\neq`    | $\neq$    | `\perp`     | $\perp$     |
 | `\in`    | $\in$    | `\notin`  | $\notin$  | `\subset` | $\subset$ | `\subseteq` | $\subseteq$ |
 | `\oplus` | $\oplus$ | `\otimes` | $\otimes$ | `\equiv`  | $\equiv$  | `\cong`     | $\cong$     |
@@ -569,7 +569,7 @@ x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 \end{gather}
 $$
 
-El segundo, multline, alinea la primera fórmula a la izquierda, la última a la
+El segundo, multline, alinea la primera fórmula a la izquierda, la última a la 
 derecha y las intermedias, si las hay, las centra.
 
 ```latex
@@ -596,22 +596,17 @@ las columnas. Además de `\\` para añadir una línea nueva, `&` se usa para sep
 En primer lugar, *align* muestra las columnas centradas.
 
 ```latex
-\[ \left.
 \begin{align}
  x+y & = 6 \\
 2x-3y & = 4
 \end{align}
-\right\}
-\]
-````
+```
 
 $$
-\left.
 \begin{align}
  x+y & = 6 \\
 2x-3y & = 4
 \end{align}
-\right\}
 $$
 
 *flalign* es una variante de align que alinea a la izquierda la primera
@@ -633,9 +628,7 @@ $$
 \end{flalign}
 $$
 
-Por último, *alignat*, que tiene un comportamiento un poco distinto: hay
-que decir cuántas columnas hay y añadir los espacios entre ellas
-manualmente.
+Por último, *alignat*, que tiene un comportamiento un poco distinto: hay que decir cuántas columnas hay y añadir los espacios entre ellas manualmente.
 
 ```latex
 \[
