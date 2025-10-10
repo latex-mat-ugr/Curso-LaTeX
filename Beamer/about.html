@@ -325,7 +325,7 @@ window.Quarto = {
 <h1>Presentaciones con Beamer</h1>
 <p>Al igual que en <span class="math inline">\(\LaTeX\)</span> existen clases para escribir artículos o libros existe la clase Beamer que es específica para generar presentaciones en formato PDF. De hecho, Beamer significa videoproyector en alemán.</p>
 <p>La principal ventaja es que el contenido de la transparencia se escribirá en código <span class="math inline">\(\LaTeX\)</span> al igual que se hace en un artículo o en un libro por lo que permite “reciclar” material ya editado préviamente. Esto simplifica mucho nuestra labor ya que, en este caso, hay seleccionar información que se incluirá en las transparencias y diseñar cómo aparecerá (posibilidad de incluir efectos dinámicos).</p>
-<p>A continuación mostramos un ejemplo básico de documento Beamer en sobre el que basaremos nuestra presentación.</p>
+<p>A continuación mostramos un ejemplo básico de documento Beamer sobre el que basaremos nuestra presentación.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">beamer</span>}</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">% Este es el contenido del fichero presentacion.tex</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetheme</span>{Berlin}</span>
@@ -364,12 +364,12 @@ window.Quarto = {
 <p>si se quiere que el logo aparezca únicamente en el título o bien</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\logo</span>{<span class="bu">\includegraphics</span>[width=2cm]{<span class="ex">./ugr.png</span>}}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>si lo que se quiere es que el logo aparezca en todas las páginas donde el tema lo tenga declarado.</p>
-<p>En la plantilla anterior la primera transparencia declarada en un entorno <code>frame</code> se crea de manera autormática con el comando <code>titlepage</code>a partir de la información declarada en el preámbulo.</p>
+<p>En la plantilla anterior la primera transparencia, declarada en un entorno <code>frame</code>, se crea de manera autormática con el comando <code>titlepage</code> a partir de la información declarada en el preámbulo.</p>
 <p>De manera análoga se ha generado una segunda transparencia con el índice de la presentación mediante el comando <code>tableofcontents</code>. En este aparecerán los títulos de las secciones o subsecciones que se hayan declarado en la presentación de la misma manera que se hace en cualquier otro tipo de documento generado con <span class="math inline">\(\LaTeX\)</span>.</p>
 </section>
 <section id="organización-del-mensaje" class="level2">
 <h2 class="anchored" data-anchor-id="organización-del-mensaje">Organización del mensaje</h2>
-<p>Como ya se ha comentado, el entorno Beamer permite mostrar cualquier contenido escrito en <span class="math inline">\(\LaTeX\)</span>. Eso sí, tendremos que dividir estos contenidos en las diferentes diapositivas que vayamos a presentar empleando para ello entornos <code>frame</code>como el siguiente</p>
+<p>Como ya se ha comentado, el entorno Beamer permite mostrar cualquier contenido escrito en <span class="math inline">\(\LaTeX\)</span>. Eso sí, tendremos que dividir estos contenidos en las diferentes diapositivas que vayamos a presentar empleando para ello entornos <code>frame</code> como el siguiente</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">frame</span>}{Beamer admite escritura en <span class="fu">\LaTeX\ </span>y más:}</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> Fórmulas: </span>
@@ -386,7 +386,7 @@ window.Quarto = {
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> y cualquier otro contenido...</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">frame</span>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>No obstante, presenta algunas funcionalidades extra que, empleadas en una presentación, pueden servir para potenciar el mensaje.</p>
+<p>No obstante, Beamer tiene algunas funcionalidades extra que, empleadas en una presentación, pueden servir para potenciar el mensaje.</p>
 <section id="encapsulado-de-contenidos-en-bloques" class="level3">
 <h3 class="anchored" data-anchor-id="encapsulado-de-contenidos-en-bloques">Encapsulado de contenidos en bloques</h3>
 <p>La clase Beamer predefine unos entornos de tipo <code>block</code> que sirven para encapsular contenidos con un encabezamiento. Los temas determinan distintos diseños del bloque dependiendo de que sean de tipo: <code>block</code> (bloque normal), <code>alertblock</code> o <code>exampleblock</code></p>
@@ -433,8 +433,13 @@ window.Quarto = {
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\item</span> 4 no es primo (<span class="fu">\alert</span>{tres} divisores: 1, 2, y 4).</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">frame</span>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>No obstante, como se ha visto en los ejemplos anteriores, se puede obtener un control mucho mayor empleando <code>especificadores de acción</code>, modificadores opcionales de la forma <code>&lt;action&gt;</code>. Así por ejemplo - <code>&lt;2-&gt;</code> implica que dicho objeto se añadirá a la transparencia a partir de la segunda transparencia en adelante, - <code>&lt;uncover@2&gt;</code> inplica qu el objeto se ha introducido desde la primera transparencia, pero se mostrará a partir de la segunda - mientras que <code>&lt;only@2&gt;</code>implica que estará presente únicamente en la segunda transparencia (no aparece ni en la primera ni de la tercera en adelante).</p>
-<p>Otra opción interesante es crear animaciones simples donde cada imagen de la animación la tenemos guardada en un fichero distinto:</p>
+<p>No obstante, como se ha visto en los ejemplos anteriores, se puede obtener un control mucho mayor empleando <code>especificadores de acción</code>, modificadores opcionales de la forma <code>&lt;action&gt;</code>. Así por ejemplo:</p>
+<ul>
+<li><code>&lt;2-&gt;</code> implica que dicho objeto se añadirá a la transparencia a partir de la segunda transparencia en adelante,</li>
+<li><code>&lt;uncover@2&gt;</code> inplica qu el objeto se ha introducido desde la primera transparencia, pero se mostrará a partir de la segunda</li>
+<li>mientras que <code>&lt;only@2&gt;</code>implica que estará presente únicamente en la segunda transparencia (no aparece ni en la primera ni de la tercera en adelante).</li>
+</ul>
+<p>Otra opción interesante es crear animaciones simples donde cada imagen de la animación se hace aparecer en una transparencia distinta:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">frame</span>}{Animación mediante especificadores de acción}</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>&lt;1&gt;[height=2.5cm]{ugr.png}<span class="co">%</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>&lt;2&gt;[height=3cm]{ugr.png}<span class="co">%</span></span>

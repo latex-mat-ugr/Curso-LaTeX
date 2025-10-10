@@ -479,11 +479,11 @@ window.Quarto = {
 <p>produce <span class="math inline">\(a + b\)</span>, <span class="math inline">\(a - b\)</span>, <span class="math inline">\(-a\)</span>, <span class="math inline">\(a / b\)</span>, <span class="math inline">\(a b\)</span>, <span class="math inline">\(a \cdot b\)</span>, <span class="math inline">\(a \times b\)</span>, <span class="math inline">\(a \div b\)</span>.</p>
 <p>Puedes escribir subíndices y superíndices de la siguiente forma:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  n^{2}, x^{1/x}, x_{n}, </span><span class="sc">\lim</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  n^{2}, x^{1/x}, x_{n}, </span><span class="sc">\lim</span><span class="ss">_{x </span><span class="sc">\to</span><span class="ss"> </span><span class="sc">\infty</span><span class="ss">} f(x)</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>que da como resultado</p>
 <p><span class="math display">\[
-n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
+n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty} f(x)
 \]</span></p>
 <p>Se pueden anidar y usar subíndices y superíndices al mismo tiempo:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[</span></span>
@@ -554,9 +554,9 @@ n^{2}, x^{1/x}, x_{n}, \lim_{x \to \infty}
 <p><span class="math display">\[
   f(x) =
   \begin{cases}
-   1+x^2, &amp; \text{si $x&lt;0$,}\\
-   e^x,  &amp; \text{si $x&gt;0$,}\\
-   1, &amp; \text{si $x=0$.}
+   1+x^2 &amp; \text{si $x&lt;0$,}\\
+   e^x  &amp; \text{si $x&gt;0$,}\\
+   1 &amp; \text{si $x=0$.}
 \end{cases}
 \]</span></p>
 <p>Si la fórmula que define la función es muy alta se puede usar <code>dcases</code> en lugar de <code>cases</code> de forma análoga a las fracciones.</p>
@@ -1005,7 +1005,7 @@ f(x)=x^2,\text{ si $x&gt;0$ y $\cos(x)$ en otro caso}
 <td><code>\cup</code></td>
 <td><span class="math inline">\(\cup\)</span></td>
 <td><code>\cap</code></td>
-<td>$</td>
+<td><span class="math inline">\(\cap\)</span></td>
 </tr>
 <tr class="even">
 <td><code>\leq</code></td>
@@ -1085,20 +1085,15 @@ x+y+z_1 + \lim_{x \to 0} \int_{0}^{x^2} f(x)\,\mathrm{d}x +
 <h3 class="anchored" data-anchor-id="entornos-alineados">Entornos alineados</h3>
 <p>Hay varios entornos de este tipo, dependiendo de cómo estén alineadas las columnas. Además de <code>\\</code> para añadir una línea nueva, <code>&amp;</code> se usa para separar las columnas.</p>
 <p>En primer lugar, <em>align</em> muestra las columnas centradas.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ss">\[ </span><span class="sc">\left</span><span class="ss">.</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y &amp; = 6 </span><span class="sc">\\</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="ss">2x-3y &amp; = 4</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="sc">\right\}</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="ss">\]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="ss"> x+y &amp; = 6 </span><span class="sc">\\</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="ss">2x-3y &amp; = 4</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span class="math display">\[
-\left.
 \begin{align}
 x+y &amp; = 6 \\
 2x-3y &amp; = 4
 \end{align}
-\right\}
 \]</span></p>
 <p><em>flalign</em> es una variante de align que alinea a la izquierda la primera columna y a la derecha la última</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
