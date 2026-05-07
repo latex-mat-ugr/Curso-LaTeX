@@ -18,7 +18,7 @@
 \usetikzlibrary{babel,shapes,arrows}
 % PGFPlots
 \usepackage{pgfplots}
-\pgfplotsset{width=6cm,compat=1.12} %{compat=yourversion}
+\pgfplotsset{width=6cm,compat=1.16} %{compat=yourversion}
 %paquete chemfig: gráficos de química
 \usepackage{chemfig}
 %paquete Wrapfig
@@ -108,7 +108,11 @@ directamente desde el entorno picture
 \end{picture}
 \end{center}
 
-Inconvenientes: es muy básico y limitado.
+Inconvenientes: es básico y limitado.
+\hfill
+\href{https://es.overleaf.com/learn/latex/Picture_environment}{\color{blue}Picture environment (Overleaf)}
+
+
 \end{frame}
 
 
@@ -158,6 +162,7 @@ Cuerpo:
 \end{tikzpicture}
 \end{minted}
 \vspace{1cm}
+\href{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Basic_Drawing}{\color{blue}LaTeX Graphics using TikZ (Overleaf)}\\
 \href{https://cremeronline.com/LaTeX/minimaltikz.pdf}{\color{blue}A very minimal introduction to TikZ}\\
 \href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusi%C3%B3n_de_gr%C3%A1ficos/Gr%C3%A1ficos_con_TikZ}{\color{blue}Manual de LaTeX/Inclusión de gráficos/Gráficos con TikZ}
 \end{frame}
@@ -167,9 +172,12 @@ Cuerpo:
 \begin{wrapfigure}{r}{4cm}
 \begin{tikzpicture}
 \draw[<->, line width = 1pt]  (3.5,0) --(0,0) -- (0,1.5);
-\draw [blue, domain=0:pi]  plot (\x, {sin(\x r)*exp(\x/exp(2*pi))});
+\draw [blue, domain=0:pi]  plot (\x, {sin(\x r)*exp(\x/(2*pi))});
+\foreach \x in {0,1,2,3,4}
+   \draw (pi /4. * \x  cm,1pt) -- (pi / 4.* \x  cm,-1pt) 
+   node[anchor=north] {$\frac{\x \pi}{4}$};
 \end{tikzpicture}
-\caption{Gr\'afico sencillo TikZ}
+\caption{Gr\'afico TikZ}
 \end{wrapfigure}
 $ $
 \vspace{-1.5cm }
@@ -183,9 +191,15 @@ Cuerpo:
 \draw[<->, line width = 1pt] 
 (3.5,0) --(0,0) -- (0,1.5);
 \draw [blue, domain=0:pi] 
-plot (\x, {sin(\x r)*exp(\x/exp(2*pi))});
+plot (\x, {sin(\x r)*exp(\x/(2*pi))});
+\foreach \x in {0,1,2,3,4}
+   \draw (pi /4. * \x cm,1pt) -- (pi /4. * \x cm,-1pt) 
+   node[anchor=north] {$\frac{\x \pi}{4}$};
 \end{tikzpicture}
 \end{minted}
+% anchor=north se usa para indicar que el nuevo nodo tenga en su norte al último 
+% punto donde se ha hecho algo. 
+% Ver  https://tikz.dev/tikz-shapes#sec-17.5.1
 %\vspace{2cm}
 %\href{https://cremeronline.com/LaTeX/minimaltikz.pdf}{\color{blue}A very minimal introduction to TikZ}\\
 %\href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusi%C3%B3n_de_gr%C3%A1ficos/Gr%C3%A1ficos_con_TikZ}{\color{blue}Manual de LaTeX/Inclusión de gráficos/Gráficos con TikZ}
@@ -225,35 +239,35 @@ Un primer ejemplo puede ser \href{http://pgfplots.net}{\color{blue}pgfplots} par
 Añadir al pre\'ambulo:
 \begin{minted}{latex}
 \usepackage{pgfplots}
-\pgfplotsset{width=6cm,compat=1.12}
+\pgfplotsset{width=6cm,compat=1.16}
 \end{minted}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
-\begin{wrapfigure}{r}{6cm}
-\begin{tikzpicture} 
-\begin{axis}[ ]
-% density of Normal distribution:
-\addplot[red, domain=0:4,
-   samples=201]
-   {exp((-(x-2)^2)/2) / sqrt(2*pi)};
-\end{axis}
-\end{tikzpicture}
-\caption{Representaci\'on funci\'on}
-\end{wrapfigure}
-$ $ \vspace{3cm}
-\begin{minted}{latex}
-\begin{tikzpicture} 
-\begin{axis}[ ]
-\addplot[ red, 
-  domain=0:4,
-  samples=201]
-  {exp((-(x-2)^2)/2) / sqrt(2*pi)};
-\end{axis}
-\end{tikzpicture}
-\end{minted}
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
+%\begin{wrapfigure}{r}{6cm}
+%\begin{tikzpicture} 
+%\begin{axis}[ ]
+%% density of Normal distribution:
+%\addplot[red, domain=0:4,
+%   samples=201]
+%   {exp((-(x-2)^2)/2) / sqrt(2*pi)};
+%\end{axis}
+%\end{tikzpicture}
+%\caption{Representaci\'on funci\'on}
+%\end{wrapfigure}
+%$ $ \vspace{3cm}
+%\begin{minted}{latex}
+%\begin{tikzpicture} 
+%\begin{axis}[ ]
+%\addplot[ red, 
+%  domain=0:4,
+%  samples=201]
+%  {exp((-(x-2)^2)/2) / sqrt(2*pi)};
+%\end{axis}
+%\end{tikzpicture}
+%\end{minted}
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Representaci\'on de funciones en TikZ con PGFPlots}
@@ -296,7 +310,7 @@ legend pos=north west]
 \begin{wrapfigure}{r}{5cm}
 \begin{tikzpicture}
 \begin{axis}[
-   title=\'Orbita,
+   title=Órbita,
    xlabel={$p(t)$},
    ylabel={$p'(t)$},
 ]
@@ -310,9 +324,9 @@ $ $ %\vspace{1cm}
 \begin{minted}{latex}
 \begin{tikzpicture}
 \begin{axis}[
-   title=Datos externos,
-   xlabel={$x$},
-   ylabel={$y$},
+   title=Órbita,
+   xlabel={$p(t)$},
+   ylabel={$p'(t)$},
 ]
 \addplot[blue] table 
 {./graficos/type1Orbit.table};
@@ -354,20 +368,62 @@ $ $ %\vspace{1cm}
 \end{axis}
 \end{tikzpicture}
 \end{minted}
+
+\href{https://www.overleaf.com/learn/latex/Pgfplots_package}{\color{blue} Pgfplots package (Overleaf)}
+
 \end{frame}
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Generaci\'on de diagramas de barras con PGFPlots}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[
+	x tick label style={
+		/pgf/number format/1000 sep=},
+	ylabel=Year,
+	enlargelimits=0.05,
+	legend style={at={(0.5,-0.2)},
+	anchor=north,legend columns=-1},
+	ybar interval=0.7,
+]
+\addplot 
+	coordinates {(2012,408184) (2011,408348)
+		 (2010,414870) (2009,412156)};
+\addplot 
+	coordinates {(2012,388950) (2011,393007) 
+		(2010,398449) (2009,395972)};
+\legend{Men,Women}
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\href{https://www.overleaf.com/learn/latex/Pgfplots_package}{\color{blue} Pgfplots package (Overleaf)}
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{El paquete chemfig}
 Este uso se está extendiendo en \'areas distintas a la Física o las Matemática como por ejemplo el paquete \href{https://www.ctan.org/pkg/chemfig}{\color{blue} chemfig} en \href{https://www.ctan.org/search/index?phrase=chemistry&offset=48&max=16}{\color{blue}Química}
 \begin{wrapfigure}{r}{4cm}
+
 \chemfig{C(-[:0]H)(-[:90]H)(-[:180]H)(-[:270]H)}
 \vspace{0.5cm}
 
 \chemfig{A*5(-B=C-D-E=)}
 \caption{Gr\'aficos química}
 \end{wrapfigure}
+
+Preámbulo;
+
+\begin{minted}{latex}
+\usepackage{chemfig}
+\end{minted}
+
+Código:
+
 \begin{minted}{latex}
 
 \chemfig{C(-[:0]H)(-[:90]H)
@@ -497,13 +553,13 @@ child {node {Arthoropoda} [sibling distance=4cm]
 
 \section{Exportar a \LaTeX{}  desde un programa externo}
 
-\begin{frame}{Exportar a \LaTeX{} desde un programa externo}
+\begin{frame}[fragile]{Exportar a \LaTeX{} desde un programa externo}
 Debido a la progresiva implantaci\'on de \LaTeX  son  numerosos los programas que 
 dan la posibilidad de exportar gr\'aficos  generados con ellos bien a TikZ
 \begin{enumerate}
 \item \href{https://ctan.org/pkg/gnuplottex}{\color{blue} gnuplot}
 \item \href{https://mcj.sourceforge.net/latex_and_xfig.html}{\color{blue} Xfig} {\small (versi\'on para Windows: WinFIG)}, 
-\item \href{http://www.geogebra.org/cms/}{\color{blue} GeoGebra}
+\item \href{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_2)%E2%80%94Generating_TikZ_Code_from_GeoGebra}{\color{blue} GeoGebra}
 
 \end{enumerate}
 o bien a PSTricks
@@ -516,7 +572,7 @@ o bien a PSTricks
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Exportar a TikZ desde Geogebra}
+\begin{frame}[fragile]{Exportar a TikZ desde Geogebra}
 %\begin{exampleblock}{Ejemplo: Exportar a TIKZ  un gr\'afico con un programa externo}
 \href{http://www.geogebra.org/cms/}{\color{blue} GeoGebra} es un programa especialmente sencillo para
 realizar  gr\'aficos.
@@ -621,9 +677,13 @@ realizar  gr\'aficos.
 \end{scriptsize}
 \end{tikzpicture}
 
-Nota: Ofrece la posibilidad de exportar el gr\'afico
+Nota: Ofrece la posibilidad de exportar el grafico
 que acabamos de realizar (puede dar errores no sencillos de detectar/corregir).
 %\end{exampleblock}
+
+\href{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_2)%E2%80%94Generating_TikZ_Code_from_GeoGebra}{\color{blue} Generating TikZ Code from Geogebra (Overleaf)}
+
+
 \end{frame}
 
 
@@ -639,7 +699,7 @@ audiencia heterogénea lo mejor es mostrar dónde y cómo localizarlos
 
 \href{https://github.com/pgf-tikz/pgf}{\color{blue}https://github.com/pgf-tikz/pgf}
 
-\href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusión_de_gráficos/Gráficos_con_TikZ}{\color{blue}Wikibooks: Gráficos con Tikz}
+\href{https://es.wikibooks.org/wiki/Manual_de_LaTeX/Inclusi%C3%B3n_de_gr%C3%A1ficos/Gr%C3%A1ficos_con_TikZ}{\color{blue}Wikibooks: Gráficos con Tikz}
 
 \href{http://www.texample.net/tikz/examples/}{\color{blue}http://www.texample.net/tikz/examples/}
 
