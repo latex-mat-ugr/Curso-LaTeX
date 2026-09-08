@@ -41,7 +41,7 @@ Los pasos para incluir la bibliografía de esta forma son los siguientes:
     ```
     donde recordemos que `referencias.bib` es el fichero de referencias creado en el punto anterior y ubicado **en la misma carpeta** que el documento `.tex` que estemos procesando.
 
-3. Compilar el fichero primer con `LaTeX` y luego con `bibTeX` (en [TeXstudio](https://www.texstudio.org) u [Overleaf](https://www.overleaf.com) no es necesario compilar con `bibtex` necesario aunque sí lo es en otros editores). 
+3. Compilar el fichero primer con `LaTeX` y luego con `bibTeX` (en [TeXstudio](https://www.texstudio.org) u [Overleaf](https://www.overleaf.com) no es necesario compilar con `bibtex` necesario aunque sí lo es en otros editores).
 
 Aunque nuestro fichero `referencias.bib` contenga muchas referencias únicamente se añadiran al documento aquellas que hayamos *citado* (es decir, aquellas cuyas etiquetas aparezcan entro de un comando `\cite` en alguna parte del documento). Si queremos añadir una referencia que no aparece citada en el documento usaremos el comando `\nocite{etiqueta}`, donde `etiqueta` es la etiqueda de la referencia (primer elemento en la entrada `bibTeX` de la referencia). Si queremos producir un documento con **todas** las referencias que figuran en `referencias.bib` deberemos incluir el comando `\nocite{*}`.
 
