@@ -2,11 +2,11 @@
 
 Todo documento de LaTeX comienza con la declaración de la *clase* o *tipo de documento* mediante el comando `\documentclass`. Existen [multitud de clases](https://ctan.org/topic/class) distintas según el propósito del documento. Describiremos aquí algunas de las más utilizadas.
 
-## Clases básicos de LaTeX
+## Clases básicas de LaTeX
 Las clases básicas en LaTeX son:
 
-- `article`: Para artículos en revistas científicas, informes,...
-- `report`: para pequeños libros, informes largos,...
+- `article`: Para artículos en revistas científicas, informes, ...
+- `report`: para pequeños libros, informes largos, ...
 - `book`: para libros
 
 Los documentos se estructuran en diferentes secciones. La clase `article` permite los siguientes comandos de estructura (de mayor a menor nivel):
@@ -17,7 +17,7 @@ Los documentos se estructuran en diferentes secciones. La clase `article` permit
 1. `\paragraph{}`
 1. `\subparagraph{}`
 
-Aunque las dos últimas no son habitualmente usadas. Además, la clase `report` y la clase `book` permiten usar el comando `\chapter{}` para dividir el documento en capítulos. Por defecto estos comandos tienen usan una numeración jerárquica de mayor a menor nivel pero tienen una versión *con asterisco* para producir un encabezado (de capítulo, sección, subsección,...) sin numerar. Por ejemplo `\section*{Introducción}` producirá una nueva sección sin numeración.
+Aunque las dos últimas no son habitualmente usadas. Además, la clase `report` y la clase `book` permiten usar el comando `\chapter{}` para dividir el documento en capítulos. Por defecto estos comandos tienen usan una numeración jerárquica de mayor a menor nivel, pero tienen una versión *con asterisco* para producir un encabezado (de capítulo, sección, subsección, ...) sin numerar. Por ejemplo `\section*{Introducción}` producirá una nueva sección sin numeración.
 
 Existe además una opción de estructura adicional que no afectan a la numeración: `\part{}`, usada para dividir cualquier documento en partes.
 
@@ -26,38 +26,43 @@ Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras 
 
 ## Las clases de documento del paquete [KOMA-Script](https://www.ctan.org/pkg/koma-script)
 
-Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` (denominadas `scrartcl`, `scrreprt` y `scrbook`) cuidando especialmente la tipografía y la versatilidad. Añade además una clase `scrlttr2` para la elboración de cartas. 
+Este paquete proporciona un reemplazo moderno para las clases `article`, `report` y `book` (denominadas `scrartcl`, `scrreprt` y `scrbook`) cuidando especialmente la tipografía y la versatilidad. Añade además una clase `scrlttr2` para la elaboración de cartas.
 
-Por otro lado también ofrece:
-- Un [paquete para calcular el diseño de página](https://www.ctan.org/pkg/typearea) 
-- paquetes para cambiar y definir fácilmente estilos de página
+Por otro lado, también ofrece:
 
-La [documentación](https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf) es extensa y a veces muy técnica pero merece la pena usar este tipo de documentos por las siguientes razones:
+- Un [paquete para calcular el diseño de página](https://www.ctan.org/pkg/typearea),
+- paquetes para cambiar y definir fácilmente estilos de página.
+
+La [documentación](https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf) es extensa y a veces muy técnica, pero merece la pena usar este tipo de documentos por las siguientes razones:
+
 - Todos los elementos del mismo pueden personalizarse de forma sencilla.
-- Permite cambiar varios parámetros del diseño e página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.
+- Permite cambiar varios parámetros del diseño de página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.
 
 Consultar la sección de [Personalización](../Personalizacion/about.qmd) para ver algunos ejemplos de su uso.
 
 ## Clases personalizadas: las plantillas de documentos UGR
 
-Es posible crear un clase de documento específica para nuestras necesidades. En Overleaf podemos encontrar documentación sobre [cómo escribir nuestra propia clase de documento](https://www.overleaf.com/learn/latex/Writing_your_own_class). 
+Es posible crear una clase de documento específica para nuestras necesidades. En Overleaf podemos encontrar documentación sobre [cómo escribir nuestra propia clase de documento](https://www.overleaf.com/learn/latex/Writing_your_own_class).
 
 En el repositorio [Plantillas UGR](https://github.com/latex-mat-ugr/Plantillas-UGR) se encuentran disponibles tres plantillas diferentes que respectan la imagen institucional de la Universidad de Granada:
 
 - `UGR-generico`: para todo tipo de documentos, desde certificados hasta informes.
-- `UGR-carta`: para cartas
+- `UGR-carta`: para cartas.
 - `UGR-examen`: para la elaboración de exámenes.
 
-Consultar la [documentación](https://github.com/latex-mat-ugr/Plantillas-UGR/blob/main/README.md) incluida en el repositorio sobre su instalación, uso y opciones.
+Consulta la [documentación](https://github.com/latex-mat-ugr/Plantillas-UGR/blob/main/README.md) incluida en el repositorio sobre su instalación, uso y opciones.
 
 ## Miscelánea
+
 En la sección precedente hemos introducido las clases de documento del paquete `KOMA-script` por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En [CTAN](https://ctan.org/topic/class) se puede ver una lista de paquetes que proporcionan clases de documento alternativas. En esta sección vamos a mencionar algunas de ellas por su calidad y personalización.
 
 ### La clase `memoir`
-La [clase memoir](https://www.ctan.org/pkg/memoir?lang=en) es otra clase de documento popular entre los usuarios de LaTeX con un gran cantidad de opciones de personalización. Su completo [manual](http://mirrors.nxthost.com/ctan/macros/latex/contrib/memoir/memman.pdf) nos permitirá sacarle todo el partido a la misma.
+
+La [clase memoir](https://www.ctan.org/pkg/memoir?lang=en) es otra clase de documento popular entre los usuarios de LaTeX con una gran cantidad de opciones de personalización. Su completo [manual](http://mirrors.nxthost.com/ctan/macros/latex/contrib/memoir/memman.pdf) nos permitirá sacarle todo el partido a la misma.
 
 ### La clase Edward Tufte
-El proyecto [Tufte-LaTeX](https://tufte-latex.github.io/tufte-latex/) ha creado dos clases de documento inspiradas en los trabajos de de [Edward Tufte](https://www.edwardtufte.com/tufte/) profesor emérito de la universidad de Yale autor de cuatro influyentes libros sobre visualización de datos. 
+
+El proyecto [Tufte-LaTeX](https://tufte-latex.github.io/tufte-latex/) ha creado dos clases de documento inspiradas en los trabajos de [Edward Tufte](https://www.edwardtufte.com/tufte/) profesor emérito de la universidad de Yale autor de cuatro influyentes libros sobre visualización de datos. 
 
 Se trata de dos [clases de documento](https://ctan.org/pkg/tufte-latex) para LaTeX [`handout`](http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-handout.pdf) y [`book`](http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-book.pdf) cuya característica principal es una cuidada tipografía y amplios márgenes para la inclusión de abundantes notas, referencias e imágenes.
 
@@ -72,4 +77,5 @@ La American Mathematical Society (AMS), responsable de los populares paquetes pa
 Si nos gusta el estilo de dichos documentos podemos usarlos sin problemas para nuestros propios documentos.
 
 ## Transparencias: la clase *beamer*
+
 La clase `beamer` es tan extensa y específica que precisa de una explicación detallada a parte. Consulta la carpeta [Beamer](../Beamer) para más detalles.

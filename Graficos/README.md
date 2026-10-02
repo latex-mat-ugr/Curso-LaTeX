@@ -8,9 +8,9 @@ No obstante, la inclusión de muchos documentos gráficos en un mismo documento 
 - y pese a ello, la calidad de los gráficos insertados no siempre es óptima.
 
 Para resolver estos inconvenientes $\LaTeX$ adoptó hace tiempo la estrategia
-*Do it yourself*. Esto es,  el propio $\LaTeX$ interpreta una serie de instrucciones mediante las que crea el gráfico. El resultado son imágenes de la más alta calidad y de peso muy reducido, aunque para ello hay que invertir en tiempo de aprendizaje. En la [segunda sección](#creación-de-gráficos) mostramos la potencialidad de esta capacidad de $\LaTeX$.
+*Do it yourself*. Esto es, el propio $\LaTeX$ interpreta una serie de instrucciones mediante las que crea el gráfico. El resultado son imágenes de la más alta calidad y de peso muy reducido, aunque para ello hay que invertir en tiempo de aprendizaje. En la [segunda sección](#creación-de-gráficos) mostramos la potencialidad de esta capacidad de $\LaTeX$.
 
-En el fichero [presentacion1.pdf](presentacion1.pdf) hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en [presentacion2.pdf](presentacion2.pdf) se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en [nuestro repositorio de Github](https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos), están encastrados al final de esta página para su visualización. Los ficheros [presentacion1.tex](presentacion1.tex) y [presentacion2.tex](presentacion2.tex) contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta gráficos.
+En el fichero [presentacion1.pdf](presentacion1.pdf) hay varios ejemplos de cómo insertar gráficos en documentos LaTeX, mientras que en [presentacion2.pdf](presentacion2.pdf) se muestra cómo generar gráficos empleando el propio LaTeX. Estos ficheros, además de estar disponibles en [nuestro repositorio de GitHub](https://github.com/latex-mat-ugr/Curso-LaTeX/tree/master/Graficos), están encastrados al final de esta página para su visualización. Los ficheros [presentacion1.tex](presentacion1.tex) y [presentacion2.tex](presentacion2.tex) contienen los ficheros en LaTeX para generar las presentaciones Beamer anteriores por lo que sirven a su vez como ejemplos. La compilación de estos ficheros requiere de los ficheros de gráficos contenidos en la carpeta gráficos.
 
 ## Inserción/edición de gráficos
 
@@ -33,7 +33,7 @@ La inserción de un gráfico requiere de la declaración del paquete *graphicx* 
 
 ```latex
 \usepackage{graphicx}
-````
+```
 
 En cualquier punto del cuerpo del documento podremos incluir una imagen mediante el comando:
 
@@ -54,7 +54,7 @@ No obstante, recomendamos que los gráficos siempre se declaren en un entorno *f
 
 De esta forma la imagen aparecerá con la leyenda que describa su contenido en el campo *caption* y se podrá hacer referencia a ella desde el texto empleando la etiqueta declarada en *label*, al igual que se hace con tablas o fórmulas.
 
-Mediante distintos comandos incluidos en el campo *parametros* se puede modificar el aspecto de la imagen, lo que nos permite editarlos ligeramente. Este punto se amplía a continuación.
+Mediante distintos comandos incluidos en el campo *parámetros* se puede modificar el aspecto de la imagen, lo que nos permite editarlos ligeramente. Este punto se amplía a continuación.
 
 ### Inserción avanzada de gráficos (edición)
 
@@ -114,7 +114,7 @@ El primero de ellos es que el entorno figure es flotante, esto es, $\LaTeX$ "dec
 
 Podemos ver ejemplos concretos en la [ayuda de OverLeaf](https://www.overleaf.com/learn/latex/Positioning_images_and_tables).
 
-Otro de los problemas que podemos encontrar muchas veces es que queremos *ajustar* el espacio que queda entre el texto y el gráfico. Al insertar un gráfico pueden quedar unos espacios muy ámplios hasta el texto y esto, a veces, ocurre porque el gráfico tiene unos márgenes muy grandes. Para estar seguros de si es este el motivo se puede usar el comando *frame* de la siguiente manera:
+Otro de los problemas que podemos encontrar muchas veces es que queremos *ajustar* el espacio que queda entre el texto y el gráfico. Al insertar un gráfico pueden quedar unos espacios muy amplios hasta el texto y esto, a veces, ocurre porque el gráfico tiene unos márgenes muy grandes. Para estar seguros de si es este el motivo se puede usar el comando *frame* de la siguiente manera:
 
 ```latex
 \begin{figure}[h]
