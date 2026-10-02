@@ -57,7 +57,7 @@ Además, algunos caracteres tienen una utilidad especial y su uso está reservad
 | ^       | Superíndice en modo matemático        | `\^{} `          |
 | &       | Alineación en tablas o matrices       | `\&`             |
 | _       | Subíndice en modo matemático          | `\_`             |
-| { }     | Delimitadores de argumentos o bloques | `\{`, `\}`       |
+| { }     | Delimitadores de argumentos o bloques | `\{` o `\lbrace`, `\}` o `\rbrace`       |
 | ~       | Espacio no separable                  | `\~{}`           |
 | \       | Carácter de escape para comandos      | `\textbackslash` |
 
