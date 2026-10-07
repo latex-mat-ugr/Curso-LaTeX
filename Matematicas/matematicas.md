@@ -21,7 +21,7 @@ $$
   \frac{x+y}{2x-1}=\sqrt{\log(x)^2+1}
 $$
 
-El entorno *equation* produce el mismo resultado y añade una marca a la ecuación para poder hacer referencia con posterioridad a ella:
+El entorno *equation* produce el mismo resultado y añade una número a la ecuación para poder hacer referencia con posterioridad a ella:
 
 ```latex
 \begin{equation} \label{eq:identidad}
@@ -35,16 +35,16 @@ $$ {#eq-identidad}
 
 Los estilos que LaTeX usa por defecto para escribir matemáticas son:
 
-* `textstyle`: matemáticas en línea
-* `displaystyle`: matemáticas centradas en línea separada
-* `scriptstyle`: sub y superíndices
-* `scriptscriptstyle`: sub y superíndices de segundo nivel
+* `\textstyle`: matemáticas en línea
+* `\displaystyle`: matemáticas centradas en línea separada
+* `\scriptstyle`: sub y superíndices
+* `\scriptscriptstyle`: sub y superíndices de segundo nivel
 
 Podemos forzar a LaTeX a escribir como lo hace en línea separada añadiendo la orden `\displaystyle`.
 
 ```latex
 Sean $f(x)=\frac{x}{2}$ y $\displaystyle g(x)=\frac{x}{3}$ las funciones
-````
+```
 
 Es preferible no forzar estos cambios y, seguramente, la solución más razonable sea escribir la función $g$ en una línea separada.
 
@@ -52,7 +52,7 @@ Es preferible no forzar estos cambios y, seguramente, la solución más razonabl
 
 Los espacios dentro del modo matemático no se tienen en cuenta.
 
-El espacio dentro las fórmulas es distinto al espacio en modo texto. Compara lo siguiente:
+El espacio dentro de las fórmulas es distinto al espacio en modo texto. Compara lo siguiente:
 
 ```latex
 Sea $x=1,2$ o $3$ con sea $x=1$, $2$ o $3$
@@ -65,15 +65,15 @@ La forma correcta de escribirlo es la *segunda* si queremos que LaTeX use el esp
 Se puede añadir o quitar espacio manualmente. Las formas más comunes de
 hacerlo son
 
-* Añadir (poco) `\,` añade un espacio pequeño.
+* Añadir (poco) `\,`  un espacio pequeño.
 
 ```latex
 \[
-  \int_{0}^{1} f(x)\, dx = \sqrt{x}\, n
+  \int_{0}^{1} \frac{1}{2\,\sqrt{x}}\, dx = \sqrt{x}
 \]
 ```
 
-* Añadir (algo más) `\quad` y `\qquad` añaden la longitud de una letra m o de dos. Son espacios dinámicos (pueden variar un poco para ajustar las líneas).
+* Añadir (algo más) `\quad` y `\qquad` añaden la longitud de una letra m o de dos.
 
 ```latex
 \[
@@ -97,13 +97,13 @@ Los paréntesis y los corchetes se suelen usar en matemáticas para agrupar oper
 | Corchetes `[...]`           | `[x+y]`                     | $[x+y]$                     |
 | Llaves `\{...\}`            | `\{2n : n \in \mathbb{N}\}` | $\{2n : n \in \mathbb{N}\}$ |
 | Ángulos `\langle...\rangle` | `\langle x,y \rangle`       | $\langle x,y \rangle$       |
-| Barra                       | `|z|`                    | $|z|$         |
+| Barra                       | `|z|`                       | $\|z\|$                       |
 
 Las barras, sencillas o dobles, que usamos habitualmente para escribir el módulo o la norma de un vector se escriben con `\lvert z \rvert ` y `\lVert z \rVert`. Puede ser cómodo añadir en la cabecera un comando definido a propósito para esto:
 
 ```latex
 \providecommand{\abs}[1]{\lvert#1\rvert}
-\providecommand{\norm}[1]{\lVert#1\rVert
+\providecommand{\norm}[1]{\lVert#1\rVert}
 ```
 
 ::: {.callout-warning title="¿Para qué tanta barra?"}
@@ -112,7 +112,7 @@ Las barras, sencillas o dobles, que usamos habitualmente para escribir el módul
 
 ### Tamaño automático de los delimitadores
 
-LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar donde empieza y donde acaba con los prefijos `left` y `right`.
+LaTeX puede ajustar el tamaño de los delimitadores al tamaño de lo que delimitan. En este caso es obligatorio indicar dónde empieza y dónde acaba con los prefijos `\left` y `\right`.
 
 ```latex
 \[
@@ -184,7 +184,7 @@ $$
 \sum_{n=1}^{\infty} x^{x^{n}}
 $$
 
-El comando `\substack` para líneas centradas
+El comando `\substack` para líneas centradas permite incluir subíndices o superíndices que ocupen varias líneas.
 
 ```latex
 \[
@@ -192,12 +192,11 @@ El comando `\substack` para líneas centradas
 \]
 ```
 
-permite incluir subíndices o superíndices que ocupen varias líneas.
 $$
 \sum_{\substack{i=1\\j=123}} i+j
 $$
 
-### Fracciones y números binómicos
+### Fracciones y números combinatorios
 
 Las fracciones se escriben con el comando `\frac{numerador}{denominador}`
 
@@ -208,9 +207,9 @@ Las fracciones se escriben con el comando `\frac{numerador}{denominador}`
 produce
 $\frac{a}{b}$, $\tfrac{1}{2}$, $\dfrac{1}{2}$
 
-`frac` se ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como `tfrac`), si está en una línea separada aumenta (como `dfrac`). Podemos forzar un comportamiento u otro usando `tfrac` o `dfrac`.
+`\frac` ajusta su tamaño dependiendo del contexto: si está en una línea es pequeño (como `\tfrac`), si está en una línea separada aumenta (como `\dfrac`). Podemos forzar un comportamiento u otro usando `\tfrac` o `\dfrac`.
 
-`\binom{a}{b}` produce $\binom{a}{b}$. Al igual que con frac, puede alterar su tamaño usando `tbinom{a}{b}` o `dbinom{a}{b}` y se obtiene $\tbinom{a}{b}$ y $\dbinom{a}{b}$.
+`\binom{a}{b}` produce $\binom{a}{b}$. Al igual que con frac, puede alterar su tamaño usando `\tbinom{a}{b}` o `\dbinom{a}{b}` y se obtiene $\tbinom{a}{b}$ y $\dbinom{a}{b}$.
 
 ### Puntos suspensivos
 
@@ -221,13 +220,13 @@ $x=1,2,\ldots, 3, x+y+\cdots +z$,
 $x\times y \times \dots z$
 ```
 
-produce $x=1,2,\ldots 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$.
+produce $x=1,2,\ldots , 3$, $x+y+\cdots +z$, $x\times y \times \dots \times z$.
 
 ### Arrays y matrices
 
 #### Arrays
 
-El entorno *array* sirve para escribir objetos agrupados por filas y columnas. Hay que indicar cuántas columnas queremos y cómo van a estar alineadas (a la izquierda, centradas o a la derecha). Las columnas se separan con `&` y las filas nuevas se crean con `\\`. Una malla vacía 3x3 sería así:
+El entorno *array* sirve para escribir objetos agrupados por filas y columnas. Hay que indicar cuántas columnas queremos y cómo van a estar alineadas (a la izquierda, centradas o a la derecha). Las columnas se separan con `&` y las filas nuevas se crean con `\\`. Una malla 3x3, con una llave a la derecha, sería así:
 
 ```latex
 \[
@@ -271,9 +270,9 @@ Un uso habitual de este entorno es definir funciones a trozos: suelen tener una 
 $$
   f(x) =
   \begin{cases}
-   1+x^2 & \text{si $x<0$,}\\
-   e^x  & \text{si $x>0$,}\\
-   1 & \text{si $x=0$.}
+   1+x^2, & \text{si $x<0$,}\\
+   e^x,  & \text{si $x>0$,}\\
+   1, & \text{si $x=0$.}
 \end{cases}
 $$
 
@@ -373,7 +372,7 @@ Hay varios símbolos de integral incluidos que se adaptan al modo matemático en
 \[
   \int_{a}^{b} f(x)\, \mathrm{d}x =
   \lim_{n \to \infty} \sum_{k=1}^{n} f(a_{k}) \frac{b-a}{n} =
-  \prod_{j\geq 1} \alpha_{j}
+  \prod_{j\geq 1} \alpha_{j} .
 \]
 ```
 
@@ -386,10 +385,10 @@ $$
 `\sqrt{num}`y `\sqrt[n]{num}` permiten escribir raíces cuadradas y raíces n-ésimas.
 
 ```latex
-$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
+$\sqrt{3}$, $\sqrt[4]{3}$, $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
 ```
 
-$\sqrt{3}$, $\sqrt[4]{3}$ $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
+$\sqrt{3}$, $\sqrt[4]{3}$, $\sqrt[\leftroot{2} \uproot{1} 6]{3}$
 
 ### Llaves y flechas
 
@@ -420,7 +419,7 @@ $$
   \overleftarrow{a+b+c}, \quad \underrightarrow{x+y}
 $$
 
-`\xrightarrow[debajo]{arriba}`y `\xleftrightarrow[debajo]{arriba}` permiten escribir flechas extensibles con texto encima y debajo. Por ejemplo,
+El paquete `mathtools` añade más flechas: `\xrightarrow[debajo]{arriba}`, `\xleftarrow[debajo]{arriba}` y `\xleftrightarrow[debajo]{arriba}` permiten escribir flechas extensibles con texto encima y debajo. Por ejemplo,
 
 ```latex
 \[
@@ -449,7 +448,7 @@ $$
 
 ### Acentos y gorros
 
-`\hat{a}`, `\acute{a}`, `\breve{a}`,  `\dot`, `\tilde`, `\mathring{A}` produce
+`\hat{a}`, `\acute{a}`, `\breve{a}`,  `\dot{a}`, `\tilde{a}`, `\mathring{A}` produce
 $\hat{a}, \acute{a}, \breve{a},  \dot{a}, \tilde{a}, \mathring{A}$
 
 También se pueden escribir flechas sobre un texto usando `\vec{a}` o `\overrightarrow{abc}`
@@ -462,20 +461,19 @@ Con el paquete *esvect* se pueden representar vectores mejor
 
 ## Tipos de letra en modo matemático
 
-| Tipo               | Código          | Resultado        |
-| ------------------ | --------------- | ---------------- |
-| Negrita            | `\mathbf{a}`    | $\mathbf{a}$     |
-| Caligráfica        | `\mathcal{A}`   | $\mathcal{A}$    |
-| Itálica            | `\mathit{ab}`   | $\mathit{ab}$    |
-| Recta              | `\mathrm{d}`    | $\mathrm{d}$     |
-| Negrita de pizarra | `\matbb{N,R,Q}` | $\mathbb{N,R,Q}$ |
-| Gótica             | `\mathfrak{A}`  | $\mathfrak{A}$   |
-| ¿Script?           | `\mathscr{A}`   | $\mathscr{A}$    |
+| Tipo               | Código                             | Resultado        |
+| ------------------ | ---------------------------------- | ---------------- |
+| Negrita            | `\mathbf{a}`                       | $\mathbf{a}$     |
+| Caligráfica        | `\mathcal{A}`                      | $\mathcal{A}$    |
+| Itálica            | `\mathit{ab}`                      | $\mathit{ab}$    |
+| Recta              | `\mathrm{d}`                       | $\mathrm{d}$     |
+| Negrita de pizarra | `\mathbb{N},\mathbb{R},\mathbb{Q}` | $\mathbb{N,R,Q}$ |
+| Gótica             | `\mathfrak{A}`                     | $\mathfrak{A}$   |
+| Script             | `\mathscr{A}`                      | $\mathscr{A}$    |
 
 ## Operadores y funciones
 
-LaTeX tiene predefinidos algunas funciones usuales. Estas funciones/operadores se
-escriben con letra recta siempre. Algunos de estos operadores o funciones además pueden tener límites que se añaden como subíndices o superíndices.
+LaTeX tiene predefinidas algunas funciones usuales. Estas funciones/operadores se escriben con letra recta siempre. Algunos de estos operadores o funciones además pueden tener límites que se añaden como subíndices o superíndices.
 
 | código    | salida   | código    | salida    | código    | salida    |
 | --------- | -------- | --------- | --------- | --------- | --------- |
@@ -503,7 +501,7 @@ Podemos añadir el operador que deseemos con la orden `\DeclareMathOperator`. Pa
 \DeclareMathOperator{\dist}{distancia}
 ```
 
-en la cabecera del documento, está disponible el comando `\distancia`
+en la cabecera del documento, está disponible el comando `\dist`
 
 Si hemos usado el paquete *babel* con la opción *spanish* se añaden las funciones `\sen`, `\tg`, `\arcsen`  y `\arctg` además de, por defecto, acentuar algunos operadores como `\lim`, `\min` o `\max`.
 
@@ -518,10 +516,10 @@ En las siguientes tablas están algunos de los símbolos más comunes. La lista 
 | `\alpha `       | $\alpha$        | `\beta`                | $\beta$                | `\gamma \Gamma`   | $\gamma \Gamma$   |
 | `\delta \Delta` | $\delta \Delta$ | `\epsilon \varepsilon` | $\epsilon \varepsilon$ | `\zeta`           | $\zeta$           |
 | `\eta`          | $\eta$          | `\theta \Theta`        | $\theta \Theta$        | `\vartheta`       | $\vartheta$       |
-| `\gamma \Gamma` | $\gamma \Gamma$ | `\kappa`               | $\kappa$               | `\lambda \Lambda` | $\lambda \Lambda$ |
+| `\iota`         | $\iota$         | `\kappa`               | $\kappa$               | `\lambda \Lambda` | $\lambda \Lambda$ |
 | `\mu`           | $\mu$           | `\nu`                  | $\nu$                  | `\xi \Xi`         | $\xi \Xi$         |
-| `\tau`          | $\tau$        | `\pi \Pi`              | $\pi \Pi$              | `\rho \varrho`    | $\rho \varrho$    |
-| `\sigma \Sigma` | $\sigma \Sigma$ | `\varsigma`            | $\varsigma$            | `\upsilon`        | $\upsilon$        |
+| `\tau`          | $\tau$        | `\pi \Pi \varpi`       | $\pi \Pi \varpi$       | `\rho \varrho`    | $\rho \varrho$    |
+| `\sigma \Sigma` | $\sigma \Sigma$ | `\varsigma`            | $\varsigma$            | `\upsilon \Upsilon` | $\upsilon \Upsilon$ |
 | `\phi \Phi`     | $\phi \Phi$     | `\varphi`              | $\varphi$              | `\chi`            | $\chi$            |
 | `\psi \Psi`     | $\psi \Psi$     | `\omega \Omega`        | $\omega \Omega$        |                   |                   |
 
@@ -552,7 +550,7 @@ A la hora de escribir una fórmula que ocupe varias líneas tenemos que decidir 
 * ¿Hay algún lugar/símbolo en las ecuaciones que nos sirva como elemento para alinear el resto de la ecuación?
 * ¿Consideramos la fórmula como una única ecuación, y una única etiqueta por tanto, o cada línea debería estar etiquetada?
 
-### Entornos ajustados
+### Entornos no alineados
 
 Hay dos: *gather* y *multline*. El primero de ellos muestra las ecuaciones
 centradas una tras otra. Se usa `\\` para partir líneas en la expresión. Por ejemplo
@@ -569,7 +567,7 @@ x+y+z_1\\ +\int_0^1 f(x)\, \mathrm{d}x +\cos \left( \sqrt{x} \, \right)
 \end{gather}
 $$
 
-El segundo, multline, alinea la primera fórmula a la izquierda, la última a la 
+El segundo, multline, alinea la primera línea a la izquierda, la última a la 
 derecha y las intermedias, si las hay, las centra.
 
 ```latex
@@ -593,7 +591,7 @@ $$
 Hay varios entornos de este tipo, dependiendo de cómo estén alineadas
 las columnas. Además de `\\` para añadir una línea nueva, `&` se usa para separar las columnas.
 
-En primer lugar, *align* muestra las columnas centradas.
+En primer lugar, *align* alterna columnas centradas a derecha e izquierda, el entorno completo está centrado:
 
 ```latex
 \begin{align}
@@ -613,12 +611,10 @@ $$
 columna y a la derecha la última
 
 ```latex
-$$
 \begin{flalign}
  x+y +2 z & = 6 & 2u+4v & =8   \\
 2x-3y & = 4 & 3u-4v  & = 10
 \end{flalign}
-$$
 ```
 
 $$
@@ -628,7 +624,7 @@ $$
 \end{flalign}
 $$
 
-Por último, *alignat*, que tiene un comportamiento un poco distinto: hay que decir cuántas columnas hay y añadir los espacios entre ellas manualmente.
+Por último, *alignat*, que tiene un comportamiento un poco distinto: hay que decir cuántas parejas de columnas hay y añadir los espacios entre ellas manualmente.
 
 ```latex
 \[
@@ -718,7 +714,7 @@ w&=10
 \qquad\Longleftrightarrow\qquad
 \begin{aligned}[c]
 x&=u/w\\
-y&=v/w\\
+y&=v/w
 \end{aligned}
 ```
 
@@ -740,6 +736,7 @@ $$
 El entorno más flexible es *split*. Se puede usar sólo
 
 ```latex
+\[
 \begin{split}
                 (x_{1}x_{2}&x_{3}x_{4}x_{5}x_{6})^{2}\\
                            &+ (x_{1}x_{2}x_{3}x_{4}x_{5}
@@ -747,6 +744,7 @@ El entorno más flexible es *split*. Se puede usar sólo
                             + x_{1}x_{2}x_{4}x_{5}x_{6}
                             + x_{1}x_{2}x_{3}x_{5}x_{6})^{2}
 \end{split}
+\]
 ```
 
 $$
@@ -789,14 +787,14 @@ $$
 Se pueden definir fácilmente tantos entornos como se necesiten. Con el paquete *amsthm* cargado en la cabecera tenemos disponible la orden `\newtheorem{teorema}{Teorema}` para definir nuevos entornos.
 
 ```latex
-\newtheorem{nombre del entorno}[opcional subentorno de]
-  {Salida del entorno}[opcional nivel de numeración]
+\newtheorem{nombre del entorno}[comparte contador con]
+  {Salida del entorno}[reinicia el contador al nivel]
 ```
 
 Una versión común sería la siguiente: tenemos los entornos teorema, propo, lema, definición, ejemplo y observ.
 
 ```latex
-\theoremstyle{theorem}
+\theoremstyle{plain}
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{propo}[teorema]{Proposición}
 \newtheorem{lema}[teorema]{Lema}
@@ -813,7 +811,7 @@ Además de etiquetarlos para futuras referencias, se le puede añadir una descri
 
 ```latex
 \begin{lema}[de Fermat]
-  Si una función derivable tiene un extremo local en un punto interior de un intervalo, la derivada en dicho punto se anula
+  Si una función derivable tiene un extremo local en un punto interior de un intervalo, la derivada en dicho punto se anula.
 \end{lema}
 \begin{proof}
   Explicación
@@ -822,4 +820,4 @@ Además de etiquetarlos para futuras referencias, se le puede añadir una descri
 
 ### Demostraciones
 
-El entorno *proof*, sin numerar, viene predefinido y se usa para delimitar el principio y final de una demostración. Si el final de la demostración ocurre en una ecuación o una lista se puede usar `\qedhere` para indiciar dónde debería aparecer el símbolo de final de demostración.
+El entorno *proof*, sin numerar, viene predefinido y se usa para delimitar el principio y final de una demostración. Si el final de la demostración ocurre en una ecuación o una lista se puede usar `\qedhere` para indicar dónde debería aparecer el símbolo de final de demostración.
