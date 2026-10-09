@@ -95,7 +95,7 @@ Los paréntesis y los corchetes se suelen usar en matemáticas para agrupar oper
 | --------------------------- | --------------------------- | --------------------------- |
 | Paréntesis `(...)`          | `(x+y)^{2}`                 | $(x+y)^{2}$                 |
 | Corchetes `[...]`           | `[x+y]`                     | $[x+y]$                     |
-| Llaves `\{...\}`            | `\{2n : n \in \mathbb{N}\}` | $\{2n : n \in \mathbb{N}\}$ |
+| Llaves `\{...\}`, `\lbrace...\rbrace`            | `\{2n : n \in \mathbb{N}\}` | $\{2n : n \in \mathbb{N}\}$ |
 | Ángulos `\langle...\rangle` | `\langle x,y \rangle`       | $\langle x,y \rangle$       |
 | Barra                       | `|z|`                       | $\|z\|$                       |
 
