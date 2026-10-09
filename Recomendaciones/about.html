@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Recomendaciones – Curso LaTeX Grado Matemáticas UGR</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -32,15 +38,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4f6427c58cf66be67f92d2b83404e106.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c93c4ec21b71c7b7def56da851ebd872.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -108,8 +113,6 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Curso LaTeX Grado Matemáticas UGR</span>
     </a>
@@ -146,10 +149,6 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
-      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -316,7 +315,7 @@ window.Quarto = {
 <p>Consultar la sección <a href="../Bibliografia/about.html">Bibliografía</a> para conocer cómo incluir referencias bibliográficas en un documento LaTeX.</p>
 <ul>
 <li>Todas las referencias incluidas en el documento deben de aparecer citadas en algún lugar del mismo con el comando <code>\cite</code>. Es una mala práctica incluir referencias sin citar.</li>
-<li>Al incluir un resultado (especialmente si no se incluye una demostración) es conveniente citar la fuente original donde encontrar una demostración además de cualquier otra fuente relevante (p.&nbsp;ej. demostraciones alternativas) al mismo. Para indicar la autoría y añadir la referencia a un teorema (o proposición o lema) se usa el argumento opcional (entre corchetes <code>[</code> <code>]</code>) de dicho tipo de entornos: <code>tex     \begin{teorema}[do Carmo~\cite{doCarmo92}, 1992]     Enunciado     \end{teorema}</code></li>
+<li>Al incluir un resultado (especialmente si no se incluye una demostración) es conveniente citar la fuente original donde encontrar una demostración además de cualquier otra fuente relevante (p.&nbsp;ej. demostraciones alternativas) al mismo. Para indicar la autoría y añadir la referencia a un teorema (o proposición o lema) se usa el argumento opcional (entre corchetes <code>[</code> <code>]</code>) de dicho tipo de entornos: <code>tex   \begin{teorema}[do Carmo~\cite{doCarmo92}, 1992]   Enunciado   \end{teorema}</code></li>
 <li><em>Estilo</em>: al incluir una referencia y hacer mención expresa los autores, p.&nbsp;ej. en <code>Do Carmo \cite{doCarmo92}</code> es recomendable añadir el símbolo <code>~</code> entre el nombre del autor y el comando <code>\cite</code>. Dicho símbolo evita que LaTeX separe en distintas líneas distintas el nombre del autor y su referencia. De forma similar, al incluir una referencia con <code>\ref</code> también se hace uso del mismo símbolo, p.&nbsp;ej. <code>Ver teorema~\ref{thm:DoCarmo}</code>. En general, es recomendable usar el símbolo <code>~</code> para evitar que LaTeX separe cualquier elemento numerado (fórmulas, teoremas, figuras, tablas,…) del número que lo identifica.</li>
 </ul>
 </section>
@@ -324,13 +323,13 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="latex">LaTeX</h2>
 <ul>
 <li>Corrige todos los errores de LaTeX tan pronto aparezcan al compilar. En ocasiones es muy difícil localizar un error que ha quedado sin corregir.</li>
-<li>Intenta obtener al final una <em>composición</em> limpia, sin errores ni advertencias. Especialmente, sin avisos de <em>overfull</em> o <em>underfull</em>. Estos avisos nos indican dificultades que ha tenido LaTeX al componer el texto y que han dado como resultado líneas de anchura mayor o menor que la anchura predefinida para el texto. Para mostrar visualmente las advertencias de <em>overfull</em> incluye el comando <code>tex     \overfullrule=10pt</code> en el preámbulo del documento. Consulta <a href="https://es.overleaf.com/learn/how-to/Understanding_underfull_and_overfull_box_warnings">Understanding underfull and overfull box warnings - Overleaf, Editor de LaTeX online</a> para más información al respecto.</li>
+<li>Intenta obtener al final una <em>composición</em> limpia, sin errores ni advertencias. Especialmente, sin avisos de <em>overfull</em> o <em>underfull</em>. Estos avisos nos indican dificultades que ha tenido LaTeX al componer el texto y que han dado como resultado líneas de anchura mayor o menor que la anchura predefinida para el texto. Para mostrar visualmente las advertencias de <em>overfull</em> incluye el comando <code>tex   \overfullrule=10pt</code> en el preámbulo del documento. Consulta <a href="https://es.overleaf.com/learn/how-to/Understanding_underfull_and_overfull_box_warnings">Understanding underfull and overfull box warnings - Overleaf, Editor de LaTeX online</a> para más información al respecto.</li>
 <li>Evita incluir paquetes o definiciones en el preámbulo que no vas a usar o que desconoces su uso (p.&nbsp;ej. al copiar y pegar de otros sitios).</li>
 <li>Como regla general deja que LaTeX establezca el espacio vertical y horizontal por sí mismo. Aunque existen comandos para modificar el espacio vertical (p.&nbsp;ej. <code>\bigskip</code>, <code>\medskip</code>, <code>\smallskip</code>, <code>\vskip</code>, <code>\vspace</code>) y horizontal (p.&nbsp;ej. <code>\</code>, <code>\,</code>, <code>\!</code>, <code>\quad</code>, <code>\qquad</code>, <code>\hskip</code>) no los uses sin una buena razón.</li>
 <li>No uses <code>\\</code> para terminar un párrafo. Deja en su lugar una línea en blanco. La orden <code>\\</code> tiene su función en tablas y alineamientos.</li>
 <li>Sé moderado a la hora de destacar palabra en el texto (en cursivo con <code>\emph</code>, en negrita con <code>\textbf</code>,…). Una página llena de cursivas, negritas, texto entre comillas, mayúsculas, recuadros, colores y tamaños es <strong>difícil</strong> de leer.</li>
-<li>Usa las órdenes <code>\sen</code>, <code>\cos</code>, <code>\tg</code>, <code>\lim</code>, <code>\max</code>, <code>\min</code>,… que producen los operadores matemáticos en letra <em>recta</em>. Si un operador no está definido puedes crear un comando para el mismo incluyendo el preámbulo <code>tex     \DeclareMathOperator{\grad}{grad} % gradiente</code></li>
-<li>Para incluir texto en una fórmula usa la orden <code>\text</code>. Por ejemplo <code>tex     \[     (-1)^n =      \begin{cases}     1, &amp;\text{si } n \text{ es par,} \\     -1, &amp;\text{si $n$ es impar.}     \end{cases}     \]</code> observa que dentro del comando <code>\text</code> el espacio en blanco funciona como en el texto normal.</li>
+<li>Usa las órdenes <code>\sen</code>, <code>\cos</code>, <code>\tg</code>, <code>\lim</code>, <code>\max</code>, <code>\min</code>,… que producen los operadores matemáticos en letra <em>recta</em>. Si un operador no está definido puedes crear un comando para el mismo incluyendo el preámbulo <code>tex   \DeclareMathOperator{\grad}{grad} % gradiente</code></li>
+<li>Para incluir texto en una fórmula usa la orden <code>\text</code>. Por ejemplo <code>tex   \[   (-1)^n =    \begin{cases}   1, &amp;\text{si } n \text{ es par,} \\   -1, &amp;\text{si $n$ es impar.}   \end{cases}   \]</code> observa que dentro del comando <code>\text</code> el espacio en blanco funciona como en el texto normal.</li>
 <li>Existe una gran variedad de entornos para escribir una fórmula que no cabe en una línea o agrupar varias fórmulas: <code>align</code>, <code>aligned</code>, <code>split</code>, <code>multline</code>, <code>gather</code>,… Consulta la <a href="https://ctan.fisiquimicamente.com/macros/latex/required/amsmath/amsldoc.pdf">guía del paquete <code>amsmath</code></a>. Por ejemplo, si partes una fórmula en dos líneas, los símbolos de relación (=, &lt;, &gt;,…), operación (+, -) o implicación (<span class="math inline">\(\Rightarrow\)</span>, …) y, en general, los símbolos que unen dos términos o dos miembros de la fórmula nunca deben quedar al final de la línea, sino comenzando la siguiente.</li>
 <li>Nunca se debe numerar a mano. Usar siempre <code>\label</code> para etiquetar un elemento (teorema, fórmula, figura, tabla,…) y <code>\ref</code> para referenciarlo. ¡Atención! Las fórmulas es mejor referenciarlas con <code>\eqref</code>. El comando <code>\autoref</code> se encargará por nosotros de determinar el tipo de elemento y lo formateará de forma adecuada.</li>
 <li>Las figuras y tablas deben siempre ir etiquetadas (con el comando <code>\label</code>) y referenciadas en el texto (con <code>\ref</code> o <code>\autoref</code>). Evitas frases como <em>en la siguiente figura</em> y usa en su lugar <em>en la figura~<span class="math inline">\(\ref{fig:etiqueta}\)</span></em>.</li>

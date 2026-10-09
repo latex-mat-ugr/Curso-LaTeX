@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>about – Curso LaTeX Grado Matemáticas UGR</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -32,15 +38,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4f6427c58cf66be67f92d2b83404e106.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c93c4ec21b71c7b7def56da851ebd872.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,8 +84,6 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Curso LaTeX Grado Matemáticas UGR</span>
     </a>
@@ -117,10 +120,6 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
-      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -215,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#clases-de-documento" id="toc-clases-de-documento" class="nav-link active" data-scroll-target="#clases-de-documento">Clases de documento</a>
   <ul class="collapse">
-  <li><a href="#clases-básicos-de-latex" id="toc-clases-básicos-de-latex" class="nav-link" data-scroll-target="#clases-básicos-de-latex">Clases básicos de LaTeX</a></li>
+  <li><a href="#clases-básicas-de-latex" id="toc-clases-básicas-de-latex" class="nav-link" data-scroll-target="#clases-básicas-de-latex">Clases básicas de LaTeX</a></li>
   <li><a href="#las-clases-de-documento-del-paquete-koma-script" id="toc-las-clases-de-documento-del-paquete-koma-script" class="nav-link" data-scroll-target="#las-clases-de-documento-del-paquete-koma-script">Las clases de documento del paquete KOMA-Script</a></li>
   <li><a href="#clases-personalizadas-las-plantillas-de-documentos-ugr" id="toc-clases-personalizadas-las-plantillas-de-documentos-ugr" class="nav-link" data-scroll-target="#clases-personalizadas-las-plantillas-de-documentos-ugr">Clases personalizadas: las plantillas de documentos UGR</a></li>
   <li><a href="#miscelánea" id="toc-miscelánea" class="nav-link" data-scroll-target="#miscelánea">Miscelánea</a>
@@ -238,12 +237,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="clases-de-documento" class="level1">
 <h1>Clases de documento</h1>
 <p>Todo documento de LaTeX comienza con la declaración de la <em>clase</em> o <em>tipo de documento</em> mediante el comando <code>\documentclass</code>. Existen <a href="https://ctan.org/topic/class">multitud de clases</a> distintas según el propósito del documento. Describiremos aquí algunas de las más utilizadas.</p>
-<section id="clases-básicos-de-latex" class="level2">
-<h2 class="anchored" data-anchor-id="clases-básicos-de-latex">Clases básicos de LaTeX</h2>
+<section id="clases-básicas-de-latex" class="level2">
+<h2 class="anchored" data-anchor-id="clases-básicas-de-latex">Clases básicas de LaTeX</h2>
 <p>Las clases básicas en LaTeX son:</p>
 <ul>
-<li><code>article</code>: Para artículos en revistas científicas, informes,…</li>
-<li><code>report</code>: para pequeños libros, informes largos,…</li>
+<li><code>article</code>: Para artículos en revistas científicas, informes, …</li>
+<li><code>report</code>: para pequeños libros, informes largos, …</li>
 <li><code>book</code>: para libros</li>
 </ul>
 <p>Los documentos se estructuran en diferentes secciones. La clase <code>article</code> permite los siguientes comandos de estructura (de mayor a menor nivel):</p>
@@ -254,38 +253,46 @@ ul.task-list li input[type="checkbox"] {
 <li><code>\paragraph{}</code></li>
 <li><code>\subparagraph{}</code></li>
 </ol>
-<p>Aunque las dos últimas no son habitualmente usadas. Además, la clase <code>report</code> y la clase <code>book</code> permiten usar el comando <code>\chapter{}</code> para dividir el documento en capítulos. Por defecto estos comandos tienen usan una numeración jerárquica de mayor a menor nivel pero tienen una versión <em>con asterisco</em> para producir un encabezado (de capítulo, sección, subsección,…) sin numerar. Por ejemplo <code>\section*{Introducción}</code> producirá una nueva sección sin numeración.</p>
+<p>Aunque las dos últimas no son habitualmente usadas. Además, la clase <code>report</code> y la clase <code>book</code> permiten usar el comando <code>\chapter{}</code> para dividir el documento en capítulos. Por defecto estos comandos tienen usan una numeración jerárquica de mayor a menor nivel, pero tienen una versión <em>con asterisco</em> para producir un encabezado (de capítulo, sección, subsección, …) sin numerar. Por ejemplo <code>\section*{Introducción}</code> producirá una nueva sección sin numeración.</p>
 <p>Existe además una opción de estructura adicional que no afectan a la numeración: <code>\part{}</code>, usada para dividir cualquier documento en partes.</p>
 <p>Evidentemente dichos tipos de documento pueden no ser suficientes para nuestras necesidades. Por ejemplo, para crear transparencias se usa un tipo de clase diferente <a href="../Beamer/about.html"><code>beamer</code></a>.</p>
 </section>
 <section id="las-clases-de-documento-del-paquete-koma-script" class="level2">
 <h2 class="anchored" data-anchor-id="las-clases-de-documento-del-paquete-koma-script">Las clases de documento del paquete <a href="https://www.ctan.org/pkg/koma-script">KOMA-Script</a></h2>
-<p>Este paquete proporciona un reemplazo moderno para las clases <code>article</code>, <code>report</code> y <code>book</code> (denominadas <code>scrartcl</code>, <code>scrreprt</code> y <code>scrbook</code>) cuidando especialmente la tipografía y la versatilidad. Añade además una clase <code>scrlttr2</code> para la elboración de cartas.</p>
-<p>Por otro lado también ofrece: - Un <a href="https://www.ctan.org/pkg/typearea">paquete para calcular el diseño de página</a> - paquetes para cambiar y definir fácilmente estilos de página</p>
-<p>La <a href="https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf">documentación</a> es extensa y a veces muy técnica pero merece la pena usar este tipo de documentos por las siguientes razones: - Todos los elementos del mismo pueden personalizarse de forma sencilla. - Permite cambiar varios parámetros del diseño e página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.</p>
+<p>Este paquete proporciona un reemplazo moderno para las clases <code>article</code>, <code>report</code> y <code>book</code> (denominadas <code>scrartcl</code>, <code>scrreprt</code> y <code>scrbook</code>) cuidando especialmente la tipografía y la versatilidad. Añade además una clase <code>scrlttr2</code> para la elaboración de cartas.</p>
+<p>Por otro lado, también ofrece:</p>
+<ul>
+<li>Un <a href="https://www.ctan.org/pkg/typearea">paquete para calcular el diseño de página</a>,</li>
+<li>paquetes para cambiar y definir fácilmente estilos de página.</li>
+</ul>
+<p>La <a href="https://osl.ugr.es/CTAN/macros/latex/contrib/koma-script/doc/scrguien.pdf">documentación</a> es extensa y a veces muy técnica, pero merece la pena usar este tipo de documentos por las siguientes razones:</p>
+<ul>
+<li>Todos los elementos del mismo pueden personalizarse de forma sencilla.</li>
+<li>Permite cambiar varios parámetros del diseño de página y el paquete se encarga de recalcular los tamaños del texto y márgenes siguiendo las prácticas tipográficas más adecuadas.</li>
+</ul>
 <p>Consultar la sección de <a href="../Personalizacion/about.html">Personalización</a> para ver algunos ejemplos de su uso.</p>
 </section>
 <section id="clases-personalizadas-las-plantillas-de-documentos-ugr" class="level2">
 <h2 class="anchored" data-anchor-id="clases-personalizadas-las-plantillas-de-documentos-ugr">Clases personalizadas: las plantillas de documentos UGR</h2>
-<p>Es posible crear un clase de documento específica para nuestras necesidades. En Overleaf podemos encontrar documentación sobre <a href="https://www.overleaf.com/learn/latex/Writing_your_own_class">cómo escribir nuestra propia clase de documento</a>.</p>
+<p>Es posible crear una clase de documento específica para nuestras necesidades. En Overleaf podemos encontrar documentación sobre <a href="https://www.overleaf.com/learn/latex/Writing_your_own_class">cómo escribir nuestra propia clase de documento</a>.</p>
 <p>En el repositorio <a href="https://github.com/latex-mat-ugr/Plantillas-UGR">Plantillas UGR</a> se encuentran disponibles tres plantillas diferentes que respectan la imagen institucional de la Universidad de Granada:</p>
 <ul>
 <li><code>UGR-generico</code>: para todo tipo de documentos, desde certificados hasta informes.</li>
-<li><code>UGR-carta</code>: para cartas</li>
+<li><code>UGR-carta</code>: para cartas.</li>
 <li><code>UGR-examen</code>: para la elaboración de exámenes.</li>
 </ul>
-<p>Consultar la <a href="https://github.com/latex-mat-ugr/Plantillas-UGR/blob/main/README.md">documentación</a> incluida en el repositorio sobre su instalación, uso y opciones.</p>
+<p>Consulta la <a href="https://github.com/latex-mat-ugr/Plantillas-UGR/blob/main/README.md">documentación</a> incluida en el repositorio sobre su instalación, uso y opciones.</p>
 </section>
 <section id="miscelánea" class="level2">
 <h2 class="anchored" data-anchor-id="miscelánea">Miscelánea</h2>
 <p>En la sección precedente hemos introducido las clases de documento del paquete <code>KOMA-script</code> por incluir tipos de documento que cubren la mayoría de necesidades de un usuario medio. Sin embargo, existen multitud de clases de documento a disposición del usuario. En <a href="https://ctan.org/topic/class">CTAN</a> se puede ver una lista de paquetes que proporcionan clases de documento alternativas. En esta sección vamos a mencionar algunas de ellas por su calidad y personalización.</p>
 <section id="la-clase-memoir" class="level3">
 <h3 class="anchored" data-anchor-id="la-clase-memoir">La clase <code>memoir</code></h3>
-<p>La <a href="https://www.ctan.org/pkg/memoir?lang=en">clase memoir</a> es otra clase de documento popular entre los usuarios de LaTeX con un gran cantidad de opciones de personalización. Su completo <a href="http://mirrors.nxthost.com/ctan/macros/latex/contrib/memoir/memman.pdf">manual</a> nos permitirá sacarle todo el partido a la misma.</p>
+<p>La <a href="https://www.ctan.org/pkg/memoir?lang=en">clase memoir</a> es otra clase de documento popular entre los usuarios de LaTeX con una gran cantidad de opciones de personalización. Su completo <a href="http://mirrors.nxthost.com/ctan/macros/latex/contrib/memoir/memman.pdf">manual</a> nos permitirá sacarle todo el partido a la misma.</p>
 </section>
 <section id="la-clase-edward-tufte" class="level3">
 <h3 class="anchored" data-anchor-id="la-clase-edward-tufte">La clase Edward Tufte</h3>
-<p>El proyecto <a href="https://tufte-latex.github.io/tufte-latex/">Tufte-LaTeX</a> ha creado dos clases de documento inspiradas en los trabajos de de <a href="https://www.edwardtufte.com/tufte/">Edward Tufte</a> profesor emérito de la universidad de Yale autor de cuatro influyentes libros sobre visualización de datos.</p>
+<p>El proyecto <a href="https://tufte-latex.github.io/tufte-latex/">Tufte-LaTeX</a> ha creado dos clases de documento inspiradas en los trabajos de <a href="https://www.edwardtufte.com/tufte/">Edward Tufte</a> profesor emérito de la universidad de Yale autor de cuatro influyentes libros sobre visualización de datos.</p>
 <p>Se trata de dos <a href="https://ctan.org/pkg/tufte-latex">clases de documento</a> para LaTeX <a href="http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-handout.pdf"><code>handout</code></a> y <a href="http://mirrors.nxthost.com/ctan/macros/latex/contrib/tufte-latex/sample-book.pdf"><code>book</code></a> cuya característica principal es una cuidada tipografía y amplios márgenes para la inclusión de abundantes notas, referencias e imágenes.</p>
 <p>Podemos recrear hasta cierto punto la clase <code>tufte-handout</code> personalizando la clase <code>scrartcl</code>. La <a href="plantilla-KOMA-margen-amplio.tex">plantilla-KOMA-margen-amplio</a> ha usado la clase <code>scrartcl</code> cambiando el tipo de fuente, el diseño de página (para permitir un amplio margen) y el paquete <code>sidenote</code> (con ciertas modificaciones) para incluir notas y figuras al margen.</p>
 </section>
