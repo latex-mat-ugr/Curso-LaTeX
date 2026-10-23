@@ -40,7 +40,7 @@ A continuación mostramos un ejemplo básico de documento Beamer sobre el que ba
 ```
 
 ## Aspecto general de la presentación
-Antes de comenzar una presentación hay que escoger un tema mediante el comando `\usetheme` que determinará el aspecto último de nuestra presentación. En el ejemplo anterior se ha usado el tema Berlin aunque como se puede ver en la [Beamer theme gallery](https://deic.uab.cat/~iblanes/beamer_gallery/index.html)
+Antes de comenzar una presentación hay que escoger un tema mediante el comando `\usetheme` que determinará el aspecto último de nuestra presentación. En el ejemplo anterior se ha usado el tema Berlin aunque como se puede ver en la [Beamer theme gallery](https://atticus-sullivan.github.io/beamercolortheme/)
 hay disponibles una gran variedad de temas en los que además, opcionalmente se pueden elegir colores y fuentes.
 Así por ejemplo, si tras la elección del tema Berlín, se se añaden los comandos
 
